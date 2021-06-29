@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='PatientAlertMaster'>
+		<common-values>
+			<master-name>PatientAlertMaster</master-name>
+			<master-title>Chronic Disease Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Chronic Disease Master</tableHeading> 
+				<list-table>HGBT_PAT_ALERT_MST</list-table>
+				<columns>
+					 <column>Chronic Disease Name</column>
+					 <column>Disease</column>
+				</columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_ALERT_NAME) </field>
+						<field>NVL(INITCAP((SELECT SUBSTR(INITCAP(B.HGBSTR_DISEASE),1,30)||'...('||B.HGBSTR_DISEASE_CODE||')' FROM HGBT_ICD_DISEASE_MST B WHERE B.HGBSTR_DISEASE_CODE=A.HGBSTR_DISEASE_CODE AND HGNUM_RECORD_TYPE=0 AND B.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE)),'-') </field>
+					</fields>
+					<primaryKey>
+						<field>A.HGNUM_PAT_ALERT_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HGNUM_SLNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_PAT_ALERT_MST</table>
+						
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID </isvalid-field>
+                            <orderby> AND A.GNUM_HOSPITAL_CODE=100 ORDER BY INITCAP(A.HGSTR_ALERT_NAME) </orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>
+			<static-page>/opd/master/patientAlertMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/patientAlertMaster.cnt</static-page>
+		</modify-page>
+		    	
+	</master>	
+</master-config>

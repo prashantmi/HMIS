@@ -1,0 +1,234 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='RecordTypeChecklistMst'>
+		<common-values>
+			<master-name>RecordTypeChecklistMst</master-name>
+			<master-title>Record Type Checklist Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Record Type Checklist Master</tableHeading> 
+				<list-table>HPMRT_RECORD_TYPE_CHECKLIST</list-table>
+				 <controls>
+				<control type="combo" index="0">
+					<label>Record type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>A.HPMRSTR_RECORDTYPE_DESC</text-field>
+								<value-field>A.HPMRNUM_RECORD_TYPE</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HPMRT_MRD_RECORDTYPE_MST</table>
+								
+							</tables>
+							<condition>
+								<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+							<general> and A.GNUM_ISVALID=1  </general>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+				
+				<columns>
+					 <column>Check List</column>
+				
+				</columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HPMRSTR_CHECKLIST) </field>
+					
+					</fields>
+					<primaryKey>
+						<field>A.HPMRNUM_CHECKLIST_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HPMRNUM_SLNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HPMRT_RECORD_TYPE_CHECKLIST</table>
+						<table alias='B'>HPMRT_MRD_RECORDTYPE_MST</table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                            <dependent>
+							<clause> A.HPMRNUM_RECORD_TYPE = #0 </clause>
+							</dependent>
+                            <general>  A.HPMRNUM_RECORD_TYPE=b.HPMRNUM_RECORD_TYPE AND b.GNUM_ISVALID=A.GNUM_ISVALID AND b.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE and  </general>
+                            <orderby> order by INITCAP(A.HPMRSTR_CHECKLIST)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>	
+				
+				<control type="text" index="0">
+						<label>Record type</label>
+						<constraints  size ='20' />
+						<data>
+							<dynamic>
+								<query-detail>
+									<fields>
+										<field>INITCAP(A.HPMRSTR_RECORDTYPE_DESC)</field>	
+									</fields>
+									<tables>
+										<table alias='A'>HPMRT_MRD_RECORDTYPE_MST</table>	
+									</tables>
+									<condition>
+									<general> A.GNUM_ISVALID=1 </general>
+                            			<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+										<dependent>
+											<clause> AND HPMRNUM_RECORD_TYPE =  #L0</clause>
+										</dependent>
+									</condition>
+								</query-detail>
+							</dynamic>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+					
+					<control type="text" index="1" >
+						<label>Checklist</label>
+						<constraints  maxlength ="50" size="20" inputType='alphabets' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>
+				
+					<control type="text" index="2" >
+						<label>Remarks</label>
+						<constraints  maxlength ="50" size="20" inputType='alphabets'/>						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="3"> 
+						<label>Is Compulsory</label>
+							<data>
+							<static>
+								<option value="0">No</option>
+								<option value="1">At Ward Level</option>
+								<option value="1">At MRD Level</option>
+							</static>
+							</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>	
+					</control>	
+			</controls>
+		    <redundent-check>
+				SELECT COUNT (*) FROM HPMRT_RECORD_TYPE_CHECKLIST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and trim(HPMRNUM_RECORD_TYPE)  =  trim(' valueMap#L0 ') and upper(HPMRSTR_CHECKLIST)  =  controlindex1 
+				
+			</redundent-check>	
+		    
+		    <insert-query>
+				<primary-key>
+					<field>HPMRNUM_CHECKLIST_ID</field>
+					<value>SELECT nvl(MAX(HPMRNUM_CHECKLIST_ID),100)+1 FROM HPMRT_RECORD_TYPE_CHECKLIST</value>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</primary-key>					
+				<fields valueMap='#L0'>HPMRNUM_RECORD_TYPE</fields>
+				<fields valueMap='#I1'>HPMRSTR_CHECKLIST</fields>
+				<fields valueMap='#2'>HPMRSTR_REMARKS</fields>
+				<fields valueMap='#3'>HPMRNUM_ISCOMPULSORY</fields>
+				<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+				<fields valueMap='@defaultOne'>HPMRNUM_SLNO</fields>
+				<fields valueMap='@seatId'>	GNUM_SEAT_ID</fields>
+				<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+				<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+				<table>HPMRT_RECORD_TYPE_CHECKLIST</table>				
+			</insert-query>
+		</dynamic-page>			
+	</add-page>
+	
+	<modify-page>
+	  <dynamic-page>
+		   <controls>	
+		   <control type="text" index="0">
+						<label>Record Type</label>
+						<constraints  size ='20' />						
+						<data>
+							<static>#Q0</static>
+						</data>					
+						<readOnly>1</readOnly>
+					</control>	
+					<control type="text" index="1" >
+						<label>Checklist</label>
+						<constraints  maxlength ="50" size="20" inputType='alphabets' mandatory ='true'/>
+						<data>
+							<static>#Q1</static>
+						</data>						
+						<readOnly>0</readOnly>
+					</control>
+					
+					<control type="text" index="2" >
+						<label>Remarks</label>
+						<constraints  maxlength ="50" size="20" inputType='alphabets'/>		
+						<data>
+							<static>#Q2</static>
+						</data>					
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="3"> 
+						<label>Is Compulsory</label>
+							<data>
+							<static>
+								<option value="0">No</option>
+								<option value="1">At Ward Level</option>
+								<option value="2">At MRD Level</option>
+							</static>
+							</data>
+							<default>#Q3</default>
+						<submitRequired>0</submitRequired>	
+					</control>	
+					<control type="combo" index="4">
+					<label>IsActive Status</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<static>
+							<option value='1'>Active </option>
+							<option value='2'>In Active </option>
+						</static>
+					</data>
+					<default>#S</default>
+					<submitRequired>0</submitRequired>
+				</control>                          	
+			</controls>
+			 <redundent-check>
+				SELECT COUNT (*) FROM HPMRT_RECORD_TYPE_CHECKLIST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper(HPMRSTR_CHECKLIST)  =  controlindex0
+			</redundent-check>	
+		    <initialise-query>
+			   	 <fields>
+					 <field>B.HPMRSTR_RECORDTYPE_DESC</field>
+					 <field>INITCAP(A.HPMRSTR_CHECKLIST)</field>
+					 <field>A.HPMRSTR_REMARKS</field>
+					 <field>A.HPMRNUM_ISCOMPULSORY</field>
+				 </fields>					
+					<tables>
+						<table alias='A'>HPMRT_RECORD_TYPE_CHECKLIST</table>
+						<table alias='B'>HPMRT_MRD_RECORDTYPE_MST</table>
+					</tables>
+					<condition>	
+						<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>		
+							<general>A.HPMRNUM_RECORD_TYPE=B.HPMRNUM_RECORD_TYPE and B.GNUM_ISVALID=A.GNUM_ISVALID and  B.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE and  </general>				
+						<dependent>
+						    <clause>A.HPMRNUM_CHECKLIST_ID= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>				
+					<fields valueMap='#I1'>HPMRSTR_CHECKLIST</fields>
+					<fields valueMap='#2'>HPMRSTR_REMARKS</fields>
+					<fields valueMap='#3'>HPMRNUM_ISCOMPULSORY</fields>
+					<fields valueMap='#4'>GNUM_ISVALID</fields>
+					<fields valueMap='@defaultOne'>HPMRNUM_SLNO</fields>
+					<fields valueMap='@seatId'>	GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<table>HPMRT_RECORD_TYPE_CHECKLIST</table>
+					<condition>HPMRNUM_CHECKLIST_ID = #1</condition>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

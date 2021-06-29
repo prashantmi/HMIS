@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <master-config>
+	<master name='ProfileRestrictedCategory'>
+		<common-values>
+			<master-name>ProfileRestrictedCategory</master-name>
+			<master-title>Category Wise Restricted Profile Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Profile Restricted Category Master</tableHeading>
+			
+			<list-table>HPMRT_PROFILE_RESTRICTED_CAT</list-table>
+
+			<columns>
+				<column>Patient Category</column>
+				<column>Profile Type</column>
+				</columns>
+
+			<query-detail>
+				<fields>
+					<field>B.GSTR_PATIENT_CAT_NAME</field>
+					<field>C.HPMRSTR_PROFILE_NAME</field>
+				</fields>
+				
+				<primaryKey>
+					<field>A.GNUM_PATIENT_CAT_CODE</field>
+					<field>A.HPMRNUM_PROFILE_TYPE</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HPMRNUM_SLNO</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HPMRT_PROFILE_RESTRICTED_CAT</table>
+					<table alias='B'>GBLT_PATIENT_CAT_MST</table>
+					<table alias='C'>HPMRT_PROFILE_TYPE_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>
+					A.GNUM_PATIENT_CAT_CODE=B.GNUM_PATIENT_CAT_CODE AND B.GNUM_HOSPITAL_CODE=100 
+					AND A.HPMRNUM_PROFILE_TYPE=C.HPMRNUM_PROFILE_TYPE 
+					AND C.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE 
+					and c.GNUM_ISVALID=A.GNUM_ISVALID AND A.GNUM_ISVALID
+					
+					</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby> order by INITCAP(A.GNUM_PATIENT_CAT_CODE)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/opd/master/restrictedCategoryMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/restrictedCategoryMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>
+   

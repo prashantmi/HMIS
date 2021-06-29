@@ -1,0 +1,126 @@
+
+
+A.link3          {font-family: Trebuchet MS, Tahoma, Arial, Helvetica; font-size: 11px; color: #0058C0; font-weight: normal; text-decoration: none; padding-bottom: 3px;}
+A.link3:hover    {text-decoration: underline;}
+
+A.link2          {font-family: Trebuchet MS, Tahoma, Arial, Helvetica; font-size: 11px; color: #000000; font-weight: normal; text-decoration: none;}
+A.link2:hover    {text-decoration: underline;}
+
+.menuTd       {color:#AAAAAA; border:solid 1px #BFBFBF; border-top: none; padding: 2px 10px 2px 10px; background-color:#EFEFEF; background-image: url(images/menuback.gif); background-repeat: repeat-x;}
+
+.copyrightTd  {font-family: Tahoma, Arial, Helvetica; font-size: 10px; color: #848484; padding: 10px;}
+.bottomMenuTd {font-family: Trebuchet MS, Tahoma, Arial, Helvetica; font-size: 11px; color: #000000; padding: 10px; padding-right: 20px;}
+
+A.link3b         {font-family: Trebuchet MS, Tahoma, Arial, Helvetica; font-size: 11px; color: #0058C0; font-weight: bold; text-decoration: none;}
+A.link3b:hover   {text-decoration: underline;}
+
+
+
+.page {
+  border-left: solid 1px #CFD3D1;
+  border-right: solid 1px #CFD3D1;
+  border-bottom: solid 1px #CFD3D1;
+  background-Color: #FCFCFD;
+}
+
+.pageGlass {
+  border-left: solid 1px #947C2F;
+  border-right: solid 1px #947C2F;
+  border-bottom: solid 1px #947C2F;
+  background-Color: #FBF5E3;
+  background-repeat: repeat-y;
+}
+
+.pageWin {
+  border-right: outset 2px #D4D0C8;
+  border-bottom: outset 2px #D4D0C8;
+  border-left: outset 2px #D4D0C8;
+  border-top: none 0px #D4D0C8;
+  background-color: #D4D0C8;
+  background-repeat: repeat-y;
+}
+
+.pagestyle1 {
+  border-left: solid 1px #5977B3;
+  border-right: solid 1px #5977B3;
+  border-bottom: solid 1px #5977B3;
+  background-Color: #FFFFFF;
+  background-repeat: repeat-y;
+}
+
+.pagestyle2 {
+  border-left: solid 1px #5D5D5D;
+  border-right: solid 1px #5D5D5D;
+  border-bottom: solid 1px #5D5D5D;
+  background-Color: #E0DFE3;
+  background-repeat: repeat-y;
+}
+
+.pagestyle3 {
+  border-left: solid 1px #CFD7DB;
+  border-right: solid 1px #CFD7DB;
+  border-bottom: solid 1px #CFD7DB;
+  border-top: solid 1px #212121;
+  background-Color: #FFFFFF;
+  background-repeat: repeat-y;
+}
+
+.pagestyle4 {
+  border-left: solid 1px #B0BEC7;
+  border-right: solid 1px #B0BEC7;
+  border-bottom: solid 1px #B0BEC7;
+  background-Color: #FFFFFF;
+  background-repeat: repeat-y;
+}
+
+.pageMicr{
+  border-left: solid 1px #9BAFDE;
+  border-right: solid 1px #9BAFDE;
+  border-bottom: solid 1px #9BAFDE;
+  background-Color: #F8F2E4;
+  background-repeat: repeat-y;
+}
+
+.pageKasper{
+  border-left: solid 1px #E7E4D7;
+  border-right: solid 1px #5D5332;
+  border-bottom: solid 1px #5D5332;
+  background-Color: #FFFFFF;
+  background-repeat: repeat-y;
+}
+
+.pageStyle {
+  border-left: solid 1px #8D93A0;
+  border-right: solid 1px #8D93A0;
+  border-bottom: solid 1px #8D93A0;
+  border-top: solid 1px #716F64;
+  background-Color: #FFFFFF;
+  background-repeat: repeat-y;
+}
+
+
+.btn { font-family: Tahoma;  font-size: 11px;  font-style: normal;  text-decoration: none;    }
+
+A.menuLink {
+ font-family: Tahoma;  font-size: 11px;  text-decoration: none; color: #5E4200;
+}
+
+A.menuLink2 {
+ font-family: Tahoma;  font-size: 11px;  text-decoration: none; color: #FFFFFF;
+}
+
+A {
+ font-family: Tahoma;  font-size: 11px;  text-decoration: underline; color: #0582FF;
+}
+
+.topString {
+ font-family: Tahoma; font-size: 10px; color: #DCC451;
+}
+
+.tabPage {
+ font-family: Tahoma; font-size: 11px; color: #333333;
+}
+
+.copyright {
+ font-family: Tahoma; font-size: 11px; color: #F3F3EF;
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Master'>
+		<common-values>
+			<master-name>ProcedureItemMappingMaster</master-name>
+			<master-title>Procedure Item Mapping Master</master-title>
+		</common-values>	
+	
+	<list-page>
+				<tableHeading>Procedure Item Mapping Master</tableHeading> 
+				<list-table>HSRV_PROCEDURE_ITEM_MAP_MST</list-table>
+				
+				<columns>
+					 <column>Procedure Name</column>
+					 <column>Item Name</column>		 
+  			   </columns>
+					<query-detail>
+					<fields>
+						<field>(SELECT INITCAP(HSRSTR_PROCEDURE_NAME) FROM HSRV_PROCEDURE_MST WHERE HSRNUM_PROCEDURE_CODE = A.HSRNUM_PROCEDURE_CODE AND GNUM_HOSPITAL_CODE=100 AND GNUM_ISVALID=1) PROC)</field>
+					    <field>(SELECT HSTSTR_ITEM_NAME FROM HSTT_DRUGBRAND_MST WHERE HSTNUM_ITEMBRAND_ID=A.HSTNUM_ITEMBRAND_ID AND HSTNUM_ITEM_ID=A.HOTNUM_ITEM_ID AND GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE AND GNUM_ISVALID=1 AND SSTNUM_ITEM_CAT_NO=A.SSTNUM_ITEM_CAT_NO AND HSTNUM_ITEMTYPE_ID=A.HSTNUM_ITEMTYPE_ID) strItemName)</field>
+					</fields>
+					<primaryKey>
+					    <field>A.HSRNUM_PROCEDURE_CODE</field>
+						<field>A.HSTNUM_ITEMBRAND_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>						
+					</primaryKey>
+					<tables>
+						<table alias='A'>HSRV_PROCEDURE_ITEM_MAP_MST</table>																		
+					</tables>
+					<condition>	
+							<dependent>
+							<clause></clause>
+							</dependent>		
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>							              				 
+                            <isvalid-field> A.GNUM_ISVALID</isvalid-field>
+                            <orderby> order by PROC</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>	
+			<static-page>/servicearea/masters/ProcedureItemMappingMaster.cnt</static-page>		
+		</add-page>
+
+		<modify-page>
+			<static-page>/servicearea/masters/ProcedureItemMappingMaster.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>		

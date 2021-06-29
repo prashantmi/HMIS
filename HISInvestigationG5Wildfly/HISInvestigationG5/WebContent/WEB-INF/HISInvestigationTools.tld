@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<!--His Global TLD-->
+<taglib>
+<tlibversion>1.0</tlibversion>
+<jspversion>2.0</jspversion>
+<shortname>HisGlobalTags</shortname>
+<info>His Global TLD</info>
+
+<!-- <tag>
+	<name>showRequisitionForm</name>
+	<tagclass>hisglobal.tools.tag.ShowRequisitionForm</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates The Requisition Form For Patient for the test
+	</info>
+	<attribute>
+		<name>requisitionDNo</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>mode</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>mandatorytemplate</name>
+	<tagclass>hisglobal.tools.tag.MandatoryTemplate</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		CREATES VIEW FOR TEMPLATE VIEW
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>associatedDivId</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+</tag>
+
+<tag>
+	<name>mandatorydetailtag</name>
+	<tagclass>hisglobal.tools.tag.MandatoryDetailTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		CREATES VIEW FOR MANDATORY VIEW
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>printingtemplate</name>
+	<tagclass>hisglobal.tools.tag.ResultPrintingTemplateTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Transforms Document Object through styleSheet
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+ -->
+ 
+ <tag>
+	<name>template</name>
+	<tagclass>hisglobal.tools.tag.ResultEntryTemplateTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Transforms Document Object through styleSheet
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>property</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>patient</name>
+	<tagclass>hisglobal.tools.PatientTagClass</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Patient Details
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>property</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag>
+	<name>episode</name>
+	<tagclass>hisglobal.tools.EpisodeTagClass</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Episode Details
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>property</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<!-- <tag>
+	<name>date</name>
+	<tagclass>hisglobal.tools.tag.NewDatePicker</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Date 
+	</info>
+	<attribute>
+		<name>beanName</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>property</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>onClick</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>onChange</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>dateFormate</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>id</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>idIconPicDate</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>readOnly</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>size</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>alt</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>viewInvestigation</name>
+	<tagclass>hisglobal.tools.tag.ViewResultsTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		 
+	</info>
+	<attribute>
+		<name>workOrderNo</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>patCRNo</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+      <name>testRemarkTag</name>
+      <tagclass>hisglobal.tools.tag.TestRemarksTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>CREATES VIEW FOR TEST REMARKS VIEW</info>
+      <attribute>
+            <name>testCode</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+      </attribute>
+</tag>
+<tag>
+      <name>sampleRemarkTag</name>
+      <tagclass>hisglobal.tools.tag.SampleRemarksTag</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <info>CREATES VIEW FOR TEST REMARKS VIEW</info>
+     <attribute><name>testCode</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+     <attribute><name>labCode</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+     <attribute><name>sampleCode</name><required>true</required><rtexprvalue>true</rtexprvalue></attribute>
+</tag> -->
+
+<tag>
+	<name>template</name>
+	<tagclass>hisglobal.tools.tag.ResultEntryTemplateTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Transforms Document Object through styleSheet
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>property</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+</taglib>

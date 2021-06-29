@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.Investigation_webservice" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.Investigation_webservice" xmlns:intf="http://service.Investigation_webservice" xmlns:tns1="http://json.jettison.codehaus.org" xmlns:tns2="http://lang.java" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.Investigation_webservice" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://json.jettison.codehaus.org"/>
+   <import namespace="http://lang.java"/>
+   <element name="getDetailsBasedOnCRNumber">
+    <complexType>
+     <sequence>
+      <element name="crNo" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getDetailsBasedOnCRNumberResponse">
+    <complexType>
+     <sequence>
+      <element name="getDetailsBasedOnCRNumberReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="authfunction">
+    <complexType>
+     <sequence>
+      <element name="ipAddressRequestCameFrom" type="xsd:string"/>
+      <element name="source" type="xsd:string"/>
+      <element name="key" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="authfunctionResponse">
+    <complexType>
+     <sequence>
+      <element name="authfunctionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="messageeror">
+    <complexType>
+     <sequence>
+      <element name="message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="messageerorResponse">
+    <complexType>
+     <sequence>
+      <element name="messageerorReturn" type="tns1:JSONArray"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="fault" type="tns1:JSONException"/>
+   <element name="LogCreate">
+    <complexType>
+     <sequence>
+      <element name="ipAddressRequestCameFrom" type="xsd:string"/>
+      <element name="source" type="xsd:string"/>
+      <element name="key" type="xsd:string"/>
+      <element name="url" type="xsd:string"/>
+      <element name="type" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="LogCreateResponse">
+    <complexType/>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://json.jettison.codehaus.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://lang.java"/>
+   <complexType name="JSONObject">
+    <sequence/>
+   </complexType>
+   <complexType name="JSONArray">
+    <sequence>
+     <element maxOccurs="unbounded" name="JSONArray" nillable="true" type="tns1:JSONArray"/>
+     <element maxOccurs="unbounded" name="JSONObject" nillable="true" type="tns1:JSONObject"/>
+     <element maxOccurs="unbounded" name="boolean" type="xsd:boolean"/>
+     <element maxOccurs="unbounded" name="double" type="xsd:double"/>
+     <element maxOccurs="unbounded" name="int" type="xsd:int"/>
+     <element maxOccurs="unbounded" name="long" type="xsd:long"/>
+     <element maxOccurs="unbounded" name="string" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="JSONException">
+    <sequence>
+     <element name="cause" nillable="true" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getDetailsBasedOnCRNumberResponse">
+
+      <wsdl:part element="impl:getDetailsBasedOnCRNumberResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDetailsBasedOnCRNumberRequest">
+
+      <wsdl:part element="impl:getDetailsBasedOnCRNumber" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="messageerorRequest">
+
+      <wsdl:part element="impl:messageeror" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="LogCreateResponse">
+
+      <wsdl:part element="impl:LogCreateResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="authfunctionRequest">
+
+      <wsdl:part element="impl:authfunction" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="authfunctionResponse">
+
+      <wsdl:part element="impl:authfunctionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="messageerorResponse">
+
+      <wsdl:part element="impl:messageerorResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="JSONException">
+
+      <wsdl:part element="impl:fault" name="fault">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="LogCreateRequest">
+
+      <wsdl:part element="impl:LogCreate" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="InvCrNoService">
+
+      <wsdl:operation name="getDetailsBasedOnCRNumber">
+
+         <wsdl:input message="impl:getDetailsBasedOnCRNumberRequest" name="getDetailsBasedOnCRNumberRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDetailsBasedOnCRNumberResponse" name="getDetailsBasedOnCRNumberResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authfunction">
+
+         <wsdl:input message="impl:authfunctionRequest" name="authfunctionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:authfunctionResponse" name="authfunctionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="messageeror">
+
+         <wsdl:input message="impl:messageerorRequest" name="messageerorRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:messageerorResponse" name="messageerorResponse">
+
+       </wsdl:output>
+
+         <wsdl:fault message="impl:JSONException" name="JSONException">
+
+       </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="LogCreate">
+
+         <wsdl:input message="impl:LogCreateRequest" name="LogCreateRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:LogCreateResponse" name="LogCreateResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="InvCrNoServiceSoapBinding" type="impl:InvCrNoService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getDetailsBasedOnCRNumber">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDetailsBasedOnCRNumberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDetailsBasedOnCRNumberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authfunction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="authfunctionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="authfunctionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="messageeror">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="messageerorRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="messageerorResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="JSONException">
+
+            <wsdlsoap:fault name="JSONException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="LogCreate">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="LogCreateRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="LogCreateResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="InvCrNoServiceService">
+
+      <wsdl:port binding="impl:InvCrNoServiceSoapBinding" name="InvCrNoService">
+
+         <wsdlsoap:address location="http://10.226.21.131:8380/HISInvestigationG5/services/InvCrNoService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Master'>
+		<common-values>
+			<master-name>ServiceAreaProcedureMst</master-name>
+			<master-title>Service Area Procedure Master</master-title>
+		</common-values>	
+	<list-page>
+				<tableHeading>ServiceArea Procedure Master</tableHeading> 
+				<list-table>HSRV_SERVICEAREA_PROCEDURE_MST</list-table>
+				
+				<columns>					 
+					 <column>Service Area</column>
+					 <column>Procedure</column>					 
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(B.HSRSTR_SERVICE_AREA_NAME)||'('||NVL((SELECT INITCAP(GSTR_DEPT_NAME) FROM GBLT_DEPARTMENT_MST 
+										WHERE GNUM_DEPT_CODE=B.GNUM_DEPT_CODE 
+										AND GNUM_HOSPITAL_CODE= B.GNUM_HOSPITAL_CODE and gnum_isvalid=1),'Global Service')||')'</field>
+					    <field>INITCAP(C.HSRSTR_PROCEDURE_NAME)</field>				    					    
+					</fields>
+					<primaryKey>
+						<field>A.HSRNUM_SERVICE_AREA_CODE</field>
+						<field>A.HSRNUM_PROCEDURE_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HSRV_SERVICEAREA_PROCEDURE_MST </table>
+						<table alias="B">HSRV_SERVICE_AREA_MST </table>
+						<table alias="C">HSRV_PROCEDURE_MST </table>
+					</tables>
+					<condition>			
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>							              				 
+                            <isvalid-field> A.GNUM_ISVALID</isvalid-field>
+                             <orderby> order by INITCAP(B.HSRSTR_SERVICE_AREA_NAME)</orderby>
+                             <general>
+								<clause> B.HSRNUM_SERVICE_AREA_CODE=A.HSRNUM_SERVICE_AREA_CODE AND C.HSRNUM_PROCEDURE_CODE=A.HSRNUM_PROCEDURE_CODE AND </clause>
+							 </general>
+							 <general-inactive>
+	 					B.HSRNUM_SERVICE_AREA_CODE=A.HSRNUM_SERVICE_AREA_CODE AND C.HSRNUM_PROCEDURE_CODE=A.HSRNUM_PROCEDURE_CODE  AND
+					</general-inactive>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<static-page>/servicearea/masters/ServiceAreaProcedureMst.cnt</static-page>			
+		</add-page>
+		
+		<modify-page>
+		    <static-page>/servicearea/masters/ServiceAreaProcedureMst.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

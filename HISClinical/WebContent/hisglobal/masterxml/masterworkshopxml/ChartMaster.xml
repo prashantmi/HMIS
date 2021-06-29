@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <master-config>
+	<master name='ChartMaster'>
+		<common-values>
+			<master-name>ChartMaster</master-name>
+			<master-title>Chart Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Chart Master</tableHeading>
+			
+			<list-table>HGBT_CHART_MST</list-table>
+
+			<columns>
+				<column>Chart Name</column>
+				<column>Chart Category</column>
+				</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(HGSTR_CHART_NAME)</field>
+					<field>DECODE(HGNUM_CHART_CATEGORY,'0','OPD and IPD','1','OPD','2','IPD',null)</field>
+				</fields>
+				<primaryKey>
+					<field>A.HGNUM_CHART_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HGNUM_SLNO</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HGBT_CHART_MST</table>
+				</tables>
+				
+				<condition>
+					<general>
+							A.GNUM_HOSPITAL_CODE=100 AND  A.GNUM_ISVALID =1 
+					</general>
+					<general-inactive>
+							A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+					</general-inactive>
+                    <isvalid-field>false</isvalid-field>
+					<orderby>order by INITCAP(A.HGSTR_CHART_NAME)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/opd/master/chartMasterACTION.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/chartMasterACTION.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>
+   

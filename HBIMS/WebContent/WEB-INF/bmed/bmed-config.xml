@@ -1,0 +1,1865 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<!-- Global Util FormBean Start -->
+		<form-bean name="itemMaintenanceMstBean"
+			type="bmed.global.controller.fb.MainteWarrantyContractFB">
+		</form-bean>
+
+		<!-- Global Util FormBean End -->
+
+		<!-- Master Beans Start -->
+		<form-bean name="ProgrammeMstBean"
+			type="bmed.masters.controller.fb.ProgrammeMstFB">
+		</form-bean>
+
+		<form-bean name="programmeItemMapBean"
+			type="bmed.masters.controller.fb.ProgrammeItemMapMstFB">
+		</form-bean>
+
+		<form-bean name="CondemnationTypeMstBean"
+			type="bmed.masters.controller.fb.CondemnationTypeMstFB">
+		</form-bean>
+
+		<form-bean name="LotTypeMstBean"
+			type="bmed.masters.controller.fb.LotTypeMstFB">
+		</form-bean>
+
+		<form-bean name="CommitteeTypeMstBean"
+			type="bmed.masters.controller.fb.CommitteeTypeMstFB">
+		</form-bean>
+
+		<form-bean name="CommitteeMstBean"
+			type="bmed.masters.controller.fb.CommitteeMstFB">
+		</form-bean>
+		<form-bean name="CommitteeRoleMstBean"
+			type="bmed.masters.controller.fb.CommitteeRoleMstFB">
+		</form-bean>
+
+		<form-bean name="CommitteeMemRoleMstBean"
+			type="bmed.masters.controller.fb.CommitteeMemberRoleMstFB">
+		</form-bean>
+		<form-bean name="subgroupBean"
+			type="bmed.masters.controller.fb.StoreSubGroupMstFB">
+		</form-bean>
+		<!-- Master Bean by Amit Kr [11-Jan-2010] -->
+		<form-bean name="itemMaintenanceMstBean"
+			type="bmed.masters.controller.fb.ItemMaintenanceMstFB">
+		</form-bean>
+		<form-bean name="serviceEnggMstBean"
+			type="bmed.masters.controller.fb.ServiceEngineerMstFB">
+		</form-bean>
+		<form-bean name="complaintMstBean"
+			type="bmed.masters.controller.fb.ComplaintEscalationMstFB">
+		</form-bean>
+		<!-- Master Bean by Amit Kr End -->
+
+		<!-- Complaint Hierarchy Master Bean by T. Saratkumar Start -->
+		<form-bean name="complaintHierarchyMstBean"
+			type="bmed.masters.controller.fb.ComplaintHierarchyMstFB">
+		</form-bean>
+		<!-- Complaint Hierarchy Master Bean by T. Saratkumar End -->
+
+		<!-- Master Bean by Arun VR [11-Jan-2010] -->
+
+
+		<form-bean name="engineeringItemSubTypeBean"
+			type="bmed.masters.controller.fb.EngineeringItemSubTypeMstFB">
+		</form-bean>
+		<form-bean name="expertiseMstBean"
+			type="bmed.masters.controller.fb.ExpertiseMstFB">
+		</form-bean>
+
+
+		<!-- Master Bean by Arun VR End -->
+
+
+		<!-- Master by Aritra Kumar Dhawa Start -->
+		<form-bean name="nonItemMaintenanceMstFB"
+			type="bmed.masters.controller.fb.NonItemMaintenanceMstFB">
+		</form-bean>
+		<form-bean name="serviceEngineerExpertiseMstFB"
+			type="bmed.masters.controller.fb.ServiceEngineerExpertiseMstFB">
+		</form-bean>
+		<!-- Master by Aritra Kumar Dhawa End -->
+
+
+
+		<!-- Master Bean by Vivek Aggarwal Start [11/Jan/2011] -->
+
+		<form-bean name="taskBean"
+			type="bmed.masters.controller.fb.TaskMstFB">
+		</form-bean>
+
+		<form-bean name="maintenanceBean"
+			type="bmed.masters.controller.fb.MaintenanceMstFB">
+		</form-bean>
+
+		<form-bean name="nonItemBean"
+			type="bmed.masters.controller.fb.NonItemMstFB">
+		</form-bean>
+
+		<form-bean name="hemConfigBean"
+			type="bmed.masters.controller.fb.HemConfigMstFB">
+		</form-bean>
+
+		<form-bean name="equipmentTestMstFB"
+			type="bmed.masters.controller.fb.EquipmentTestMstFB">
+		</form-bean>
+
+		<form-bean name="equipmentParameterMstFB"
+			type="bmed.masters.controller.fb.EquipmentParameterMstFB">
+		</form-bean>
+
+		<form-bean name="equipmentTestParameterMstFB"
+			type="bmed.masters.controller.fb.EquipmentTestParameterMstFB">
+		</form-bean>
+
+		<form-bean name="ComplaintDeskConfigMstFB"
+			type="bmed.masters.controller.fb.ComplaintDeskConfigMstFB">
+		</form-bean>
+
+		<form-bean name="MaintAndWarrantyDeskConfigMstFB"
+			type="bmed.masters.controller.fb.MaintAndWarrantyDeskConfigMstFB">
+		</form-bean>
+
+		<form-bean name="ComplaintApprovalDeskConfigMstFB"
+			type="bmed.masters.controller.fb.ComplaintApprovalDeskConfigMstFB">
+		</form-bean>
+
+
+
+		<form-bean name="ComplaintDeskConfigMstFB"
+			type="bmed.masters.controller.fb.ComplaintDeskConfigMstFB">
+		</form-bean>
+
+		<form-bean name="MaintAndWarrantyDeskConfigMstFB"
+			type="bmed.masters.controller.fb.MaintAndWarrantyDeskConfigMstFB">
+		</form-bean>
+		<form-bean name="ComplaintApprovalDeskConfigMstFB"
+			type="bmed.masters.controller.fb.ComplaintApprovalDeskConfigMstFB">
+		</form-bean>
+		<form-bean name="BudgetControlDeskConfigMstFB"
+			type="bmed.masters.controller.fb.BudgetControlDeskConfigMstFB">
+		</form-bean>
+		<form-bean name="ConfigurationMstFB"
+			type="bmed.masters.controller.fb.ConfigurationMstFB">
+		</form-bean>
+
+		<!--For Budget Control Delegation Desk Process Start-->
+		<form-bean name="budgetControlDelegationDeskFB"
+			type="bmed.transactions.controller.fb.BudgetControlDelegationDeskFB">
+		</form-bean>
+		<!--For Budget Control Delegation Desk Process End-->
+
+		<form-bean name="GrantFundMstFB"
+			type="bmed.masters.controller.fb.GrantFundMstFB">
+		</form-bean>
+		<form-bean name="BudgetMstFB"
+			type="bmed.masters.controller.fb.BudgetMstFB">
+		</form-bean>
+		<form-bean name="SchemeMstFB"
+			type="bmed.masters.controller.fb.SchemeMstFB">
+		</form-bean>
+		<form-bean name="ProjectMstFB"
+			type="bmed.masters.controller.fb.ProjectMstFB">
+		</form-bean>
+		<form-bean name="MajorHeadMstFB"
+			type="bmed.masters.controller.fb.MajorHeadMstFB">
+		</form-bean>
+		<form-bean name="MinorHeadMstFB"
+			type="bmed.masters.controller.fb.MinorHeadMstFB">
+		</form-bean>
+		<form-bean name="SubHeadMstFB"
+			type="bmed.masters.controller.fb.SubHeadMstFB">
+		</form-bean>
+		<form-bean name="DetailHeadMstFB"
+			type="bmed.masters.controller.fb.DetailHeadMstFB">
+		</form-bean>
+
+		<form-bean name="FinanceDeskDelegConfigMstFB"
+			type="bmed.masters.controller.fb.FinanceDeskDelegConfigMstFB">
+		</form-bean>
+		<form-bean name="PreNPostLiabilityDelegationDeskFB"
+			type="bmed.masters.controller.fb.PreNPostLiabilityDelegationDeskFB">
+		</form-bean>
+		<form-bean name="HemmsDeskDelegationConfigFB"
+			type="bmed.masters.controller.fb.HemmsDeskDelegationConfigFB">
+		</form-bean>
+		<form-bean name="BlockEquipmentInstalDeskMstFB"
+			type="bmed.masters.controller.fb.BlockEquipmentInstalDeskMstFB">
+		</form-bean>
+		<form-bean name="BlockMstFB"
+			type="bmed.masters.controller.fb.BlockMstFB">
+		</form-bean>
+		<form-bean name="BuildingMstFB"
+			type="bmed.masters.controller.fb.BuildingMstFB">
+		</form-bean>
+		<form-bean name="FloorMstFB"
+			type="bmed.masters.controller.fb.FloorMstFB">
+		</form-bean>
+		<form-bean name="RoomMstFB"
+			type="bmed.masters.controller.fb.RoomMstFB">
+		</form-bean>
+		<form-bean name="LocationMstFB"
+			type="bmed.masters.controller.fb.LocationMstFB">
+		</form-bean>
+		<form-bean name="InstallationMstFB"
+			type="bmed.masters.controller.fb.InstallationMstFB">
+		</form-bean>
+		<form-bean name="ManpowerAssignmentDeskFB"
+			type="bmed.masters.controller.fb.ManpowerAssignmentDeskFB">
+		</form-bean>
+
+		<!-- Added In 08/09/2014 -->
+		<form-bean name="supplierBean"
+			type="bmed.masters.controller.fb.SupplierMstFB">
+		</form-bean>
+		<form-bean name="StoreItemBean"
+			type="bmed.masters.controller.fb.StoreItemMstFB">
+		</form-bean>
+		<form-bean name="itemBean"
+			type="bmed.masters.controller.fb.ItemMstFB">
+		</form-bean>
+		<form-bean name="genericitemBean"
+			type="bmed.masters.controller.fb.GenericItemMstFB">
+		</form-bean>
+		<form-bean name="ItemTypeBean"
+			type="bmed.masters.controller.fb.ItemTypeMstFB">
+		</form-bean>
+		<form-bean name="StoreGrpBean"
+			type="bmed.masters.controller.fb.StoreGroupMstFB">
+		</form-bean>
+		<form-bean name="storeCategoryBean"
+			type="bmed.masters.controller.fb.StoreCategoryMstFB">
+		</form-bean>
+		<form-bean name="StoreHierarchyBean"
+			type="bmed.masters.controller.fb.StoreHierarchyMstFB">
+		</form-bean>
+		<form-bean name="StoreBean"
+			type="bmed.masters.controller.fb.StoreMstFB">
+		</form-bean>
+		<form-bean name="storeReqTypeBean"
+			type="bmed.masters.controller.fb.StoreReqTypeMstFB">
+		</form-bean>
+		<form-bean name="SupplierItemBean"
+			type="bmed.masters.controller.fb.SupplierItemMstFB">
+		</form-bean>
+
+		<!--End 08/09/2014 -->
+
+		<!-- Transaction Beans Start -->
+		<form-bean name="itemInventoryTransBean"
+			type="bmed.transactions.controller.fb.ItemInventoryTransFB">
+		</form-bean>
+
+		<form-bean name="itemContractDetailsFB"
+			type="bmed.transactions.controller.fb.ItemMaintContractDtlsFB">
+		</form-bean>
+
+		<form-bean name="itemWarrantyDetailsFB"
+			type="bmed.transactions.controller.fb.ItemWarrantyDtlsFB">
+		</form-bean>
+
+		<form-bean name="hemDeskFB"
+			type="bmed.transactions.controller.fb.HemDeskFB">
+		</form-bean>
+		<form-bean name="centralizeWorkshopMonitoringDeskFB"
+			type="bmed.transactions.controller.fb.CentralizeWorkshopMonitoringDeskFB">
+		</form-bean>
+
+		<form-bean name="equipmentMaintAndWarrantyDeskFB"
+			type="bmed.transactions.controller.fb.EquipmentMaintAndWarrantyDeskFB">
+		</form-bean>
+		<!--For Budget Control Delegation Desk Process Start-->
+		<form-bean name="budgetControlDelegationDeskFB"
+			type="bmed.transactions.controller.fb.BudgetControlDelegationDeskFB">
+		</form-bean>
+		<!--For Budget Control Delegation Desk Process End-->
+
+		<!--For Emergency Costing Detail Process Start-->
+		<form-bean name="hemmsEmergencyCostingDtlFB"
+			type="bmed.transactions.controller.fb.HemmsEmergencyCostingDtlFB">
+		</form-bean>
+		<!--For Emergency Costing Detail Process End-->
+
+		<form-bean name="ComplaintDeskFB"
+			type="bmed.transactions.controller.fb.ComplaintDeskFB">
+		</form-bean>
+
+		<form-bean name="hemComplaintAppDeskFB"
+			type="bmed.transactions.controller.fb.HemComplaintApprovalDeskFB">
+		</form-bean>
+
+		<form-bean name="hemmsComplaintMaintenanceStatusBean"
+			type="bmed.transactions.controller.fb.HemmsComplaintMaintenanceStatusFB">
+		</form-bean>
+
+		<!-- Transaction Bean For Centralized Spare Part Management Desk [30-Aug-2013] -->
+
+		<form-bean name="hemmsSparePartMgmtDeskFB"
+			type="bmed.transactions.controller.fb.HemmsSparePartMgmtDeskFB">
+		</form-bean>
+		<!-- Transaction Bean For Centralized Spare Part Management Desk [30-Aug-2013] END -->
+
+		<!-- Transaction Bean For Engineer Service Management Desk [04-Sept-2013] -->
+
+		<form-bean name="hemmsEngineerDeskFB"
+			type="bmed.transactions.controller.fb.HemmsEngineerDeskFB">
+		</form-bean>
+		<!-- Transaction Bean For Engineer Service Management Desk [04-Sept-2013] END -->
+
+		<!-- Transaction Aritra Start -->
+		<form-bean name="complaintMaintenanceStatusBean"
+			type="bmed.transactions.controller.fb.ComplaintMaintenanceStatusFB">
+		</form-bean>
+		<!-- Transaction Aritra End -->
+
+
+		<!-- Transaction Bean by Vivek Aggarwal [10-May-2011] -->
+
+		<form-bean name="offlineSparePartAddTransFB"
+			type="bmed.transactions.controller.fb.OfflineSparePartAddTransFB">
+		</form-bean>
+
+
+		<!-- Transaction Bean by Vivek Aggarwal END -->
+		<!-- Transaction Bean by shefali Start  31-oct-2013-->
+
+
+		<form-bean name="EquipInwardOutwardGatePassFB"
+			type="bmed.transactions.controller.fb.EquipInwardOutwardGatePassFB">
+		</form-bean>
+		<form-bean name="EquipmentIssueAndRestorationDeskFB"
+			type="bmed.transactions.controller.fb.EquipmentIssueAndRestorationDeskFB">
+		</form-bean>
+		<form-bean name="SecurityDeskFB"
+			type="bmed.transactions.controller.fb.SecurityDeskFB">
+		</form-bean>
+		<form-bean name="EquipmentAuctionAndCondemnationDeskFB"
+			type="bmed.transactions.controller.fb.EquipmentAuctionAndCondemnationDeskFB">
+		</form-bean>
+
+		<!-- Transaction Bean by shefali End -->
+
+		<!-- report Bean by shefali start -->
+
+		<!-- checkIn/Out port 28 oct 2013 -->
+		<form-bean name="EquipmentCheckInOutSecurityReportFB"
+			type="bmed.reports.controller.fb.EquipmentCheckInOutSecurityReportFB">
+		</form-bean>
+		<!-- issue and restoration report 29 oct 2013 -->
+		<form-bean name="EquipmentIssueAndRestorationReportFB"
+			type="bmed.reports.controller.fb.EquipmentIssueAndRestorationReportFB">
+		</form-bean>
+
+		<!--Added by paras jain manpower assignment desk report 19th june 2014 -->
+		<form-bean name="ManpowerAssignmentDeskRptFB"
+			type="bmed.reports.controller.fb.ManpowerAssignmentDeskRptFB">
+		</form-bean>
+
+		<!--Added by paras jain Equipment Test Conduction report 20th june 2014 -->
+		<form-bean name="EquipmentTestConductionRptFB"
+			type="bmed.reports.controller.fb.EquipmentTestConductionRptFB">
+		</form-bean>
+
+		<!-- Added by paras jain Equipment Manpower Register Report added on 08-July-2014 -->
+		<form-bean name="EquipManpowerAssignmentRegReportFB"
+			type="bmed.reports.controller.fb.EquipManpowerAssignmentRegReportFB">
+		</form-bean>
+
+		<!-- shefali report end -->
+
+		<!-- Transaction Arun  Start -->
+		<form-bean name="complaintLogOfflineBean"
+			type="bmed.transactions.controller.fb.ComplaintLogOfflineFB">
+		</form-bean>
+
+
+		<form-bean name="equipmentInspectionTestDtlsFB"
+			type="bmed.transactions.controller.fb.EquipmentInspectionTestDtlsFB">
+		</form-bean>
+		<!-- Transaction Arun  End -->
+
+		<form-bean name="CentralEquipEnquiryDeskFB"
+			type="bmed.transactions.controller.fb.CentralEquipEnquiryDeskFB">
+		</form-bean>
+
+
+
+
+
+		<!-- Transaction Anshuman  Start -->
+
+		<form-bean name="DynamicReportChartDeskFB"
+			type="bmed.transactions.controller.fb.DynamicReportChartDeskFB">
+		</form-bean>
+
+		<!-- Transaction Anshuman  End -->
+
+
+
+		<!-- Transaction Beans End -->
+
+
+
+
+		<!-- Report Form Bean  -->
+
+
+		<!-- Report Form Bean  -->
+
+		<!-- Report Anshuman  Start -->
+		<form-bean name="DynamicReportDeskFB"
+			type="bmed.reports.controller.fb.DynamicReportDeskFB">
+		</form-bean>
+		<!-- Report Anshuman  End -->
+
+		<!-- Report Centralized GIS-Interface Desk Anshuman  Start -->
+		<form-bean name="CentralizedGISInterfaceDeskFB"
+			type="bmed.reports.controller.fb.CentralizedGISInterfaceDeskFB">
+		</form-bean>
+		<!-- Report Centralized GIS-Interface Desk Anshuman  End -->
+
+
+
+		<form-bean name="listofCompletedComplaint"
+			type="bmed.reports.controller.fb.ListOfCompletedComplaintsFB">
+		</form-bean>
+
+		<form-bean name="listofComplaint"
+			type="bmed.reports.controller.fb.ListOfComplaintsFB">
+		</form-bean>
+
+
+		<form-bean name="listOfEquipmentUnderAmcReportFB"
+			type="bmed.reports.controller.fb.ListOfEquipmentUnderAmcReportFB">
+		</form-bean>
+
+		<form-bean name="listOfPendingComplaintsReportFB"
+			type="bmed.reports.controller.fb.ListOfPendingComplaintsReportFB">
+		</form-bean>
+
+		<form-bean name="commutativeExp"
+			type="bmed.reports.controller.fb.CommutativeExpenditureFB">
+		</form-bean>
+
+		<form-bean name="downTimeRpt"
+			type="bmed.reports.controller.fb.DownTimeRptFB">
+		</form-bean>
+
+		<form-bean name="emergencyCostingDataRpt"
+			type="bmed.reports.controller.fb.EmergencyCostingDataRptFB">
+		</form-bean>
+
+		<form-bean name="serviceEngineerWiseJobStatusReportFB"
+			type="bmed.reports.controller.fb.ServiceEngineerWiseJobStatusReportFB">
+		</form-bean>
+
+		<form-bean name="listOfEquipmentWarrantyAmcExpiredReportFB"
+			type="bmed.reports.controller.fb.ListOfEquipmentWarrantyAmcExpiredReportFB">
+		</form-bean>
+
+		<form-bean name="equipmentWiseComplaintStatusReportFB"
+			type="bmed.reports.controller.fb.EquipmentWiseComplaintStatusReportFB">
+		</form-bean>
+
+		<form-bean name="equipmentInspectionOrTestReportFB"
+			type="bmed.reports.controller.fb.EquipmentInspectionOrTestReportFB">
+		</form-bean>
+
+
+		<form-bean name="logRegisterReportFB"
+			type="bmed.reports.controller.fb.logRegisterReportFB">
+		</form-bean>
+
+		<!-- Equipment Report added on 11-Sept-2013 -->
+		<form-bean name="equipmentReportFB"
+			type="bmed.reports.controller.fb.EquipmentReportFB">
+		</form-bean>
+		<!-- Equipment Report FormBean ends here -->
+		<!-- Complaint Status Report added on 16-Sept-2013 -->
+		<form-bean name="complaintStatusReportFB"
+			type="bmed.reports.controller.fb.ComplaintStatusReportFB">
+		</form-bean>
+		<!-- Complaint Status Report FormBean ends here -->
+
+		<!-- Stock Register Report added on 18-June-2014 -->
+		<form-bean name="stockRegisterReportFB"
+			type="bmed.reports.controller.fb.StockRegisterReportFB">
+		</form-bean>
+
+		<!-- Warranty Register Report added on 18-June-2014 -->
+		<form-bean name="EquipMaintGuateeRegReportFB"
+			type="bmed.reports.controller.fb.EquipMaintGuateeRegReportFB">
+		</form-bean>
+
+		<!-- Equipment Manpower Register Report added on 18-June-2014 -->
+		<form-bean name="EquipManpowerRegReportFB"
+			type="bmed.reports.controller.fb.EquipManpowerRegReportFB">
+		</form-bean>
+		<form-bean name="stockRegisterGraphReportFB"
+			type="bmed.reports.controller.fb.StockRegisterGraphReportFB">
+		</form-bean>
+		<form-bean name="warrentyMaintGraphReportFB"
+			type="bmed.reports.controller.fb.WarrentyMaintGraphReportFB">
+		</form-bean>
+
+		<!-- Report Form Bean End -->
+
+
+	</form-beans>
+
+
+
+
+	<action-mappings>
+
+		<!-- Global Action Start -->
+		<action path="/global/MainteWarrantyContractCNT"
+			type="bmed.global.controller.action.MainteWarrantyContractCNT"
+			name="mainteWarrantyContractBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+		<!-- Global Action End -->
+
+		<!--  Programme Master Action Mapping Start -->
+		<action path="/masters/ProgrammeMstCNT"
+			type="bmed.masters.controller.action.ProgrammeMstCNT"
+			name="ProgrammeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_Programme_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_Programme_Mst_mms.jsp" />
+		</action>
+		<!--  Programme Master Action Mapping End -->
+		<!--  Programme Item Mapping Master Start -->
+		<action path="/masters/ProgrammeItemMapMstCNT"
+			type="bmed.masters.controller.action.ProgrammeItemMapMstCNT"
+			name="programmeItemMapBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_prog_item_map_mst.jsp" />
+			<forward name="reportPage"
+				path="/masters/report_ItemProgrammeMapMst.jsp" />
+
+		</action>
+		<!-- Programme Item Mapping Master  end -->
+
+		<!--  Condemnation Type Master Action Mapping Start -->
+		<action path="/masters/CondemnationTypeMstCNT"
+			type="bmed.masters.controller.action.CondemnationTypeMstCNT"
+			name="CondemnationTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_condemnation_type_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_condemnation_type_Mst.jsp" />
+		</action>
+		<!--  Condemnation Type Master Action Mapping End -->
+
+		<!--  Lot Type Master Action Mapping Start -->
+		<action path="/masters/LotTypeMstCNT"
+			type="bmed.masters.controller.action.LotTypeMstCNT"
+			name="LotTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_lot_type_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_lot_type_Mst.jsp" />
+		</action>
+		<!--  Lot Type Master Action Mapping End -->
+
+		<!--  Committee Type Master Action Mapping Start -->
+		<action path="/masters/CommitteeTypeMstCNT"
+			type="bmed.masters.controller.action.CommitteeTypeMstCNT"
+			name="CommitteeTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_committee_type_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_committee_type_Mst.jsp" />
+		</action>
+		<!--  Committee Type Master Action Mapping End -->
+
+
+		<!--  Committee Master Action Mapping Start -->
+		<action path="/masters/CommitteeMstCNT"
+			type="bmed.masters.controller.action.CommitteeMstCNT"
+			name="CommitteeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_committee_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_committee_Mst.jsp" />
+		</action>
+		<!--  Committee Master Action Mapping End -->
+
+		<!--  Committee(Member) Role Master Action Mapping Start -->
+		<action path="/masters/CommitteeRoleMstCNT"
+			type="bmed.masters.controller.action.CommitteeRoleMstCNT"
+			name="CommitteeRoleMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_committee_role_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_committee_role_Mst.jsp" />
+		</action>
+		<!--  Committee(Member) Role Master Action Mapping End -->
+
+		<!--  Committee Member Role Master Action Mapping Start -->
+		<action path="/masters/CommitteeMemberRoleMstCNT"
+			type="bmed.masters.controller.action.CommitteeMemberRoleMstCNT"
+			name="CommitteeMemRoleMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_committee_member_role_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_committee_member_role_Mst.jsp" />
+		</action>
+		<!--  Committee Member Role Master Action Mapping End -->
+
+		<!--Store Sub Group Type Master Start -->
+
+		<action path="/masters/StoreSubGroupMstCNT"
+			type="bmed.masters.controller.action.StoreSubGroupMstCNT"
+			name="subgroupBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_SubGroupType_bmed.jsp" />
+			<forward name="modify"
+				path="/masters/modify_SubGroupType_bmed.jsp" />
+
+		</action>
+		<!-- Master Mapping by Amit Kr [11-Jan-2010] -->
+		<action path="/masters/ItemMaintenanceMstCNT"
+			type="bmed.masters.controller.action.ItemMaintenanceMstCNT"
+			name="itemMaintenanceMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_itemMaintinanace_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_itemMaintinanace_mst.jsp" />
+			<forward name="viewPage"
+				path="/masters/bmed_view_itemMaintinanace_mst.jsp" />
+		</action>
+
+		<action path="/masters/ServiceEngineerMstCNT"
+			type="bmed.masters.controller.action.ServiceEngineerMstCNT"
+			name="serviceEnggMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_serviceEngg_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_serviceEngg_mst.jsp" />
+		</action>
+
+		<action path="/masters/ComplaintEscalationMstCNT"
+			type="bmed.masters.controller.action.ComplaintEscalationMstCNT"
+			name="complaintMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_complaintEscl_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_complaintEscl_mst.jsp" />
+
+		</action>
+		<!-- Master Mapping by Amit Kr [END] -->
+
+		<!-- Complaint Hierarchy Master by T. SaratKumar [START] -->
+		<action path="/masters/ComplaintHierarchyMstCNT"
+			type="bmed.masters.controller.action.ComplaintHierarchyMstCNT"
+			name="complaintHierarchyMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_complaint_hierarchy_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_complaint_hierarchy_mst.jsp" />
+
+		</action>
+		<!-- Complaint Hierarchy Master by T. SaratKumar [END] -->
+
+		<!-- Master Mapping by Arun VR [11-Jan-2010] -->
+		<action path="/masters/EngineeringItemSubTypeMstCNT"
+			type="bmed.masters.controller.action.EngineeringItemSubTypeMstCNT"
+			name="engineeringItemSubTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_enggitemsubtype_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_enggitemsubtype_mst.jsp" />
+		</action>
+
+		<action path="/masters/ExpertiseMstCNT"
+			type="bmed.masters.controller.action.ExpertiseMstCNT"
+			name="expertiseMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_expertise_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_expertise_mst.jsp" />
+		</action>
+		<!-- Master Mapping by Arun VR[END] -->
+
+		<!-- Added In 08/09/2014 -->
+		<!-- Supplier Master Mapping -->
+		<action path="/masters/SupplierMstCNT"
+			type="bmed.masters.controller.action.SupplierMstCNT"
+			name="supplierBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_Supplier_bmed.jsp" />
+			<forward name="modify"
+				path="/masters/modify_Supplier_bmed.jsp" />
+			<forward name="view" path="/masters/view_Supplier_bmed.jsp" />
+		</action>
+		<!-- End Supplier Master Mapping -->
+
+		<!-- Equipment Model Master Mapping -->
+		<action path="/masters/ItemMstCNT"
+			type="bmed.masters.controller.action.ItemMstCNT" name="itemBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/add_Item_bmed.jsp" />
+			<forward name="modify" path="/masters/modify_Item_bmed.jsp" />
+			<forward name="view" path="/masters/view_Item_bmed.jsp" />
+		</action>
+		<!-- End Equipment model Master Mapping -->
+
+		<!-- Equipment Name Master Mapping -->
+		<action path="/masters/GenericItemMstCNT"
+			type="bmed.masters.controller.action.GenericItemMstCNT"
+			name="genericitemBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_GenericItem_bmed.jsp" />
+			<forward name="modify"
+				path="/masters/modify_GenericItem_bmed.jsp" />
+			<forward name="view"
+				path="/masters/view_GenericItem_bmed.jsp" />
+		</action>
+		<!-- End Equipment Name Master Mapping -->
+
+		<!-- Equipment Type Master Mapping -->
+		<action path="/masters/ItemTypeMstCNT"
+			type="bmed.masters.controller.action.ItemTypeMstCNT"
+			name="ItemTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="bmed_add"
+				path="/masters/add_ItemType_bmed.jsp" />
+			<forward name="bmed_modify"
+				path="/masters/modify_ItemType_bmed.jsp" />
+		</action>
+		<!-- End Equipment Type Master Mapping -->
+
+		<!-- Store Group Master Mapping -->
+		<action path="/masters/StoreGroupMstCNT"
+			type="bmed.masters.controller.action.StoreGroupMstCNT"
+			name="StoreGrpBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_StoreGroup_bmed.jsp" />
+			<forward name="modify"
+				path="/masters/modify_StoreGroup_bmed.jsp" />
+		</action>
+		<!-- End Store Group Master Mapping -->
+
+		<!-- Store Equipment Mapping Master Mapping -->
+		<action path="/masters/StoreItemMstCNT"
+			type="bmed.masters.controller.action.StoreItemMstCNT"
+			name="StoreItemBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="bmed_add"
+				path="/masters/add_StoreItem_bmed.jsp" />
+			<forward name="bmed_modify"
+				path="/masters/modify_StoreItem_bmed.jsp" />
+		</action>
+		<!-- End Store Equipment Mapping Master Mapping -->
+
+		<!-- Store Category Master Mapping -->
+		<action path="/masters/StoreCategoryMstCNT"
+			type="bmed.masters.controller.action.StoreCategoryMstCNT"
+			name="storeCategoryBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="bmed_add"
+				path="/masters/bmed_add_StoreCategory_bmed.jsp" />
+			<forward name="bmed_modify"
+				path="/masters/bmed_modify_StoreCategory_bmed.jsp" />
+		</action>
+		<!-- End Store Category Master Mapping -->
+
+		<!-- Store Hierarchy Master Mapping -->
+		<action path="/masters/StoreHierarchyMstCNT"
+			type="bmed.masters.controller.action.StoreHierarchyMstCNT"
+			name="StoreHierarchyBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="bmed_add"
+				path="/masters/bmed_add_StoreHierarchy_bmed.jsp" />
+			<forward name="bmed_modify"
+				path="/masters/bmed_modify_StoreHierarchy_bmed.jsp" />
+		</action>
+		<!-- End of Store Hierarchy Master Mapping -->
+
+		<!-- Equipment Warehouse Master Start -->
+		<action path="/masters/StoreMstCNT"
+			type="bmed.masters.controller.action.StoreMstCNT" name="StoreBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="bmed_add"
+				path="/masters/bmed_add_Store_bmed.jsp" />
+			<forward name="bmed_modify"
+				path="/masters/bmed_modify_Store_bmed.jsp" />
+			<forward name="bmed_view"
+				path="/masters/bmed_view_Store_bmed.jsp" />
+		</action>
+		<!-- End of  Store Master Mapping -->
+
+		<!-- Store Process Mapping Master Mapping -->
+		<action path="/masters/StoreReqTypeMstCNT"
+			type="bmed.masters.controller.action.StoreReqTypeMstCNT"
+			name="storeReqTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="bmed_add"
+				path="/masters/bmed_add_StoreReqType_bmed.jsp" />
+			<forward name="bmed_modify"
+				path="/masters/bmed_modify_StoreReqType_bmed.jsp" />
+		</action>
+		<!-- End of  Store Process Mapping Master Mapping -->
+
+		<!-- Supplier Equipment Mapping Master Start -->
+		<action path="/masters/SupplierItemMstCNT"
+			type="bmed.masters.controller.action.SupplierItemMstCNT"
+			name="SupplierItemBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="bmed_add"
+				path="/masters/add_SupplierItem_bmed.jsp" />
+			<forward name="bmed_modify"
+				path="/masters/modify_SupplierItem_bmed.jsp" />
+		</action>
+		<!-- End of  Supplier Equipment Mapping Master Mapping -->
+
+		<!--End 08/09/2014 -->
+
+		<!-- Master by Aritra Kumar Dhawa Start -->
+		<action path="/masters/NonItemMaintenanceMstCNT"
+			type="bmed.masters.controller.action.NonItemMaintenanceMstCNT"
+			name="nonItemMaintenanceMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_non_item_maintenance_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_non_item_maintenance_mst.jsp" />
+			<forward name="view"
+				path="/masters/view_non_item_maintenance_mst.jsp" />
+		</action>
+
+		<action path="/masters/ServiceEngineerExpertiseMstCNT"
+			type="bmed.masters.controller.action.ServiceEngineerExpertiseMstCNT"
+			name="serviceEngineerExpertiseMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_service_engineer_expertise_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_service_engineer_expertise_mst.jsp" />
+		</action>
+		<!-- Master by Aritra Kumar Dhawa End -->
+
+
+		<!-- Task Master by Vivek Aggarwal [11-Jan-2011] -->
+
+		<action path="/masters/TaskMstCNT"
+			type="bmed.masters.controller.action.TaskMstCNT" name="taskBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/bmed_add_task_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_task_mst.jsp" />
+
+		</action>
+
+		<!-- Task Master by Vivek Aggarwal END [20-Jan-2011] -->
+
+		<!-- Maintenance Master by Vivek Aggarwal [19/Jan/2011] -->
+
+		<action path="/masters/MaintenanceMstCNT"
+			type="bmed.masters.controller.action.MaintenanceMstCNT"
+			name="maintenanceBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_maintenance_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_maintenance_mst.jsp" />
+
+		</action>
+
+		<!-- Maintenance Master by Vivek Aggarwal END [25-Jan-2011] -->
+
+		<!-- Non-Item Master by Vivek Aggarwal [11-April-2011] -->
+
+		<action path="/masters/NonItemMstCNT"
+			type="bmed.masters.controller.action.NonItemMstCNT"
+			name="nonItemBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_nonItem_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_nonItem_mst.jsp" />
+
+		</action>
+
+		<!-- Non-Item Master by Vivek Aggarwal END [12-April-2011] -->
+
+		<!-- HEM Config Master by Vivek Aggarwal [12-April-2011] -->
+
+		<action path="/masters/HemConfigMstCNT"
+			type="bmed.masters.controller.action.HemConfigMstCNT"
+			name="hemConfigBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/masters/bmed_hem_config_mst.jsp" />
+
+		</action>
+
+		<!-- HEM Config Master by Vivek Aggarwal END [13-April-2011] -->
+
+
+
+		<!-- Equipment Test Master by Vivek Aggarwal [27-Jul-2012] -->
+
+		<action path="/masters/EquipmentTestMstCNT"
+			type="bmed.masters.controller.action.EquipmentTestMstCNT"
+			name="equipmentTestMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_equipment_test_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_equipment_test_mst.jsp" />
+
+		</action>
+
+		<!-- Equipment Test Master by Vivek Aggarwal END [27-Jul-2012] -->
+
+
+		<!-- Equipment Parameter Master by Vivek Aggarwal [27-Jul-2012] -->
+
+		<action path="/masters/EquipmentParameterMstCNT"
+			type="bmed.masters.controller.action.EquipmentParameterMstCNT"
+			name="equipmentParameterMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_equipment_parameter_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_equipment_parameter_mst.jsp" />
+
+		</action>
+
+		<!-- Equipment  Parameter Master by Vivek Aggarwal END [27-Jul-2012] -->
+
+
+
+		<!-- Equipment Test Parameter Master by Vivek Aggarwal [27-Jul-2012] -->
+
+		<action path="/masters/EquipmentTestParameterMstCNT"
+			type="bmed.masters.controller.action.EquipmentTestParameterMstCNT"
+			name="equipmentTestParameterMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_equipment_test_parameter_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_equipment_test_parameter_mst.jsp" />
+
+		</action>
+
+		<!-- Equipment Test Parameter Master by Vivek Aggarwal END [27-Jul-2012] -->
+
+		<!-- Masters ACTION Mapping on 06-Aug-2013 START -->
+
+		<action path="/masters/ComplaintDeskConfigMstCNT"
+			type="bmed.masters.controller.action.ComplaintDeskConfigMstCNT"
+			name="ComplaintDeskConfigMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_complaint_desk_config_mst.jsp" />
+		</action>
+
+		<action path="/masters/ComplaintApprovalDeskConfigMstCNT"
+			type="bmed.masters.controller.action.ComplaintApprovalDeskConfigMstCNT"
+			name="ComplaintApprovalDeskConfigMstFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/add_complaint_approval_desk_config_mst.jsp" />
+		</action>
+
+		<action path="/masters/MaintAndWarrantyDeskConfigMstCNT"
+			type="bmed.masters.controller.action.MaintAndWarrantyDeskConfigMstCNT"
+			name="MaintAndWarrantyDeskConfigMstFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_maint_warranty_desk_config_mst.jsp" />
+		</action>
+
+		<!-- Masters ACTION Mapping on 06-Aug-2013 END -->
+
+		<!-- Transaction Equipment Maintenance and Guarantee Process Action mapping Starts -->
+
+		<!-- Item Inventory Trans  Start -->
+
+		<action path="/transactions/ItemInventoryTransCNT"
+			type="bmed.transactions.controller.action.ItemInventoryTransCNT"
+			name="itemInventoryTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/jsp/itemInventory_add_bmed_trans.jsp" />
+			<forward name="modify"
+				path="/transactions/jsp/itemInventory_modify_bmed_trans.jsp" />
+			<forward name="view"
+				path="/transactions/jsp/itemInventory_view_bmed_trans.jsp" />
+		</action>
+
+		<!-- Item Inventory Trans  End -->
+
+		<action path="/transactions/ItemMaintContractDtlsACTION"
+			type="bmed.transactions.controller.action.ItemMaintContractDtlsACTION"
+			name="itemContractDetailsFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="item"
+				path="/transactions/jsp/bmed_main_itemMaintContactDtl_trans.jsp" />
+			<forward name="nonitem"
+				path="/transactions/jsp/bmed_main_nonItemMaintContactDtl_trans.jsp" />
+			<forward name="view"
+				path="/transactions/jsp/hemms_main_itemMaintContactDtl_view_trans.jsp" />
+		</action>
+
+		<action path="/transactions/ItemWarrantyDtlsACTION"
+			type="bmed.transactions.controller.action.ItemWarrantyDtlsACTION"
+			name="itemWarrantyDetailsFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="item"
+				path="/transactions/jsp/bmed_main_itemWarrantyDtl_trans.jsp" />
+			<forward name="view"
+				path="/transactions/jsp/hemms_main_itemWarrantyDtl_view_trans.jsp" />
+		</action>
+		<!-- Transaction Equipment Maintenance and Guarantee Process Action mapping Ends -->
+
+		<action path="/transactions/HemDeskACTION"
+			type="bmed.transactions.controller.action.HemDeskACTION"
+			name="hemDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="acknowledge"
+				path="/transactions/jsp/bmed_main_hemDesk_acknowledge_trans.jsp" />
+			<forward name="schedule"
+				path="/transactions/jsp/bmed_main_hemDesk_schedule_trans.jsp" />
+			<forward name="attend"
+				path="/transactions/jsp/bmed_main_hemDesk_attend_trans.jsp" />
+			<forward name="service"
+				path="/transactions/jsp/bmed_service_action_trans.jsp" />
+			<forward name="close"
+				path="/transactions/jsp/bmed_main_hemDesk_close_trans.jsp" />
+			<forward name="view"
+				path="/transactions/jsp/bmed_main_hemDesk_view_trans.jsp" />
+			<forward name="grevancesInternal"
+				path="/transactions/jsp/bmed_main_hemDesk_Grevances_Internal_trans.jsp" />
+			<forward name="grevancesExternal"
+				path="/transactions/jsp/bmed_main_hemDesk_Grevances_External_trans.jsp" />
+
+		</action>
+
+		<action
+			path="/transactions/CentralizeWorkshopMonitoringDeskACTION"
+			type="bmed.transactions.controller.action.CentralizeWorkshopMonitoringDeskACTION"
+			name="centralizeWorkshopMonitoringDeskFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="view"
+				path="/transactions/jsp/hemms_centralize_workshop_monitoring_view_trans.jsp" />
+		</action>
+
+		<!--  Guarantee And Maintenance Main Controller File-->
+		<action path="/transactions/EquipmentMaintAndWarrantyDeskACTION"
+			type="bmed.transactions.controller.action.EquipmentMaintAndWarrantyDeskACTION"
+			name="equipmentMaintAndWarrantyDeskFB" scope="request"
+			validate="false" parameter="hmode">
+		</action>
+		<!--For Budget Control Delegation Desk Process Start-->
+
+		<action path="/transactions/BudgetControlDelegationDeskACTION"
+			type="bmed.transactions.controller.action.BudgetControlDelegationDeskACTION"
+			name="budgetControlDelegationDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="classificationAdd"
+				path="/transactions/jsp/hemms_budget_control_desk_classification_add_trans.jsp" />
+		</action>
+
+		<!--For Budget Control Delegation Desk Process End-->
+
+		<!--For Emergency Costing Detail Process Start-->
+
+		<action path="/transactions/HemmsEmergencyCostingDtlACTION"
+			type="bmed.transactions.controller.action.HemmsEmergencyCostingDtlACTION"
+			name="hemmsEmergencyCostingDtlFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/jsp/hemms_emergency_costing_dtl_add_trans.jsp" />
+		</action>
+
+		<!--For Emergency Costing Detail Process End-->
+
+       <action path="/transactions/HemComplaintApprovalDeskACTION" type="bmed.transactions.controller.action.HemComplaintApprovalDeskACTION"
+				name="hemComplaintAppDeskFB" scope="request" validate="false" parameter="hmode">
+				<forward name="verify" path="/transactions/jsp/bmed_main_complaintAppDeskVerify_trans.jsp" />
+				<forward name="view" path="/transactions/jsp/bmed_main_complaintAppDeskView_trans.jsp" />
+				
+		</action>
+
+
+
+		<!-- Transaction ACTION mapping For Centralized Spare Part Management Desk  BY SARATKUMAR [30-Aug-2013]  -->
+		<action path="/transactions/HemmsSparePartMgmtDeskACTION"
+			type="bmed.transactions.controller.action.HemmsSparePartMgmtDeskACTION"
+			name="hemmsSparePartMgmtDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main"
+				path="/transactions/jsp/hemms_spare_part_mgmt_desk_add.jsp" />
+			<forward name="view"
+				path="/transactions/jsp/hemms_spare_part_mgmt_desk_view.jsp" />
+		</action>
+
+		<!-- Transaction ACTION mapping For Centralized Spare Part Management Desk BY SARATKUMAR [30-Aug-2013]  END -->
+
+		<!-- Transaction ACTION mapping For Engineer Service Management Desk  BY SARATKUMAR [04-Sept-2013]  -->
+		<action path="/transactions/HemmsEngineerDeskACTION"
+			type="bmed.transactions.controller.action.HemmsEngineerDeskACTION"
+			name="hemmsEngineerDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="acknowledge"
+				path="/transactions/jsp/bmed_engineer_desk_acknowledge_trans.jsp" />
+			<forward name="service"
+				path="/transactions/jsp/bmed_engineer_desk_service_trans.jsp" />
+		</action>
+		<!-- Transaction ACTION mapping For Engineer Service Management Desk BY SARATKUMAR [04-Sept-2013]  END -->
+
+		<!-- Transaction Aritra Start -->
+		<action
+			path="/transactions/ComplaintMaintenanceStatusTransACTION"
+			type="bmed.transactions.controller.action.ComplaintMaintenanceStatusTransACTION"
+			name="complaintMaintenanceStatusBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="main"
+				path="/transactions/jsp/bmed_main_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="item"
+				path="/transactions/jsp/bmed_main_itemComplaintRegister_trans.jsp" />
+			<forward name="cancel"
+				path="/transactions/jsp/bmed_cancel_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="schedule"
+				path="/transactions/jsp/bmed_schedule_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="attended"
+				path="/transactions/jsp/bmed_attend_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="view"
+				path="/transactions/jsp/bmed_main_complaintDetailsView_trans.jsp" />
+			<forward name="reminder"
+				path="/transactions/jsp/bmed_main_complaintReminder_trans.jsp" />
+			<forward name="reminderReply"
+				path="/transactions/jsp/bmed_main_complaintReminderReply_trans.jsp" />
+			<forward name="close"
+				path="/transactions/jsp/bmed_close_complaintMaintenanceStatus_trans.jsp" />
+		</action>
+
+		<!-- Transaction Aritra End -->
+
+
+
+		<!-- Transaction Arun Start -->
+		<action path="/transactions/ComplaintLogOfflineACTION"
+			type="bmed.transactions.controller.action.ComplaintLogOfflineACTION"
+			name="complaintLogOfflineBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main"
+				path="/transactions/jsp/bmed_main_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="item"
+				path="/transactions/jsp/bmed_complaint_log_offline_trans.jsp" />
+			<forward name="cancel"
+				path="/transactions/jsp/bmed_cancel_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="schedule"
+				path="/transactions/jsp/bmed_schedule_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="attended"
+				path="/transactions/jsp/bmed_attend_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="view"
+				path="/transactions/jsp/bmed_main_complaintDetailsView_trans.jsp" />
+			<forward name="reminder"
+				path="/transactions/jsp/bmed_main_complaintReminder_trans.jsp" />
+			<forward name="reminderReply"
+				path="/transactions/jsp/bmed_main_complaintReminderReply_trans.jsp" />
+			<forward name="close"
+				path="/transactions/jsp/bmed_close_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="engineerDesk"
+				path="/transactions/jsp/bmed_engineer_desk_trans.jsp" />
+		</action>
+
+		<action path="/transactions/EquipmentInspectionTestDtlsACTION"
+			type="bmed.transactions.controller.action.EquipmentInspectionTestDtlsACTION"
+			name="equipmentInspectionTestDtlsFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main"
+				path="/transactions/jsp/bmed_main_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="item"
+				path="/transactions/jsp/bmed_equipment_inspection_test_trans.jsp" />
+			<forward name="verify"
+				path="/transactions/jsp/bmed_equipment_inspection_test_verify.jsp" />
+
+			<forward name="cancel"
+				path="/transactions/jsp/bmed_cancel_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="schedule"
+				path="/transactions/jsp/bmed_schedule_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="attended"
+				path="/transactions/jsp/bmed_attend_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="view"
+				path="/transactions/jsp/bmed_view_equipment_inspection_dtl_entry.jsp" />
+			<forward name="reminder"
+				path="/transactions/jsp/bmed_main_complaintReminder_trans.jsp" />
+			<forward name="reminderReply"
+				path="/transactions/jsp/bmed_main_complaintReminderReply_trans.jsp" />
+			<forward name="close"
+				path="/transactions/jsp/bmed_close_complaintMaintenanceStatus_trans.jsp" />
+		</action>
+
+
+
+		<!-- Transaction Arun End -->
+
+
+		<!--Start: Complaint Desk Transaction Sarat -->
+		<action path="/transactions/ComplaintDeskACTION"
+			type="bmed.transactions.controller.action.ComplaintDeskACTION"
+			name="ComplaintDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/jsp/hemms_view_itemComplaintRegister_trans.jsp" />
+		</action>
+		<action
+			path="/transactions/HemmsComplaintMaintenanceStatusTransACTION"
+			type="bmed.transactions.controller.action.HemmsComplaintMaintenanceStatusTransACTION"
+			name="hemmsComplaintMaintenanceStatusBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="main"
+				path="/transactions/jsp/hemms_main_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="item"
+				path="/transactions/jsp/hemms_main_itemComplaintRegister_trans.jsp" />
+			<forward name="cancel"
+				path="/transactions/jsp/bmed_cancel_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="schedule"
+				path="/transactions/jsp/bmed_schedule_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="attended"
+				path="/transactions/jsp/bmed_attend_complaintMaintenanceStatus_trans.jsp" />
+			<forward name="view"
+				path="/transactions/jsp/bmed_main_complaintDetailsView_trans.jsp" />
+			<forward name="reminder"
+				path="/transactions/jsp/bmed_main_complaintReminder_trans.jsp" />
+			<forward name="reminderReply"
+				path="/transactions/jsp/bmed_main_complaintReminderReply_trans.jsp" />
+			<forward name="close"
+				path="/transactions/jsp/bmed_close_complaintMaintenanceStatus_trans.jsp" />
+		</action>
+
+		<!--End: Complaint Desk Transaction Sarat -->
+
+
+		<!-- Transaction ACTION Mapping By Vivek Aggarwal [10-May-2011] -->
+		<action path="/transactions/OfflineSparePartAddTransACTION"
+			type="bmed.transactions.controller.action.OfflineSparePartAddTransACTION"
+			name="offlineSparePartAddTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main"
+				path="/transactions/jsp/bmed_main_offlineSparePartAdd_trans.jsp" />
+		</action>
+
+		<!-- Transaction ACTION Mapping By Vivek Aggarwal END -->
+		<!-- For Equipment Enquiry Desk added on 16Spet2013 -->
+		<action path="/transactions/CentralEquipEnquiryDeskCNT"
+			type="bmed.transactions.controller.action.CentralEquipEnquiryDeskCNT"
+			name="CentralEquipEnquiryDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/jsp/bmed_equip_inventory_enquiry_desk.jsp" />
+			<forward name="Inventory"
+				path="/transactions/jsp/bmed_equip_inventory_enquiry_desk.jsp" />
+			<forward name="InstallationEnquiry"
+				path="/transactions/jsp/bmed_equip_installation_enquiry_desk.jsp" />
+			<forward name="MaintananceEnquiry"
+				path="/transactions/jsp/bmed_maintanance_enquiry_desk.jsp" />
+			<forward name="WarrantyEnquiry"
+				path="/transactions/jsp/bmed_warranty_enquiry_desk.jsp" />
+			<forward name="DownTimeEnquiry"
+				path="/transactions/jsp/bmed_downtime_enquiry_desk.jsp" />
+			<forward name="UpTimeEnquiry"
+				path="/transactions/jsp/bmed_uptime_enquiry_desk.jsp" />
+			<forward name="ManpowerEnquiry"
+				path="/transactions/jsp/bmed_manpower_enquiry_desk.jsp" />
+			<forward name="ComplaintEnquiry"
+				path="/transactions/jsp/bmed_complaint_enquiry_desk.jsp" />
+			<forward name="getComplaintDetail"
+				path="/transactions/jsp/bmed_complaint_enquiry_detail.jsp" />
+		</action>
+
+		<!-- shefali dated 04-09-2013-->
+		<action path="/masters/ComplaintDeskConfigMstCNT"
+			type="bmed.masters.controller.action.ComplaintDeskConfigMstCNT"
+			name="ComplaintDeskConfigMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_complaint_desk_config_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_complaint_hierarchy_mst.jsp" />
+
+		</action>
+
+		<action path="/masters/ComplaintApprovalDeskConfigMstCNT"
+			type="bmed.masters.controller.action.ComplaintApprovalDeskConfigMstCNT"
+			name="ComplaintApprovalDeskConfigMstFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/add_complaint_approval_desk_config_mst.jsp" />
+		</action>
+		<action path="/masters/MaintAndWarrantyDeskConfigMstCNT"
+			type="bmed.masters.controller.action.MaintAndWarrantyDeskConfigMstCNT"
+			name="MaintAndWarrantyDeskConfigMstFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_maint_warranty_desk_config_mst.jsp" />
+		</action>
+		<action path="/masters/BudgetControlDeskConfigMstCNT"
+			type="bmed.masters.controller.action.BudgetControlDeskConfigMstCNT"
+			name="BudgetControlDeskConfigMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_budget_control_desk_config_mst.jsp" />
+		</action>
+
+
+		<action path="/masters/GrantFundMstCNT"
+			type="bmed.masters.controller.action.GrantFundMstCNT"
+			name="GrantFundMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_grant_fund_mst.jsp" />
+		</action>
+		<action path="/masters/BudgetMstCNT"
+			type="bmed.masters.controller.action.BudgetMstCNT" name="BudgetMstFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/bmed_add_budget_mst.jsp" />
+		</action>
+		<action path="/masters/SchemeMstCNT"
+			type="bmed.masters.controller.action.SchemeMstCNT" name="SchemeMstFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/bmed_add_scheme_mst.jsp" />
+		</action>
+
+		<action path="/masters/ProjectMstCNT"
+			type="bmed.masters.controller.action.ProjectMstCNT"
+			name="ProjectMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_project_mst.jsp" />
+		</action>
+
+		<action path="/masters/MajorHeadMstCNT"
+			type="bmed.masters.controller.action.MajorHeadMstCNT"
+			name="MajorHeadMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_major_head_mst.jsp" />
+		</action>
+		<action path="/masters/MinorHeadMstCNT"
+			type="bmed.masters.controller.action.MinorHeadMstCNT"
+			name="MinorHeadMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_minor_head_mst.jsp" />
+		</action>
+		<action path="/masters/SubHeadMstCNT"
+			type="bmed.masters.controller.action.SubHeadMstCNT"
+			name="SubHeadMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_sub_head_mst.jsp" />
+		</action>
+
+		<action path="/masters/DetailHeadMstCNT"
+			type="bmed.masters.controller.action.DetailHeadMstCNT"
+			name="DetailHeadMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_detail_head_mst.jsp" />
+		</action>
+
+
+		<action path="/masters/FinanceDeskDelegConfigMstCNT"
+			type="bmed.masters.controller.action.FinanceDeskDelegConfigMstCNT"
+			name="FinanceDeskDelegConfigMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_finance_desk_deleg_config_mst.jsp" />
+		</action>
+		<action path="/masters/PreNPostLiabilityDelegationDeskCNT"
+			type="bmed.masters.controller.action.PreNPostLiabilityDelegationDeskCNT"
+			name="PreNPostLiabilityDelegationDeskFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_pre_post_liability_delegation_desk.jsp" />
+		</action>
+		<action path="/masters/HemmsDeskDelegationConfigCNT"
+			type="bmed.masters.controller.action.HemmsDeskDelegationConfigCNT"
+			name="HemmsDeskDelegationConfigFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_hemms_desk_delegation_config.jsp" />
+		</action>
+		<action path="/masters/BlockEquipmentInstalDeskMstCNT"
+			type="bmed.masters.controller.action.BlockEquipmentInstalDeskMstCNT"
+			name="BlockEquipmentInstalDeskMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_block_equipment_install_desk_mst.jsp" />
+		</action>
+
+		<action path="/masters/BlockMstCNT"
+			type="bmed.masters.controller.action.BlockMstCNT" name="BlockMstFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/bmed_add_block_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_block_mst.jsp" />
+			<forward name="view"
+				path="/masters/bmed_view_block_mst.jsp" />
+		</action>
+
+		<action path="/masters/BuildingMstCNT"
+			type="bmed.masters.controller.action.BuildingMstCNT"
+			name="BuildingMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_building_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_building_mst.jsp" />
+			<forward name="view"
+				path="/masters/bmed_view_building_mst.jsp" />
+		</action>
+
+		<action path="/masters/FloorMstCNT"
+			type="bmed.masters.controller.action.FloorMstCNT" name="FloorMstFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/bmed_add_floor_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_floor_mst.jsp" />
+			<forward name="view"
+				path="/masters/bmed_view_floor_mst.jsp" />
+		</action>
+		<action path="/masters/RoomMstCNT"
+			type="bmed.masters.controller.action.RoomMstCNT" name="RoomMstFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/bmed_add_room_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_room_mst.jsp" />
+			<forward name="view" path="/masters/bmed_view_room_mst.jsp" />
+		</action>
+		<action path="/masters/LocationMstCNT"
+			type="bmed.masters.controller.action.LocationMstCNT"
+			name="LocationMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_location_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_location_mst.jsp" />
+			<forward name="view"
+				path="/masters/bmed_view_location_mst.jsp" />
+		</action>
+		<action path="/masters/InstallationMstCNT"
+			type="bmed.masters.controller.action.InstallationMstCNT"
+			name="InstallationMstFB" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+
+		<action path="/masters/InstallationsMstCNT"
+			type="bmed.masters.controller.action.InstallationsMstCNT"
+			name="InstallationMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/bmed_add_installation_mst.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_installation_mst.jsp" />
+			<forward name="view"
+				path="/masters/bmed_view_installation_mst.jsp" />
+		</action>
+
+		<action path="/masters/ManpowerAssignmentDeskCNT"
+			type="bmed.masters.controller.action.ManpowerAssignmentDeskCNT"
+			name="ManpowerAssignmentDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="allocate"
+				path="/masters/bmed_add_manpower_assignment_desk.jsp" />
+			<forward name="DownTime"
+				path="/masters/bmed_add_down_time.jsp" />
+			<forward name="UpTime" path="/masters/bmed_add_up_time.jsp" />
+			<forward name="modify"
+				path="/masters/bmed_modify_manpower_assignment_desk.jsp" />
+			<forward name="view"
+				path="/masters/bmed_view_manpower_assignment_desk.jsp" />
+
+		</action>
+		<!-- Transaction By shefali garg 31-oct-2013 -->
+
+		<action path="/transactions/EquipInwardOutwardGatePassCNT"
+			type="bmed.transactions.controller.action.EquipInwardOutwardGatePassCNT"
+			name="EquipInwardOutwardGatePassFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/jsp/bmed_equip_inward_outward_gate_pass_view.jsp" />
+			<forward name="pending"
+				path="/transactions/jsp/bmed_gate_pass_request_desk.jsp" />
+			<forward name="Verify"
+				path="/transactions/jsp/bmed_gate_pass_verification.jsp" />
+			<forward name="Approve"
+				path="/transactions/jsp/bmed_gate_pass_approval.jsp" />
+
+		</action>
+
+		<action path="/transactions/EquipmentIssueAndRestorationDeskCNT"
+			type="bmed.transactions.controller.action.EquipmentIssueAndRestorationDeskCNT"
+			name="EquipmentIssueAndRestorationDeskFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="ISSUE"
+				path="/transactions/jsp/bmed_Equip_issue_desk.jsp" />
+			<forward name="RESTORATION"
+				path="/transactions/jsp/bmed_equip_restoration_desk.jsp" />
+		</action>
+
+
+		<action path="/transactions/SecurityDeskCNT"
+			type="bmed.transactions.controller.action.SecurityDeskCNT"
+			name="SecurityDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="Acknowledge"
+				path="/transactions/jsp/bmed_security_acknowledge_desk.jsp" />
+			<forward name="checkOut"
+				path="/transactions/jsp/bmed_security_checkout_desk.jsp" />
+			<forward name="checkIn"
+				path="/transactions/jsp/bmed_security_checkIn_desk.jsp" />
+
+		</action>
+
+
+		<action
+			path="/transactions/EquipmentAuctionAndCondemnationDeskCNT"
+			type="bmed.transactions.controller.action.EquipmentAuctionAndCondemnationDeskCNT"
+			name="EquipmentAuctionAndCondemnationDeskFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="Inventory"
+				path="/transactions/jsp/bmed_equip_identify_condemnation.jsp" />
+			<forward name="OrderGeneration"
+				path="/transactions/jsp/bmed_condemnation_order_generation.jsp" />
+			<forward name="AddCommittee"
+				path="/transactions/jsp/bmed_add_committee.jsp" />
+			<forward name="ScheduleReview"
+				path="/transactions/jsp/bmed_add_review_scheduling.jsp" />
+			<forward name="Recommendation"
+				path="/transactions/jsp/bmed_condemnation_auction_recommendation.jsp" />
+			<forward name="Approval"
+				path="/transactions/jsp/bmed_condemnation_auction_approval.jsp" />
+			<forward name="IssueCertificate"
+				path="/transactions/jsp/bmed_condemnation_certificate_issue.jsp" />
+			<forward name="AuctionDtl"
+				path="/transactions/jsp/bmed_Condemnation_Auction_Dtl.jsp" />
+			<forward name="RevenueHeadDtl"
+				path="/transactions/jsp/bmed_RevenueHead_Dtl.jsp" />
+
+		</action>
+
+		<!-- transaction End shefali  -->
+
+		<!-- For Equipment Dynamic Report and Chart Preparation Desk added on 08Oct2013 by Anshuman Singh Start-->
+		<action path="/transactions/DynamicReportChartDeskCNT"
+			type="bmed.transactions.controller.action.DynamicReportChartDeskCNT"
+			name="DynamicReportChartDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="StockInHand"
+				path="/transactions/jsp/bmed_report_chart_desk_stock_inHand.jsp" />
+			<forward name="InstallationStatistical"
+				path="/transactions/jsp/bmed_report_chart_desk_Installation.jsp" />
+			<forward name="DownUPTime"
+				path="/transactions/jsp/bmed_report_chart_desk_UPNDOWN.jsp" />
+			<forward name="InspectionTest"
+				path="/transactions/jsp/bmed_maintanance_enquiry_desk.jsp" />
+			<forward name="ComplaintsStatistical"
+				path="/transactions/jsp/bmed_warranty_enquiry_desk.jsp" />
+			<forward name="MaintananceStatistical"
+				path="/transactions/jsp/bmed_downtime_enquiry_desk.jsp" />
+			<forward name="WarrantyStatistical"
+				path="/transactions/jsp/bmed_report_chart_desk_Installation.jsp" />
+
+		</action>
+
+		<!-- For Equipment Dynamic Report and Chart Preparation Desk added on 08Oct2013 by Anshuman Singh End-->
+
+
+
+		<!-- Report Action Mapping  -->
+		<!-- For Centralized GIS-Interface  Desk added on 07Nov2013 by Anshuman Singh Start-->
+		<action path="/reports/CentralizedGISInterfaceDeskCNT"
+			type="bmed.reports.controller.action.CentralizedGISInterfaceDeskCNT"
+			name="CentralizedGISInterfaceDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="INITPAGE"
+				path="/reports/jsp/bmed_centralized_gis_interface_desk.jsp" />
+			<forward name="DetailStockInHand"
+				path="/reports/jsp/bmed_centralized_gis_interface_detail_data.jsp" />
+		</action>
+
+		<!-- For Centralized GIS-Interface  Desk added on 07Nov2013 by Anshuman Singh End-->
+
+
+		<action path="/reports/ListOfCompletedComplaintsACTION"
+			type="bmed.reports.controller.action.ListOfCompletedComplaintsACTION"
+			name="listofCompletedComplaint" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_main_ListofCompleteComplaint_report.jsp" />
+
+		</action>
+
+		<action path="/reports/ListOfComplaintsACTION"
+			type="bmed.reports.controller.action.ListOfComplaintsACTION"
+			name="listofComplaint" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_main_ListofComplaint_report.jsp" />
+
+		</action>
+
+		<action path="/reports/ListOfEquipmentUnderAmcReportACTION"
+			type="bmed.reports.controller.action.ListOfEquipmentUnderAmcReportACTION"
+			name="listOfEquipmentUnderAmcReportFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="main"
+				path="/reports/jsp/bmed_listOfEquipmentUnderAmc_report.jsp" />
+
+		</action>
+
+
+		<action path="/reports/ListOfPendingComplaintsReportACTION"
+			type="bmed.reports.controller.action.ListOfPendingComplaintsReportACTION"
+			name="listOfPendingComplaintsReportFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="main"
+				path="/reports/jsp/bmed_listOfPendingComplaints_report.jsp" />
+
+		</action>
+
+
+		<!-- Added by Anshul on 6th July -->
+		<action path="/reports/CommutativeExpenditureACTION"
+			type="bmed.reports.controller.action.CommutativeExpenditureACTION"
+			name="commutativeExp" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_main_CommutativeExpenditure_report.jsp" />
+
+		</action>
+
+
+		<!-- Added by Anshul on 6th July -->
+		<action path="/reports/DownTimeRptACTION"
+			type="bmed.reports.controller.action.DownTimeRptACTION"
+			name="downTimeRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_main_downTime_report.jsp" />
+
+		</action>
+
+		<action path="/reports/ServiceEngineerWiseJobStatusReportACTION"
+			type="bmed.reports.controller.action.ServiceEngineerWiseJobStatusReportACTION"
+			name="serviceEngineerWiseJobStatusReportFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_main_serviceEngineerWiseJobStatus_report.jsp" />
+
+		</action>
+
+		<action
+			path="/reports/ListOfEquipmentWarrantyAmcExpiredReportACTION"
+			type="bmed.reports.controller.action.ListOfEquipmentWarrantyAmcExpiredReportACTION"
+			name="listOfEquipmentWarrantyAmcExpiredReportFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_main_listOfEquipmentWarrantyAmcExpired_report.jsp" />
+
+		</action>
+
+		<action path="/reports/EquipmentWiseComplaintStatusReportACTION"
+			type="bmed.reports.controller.action.EquipmentWiseComplaintStatusReportACTION"
+			name="equipmentWiseComplaintStatusReportFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_main_equipmentWiseComplaintStatus_report.jsp" />
+
+		</action>
+
+		<action path="/reports/EquipmentInspectionOrTestReportACTION"
+			type="bmed.reports.controller.action.EquipmentInspectionOrTestReportACTION"
+			name="equipmentInspectionOrTestReportFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_main_equipmentInspectionOrTest_report.jsp" />
+
+		</action>
+
+		<action path="/reports/logRegisterReportACTION"
+			type="bmed.reports.controller.action.logRegisterReportACTION"
+			name="logRegisterReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_logRegister_Rpt.jsp" />
+
+		</action>
+
+		<!-- Added by paras jain on 19th june 2014 -->
+		<action path="/reports/ManpowerAssignmentDeskCNT"
+			type="bmed.reports.controller.action.ManpowerAssignmentDeskCNT"
+			name="ManpowerAssignmentDeskRptFB" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="interface"
+				path="/reports/jsp/Equipment_uptime_downtime_register_report.jsp" />
+
+		</action>
+
+		<!-- Added by paras jain on 20th june 2014 -->
+		<action path="/reports/EquipmentTestConductionRptCNT"
+			type="bmed.reports.controller.action.EquipmentTestConductionRptCNT"
+			name="EquipmentTestConductionRptFB" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="interface"
+				path="/reports/jsp/Equipment_Test_conducted_report.jsp" />
+
+		</action>
+
+		<!-- Added by paras jain on 08-July 2014 -->
+		<action path="/reports/EquipmentManpowerRegRptCNT"
+			type="bmed.reports.controller.action.EquipmentManpowerRegRptCNT"
+			name="EquipManpowerAssignmentRegReportFB" scope="request"
+			validate="false" parameter="hmode">
+
+			<forward name="interface"
+				path="/reports/jsp/equip_manpower_register_RPT.jsp" />
+
+		</action>
+
+		<!-- Added by Sarat on 19th Aug 2013 -->
+		<action path="/reports/EmergencyCostingDataRptCNT"
+			type="bmed.reports.controller.action.EmergencyCostingDataRptCNT"
+			name="emergencyCostingDataRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="interface"
+				path="/reports/jsp/hemms_emergency_costing_data_report.jsp" />
+		</action>
+		<!-- Added by Sarat on 11th Sept 2013 -->
+		<action path="/reports/EquipmentReportCNT"
+			type="bmed.reports.controller.action.EquipmentReportCNT"
+			name="equipmentReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="interface"
+				path="/reports/jsp/hemms_equipment_report.jsp" />
+		</action>
+		<!-- Added by Sarat on 16th Sept 2013 -->
+		<action path="/reports/ComplaintStatusReportCNT"
+			type="bmed.reports.controller.action.ComplaintStatusReportCNT"
+			name="complaintStatusReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="interface"
+				path="/reports/jsp/hemms_complaint_status_report.jsp" />
+		</action>
+
+		<!-- report action by shefali garg 31-oct-2013 -->
+
+		<action path="/reports/EquipmentCheckInOutSecurityReportCNT"
+			type="bmed.reports.controller.action.EquipmentCheckInOutSecurityReportCNT"
+			name="EquipmentCheckInOutSecurityReportFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_equip_checkInOut_security_report.jsp" />
+
+		</action>
+		<action path="/reports/EquipmentIssueAndRestorationReportCNT"
+			type="bmed.reports.controller.action.EquipmentIssueAndRestorationReportCNT"
+			name="EquipmentIssueAndRestorationReportFB" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_equipment_issue_restoration_report.jsp" />
+
+		</action>
+
+		<!-- For Equipment Dynamic Report  Desk added on 25Oct2013 by Anshuman Singh Start-->
+		<action path="/reports/DynamicReportDeskCNT"
+			type="bmed.reports.controller.action.DynamicReportDeskCNT"
+			name="DynamicReportDeskFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/jsp/bmed_dynamic_desk_report.jsp" />
+
+		</action>
+
+		<!-- For Equipment Dynamic Report  Desk added on 25Oct2013 by Anshuman Singh End-->
+
+		<!-- Added by Sarat on 18-June-2014 -->
+		<action path="/reports/StockRegisterReportCNT"
+			type="bmed.reports.controller.action.StockRegisterReportCNT"
+			name="stockRegisterReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="interface"
+				path="/reports/jsp/stock_register_report.jsp" />
+		</action>
+
+		<!-- Added by Sarat on 19-June-2014 -->
+		<action path="/reports/InstallationRegisterReportCNT"
+			type="bmed.reports.controller.action.InstallationRegisterReportCNT"
+			name="stockRegisterReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="interface"
+				path="/reports/jsp/installation_register_report.jsp" />
+		</action>
+
+		<action path="/reports/EquipMaintGuateeRegReportCNT"
+			type="bmed.reports.controller.action.EquipMaintGuateeRegReportCNT"
+			name="EquipMaintGuateeRegReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="interface"
+				path="/reports/jsp/equip_main_guatee_reg_report.jsp" />
+		</action>
+
+		<action path="/reports/StockRegisterGraphReportCNT"
+			type="bmed.reports.controller.action.StockRegisterGraphReportCNT"
+			name="stockRegisterGraphReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="interface"
+				path="/reports/jsp/stock_register_graph_report.jsp" />
+			<forward name="group"
+				path="/reports/jsp/stock_register_groupwise_graph_report.jsp" />
+		</action>
+		<action path="/reports/WarrentyMaintGraphReportCNT"
+			type="bmed.reports.controller.action.WarrentyMaintGraphReportCNT"
+			name="warrentyMaintGraphReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="interface"
+				path="/reports/jsp/warrenty_maint_graph_report.jsp" />
+			<forward name="group"
+				path="/reports/jsp/warrenty_maint_groupwise_graph_report.jsp" />
+		</action>
+
+
+	</action-mappings>
+
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

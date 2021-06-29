@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions> 
+
+	  <definition name="/regDeskNewRegistration" path="/registration/transaction/RegistrationDeskLayout.jsp">      
+		  <put name="title"  value="Registration Desk New Registration" type="string"/>
+	  	  <put name="header"  value="header.jsp"/>	  
+	  	  <put name="body"  value="/registration/newRegistrationDesk"/>	  
+	  	  <put name="footer" value="" />  
+	  </definition>
+	  	    
+</tiles-definitions>
+
+
+  	  

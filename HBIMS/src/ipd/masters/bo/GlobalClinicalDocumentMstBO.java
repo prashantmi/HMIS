@@ -1,0 +1,178 @@
+package ipd.masters.bo;
+
+import ipd.masters.dao.GlobalClinicalDocumentMstDAO;
+import ipd.masters.vo.GlobalClinicalDocumentMstVO;
+import hisglobal.exceptions.HisException;
+
+public class GlobalClinicalDocumentMstBO {
+	
+	/**
+	 * First it will check duplicate record is there or not,<br>
+	 * If duplicate record is there then it display a message "Record Not Saved!Data Already Exist!!"<br>
+	 * If there is no duplicate record then it saved the record<br>
+	 * And get back to the list page<br>
+	 * But if some error is occurs then it will show the message "Record Not Saved!!!"<br>
+	 * 
+	 * @param globalClinicalDocumentMstVO_p - FormBean Object
+	 * @return true- Record Saved Successfully!!
+	 * false- Record Not Saved!!
+	 */
+	public String InsertRecord(GlobalClinicalDocumentMstVO globalClinicalDocumentMstVO_p) {
+		String strTarget = "add";
+		boolean fretValue = true;
+		String strErrmsg = "";
+		String strmsgText = "";
+		String strMsg = ""; 
+		String strWarning = "";
+
+		try {
+			 fretValue = this.initialAdd(globalClinicalDocumentMstVO_p); // Check for Record Duplicacy
+			 if (fretValue) 
+			   {
+				fretValue = GlobalClinicalDocumentMstDAO.insertQuery(globalClinicalDocumentMstVO_p);
+				if (fretValue) {
+					strMsg = "Record saved successfully!";
+					globalClinicalDocumentMstVO_p.setStrMsg(strMsg);
+				}
+			}
+		   else
+		   {
+			   strWarning = "Record Not Saved!Data Already Exist!!";
+			   globalClinicalDocumentMstVO_p.setStrWarning(strWarning); 
+		   }
+		   
+		} catch (Exception e) {
+			fretValue = false;
+			 globalClinicalDocumentMstVO_p.setStrErrorMsg(e.getMessage());
+			   HisException eObj = new HisException("IPD-->Clinical Document", "GlobalClinicalDocumentMstBO-->InsertRecord()", globalClinicalDocumentMstVO_p.getStrErrorMsg());
+			   globalClinicalDocumentMstVO_p.setStrErrorMsg("ERROR####Application Error [ERROR ID : " + eObj.getErrorID() + "], Contact System Administrator! ");
+			   eObj = null;
+			strmsgText = "ipd.masters.GlobalClinicalDocumentMstBO.InsertRecord(globalClinicalDocumentMstVO_p) --> "
+					+ e.getMessage();
+			new HisException("IPD", "Clinical Document Master.Add", strmsgText);
+			
+			strErrmsg = "Record Not Saved!!!";
+			globalClinicalDocumentMstVO_p.setStrErrorMsg(strErrmsg); 
+		}
+		return strTarget;
+	}
+	
+	/**
+	 * Check for Duplicate Record
+	 * 
+	 * @param globalClinicalDocumentMstVO_p - FormBean Object
+	 * @return true- Record not saved,already exist!!
+	 * false - record saved
+	 * @throws Exception
+	 */
+	public boolean initialAdd(GlobalClinicalDocumentMstVO globalClinicalDocumentMstVO_p) throws Exception// Check for Existing Duplicate Record
+		{
+				boolean retValue = false;
+				try {
+					retValue = GlobalClinicalDocumentMstDAO.initialAddQuery(globalClinicalDocumentMstVO_p);
+				} catch (Exception e) {
+					 globalClinicalDocumentMstVO_p.setStrErrorMsg(e.getMessage());
+					   HisException eObj = new HisException("IPD-->Clinical Document", "GlobalClinicalDocumentMstBO-->initialAdd()", globalClinicalDocumentMstVO_p.getStrErrorMsg());
+					   globalClinicalDocumentMstVO_p.setStrErrorMsg("ERROR####Application Error [ERROR ID : " + eObj.getErrorID() + "], Contact System Administrator! ");
+					   eObj = null;
+				}
+				return retValue;
+		}
+	
+	/**
+	 * Retrieve the content from the record to modify it.
+	 * 
+	 * @param chk1 - Primary Keys Concatenated with '@'.
+	 * @param globalClinicalDocumentMstVO_p - FormBean Object
+	 * @throws Exception
+	 */
+	public void modifyRecord(String chk1, GlobalClinicalDocumentMstVO globalClinicalDocumentMstVO_p) throws Exception {
+
+		try {
+			GlobalClinicalDocumentMstDAO.modifyQuery(chk1, globalClinicalDocumentMstVO_p);
+		} catch (Exception e) {
+			 globalClinicalDocumentMstVO_p.setStrErrorMsg(e.getMessage());
+			   HisException eObj = new HisException("IPD-->Clinical Document", "GlobalClinicalDocumentMstBO-->modifyRecord()", globalClinicalDocumentMstVO_p.getStrErrorMsg());
+			   globalClinicalDocumentMstVO_p.setStrErrorMsg("ERROR####Application Error [ERROR ID : " + eObj.getErrorID() + "], Contact System Administrator! ");
+			   eObj = null;
+		}
+
+	}
+
+	/**
+	 * Update method returns true if Record Updated Successfully false if Record
+	 * Not Updated Successfully
+	 * 
+	 * @param chk1 - Primary Keys Concatenated with '@'.
+	 * @param globalClinicalDocumentMstVO_p - Form Object of the Current Master
+	 * @return boolean Value
+	 */
+	public String updateRecord(String chk1, GlobalClinicalDocumentMstVO globalClinicalDocumentMstVO_p) {
+		String strtarget = "";
+		boolean fretValue;
+		boolean fretValue1;
+		String strmsgText = "";
+		try {
+		
+			fretValue1 = this.initialUpdate(chk1, globalClinicalDocumentMstVO_p);// Check For Record
+														// Modification
+
+			if (!fretValue1) {
+				String errmsg = "Record can not be modified due To Duplicacy !";
+				globalClinicalDocumentMstVO_p.setStrErrorMsg(errmsg);
+				strtarget = "modify";
+			} else {
+				fretValue = GlobalClinicalDocumentMstDAO.updateQuery(chk1, globalClinicalDocumentMstVO_p);
+				if (!fretValue) {
+
+					String errmsg = "Record not modified successfully!";
+					globalClinicalDocumentMstVO_p.setStrErrorMsg(errmsg);
+					strtarget = "modify";
+				} else {
+
+					strtarget = "list";
+				}
+			}
+		} catch (Exception e) {
+			fretValue = false;
+			 globalClinicalDocumentMstVO_p.setStrErrorMsg(e.getMessage());
+			   HisException eObj = new HisException("IPD-->Clinical Document", "GlobalClinicalDocumentMstBO-->updateRecord()", globalClinicalDocumentMstVO_p.getStrErrorMsg());
+			   globalClinicalDocumentMstVO_p.setStrErrorMsg("ERROR####Application Error [ERROR ID : " + eObj.getErrorID() + "], Contact System Administrator! ");
+			   eObj = null;
+			strmsgText = "ipd.masters.GlobalClinicalDocumentMstBO.InsertRecord(globalClinicalDocumentMstVO_p) --> "
+					+ e.getMessage();
+			new HisException("IPD", "Clinical Document Master.Update", strmsgText);
+		}
+
+		return strtarget;
+	}
+
+	/**
+	 * To initial Update
+	 * 
+	 * @param chk - Primary Keys Concatenated with '@'.
+	 * @param globalClinicalDocumentMstVO_p- FormBean Object
+	 * @return - boolean value either it is true or false
+	 * @throws Exception
+	 */
+	public boolean initialUpdate(String chk, GlobalClinicalDocumentMstVO globalClinicalDocumentMstVO_p)
+			throws Exception// Check Data in Database for Modification
+	{
+		boolean retvalue = true;
+		try {
+			retvalue = GlobalClinicalDocumentMstDAO.initialUpdateQuery(chk, globalClinicalDocumentMstVO_p);
+		} catch (Exception e) {
+			 globalClinicalDocumentMstVO_p.setStrErrorMsg(e.getMessage());
+			   HisException eObj = new HisException("IPD-->Clinical Document", "GlobalClinicalDocumentMstBO-->initialUpdate()", globalClinicalDocumentMstVO_p.getStrErrorMsg());
+			   globalClinicalDocumentMstVO_p.setStrErrorMsg("ERROR####Application Error [ERROR ID : " + eObj.getErrorID() + "], Contact System Administrator! ");
+			   eObj = null;
+		}
+
+		return retvalue;
+
+	}
+
+
+
+
+}

@@ -1,0 +1,223 @@
+/*------------------------------------------------------------------------
+
+* Copyright (c) 2008-2012 ZooTemplate. All Rights Reserved.
+
+* @license - Copyrighted Commercial Software
+
+* Author: ZooTemplate
+
+* Websites:  http://www.zootemplate.com
+
+-------------------------------------------------------------------------*/
+
+
+
+/* drill*/
+
+.menusys_drill.collapse,
+
+ul.nav-drilldown li.active a.active
+
+{
+
+    background: #e56c69;
+
+}
+
+ul.nav-drilldown li.active,
+
+ul.nav-drilldown li a:hover
+
+{
+
+    background: #e87573;
+
+}
+
+ul.nav-drilldown li a
+
+{
+
+    border-bottom: 1px solid #ec8b8a;
+
+}
+
+/* end drill*/
+
+#menusys_mega .megacol ul li a:hover,
+
+#menusys_mega .megacol ul  li a:active,
+
+#menusys_mega .megacol ul  li a:focus,
+
+#menusys_mega .megacol ul  li a.active,
+
+#menusys_mega .megacol ul  li a.active:hover,
+
+#menusys_mega .megacol ul  li a.active:active,
+
+#menusys_mega .megacol ul  li a.active:focus,
+
+#menusys_mega .megacol ul  li.hover a,
+
+#menusys_mega .megacol ul  li:hover a,
+
+#menusys_mega .megacol ul  li ul li:hover a,
+
+#menusys_mega .megacol ul  li ul li a.active,
+
+#menusys_mega li:hover a,
+
+#menusys_mega li:active a,
+
+#menusys_mega li:focus a,
+
+#menusys_mega li a.active,
+
+#menusys_mega li a.active:hover,
+
+#menusys_mega li a.active:active,
+
+#menusys_mega li a.active:focus,
+
+#menusys_mega .subwraptop,
+
+.tp-caption.genius_big_bg,
+
+p.readmore a:hover,
+
+.zt-col-inside p.readmore a,
+
+#zt-userwrap3-inner .zt-box-inside:hover p.readmore a,
+
+a#gototop,
+
+a.k2ReadMore:hover,
+
+ul.pagination li:hover a,
+
+ul.menu li:hover,
+
+ul.menu li.active,
+
+div.k2TagCloudBlock a:hover,
+
+.button:hover,
+
+button.validate:hover,
+
+.zt-drillmenu-inner .btn-navbar,
+
+.zt-drillmenu-inner .btn-navbar:hover,
+
+.pagenav li.pagenav-prev,
+
+.pagenav li.pagenav-next,
+
+ul.pagination li span
+
+
+
+{
+
+    background-color: #b54321;
+
+    transition: all 0.6s linear 0s;
+
+}
+
+#zt-userwrap3-inner .zt-box-inside:hover h3,
+
+.breadcrumbs span,
+
+#zt-logo-text span
+
+{
+
+    color: #b54321;
+
+}
+
+#zt-userwrap3-inner .zt-box-inside p.icon-cicle
+
+{
+
+    background: url("http://www.aiims.edu/templates/zt_genius/images/orenge/item-hover.png") top center no-repeat;
+	
+}
+
+
+
+/* genaral*/
+
+.breadcrumbs .path
+
+{
+
+    background: url("http://www.aiims.edu/templates/zt_genius/images/orenge/path.png") no-repeat top right;
+
+}
+
+/* style k2*/
+
+.itemRatingList,
+
+.itemRatingList a:hover,
+
+.itemRatingList .itemCurrentRating
+
+{
+
+    background:transparent url(http://www.aiims.edu/templates/zt_genius/images/orenge/star.png) left -1000px repeat-x;
+
+}
+
+.itemRatingList {position:relative;float:left;width:125px;height:25px;overflow:hidden;list-style:none;margin:0;padding:0;background-position:left top;}
+
+.itemRatingList li {display:inline;background:none;padding:0;}
+
+.itemRatingList a,
+
+.itemRatingList .itemCurrentRating {position:absolute;top:0;left:0;text-indent:-1000px;height:25px;line-height:25px;outline:none;overflow:hidden;border:none;cursor:pointer;}
+
+.itemRatingList a:hover {background-position:left bottom;}
+
+.itemRatingList a.one-star {width:20%;z-index:6;}
+
+.itemRatingList a.two-stars {width:40%;z-index:5;}
+
+.itemRatingList a.three-stars {width:60%;z-index:4;}
+
+.itemRatingList a.four-stars {width:80%;z-index:3;}
+
+.itemRatingList a.five-stars {width:100%;z-index:2;}
+
+.itemRatingList .itemCurrentRating {z-index:1;background-position:0 center;margin:0;padding:0;}
+
+/* style wrapper 6*/
+
+.ztk2ItemsBlock ul li a.selected,
+
+.ztk2ItemsBlock ul li a:hover
+
+{
+
+    background-color: #e76e66 !important;
+
+}
+
+.ztItemCurrentRating
+
+{
+
+    background:transparent url(http://www.aiims.edu/templates/zt_genius/images/orenge/star.png) left center !important;
+
+}
+
+.zt-box-inside p.icon-cicle span
+
+{
+
+    border: 1px solid #e76e66 ;
+
+}

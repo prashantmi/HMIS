@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		
+		<form-bean name="laundryReceiptReportFB" type="laundry.reports.controller.fb.LaundryReceiptReportFB">
+		</form-bean>
+	
+	
+	<form-bean name="laundryDailyCollectionReportFB" type="laundry.reports.controller.fb.LaundryDailyCollectionReportFB">
+	</form-bean>
+	
+	<form-bean name="washingMendingRecordLinenLaundryPlantFB" type="laundry.reports.controller.fb.WashingMendingRecordLinenLaundryPlantFB">
+	</form-bean>
+	
+	
+	<form-bean name="laundryDeliveryNoteReportFB" type="laundry.reports.controller.fb.LaundryDeliveryNoteReportFB">
+	</form-bean>
+	
+	
+	<form-bean name="PendingLaundryStatusFB" type="laundry.reports.controller.fb.PendingLaundryStatusFB" >
+	
+	</form-bean>
+	
+	<form-bean name="LaundryBillReportFB" 	type="laundry.reports.controller.fb.LaundryBillReportFB" >
+	
+	</form-bean>
+	
+	
+	
+	
+	</form-beans>
+
+	<action-mappings>
+
+		<action path="/switchModule" type="org.apache.struts.actions.SwitchAction" />
+
+		
+		<!-- Receipt Report Report by Arun [08/Sep/2011] -->
+
+		<action path="/reports/LaundryReceiptReportACTION" type="laundry.reports.controller.action.LaundryReceiptReportACTION"
+			name="laundryReceiptReportFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/laundry_receipt_report.jsp" />
+
+		</action>
+		<!-- Receipt Report Report by  Arun END [08/Sep/2011] -->
+			
+		
+		<action path="/reports/LaundryDailyCollectionReportACTION" type="laundry.reports.controller.action.LaundryDailyCollectionReportACTION"
+			name="laundryDailyCollectionReportFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/laundry_daily_collect_report.jsp" />
+
+		</action>
+		
+		
+		
+			<action path="/reports/WashingMendingRecordLinenLaundryPlantACTION" type="laundry.reports.controller.action.WashingMendingRecordLinenLaundryPlantACTION"
+			name="washingMendingRecordLinenLaundryPlantFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/laundry_washing_mending_rcd_linen_laundry_plant.jsp" />
+
+		</action>
+		
+		
+		
+		
+			<action path="/reports/LaundryDeliveryNoteReportACTION" type="laundry.reports.controller.action.LaundryDeliveryNoteReportACTION"
+			name="laundryDeliveryNoteReportFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/laundry_delivery_note_report.jsp" />
+
+		</action>
+		
+		
+		<action path="/reports/PendingLaundryStatusACTION"
+			type="laundry.reports.controller.action.PendingLaundryStatusACTION"
+			name="PendingLaundryStatusFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main" path="/reports/jsp/PendingLaundryStatus.jsp" />
+	   </action>
+
+		<action path="/reports/LaundryBillReportACTION"
+			type="laundry.reports.controller.action.LaundryBillReportACTION"
+			name="LaundryBillReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main" path="/reports/jsp/LaundryBillReport.jsp" />
+	   </action>
+
+	
+
+
+
+		
+	</action-mappings>
+
+
+
+
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="laundry.laundryResourceBundle">
+	</message-resources>
+
+
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+
+
+
+
+
+
+		
+
+</struts-config>

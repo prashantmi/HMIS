@@ -1,0 +1,39 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+<field name="uomModel.strUOMName">
+	<field-validator type="requiredstring" >  
+    	    	<message> Unit of Measurement Name Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">60</param>
+                    <param name="trim">true</param>
+                    <message> Unit of Measurement Name Length Cannot Be Greater Than 60 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[0-9a-zA-Z\.\^\*\%\/\\()]*</param>
+       	<message> Unit of Measurement Name is Required. It Excepts Alphanumeric Only</message>
+    </field-validator>
+</field>
+
+
+<field name="uomModel.strUOMShortName">
+	<field-validator type="requiredstring" >  
+    	    	<message> Unit of Measurement Short Name Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">20</param>
+                    <param name="trim">true</param>
+                    <message> Unit of Measurement Short Name Length Cannot Be Greater Than 20 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[0-9a-zA-Z\.\^\*\%\/\\()]*</param>
+       	<message> Unit of Measurement Short Name is Required. It Excepts Alphanumeric Only</message>
+    </field-validator>
+</field>
+
+
+
+
+</validators>

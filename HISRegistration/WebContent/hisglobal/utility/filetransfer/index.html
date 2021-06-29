@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>FTP Upload Test</title>
+
+<link href="/HIS/hisglobal/css/basic.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/HIS/hisglobal/css/loginLayout.css" rel="stylesheet" type="text/css" >
+
+<script type="text/javascript" src="/HIS/hisglobal/js/jquery.js"></script>
+<script type="text/javascript" src="/HIS/hisglobal/js/jquery.simplemodal.js"></script>
+
+<script type="text/javascript">
+
+function openPopup(url,eventObj, height, width)
+{
+if(eventObj.type=="click" || eventObj.keyCode==13 )
+ {
+   	var child = window.open(url,'popupWindow','status=yes,scrollbars=yes,height='+height+',width='+width+',left=10,top=10');  
+  	child.moveTo(250,250);
+ 	child.focus(); 
+
+if(!child.opener)
+   child.opener = self;
+ }
+ return child
+}
+
+function upload(e)
+{
+	var processID = document.getElementsByName("processId")[0].value;
+	var crNo = document.getElementsByName("crNoHosCode")[0].value;
+	var filname = document.getElementsByName("filename")[0].value;
+	var url = "/HISGlobal/hisglobal/filetransfer/UploadFile.action?strProcessId="+processID+"&strCRNoHospCode="+crNo+"&strFileName="+filname;
+	openURLInPopup(url,600,400,0,0);
+}
+
+function show(e)
+{
+	var processID = document.getElementsByName("processId")[0].value;
+	var crNo = document.getElementsByName("crNoHosCode")[0].value;
+	var filname = document.getElementsByName("filename")[0].value;
+	var url = "/HISGlobal//hisglobal/filetransfer/DisplayUploadedFile.action?strProcessId="+processID+"&strCRNoHospCode="+crNo+"&strFileName="+filname; 
+	openURLInPopup(url,600,600,0,0);
+}
+</script>
+</head>
+
+<body>
+
+Process ID: <input name="processId"/>
+<br>
+CRNo/HospitalCode : <input name="crNoHosCode" />
+<br>
+File Name : <input name="filename" />
+<br>
+<br>
+Upload File: <button name="Upload" value="Upload" title="Upload" onclick="upload(event)">Upload</button> 
+<br>
+<br>
+View Uploaded File: <button name="Show" value="Show" title="Show" onclick="show(event)">Show</button>
+
+
+</body>
+</html>

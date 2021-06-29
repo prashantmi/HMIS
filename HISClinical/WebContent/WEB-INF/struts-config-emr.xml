@@ -1,0 +1,1054 @@
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+	<!--  UnipagePrescription -->
+		<form-bean name="UniPagePrescriptionFB" type="emr.dataentry.spp.presentation.fb.UniPagePrescriptionFB"/>
+		<form-bean name="EHRSection_DiagnosisFB" type="ehr.diagnosis.presentation.EHRSection_DiagnosisFB"/>
+		<form-bean name="EHRSection_VisitReasonFB" type="ehr.visitreason.dataentry.EHRSection_VisitReasonFB"/>
+		<form-bean name="EHRSection_TreatmentFB" type="ehr.treatmentdetail.dataentry.EHRSection_TreatmentFB"/>
+		<!-- <form-bean name="EHRSection_InvestigationAdviceFB" type="ehr.investigation.dataentry.EHRSection_InvestigationAdviceFB"/> -->
+		<form-bean name="EHRSection_FollowupFB" type="ehr.followup.dataentry.EHRSection_FollowupFB"/>
+		<form-bean name="EHRSection_StatusAtDischargeFB" type="ehr.statusdischarge.dataentry.EHRSection_StatusAtDischargeFB"/><!-- Added By Nilesh Gupta -->
+		
+		<form-bean name="EHRSection_HEADERFB" type="ehr.header.data.EHRSection_HEADERFB"/>
+	<!-- End  UnipagePrescription -->
+	
+	<!-- Patient Clinical Documents -->
+		<form-bean name="PatientClinicalDocumentsFB" type="emr.datafetch.patientClinicalDocuments.presentation.fb.PatientClinicalDocumentsFB"/>
+		<form-bean name="EHRSection_DiagnosisFB1" type="ehr.diagnosis.datafetch.EHRSection_DiagnosisFB"/>
+		<form-bean name="EHRSection_PatientTileFB" type="ehr.patientTile.dataentry.EHRSection_PatientTileFB"/>
+		<form-bean name="EHRSection_ComplaintsFB" type="ehr.complaints.presentation.EHRSection_ComplaintsFB"/>
+		<form-bean name="EHRSection_HistoryFB" type="ehr.history.presentation.EHRSection_HistoryFB"/>
+		<form-bean name="EHRSection_ExaminationFB" type="ehr.examination.presentation.EHRSection_ExaminationFB"/>
+		<form-bean name="EHRSection_InvestigationAdviceFB" type="ehr.investigation.presentation.EHRSection_InvestigationAdviceFB"/>
+        <form-bean name="EHRSection_TreatmentGivenFB" type="ehr.treatmentgiven.presentation.EHRSection_TreatmentGivenFB"/>
+        <form-bean name="EHRSection_HospitalCourseFB" type="ehr.hospitalcourse.dataentry.EHRSection_HospitalCourseFB"/>
+        <form-bean name="EHRSection_DocumentHeaderFB" type="emr.sections.docheader.presentation.EHRSection_DocumentHeaderFB"/>	
+        <form-bean name="EHRSection_OTDetailsFB" type="ehr.ot.presentation.EHRSection_OTDetailsFB"/>
+        <form-bean name="EHRSection_CaseSummaryFB" type="ehr.casesummary.dataentry.EHRSection_CaseSummaryFB"/>
+        <form-bean name="EHRSection_ConditionAtDischargeFB" type="ehr.conditionatdischarge.dataentry.EHRSection_ConditionAtDischargeFB"/>
+        <form-bean name="EHRSection_ChronicDiseaseFB" type="ehr.chronicdisease.presentation.EHRSection_ChronicDiseaseFB"></form-bean>	
+        <form-bean name="EHRSection_AllergiesFB" type="ehr.allergies.presentation.EHRSection_AllergiesFB"></form-bean>
+        <form-bean name="EHRSection_PatientReferralFB" type="ehr.patientreferral.presentation.EHRSection_PatientReferralFB"></form-bean>
+        <form-bean name="EHRSection_ServiceProcedureFB" type="ehr.serviceprocedure.presentation.EHRSection_ServiceProcedureFB"></form-bean>
+        <form-bean name="EHRSection_ExternalInvestigationFB" type="ehr.externalinvestigation.presentation.EHRSection_ExternalInvestigationFB"/>
+        <form-bean name="EHRSection_QuestionnaireFB" type="ehr.questionnaire.presentation.EHRSection_QuestionnaireFB"/>	
+         <form-bean name="EHRSection_TextualMedAdvFB" type="ehr.textualadvice.dataentry.EHRSection_TextualMedAdvFB"></form-bean>	
+          <form-bean name="EHRSection_VitalFB" type="ehr.vitals.dataentry.EHRSection_VitalFB"></form-bean>
+          
+           <form-bean name="EHRSection_ServicePackageFB" type="ehr.servicepackage.EHRSection_ServicePackageFB"></form-bean>	
+           <form-bean name="EHRSection_ImageExamFB" type="ehr.ImageExam.EHRSection_ImageExamFB"></form-bean>	
+          <form-bean name="EHRSection_Medication_AdviceFB" type="ehr.medicationAdvice.dataentry.EHRSection_Medication_AdviceFB"/>		
+	<!-- End Patient Clinical Documents -->
+	
+	</form-beans>
+	
+	<action-mappings>
+	
+	
+	
+		<!-- Uni page prescription -->
+		<action path="/uniPagePrescription"
+				type="emr.dataentry.spp.presentation.action.UniPagePrescriptionACTION"
+				name="UniPagePrescriptionFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/dataentry/spp/UniPagePrescription.jsp"
+				>
+			<forward name="NEW" path="/../emr/dataentry/spp/UniPagePrescriptionConfig.jsp" />
+			<forward name="VISITREASON" path="/../ehr/visitreason/EHRSection_VISITREASON.jsp" />
+			<forward name="DESKDIAGNOSIS" path="/ehrSection_DESKDIAGNOSIS" />
+			<forward name="DESKTREATMENT" path="/ehrSection_DESKTREATMENT" />
+			<forward name="FOLLOWUP" path="/ehrSection_FOLLOWUP" />
+			<forward name="DISCHARGE" path="/ehrSection_DISCHARGE" />
+			<forward name="REQUISITIONRAISING" path="/ehrSection_REQUISITIONRAISING" />
+			<forward name="OPDNEXTVISITDETAIL" path="/ehrSection_OPDNEXTVISITDETAIL" />
+			<forward name="COMPLAINTS" path="/ehrSection_COMPLAINTS" />
+			<forward name="HISTORY" path="/ehrSection_HISTORY" />
+			<forward name="EXAMINATION" path="/ehrSection_EXAMINATION" />
+			<forward name="CLINICALDOCUMENTS" path="/../emr/dataentry/spp/UniPagePrescriptionConfig.jsp" />
+			<forward name="PREVIEW" path="/../emr/dataentry/spp/UniPagePrescriptionPrint.jsp" />
+			<forward name="HEADER" path= "/ehrSection_HEADER"/>
+			<forward name="VIEWPRESCRIPTION" path= "/ehrSection_PRESCRIPTION"/>
+			<forward name="DISCHARGESUMMARY" path="/../emr/dataentry/spp/SinglePageDischarge.jsp"/>
+			<forward name="PREVIEWNGEN" path="/../emr/dataentry/spp/SinglePageDischargePreviewGenerate.jsp" />
+			
+			<!-- <forward name="GETPATDTL" path="/../emr/dataentry/spp/OfflineUniPagePrescription.jsp" />
+			 -->
+			
+			
+			
+		</action>
+		
+		<action path="/ehrSection_OPDNEXTVISITDETAIL"
+				type="ehr.visitreason.dataentry.EHRSection_VisitReasonACT"
+				name="EHRSection_VisitReasonFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/visitreason/EHRSection_OPDNEXTVISITDETAIL.jsp"
+				>
+			<forward name="NEW" path="/../ehr/visitreason/EHRSection_OPDNEXTVISITDETAIL.jsp" />
+			<forward name="OPDNEXTVISITDETAIL" path="/../ehr/visitreason/EHRSection_OPDNEXTVISITDETAIL.jsp" />
+			
+		</action>
+		
+		
+		<action path="/ehrSection_DESKTREATMENT"
+				type="ehr.treatmentdetail.dataentry.EHRSection_TreatmentACT"
+				name="EHRSection_TreatmentFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/treatment/EHRSection_TREATMENT.jsp"
+				>
+			<forward name="NEW" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" />
+			<forward name="DESKTREATMENT" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" />
+			<forward name="DRUGINSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_DrugInstruction.jsp" />
+			<forward name="DRUGTIME" path="/../ehr/treatment/EHRSection_Treatment_DrugTimePopup.jsp" />
+			<forward name="PREVDRUGSCHEDULE" path="/../ehr/treatment/EHRSection_Treatment_prevSchedulePopup.jsp" />
+			<forward name="INSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_prevInstructionPopup.jsp" />
+			
+		
+		</action>
+		
+		<!-- Diagnosis -->
+		<action path="/ehrSection_DESKDIAGNOSIS"
+				type="ehr.diagnosis.presentation.EHRSection_DiagnosisACT"
+				name="EHRSection_DiagnosisFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/diagnosis/EHRSection_DIAGNOSIS.jsp"
+				>
+			<forward name="NEW" path="/../ehr/diagnosis/EHRSection_DIAGNOSIS.jsp" />
+			<forward name="DESKDIAGNOSIS" path="/../ehr/diagnosis/EHRSection_DIAGNOSIS.jsp" />
+		</action>
+		
+		
+		<!-- End: Diagnosis -->
+
+			
+		<action path="/ehrSection_REQUISITIONRAISING"
+				type="ehr.investigation.presentation.EHRSection_InvestigationAdviceACT"
+				name="EHRSection_InvestigationAdviceFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/investigation/EHRSection_REQUISITIONRAISING.jsp"
+				>
+			<forward name="NEW" path="/../ehr/investigation/EHRSection_REQUISITIONRAISING.jsp" />
+			<forward name="REQUISITIONRAISING" path="/../ehr/investigation/EHRSection_REQUISITIONRAISING.jsp" />
+			
+		</action>
+		
+	
+		 
+		 <action path="/ehrSection_EXAMINATION"
+				type="ehr.examination.presentation.EHRSection_ExaminationACT"
+				name="EHRSection_ExaminationFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/../ehr/EHRSection_ExaminationTemplateTile.jsp">
+			<forward name="NEW" path="/../ehr/examination/EHRSection_EXAMINATION_Template.jsp" />
+			<forward name="VIEWREPORT" path="/../ehr/examination/EHRSection_EXAMINATION_PRINT.jsp" />
+			
+			
+		</action>
+		
+		 <action path="/ehrSection_COMPLAINTS"
+				type="ehr.complaints.presentation.EHRSection_ComplaintsACT"
+				name="EHRSection_ComplaintsFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/../ehr/EHRSection_ComplaintsTemplateTile.jsp">
+			<forward name="NEW" path="/../ehr/complaints/EHRSection_COMPLAINTS_Template.jsp" />
+			<forward name="VIEWREPORT" path="/../ehr/examination/EHRSection_COMPLAINTS_PRINT.jsp" />
+			
+		</action>
+		
+		 <action path="/ehrSection_HISTORY"
+				type="ehr.history.presentation.EHRSection_HistoryACT"
+				name="EHRSection_HistoryFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/../ehr/EHRSection_HistoryTemplateTile.jsp">
+			<forward name="NEW" path="/../ehr/history/EHRSection_HISTORY_Template.jsp" />
+			<forward name="VIEWREPORT" path="/../ehr/examination/EHRSection_HISTORY_PRINT.jsp" />
+			
+		</action>
+		
+		
+		<!-- End: Investigation -->	
+		 
+		<action path="/ehrSection_FOLLOWUP"
+				type="ehr.followup.dataentry.EHRSection_FollowupACT"
+				name="EHRSection_FollowupFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/followup/EHRSection_FOLLOWUP.jsp"
+				>
+			<forward name="NEW" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="FOLLOWUP" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			
+		</action>
+		
+		<!-- Added By Nilesh Gupta for Status At Discharge-->
+		<action path="/ehrSection_DISCHARGE"
+				type="ehr.statusdischarge.dataentry.EHRSection_StatusAtDischargeACT"
+				name="EHRSection_StatusAtDischargeFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/statusdischarge/EHRSection_STATUS_DISCHARGE.jsp">
+			<forward name="NEW" path="/../ehr/statusdischarge/EHRSection_STATUS_DISCHARGE.jsp" />
+			<forward name="DISCHARGE" path="/../ehr/statusdischarge/EHRSection_STATUS_DISCHARGE.jsp" />
+		</action>
+	<!-- End Status At Discharge	     -->
+	
+	<!-- Header -->
+		<action path="/ehrSection_HEADER"
+				type="ehr.header.data.EHRSection_HEADER"
+				name="EHRSection_HEADERFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/emr/dataentry/spp/uniPagePrescriptionConfig.jsp"
+				>
+			<forward name="NEW" path="/emr/dataentry/spp/uniPagePrescriptionPrint.jsp" />
+			<!-- <forward name="DESKDIAGNOSIS" path="/../ehr/diagnosis/EHRSection_DIAGNOSIS.jsp" /> -->
+		</action>
+		
+		<!-- End of Header -->
+		
+		<!-- End UnipagePrescription -->
+		
+		<action path="/clinicalSummaryEntry"
+				type="emr.dataentry.spp.presentation.action.ClinicalSummaryEntryACTION"
+				name="UniPagePrescriptionFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/dataentry/spp/OfflineUniPagePrescription.jsp"
+				>
+				<forward name="GETPATDETAIL" path="/../emr/dataentry/spp/OfflineUniPagePrescription.jsp" />
+				<!-- <forward name="SPP" path="/uniPagePrescription" /> -->
+				
+	</action>
+	
+		
+		<!-- Patient Clinical Documents -->
+		
+		<action path="/patientClinicalDocuments"
+				type="emr.datafetch.patientClinicalDocuments.presentation.action.PatientClinicalDocumentsACTION"
+				name="PatientClinicalDocumentsFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/datafetch/patientClinicalDocuments/PatientClinicalDocuments.jsp">
+			<!-- <forward name="NEW" path="/../emr/AdminLTE-2.4.2/index.html" />	 -->
+			<forward name="NEW" path="/../emr/datafetch/patientClinicalDocuments/clinicalDocumentTypeTile.jsp" />
+			<forward name="CLINICALDOCUMENTS" path="/../emr/datafetch/patientClinicalDocuments/PatientClinicalDocuments.jsp" />
+			
+			<forward name="DESKDIAGNOSIS" path="/ehrComposition_ENCDIAGNOSIS" />
+			<forward name="DISCHARGESTATUS" path="/ehrComposition_DISCHARGESTATUS" />
+			<forward name="OPDNEXTVISITDETAIL" path="/ehrComposition_OPDNEXTVISITDETAIL" />
+			<forward name="COMPLAINTS" path="/ehrComposition_COMPLAINTS" />
+			<forward name="HISTORY" path="/ehrComposition_HISTORY" />
+			<forward name="EXAMINATION" path="/ehrComposition_EXAMINATION" />
+			<!-- <forward name="HOSPITALCOURSE" path="/ehrComposition_HOSPITALCOURSE" /> -->
+			<forward name="ADVICEONDISCHARGE" path="/ehrComposition_ENC_ADVICEONDISCHARGE" />
+			<!-- <forward name="FOLLOWUPADVICE" path="/ehrComposition_FOLLOWUPADVICE" /> -->
+			<forward name="FOLLOWUPADVICE" path="/ehrComposition_FOLLOWUP_ADVICE" />
+			<forward name="FOLLOWUPADVICE" path="/ehrComposition_FOLLOWUPADVICE" />
+			<forward name="ENCINVESTIGATION" path="/ehrComposition_ENC_INVESTIGATION" />
+			<forward name="TREATMENTGIVEN" path="/ehrComposition_TREATMENTGIVEN" />
+			<forward name="PREVIEW" path="/../emr/datafetch/patientClinicalDocuments/PatientClinicalDocumentsPrint.jsp" />
+			<forward name="PREVIEWNEW" path="/../emr/datafetch/patientClinicalDocuments/patientClinicalDocumentsPrintPDF.jsp" />
+			<forward name="GENERATE" path="/../emr/datafetch/patientClinicalDocuments/documentGeneration.jsp" />
+			<forward name="VIEWPRINT" path="/../emr/datafetch/patientClinicalDocuments/documentViewPrint.jsp" />	
+			<forward name="MODIFY" path="/../emr/datafetch/patientClinicalDocuments/PatientClinicalDocuments.jsp" />
+			<forward name="PATIENTTILE" path="/ehrComposition_PATIENTTILE" />
+			<forward name="DOCUMENTHEADER" path= "/ehrComposition_HDR_HOSPITAL"/>
+			<forward name="DESKTREATMENT" path="/ehrComposition_DESK_TREATMENT" />
+			
+			<!-- New Mapping for SPP & Discharge Summary Added by Vasu on 30.Nov.2018-->
+			<forward name="PATIENTDEMOGRAPHIC" path="/ehrComposition_PAT_DTL_DEMO" />
+			<forward name="ADMISSIONDETAIL" path="/ehrComposition_ENC_DTL_ADM" />
+			<forward name="DESKDIAGNOSIS" path="/ehrComposition_ENC_DIAGNOSIS" />
+			<forward name="OPDNEXTVISITDETAIL" path="/ehrComposition_ENC_CC_ROV" />
+			<forward name="COMPLAINTS" path="/ehrComposition_ENC_COMPLAINTS" />
+			<forward name="HISTORY" path="/ehrComposition_PAT_HISTORY" />
+			<forward name="EXAMINATION" path="/ehrComposition_ENC_EXAMINATION" />
+			<forward name="ADVICEONDISCHARGE" path="/ehrComposition_ENC_MED_ADV" />
+			<forward name="ENCINVESTIGATION" path="/ehrComposition_ENC_INV" />
+			<forward name="DESKTREATMENT" path="/ehrComposition_ENC_MED_ADV_DRUG" />
+			<forward name="SATATUSATDISCHARGE" path="/ehrComposition_ENC_PAT_COND_DIS" />
+			<forward name="FOLLOWUPADVICE" path="/ehrComposition_ENC_FOLLOWUP_OPD" />
+			<forward name="DESKTREATMENT" path="/ehrComposition_ENC_TREATMENT" />
+			<forward name="FOLLOWUPADVICE" path="/ehrComposition_ENC_FOLLOWUP_DISCHARGE" />
+			<forward name="OT" path="/ehrComposition_ENC_OT_DTL" />
+			<forward name="CASESUMMARY" path="/ehrComposition_ENC_CLN_DTL_CASE" />
+			<forward name="CONDITIONATDISCHARGE" path="/ehrComposition_CONDITIONATDISCHARGE" />
+			<forward name="HOSPITALCOURSE" path="/ehrComposition_ENC_COURSE" />
+			<forward name="EXAMINATION" path="/ehrComposition_ENC_EXAM" />
+			<!-- Added by Prachi on 14-05-2019 for chronic disease entry on SPP		 -->
+			<forward name="CHRONICDISEASE" path="ehrComposition_PAT_CHRONIC_DISEASE" />
+			<forward name="ALLERGY" path="ehrComposition_PAT_ALLERGY" />
+			<forward name="PATIENTREFERRAL" path="ehrComposition_PAT_REFERRAL" />
+			<forward name="ENCINVESTIGATION" path="/ehrComposition_ENC_INV_ADV" />
+			<forward name="ENCINVESTIGATION" path="/ehrComposition_SERVICE_PROCEDURE" />
+			<!-- Added by Shweta on 11-06-2019 for Textual Medical Advice on SPP		 -->
+			<forward name="ENCTEXTUALMEDADV" path="/ehrComposition_ENC_MED_ADV_TEXT" />
+			<forward name="ENCVITAL" path="/ehrComposition_ENC_VITAL" />
+			<forward name="ENCSERVICEPACKAGE" path="/ehrComposition_SERVICE_PACKAGE" />
+			<forward name="EXRERNALINVESTIGATION" path="/ehrComposition_EXT_INV" />
+			<forward name="QUESTIONNAIRE" path="/ehrComposition_QUESTIONNAIRE" />
+			<forward name="IMAGEEXAM" path="/ehrComposition_PAT_IMG_EXAM" />
+			<forward name="MEDICATIONADVICE" path="/ehrComposition_ENC_MED_ADV_TEXT" />
+			<!-- End -->
+			
+		</action>
+		
+		
+		
+		<!-- New Mapping for SPP & Discharge Summary Added by Vasu on 30.Nov.2018-->
+		   <action path="/ehrComposition_PAT_DTL_DEMO"
+				type="ehr.patientTile.dataentry.EHRSection_PatientTileACT"
+				name="EHRSection_PatientTileFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/patientTile/EHRComp_PATIENTSUMMARY_SELECT.jsp"
+				>
+			<forward name="PATIENTSUMMARY" path="/../ehr/patientTile/EHRComp_PATIENTSUMMARY_SELECT.jsp" />
+			<forward name="PATIENTSUMMARYSER" path="/../ehr/patientTile/EHRComp_PATIENTSUMMARYser_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/patientTile/EHRComp_PATIENTSUMMARY_VIEW.jsp" />
+		</action>
+		
+		<action path="/ehrComposition_ENC_DTL_ADM"
+				type="ehr.patientTile.dataentry.EHRSection_PatientTileACT"
+				name="EHRSection_PatientTileFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/patientTile/EHRComp_DISCHARGESUMMARY_SELECT.jsp"
+				>
+			<forward name="DISCHARGESUMMARY" path="/../ehr/patientTile/EHRComp_DISCHARGESUMMARY_SELECT.jsp" />
+			<forward name="PATIENTSUMMARYSER" path="/../ehr/patientTile/EHRComp_PATIENTSUMMARYser_SELECT.jsp" />
+			<forward name="PREVIEWDISCH" path="/../ehr/patientTile/EHRComp_DISCHARGESUMMARY_VIEW.jsp" />
+		</action>
+		
+		<action path="/ehrComposition_ENC_DIAGNOSIS"
+				type="ehr.diagnosis.presentation.EHRSection_DiagnosisACT"
+				name="EHRSection_DiagnosisFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/diagnosis/EHRSection_DIAGNOSIS.jsp"
+				>
+			<forward name="DESKDIAGNOSIS" path="/../ehr/diagnosis/EHRSection_DIAGNOSIS.jsp" />
+			<forward name="ENCDIAGNOSIS" path="/../ehr/diagnosis/EHRComposition_ENCDIAGNOSIS_select.jsp" />
+			 <forward name="PREVIEW" path="/../ehr/diagnosis/EHRComp_DIAGNOSIS_VIEW.jsp" />
+		</action>
+		
+		<action path="/ehrComposition_ENC_COMPLAINTS"
+				type="ehr.complaints.presentation.EHRSection_ComplaintsACT"
+				name="EHRSection_ComplaintsFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/complaints/EHRComp_COMPLAINTS_SELECT.jsp"
+				>
+			<forward name="COMPLAINTS" path="/../ehr/complaints/EHRComp_COMPLAINTS_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/complaints/EHRComp_COMPLAINTS_VIEW.jsp" />
+			<forward name="ADDSAVE" path="/../ehr/complaints/EHRSection_COMPLAINTS_Template.jsp" />
+			<forward name="NEW" path="/../ehr/complaints/EHRSection_COMPLAINTS.jsp" />
+			</action>
+		
+		<action path="/ehrComposition_ENC_CC_ROV"
+				type="ehr.visitreason.dataentry.EHRSection_VisitReasonACT"
+				name="EHRSection_VisitReasonFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/visitreason/EHRSection_OPDNEXTVISITDETAIL.jsp"
+				>
+			<forward name="NEW" path="/../ehr/visitreason/EHRSection_OPDNEXTVISITDETAIL.jsp" />
+			<forward name="OPDNEXTVISITDETAIL" path="/../ehr/visitreason/EHRSection_OPDNEXTVISITDETAIL.jsp" />
+			<forward name="ENCNEXTVISITDETAIL" path="/../ehr/visitreason/EHRComp_OPDNEXTVISITDETAIL_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/visitreason/EHRComp_OPDNEXTVISITDETAIL_VIEW.jsp" />
+		    <forward name="CHEIFCOMPLAINTSDETAIL" path="/../ehr/visitreason/EHRSection_CHEIFCOMPLAINTSDETAIL.jsp" />
+		</action>
+		
+		
+		<action path="/ehrComposition_PAT_HISTORY"
+				type="ehr.history.presentation.EHRSection_HistoryACT"
+				name="EHRSection_HistoryFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/history/EHRComp_HISTORY_SELECT.jsp"
+				>
+			<forward name="HISTORY" path="/../ehr/history/EHRComp_HISTORY_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/history/EHRComp_HISTORY_VIEW.jsp" />
+			<forward name="ADDSAVE" path="/../ehr/history/EHRSection_HISTORY_Template.jsp" />
+			<forward name="NEW" path="/../ehr/history/EHRSection_HISTORY.jsp" />
+		</action>
+		
+		<action path="/ehrComposition_ENC_EXAMINATION"
+				type="ehr.examination.presentation.EHRSection_ExaminationACT"
+				name="EHRSection_ExaminationFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/examination/EHRComp_EXAMINATION_SELECT.jsp"
+				>
+			<forward name="EXAMINATION" path="/../ehr/examination/EHRComp_EXAMINATION_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/examination/EHRComp_EXAMINATION_VIEW.jsp" />
+			<forward name="ADDSAVE" path="/../ehr/examination/EHRSection_EXAMINATION_Template.jsp" />
+		</action>
+		
+		<!-- ADDED BY SHWETA for Image Examination On Single Page -->
+		<action path="/ehrComposition_PAT_IMG_EXAM"
+				type="ehr.ImageExam.EHRSection_ImageExamACT"
+				name="EHRSection_ImageExamFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/ImageExam/EHRSection_ImageExam.jsp"
+				>
+			<forward name="NEW" path="/../ehr/ImageExam/EHRSection_ImageExam.jsp" />
+			<!-- <forward name="PREVIEW" path="/../ehr/examination/EHRComp_EXAMINATION_VIEW.jsp" />
+			<forward name="ADDSAVE" path="/../ehr/examination/EHRSection_EXAMINATION_Template.jsp" /> -->
+		</action>
+		
+		<!--Advice on Discharge or Treatment Advice-->
+		<action path="/ehrComposition_ENC_MED_ADV"
+				type="ehr.treatmentdetail.dataentry.EHRSection_TreatmentACT"
+				name="EHRSection_TreatmentFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/treatment/EHRSection_TREATMENT.jsp">
+			<forward name="ENCTREATMENT" path="/../ehr/treatment/EHRComposition_ADVICEONDISCHARGE_SELECT.jsp" />
+			<forward name="DESKTREATMENT" path="/../ehr/treatment/EHRComposition_ADVICEONDISCHARGE_ADDSAVE.jsp" />
+		    <forward name="PREVIEW" path="/../ehr/treatment/EHRComp_ADVICEONDISCHARGE_VIEW.jsp" />
+			
+			
+		</action>
+		<!--ADDED BY SHWETA  -->
+		<!--Textual Medical Advice on Discharge -->
+		<action path="/ehrComposition_ENC_MED_ADV_TEXT"
+				type="ehr.textualadvice.dataentry.EHRSection_TextualMedAdvACT"
+				name="EHRSection_TextualMedAdvFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/textualadvice/EHRSection_TextualMedAdv.jsp">
+			<!-- <forward name="ENCTREATMENT" path="/../ehr/treatment/EHRComposition_ADVICEONDISCHARGE_SELECT.jsp" /> -->
+			<forward name="TEXTADV" path="/../ehr/textualadvice/EHRSection_TextualMedAdv.jsp" />
+		    <!-- <forward name="PREVIEW" path="/../ehr/treatment/EHRComp_ADVICEONDISCHARGE_VIEW.jsp" /> -->
+			
+			
+		</action>
+		
+		
+		<!--VITALS -->
+		<action path="/ehrComposition_ENC_VITAL"
+				type="ehr.vitals.dataentry.EHRSection_VitalACT"
+				name="EHRSection_VitalFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/vitals/EHRSection_vital.jsp">
+			<!-- <forward name="ENCTREATMENT" path="/../ehr/treatment/EHRComposition_ADVICEONDISCHARGE_SELECT.jsp" /> -->
+			<forward name="VITAL" path="/../ehr/vitals/EHRSection_vital.jsp" />
+			<forward name="ADDSAVE" path="/../ehr/vitals/EHRSection_VITAL_TEMPLATE.jsp"/>
+			<forward name="NEW" path="/../ehr/vitals/EHRSection_VITALS.jsp"/>
+		    <!-- <forward name="PREVIEW" path="/../ehr/treatment/EHRComp_ADVICEONDISCHARGE_VIEW.jsp" /> -->
+			
+			
+		</action>
+		
+		<!--END SHWETA  -->
+		
+		<action path="/ehrComposition_ENC_INV"
+				type="ehr.investigation.presentation.EHRSection_InvestigationAdviceACT"
+				name="EHRSection_InvestigationAdviceFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/investigation/EHRSection_ENCINVESTIGATION_SELECT.jsp"
+				>
+			<forward name="REQUISITIONRAISING" path="/../ehr/investigation/EHRSection_REQUISITIONRAISING.jsp" />
+			<forward name="ENCINVESTIGATION" path="/../ehr/investigation/EHRSection_ENCINVESTIGATION_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/investigation/EHRComp_ENCINVESTIGATION_VIEW.jsp" />
+			
+		</action>
+		
+		<!--Treatment Given-->
+		<action path="/ehrComposition_ENC_MED_ADV_DRUG"
+				type="ehr.treatmentdetail.dataentry.EHRSection_TreatmentACT"
+				name="EHRSection_TreatmentFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/treatment/EHRSection_TREATMENT.jsp"
+				>
+			<forward name="NEW" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" />
+			<forward name="DESKTREATMENT" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" />
+			<forward name="DRUGINSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_DrugInstruction.jsp" />
+			<forward name="DRUGTIME" path="/../ehr/treatment/EHRSection_Treatment_DrugTimePopup.jsp" />
+			<forward name="PREVDRUGSCHEDULE" path="/../ehr/treatment/EHRSection_Treatment_prevSchedulePopup.jsp" />
+			<forward name="INSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_prevInstructionPopup.jsp" />
+			<forward name="TREATMENTGIVEN" path="/../ehr/treatment/EHRSection_TREATMENTGIVEN.jsp" />
+			
+		
+		</action>
+		
+		
+		 <action path="/ehrComposition_ENC_PAT_COND_DIS"
+				type="ehr.statusdischarge.dataentry.EHRSection_StatusAtDischargeACT"
+				name="EHRSection_StatusAtDischargeFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/statusdischarge/EHRSection_STATUS_DISCHARGE_ADDSAVE.jsp">
+			<forward name="NEW" path="/../ehr/statusdischarge/EHRSection_STATUS_DISCHARGE_ADDSAVE.jsp" />
+			<forward name="DISCHARGE" path="/../ehr/statusdischarge/EHRSection_STATUS_DISCHARGE_ADDSAVE.jsp" />
+			<forward name="SELECT" path="/../ehr/statusdischarge/EHRComp_STATUS_DISCHARGE_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/statusdischarge/EHRComp_STATUS_DISCHARGE_VIEW.jsp" />
+				
+		</action> 
+		<action path="/ehrComposition_ENC_FOLLOWUP_OPD"
+				type="ehr.followup.dataentry.EHRSection_FollowupACT"
+				name="EHRSection_FollowupFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/followup/EHRSection_FOLLOWUP.jsp"
+				>
+			 <forward name="NEW" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="FOLLOWUP" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="SELECT" path="/../ehr/followup/EHRComposition_FOLLOWUPADVICE_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/followup/EHRComposition_FOLLOWUPADVICE_VIEW.jsp" />
+	 	
+		</action>
+		
+		<action path="/ehrComposition_ENC_TREATMENT"
+				type="ehr.treatmentdetail.dataentry.EHRSection_TreatmentACT"
+				name="EHRSection_TreatmentFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/treatment/EHRSection_TREATMENT.jsp"
+				>
+			 <forward name="NEW" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" /> 
+			<!-- <forward name="NEW" path="/../ehr/treatment/EHRSection_DRUG_TREATMENT.jsp" /> -->
+			<forward name="DESKTREATMENT" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" />
+			<forward name="DRUGINSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_DrugInstruction.jsp" />
+			<forward name="DRUGTIME" path="/../ehr/treatment/EHRSection_Treatment_DrugTimePopup.jsp" />
+			<forward name="PREVDRUGSCHEDULE" path="/../ehr/treatment/EHRSection_Treatment_prevSchedulePopup.jsp" />
+			<forward name="INSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_prevInstructionPopup.jsp" />
+			<forward name="TREATMENTGIVEN" path="/../ehr/treatment/EHRSection_TREATMENTGIVEN.jsp" />
+
+		</action>
+		<!-- IPD Discharge FollowUP -->
+		<action path="/ehrComposition_ENC_FOLLOWUP_DISCHARGE"
+				type="ehr.followup.dataentry.EHRSection_FollowupACT"
+				name="EHRSection_FollowupFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/followup/EHRSection_FOLLOWUP.jsp"
+				>
+			 <forward name="NEW" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="FOLLOWUP" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="SELECT" path="/../ehr/followup/EHRComposition_FOLLOWUPADVICE_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/followup/EHRComposition_FOLLOWUPADVICE_VIEW.jsp" />
+	 	    <forward name="DISCHARGEFOLLOWUP" path="/../ehr/followup/EHRSection_FOLLOWUP_DISCHARGE.jsp" />
+		</action>
+		
+		<!--OT -->
+		 <action path="/ehrComposition_ENC_OT_DTL"
+				type="ehr.ot.presentation.EHRSection_OTDetailsACT"
+				name="EHRSection_OTDetailsFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/treatmentgiven/EHRSection_OT.jsp"
+				>
+			<forward name="OT" path="/../ehr/ot/EHRSection_OT_ADDSAVE.jsp" />
+			<forward name="ENCTREATMENTGIVEN" path="/../ehr/ot/EHRSection_OT_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/ot/EHRComp_OT_VIEW.jsp" />
+			
+		</action> 
+		
+		<!-- CASE SUMMARY -->
+		<action path="/ehrComposition_ENC_CLN_DTL_CASE"
+				type="ehr.casesummary.dataentry.EHRSection_CaseSummaryACT"
+				name="EHRSection_CaseSummaryFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/casesummary/EHRSection_CaseSummary_ADDSAVE.jsp">
+			<forward name="NEW" path="/../ehr/casesummary/EHRSection_CaseSummary_ADDSAVE.jsp" />
+			<forward name="CASESUMMARY" path="/../ehr/casesummary/EHRSection_CaseSummary_ADDSAVE.jsp" />
+			<forward name="CASESUMMARYOPD" path="/../ehr/casesummary/EHRSection_CaseSummaryOPD_ADDSAVE.jsp" />
+			
+				
+		</action> 
+		
+		<!--Condition At Discharge  -->
+		<action path="/ehrComposition_CONDITIONATDISCHARGE"
+				type="ehr.conditionatdischarge.dataentry.EHRSection_ConditionAtDischargeACT"
+				name="EHRSection_ConditionAtDischargeFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/conditionatdischarge/EHRSection_ConditionAtDischarge_ADDSAVE.jsp">
+			<forward name="NEW" path="/../ehr/conditionatdischarge/EHRSection_ConditionAtDischarge_ADDSAVE.jsp" />
+			<forward name="CONDITIONATDISCHARGE" path="/../ehr/conditionatdischarge/EHRSection_ConditionAtDischarge_ADDSAVE.jsp" />
+				
+		</action> 
+		
+		<!-- Hospital Course -->
+		<action path="/ehrComposition_ENC_COURSE"
+				type="ehr.hospitalcourse.dataentry.EHRSection_HospitalCourseACT"
+				name="EHRSection_HospitalCourseFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/hospitalcourse/EHRSection_HOSPITALCOURSE_ADDSAVE.jsp">
+			<forward name="NEW" path="/../ehr/hospitalcourse/EHRSection_HOSPITALCOURSE_ADDSAVE.jsp" />
+			<forward name="HOSPITALCOURSE" path="/../ehr/hospitalcourse/EHRSection_HOSPITALCOURSE_ADDSAVE.jsp" />
+				
+		</action> 
+		
+		<!-- SPP Examination -->
+		<action path="/ehrComposition_ENC_EXAM"
+				type="ehr.examination.presentation.EHRSection_ExaminationACT"
+				name="EHRSection_ExaminationFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/examination/EHRComp_EXAMINATION_SELECT.jsp"
+				>
+			<forward name="EXAMINATION" path="/../ehr/examination/EHRComp_EXAMINATION_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/examination/EHRComp_EXAMINATION_VIEW.jsp" />
+			<forward name="ADDSAVE" path="/../ehr/examination/EHRSection_EXAMINATION_Template.jsp" />
+			<forward name="NEW" path="/../ehr/examination/EHRSection_EXAMINATION.jsp" />
+		</action>
+		
+		<!-- External Investigation -->
+		<action path="/ehrComposition_EXT_INV"
+				type="ehr.externalinvestigation.presentation.EHRSection_ExternalInvestigationACT"
+				name="EHRSection_ExternalInvestigationFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/externalinvestigation/EHRComp_EXTERNAL_INVESTIGATION_SELECT.jsp"
+				>
+			
+			<forward name="NEW" path="/../ehr/externalinvestigation/EHRComp_EXTERNAL_INVESTIGATION_SELECT.jsp" />
+		</action>
+		
+		<!-- Added by Prachi on 14-05-2019 for chronic disease entry on SPP		 -->
+		<action path="/ehrComposition_PAT_CHRONIC_DISEASE"
+				type="ehr.chronicdisease.presentation.EHRSection_ChronicDiseaseACT"
+				name="EHRSection_ChronicDiseaseFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/chronicdisease/EHRSection_PATCHRONICDISEASEL.jsp"
+				>
+			<forward name="NEW" path="/../ehr/chronicdisease/EHRSection_PATCHRONICDISEASEL.jsp" />
+		</action>
+		
+		<action path="/ehrComposition_PAT_ALLERGY"
+				type="ehr.allergies.presentation.EHRSection_AllergiesACT"
+				name="EHRSection_AllergiesFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/allergies/EHRSection_ALLEGIES.jsp"
+				>
+			<forward name="NEW" path="/../ehr/allergies/EHRSection_ALLERGIES.jsp" />
+		</action>
+		
+	<!-- End Prachi -->	
+		<action path="/ehrComposition_PAT_REFERRAL"
+				type="ehr.patientreferral.presentation.EHRSection_PatientReferralACT"
+				name="EHRSection_PatientReferralFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/patientreferral/EHRSection_PatientReferral.jsp"
+				>
+			<forward name="NEW" path="/../ehr/patientreferral/EHRSection_PatientReferral.jsp" />
+			<forward name="REFERRAL" path="/../ehr/patientreferral/EHRSection_PatientReferralNew.jsp" />
+		</action>
+		<!-- Investigation Advice -->
+		<action path="/ehrComposition_ENC_INV_ADV"
+				type="ehr.investigation.presentation.EHRSection_InvestigationAdviceACT"
+				name="EHRSection_InvestigationAdviceFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/investigation/EHRSection_ENCINVESTIGATION_SELECT.jsp"
+				>
+			<forward name="REQUISITIONRAISING" path="/../ehr/investigation/EHRSection_REQUISITIONRAISING.jsp" />
+			<forward name="ENCINVESTIGATION" path="/../ehr/investigation/EHRSection_ENCINVESTIGATION_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/investigation/EHRComp_ENCINVESTIGATION_VIEW.jsp" />
+			<forward name="INVESTIGATIONADVICE" path="/../ehr/investigation/EHRSection_InvestigationAdvice.jsp" />
+		</action>
+		<!-- Service Procedure -->
+		<action path="/ehrComposition_SERVICE_PROCEDURE"
+				type="ehr.serviceprocedure.presentation.EHRSection_ServiceProcedureACT"
+				name="EHRSection_ServiceProcedureFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/serviceprocedure/EHRSection_ServiceProcedure.jsp"
+				>
+			<forward name="NEW" path="/../ehr/serviceprocedure/EHRSection_ServiceProcedure.jsp" />
+		</action>
+		
+		<!-- Questionnaire -->
+		<action path="/ehrComposition_QUESTIONNAIRE"
+				type="ehr.questionnaire.presentation.EHRSection_QuestionnaireACT"
+				name="EHRSection_QuestionnaireFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/questionnaire/EHRSection_Questionnaire.jsp"
+				>
+			<forward name="NEW" path="/../ehr/questionnaire/EHRSection_Questionnaire.jsp" />
+		</action>
+		
+		<!-- End Vasu -->
+		
+		<!-- Service Package -->
+		<action path="/ehrComposition_SERVICE_PACKAGE"
+				type="ehr.servicepackage.EHRSection_ServicePackageACT"
+				name="EHRSection_ServicePackageFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/servicepackage/EHRSection_ServicePackage.jsp"
+				>
+			<forward name="NEW" path="/../ehr/servicepackage/EHRSection_ServicePackage.jsp" />
+		</action>
+		
+		<!-- MEDICATIONADVICE BY PRACHI TIWARI ON 09-10-2019-->
+		
+		<action path="/ehrComposition_ENC_MED_ADV_TEXT"
+				type="ehr.medicationAdvice.dataentry.EHRSection_Medication_AdviceACT"
+				name="EHRSection_Medication_AdviceFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/medicationAdvice/EHRSection_MEDICATION_ADVICE_ADDSAVE.jsp"
+				>
+			<forward name="NEW" path="/../ehr/medicationAdvice/EHRSection_MEDICATION_ADVICE_ADDSAVE.jsp" />
+		</action>
+		
+		<!-- END PRACHI -->
+				
+		<action path="/ehrComposition_PATIENTSUMMARY"
+				type="ehr.patientTile.dataentry.EHRSection_PatientTileACT"
+				name="EHRSection_PatientTileFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/patientTile/EHRComp_PATIENTSUMMARY_SELECT.jsp"
+				>
+			<forward name="PATIENTSUMMARY" path="/../ehr/patientTile/EHRComp_PATIENTSUMMARY_SELECT.jsp" />
+			<forward name="PATIENTSUMMARYSER" path="/../ehr/patientTile/EHRComp_PATIENTSUMMARYser_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/patientTile/EHRComp_PATIENTSUMMARY_VIEW.jsp" />
+		</action>
+		
+		<action path="/ehrComposition_DISCHARGESUMMARY"
+				type="ehr.patientTile.dataentry.EHRSection_PatientTileACT"
+				name="EHRSection_PatientTileFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/patientTile/EHRComp_DISCHARGESUMMARY_SELECT.jsp"
+				>
+			<forward name="DISCHARGESUMMARY" path="/../ehr/patientTile/EHRComp_DISCHARGESUMMARY_SELECT.jsp" />
+			<forward name="PATIENTSUMMARYSER" path="/../ehr/patientTile/EHRComp_PATIENTSUMMARYser_SELECT.jsp" />
+			<forward name="PREVIEWDISCH" path="/../ehr/patientTile/EHRComp_DISCHARGESUMMARY_VIEW.jsp" />
+		</action>
+		
+		<action path="/ehrComposition_ENC_DIAGNOSIS"
+				type="ehr.diagnosis.presentation.EHRSection_DiagnosisACT"
+				name="EHRSection_DiagnosisFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/diagnosis/EHRSection_DIAGNOSIS.jsp"
+				>
+			<forward name="DESKDIAGNOSIS" path="/../ehr/diagnosis/EHRSection_DIAGNOSIS.jsp" />
+			<forward name="ENCDIAGNOSIS" path="/../ehr/diagnosis/EHRComposition_ENCDIAGNOSIS_select.jsp" />
+			 <forward name="PREVIEW" path="/../ehr/diagnosis/EHRComp_DIAGNOSIS_VIEW.jsp" />
+		</action>
+		
+		
+		<action path="/ehrComposition_ENCDIAGNOSIS"
+				type="ehr.diagnosis.presentation.EHRSection_DiagnosisACT"
+				name="EHRSection_DiagnosisFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/diagnosis/EHRSection_DIAGNOSIS.jsp"
+				>
+			<forward name="DESKDIAGNOSIS" path="/../ehr/diagnosis/EHRSection_DIAGNOSIS.jsp" />
+			<forward name="ENCDIAGNOSIS" path="/../ehr/diagnosis/EHRComposition_ENCDIAGNOSIS_select.jsp" />
+			 <forward name="PREVIEW" path="/../ehr/diagnosis/EHRComp_DIAGNOSIS_VIEW.jsp" />
+		</action>
+		
+		<!-- Templates composition start-->
+		<action path="/ehrComposition_COMPLAINTS"
+				type="ehr.complaints.presentation.EHRSection_ComplaintsACT"
+				name="EHRSection_ComplaintsFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/complaints/EHRComp_COMPLAINTS_SELECT.jsp"
+				>
+			<forward name="COMPLAINTS" path="/../ehr/complaints/EHRComp_COMPLAINTS_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/complaints/EHRComp_COMPLAINTS_VIEW.jsp" />
+			<forward name="ADDSAVE" path="/../ehr/complaints/EHRSection_COMPLAINTS_Template.jsp" />
+			<!-- <forward name="TEMPREPORT" path="/transaction/genericTemplateReportMode.jsp" /> -->
+			</action>
+		
+		<action path="/ehrComposition_OPDNEXTVISITDETAIL"
+				type="ehr.visitreason.dataentry.EHRSection_VisitReasonACT"
+				name="EHRSection_VisitReasonFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/visitreason/EHRSection_OPDNEXTVISITDETAIL.jsp"
+				>
+			<forward name="NEW" path="/../ehr/visitreason/EHRSection_OPDNEXTVISITDETAIL.jsp" />
+			<forward name="OPDNEXTVISITDETAIL" path="/../ehr/visitreason/EHRSection_OPDNEXTVISITDETAIL.jsp" />
+			<forward name="ENCNEXTVISITDETAIL" path="/../ehr/visitreason/EHRComp_OPDNEXTVISITDETAIL_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/visitreason/EHRComp_OPDNEXTVISITDETAIL_VIEW.jsp" />
+		
+		</action>
+		
+		
+		<action path="/ehrComposition_HISTORY"
+				type="ehr.history.presentation.EHRSection_HistoryACT"
+				name="EHRSection_HistoryFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/history/EHRComp_HISTORY_SELECT.jsp"
+				>
+			<forward name="HISTORY" path="/../ehr/history/EHRComp_HISTORY_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/history/EHRComp_HISTORY_VIEW.jsp" />
+			<forward name="ADDSAVE" path="/../ehr/history/EHRSection_HISTORY_Template.jsp" />
+		</action>
+		
+		<action path="/ehrComposition_EXAMINATION"
+				type="ehr.examination.presentation.EHRSection_ExaminationACT"
+				name="EHRSection_ExaminationFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/examination/EHRComp_EXAMINATION_SELECT.jsp"
+				>
+			<forward name="EXAMINATION" path="/../ehr/examination/EHRComp_EXAMINATION_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/examination/EHRComp_EXAMINATION_VIEW.jsp" />
+			<forward name="ADDSAVE" path="/../ehr/examination/EHRSection_EXAMINATION_Template.jsp" />
+		</action>
+		
+		<!-- Templates composition End-->
+		
+		
+		<action path="/ehrComposition_DESKTREATMENT"
+				type="ehr.treatmentdetail.dataentry.EHRSection_TreatmentACT"
+				name="EHRSection_TreatmentFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/treatment/EHRSection_TREATMENT.jsp"
+				>
+			<forward name="NEW" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" />
+			<forward name="DESKTREATMENT" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" />
+			<forward name="DRUGINSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_DrugInstruction.jsp" />
+			<forward name="DRUGTIME" path="/../ehr/treatment/EHRSection_Treatment_DrugTimePopup.jsp" />
+			<forward name="PREVDRUGSCHEDULE" path="/../ehr/treatment/EHRSection_Treatment_prevSchedulePopup.jsp" />
+			<forward name="INSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_prevInstructionPopup.jsp" />
+			
+		
+		</action>
+		
+		 <action path="/ehrComposition_DISCHARGESTATUS"
+				type="ehr.statusdischarge.dataentry.EHRSection_StatusAtDischargeACT"
+				name="EHRSection_StatusAtDischargeFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/statusdischarge/EHRSection_STATUS_DISCHARGE_ADDSAVE.jsp">
+			<forward name="NEW" path="/../ehr/statusdischarge/EHRSection_STATUS_DISCHARGE_ADDSAVE.jsp" />
+			<forward name="DISCHARGE" path="/../ehr/statusdischarge/EHRSection_STATUS_DISCHARGE_ADDSAVE.jsp" />
+			<forward name="SELECT" path="/../ehr/statusdischarge/EHRComp_STATUS_DISCHARGE_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/statusdischarge/EHRComp_STATUS_DISCHARGE_VIEW.jsp" />
+				
+		</action> 
+		<action path="/ehrComposition_FOLLOWUP_ADVICE"
+				type="ehr.followup.dataentry.EHRSection_FollowupACT"
+				name="EHRSection_FollowupFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/followup/EHRSection_FOLLOWUP.jsp"
+				>
+			 <forward name="NEW" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="FOLLOWUP" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="SELECT" path="/../ehr/followup/EHRComposition_FOLLOWUPADVICE_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/followup/EHRComposition_FOLLOWUPADVICE_VIEW.jsp" />
+	 	
+		</action>
+		
+		<action path="/ehrComposition_FOLLOWUPADVICE"
+				type="ehr.followup.dataentry.EHRSection_FollowupACT"
+				name="EHRSection_FollowupFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/followup/EHRSection_FOLLOWUP.jsp"
+				>
+			 <forward name="NEW" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="FOLLOWUP" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="SELECT" path="/../ehr/followup/EHRComposition_FOLLOWUPADVICE_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/followup/EHRComposition_FOLLOWUPADVICE_VIEW.jsp" />
+	 	
+		</action>
+		
+		
+	<action path="/ehrComposition_ENC_ADVICEONDISCHARGE"
+				type="ehr.treatmentdetail.dataentry.EHRSection_TreatmentACT"
+				name="EHRSection_TreatmentFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/treatment/EHRSection_TREATMENT.jsp">
+			<forward name="ENCTREATMENT" path="/../ehr/treatment/EHRComposition_ADVICEONDISCHARGE_SELECT.jsp" />
+			<forward name="DESKTREATMENT" path="/../ehr/treatment/EHRComposition_ADVICEONDISCHARGE_ADDSAVE.jsp" />
+		    <forward name="PREVIEW" path="/../ehr/treatment/EHRComp_ADVICEONDISCHARGE_VIEW.jsp" />
+			
+			
+		</action>
+		
+	
+		
+	
+		<action path="/ehrComposition_ENC_INVESTIGATION"
+				type="ehr.investigation.presentation.EHRSection_InvestigationAdviceACT"
+				name="EHRSection_InvestigationAdviceFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/investigation/EHRSection_ENCINVESTIGATION_SELECT.jsp"
+				>
+			<forward name="REQUISITIONRAISING" path="/../ehr/investigation/EHRSection_REQUISITIONRAISING.jsp" />
+			<forward name="ENCINVESTIGATION" path="/../ehr/investigation/EHRSection_ENCINVESTIGATION_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/investigation/EHRComp_ENCINVESTIGATION_VIEW.jsp" />
+			
+		</action>
+		<!--TREATMENT GIVEN -->
+		 <action path="/ehrComposition_TREATMENTGIVEN"
+				type="ehr.treatmentgiven.presentation.EHRSection_TreatmentGivenACT"
+				name="EHRSection_TreatmentGivenFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/treatmentgiven/EHRSection_TREATMENTGIVEN.jsp"
+				>
+			<forward name="TREATMENTGIVEN" path="/../ehr/treatmentgiven/EHRSection_TREATMENTGIVEN_ADDSAVE.jsp" />
+			<forward name="ENCTREATMENTGIVEN" path="/../ehr/treatmentgiven/EHRSection_TREATMENTGIVEN_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/treatmentgiven/EHRComp_TREATMENTGIVEN_VIEW.jsp" />
+			
+		</action> 
+		<!--HOSPITAL COURSE -->
+		<!-- <action path="/ehrComposition_HOSPITALCOURSE"
+				type="ehr.hospitalcourse.dataentry.EHRSection_HospitalCourseACT"
+				name="EHRSection_HospitalCourseFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/hospitalcourse/EHRSection_HOSPITALCOURSE_ADDSAVE.jsp">
+			<forward name="NEW" path="/../ehr/hospitalcourse/EHRSection_HOSPITALCOURSE_ADDSAVE.jsp" />
+			<forward name="DISCHARGE" path="/../ehr/hospitalcourse/EHRSection_HOSPITALCOURSE_ADDSAVE.jsp" />
+			<forward name="SELECT" path="/../ehr/hospitalcourse/EHRComp_HOSPITALCOURSE_SELECT.jsp" />
+			<forward name="PREVIEW" path="/../ehr/hospitalcourse/EHRComp_HOSPITALCOURSE_VIEW.jsp" />
+				
+		</action>  -->
+		
+		<action path="/ehrComposition_HDR_HOSPITAL"
+				type="emr.sections.docheader.presentation.EHRSection_DocumentHeaderACT"
+				name="EHRSection_DocumentHeaderFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/emr/sections/docheader/EHRSection_DocumentHeader.jsp"
+				>
+			<forward name="DOCUMENTHEADER" path="/../emr/sections/docheader/EHRSection_DocumentHeader.jsp" />
+		</action>
+		
+		<action path="/ehrComposition_DESK_TREATMENT"
+				type="ehr.treatmentdetail.dataentry.EHRSection_TreatmentACT"
+				name="EHRSection_TreatmentFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/treatment/EHRSection_TREATMENT.jsp"
+				>
+			<forward name="NEW" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" />
+			<forward name="DESKTREATMENT" path="/../ehr/treatment/EHRSection_TREATMENT.jsp" />
+			<forward name="DRUGINSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_DrugInstruction.jsp" />
+			<forward name="DRUGTIME" path="/../ehr/treatment/EHRSection_Treatment_DrugTimePopup.jsp" />
+			<forward name="PREVDRUGSCHEDULE" path="/../ehr/treatment/EHRSection_Treatment_prevSchedulePopup.jsp" />
+			<forward name="INSTRUCTION" path="/../ehr/treatment/EHRSection_Treatment_prevInstructionPopup.jsp" />
+			<forward name="TREATMENTGIVEN" path="/../ehr/treatment/EHRSection_TREATMENTGIVEN.jsp" />
+			
+		
+		</action>
+				
+		<action path="/ehrComposition_FOLLOWUP_ADVICE"
+				type="ehr.followup.dataentry.EHRSection_FollowupACT"
+				name="EHRSection_FollowupFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/ehr/followup/EHRSection_FOLLOWUP.jsp"
+				>
+			<forward name="NEW" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			<forward name="FOLLOWUP" path="/../ehr/followup/EHRSection_FOLLOWUP.jsp" />
+			
+		</action>
+	<!--End  Patient Clinical Documents -->
+		
+		
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+</struts-config>

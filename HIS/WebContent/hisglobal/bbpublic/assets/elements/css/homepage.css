@@ -1,0 +1,342 @@
+@charset "utf-8";
+
+.main-footer {
+  font-size: 14px;
+}
+.main-footer a, .main-footer a:visited, .main-footer a:focus {
+  color: black;
+}
+.main-footer a:hover {
+  color: #333;
+}
+.main-footer .footer-bottom {
+  padding-bottom: 5px;
+}
+#RA {
+}
+#RA table {
+  border-collapse: collapse;
+  border: 2px solid black;
+  margin: 2em 0;
+  width: 100%;
+}
+#RA table td {
+  border: 1px solid black;
+  vertical-align: top;
+}
+#RA table th {
+  color: black;
+  background-color: inherit;
+  font-weight: bolder;
+  border: 1px solid black;
+  width: 12em;
+  vertical-align: top;
+}
+#RA .RARevComment {
+  margin: 0.5em 2em;
+  padding: 4px 4px 4px 14px;
+  border: 1px solid gray;
+  border-width: 0 0 0 1px;
+  font-size: 10pt;
+  font-family: unknown, monospace;
+  background-color: rgb(230,230,230);
+  background-image: url(../Papers/images/CommentBGText.gif);
+  background-repeat: repeat-y;
+  background-position: 1px top;
+}
+#RA th.RARevHead, #RA th.sep{
+  text-align: center;
+  font-size: larger;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  width: inherit;
+}
+#RA tr.needinput {
+  background-color: rgb(255,255,200);
+}
+
+#RA {
+}
+#RA table.RAssessment {
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-size: 12px;
+  width: 11em;
+  margin: 1em auto;
+}
+#RA table.RAssessment td {
+  border: 1px solid black;
+  padding: 4px 0;
+}
+#RA table.RAssessment td.horAcc {
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+}
+#RA table.RAssessment td.vertJust {
+  line-height: 90%;
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+}
+#RA table.RAssessment td.numLabel {
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+}
+#RA table.RAssessment td.input {
+  height: 12px;
+  width: 12px;
+}
+#RA table#AvgScores {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+#RA table#AvgScores td {
+  border: 1px solid black;
+  border-width: 0 1px;
+  text-align: center;
+  padding: 0 10px;
+}
+#RA table#RAssessment td.input input {
+  background-color: blue;
+  color: red;
+}
+#RA div#awds {
+  display: inline;
+}
+#RA table#assessmentlegend {
+  border-collapse: collapse;
+  border: 1px solid black;
+  font-size: 11px;
+}
+#RA table#assessmentlegend td {
+  border: 1px solid black;
+  padding: 1px 2px;
+  text-align: left;
+  vertical-align: middle;
+}
+#RA table#assessmentlegend th {
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+table.Exhibit {
+  /*border-collapse: collapse;*/
+  border-style: none;
+  text-align: center;
+}
+table.Exhibit td {
+  border-style: none;
+  padding-top:15px;
+  padding-bottom:15px;
+  padding-right:10px;
+  padding-left:10px;
+}
+table.Exhibit th {
+  border-style: none;
+}
+p.extraDesc {
+  font-size: smaller;
+  margin-bottom: 0;
+  padding: 0;
+}
+table.SessionList {
+  border-collapse: collapse;
+  border-style: none;
+}
+table.SessionList tr, table.SessionList td {
+  border-style: none;
+  font-size: 12px !important;
+  padding:2.5px;
+}
+td.locationcell {
+  border-style: solid;
+  text-align: right;
+}
+td.daycell {
+  color: red;
+  background-color: inherit;
+  font-weight: bold;
+}
+td.timecell {
+  color: black;
+  background-color: inherit;
+  text-indent: 0.5cm;
+  font-weight: bold;
+}
+table.SessionDescription {
+  border-collapse: collapse;
+  border-style: none;
+}
+table.SessionDescription td {
+  border-style: none;
+}
+table.PaperDescription {
+  border-collapse: collapse;
+  border-style: none;
+}
+table.PaperDescription td {
+  border-style: none;
+}
+table.AbstractSearch {
+  border-collapse: collapse;
+  border-style: none;
+}
+table.AbstractSearch td {
+  border-style: none;
+}
+table.ResultsForm {
+}
+table.ResultsForm td {
+  border-width: 0;
+}
+table.ResultsForm table {
+  border-style: none;
+  border-width: 0;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+}
+table.ResultsForm table td {
+  border-style: none;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+}
+table#vi_dates {
+}
+table#vi_dates td {
+	padding:2px 5px 2px 2px;
+	vertical-align:top;
+}
+table#vi_dates td:first-child {
+  text-align: right;
+	font-weight: bolder;
+	width: 12em;
+}
+input, textarea, select {
+  border: 1px solid #bbb;
+}
+.spstiny {
+  width: 84px !important;
+}
+.ieeetiny {
+}
+.fa-ieee-f {
+}
+.fa-sps-f {
+}
+
+table.openPreviewSelector {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  margin: 1em;
+  width: 60%;
+}
+table.openPreviewSelector td {
+  padding: 0.5em;
+  border: 1px solid gray;
+  text-align: left;
+}
+table.openPreviewSelector td:first-child {
+  width: 50%;
+}
+.openPreviewDefault {
+}
+.openPreviewOptOut {
+}
+.openPreviewOn {
+  background-color: rgb(100,100,255);
+}
+.openPreviewOff {
+  background-color: rgb(255,255,100);
+}
+
+fieldset {
+  border: 1px solid #bf222b;
+  padding: 0 1em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  box-shadow: 3px 3px 5px gray;
+}
+
+fieldset legend {
+  border: 1px solid #bf222b;
+  border-width: 0 1px 0 1px;
+  width: initial;
+  padding: 2px 10px;
+}
+
+fieldset fieldset {
+  border: 1px solid darkgreen;
+  box-shadow: 3px 3px 5px lightgray;
+}
+
+fieldset fieldset legend {
+  font-size: 95%;
+  line-height: 80%;
+  border-color: darkgreen;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+  padding: 5px 15px;
+}
+
+ul.icip-list, ol.icip-list {
+  list-style: initial;
+  padding-left: 1em;
+}
+ul.icip-list li, ol.icip-list li {
+  list-style-type: disc;
+  margin-left: 1em;
+  line-height: normal;
+}
+div.standout {
+  border: 1px solid #bf222b;
+  padding: 0 1em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  box-shadow: 3px 3px 5px gray;
+}
+table.PaperStatusGrid {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 100%;
+}
+
+table.PaperStatusGrid tr.HeaderRow {
+  background-color: black;
+  color: white;
+}
+
+table.PaperStatusGrid tr.HeaderRow th {
+  font-weight: bold;
+  text-align: left;
+  padding: 2px 10px;
+}
+
+table.PaperStatusGrid td {
+  padding: 2px 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+table#worldTimes {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+table#worldTimes td {
+  border-style: none;
+  font-size: smaller;
+  border: 1px dotted gray;
+  padding: 1px 5px;
+  line-height: normal;
+}
+
+

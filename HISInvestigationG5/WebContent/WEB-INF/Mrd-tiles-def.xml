@@ -1,0 +1,376 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions> 
+  <definition name="/emrCommonLayout" path="/mrd/transaction/emrCommonLayout.jsp"> 
+  	  <put name="action"  value="/mrd/emrDesk" />     
+	  <put name="title"  value="Registration Desk New Registration" type="string"/>
+  	  <put name="header"  value="/mrd/transaction/emrHeader.jsp"/>	  
+  	  <put name="body"  value="/mrd/emrDesk.cnt"/>	  
+  	  <put name="footer" value="/mrd/transaction/emrHeader.jsp" />
+  </definition>
+
+  
+  <definition name="/specialityWiseOutdoorPatientsReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Speciality Wise Outdoor Patients Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/specialityWiseOutdoorPatientsReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/genderWiseOutdoorPatientsReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Sex Wise Distribution of OPD Patients Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/genderWiseOutdoorPatientsReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+
+  <definition name="/specialityUnitWiseOPDPatientsReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Speciality and Unit Wise Special Clinic OPD Patients Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/specialityUnitWiseOPDPatientsReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/specialityGenderWiseOPDPatientsReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Speciality and Gender Wise OPD Patients Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/specialityGenderWiseOPDPatientsReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	 <definition name="/specialityWiseSundayClinicPatientsReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Speciality Wise Sunday Clinic Patients Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/specialityWiseSundayClinicPatientsReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	 <definition name="/specialityUnitWiseSplClinicOPDPatReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Speciality and Unit Wise Special Clinic OPD Patients Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/specialityUnitWiseSplClinicOPDPatReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	 <definition name="/specialityWiseIndoorPatientsReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Speciality Wise Distribution Of Indoor Patients Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/specialityWiseIndoorPatientsReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+
+	<definition name="/specialityWiseOperationReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Speciality Wise Operations Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/specialityWiseOperationReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/specialityWiseInvestigationReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Speciality Wise Investigation Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/specialityWiseInvestigationReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+		
+	 <definition name="/registeredMlcPatientReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Registered MLC patient report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/registeredMlcPatientReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/birthDetailsReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Birth Details Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/birthDetailsReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/patientNotDischargedReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Patient Not Discharged Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/patientNotDischargedReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+
+	<definition name="/communicableDisReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Communicable Disease Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/communicableDiseaseReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	
+	<definition name="/licReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="LIC Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/licReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/diseaseCodeReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Disease Code Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/diseaseCodeReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/deathDetailsReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Death Details Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/deathDetailsReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/twentyPointReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Twenty Point Report For a Month" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/twentyPointReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/ageSexReligionHosRegReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Age Wise/Sex/Religion Hospital Registration Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/ageSexReligionHosRegReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/ageSexReligionDeptRegReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Age Wise/Sex/Religion Department Registration Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/ageSexReligionDeptRegReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	    <definition name="/birthUpload" path="/mrd/transaction/birthDeathRegistrationUploadDesk.jsp">
+		<put name="title"  value="Birth Registration Upload Desk" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/birthUploadTab"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/birthUploadTab" path="/mrd/transaction/mrdTabViewLayout.jsp">
+		<put name="body"  value="/mrd/birthRegistrationUpload.cnt"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+
+   
+    <definition name="/deathUpload" path="/mrd/transaction/birthDeathRegistrationUploadDesk.jsp">
+		<put name="title"  value="Death Registration Upload Desk" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/deathUploadTab"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	
+	
+	    <definition name="/birthUpload" path="/mrd/transaction/birthDeathRegistrationUploadDesk.jsp">
+		<put name="title"  value="Birth Registration Upload Desk" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/birthUploadTab"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/birthUploadTab" path="/mrd/transaction/mrdTabViewLayout.jsp">
+		<put name="body"  value="/mrd/birthRegistrationUpload.cnt"/>
+		<put name="action"  value="/mrd/birthRegistrationUpload.cnt"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+
+   
+    <definition name="/deathUpload" path="/mrd/transaction/birthDeathRegistrationUploadDesk.jsp">
+		<put name="title"  value="Death Registration Upload Desk" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/deathUploadTab"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/deathUploadTab" path="/mrd/transaction/mrdTabViewLayout.jsp">
+		<put name="body"  value="/mrd/deathRegistrationUpload.cnt"/>
+		<put name="action"  value="/mrd/deathRegistrationUpload.cnt"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/manualUpload" path="/mrd/transaction/summonDetailUploadDesk.jsp">
+		<put name="title"  value="Manul Summon Detail Upload Desk" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/manualUploadTab"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/manualUploadTab" path="/mrd/transaction/mrdTabViewLayout.jsp">
+		<put name="body"  value="/mrd/summonDetail.cnt"/>
+		<put name="action"  value="/mrd/summonDetail.cnt"/> 	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/computerizedUpload" path="/mrd/transaction/summonDetailUploadDesk.jsp">
+		<put name="title"  value="Computerized Summon Detail Upload Desk" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/computerizedUploadTab"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/computerizedUploadTab" path="/mrd/transaction/mrdTabViewLayout.jsp">
+		<put name="body"  value="/mrd/computerizedSummonDetail.cnt"/>
+		<put name="action"  value="/mrd/computerizedSummonDetail.cnt"/> 	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/certificateAccept" path="/mrd/transaction/receiveCertificateInMrdDesk.jsp">
+		<put name="action"  value="/mrd/certificateAcceptInMrd.cnt"/>  
+		<put name="title"  value="Certificate Accept In MRD" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/mrd/transaction/mrdTabViewLayout.jsp"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/certificateArchival" path="/mrd/transaction/receiveCertificateInMrdDesk.jsp">
+		<put name="action"  value="/mrd/certificateArchivalInMrd.cnt"/> 
+		<put name="title"  value="Certificate Archival In MRD" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/mrd/transaction/mrdTabViewLayout.jsp"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/certificateLostFound" path="/mrd/transaction/receiveCertificateInMrdDesk.jsp">
+		<put name="action"  value="/mrd/certificateLostFoundInMrd.cnt"/> 
+		<put name="title"  value="Certificate LostFound In MRD" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/mrd/transaction/mrdTabViewLayout.jsp"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/opdFileMovement" path="/mrd/transaction/opdFileTrackingDeskLayout.jsp">
+		<put name="action"  value="/mrd/opdFileMovement.cnt"/>  
+		<put name="title"  value="OPD File Movement" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/mrd/transaction/mrdTabViewLayout.jsp"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/opdFileReturn" path="/mrd/transaction/opdFileTrackingDeskLayout.jsp">
+		<put name="action"  value="/mrd/opdFileReturn.cnt"/> 
+		<put name="title"  value="OPD File Return" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/mrd/transaction/mrdTabViewLayout.jsp"/>	  
+  	    <put name="footer" value="" /> 
+	</definition>
+	
+	<definition name="/registrationCensusReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Registration Census Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/registrationCensusReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/registrationPatientListingReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Registration Patient Listing Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/registrationPatientListingReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/opdStaticReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Opd Static Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/opdStaticReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/admissionAndDischargeStaticReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Admission And Discharge Static Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/admissionAndDischargeStaticReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/admissionAndDischargeListingReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Admission And Discharge Listing Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/admissionAndDischargeListingReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/diseaseWisePatientStaticReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Disease Wise Patient Static Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/diseaseWisePatientStaticReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/diseaseWisePatientListingReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Disease Wise Patient Listing Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/diseaseWisePatientListingReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/deathPatientListingReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Death Patient Listing Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/deathPatientListingReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	
+	<definition name="/mlcPatientListingReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="MLC Patient Listing Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/mlcPatientListingReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/broughtDeathPatientListingReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Brought Death Patient Listing Reportr" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/broughtDeathPatientListingReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	
+	<definition name="/wardCensusReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Ward Census Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/wardCensusReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/operationCensusReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Operation Census Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/operationCensusReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/labCensusReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Lab Census Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/labCensusReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>	
+	
+	<definition name="/issueAndReceiptOfCasePaperInterfaceReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Issue And Receipt Of Case Paper Interface Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/issueAndReceiptOfCasePaperInterfaceReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/formPReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Form P Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/formPReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/medicalCampReportdefinition" path="/mrd/reports/MrdCommonReportLayout.jsp">
+		<put name="title" value="Medical Camp Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/report/medicalCampReport.cnt" />
+		<put name="footer" value="/mrd/reports/MrdReportFooter.jsp" />
+	</definition>
+	
+</tiles-definitions>

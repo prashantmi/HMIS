@@ -1,0 +1,1438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =========== -->
+	<form-beans>
+
+		<!-- ========== Form Bean Definitions For Masters =========== -->
+		<!-- Floor Master -->
+		<form-bean name="floorForm"
+			type="hr.estate.masters.form.Est_Mst_Floor_Form">
+		</form-bean>
+		<!-- Floor Master -->
+
+		<!-- Block Master -->
+		<form-bean name="blockForm"
+			type="hr.estate.masters.form.Est_Mst_Block_Form">
+		</form-bean>
+		<form-bean name="uploadForm"
+			type="hr.estate.masters.form.File_Upload_Form">
+		</form-bean>
+		<!-- Block Master -->
+
+		<!-- Building Master -->
+		<form-bean name="buildingForm"
+			type="hr.estate.masters.form.Est_Mst_Building_Form">
+		</form-bean>
+		<form-bean name="uploadForm"
+			type="hr.estate.masters.form.File_Upload_Form">
+		</form-bean>
+		<!-- Building Master -->
+
+
+		<!-- Security Personnel Details -->
+		<form-bean name="SecurityForm"
+			type="hr.estate.masters.form.Est_Mst_Sec_Per_Dtl_Form" />
+		<!-- Security Personnel Details -->
+
+		<!-- Vehicle Master -->
+		<form-bean name="vehicleForm"
+			type="hr.estate.masters.form.Est_Mst_Vehicle_Form">
+		</form-bean>
+		<!-- Vehicle Master -->
+
+		<!-- PrivateAgency Master -->
+		<form-bean name="privateagencyForm"
+			type="hr.estate.masters.form.Est_Mst_PrivateAgency_Form">
+		</form-bean>
+		<!-- PrivateAgency Master -->
+
+		<!-- Room Master -->
+		<form-bean name="roomForm"
+			type="hr.estate.masters.form.Est_Mst_Room_Form">
+		</form-bean>
+		<form-bean name="uploadForm"
+			type="hr.estate.masters.form.File_Upload_Form">
+		</form-bean>
+		<!-- Room Master -->
+
+		<!-- ServiceType Master -->
+		<form-bean name="ServiceTypeForm"
+			type="hr.estate.masters.form.Est_Mst_Ser_Type_Form" />
+		<!-- ServiceType Master -->
+
+
+		<!-- ServiceAgency Master -->
+		<form-bean name="ServiceAgencyForm"
+			type="hr.estate.masters.form.Est_Mst_Ser_Agency_Form" />
+		<!-- ServiceType Master -->
+
+
+		<!-- Supplier Master -->
+		<form-bean name="SupplierForm"
+			type="hr.estate.masters.form.Est_Mst_Supplier_Form" />
+		<!-- Supplier Master -->
+
+
+		<!-- Hospital Electricity  Meter Master -->
+		<form-bean name="ElecMtrForm"
+			type="hr.estate.masters.form.Est_Mst_Elec_Mtr_Form" />
+		<!-- Hospital Electricity & Water Meter Master -->
+
+		<!-- Hospital Water  Meter Master -->
+		<form-bean name="WtrMtrForm"
+			type="hr.estate.masters.form.Est_Mst_Wtr_Mtr_Form" />
+		<!-- Hospital Electricity & Water Meter Master -->
+
+
+		<!-- Bill Nature  Master -->
+		<form-bean name="BillNatureForm"
+			type="hr.estate.masters.form.Est_Mst_Bill_Nature_Form" />
+		<!-- Bill Nature  Master -->
+		<!-- Shop Master -->
+		<form-bean name="ShopForm"
+			type="hr.estate.masters.form.Est_Mst_Shop_Form" />
+		<form-bean name="uploadForm"
+			type="hr.estate.masters.form.File_Upload_Form">
+		</form-bean>
+		<!-- Shop Master -->
+
+		<!-- Compliment Sub Category Master -->
+		<form-bean name="CompSubCatForm"
+			type="hr.estate.masters.form.Est_Mst_Com_Sub_Cat_Form" />
+		<!-- Compliment Sub Category Master -->
+
+		<!-- Revenue Generation Category Master -->
+		<form-bean name="RevGenCatForm"
+			type="hr.estate.masters.form.Est_Mst_Rev_Gen_Cat_Form" />
+		<!-- Revenue Generation Category Master -->
+
+		<!-- Official Purpose Common Area Type Master -->
+		<form-bean name="OffPurComAreaTypeForm"
+			type="hr.estate.masters.form.Est_Mst_Off_Pur_Com_Area_Type_Form" />
+		<!-- Official Purpose Common Area Type Master -->
+
+		<!-- Official Purpose Common Area Master -->
+		<form-bean name="OffPurComAreaForm"
+			type="hr.estate.masters.form.Est_Mst_Off_Pur_Com_Area_Form" />
+		<!-- Official Purpose Common Area  Master -->
+
+		<!-- Telephone Master -->
+		<form-bean name="telephoneForm"
+			type="hr.estate.masters.form.Est_Mst_Telephone_Form" />
+		<!-- Telephone Master -->
+
+
+		<!-- Revenue Generation Service Master -->
+		<form-bean name="RevGenForm"
+			type="hr.estate.masters.form.Est_Mst_Rev_Gen_Ser_Form" />
+		<!-- Revenue Generation Service Master -->
+
+		<!-- Complaint Category Master -->
+		<form-bean name="CompCatForm"
+			type="hr.estate.masters.form.Est_Mst_Comp_Cat_Form" />
+		<!-- Complaint Category Master -->
+
+		<!-- Item Master -->
+		<form-bean name="itemForm"
+			type="hr.estate.masters.form.Est_Mst_Item_Form">
+		</form-bean>
+		<!-- Item Master -->
+
+		<!-- QuarterType Master -->
+		<form-bean name="quartertypeForm"
+			type="hr.estate.masters.form.Est_Mst_Quartertype_Form">
+		</form-bean>
+		<!-- QuarterType Master -->
+
+		<!-- Quarter Master -->
+		<form-bean name="quarterForm"
+			type="hr.estate.masters.form.Est_Mst_Quarter_Form">
+		</form-bean>
+		<form-bean name="uploadForm"
+			type="hr.estate.masters.form.File_Upload_Form">
+		</form-bean>
+		<!-- Quarter Master -->
+
+		<!-- RoomType Master -->
+		<form-bean name="roomtypeForm"
+			type="hr.estate.masters.form.Est_Mst_Roomtype_Form">
+		</form-bean>
+		<!-- RoomType Master -->
+
+		<!-- BlockType Master -->
+		<form-bean name="blocktypeForm"
+			type="hr.estate.masters.form.Est_Mst_Blocktype_Form">
+		</form-bean>
+		<!-- blockType Master -->
+
+		<!-- GuestHouse Master -->
+		<form-bean name="guesthouseForm"
+			type="hr.estate.masters.form.Est_Mst_GuestHouse_Form">
+		</form-bean>
+		<!-- GuestHouse Master -->
+
+		<!-- Commonarea Master -->
+		<form-bean name="commonareaForm"
+			type="hr.estate.masters.form.Est_Mst_Commonarea_Form">
+		</form-bean>
+		<!-- Commonarea Master -->
+
+		<!-- Land Master -->
+		<form-bean name="landForm"
+			type="hr.estate.masters.form.Est_Mst_Land_Form" />
+		<!-- Land Master -->
+
+		<!-- ********** Form Bean Definitions For Masters *********** -->
+
+
+		<!-- ********** Form Bean Definitions For Transactions *********** -->
+		<!--Application Storage Form  -->
+		<form-bean name="applicationForm"
+			type="hr.estate.transactions.form.Est_Trans_Application_Form">
+		</form-bean>
+		<!--Application Storage Form  -->
+
+		<!-- Quarter Allotment Details Form -->
+		<form-bean name="quarterAllotForm"
+			type="hr.estate.transactions.form.Est_Trans_Quarter_Allot_Form">
+		</form-bean>
+		<form-bean name="quarterAllotChk"
+			type="hr.estate.transactions.form.Est_Trans_Quarter_Chk_Form">
+		</form-bean>
+		<!-- Quarter Allotment Details Form -->
+
+		<!-- Telephone Allotment Details -->
+		<form-bean name="telephoneAllotForm"
+			type="hr.estate.transactions.form.Est_Trans_Telephone_Allot_Form">
+		</form-bean>
+		<!-- Telephone Allotment Details -->
+
+		<!-- Previous Dues Recovery Details -->
+		<form-bean name="previousDuesRecForm"
+			type="hr.estate.transactions.form.Est_Trans_Prev_Dues_Rec_Form">
+		</form-bean>
+		<!-- Previous Dues Recovery Details -->
+
+		<!-- Quarter Vacate Details -->
+		<form-bean name="quarterVacateForm"
+			type="hr.estate.transactions.form.Est_Trans_Quarter_Vacation_Form">
+		</form-bean>
+		<!-- Quarter Vacate Details -->
+
+		<!-- Telephone Cancle Details -->
+		<form-bean name="teleCancelForm"
+			type="hr.estate.transactions.form.Est_Trans_Telephone_Cancellation_Form">
+		</form-bean>
+		<!-- Telephone Cancle Details -->
+
+		<!-- Bill Genration Details -->
+		<form-bean name="billGenForm"
+			type="hr.estate.transactions.form.Est_Trans_Bill_Gen_Form">
+		</form-bean>
+		<!-- Bill Genration Details -->
+
+		<!-- Payment Receive Details -->
+		<form-bean name="paymentRecForm"
+			type="hr.estate.transactions.form.Est_Trans_Payment_Rec_Form">
+		</form-bean>
+		<!-- Payment Receive Details -->
+
+		<!-- Hospital Bill Details -->
+		<form-bean name="hospitalbillForm"
+			type="hr.estate.transactions.form.Est_Trans_Hospital_Bill_Dtl_Form">
+		</form-bean>
+		<!-- Hospital Bill Details -->
+
+		<!-- Payment Made From -->
+		<form-bean name="paymentMadeForm"
+			type="hr.estate.transactions.form.Est_Trans_Payment_Made_Form">
+		</form-bean>
+		<!-- Payment Made From -->
+
+		<!-- Room Allot Transaction -->
+		<form-bean name="RoomAllotForm"
+			type="hr.estate.transactions.form.Est_Trans_RoomAllot_Form">
+		</form-bean>
+		<!-- Room Allot Transaction -->
+
+		<!-- Room Vacation Transaction -->
+		<form-bean name="roomvacationForm"
+			type="hr.estate.transactions.form.Est_Trans_RoomVacation_Form">
+		</form-bean>
+		<!-- Room Vacation Transaction -->
+
+		<!-- Shop Allotment Transaction -->
+		<form-bean name="ShopAllotmentForm"
+			type="hr.estate.transactions.form.Est_Trans_Shop_Rev_Allotment_Form" />
+		<!-- Shop Allotment Transaction -->
+
+		<!-- Shop Vacation Transaction -->
+		<form-bean name="ShopVacanteForm"
+			type="hr.estate.transactions.form.Est_Trans_Shop_Rev_Vacate_Form" />
+		<!-- Shop Vacation Transaction -->
+
+		<!-- Civil Request Transaction -->
+		<form-bean name="CivilRequestForm"
+			type="hr.estate.transactions.form.Est_Trans_Civil_Request_Form" />
+		<!-- Civil Request Transaction -->
+
+		<!-- Security Gaurd Verification Transaction -->
+		<form-bean name="SecGaurdVerifyForm"
+			type="hr.estate.transactions.form.Est_Trans_Sec_Guard_Verification_Form" />
+		<!-- Security Gaurd Verification Transaction  -->
+
+		<!-- Roster Form  Transaction -->
+		<form-bean name="RosterForm"
+			type="hr.estate.transactions.form.Est_Trans_Roster_Form" />
+		<!--Roster Form  Transaction   -->
+
+
+		<!-- External Security Complaint Detail Transaction -->
+		<form-bean name="SecCompDetForm"
+			type="hr.estate.transactions.form.Est_Trans_Ext_Complain_Form" />
+		<!--  External Security Complaint Detail Transaction  -->
+
+		<!-- Security Incharge Verification Transaction -->
+		<form-bean name="SecIncVerForm"
+			type="hr.estate.transactions.form.Est_Trans_Sec_Incharge_Form" />
+		<!--  Security Incharge Verification Transaction  -->
+
+		<!-- Internal Complain Registration Form -->
+		<form-bean name="InternalComForm"
+			type="hr.estate.transactions.form.Est_Trans_Internal_Complain_Form" />
+		<!--  Internal Complain Registration Form  -->
+
+		<!-- GuestHouse Allotment -->
+		<form-bean name="guesthouseAllotmentForm"
+			type="hr.estate.transactions.form.Est_Trn_GuestHouse_Allotment_Form">
+		</form-bean>
+		<!-- GuestHouse Allotment -->
+
+		<!-- GuestHouse Vacation -->
+		<form-bean name="guesthouseVacationForm"
+			type="hr.estate.transactions.form.Est_Trn_GuestHouse_Vacation_Form">
+		</form-bean>
+		<!-- GuestHouse Vacation -->
+
+		<!-- GuestHouse Maintenance -->
+		<form-bean name="guesthouseMntAltCnlForm"
+			type="hr.estate.transactions.form.Est_Trn_GuestHouse_Mnt_Alt_Cnl_Form">
+		</form-bean>
+		<!-- GuestHouse Maintenance -->
+
+
+		<!-- GuestHouse Maintenance Status-->
+		<form-bean name="guesthouseMntStatusForm"
+			type="hr.estate.transactions.form.Est_Trn_GuestHouse_Mnt_Status_Form">
+		</form-bean>
+		<!-- GuestHouse Maintenance Status-->
+
+		<!-- Official Purpose ComArea Allotment-->
+		<form-bean name="offPurComAreaAllotForm"
+			type="hr.estate.transactions.form.Est_Trn_O_P_C_Area_Allot_Form">
+		</form-bean>
+		<!-- Official Purpose ComArea Allotment-->
+
+		<!-- Official Purpose ComArea Maintenance Allotment-->
+		<form-bean name="offPurComAreaMaintAllotForm"
+			type="hr.estate.transactions.form.Est_Trn_O_P_Mnt_Alt_Cnl_Form">
+		</form-bean>
+		<!-- Official Purpose ComArea Maintenance Allotment-->
+
+		<!-- Official Purpose ComArea Maintenance Allotment-->
+		<form-bean name="OPMntStatusForm"
+			type="hr.estate.transactions.form.Est_Trn_O_P_Mnt_Status_Form">
+		</form-bean>
+		<!-- Official Purpose ComArea Maintenance Allotment-->
+
+		<!-- Hospital ComArea Maintenance Allotment-->
+		<form-bean name="hosComAreaMaintAllotForm"
+			type="hr.estate.transactions.form.Est_Trn_Hospital_ComArea_Mnt_Alt_Cnl_Form">
+		</form-bean>
+		<!-- Hospital ComArea Maintenance Allotment-->
+
+		<!-- Hospital ComArea Maintenance Allotment-->
+		<form-bean name="HosMntStatusForm"
+			type="hr.estate.transactions.form.Est_Trn_Hospital_ComArea_Mnt_Status_Form">
+		</form-bean>
+		<!-- Hospital ComArea Maintenance Allotment-->
+
+		<!-- Block ComArea Maintenance Allotment-->
+		<form-bean name="blkComAreaMaintAllotForm"
+			type="hr.estate.transactions.form.Est_Trn_Block_ComArea_Mnt_Alt_Cnl_Form">
+		</form-bean>
+		<!-- Block ComArea Maintenance Allotment-->
+
+		<!-- Block ComArea Maintenance Status-->
+		<form-bean name="BlkMntStatusForm"
+			type="hr.estate.transactions.form.Est_Trn_Block_ComArea_Mnt_Status_Form">
+		</form-bean>
+		<!-- Block ComArea Maintenance Status-->
+
+		<!-- BlockFloor ComArea Maintenance -->
+		<form-bean name="blkflrComAreaMaintAllotForm"
+			type="hr.estate.transactions.form.Est_Trn_BlkFlr_ComArea_Mnt_Alt_Cnl_Form">
+		</form-bean>
+		<!-- BlockFloor ComArea Maintenance -->
+
+		<!-- BlockFloor ComArea Maintenance Status -->
+		<form-bean name="BlkFlrMntStatusForm"
+			type="hr.estate.transactions.form.Est_Trn_BlockFlr_ComArea_Mnt_Status_Form">
+		</form-bean>
+		<!-- BlockFloor ComArea Maintenance Status -->
+
+		<!-- Water & Electricity Bill Entry Details -->
+		<form-bean name="wtrElecBillForm"
+			type="hr.estate.transactions.form.Est_Trans_Wtr_Elec_Bill_Entry_Form">
+		</form-bean>
+		<!-- Water & Electricity Bill Entry Details -->
+
+		<!-- Water & Electricity Bill Entry Details -->
+		<form-bean name="LandAcqRepForm"
+			type="estate.reports.form.LandAcqForm" />
+
+
+	</form-beans>
+
+	<!-- ********** Form Bean Definitions *********** -->
+
+
+
+	<!-- ========== Action Mapping Definitions ========== -->
+	<action-mappings>
+
+		<!-- ========== Action Mapping Definitions for Masters ========== -->
+
+		<!-- Floor Master -->
+		<action path="/floorAction"
+			type="hr.estate.masters.action.Est_Mst_Floor_Action" name="floorForm"
+			scope="request" validate="false" parameter="estateMode">
+			<forward name="floorList" path="floorList.page" />
+			<forward name="floorAdd" path="floorAdd.page" />
+			<forward name="floorModify" path="floorModify.page" />
+			<forward name="floorView" path="floorView.page" />
+		</action>
+		<!-- Floor Master -->
+
+		<action path="/fileuploadAction"
+			type="hr.estate.masters.action.File_Upload_Action" name="uploadForm"
+			scope="request" validate="false" parameter="estateMode">
+			<forward name="UPLOAD"
+				path="/hr/estate/masters/uploadFile.jsp" />
+		</action>
+
+
+		<!-- Land Master -->
+		<action path="/landAction"
+			type="hr.estate.masters.action.Est_Mst_Land_Action" name="landForm"
+			scope="request" validate="false" parameter="estateMode">
+			<forward name="landList" path="landList.page" />
+			<forward name="landAdd" path="landAdd.page" />
+			<forward name="landModify" path="landModify.page" />
+			<forward name="landView" path="landView.page" />
+		</action>
+		<!-- Land Master -->
+
+
+		<!-- Block Master -->
+		<action path="/blockAction"
+			type="hr.estate.masters.action.Est_Mst_Block_Action" name="blockForm"
+			scope="request" validate="false" parameter="estateMode">
+			<forward name="blockList" path="blockList.page" />
+			<forward name="blockAdd" path="blockAdd.page" />
+			<forward name="blockModify" path="blockModify.page" />
+			<forward name="blockView" path="blockView.page" />
+		</action>
+		<!-- Block Master -->
+
+		<!-- Building Master -->
+		<action path="/buildingAction"
+			type="hr.estate.masters.action.Est_Mst_Building_Action"
+			name="buildingForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="buildingList" path="buildingList.page" />
+			<forward name="buildingAdd" path="buildingAdd.page" />
+			<forward name="buildingModify" path="buildingModify.page" />
+			<forward name="buildingView" path="buildingView.page" />
+		</action>
+
+		<!-- Building Master -->
+
+		<!--Security Personnel Master -->
+		<action path="/securityperAction"
+			type="hr.estate.masters.action.Est_Mst_Sec_Per_Dtl_Action"
+			name="SecurityForm" validate="false" parameter="estateMode">
+			<forward name="secperList" path="SecPerList.page" />
+			<forward name="secperAdd" path="SecPerAdd.page" />
+			<forward name="secperModify" path="SecPerModify.page" />
+			<forward name="secperView" path="SecPerView.page" />
+		</action>
+		<!--Security Personnel Master -->
+
+
+		<!-- Vehicle Master -->
+		<action path="/vehicleAction"
+			type="hr.estate.masters.action.Est_Mst_Vehicle_Action"
+			name="vehicleForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="vehicleList" path="vehicleList.page" />
+			<forward name="vehicleAdd" path="vehicleAdd.page" />
+			<forward name="vehicleModify" path="vehicleModify.page" />
+			<forward name="vehicleView" path="vehicleView.page" />
+
+		</action>
+		<!-- Vehicle Master -->
+
+		<!-- PrivateAgency Master -->
+		<action path="/privateagencyAction"
+			type="hr.estate.masters.action.Est_Mst_PrivateAgency_Action"
+			name="privateagencyForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="privateagencyList"
+				path="privateagencyList.page" />
+			<forward name="privateagencyAdd"
+				path="privateagencyAdd.page" />
+			<forward name="privateagencyModify"
+				path="privateagencyModify.page" />
+			<forward name="privateagencyView"
+				path="privateagencyView.page" />
+		</action>
+		<!-- PrivateAgency Master -->
+
+		<!-- Room Master -->
+		<action path="/roomAction"
+			type="hr.estate.masters.action.Est_Mst_Room_Action" name="roomForm"
+			scope="request" validate="false" parameter="estateMode">
+			<forward name="roomList" path="roomList.page" />
+			<forward name="roomAdd" path="roomAdd.page" />
+			<forward name="roomModify" path="roomModify.page" />
+			<forward name="roomView" path="roomView.page" />
+		</action>
+		<!-- Room Master -->
+
+
+		<!-- ServiceType Master -->
+		<action path="/servicetypeAction"
+			type="hr.estate.masters.action.Est_Mst_Ser_Type_Action"
+			name="ServiceTypeForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="servicetypeList" path="TypeList.page" />
+			<forward name="servicetypeAdd" path="TypeAdd.page" />
+			<forward name="servicetypeModify" path="TypeModify.page" />
+			<forward name="servicetypeView" path="TypeView.page" />
+		</action>
+		<!-- ServiceType Master -->
+
+
+		<!-- ServiceAgency Master -->
+		<action path="/serviceagencyAction"
+			type="hr.estate.masters.action.Est_Mst_Ser_Agency_Action"
+			name="ServiceAgencyForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="serviceagencyList" path="AgencyList.page" />
+			<forward name="serviceagencyAdd" path="AgencyAdd.page" />
+			<forward name="serviceagencyModify"
+				path="AgencyModify.page" />
+			<forward name="serviceagencyView" path="AgencyView.page" />
+		</action>
+		<!-- ServiceAgency Master -->
+
+
+		<!-- Supplier Master -->
+		<action path="/supplierAction"
+			type="hr.estate.masters.action.Est_Mst_Supplier_Action"
+			name="SupplierForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="supplierList" path="SupplierList.page" />
+			<forward name="supplierAdd" path="SupplierAdd.page" />
+			<forward name="supplierModify" path="SupplierModify.page" />
+			<forward name="supplierView" path="SupplierView.page" />
+		</action>
+		<!-- Supplier Master -->
+
+
+		<!-- Bill Nature  Master -->
+		<action path="/billnatureAction"
+			type="hr.estate.masters.action.Est_Mst_Bill_Nature_Action"
+			name="BillNatureForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="billnatureList" path="billnatureList.page" />
+			<forward name="billnatureAdd" path="billnatureAdd.page" />
+			<forward name="billnatureView" path="billnatureView.page" />
+			<forward name="billnaturesModify"
+				path="billnaturesModify.page" />
+		</action>
+		<!-- Bill Nature  Master -->
+
+
+		<!-- Elecricity Meter Master -->
+		<action path="/elecmtrAction"
+			type="hr.estate.masters.action.Est_Mst_Elec_Action"
+			name="ElecMtrForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="elecmtrList" path="elecmtrList.page" />
+			<forward name="elecmtrAdd" path="elecmtrAdd.page" />
+			<forward name="elecmtrView" path="elecmtrView.page" />
+			<forward name="elecmtrModify" path="elecmtrModify.page" />
+		</action>
+		<!-- Elecricity Meter  Master -->
+
+
+		<!-- Water Meter Master -->
+		<action path="/wtrmtrAction"
+			type="hr.estate.masters.action.Est_Mst_Wtr_Action" name="WtrMtrForm"
+			scope="request" validate="false" parameter="estateMode">
+			<forward name="wtrmtrList" path="wtrmtrList.page" />
+			<forward name="wtrmtrAdd" path="wtrmtrAdd.page" />
+			<forward name="wtrmtrView" path="wtrmtrView.page" />
+			<forward name="wtrmtrModify" path="wtrmtrModify.page" />
+		</action>
+		<!-- Water Meter  Master -->
+
+
+		<!-- Shop Master -->
+		<action path="/shopAction"
+			type="hr.estate.masters.action.Est_Mst_Shop_Action" name="ShopForm"
+			scope="request" validate="false" parameter="estateMode">
+			<forward name="shopList" path="shopList.page" />
+			<forward name="shopAdd" path="shopAdd.page" />
+			<forward name="shopView" path="shopView.page" />
+			<forward name="shopModify" path="shopModify.page" />
+		</action>
+		<!-- Shop Master -->
+
+
+		<!-- Compliment Sub Category Master -->
+		<action path="/CompSubCatAction"
+			type="hr.estate.masters.action.Est_Mst_Com_Sub_Cat_Action"
+			name="CompSubCatForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="compsubcatList" path="CompSubCatList.page" />
+			<forward name="compsubcatAdd" path="CompSubCatAdd.page" />
+			<forward name="compsubcatView" path="CompSubCatView.page" />
+			<forward name="compsubcatModify"
+				path="CompSubCatModify.page" />
+		</action>
+		<!-- Compliment Sub Category Master -->
+
+		<!-- Revenue Generation Category Master -->
+
+		<action path="/revgencatAction"
+			type="hr.estate.masters.action.Est_Mst_Rev_Gen_Cat_Action"
+			name="RevGenCatForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="revgencatList" path="RevgencatList.page" />
+			<forward name="revgencatAdd" path="RevgencatAdd.page" />
+			<forward name="revgencatView" path="RevgencatView.page" />
+			<forward name="revgencatModify" path="RevgencatModify.page" />
+		</action>
+
+		<!-- Revenue Generation Category Master -->
+
+		<!-- Offical Purpose Common Area Type Master -->
+		<action path="/offpurcomareatypeAction"
+			type="hr.estate.masters.action.Est_Mst_Off_Pur_Com_Area_Type_Action"
+			name="OffPurComAreaTypeForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="OffcomareatypeList"
+				path="OffComAreaTypeList.page" />
+			<forward name="OffcomareatypeAdd"
+				path="OffComAreaTypeAdd.page" />
+			<forward name="OffcomareatypeView"
+				path="OffComAreaTypeView.page" />
+			<forward name="OffcomareatypeModify"
+				path="OffComAreaTypeModify.page" />
+		</action>
+
+		<!-- Offical Purpose Common Area Type Master -->
+
+
+		<!-- Offical Purpose Common Area Master -->
+		<action path="/offpurcomareaAction"
+			type="hr.estate.masters.action.Est_Mst_Off_Pur_Com_Area_Action"
+			name="OffPurComAreaForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="OffcomareaList" path="OffComAreaList.page" />
+			<forward name="OffcomareaAdd" path="OffComAreaAdd.page" />
+			<forward name="OffcomareaView" path="OffComAreaView.page" />
+			<forward name="OffcomareaModify"
+				path="OffComAreaModify.page" />
+		</action>
+
+		<!-- Offical Purpose Common Area Master -->
+
+
+		<!-- Telephone Master -->
+
+		<action path="/telephoneAction"
+			type="hr.estate.masters.action.Est_Mst_Telephone_Action"
+			name="telephoneForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="telephoneList" path="TelephoneList.page" />
+			<forward name="telephoneAdd" path="TelephoneAdd.page" />
+			<forward name="telephoneView" path="TelephoneView.page" />
+			<forward name="telephoneModify" path="TelephoneModify.page" />
+		</action>
+
+		<!-- Telephone Master -->
+
+
+		<!-- Complaint Category Master -->
+		<action path="/compCatAction"
+			type="hr.estate.masters.action.Est_Mst_Comp_Cat_Action"
+			name="CompCatForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="compCatList" path="CompCatList.page" />
+			<forward name="compCatAdd" path="CompCatAdd.page" />
+			<forward name="compCatModify" path="CompCatModify.page" />
+			<forward name="compCatView" path="CompCatView.page" />
+		</action>
+		<!-- Complaint Category Master -->
+
+
+		<!-- Revenue Generation Service -->
+
+		<action path="/revgenAction"
+			type="hr.estate.masters.action.Est_Mst_Rev_Gen_Ser_Action"
+			name="RevGenForm" validate="false" parameter="estateMode">
+			<forward name="revgenList" path="RevGenList.page" />
+			<forward name="revgenAdd" path="RevGenAdd.page" />
+			<forward name="revgenModify" path="RevGenModify.page" />
+			<forward name="revgenView" path="RevGenView.page" />
+		</action>
+
+		<!-- Revenue Generation Service -->
+
+		<!-- Item Master -->
+
+		<action path="/itemAction"
+			type="hr.estate.masters.action.Est_Mst_Item_Action" name="itemForm"
+			scope="request" validate="false" parameter="estateMode">
+			<forward name="itemList" path="itemList.page" />
+			<forward name="itemAdd" path="itemAdd.page" />
+			<forward name="itemModify" path="itemModify.page" />
+			<forward name="itemView" path="itemView.page" />
+		</action>
+
+
+		<!-- Item Master -->
+
+		<!-- QuarterType Master -->
+
+		<action path="/quartertypeAction"
+			type="hr.estate.masters.action.Est_Mst_Quartertype_Action"
+			name="quartertypeForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="quartertypeList" path="quartertypeList.page" />
+			<forward name="quartertypeAdd" path="quartertypeAdd.page" />
+			<forward name="quartertypeModify"
+				path="quartertypeModify.page" />
+			<forward name="quartertypeView" path="quartertypeView.page" />
+		</action>
+
+		<!-- QuarterType Master -->
+
+		<!-- Quarter Master -->
+
+		<action path="/quarterAction"
+			type="hr.estate.masters.action.Est_Mst_Quarter_Action"
+			name="quarterForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="quarterList" path="quarterList.page" />
+			<forward name="quarterAdd" path="quarterAdd.page" />
+			<forward name="quarterModify" path="quarterModify.page" />
+			<forward name="quarterView" path="quarterView.page" />
+		</action>
+		<!-- Quarter Master -->
+
+		<!-- RoomType Master -->
+
+		<action path="/roomtypeAction"
+			type="hr.estate.masters.action.Est_Mst_Roomtype_Action"
+			name="roomtypeForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="roomtypeList" path="roomtypeList.page" />
+			<forward name="roomtypeAdd" path="roomtypeAdd.page" />
+			<forward name="roomtypeModify" path="roomtypeModify.page" />
+			<forward name="roomtypeView" path="roomtypeView.page" />
+		</action>
+
+		<!-- RoomType Master -->
+
+		<!-- BlockType Master -->
+		<action path="/blocktypeAction"
+			type="hr.estate.masters.action.Est_Mst_Blocktype_Action"
+			name="blocktypeForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="blocktypeList" path="blocktypeList.page" />
+			<forward name="blocktypeAdd" path="blocktypeAdd.page" />
+			<forward name="blocktypeModify" path="blocktypeModify.page" />
+			<forward name="blocktypeView" path="blocktypeView.page" />
+		</action>
+
+		<!-- BlockType Master -->
+
+		<!-- GuestHouse Master -->
+		<action path="/guesthouseAction"
+			type="hr.estate.masters.action.Est_Mst_GuestHouse_Action"
+			name="guesthouseForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="guesthouseList" path="guesthouseList.page" />
+			<forward name="guesthouseAdd" path="guesthouseAdd.page" />
+			<forward name="guesthouseModify"
+				path="guesthouseModify.page" />
+			<forward name="guesthouseView" path="guesthouseView.page" />
+
+		</action>
+		<!-- GuestHouse Master -->
+
+
+		<!-- Commonarea Master -->
+		<action path="/commonareaAction"
+			type="hr.estate.masters.action.Est_Mst_Commonarea_Action"
+			name="commonareaForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="commonareaList" path="commonareaList.page" />
+			<forward name="commonareaAdd" path="commonareaAdd.page" />
+			<forward name="commonareaModify"
+				path="commonareaModify.page" />
+			<forward name="commonareaView" path="commonareaView.page" />
+
+		</action>
+		<!-- Commonarea Master -->
+
+		<!-- Commonarea Maintenance -->
+		<action path="/commonareaMaintAction"
+			type="hr.estate.masters.action.Est_Mst_Commonarea_Maint_Action"
+			name="commonareaForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="commonareaMaint" path="commonareaMaint.page" />
+		</action>
+		<!-- Commonarea Maintenance -->
+
+
+
+
+		<!-- ********** Action Mapping Definitions for Masters ********** -->
+
+
+		<!-- ********** Action Mapping Definitions for Transactions ********** -->
+		<!-- Application Storage Form -->
+		<action path="/appAction"
+			type="hr.estate.transactions.action.Est_Trans_Application_Action"
+			name="applicationForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="appAdd" path="appAdd.page" />
+			<forward name="appNext" path="appNext.page" />
+			<forward name="appModify" path="appModify.page" />
+			<forward name="appPop" path="appPop.page" />
+			<forward name="appData" path="appData.page" />
+		</action>
+
+
+		<!-- Telephone Allotment Details -->
+		<action path="/teleAllotment"
+			type="hr.estate.transactions.action.Est_Trans_Telephone_Allot_Action"
+			name="telephoneAllotForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="teleAllotAdd" path="teleAllotAdd.page" />
+			<forward name="teleAllotPop" path="teleAllotPop.page" />
+			<forward name="teleAllotNext" path="teleAllotNext.page" />
+			<forward name="teleAllotPop1" path="teleAllotPop1.page" />
+			<forward name="teleAllotPop2" path="teleAllotPop2.page" />
+			<forward name="teleAllotModify" path="teleAllotModify.page" />
+		</action>
+
+
+		<!-- Application Storage Form -->
+
+		<!-- Quarter Allotment Details -->
+		<action path="/quarterallot"
+			type="hr.estate.transactions.action.Est_Trans_Quarter_Allot_Action"
+			name="quarterAllotForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="quartallotAdd" path="quartAllotAdd.page" />
+			<forward name="quartallotPop" path="quartAllotPop.page" />
+			<forward name="quartallotNext" path="quartAllotNext.page" />
+			<forward name="quartallotModify"
+				path="quartAllotModify.page" />
+			<forward name="quartallotPopup" path="quartAllotPopup.page" />
+			<forward name="quartNextData" path="quartNextData.page" />
+		</action>
+
+
+		<action path="/QtrAllotChkAction"
+			type="hr.estate.transactions.action.Est_Trans_Quarter_Chk_Action"
+			name="quarterAllotChk" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="quartChkAddMST" path="quartChkAddMST.page" />
+			<forward name="quartChkAddTRNS" path="quartChkAddTRNS.page" />
+		</action>
+		<!-- Quarter Allotment Details -->
+
+
+		<action path="/prevduesRec"
+			type="hr.estate.transactions.action.Est_Trans_Prev_Dues_Rec_Action"
+			name="previousDuesRecForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="prevduesRec" path="prevduesRec.page" />
+			<forward name="prevduesRecPop" path="prevduesRecPop.page" />
+			<forward name="prevduesRecData" path="prevduesRecData.page" />
+			<forward name="prevduesRecMod" path="prevduesRecMod.page" />
+		</action>
+
+		<!-- Quarter Cancle Details -->
+		<action path="/quartervacate"
+			type="hr.estate.transactions.action.Est_Trans_Quarter_Vacation_Action"
+			name="quarterVacateForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="quartvacateAdd" path="quartvacateAdd.page" />
+			<forward name="quartvacatePop" path="quartvacatePop.page" />
+			<forward name="quartvacateModify"
+				path="quartvacateModify.page" />
+			<forward name="quartvacatePopMod"
+				path="quartvacatePopMod.page" />
+		</action>
+		<!-- Quarter Cancle Details -->
+
+		<action path="/teleCancel"
+			type="hr.estate.transactions.action.Est_Trans_Telephone_Cancellation_Action"
+			name="teleCancelForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="teleCancelAdd" path="teleCancelAdd.page" />
+			<forward name="teleCancelPop" path="teleCancelPop.page" />
+			<forward name="teleCancelModify"
+				path="teleCancelModify.page" />
+			<forward name="teleCancelPopMod"
+				path="teleCancelPopMod.page" />
+		</action>
+
+		<action path="/BillGenAction"
+			type="hr.estate.transactions.action.Est_Trans_Bill_Gen_Action"
+			name="billGenForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="billGenAdd" path="billGenAdd.page" />
+		</action>
+
+
+		<action path="/paymentRecAction"
+			type="hr.estate.transactions.action.Est_Trans_Payment_Rec_Action"
+			name="paymentRecForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="payRecList" path="payRecList.page" />
+			<forward name="payRecAdd" path="payRecAdd.page" />
+		</action>
+
+		<action path="/hospitalBillAction"
+			type="hr.estate.transactions.action.Est_Trans_Hospital_Bill_Dtl_Action"
+			name="hospitalbillForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="hospitalBillAdd" path="hospitalBillAdd.page" />
+			<forward name="hospitalBillNext"
+				path="hospitalBillNext.page" />
+			<forward name="hospitalBillPOP" path="hospitalBillPOP.page" />
+			<forward name="hospitalBillMod" path="hospitalBillMod.page" />
+		</action>
+
+
+		<action path="/paymentMadeAction"
+			type="hr.estate.transactions.action.Est_Trans_Payment_Made_Action"
+			name="paymentMadeForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="payMadeList" path="payMadeList.page" />
+			<forward name="payMadeAdd" path="payMadeAdd.page" />
+
+		</action>
+		<action path="/roomAllotAction"
+			type="hr.estate.transactions.action.Est_Trans_Room_Allot_Action"
+			name="RoomAllotForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="roomAllotAdd" path="roomAllotAdd.page" />
+			<forward name="roomAllotPop" path="roomAllotPop.page" />
+			<forward name="roomAllotModify" path="roomAllotModify.page" />
+			<forward name="roomAllotSave" path="roomAllotSave.page" />
+			<forward name="roomAllotList" path="roomAllotList.page" />
+			<forward name="roomAllotView" path="roomAllotView.page" />
+			<forward name="roomAllotUpdate" path="roomAllotUpdate.page" />
+			<forward name="roomAllotDelete" path="roomAllotDelete.page" />
+
+		</action>
+		<!-- Room Allot Transaction -->
+
+		<!-- Room Vacation Transaction -->
+
+		<action path="/roomVacationAction"
+			type="hr.estate.transactions.action.Est_Trans_Room_Vacation_Action"
+			name="roomvacationForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="roomVacationAdd" path="roomVacationAdd.page" />
+			<forward name="roomVacationList"
+				path="roomVacationList.page" />
+			<forward name="roomVacationModify"
+				path="roomVacationModify.page" />
+			<forward name="roomVacationSave"
+				path="roomVacationSave.page" />
+			<forward name="roomVacationUpdate"
+				path="roomVacationUpdate.page" />
+			<forward name="roomVacationDelete"
+				path="roomVacationDelete.page" />
+
+		</action>
+
+		<!-- Room Vacation Transaction -->
+
+		<!-- Shop Allotment Transaction -->
+
+		<action path="/ShopAllotAction"
+			type="hr.estate.transactions.action.Est_Trans_Shop_Rev_Allotment_Action"
+			name="ShopAllotmentForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="shopAllotmentAdd"
+				path="shopAllotmentAdd.page" />
+			<forward name="shopAllotmentsave"
+				path="shopAllotmentsave.page" />
+			<forward name="shopAllotmentModify"
+				path="shopAllotmentModify.page" />
+			<forward name="shopAllotmentPop"
+				path="shopAllotmentPop.page" />
+			<forward name="shopAllotAfterModify"
+				path="shopAllotAfterModify.page" />
+			<forward name="shopAllotAfterDelete"
+				path="shopAllotAfterDelete.page" />
+		</action>
+		<!-- Shop Allotment Transaction -->
+		<!-- Shop Vacation Transaction -->
+		<action path="/ShopVacateAction"
+			type="hr.estate.transactions.action.Est_Trans_Shop_Rev_Vacate_Action"
+			name="ShopVacanteForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="shopVacateAdd" path="shopVacateAdd.page" />
+			<forward name="shopVacatePop" path="shopVacatePop.page" />
+			<forward name="shopVacateSave" path="shopVacateSave.page" />
+			<forward name="shopVacateModify"
+				path="shopVacateModify.page" />
+			<forward name="shopVacatePop1" path="shopVacatePop1.page" />
+			<forward name="shopVacateAfterModify"
+				path="shopVacateAfterModify.page" />
+			<forward name="shopVacateAfterDelete"
+				path="shopVacateAfterDelete.page" />
+		</action>
+		<!-- Shop Vacation Transaction -->
+
+		<!-- Civil Request Transaction -->
+		<action path="/CivilRequestAction"
+			type="hr.estate.transactions.action.Est_Trans_Civil_Request_Action"
+			name="CivilRequestForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="civilRequestAdd" path="civilRequestAdd.page" />
+			<forward name="civilRequestModify"
+				path="civilRequestModify.page" />
+			<forward name="civilRequestPop" path="civilRequestPop.page" />
+		</action>
+		<!-- Civil Request Transaction -->
+
+		<!--Security Gaurd Verification Transaction -->
+		<action path="/SecGaurdVerifyAction"
+			type="hr.estate.transactions.action.Est_Trans_Sec_Guard_Verification_Action"
+			name="SecGaurdVerifyForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="SecGaurdVerifyList"
+				path="SecGaurdVerifyList.page" />
+			<forward name="SecGaurdVerifyModify"
+				path="SecGaurdVerifyModify.page" />
+
+		</action>
+		<!--Security Gaurd Verification Transaction -->
+
+
+		<!-- Roster Form Transaction -->
+		<action path="/RosterAction"
+			type="hr.estate.transactions.action.Est_Trans_Roster_Action"
+			name="RosterForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="RosterAdd" path="RosterAdd.page" />
+			<forward name="RosterModify" path="RosterModify.page" />
+			<forward name="RosterPop" path="RosterPop.page" />
+		</action>
+		<!-- Roster Form  Transaction -->
+
+		<!-- External Security Complaint Detail Transaction -->
+		<action path="/ExtSecComDetAction"
+			type="hr.estate.transactions.action.Est_Trans_Ext_Com_Detail_Action"
+			name="SecCompDetForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="SecCompDetAdd" path="SecCompDetAdd.page" />
+			<forward name="SecCompDetModify"
+				path="SecCompDetModify.page" />
+			<forward name="SecCompDetPop" path="SecCompDetPop.page" />
+			<forward name="SecCompDetPop1" path="SecCompDetPop1.page" />
+		</action>
+		<!--External Security Complaint Detail Transaction -->
+
+
+
+		<!-- Security Incharge Verification Transaction -->
+		<action path="/SecIncVerAction"
+			type="hr.estate.transactions.action.Est_Trans_Sec_Incharge_Action"
+			name="SecIncVerForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="SecIncVerAdd" path="SecIncVerAdd.page" />
+			<forward name="SecIncVerModify" path="SecIncVerModify.page" />
+			<forward name="SecIncVerList" path="SecIncVerList.page" />
+		</action>
+		<!--Security Incharge Verification Transaction -->
+
+
+		<!-- Internal Complain Resistration Form -->
+		<action path="/IncCompAction"
+			type="hr.estate.transactions.action.Est_Trans_Internal_Complain_Action"
+			name="InternalComForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="IncComRegAdd" path="IncComRegAdd.page" />
+			<forward name="IncComRegAftSave"
+				path="IncComRegAftSave.page" />
+			<forward name="IncComRegModify" path="IncComRegModify.page" />
+			<forward name="IncComRegPop" path="IncComRegPop.page" />
+		</action>
+		<!--Internal Complain Resistration Form -->
+
+		<!-- Complaint Status Change Form -->
+		<action path="/CompStatChangeAction"
+			type="hr.estate.transactions.action.Est_Trans_Compl_Stat_Change_Action"
+			name="InternalComForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="CompStatChangeList"
+				path="CompStatChangeList.page" />
+			<forward name="CompStatChangeModify"
+				path="CompStatChangeModify.page" />
+		</action>
+		<!--Complaint Status Change Form -->
+		<!-- GuestHouse Allotment -->
+		<action path="/guesthouseAllotmentAction"
+			type="hr.estate.transactions.action.Est_Trn_GuestHouse_Allotment_Action"
+			name="guesthouseAllotmentForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="guesthouseAllotmentAdd"
+				path="guesthouseAllotmentAdd.page" />
+			<forward name="guesthouseAllotSave"
+				path="guesthouseAllotmentSave.page" />
+			<forward name="guesthouseAllotmentList"
+				path="guesthouseAllotmentList.page" />
+			<forward name="guesthouseAllotModify"
+				path="guesthouseAllotModify.page" />
+			<forward name="guesthouseAllotView"
+				path="guesthouseAllotView.page" />
+			<forward name="guesthouseAllotUpdate"
+				path="guesthouseAllotUpdate.page" />
+			<forward name="guesthouseAllotDelete"
+				path="guesthouseAllotDelete.page" />
+		</action>
+
+		<!-- GuestHouse Allotment -->
+		<!-- GuestHouse Vacation -->
+		<action path="/guesthouseVacationAction"
+			type="hr.estate.transactions.action.Est_Trn_GuestHouse_Vacation_Action"
+			name="guesthouseVacationForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="guesthouseVacationAdd"
+				path="guesthouseVacationAdd.page" />
+			<forward name="guesthouseVacatSave"
+				path="guesthouseVacatSave.page" />
+			<forward name="guesthouseVacatModify"
+				path="guesthouseVacatModify.page" />
+			<forward name="guesthouseVacatUpdate"
+				path="guesthouseVacatUpdate.page" />
+			<forward name="guesthouseVacatList"
+				path="guesthouseVacatList.page" />
+			<forward name="guesthouseVacatListMod"
+				path="guesthouseVacatListMod.page" />
+			<forward name="guesthouseVacatDelete"
+				path="guesthouseVacatDelete.page" />
+		</action>
+		<!-- GuestHouse Vacation -->
+		<!-- GuestHouse Maintenance -->
+		<action path="/guesthouseMntAltCnlAction"
+			type="hr.estate.transactions.action.Est_Trn_GuestHouse_Mnt_Alt_Cnl_Action"
+			name="guesthouseMntAltCnlForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="guesthouseMntAltCnlAdd"
+				path="guesthouseMntAltCnlAdd.page" />
+			<forward name="guesthouseMntAltCnlSave"
+				path="guesthouseMntAltCnlSave.page" />
+			<forward name="guesthouseMntAltCnlModify"
+				path="guesthouseMntAltCnlModify.page" />
+			<forward name="guesthouseMntAltCnlViewForMod"
+				path="guesthouseMntAltCnlViewForMod.page" />
+			<forward name="guesthouseMntAltCnlList"
+				path="guesthouseMntAltCnlList.page" />
+			<forward name="guesthouseMntAltCnlUpdate"
+				path="guesthouseMntAltCnlUpdate.page" />
+			<forward name="guesthouseMntAltCnlDelete"
+				path="guesthouseMntAltCnlDelete.page" />
+		</action>
+
+		<!-- GuestHouse Maintenance -->
+
+		<!-- GuestHouse Maintenance Status-->
+		<action path="/guesthouseMntStatusAction"
+			type="hr.estate.transactions.action.Est_Trn_GuestHouse_Mnt_Status_Action"
+			name="guesthouseMntStatusForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="guesthouseMntStatusAdd"
+				path="guesthouseMntStatusAdd.page" />
+			<forward name="guesthouseMntStatusSave"
+				path="guesthouseMntStatusSave.page" />
+			<forward name="guesthouseMntStatusModify"
+				path="guesthouseMntStatusModify.page" />
+			<forward name="guesthouseMntStatusViewForMod"
+				path="guesthouseMntStatusViewForMod.page" />
+			<forward name="guesthouseMntStatusUpdate"
+				path="guesthouseMntStatusUpdate.page" />
+			<forward name="guesthouseMntStatusList"
+				path="guesthouseMntStatusList.page" />
+			<forward name="guesthouseMntStatusDelete"
+				path="guesthouseMntStatusDelete.page" />
+		</action>
+
+		<!-- GuestHouse Maintenance Status--><!-- Official Purpose CommonArea allotment-->
+		<action path="/opcAreaAllotAction"
+			type="hr.estate.transactions.action.Est_Trn_O_P_C_Area_Allot_Action"
+			name="offPurComAreaAllotForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="OPCAreaAllotAdd" path="OPCAreaAllotAdd.page" />
+			<forward name="OPCAreaAllotSave"
+				path="OPCAreaAllotSave.page" />
+			<forward name="OPCAreaAllotModify"
+				path="OPCAreaAllotModify.page" />
+			<forward name="OPCAreaAllotView"
+				path="OPCAreaAllotView.page" />
+			<forward name="OPCAreaAllotUpdate"
+				path="OPCAreaAllotUpdate.page" />
+			<forward name="OPCAreaAllotDelete"
+				path="OPCAreaAllotDelete.page" />
+			<forward name="OPCAreaAllotList"
+				path="OPCAreaAllotList.page" />
+		</action>
+		<!-- Official Purpose CommonArea allotment-->
+
+		<!-- Official Purpose CommonArea Maintenance allotment-->
+		<action path="/OPMntAltCnlAction"
+			type="hr.estate.transactions.action.Est_Trn_O_P_Mnt_Alt_Cnl_Action"
+			name="offPurComAreaMaintAllotForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="OPMntAltCnlAdd" path="OPMntAltCnlAdd.page" />
+			<forward name="OPMntAltCnlSave" path="OPMntAltCnlSave.page" />
+			<forward name="OPMntAltCnlModify"
+				path="OPMntAltCnlModify.page" />
+			<forward name="OPMntAltCnlViewForMod"
+				path="OPMntAltCnlModify.page" />
+			<forward name="OPMntAltCnlUpdate"
+				path="OPMntAltCnlUpdate.page" />
+			<forward name="OPMntAltCnlList" path="OPMntAltCnlList.page" />
+			<forward name="OPMntAltCnlDelete"
+				path="OPMntAltCnlDelete.page" />
+		</action>
+		<!-- Official Purpose CommonArea Maintenance allotment-->
+
+		<!-- Official Purpose CommonArea Maintenance Status-->
+		<action path="/OPMntStatusAction"
+			type="hr.estate.transactions.action.Est_Trn_O_P_Mnt_Status_Action"
+			name="OPMntStatusForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="OPMntStatusAdd" path="OPMntStatusAdd.page" />
+			<forward name="OPMntStatusSave" path="OPMntStatusSave.page" />
+			<forward name="OPMntStatusModify"
+				path="OPMntStatusModify.page" />
+			<forward name="OPMntStatusViewForMod"
+				path="OPMntStatusModify.page" />
+			<forward name="OPMntStatusUpdate"
+				path="OPMntStatusUpdate.page" />
+			<forward name="OPMntStatusList" path="OPMntStatusList.page" />
+			<forward name="OPMntStatusDelete"
+				path="OPMntStatusDelete.page" />
+		</action>
+		<!-- Official Purpose CommonArea Maintenance Status-->
+		<!-- Hospital ComArea Maintenance Allotment-->
+		<action path="/HosComAreaMntAltCnlAction"
+			type="hr.estate.transactions.action.Est_Trn_Hospital_ComArea_Mnt_Alt_Cnl_Action"
+			name="hosComAreaMaintAllotForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="HosComAreaMntAltCnlAdd"
+				path="HosComAreaMntAltCnlAdd.page" />
+			<forward name="HosComAreaMntAltCnlSave"
+				path="HosComAreaMntAltCnlSave.page" />
+			<forward name="HosComAreaMntAltCnlModify"
+				path="HosComAreaMntAltCnlModify.page" />
+			<forward name="HosComAreaMntAltCnlViewForMod"
+				path="HosComAreaMntAltCnlModify.page" />
+			<forward name="HosComAreaMntAltCnlUpdate"
+				path="HosComAreaMntAltCnlUpdate.page" />
+			<forward name="HosComAreaMntAltCnlList"
+				path="HosComAreaMntAltCnlList.page" />
+			<forward name="HosComAreaMntAltCnlDelete"
+				path="HosComAreaMntAltCnlDelete.page" />
+		</action>
+
+
+		<!-- Hospital ComArea Maintenance Allotment-->
+
+		<!-- Hospital ComArea Maintenance Status Allotment-->
+		<action path="/HosMntStatusAction"
+			type="hr.estate.transactions.action.Est_Trn_Hospital_ComArea_Mnt_Status_Action"
+			name="HosMntStatusForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="HosMntStatusAdd" path="HosMntStatusAdd.page" />
+			<forward name="HosMntStatusSave"
+				path="HosMntStatusSave.page" />
+			<forward name="HosMntStatusModify"
+				path="HosMntStatusModify.page" />
+			<forward name="HosMntStatusViewForMod"
+				path="HosMntStatusModify.page" />
+			<forward name="HosMntStatusUpdate"
+				path="HosMntStatusUpdate.page" />
+			<forward name="HosMntStatusList"
+				path="HosMntStatusList.page" />
+			<forward name="HosMntStatusDelete"
+				path="HosMntStatusDelete.page" />
+
+		</action>
+
+		<!-- Hospital ComArea Maintenance Allotment-->
+
+
+		<!-- Block ComArea Maintenance Allotment-->
+		<action path="/BlkComAreaMntAltCnlAction"
+			type="hr.estate.transactions.action.Est_Trn_Block_ComArea_Mnt_Alt_Cnl_Action"
+			name="blkComAreaMaintAllotForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="BlkComAreaMntAltCnlAdd"
+				path="BlkComAreaMntAltCnlAdd.page" />
+			<forward name="BlkComAreaMntAltCnlSave"
+				path="BlkComAreaMntAltCnlSave.page" />
+			<forward name="BlkComAreaMntAltCnlModify"
+				path="BlkComAreaMntAltCnlModify.page" />
+			<forward name="BlkComAreaMntAltCnlViewForMod"
+				path="BlkComAreaMntAltCnlModify.page" />
+			<forward name="BlkComAreaMntAltCnlUpdate"
+				path="BlkComAreaMntAltCnlUpdate.page" />
+			<forward name="BlkComAreaMntAltCnlList"
+				path="BlkComAreaMntAltCnlList.page" />
+			<forward name="BlkComAreaMntAltCnlDelete"
+				path="BlkComAreaMntAltCnlDelete.page" />
+		</action>
+
+
+		<!-- Block ComArea Maintenance Allotment-->
+
+		<!-- Block ComArea Maintenance Status-->
+		<action path="/BlkMntStatusAction"
+			type="hr.estate.transactions.action.Est_Trn_Block_ComArea_Mnt_Status_Action"
+			name="BlkMntStatusForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="BlkMntStatusAdd" path="BlkMntStatusAdd.page" />
+			<forward name="BlkMntStatusSave"
+				path="BlkMntStatusSave.page" />
+			<forward name="BlkMntStatusModify"
+				path="BlkMntStatusModify.page" />
+			<forward name="BlkMntStatusViewForMod"
+				path="BlkMntStatusModify.page" />
+			<forward name="BlkMntStatusUpdate"
+				path="BlkMntStatusUpdate.page" />
+			<forward name="BlkMntStatusList"
+				path="BlkMntStatusList.page" />
+			<forward name="BlkMntStatusDelete"
+				path="BlkMntStatusDelete.page" />
+		</action>
+
+
+		<!-- Block ComArea Maintenance Status-->
+
+		<!-- BlockFloor ComArea Maintenance -->
+		<action path="/BlkFlrComAreaMntAltCnlAction"
+			type="hr.estate.transactions.action.Est_Trn_BlkFlr_ComArea_Mnt_Alt_Cnl_Action"
+			name="blkflrComAreaMaintAllotForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="BlkFlrComAreaMntAdd"
+				path="BlkFlrComAreaMntAdd.page" />
+			<forward name="BlkFlrComAreaMntSave"
+				path="BlkFlrComAreaMntSave.page" />
+			<forward name="BlkFlrComAreaMntModify"
+				path="BlkFlrComAreaMntModify.page" />
+			<forward name="BlkFlrComAreaMntViewForMod"
+				path="BlkFlrComAreaMntModify.page" />
+			<forward name="BlkFlrComAreaMntUpdate"
+				path="BlkFlrComAreaMntUpdate.page" />
+			<forward name="BlkFlrComAreaMntList"
+				path="BlkFlrComAreaMntList.page" />
+			<forward name="BlkFlrComAreaMntDelete"
+				path="BlkFlrComAreaMntDelete.page" />
+		</action>
+
+
+		<!-- BlockFloor ComArea Maintenance -->
+
+		<!-- BlockFloor ComArea Maintenance Status -->
+		<action path="/BlkFlrMntStatusAction"
+			type="hr.estate.transactions.action.Est_Trn_BlockFlr_ComArea_Mnt_Status_Action"
+			name="BlkFlrMntStatusForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="BlkFlrMntStatusAdd"
+				path="BlkFlrMntStatusAdd.page" />
+			<forward name="BlkFlrMntStatusSave"
+				path="BlkFlrMntStatusSave.page" />
+			<forward name="BlkFlrMntStatusModify"
+				path="BlkFlrMntStatusModify.page" />
+			<forward name="BlkFlrMntStatusViewForMod"
+				path="BlkFlrMntStatusModify.page" />
+			<forward name="BlkFlrMntStatusUpdate"
+				path="BlkFlrMntStatusUpdate.page" />
+			<forward name="BlkFlrMntStatusList"
+				path="BlkFlrMntStatusList.page" />
+			<forward name="BlkFlrMntStatusDelete"
+				path="BlkFlrMntStatusDelete.page" />
+		</action>
+
+
+		<!-- FBlockFloor ComArea Maintenance Status -->
+
+
+
+		<!-- Water & electricity Bill Entry Form -->
+		<action path="/wtrElectEntryAction"
+			type="hr.estate.transactions.action.Est_Trans_Wtr_Elec_Bill_Entry_Action"
+			name="wtrElecBillForm" scope="request" validate="false"
+			parameter="estateMode">
+			<forward name="wtrElecBillAdd" path="wtrElecBillAdd.page" />
+		</action>
+
+		<!-- Water & electricity Bill Entry Form -->
+
+
+
+		<action path="/estate/reports/LandAcqRepAction"
+			type="estate.reports.action.LandAcqAction" name="LandAcqRepForm"
+			scope="request" validate="false" parameter="estateMode">
+			<forward name="LandAcqRep" path="LandAcqRep.page" />
+		</action>
+	</action-mappings>
+
+
+
+
+
+	<!-- ********** Action Mapping Definitions ********** -->
+
+
+	<message-resources parameter="ApplicationResources" />
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/tiles-def-estate.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

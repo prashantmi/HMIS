@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+
+ <meta charset="utf-8">
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+ <!-- <link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/bootstrap.min.css" > -->
+ <link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/jquery-ui.css" >
+ <link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/jqueryui.min.css" >
+ 
+ <!-- <script src="/HISInvestigationG5/hisglobal/js/jquery.dataTables.min.js" ></script> -->
+ <script src="/HISInvestigationG5/hisglobal/js/dataTables.jqueryui.min.js" ></script>
+ <!-- <script src="/HISInvestigationG5/hisglobal/js/bootstrap.min.js" ></script> -->
+ <!-- <script src="/HISInvestigationG5/hisglobal/js/jquery.min.js" ></script> -->
+ 
+ 
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/js/hisglobal/css/tab.css" >
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/Color.css" >
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/master.css" >
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/hisStyle.css" >
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/calendar-blue2.css" >
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/hisStyleExt.css" >
+ 
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/icon.css" >
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/email.css" >
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/textboxcss.css" >
+<link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/drop.css" >
+ <link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/invPopupReport.css" >
+ <link rel="stylesheet" href="/HISInvestigationG5/new_investigation/css/Date/site-demos.css"> 
+ 
+ 
+ 
+<script src="/HISInvestigationG5/hisglobal/js/utilityFunctions.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/js/util.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/js/popup.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/js/commonFunctions.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/js/calendar.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/js/validationCommon.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/js/validationCalls.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/js/dateFunctions.js" ></script>
+
+<script src="/bloodbank/js/bloodRequisition.js" ></script>
+<script src="/HISInvestigationG5/new_investigation/js/reportsValidation.js" ></script>
+<script src="/HISInvestigationG5/new_investigation/js/onlinePatientAcceptance.js" ></script>
+<script src="/HISInvestigationG5/new_investigation/js/jquery-1.11.1.min.js" ></script>
+<script src="/HISInvestigationG5/new_investigation/js/jquery.validate.email.js" ></script>
+<script src="/HISInvestigationG5/new_investigation/js/additional-methods.min.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/js/jquery-1.7.2.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/js/css-pop-report-inv.js" ></script>
+ <script src="/HISInvestigationG5/hisglobal/js/base64.js" ></script>
+ <script src="/HISInvestigationG5/hisglobal/js/sprintf.js" ></script>
+ 
+  <script src="/HISInvestigationG5/hisglobal/js/jspdf.js" ></script>
+<script type="text/javascript"
+	src="/HIS/hisglobal/js/jquery/jquery-1.10.2.js"></script>
+<!-- <script type="text/javascript"
+	src="/HIS/hisglobal/js/jquery/jquery-ui.js"></script> -->
+	
+	<!-- <script src="/HISInvestigationG5/hisglobal/js/jquery-ui.js" ></script> -->
+<script src="/HISInvestigationG5/hisglobal/js/sweet-alert.min.js" ></script>
+<script language="Javascript" src="../../hisglobal/js/datepicker1.js"></script>
+ <script type="text/javascript" src="/HISInvestigationG5/hisglobal/js/dojotoolkit/dojo/dojo.js" djConfig="parseOnLoad: true"> </script> 
+
+ 
+ <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  -->
+  
+  <style>
+  
+  
+  .vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events:all;
+}
+
+
+
+.modal-title {
+    color: red;
+}
+
+
+  
+ 
+</style>
+
+  <style>
+  
+  #clockdiv{
+  
+  	text-align: center;
+	background: #00ECB9;
+  
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+	
+}
+
+#clockdiv > div{
+	padding: 8px;
+	border-radius: 2px;
+	background: #00BF96;
+	display: inline-block;
+}
+
+#clockdiv div > span{
+    font-size: 120%; 
+   
+	padding: 13px;
+	border-radius: 3px;
+	background: #00816A;
+	display: inline-block;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 10px;
+}
+
+ 
+
+  .imgheader1{
+	width:50%;
+	float:left;
+}
+
+
+.imgheader2{
+	width:50%;
+	float:right;
+}
+
+.headerLogin{
+height: 70px;
+background: #87c4df; /* Old browsers */
+background: -moz-linear-gradient(top, #3f8bba 0%, #87c4df 0%, #87c4df 32%,#3f8bba 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f8bba), color-stop(0%,#87c4df), color-stop(32%,#87c4df), color-stop(100%,#3f8bba)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #3f8bba 0%,#87c4df 0%,#87c4df 32%,#3f8bba 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #3f8bba 0%,#87c4df 0%,#87c4df 32%,#3f8bba 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top ,#3f8bba 0%,#87c4df 0%,#87c4df 32%,#3f8bba 100%); /* IE10+ */
+background: linear-gradient(to bottom, #3f8bba 0%,#87c4df 0%,#87c4df 32%,#3f8bba 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0d9e8', endColorstr='#3f8bba',GradientType=0 ); /* IE6-9 */
+
+background: #a9d18e; /* Old browsers */
+background: -moz-linear-gradient(45deg, #a9d18e 0%, #008080 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #a9d18e), color-stop(100%, #008080)); /* safari4+,chrome */
+background: -webkit-linear-gradient(45deg, #a9d18e 0%, #008080 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(45deg, #a9d18e 0%, #008080 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(45deg, #a9d18e 0%, #008080 100%); /* ie10+ */
+background: linear-gradient(45deg, #a9d18e 0%, #008080 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008080', endColorstr='#a9d18e',GradientType=1 );
+
+/*float: left;*/
+width: 100%;
+color: white;
+}
+  
+  
+  
+  #time
+  {
+  	padding: 15px;
+	border-radius: 3px;
+	background: #00816A;
+	display: inline-block;
+  }
+  
+  
+ /*  
+ #divv
+ {
+ margin-top: 7%;
+ } */
+ #gen1
+ {
+ margin-top: 7%;
+ }
+ #gen2
+ {
+ margin-top: 7%;
+ }
+ 
+ @media (max-width: @screen-xs-min) {
+  .modal-xs { width: @modal-sm; }
+}
+ 
+  @font-face {
+  font-family: 'Tangerine';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Tangerine'), url(http://fonts.gstatic.com/s/tangerine/v7/HGfsyCL5WASpHOFnouG-RFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+.textstyle {
+  font-family: 'Tangerine', serif;
+ -webkit-transition: all 0.3s ease-in; /*Safari & Chrome*/
+
+   transition: all 0.3s ease-in;
+
+   -moz-transition: all 0.3s ease-in; /* Firefox 4 */
+
+   -o-transition: all 0.3s ease-in; /* Opera */
+
+   text-decoration:none;
+
+   color:white;
+	font-size: 48px;
+}
+
+  </style>
+  
+   <script>
+
+/* 
+added by chandan */
+
+
+
+
+
+
+	
+
+window.onload =  function(){
+ 
+	document.getElementById("gen22").style.display="none";
+};
+
+   window.onresize = resizee;
+
+
+   $(document).ready(function () {
+	    $("#ckbCheckAll").click(function () {
+	        $(".chkbox").prop('checked', $(this).prop('checked'));
+	    });
+	});
+
+   var timer;
+
+
+  
+   
+    function resizee()
+    { 
+    	/* document.getElementById("gen22").style.display="none"; */
+    	
+    	//document.getElementById("footerr").style.marginTop =  (0) + "px"; 
+        var height=5;
+        var h = window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight;
+     //   alert(document.body.clientHeight);
+	   document.getElementById("footerr").style.marginTop =  (h - 371) + "px";
+	   document.getElementById("footerr").style.marginBottom  =  (0) + "px";
+		}
+
+function selectall()
+{
+
+	$(document).ready(function () {
+	    $("#chk1").click(function () {
+	        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+	    });
+	});
+	}
+   function closee()
+   {
+	 //  alert("s");
+	   window.top.close();
+	   //self.close();
+
+	}
+	
+   function otpTimer()
+   {
+	  
+	   //alert("s");
+   $('#mins').text("04");
+   $('#secnds').text("59");
+
+  
+   
+   //parseInt($('#hideMsgs span').text("60"))
+   var min = parseInt($('#mins').text());// || 0;
+   var sec = parseInt($('#secnds').text());
+   /* document.getElementById("gen22").style.display=""; */
+ //  alert(min);
+    timer = setInterval(function() 
+   { 
+   	/* if(min == 0)
+   	{
+   		$('#secn').text("59");
+          var secnds = parseInt($('#secn').text());
+          //alert(secnds);
+          sec = 59;
+   	} */
+     
+        $('#secnds').text(--sec);
+        
+       if(sec < 10)
+      	 {
+      	 	$('#secnds').text("0" + sec);
+      	 }
+       if(sec < 0)
+         {
+              $('#secnds').text("59");
+              var secnd = parseInt($('#secnds').text());
+              sec = secnd;
+              $('#mins').text(--min);
+              if(min < 10)
+              	{
+              		$('#mins').text("0" + min);
+              	}
+             
+      	}
+   	      /*   if (sec == 1)
+   	        {
+   	           
+   	        } */
+   	        
+   	 
+         if(min == 0 && sec == 0)
+         {
+         	      $('#hideMsgs').fadeOut('fast');
+         	       clearInterval(timer);
+             	   $("#invalidOTP").hide();
+   		        $("#expiryOTP").show();
+   		    	$("#b5").show(); 
+   		    	//$("#invalidEmail").hide();
+   		    	$("#blankOTP").hide(); 
+   	   		} 
+     
+      
+   },1000);
+
+    
+   }
+
+   /* function CountDownTimer(duration, granularity) {
+	   this.duration = duration;
+	   this.granularity = granularity || 1000;
+	   this.tickFtns = [];
+	   this.running = false;
+	 
+       
+	 CountDownTimer.prototype.start = function() {
+	   if (this.running) {
+	     return;
+	   }
+	   this.running = true;
+	   var start = Date.now(),
+	       that = this,
+	       diff, obj;
+
+	   (function timer() {
+	     diff = that.duration - (((Date.now() - start) / 1000) | 0);
+	     
+	     if (diff > 0) {
+	       setTimeout(timer, that.granularity);
+	     } else {
+	       diff = 0;
+	       that.running = false;
+	     }
+
+	     obj = CountDownTimer.parse(diff);
+	     that.tickFtns.forEach(function(ftn) {
+	       ftn.call(this, obj.minutes, obj.seconds);
+	     }, that);
+	   }());
+	 };
+
+	 CountDownTimer.prototype.onTick = function(ftn) {
+	   if (typeof ftn === 'function') {
+	     this.tickFtns.push(ftn);
+	   }
+	   return this;
+	 };
+
+	 CountDownTimer.prototype.expired = function() {
+	   this.running=false;
+	 };
+
+	 CountDownTimer.parse = function(seconds) {
+	   return {
+	     'minutes': (seconds / 60) | 0,
+	     'seconds': (seconds % 60) | 0
+	   };
+	 };
+
+   } */
+
+   
+
+   var co=0;
+   var coo=0;
+   function endd()
+   {
+   timerr();
+
+   }
+   function timerr() {
+   co++;
+   coo++;
+  // alert(co);
+       var minn = document.querySelector('#minutess'),
+		       secc=document.querySelector('#secondss'),
+           timer = new CountDownTimer(300),
+           timeObj = CountDownTimer.parse(300);
+
+       format(timeObj.minutes, timeObj.seconds);
+       
+       timer.onTick(format);
+       
+           timer.start();
+       function format(minutes, seconds) {
+           minutes = minutes < 10 ? "0" + minutes : minutes;
+           seconds = seconds < 10 ? "0" + seconds : seconds;
+           minn.textContent = minutes ;
+	        secc.textContent =  seconds;
+       }
+   };
+
+
+   function CountDownTimer(duration, granularity) {
+     this.duration = duration;
+     this.granularity = granularity || 1000;
+     this.tickFtns = [];
+     this.running = false;
+   }
+
+
+   CountDownTimer.prototype.start = function() {
+     if (this.running) {
+       return;
+     }
+     this.running = true;
+     var start = Date.now(),
+         that = this,
+         diff, obj;
+
+     (function timer() {
+      
+      diff = that.duration - (((Date.now() - start) / 1000) | 0);
+      
+      
+       if (diff > 0) {
+         setTimeout(timer, that.granularity);
+       } else {
+         diff = 0;
+         that.running = false;
+       }
+      
+       obj = CountDownTimer.parse(diff);
+       that.tickFtns.forEach(function(ftn) {
+         ftn.call(this, obj.minutes, obj.seconds);
+       }, that);
+     }());
+   };
+   CountDownTimer.prototype.onTick = function(ftn) {
+     if (typeof ftn === 'function') {
+       this.tickFtns.push(ftn);
+     }
+     return this;
+   };
+
+   CountDownTimer.prototype.expired = function() {
+     return !this.running;
+   };
+
+
+      if(co==coo)
+      {
+   CountDownTimer.parse = function(seconds) {
+     return {
+       'minutes': (seconds / 60) | 0,
+       'seconds': (seconds % 60) | 0
+     };
+   };
+   }
+      
+
+	/*  function timerr() {
+		var a=300;
+		
+		 document.getElementById("minutess").innerHTML="";
+			document.getElementById("secondss").innerHTML="";
+		    var minn = document.querySelector('#minutess'),
+		       secc=document.querySelector('#secondss'),
+		        timer = new CountDownTimer(a),
+		        timeObj = CountDownTimer.parse(a);
+
+			  
+		  
+		    format(timeObj.minutes, timeObj.seconds);
+		    
+		    timer.onTick(format);
+		        
+		        timer.start();
+		
+		    
+		    function format(minutes, seconds) {
+		        minutes = minutes < 10 ? "0" + minutes : minutes;
+		        seconds = seconds < 10 ? "0" + seconds : seconds;
+		      
+		        minn.textContent = minutes ;
+		        secc.textContent =  seconds;
+		    }
+		}; */
+
+
+
+
+
+   
+  $(function() {
+    $( "#popUpDiv" ).resizable();
+  });
+  </script>
+  
+  
+
+  
+  <script type="text/javascript"
+	src="/HISInvestigationG5/hisglobal/js/jquery/jquery-1.12.4.js"></script>
+ 	<script src="/HISInvestigationG5/hisglobal/datatables/dataTables.fixedColumns.min.js" ></script>
+	
+	<script type="text/javascript" src="/HISInvestigationG5/hisglobal/js/jquery/jquery.datatables.min.js"></script>
+	
+   <link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/datatables/fixedColumns.dataTables.min.css" >
+ 
+ 
+ 	 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 	  -->
+ 	 <link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/css/bootstrap.min.css" >
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    -->
+   <script src="/HISInvestigationG5/hisglobal/js/jquery.min.js" ></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+  -->
+  <script src="/HISInvestigationG5/hisglobal/js/bootstrap.min.js" ></script>
+  
+  
+
+ <link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/datatables/jquery.dataTables.min.css" >
+
+<script src="/HISInvestigationG5/hisglobal/datatables/dataTables.fixedColumns.min.js" ></script>
+
+<script src="/HISInvestigationG5/hisglobal/datatables/jquery-1.11.1.min.js" ></script>
+ <script src="/HISInvestigationG5/hisglobal/datatables/jquery.dataTables.min1.js" ></script>
+ <link rel="stylesheet" href="/HISInvestigationG5/hisglobal/datatables/jquery.dataTables.min1.css">
+<script src="/HISInvestigationG5/hisglobal/datatables/moment.min.js" ></script>
+<script src="/HISInvestigationG5/hisglobal/datatables/daterangepicker.js" ></script>
+<link rel="stylesheet" href="/HISInvestigationG5/hisglobal/datatables/daterangepicker.css">
+
+<script type="text/javascript"
+	src="/HISInvestigationG5/hisglobal/datatables/dataTables.responsive.min.js"></script>
+	
+   <link rel="stylesheet"  href="/HISInvestigationG5/hisglobal/datatables/responsive.dataTables.min.css" >
+   <script type="text/javascript" src="/HISInvestigationG5/hisglobal/datatables/fnReloadAjax.js"></script>
+<!-- <link rel="stylesheet" href="/HISInvestigationG5/hisglobal/datatables/bootstrap.css"> -->
+
+
+ 
+ <script type="text/javascript">
+
+
+ 
+	
+ function isNumber(evt) {
+	    evt = (evt) ? evt : window.event;
+	    var charCode = (evt.which) ? evt.which : evt.keyCode;
+	    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+	        return false;
+	    }
+	    return true;
+	}
+	
+ function validateCRNoCHE(hospitalCode)
+ {
+	 var val="";
+ 	 var crno =document.getElementById("input").value;
+      var textLength = crno.length;
+        	if(textLength==15)
+ 						 {
+ 						   
+        		onclickgo();
+ 					     }
+ 					
+ 			     else
+ 			     {     
+ 				   		    alert("InValid CR No");
+ 				     		return false;
+ 				              
+ 			          
+ 			     }
+ }
+
+ 
+function CANCEL()
+{
+	var mode="NEW";
+	window.location.href='/HISInvestigationG5/new_investigation/publicreportdownload.cnt?hmode='+mode+'';
+
+}
+
+
+function refresh()
+{
+
+	document.getElementById("addMoreValue").innerHTML="";
+	document.getElementById("ckbCheckAll").checked=false;
+		"";
+	var cbs =document.getElementsByName('selctedcheckbox');
+   
+ 	for(var i=0; i < cbs.length; i++) {
+ 	 // if(cbs[i].type == 'checkbox') 
+     //{
+     	
+     	if(cbs[i].checked)
+     	{
+     		cbs[i].checked=false;
+     	 }
+ 	 }
+ 	document.getElementById('alertmail').style.display="none";
+/* 	var hmode="AJAX_GETLIST";
+	//alert(testCode);
+var url1=	"/HISInvestigationG5/new_investigation/publicreportdownload.cnt?hmode="+hmode;
+
+	 $( "#t2" ).load(url1 + " #t2" );
+	getlist();
+ *//* 	var hmode="AJAX_GETLIST";
+	//alert(testCode);
+var url1=	"/HISInvestigationG5/new_investigation/publicreportdownload.cnt?hmode="+hmode;
+	 $( "#container" ).load(url1 + " #container" );
+	 $( "#addMoreValue" ).load(url1 + " #addMoreValue" );
+	 getlist();
+ */
+	 }
+ 
+ function onclickk()
+ {
+ // alert("onclick");
+}
+
+ function displaySamplePatDetails()
+ {	
+ 	var count=0;
+ 	//var reportType=document.getElementsByName('reportType')[0].value;
+ 	//document.getElementsByName('isPatDetailPage')[0].value="1";
+ 	var strAllChkDetail="";
+ 	var concatenateChkBoxVal="";
+ 	//var cbs = document.getElementsByTagName('input');
+ 	var cbs =document.getElementsByName('selctedcheckbox');
+ 	for(var i=0; i < cbs.length; i++) {
+ 	 // if(cbs[i].type == 'checkbox') 
+     //{
+   //  	alert("hhello");
+     	if(cbs[i].checked)
+     	{
+     		
+     	count++;	
+     	concatenateChkBoxVal =concatenateChkBoxVal.concat(cbs[i].value);
+     	concatenateChkBoxVal+='@';
+     	 }
+   	//}
+ 	  
+  
+       }
+    
+ //   alert("count"+count);
+ 	
+ 	if(count==0)
+    	{
+    	alert("please select a record");
+    	return false;
+    	}
+ 	
+ 	var src="/hisglobal/js/Payment.pdf";
+ 	
+ 	
+ 	//demo1();
+ 	//document.getElementsByName('selectedCheckbox')[0].value=concatenateChkBoxVal;
+ 	 
+ 	
+ 	 
+ 	strAllChkDetail=strAllChkDetail+"&selectedCheckbox="+concatenateChkBoxVal;
+ 	
+ 	var mode="SHOWPATDETAILS";
+ 	var url1='/HISInvestigationG5/new_investigation/publicreportdownload.cnt?hmode='+mode+'&selectedCheckbox='+concatenateChkBoxVal;
+
+ 	
+/*  	var url='/HISInvestigationG5/new_investigation/publicreportdownload.cnt?hmode='+mode+strAllChkDetail+'&reportType='+reportType;
+ 	var url1="/HISInvestigationG5/new_investigation/publicreportdownload.cnt?selectedCheckbox="+concatenateChkBoxVal+"&hmode="+hmode ;
+ */	 
+ 		
+// 	alert("final url"+url);
+ 	
+ 	AddRowToTableAddMoreValue(url1);
+ 	popup('popUpDiv');
+ 	 
+     
+ 	
+ 	//document.forms[0].submit();
+  	
+ 	}
+
+
+ function AddRowToTableAddMoreValue(finalMadCode)
+ {
+ 	 
+ 	// alert("working fine"+finalMadCode);
+ 	 
+ 	 //var mode = "SHOWPATDETAILS";
+ 	 
+ 	//var url ='/HISInvestigationG5/new_investigation/invResultReportPrinting.cnt?hmode='+mode
+ 	 
+ 	var nRow=0;
+ 	var tableObj=document.getElementById('addMoreValue');
+ 	var numRows=tableObj.rows.length;
+ 	//alert(document.getElementById("setPdf"));
+ 	if(document.getElementById("setPdf")!=null){
+ 		
+ document.getElementById("setPdf").remove();
+  //document.getElementById("deleteRow").deleteRow(1);
+ 	}
+ 	
+ 	//alert("total length"+numRows);
+ 		nRow=numRows;
+  
+ 	var tabRow=tableObj.insertRow(numRows);
+ 	tabRow.id=parseInt(nRow);
+ 	 
+ 	var td1=document.createElement("TD");
+  
+ 	td1.innerHTML="<iframe src='"+ finalMadCode + "' width='100%' height='450px' type='application/pdf'    ></iframe>";   
+ 	td1.className='tdfont';
+ 	td1.colspan="1";
+ 		
+    
+ 	tabRow.appendChild(td1);  
+ 	 
+ 	 
+
+ 	//document.forms[0].numberOfRow.value=numRows;
+ 	  }	
+
+
+
+
+
+ function getemail()
+ {
+ 		var count=0;
+ 		//var reportType=document.getElementsByName('reportType')[0].value;
+ 		//document.getElementsByName('isPatDetailPage')[0].value="1";
+ 		var strAllChkDetail="";
+ 		var concatenateChkBoxVal="";
+ 		//var cbs = document.getElementsByTagName('input');
+ 		
+
+ 		
+ 		var cbs =document.getElementsByName('selctedcheckbox');
+ 		
+ 		for(var i=0; i < cbs.length; i++) {
+ 		 // if(cbs[i].type == 'checkbox') 
+ 	    //{
+ 	  //  	alert("hhello");
+ 	    	if(cbs[i].checked)
+ 	    	{
+ 	    		
+ 	    	count++;	
+ 	    	concatenateChkBoxVal =concatenateChkBoxVal.concat(cbs[i].value);
+ 	    	concatenateChkBoxVal+='@';
+ 	    	 }
+ 	  	//}
+ 		  
+ 	 
+ 	      }
+
+ 	      if(count==0)
+ 		      {
+              alert("Please select record");
+ 		      }
+ 	      else
+ 	 	      {
+ 	 	     
+ 	    	  sendmaildetail();
+ 	 	      }
+ 	   /* var email=document.getElementById("emaill").value;
+ 	   if(email=='')
+ 		   {
+          alert("Please Enter Email id");
+          return ;
+ 		   }
+ 	   else
+ 		   {
+ 		   sendmaildetail();
+        
+ 		   } */
+ }
+
+
+ function sendmaildetail()
+ {	
+
+	 var l1 = document.getElementById('b333');
+	   l1.click();
+ }
+
+
+
+ function sendemaill()
+ {	   
+	 var email=document.getElementById("emaill").value;
+	   if(email=='')
+		   {
+        alert("Please Enter Email id");
+        return false;
+		   }
+	   
+ 	 var count=0;
+ 	//var reportType=document.getElementsByName('reportType')[0].value;
+ 	//document.getElementsByName('isPatDetailPage')[0].value="1";
+ 	var strAllChkDetail="";
+ 	var concatenateChkBoxVal="";
+ 	//var cbs = document.getElementsByTagName('input');
+ 			var email =document.getElementById('emaill').value;
+ 	
+ 	var cbs =document.getElementsByName('selctedcheckbox');
+ 	for(var i=0; i < cbs.length; i++) {
+ 	 // if(cbs[i].type == 'checkbox') 
+     //{
+   //  	alert("hhello");
+     	if(cbs[i].checked)
+     	{
+     		
+     	count++;	
+     	concatenateChkBoxVal =concatenateChkBoxVal.concat(cbs[i].value);
+     	concatenateChkBoxVal+='@';
+     	 }
+   	//}
+ 	  
+  
+       }
+    
+ //   alert("count"+count);
+ 	
+ 	if(count==0)
+    	{
+    	alert("please select a record");
+    	return false;
+    	} 
+ 	
+ 	/* var src="/hisglobal/js/Payment.pdf"; */
+ 	
+ 	
+ 	//demo1();
+ 	//document.getElementsByName('selectedCheckbox')[0].value=concatenateChkBoxVal;
+ 	 
+ 	
+ 	 
+ 	 strAllChkDetail=strAllChkDetail+"&selectedCheckbox="+concatenateChkBoxVal;
+ 	var data={};
+ 	var hmode="SENDMAILREPORT";
+ 	var url14='/HISInvestigationG5/new_investigation/publicreportdownload.cnt?email='+email+'&selectedCheckbox='+concatenateChkBoxVal+'&hmode='+hmode;
+
+
+ //	alert(url14);
+ 	$.ajax({
+ 		url : url14, 
+ 		type : "POST",
+ 		async : true,
+ 		data : data,
+ 		dataType : "json",
+ 		success : function(val) {
+ 			
+ 			document.getElementById('alertmail').style.display="";
+      
+ 			var l = document.getElementById('modalclose');
+ 			   l.click();
+
+ 			  var cbs =document.getElementsByName('selctedcheckbox');
+ 			   
+ 			 	for(var i=0; i < cbs.length; i++) {
+ 			 	 // if(cbs[i].type == 'checkbox') 
+ 			     //{
+ 			     	
+ 			     	if(cbs[i].checked)
+ 			     	{
+ 			     		cbs[i].checked=false;
+ 			     	 }
+ 			 	 }
+ 			//document.getElementById('myModal').style.display="none";
+ 		/* 	$('#myModal').modal('hide'); */
+ 			
+ 	 		},
+ 		error : function(errorMsg, textstatus, errorthrown) {
+ 			console.log('makeParatmeterHTML ' + errorMsg + " textstatus::"
+ 						+ textstatus + " errorthrown::" + errorthrown);
+ 			}
+ 		});
+
+
+/* 	var table12 = $('#t3').dataTable();
+    table12.fnReloadAjax(url11);
+
+
+ var   table21 = $('#t2').dataTable();
+    table21.fnReloadAjax(url1);
+ */
+	
+ /*  	var url='/HISInvestigationG5/new_investigation/publicreportdownload.cnt?hmode='+mode+strAllChkDetail+'&reportType='+reportType;
+ 	var url1="/HISInvestigationG5/new_investigation/publicreportdownload.cnt?selectedCheckbox="+concatenateChkBoxVal+"&hmode="+hmode ;
+ */	 
+ 		
+// 	alert("final url"+url);
+ 	/* 
+ 	AddRowToTableAddMoreValue(url1);
+ 	popup('popUpDiv');
+ 	 */ 
+     
+ 	
+ 	//document.forms[0].submit();
+  	
+ 	}
+	
+
+	
+  function onclickgo()
+  {
+	
+	  $("#b5").hide();
+	  getlist();
+	    }
+
+
+  
+ function goo(flag)
+ {
+	 if(flag==1)
+ {
+	   //alert("se");
+	   document.getElementById("gen1").style.display="none";
+	   document.getElementById("gen22").style.display="";
+	   document.getElementById("gen2").style.display="";
+	   }
+ if(flag==0)
+	   {
+	 document.getElementById("gen22").style.display="none";
+      alert("Please Register Your Mobile No first.");
+      return flase;
+	   }
+ if(flag==2)
+	 {
+	 document.getElementById("gen22").style.display="none";
+	 alert("Please Enter valid Cr No");
+	 
+     return flase;
+	  
+	 }
+	 }
+
+ function onclickvalidate()
+ {
+
+	 document.getElementById("gen22").style.display="none";
+	 document.getElementById("gen221").style.display="";
+ //  alert("hi");
+//	alert(document.getElementById("input").value);
+	var otp=document.getElementById("otpp").value;
+var data={};
+var hmode="AJX_OTP_VALIDATE";
+	//alert(testCode);
+var url1=	"/HISInvestigationG5/new_investigation/publicreportdownload.cnt?otp="+otp+"&hmode="+hmode;
+var flag="";
+
+$.ajax({
+	url : url1, 
+	type : "POST",
+	async : true,
+	data : data,
+	dataType : "json",
+	success : function(val) {
+		flag=val;		
+		validate(flag);
+		
+	},
+	error : function(errorMsg, textstatus, errorthrown) {
+		console.log('makeParatmeterHTML ' + errorMsg + " textstatus::"
+					+ textstatus + " errorthrown::" + errorthrown);
+		}
+	});
+
+
+ }
+
+
+ function Resendotp()
+ {
+	 
+	
+ //  alert("hi");
+//	alert(document.getElementById("input").value);
+	var otp=document.getElementById("otpp").value;
+	
+var data="";
+var hmode="AJX_REOTP";
+	//alert(testCode);
+var url1=	"/HISInvestigationG5/new_investigation/publicreportdownload.cnt?otp="+otp+"&hmode="+hmode;
+var flag="";
+
+$.ajax({
+	url : url1, 
+	type : "POST",
+	async : true,
+	data : data,
+	dataType : "text",
+	success : function(val) {
+		
+		
+	},
+	error : function(errorMsg, textstatus, errorthrown) {
+		console.log('makeParatmeterHTML ' + errorMsg + " textstatus::"
+					+ textstatus + " errorthrown::" + errorthrown);
+		}
+	});
+
+//timerr();
+
+ clearTimeout(timer);
+otpTimer();
+ }
+ 
+
+ function validate(flag)
+   {
+
+     if(flag==2)
+         {
+        alert("Please Enter Validate OTP");
+         }
+     if(flag==3)
+     {
+    alert("Your OTP Expired");
+     }
+     if(flag==1)
+         {
+       //  alert("validate");
+         getlist();
+         }
+
+	 }
+ 		
+
+function getlist()
+ {
+	//  timerr();  //uncomment to check
+	document.getElementById("t1").style.display="";
+	
+	document.getElementById("gen2").style.display="none";
+	var data={};
+	var hmode="AJAX_GETLIST";
+	var mode="PAT_GETLIST";
+		//alert(testCode);
+	var url1=	"/HISInvestigationG5/new_investigation/publicreportdownload.cnt?hmode="+hmode;
+
+	var url11=	"/HISInvestigationG5/new_investigation/publicreportdownload.cnt?hmode="+mode;
+
+	$(document).ready(function() {
+	    $('#t3').DataTable( {
+	        "ajax":url11,
+	        "bPaginate": false,
+	        "showNEntries" : false,
+	        "bFilter": false,
+	        "bLengthChange": false ,
+	        "sDom": 'ft',
+			 responsive: true
+	        
+	    } );
+	} );
+	
+	/* $(document).ready(function() {
+	    $('#t2').DataTable( {
+	        "ajax":url1,
+	        responsive: true,
+	        initComplete : function() {
+				this
+						.api()
+						.columns()
+						.every(
+								function() {
+									var column = this;
+									var colIdx = column
+											.index();
+
+									if (colIdx==0||colIdx==1||colIdx==2
+											)
+										return;
+									var select = $(
+											'<select><option value="">All</option></select>')
+											.appendTo(
+													$(
+															column
+																	.footer())
+															)
+											.on(
+													'change',
+													function() {
+														var val = $.fn.dataTable.util
+																.escapeRegex($(
+																		this)
+																		.val());
+
+														column
+																.search(
+																		val ? '^'
+																				+ val
+																				+ '$'
+																				: '',
+																		true,
+																		false)
+																.draw();
+													});
+
+									column
+											.data()
+											.unique()
+											.sort()
+											.each(
+													function(
+															d,
+															j) {
+														select
+																.append('<option value="'+d+'">'
+																		+ d
+																		+ '</option>')
+													});
+								});
+			},
+			"aLengthMenu" : [
+					[ 5, 10, 20, 50, 75, -1 ],
+					[ 5, 10, 20, 50, 75, "All" ] ],
+			"pageLength" : 5,
+			
+	        
+	    } );
+	} ); */
+
+	$(document).ready(function() {
+		 table  =$('#t2').DataTable( {
+			   
+		        "ajax":url1,
+		     
+		      
+		        initComplete : function() {
+					this
+							.api()
+							.columns()
+							.every(
+									function() {
+										var column = this;
+										var colIdx = column
+												.index();
+
+										if (colIdx==0||colIdx==2
+												)
+											return;
+										var select = $(
+												'<select><option value="">All</option></select>')
+												.appendTo(
+														$(
+																column
+																		.footer())
+																)
+												.on(
+														'change',
+														function() {
+															var val = $.fn.dataTable.util
+																	.escapeRegex($(
+																			this)
+																			.val());
+
+															column
+																	.search(
+																			val ? '^'
+																					+ val
+																					+ '$'
+																					: '',
+																			true,
+																			false)
+																	.draw();
+														});
+
+										column
+												.data()
+												.unique()
+												.sort()
+												.each(
+														function(
+																d,
+																j) {
+															select
+																	.append('<option value="'+d+'">'
+																			+ d
+																			+ '</option>')
+														});
+									});
+				},
+				"aLengthMenu" : [
+						[ 5, 10, 20, 50, 75, -1 ],
+						[ 5, 10, 20, 50, 75, "All" ] ],
+				"pageLength" : 5,
+				
+				 responsive: true,
+				    columnDefs: [
+				        { responsivePriority: 1, targets: 0 },
+				        { responsivePriority: 2, targets: -1 }
+				    ]
+				
+		} );
+
+
+		  
+		   
+		} );
+		    
+
+
+	
+	
+  }
+
+(function () {
+	 
+	var customDateDDMMMYYYYToOrd = function (date) {
+	    "use strict"; //let's avoid tom-foolery in this function
+	    // Convert to a number YYYYMMDD which we can use to order
+	    var dateParts = date.split(/-/);
+	    console.log("chaa"+dateParts[2]);
+	    return (dateParts[2] * 10000) + ($.inArray(dateParts[1].toUpperCase(), ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]) * 100) + (dateParts[0]*1);
+	};
+	 
+	// This will help DataTables magic detect the "dd-MMM-yyyy" format; Unshift
+	// so that it's the first data type (so it takes priority over existing)
+	jQuery.fn.dataTableExt.aTypes.unshift(
+	    function (sData) {
+	        "use strict"; //let's avoid tom-foolery in this function
+	        if (/^([0-2]?\d|3[0-1])-(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)-\d{4}/i.test(sData)) {
+	          return 'date-dd-mmm-yyyy';
+	        }
+	        return null;
+	    }
+	);
+	 
+	// define the sorts
+	jQuery.fn.dataTableExt.oSort['date-dd-mmm-yyyy-asc'] = function (a, b) {
+	    "use strict"; //let's avoid tom-foolery in this function
+	    var ordA = customDateDDMMMYYYYToOrd(a),
+	        ordB = customDateDDMMMYYYYToOrd(b);
+	    return (ordA < ordB) ? -1 : ((ordA > ordB) ? 1 : 0);
+	};
+	 
+	jQuery.fn.dataTableExt.oSort['date-dd-mmm-yyyy-desc'] = function (a, b) {
+	    "use strict"; //let's avoid tom-foolery in this function
+	    var ordA = customDateDDMMMYYYYToOrd(a),
+	        ordB = customDateDDMMMYYYYToOrd(b);
+	    return (ordA < ordB) ? 1 : ((ordA > ordB) ? -1 : 0);
+	};
+	 
+	})();
+
+
+
+
+	
+  </script>
+  
+  
+</head>
+<body onload="resizee()">
+ 
+<form class="form-horizontal" role="form" action="/publicreportdownload">
+
+<!-- //addded -->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%" class="" >
+	<div class="headerLogin" style="margin-top: 0">
+		 <div class="imgheader1">
+			<div align=left>
+				<img src="/HIS/hisglobal/images/Telegana_Header.png" class="img-responsive" ></div>
+			</div>
+		<div class="imgheader2">
+			<div align="right">
+				<img src="/HIS/hisglobal/images/Header11.png" class="img-responsive" >
+			</div> 
+		</div>
+		<!-- <span class="titleTag"> e-Sushrut Advanced Hospital Information System </span> -->
+	</div>
+	</td></tr>
+	<tr>
+	</tr>
+	<tr></tr>
+	</table>
+<!-- // end -->
+<div id="divv"  style="min-height: 200px;">
+<div class="container">
+
+    
+</div>
+<!-- <div class="container">
+
+    <div align="right" > <button id="otpclose" type="button" class="btn btn-success" onclick="closee()">Close</button></div>
+</div> -->
+<div class="container-fluid" id="gen1" >
+
+    <div class="form-group">
+    
+        <label for="inputType" class="col-sm-4 control-label">CR NO.</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="input" placeholder="Enter CR NO." maxlength=15 onkeypress="return isNumber(event)"  />
+        </div>
+	</div>
+	<div class="form-group">
+        <label for="inputType" class="col-sm-4 control-label"></label>
+        <div class="col-sm-4" align="center">
+            <button id="b1" type="button" class="btn btn-info" onclick="onclickgo()"  onkeypress="if(event.keyCode==13)return   onclickgo()">GO</button>
+            <button id="otpclose" type="button" class="btn btn-info" onclick="closee()">Cancel</button>
+        </div>
+	</div>
+</div>
+
+
+
+<br>
+<div class="container" id="gen22" style="display: none">
+
+    <div align="right" > <button id="otpclose" type="button" class="btn btn-success" onclick="closee()">Close</button></div>
+</div>
+
+<div class="container " id="gen221" style="display: none">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="" >
+<tr class="alert alert-success" >
+<td> <div align="left" class="textstyle" style="font-size: 48px;color:green;"><h4 style="font-size:50px">Report Viewer</h4></div></td>
+<td> <div align="right" ><button id="otpclose" type="button" class="btn btn-success" onclick="closee()" >Close</button>&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+</tr>
+</table>
+
+</div>
+
+
+
+<br>
+<div class="container-fluid" id="gen2" style="display: none;">
+
+<!-- <div class="row"> 
+									<div class="col-sm-7"></div>
+										  <p id="hideMsgse" align="center">Your OTP will expire in <span id="mins"> 04</span> : <span id="secnds"> 59</span> seconds</p>
+							
+								</div> -->
+
+
+    <div class="form-group ">
+    
+
+        <label for="inputType" class="col-sm-4 control-label">Enter Your OTP</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" id="otpp" placeholder="Enter Your OTP" maxlength=6>
+            <p>(OTP has been sent to your registered Mobile number  )</p>
+        </div>
+        <div  class="col-sm-4" id="hideMsgse">
+
+ <div style="display: inline-block;"></div>
+<div id="clockdiv" >
+ 
+  <div id="min1">
+    <span id="mins">04:</span>
+    <div class="smalltext">Minutes</div>
+ 
+  </div>
+  <div id="sec2">
+    <span id="secnds">59</span>
+    <div class="smalltext">Seconds</div>
+  
+  </div>
+
+</div>
+<p>&nbsp;&nbsp;&nbsp;(OTP expiration time )</p>
+</div>
+	</div>
+	<div class="form-group">
+        <label for="inputType" class="col-sm-4 control-label"></label>
+        <div class="col-sm-4" align="center">
+            <button id="b2" type="button" class="btn btn-info" onclick="onclickvalidate()">GO</button>
+             
+              <button id="b6" type="button" class="btn btn-info" onclick="CANCEL()">Cancel</button>
+        <button id="b5" type="button" class="btn btn-info" onclick="Resendotp()">Resend</button>
+        </div>
+	</div>
+</div>
+
+<div class="container" id="t1" style="display: none;margin-top: 3">
+<div class="">
+<table  id="t3" class="display responsive nowrap" cellspacing="0" width="100%">
+   <!--  <div align="right" > <button id="otpclose" type="button" class="btn btn-success" onclick="closee()">Close</button></div> -->
+    <div align="left" class="alert alert-success"><h3 >Patient Details</h3></div>
+    <thead>
+     
+      <tr style="font-size: 2;">
+        
+        <th class="tdfont">CR No</th>
+        <th class="tdfont">Patient Name</th>
+        <th class="tdfont">AGE/Gender</th>
+        <th class="tdfont">Status</th>
+        
+      </tr>
+    </thead>
+    <tbody style="font-size: 2;" >
+     
+    </tbody>
+   
+  </table>
+  </div>
+ <br><br><br><br>
+ <div class="">
+  <table  id="t2" class="display responsive nowrap" cellspacing="0" width="100%">
+  <div align="left" class="alert alert-success"><h3 >Report Details</h3>
+  
+  </div>
+    <thead>
+     
+      <tr style="font-size: 2;" >
+       <th class="tdfont" ><input type="checkbox" id="ckbCheckAll" > </th>
+        
+        <th class="tdfont">Date of Requisition</th>
+        <th class="tdfont">Report Generation Date</th>
+        <th class="tdfont">Dept/Unit</th>
+        <th class="tdfont">Test Name</th>
+        <th class="tdfont">Lab Name</th>
+       
+      </tr>
+    </thead>
+    <tbody style="font-size: 2;">
+     
+    </tbody>
+   
+     <tfoot>
+     
+      <tr style="font-size: 2;">
+       <th class="tdfont" ></th>
+        
+        <th class="tdfont"></th>
+        <th class="tdfont"></th>
+        <th class="tdfont"></th>
+        <th class="tdfont"></th>
+        <th class="tdfont"></th>
+        
+      </tr>
+    </tfoot>
+  </table>
+  </div>
+  
+  
+  <!-- 
+google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-73827792-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <div  align="center" style="min-height: 5px;">
+  
+            <button id="b3" type="button" class="btn btn-info" onclick="displaySamplePatDetails()">View</button>
+           
+             <!-- <button id="b33" type="button" class="btn btn-info" onclick="getemail()">Email</button> -->
+            
+             <button id="b4" type="button" class="btn btn-info" onclick="CANCEL()">Cancel</button>
+             <div id="modalopen" style="display:none">
+             <!-- <button id="b333" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" >Email</button> -->
+             </div>
+        </div> 
+        <br>
+        <div id="alertmail" style="display: none">
+         <div class="alert alert-warning alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    Report has been succesfully sent to your  Email id
+  </div>
+        
+        </div>
+        
+  
+        
+       <!-- email pop start  -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header" style="color: yellow;">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+
+                    </button>
+                    <strong>
+                     <h4 class=" textstyle modal-title" id="myModalLabel" style="font-size:50px;color:green;">Email</h4></strong>
+
+                </div>
+                <div class="modal-body">
+                
+                <div class="container">
+ 
+   <label for="inputType" class="col-sm-1 control-label">Email:</label>
+        <div class="col-sm-4">
+           <input type="email" class="form-control" id="emaill" placeholder="Enter your Email" >
+        </div>
+         
+        
+  <!-- <form class="form-horizontal">
+  
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="emaill">Email:</label>
+      <div class="col-xs-4">          
+        <input type="email" class="form-control" id="emaill" placeholder="Enter your Email" >
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-4">
+        <button class="btn btn-default" onclick="sendemaill()" type="button">Submit</button>
+      </div>
+    </div>
+  </form> -->
+  <div class=" col-sm-2">
+         <button class="btn btn-info" onclick="sendemaill()" type="button">Submit</button>       
+   </div>
+</div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="modalclose">Close</button>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+       <!-- email pop end  -->
+
+</div>
+
+ <div id="container">
+
+
+	 
+    <div id="blanket" style="display:none;"></div>
+	<div draggable="true" id="popUpDiv" style="display:none;">
+		
+ <b>Result Printing Details</b>
+     <img src='/HIS/hisglobal/snomedct/css/images/close.png'  onclick="popupClose('popUpDiv')"' align="right">&nbsp;&nbsp;&nbsp;
+<!-- <div align="right">
+  <button id="b4" type="button" class="btn btn-info" onclick="popupClose('popUpDiv')"'  ><b>X</b></button>
+ </div> -->
+	<table id="addMoreValue" width="100%">
+<tr id="deleteRow">
+ 
+</tr>	 
+	
+	 
+	</table>
+<left>
+    	 
+</left>
+	</div>	
+</div>
+</div>
+<div >
+<table class="table " id="footerr" >
+
+<tr>
+<td class="" style="background-color: rgb(192, 217, 232)">
+<div class="container" align="center" >
+	
+	<font style="font-family:normal 62.8%/1.3 Arial, Helvetica, sans-serif; color:#297eb2; padding-top:0px;font-size: 12px; align:center; font-weight:bold;" >
+				
+				Health, Medical & Family Welfare Department, Government of Telangana<br>
+				Telephone No.: 040-24658702 &nbsp Fax No.: 040-24619120 &nbsp email: tsmsidc.itcell@gmail.com
+				</font>
+	
+	</div>
+</td>
+</tr>
+<tr>
+<td class="loginLowerPart  container" height="25px" align="center" style="background-color: rgb(192, 217, 232)">
+		<div align="center" style="background-color: rgb(192, 217, 232)">
+			 <img class="img-responsive"  src="/HIS/hisglobal/images/footerImage.png" align="center">
+		</div>
+</td>
+</tr>
+
+</table>
+
+ 
+
+
+
+</div>
+</form>
+</body>
+</html>
+

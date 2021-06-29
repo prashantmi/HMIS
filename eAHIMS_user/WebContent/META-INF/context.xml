@@ -1,0 +1,28 @@
+ <context>
+
+<Resource 
+        name="AHIS"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.2.98:5444/hmisodisha"
+		username="hmisodisha"
+		password="hmisodisha"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+		<Resource 
+        name="AHIS1"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.2.63:5444/nims_uat"
+		username="nims_uat"
+		password="nims_uat"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+</context>

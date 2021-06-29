@@ -1,0 +1,93 @@
+/**
+ CSS For Combo Box
+ Added By Pathan Basha Khan
+ On 16-04-2015
+ **/
+ 
+.big {
+  font-size: 1.2em;
+  padding: .3em;
+}
+
+.small {
+  font-size: .7em;
+}
+
+.square {
+/*   width: .7em;
+  height: .7em;
+  margin: .5em; */
+  display: inline-block;
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  /* margin: 10px; */ /* demo only */
+}
+
+
+
+
+/**
+ CSS For Combo Box change Color Inside The Combo Box
+ Added By Pathan Basha Khan
+ On 16-04-2015
+   #A4C1D3**/
+
+.custom-dropdown select {
+	
+  background-color:#96BAEA ;
+  color: #000;
+  font-size:11;
+  /*  padding: .3em; */
+  border: 0;
+  margin: 0;
+  border-radius: 3px; 
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.custom-dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.custom-dropdown::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.custom-dropdown::after {
+  color: rgba(0,0,0,.4);
+}

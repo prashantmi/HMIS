@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Roster Category Master'>
+		<common-values>
+			<master-name>RosterCategoryMaster</master-name>
+			<master-title>Roster Category Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Roster Category Master</tableHeading>
+			
+			<list-table>HDRT_ROSTER_CAT_MST</list-table>
+
+			<columns>
+				<column>Roster Category Name</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HDRSTR_ROSTER_CAT_NAME)</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HDRNUM_ROSTER_CAT_ID</field>
+					<field>A.HDRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDRT_ROSTER_CAT_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby>ORDER BY(A.HDRSTR_ROSTER_CAT_NAME)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/dutyroster/masters/RosterCategoryMstAddModACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/dutyroster/masters/RosterCategoryMstAddModACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

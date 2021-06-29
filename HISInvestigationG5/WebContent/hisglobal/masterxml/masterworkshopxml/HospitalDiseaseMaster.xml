@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='HospitalDiseaseMaster'>
+		<common-values>
+			<master-name>HospitalDiseaseMaster</master-name>
+			<master-title>Ayush Disease Master</master-title>
+		</common-values>
+		
+		<list-page>
+				<tableHeading>Ayush Disease Master</tableHeading> 
+				<list-table>HGBT_HOSPITAL_DISEASE_MST</list-table>				
+				<columns>
+					 <column>Disease Name</column>  
+					 <column>Disease Type</column>  				  
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGBSTR_DISEASE_DESC)</field>
+						<field>INITCAP(B.HGBSTR_DISEASE_TYPE_NAME)</field>					
+					</fields>
+					<primaryKey>
+						<field>A.HGBSTR_HOSPITAL_DISEASE_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_HOSPITAL_DISEASE_MST</table>
+						<table alias='B'>HGBT_DISEASE_TYPE_MST</table>
+					</tables>
+					<condition>	
+                        <isvalid-field>A.HGBNUM_DISEASE_TYPE_CODE=B.HGBNUM_DISEASE_TYPE_CODE AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND A.GNUM_HOSPITAL_CODE=100 AND A.HGBSTR_PARENT_DISEASE_CODE IS NULL AND A.GNUM_ISVALID</isvalid-field>
+						<orderby> order by INITCAP(A.HGBSTR_DISEASE_DESC)</orderby>	
+                    </condition>
+				</query-detail>				
+		</list-page>
+	
+		<add-page>
+			<dynamic-page>
+				<controls>
+					<control type="text" index="0">
+						<label>Disease Name</label>
+						<constraints maxlength='100' size='30'
+							inputType='alphabets' mandatory="true" />
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="1">
+			       	<label>Disease Type</label>
+			         <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGBSTR_DISEASE_TYPE_NAME)</text-field>
+									<value-field>A.HGBNUM_DISEASE_TYPE_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_DISEASE_TYPE_MST</table>	
+								</tables>
+								<condition>
+										<general> A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HGBSTR_DISEASE_TYPE_NAME)</general>
+								</condition>
+							</dynamic>		
+						</data>
+						<default>0</default>
+						<submitRequired>0</submitRequired>		
+					</control>
+					<control type="textarea" index="2">
+						<label>Remarks</label>
+						<constraints maxlength='500' size='30'
+							inputType='alphabets'  />
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="3" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet' styleString="style='display:none'" />			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+						
+					</control>
+				</controls>
+				<redundent-check>
+					SELECT COUNT (*) FROM HGBT_HOSPITAL_DISEASE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+					and upper(HGBSTR_DISEASE_DESC)  =  controlindex0
+				</redundent-check>
+				
+				<insert-query>
+					<primary-key>
+						<field>HGBSTR_HOSPITAL_DISEASE_CODE</field>
+						<value>SELECT  concat('H',NVL(MAX(SUBSTR(HGBSTR_HOSPITAL_DISEASE_CODE,2)),'10')+1) FROM HGBT_HOSPITAL_DISEASE_MST WHERE GNUM_HOSPITAL_CODE=100</value>
+											
+					</primary-key>
+					<fields valueMap='#I0'>HGBSTR_DISEASE_DESC</fields>
+					<fields valueMap='#1'>HGBNUM_DISEASE_TYPE_CODE</fields>
+					<fields valueMap='#I2'>HGBSTR_DISEASE_REMARK</fields>
+					<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#3'>GNUM_HOSPITAL_CODE</fields>
+					<table>HGBT_HOSPITAL_DISEASE_MST</table>
+				</insert-query>
+			</dynamic-page>
+		</add-page>
+		
+		<modify-page>
+			<dynamic-page>
+				<controls>
+					<control type="text" index="0">
+						<label>Disease Name</label>
+						<constraints size='30' maxlength="100" mandatory='true' inputType="alphabets" />
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="1">
+						<label>Disease Type</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGBSTR_DISEASE_TYPE_NAME)</text-field>
+									<value-field>A.HGBNUM_DISEASE_TYPE_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_DISEASE_TYPE_MST</table>	
+								</tables>
+								<condition>
+									<general> A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HGBSTR_DISEASE_TYPE_NAME)</general>
+								</condition>
+							</dynamic>
+						</data>
+						<default>#Q1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+					<control type="textarea" index="2">
+						<label>Remarks</label>
+						<constraints size='30' maxlength="500"
+							inputType="alphabets"  />
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="3">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active</option>
+								<option value='2'>In Active</option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+				</controls>
+				<redundent-check>
+					SELECT COUNT (*) FROM HGBT_HOSPITAL_DISEASE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+					and upper(HGBSTR_DISEASE_DESC)  =  controlindex0
+				</redundent-check>
+				<initialise-query>
+					<fields>
+						<field>INITCAP(A.HGBSTR_DISEASE_DESC)</field>
+						<field>A.HGBNUM_DISEASE_TYPE_CODE</field>
+						<field>INITCAP(A.HGBSTR_DISEASE_REMARK)</field>
+					</fields>
+					<tables>
+						<table alias='A'>HGBT_HOSPITAL_DISEASE_MST</table>
+					</tables>
+					<condition>
+						<dependent>
+							<clause> A.GNUM_HOSPITAL_CODE=100 AND A.HGBSTR_HOSPITAL_DISEASE_CODE= #C1 </clause>
+						</dependent>
+					</condition>
+				</initialise-query>
+				<update-query>
+					<fields valueMap='#I0'>HGBSTR_DISEASE_DESC</fields>
+					<fields valueMap='#1'>HGBNUM_DISEASE_TYPE_CODE</fields>
+					<fields valueMap='#I2'>HGBSTR_DISEASE_REMARK</fields>
+					<fields valueMap='#3'>GNUM_ISVALID</fields>
+
+					<table>HGBT_HOSPITAL_DISEASE_MST</table>
+					<condition>GNUM_HOSPITAL_CODE=100 AND HGBSTR_HOSPITAL_DISEASE_CODE = #1 </condition>
+				</update-query>
+			</dynamic-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<master-config>
+	<master name='ExternalInstituteMaster'>
+		<common-values>
+			 <master-name>ExternalInstituteMaster</master-name> 
+			<master-title>External Institute Master</master-title>
+		</common-values>
+		
+		<list-page>
+				<tableHeading>External Institute Master</tableHeading> 
+				<list-table>GBLT_EXT_INSTITUTE_MST</list-table>
+				
+				<columns>
+					<column>Institute Name </column>
+				    <column>Institute Short Name</column>
+					<column>City</column> 
+					
+				</columns>
+				<query-detail>
+					<fields>
+						<field>INITCAP(A.GSTR_INSTITUTE_NAME)</field>
+						<field>UPPER(A.GSTR_SHORT_NAME)</field>
+					    <field>INITCAP(A.GSTR_CITY)</field>
+						
+					</fields>
+					<primaryKey>
+						<field>A.GNUM_INSTITUTE_CODE </field>
+						<field>A.GNUM_INSTITUTE_SLNO </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_EXT_INSTITUTE_MST </table>
+						
+					</tables>
+				<condition>
+					<general> GNUM_INSTITUTE_SLNO=(select max (GNUM_INSTITUTE_SLNO) from GBLT_EXT_INSTITUTE_MST where GNUM_INSTITUTE_CODE=a.GNUM_INSTITUTE_CODE
+							and GNUM_HOSPITAL_CODE=a.GNUM_HOSPITAL_CODE) AND</general>
+						    <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+							<orderby> order by INITCAP(A.GSTR_INSTITUTE_NAME)</orderby>
+					</condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>
+			<dynamic-page>	
+				<controls>
+					<control type="radio"  index="0">  
+						<label>Hospital Type </label>	
+						
+						<data>
+							<static>
+								<option value='0'>  Not Associated </option>
+								<option value='1'>  Associated  </option>
+							</static>
+						</data>
+						<default>1</default>
+						<readOnly>0</readOnly>							
+					</control>
+					<control type="text" index="1" >
+						<label>Institute Name</label>
+						<constraints  inputType='alphabets' maxlength ='100' styleString="style='width:130px; height:30px'" mandatory ='true' methodstring="onkeypress='return CheckMaxLength(event,this,100);'"/>					
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="2" >
+						<label>Institute Short Name</label>
+						<constraints  inputType='alphabets' maxlength ='10' size="12" mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="3">
+						<label>Institute Type</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='2'>Dispensary </option>
+								<option value='1'>Govt Hospital </option>
+								<option value='4'>Nursing Home </option>
+								<option value='3'>Private Hospital </option>
+							</static>
+						</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>
+					</control>		
+					<control type="textarea" index="4" >
+						<label>Address1</label>
+						<constraints   styleString="style='width:130px; height:30px'"  methodstring="onkeypress='return CheckMaxLength(event,this,40,3);'"/>							
+						<readOnly>0</readOnly>
+					</control>				
+				   <control type="textarea" index="5" >
+						<label>Address2</label>
+						<constraints  styleString="style='width:130px; height:30px'"  methodstring="onkeypress='return CheckMaxLength(event,this,40,3);'"/>						
+						<readOnly>0</readOnly>
+					</control>	
+					<control type="text" index="6" >
+						<label>City</label>
+						<constraints  inputType='alphabets'  maxlength ='40' size='22' mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					  <control type="combo" index="7">
+						<label>State</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_STATENAME)</text-field>
+									<value-field>A.GNUM_STATECODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_STATE_MST</table>									  
+								</tables>
+								<condition>
+									<general> A.GNUM_ISVALID = 1</general>
+									<orderby> order by INITCAP(A.GSTR_STATENAME)</orderby>
+																	
+							</condition>
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>					
+					</control>
+					
+					<control type="text" index="8">
+						<label>Contact Person</label>
+						<constraints  inputType = 'alphabets' maxlength="50" size="22" />
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="9" >
+						<label>Phone</label>
+						<constraints  inputType='numeric'  maxlength ='40'  size='12'/>						
+						<readOnly>0</readOnly>
+					</control>				
+					<control type="text" index="10" >
+						<label>Fax</label>
+						<constraints  inputType='numeric'  maxlength ='20' size="12"/>						
+						<readOnly>0</readOnly>
+					</control>					
+					<control type="text" index="11">
+						<label>Email </label>
+						<constraints size="22" methodstring="onkeypress='return CheckMaxLength(event,this,50,3);'"/>						
+						<readOnly>0</readOnly>
+					</control>					  					  
+					 	
+					<control type="combo" index="12">
+						<label>Is Active Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				   
+						
+				</controls>
+				<redundent-check>
+				SELECT COUNT (*) FROM GBLT_EXT_INSTITUTE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper (GSTR_INSTITUTE_NAME)  =  controlindex1
+				</redundent-check>	
+				<insert-query>
+					<primary-key>
+						<field>GNUM_INSTITUTE_CODE</field>
+						<value>SELECT NVL(MAX(GNUM_INSTITUTE_CODE),100)+1 FROM GBLT_EXT_INSTITUTE_MST</value>
+						<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+						</primary-key>
+						
+						
+					
+					
+					<fields valueMap='#0'>GNUM_IS_ASSOCIATED</fields>
+					<fields valueMap='#I1'>GSTR_INSTITUTE_NAME</fields>
+					<fields valueMap='#U2'>GSTR_SHORT_NAME</fields>
+					<fields valueMap='#3'>GNUM_INSTITUTE_TYPE</fields>
+					<fields valueMap='#4'>GSTR_INSTITUTE_ADD1</fields>
+					<fields valueMap='#5'>GSTR_INSTITUTEL_ADD2</fields>
+					<fields valueMap='#6'>GSTR_CITY</fields>
+					<fields valueMap='#7'>GNUM_STATE_CODE</fields>
+					<fields valueMap='#I8'>GSTR_CONTACT_PERSON</fields>
+				    <fields valueMap='#9'>GSTR_PHONE</fields>
+				    <fields valueMap='#10'>GSTR_FAX</fields>
+				    <fields valueMap='#11'>GSTR_EMAIL</fields>				    
+					<fields valueMap='#12'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+				    <fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+				    <fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+				    <fields valueMap='@defaultOne'>GNUM_INSTITUTE_SLNO</fields>
+				    
+				    
+				    
+				    
+				    <table>GBLT_EXT_INSTITUTE_MST</table>
+				</insert-query>
+			</dynamic-page>
+		</add-page>
+		
+		<modify-page>
+			<static-page>/registration/master/modifyExternalInstituteMaster.cnt</static-page>	
+		</modify-page>
+	</master>
+</master-config>		

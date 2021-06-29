@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <master-config>
+	<master name='ProfileGroupDetail'>
+		<common-values>
+			<master-name>ProfileGroupDetail</master-name>
+			<master-title>Profile Group Detail Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Profile Group Detail</tableHeading>
+			
+			<list-table>HPMRT_PROFILE_GROUP_DTL</list-table>
+
+			<columns>
+				<column>Profile Group Name</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>B.HPMRSTR_PROFILE_GROUP_NAME</field>
+				</fields>
+				
+				<primaryKey>
+					<field>distinct(A.HPMRNUM_PROFILE_GROUP_ID)</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HPMRNUM_SLNO</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HPMRT_PROFILE_GROUP_DTL</table>
+					<table alias='B'>HPMRT_PROFILE_GROUP_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>
+					A.HPMRNUM_PROFILE_GROUP_ID=B.HPMRNUM_PROFILE_GROUP_ID AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1  AND A.GNUM_ISVALID
+					</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby>order by INITCAP(A.HPMRNUM_PROFILE_GROUP_ID)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/opd/master/profileGroupDetail.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/profileGroupDetail.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>
+   

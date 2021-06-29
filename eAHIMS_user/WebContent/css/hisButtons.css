@@ -1,0 +1,87 @@
+a.button {
+    background: none repeat scroll 0 0 #086FA6;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-weight: bold;
+    font-family: Verdana,sans-serif,Georgia;
+    font-size: 11px;
+    height: 25px;
+    line-height: 25px;
+    margin-right: 5px;
+    text-decoration: none;
+    width: 100px;
+}
+a.button:hover {
+    color: #000000;
+}
+a:focus.button{
+	 color:#000;
+}
+.save{
+background:url(/eAHIMS_user/images/save.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.clear{
+background:url(/eAHIMS_user/images/clear.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.cancel{
+background:url(/eAHIMS_user/images/cancel.png) no-repeat 10px 5px;
+text-indent:25px;
+display:block;
+}
+
+.reset{
+background:url(/eAHIMS_user/images/reset.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+/*		Modification Log							
+	##		Modify Date				:26thMar'15 
+	##		Reason	(CR/PRS)		:UAT Observation Point 18: In Admin Module, along with the reset password option, there should be an “Unlock” option too. So that users password can be unlocked and user may not require to change the password
+	##		Modify By				:Sheeldarshi */
+.unlock{
+background:url(/eAHIMS_user/images/unlock.gif) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+/* end */
+.find{
+background:url(/eAHIMS_user/images/zoom.png) no-repeat 10px 5px;
+text-indent:40px;
+display:block;
+}
+.add{
+background:url(/eAHIMS_user/images/addA.gif) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.modify{
+background:url(/eAHIMS_user/images/edit.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.delete{
+background:url(/eAHIMS_user/images/trash.gif) no-repeat 10px 5px;
+text-indent:20px;
+display:block;
+}
+.view{
+background:url(/eAHIMS_user/images/viewA.png) no-repeat 10px 5px;
+text-indent:15px;
+display:block;
+}
+.reports{
+background:url(/eAHIMS_user/images/reportA.png) no-repeat 10px 5px;
+text-indent:25px;
+display:block;
+}
+.print{
+background:url(/eAHIMS_user/images/printA.gif) no-repeat 10px 5px;
+text-indent:25px;
+display:block;
+}

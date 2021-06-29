@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Roster Area Mapping Master'>
+		<common-values>
+			<master-name>RosterAreaCapacityMaster</master-name>
+			<master-title>Roster Area Mapping Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Roster Area Mapping Master</tableHeading>
+			
+			<list-table>HDRT_ROSTERAREA_CAPACITY_MST</list-table>
+
+			<columns>
+				<column>Roster Name</column>
+				<column>Area Type Name</column>
+				<column>Area Name</column>
+			</columns>
+
+			<query-detail>
+				<fields> 
+					<field>(SELECT hdrstr_roster_type_name
+         					 FROM hdrt_roster_type_mst
+         						WHERE hdrnum_roster_type_id = a.hdrnum_roster_type_id
+          					 AND gnum_hospital_code = a.gnum_hospital_code
+          					 AND hdrnum_slno =
+                  			(SELECT MAX (hdrnum_slno)
+                     		FROM hdrt_roster_type_mst
+                    		WHERE hdrnum_roster_type_id = a.hdrnum_roster_type_id
+                      		AND gnum_hospital_code = a.gnum_hospital_code
+	                      AND gnum_isvalid = 1)
+    				       AND gnum_isvalid = 1)</field> 
+    				       
+					<field>(SELECT hdtstr_duty_area_type
+         					FROM hdrt_duty_area_mst
+         					WHERE hdrnum_area_type_code =a.hdrnum_area_type_code
+           					AND gnum_isvalid = 1
+           					AND hdrnum_slno =
+           					(SELECT MAX (hdrnum_slno)
+                    		 FROM hdrt_duty_area_mst
+                    		WHERE hdrnum_area_type_code = a.hdrnum_area_type_code
+                      		AND gnum_isvalid = 1))</field> 
+                      		
+                      		
+					<field>(SELECT pkg_duty_roster.areaname 
+					(a.GNUM_HOSPITAL_CODE,a.hdrnum_area_type_code,a.hdrstr_duty_area_code )
+         	 FROM DUAL)</field> 
+					
+				</fields>
+				
+				<primaryKey>  
+					<field>A.HDRNUM_ROSTER_TYPE_ID</field>
+					<field>A.HDRSTR_DUTY_AREA_CODE</field>
+					<field>A.HDRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field> 
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDRT_ROSTERAREA_CAPACITY_MST</table>
+					<table alias='B'>hdrt_roster_type_mst</table>
+				</tables>
+				
+				<condition>
+					
+					<general-inactive>A.hdrnum_slno =
+          (SELECT MAX (hdrnum_slno)
+             FROM hdrt_rosterarea_capacity_mst a
+            WHERE hdrnum_roster_type_id = a.hdrnum_roster_type_id
+              AND hdrstr_duty_area_code = a.hdrstr_duty_area_code
+              AND gnum_hospital_code = a.gnum_hospital_code
+              AND gnum_isvalid = A.GNUM_ISVALID)  
+               AND a.gnum_isvalid =b.gnum_isvalid 
+   AND a.gnum_hospital_code =b.gnum_hospital_code
+   and a.HDRNUM_ROSTER_TYPE_ID=b.HDRNUM_ROSTER_TYPE_ID  AND              
+              </general-inactive>
+              
+              <general> A.hdrnum_slno =
+          	(SELECT MAX (hdrnum_slno)
+             FROM hdrt_rosterarea_capacity_mst 
+            WHERE hdrnum_roster_type_id = a.hdrnum_roster_type_id
+              AND hdrstr_duty_area_code = a.hdrstr_duty_area_code
+              AND gnum_hospital_code = a.gnum_hospital_code
+              AND gnum_isvalid = A.GNUM_ISVALID)  
+               AND a.gnum_isvalid =b.gnum_isvalid 
+   AND a.gnum_hospital_code =b.gnum_hospital_code
+   and a.HDRNUM_ROSTER_TYPE_ID=b.HDRNUM_ROSTER_TYPE_ID
+   AND   </general>
+					
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					
+								
+				</condition>
+				<orderby> ORDER BY(B.HDRSTR_ROSTER_TYPE_NAME)</orderby>
+				
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/dutyroster/masters/RosterAreaCapacityMstAddModACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/dutyroster/masters/RosterAreaCapacityMstAddModACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

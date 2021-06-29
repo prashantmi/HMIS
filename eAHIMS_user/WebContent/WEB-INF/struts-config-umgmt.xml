@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>		
+		<form-bean name= "admin_new" type="usermgmt.reports.inv_Adminactivity_ActionForm">	</form-bean>
+		<form-bean name= "user_form" type="usermgmt.reports.inv_UserLogActionForm"></form-bean><!--User Log-->
+	
+	 	<form-bean name= "sessionConfigForm" type="usermgmt.masters.umgmtSessionMgtConfigActionForm"></form-bean><!--config file-->
+	
+		<form-bean name="errorLogForm" type='usermgmt.reports.errorLogActionForm'></form-bean>	
+	</form-beans>
+			          
+
+	<!-- ========== Action Mapping Definitions ============================== -->
+	
+	<action-mappings>	
+	
+		
+		<!-- Usermanagement : UserLog Report by Shantanu Chaturvedi-->
+		
+		<action path = "/usermgmt/reports/user_log"
+			type = "usermgmt.reports.inv_UserlogAction"
+			name = "user_form"
+			scope = "request"
+			parameter = "hmode"
+			validate = "false"
+			input = "/usermgmt/reports/inv_Userlog_lst.jsp">
+		<forward name="init" path="/usermgmt/reports/inv_Userlog_lst.jsp"/>				
+		<forward name="rpt" path="/usermgmt/reports/inv_Userlog_rpt.jsp"/>
+		</action>
+		
+		<!-- Usermanagement : Audit Log Report by Shantanu Chaturvedi-->
+		
+		<action path = "/usermgmt/reports/admin_action"
+			type = "usermgmt.reports.inv_Adminactivity_Action"
+			name = "admin_new"
+			scope = "request"
+			parameter = "hmode"
+			validate = "false"
+			input = "/usermgmt/reports/inv_adminactivityLst_cpy.jsp">
+		<forward name="init" path="/usermgmt/reports/inv_adminactivityLst_cpy.jsp"/>				
+		<forward name="rpt" path="/usermgmt/reports/inv_adminactivityrpt_cpy.jsp"/>
+		</action>
+		
+		
+		
+		<!-- error log report -->
+		
+		<action path="/usermgmt/reports/errorLogController"
+		    type="usermgmt.reports.errorLogAction"
+		    name="errorLogForm" 
+		    scope="request"
+		    parameter="hmode"
+		     validate="false">
+		 	<forward name="init" path="/usermgmt/reports/errorLog.jsp"/>
+			 <forward name="same" path="/usermgmt/reports/errorLog.jsp"/>  	
+		 </action> 
+		 
+		 <!-- User Management Configuation Mapping -->
+		 
+		 <action path="/usermgmt/masters/userMgtConfigController"
+		    type="usermgmt.masters.umgmtSessionMgtConfigAction"
+		    name="sessionConfigForm" 
+		    scope="request"
+		    parameter="hmode"
+		     validate="false">
+		 	<forward name="init" path="/usermgmt/masters/umgmtSessionMgtConfig_int.jsp"/>
+
+		 </action> 
+		 
+		 
+ 
+		
+	</action-mappings>		
+	
+	
+	<!-- ========== Validation Definitions =========================== -->
+
+</struts-config> 
+ 

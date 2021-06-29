@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	 <!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		  <form-bean name="masterVerificationFB" type="hisglobal.utility.masterVerification.MasterVerificationFB"/>
+		  <form-bean name="masterVerificationMstFB" type="hisglobal.utility.masterVerification.MasterVerificationMstFB"/>
+		  <form-bean name="patientAuditLogMstFB" type="hisglobal.utility.patientAuditLog.PatientAuditLogMstFB"/>
+	</form-beans>
+	
+	<action-mappings>
+	
+		<action path="/masterVerification"
+		name="masterVerificationFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="hisglobal.utility.masterVerification.MasterVerificationACT"
+		input="/masterVerification/masterVerification.jsp" >
+		<forward name="NEW" path="/../hisglobal/utility/masterVerification/masterVerification.jsp" /> 
+		<forward name="POPUP" path="/../hisglobal/utility/masterVerification/masterVerificationDataView.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/masterVerificationMst"
+		name="masterVerificationMstFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="hisglobal.utility.masterVerification.MasterVerificationMstACTION"
+		input="/masterVerification/masterVerificationMst.jsp" >
+		<forward name="NEW" path="/../hisglobal/utility/masterVerification/masterVerificationMst.jsp" /> 
+		<forward name="MODIFY" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		<forward name="CANCEL" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		</action> 
+		
+		<action path="/patientAuditLogMst"
+		name="patientAuditLogMstFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="hisglobal.utility.patientAuditLog.PatientAuditLogMstACTION"
+		input="/patientAuditLog/patientAuditLogMst.jsp" >
+		<forward name="NEW" path="/../hisglobal/utility/patientAuditLog/patientAuditLogMst.jsp" /> 
+		<forward name="POPUP" path="/../hisglobal/utility/patientAuditLog/patientAuditLogDataView.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		
+		<action path="/switchModule" 	type="org.apache.struts.actions.SwitchAction" ></action>
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Disaster-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+</struts-config>          

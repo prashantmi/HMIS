@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!-- ========== Form Bean Definitions =================================== -->
+
+	<form-beans>
+		<form-bean name="InvestigationRaisingDtlFB"
+			type="investigationDesk.transactions.controller.fb.InvestigationRaisingDtlFB" />
+
+		<form-bean name="SampleCollectionFB"
+			type="investigationDesk.transactions.controller.fb.SampleCollectionFB" />
+
+		<form-bean name="PackingListGenerationFB"
+			type="investigationDesk.transactions.controller.fb.PackingListGenerationFB" />
+
+
+		<form-bean name="viewInvestigationFB"
+			type="investigationDesk.transactions.controller.fb.viewInvestigationFB" />
+			
+		<form-bean name="invRaisingCumSamCollectionFB"
+			type="investigationDesk.transactions.controller.fb.invRaisingCumSamCollectionFB" />
+	</form-beans>
+
+	<action-mappings>
+
+		<action path="/investigationReqRaising"
+			type="investigationDesk.transactions.controller.action.InvestigationRaisingDtlACT"
+			name="InvestigationRaisingDtlFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/investigationRaisingDtl.jsp">
+			<forward name="NEW" path="/transactions/investigationRaisingDtl.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/viewInvestigation"
+			type="investigationDesk.transactions.controller.action.viewInvestigationACT"
+			name="viewInvestigationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/viewInvestigationDtl.jsp">
+			<forward name="NEW" path="/transactions/viewInvestigationDtl.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+		
+		<action path="/invRaisingCumSamCollection"
+			type="investigationDesk.transactions.controller.action.invRaisingCumSamCollectionACT"
+			name="invRaisingCumSamCollectionFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invRaisingCumSamCollection.jsp">
+			<forward name="NEW" path="/transactions/invRaisingCumSamCollection.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/sampleCollection"
+			type="investigationDesk.transactions.controller.action.SampleCollectionACT"
+			name="SampleCollectionFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/sampleCollection.jsp">
+			<forward name="NEW" path="/transactions/sampleCollection.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/packingListGeneration"
+			type="investigationDesk.transactions.controller.action.PackingListGenerationACT"
+			name="PackingListGenerationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/packingListGeneration.jsp">
+			<forward name="NEW" path="/transactions/packingListGeneration.jsp" />
+			<forward name="PACKINGLISTREPORT"
+				path="/transactions/packingListGenerationReportPage.jsp" />
+			<forward name="DUPLICATEPACKINGLISTREPORT"
+				path="/transactions/duplicatePackingListGenerationReportPage.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+	</action-mappings>
+
+
+	<controller>
+		<set-property property="processorClass"
+			value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="investigationDesk.investigationResourceBundle">
+	</message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/investigationDesk-tiles-def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+	<!-- **************** scheduler Plugin which schedule jobs*********************** 
+		The plugin configuration has two properties used for initialization. @startOnLoad 
+		specifies whether or not we want to start the scheduler immediately when 
+		the container starts and @startupDelay is used to specify how long before 
+		the code will attempt to start the scheduler. -->
+
+
+	<!-- <plug-in className="hisglobal.presentation.SchedulerDonorPlugIn"> <set-property 
+		property="startOnLoad" value="false" /> <set-property property="startupDelay" 
+		value="0" /> </plug-in> -->
+
+	<!-- **************************************************************************** -->
+</struts-config>

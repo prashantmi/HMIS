@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="medicalCertificateFB" type="mrd.transaction.controller.fb.MedicalCertificateFB" />
+		<form-bean name="FitnessCertificateFB" type="mrd.transaction.controller.fb.FitnessCertificateFB" />
+		<form-bean name="IssueCertificateFB" type="mrd.transaction.controller.fb.IssueCertificateFB" />
+		<form-bean name="certificateReceivedFB" type="mrd.transaction.controller.fb.CertificateReceivedFB" />
+		<form-bean name="CertificateMovementFB" type="mrd.transaction.controller.fb.CertificateMovementFB" />
+
+		<form-bean name="CaseSheetDispatchFB" type="mrd.transaction.controller.fb.CaseSheetDispatchFB" />
+		<form-bean name="caseSheetMonitoringFB" type="mrd.transaction.controller.fb.CaseSheetMonitoringFB" />
+		<form-bean name="caseSheetReceivedFB" type="mrd.transaction.controller.fb.CaseSheetReceivedFB" />
+
+		<form-bean name="patientDischargePrintingFB" type="mrd.transaction.controller.fb.PatientDischargePrintingFB" />
+		<form-bean name="duplicateDischargePrintingFB" type="mrd.transaction.controller.fb.DuplicateDischargePrintingFB" />
+		<form-bean name="PatientFamilyDoctorDtlFB" type="mrd.transaction.controller.fb.PatientFamilyDoctorDtlFB" />
+		<form-bean name="CrNoMergeDtlFB" type="mrd.transaction.controller.fb.CrNoMergeDtlFB" />
+		<form-bean name="OnlineCRNoMergeFB" type="mrd.transaction.controller.fb.OnlineCRNoMergeFB" />
+		<form-bean name="EmrCommonDeskFB" type="mrd.transaction.controller.fb.EmrCommonDeskFB" />
+		<form-bean name="patImageUploadFB" type="mrd.transaction.controller.fb.PatImageUploadFB" />
+		<form-bean name="SummonDtlFB" type="mrd.transaction.controller.fb.SummonDtlFB" />
+		<form-bean name="FileUploadFB" type="registration.controller.fb.FileUploadFB" />
+		
+		<form-bean name="BirthDeathRegistrationUploadDeskFB" type="mrd.transaction.controller.fb.BirthDeathRegistrationUploadDeskFB" />
+		<form-bean name="BirthRegistrationUploadFB" type="mrd.transaction.controller.fb.BirthRegistrationUploadFB" />
+		<form-bean name="DeathRegistrationUploadFB" type="mrd.transaction.controller.fb.DeathRegistrationUploadFB" />
+		
+		<form-bean name="SummonDetailDeskFB" type="mrd.transaction.controller.fb.SummonDetailDeskFB" />
+		<form-bean name="SummonAssigmentFB" type="mrd.transaction.controller.fb.SummonAssigmentFB" />
+		<form-bean name="PostSummonDetailFB" type="mrd.transaction.controller.fb.PostSummonDetailFB" />
+		<form-bean name="SummonAssigmentChangeFB" type="mrd.transaction.controller.fb.SummonAssigmentChangeFB" />
+		<form-bean name="SummonTrackingFB" type="mrd.transaction.controller.fb.SummonTrackingFB" />
+		<form-bean name="InsuranceClaimReceiveFB" type="mrd.transaction.controller.fb.InsuranceClaimReceiveFB" />
+	
+		<form-bean name="ReceiveCertificateInitialFB" type="mrd.transaction.controller.fb.ReceiveCertificateInitialFB" />
+		<form-bean name="ReceiveCertificateInMrdDeskFB" type="mrd.transaction.controller.fb.ReceiveCertificateInMrdDeskFB" />
+		<form-bean name="CertificateAcceptFB" type="mrd.transaction.controller.fb.CertificateAcceptFB" />
+		<form-bean name="CertificateArchivalFB" type="mrd.transaction.controller.fb.CertificateArchivalFB" />
+		<form-bean name="CertificateLostFoundFB" type="mrd.transaction.controller.fb.CertificateLostFoundFB" />
+		<form-bean name="CaseSheetEnquiryFB" type="mrd.transaction.controller.fb.CaseSheetEnquiryFB" />
+		<form-bean name="OnlineMrdRecordReqDtlFB" type="mrd.transaction.controller.fb.OnlineMrdRecordReqDtlFB" />
+		<form-bean name="OfflineMrdRecordReqDtlFB" type="mrd.transaction.controller.fb.OfflineMrdRecordReqDtlFB" />
+		<form-bean name="caseSheetHandoverFB" type="mrd.transaction.controller.fb.CaseSheetHandoverFB" />
+		<form-bean name="SummonDetailConfigFB" type="mrd.transaction.controller.fb.SummonDetailConfigFB" />
+		<form-bean name="caseSheetApprovalFB" type="mrd.transaction.controller.fb.CaseSheetApprovalFB" />
+		<form-bean name="SummonInboxFB" type="mrd.transaction.controller.fb.SummonInboxFB" />
+		<form-bean name="recordRequestApprovalFB" type="mrd.transaction.controller.fb.RecordRequestApprovalFB" />
+		<form-bean name="InsuranceClaimRecordEntryFB" type="mrd.transaction.controller.fb.InsuranceClaimRecordEntryFB" />
+		<form-bean name="mrdRecordIssueFB" type="mrd.transaction.controller.fb.MrdRecordIssueFB" />
+		<form-bean name="mrdRecordReturnFB" type="mrd.transaction.controller.fb.MrdRecordReturnFB" />
+		<form-bean name="cdBurnFB" type="mrd.transaction.controller.fb.CDBurnFB" />
+		<form-bean name="RecordLostInMrdFB" type="mrd.transaction.controller.fb.RecordLostInMrdFB" />
+		<form-bean name="MrdRecordMovementDetailFB" type="mrd.transaction.controller.fb.MrdRecordMovementDetailFB" />
+		<form-bean name="RecordFoundInMrdFB" type="mrd.transaction.controller.fb.RecordFoundInMrdFB" />
+		<form-bean name="InsuranceEnquiryFB" type="mrd.transaction.controller.fb.InsuranceEnquiryFB" />
+		<form-bean name="OPDFileTrackingFB" type="mrd.transaction.controller.fb.OPDFileTrackingFB" />
+		<form-bean name="OPDFileTrackingDeskFB" type="mrd.transaction.controller.fb.OPDFileTrackingDeskFB" />
+		<form-bean name="opdFileMovementFB" type="mrd.transaction.controller.fb.OPDFileMovementFB" />
+		<form-bean name="opdFileReturnFB" type="mrd.transaction.controller.fb.OPDFileReturnFB" />
+		<form-bean name="employeePopUp" type="mrd.transaction.controller.fb.EmployeePopUpFB"/>
+		<form-bean name="patientEmrAuditFB" type="mrd.transaction.controller.fb.PatientEmrAuditFB" />
+		<form-bean name="mrdMedicalCampFB" type="mrd.transaction.controller.fb.MrdMedicalCampFB" />
+		<form-bean name="EstimateCertificateIssuetFB" type="mrd.transaction.controller.fb.EstimateCertificateIssuetFB" />
+		<form-bean name="MedicalCertificateRequestFB" type="mrd.transaction.controller.fb.MedicalCertificateRequestFB" />
+		
+		 
+	</form-beans>
+	
+	
+	<action-mappings>
+	
+		<action path="/recordFoundInMrd"
+				type="mrd.transaction.controller.action.RecordFoundInMrdACT"
+				name="RecordFoundInMrdFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/recordFoundInMrd.jsp">
+			<forward name="NEW" path="/transaction/recordFoundInMrd.jsp" />
+			<forward name="POPUP" path="/transaction/searchLostRecordIDInMrd.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+	
+		<action path="/mrdRecordMovementDetail"
+				type="mrd.transaction.controller.action.MrdRecordMovementDetailACT"
+				name="MrdRecordMovementDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/mrdRecordMovementDetail.jsp">
+			<forward name="NEW" path="/transaction/mrdRecordMovementDetail.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+	
+		<action path="/recordLostInMrd"
+				type="mrd.transaction.controller.action.RecordLostInMrdACT"
+				name="RecordLostInMrdFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/recordLostInMrd.jsp">
+			<forward name="NEW" path="/transaction/recordLostInMrd.jsp" />
+			<forward name="POPUP" path="/transaction/searchLostRecordIDInMrd.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+	
+		<action path="/offlineMrdRecordRequest"
+				type="mrd.transaction.controller.action.OfflineMrdRecordReqDtlACT"
+				name="OfflineMrdRecordReqDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/offlineMrdRecordReqDtl.jsp">
+			<forward name="NEW" path="/transaction/offlineMrdRecordReqDtl.jsp" />
+			<forward name="POPUP" path="/transaction/searchRecordInMrd.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/onlineMrdRecordRequest"
+				type="mrd.transaction.controller.action.OnlineMrdRecordReqDtlACT"
+				name="OnlineMrdRecordReqDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/onlineMrdRecordReqDtl.jsp">
+			<forward name="NEW" path="/transaction/onlineMrdRecordReqDtl.jsp" />
+			<forward name="POPUP" path="/transaction/pendingRequestRecordStatusPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/receiveCertificateInitial"
+				type="mrd.transaction.controller.action.ReceiveCertificateInitialACT"
+				name="ReceiveCertificateInitialFB"
+				validate="false"
+				scope="request"
+				parameter="mode"
+				input="/transaction/receiveCertificateInitial.jsp">
+			<forward name="NEW" path="/transaction/receiveCertificateInitial.jsp" />
+			<forward name="DESK" path="/receiveCertificateInMrdDesk.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/receiveCertificateInMrdDesk"
+				type="mrd.transaction.controller.action.ReceiveCertificateInMrdDeskACT"
+				name="ReceiveCertificateInMrdDeskFB"
+				validate="false"
+				scope="request"
+				parameter="deskmode"
+				input="/certificatedAccept">
+			<forward name="ACCEPT" path="/certificateAccept"/>
+			<forward name="ARCHIVAL" path="/certificateArchival"/>
+			<forward name="LOSTFOUND" path="/certificateLostFound"/>
+			<forward name="CANCEL" path="/receiveCertificateInitial.cnt" />
+		</action>
+		
+		<action path="/certificateAcceptInMrd"
+				type="mrd.transaction.controller.action.CertificateAcceptACT"
+				name="CertificateAcceptFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/certificateAccept.jsp">
+			<forward name="NEW" path="/transaction/certificateAccept.jsp" />
+			<forward name="ENCLOSURE" path="/transaction/enclosureDetailPopup.jsp" />
+			<forward name="CANCEL" path="/receiveCertificateInitial.cnt"/>
+		</action>
+		
+		<action path="/certificateArchivalInMrd"
+				type="mrd.transaction.controller.action.CertificateArchivalACT"
+				name="CertificateArchivalFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/certificateArchival.jsp">
+			<forward name="NEW" path="/transaction/certificateArchival.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/certificateLostFoundInMrd"
+				type="mrd.transaction.controller.action.CertificateLostFoundACT"
+				name="CertificateLostFoundFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/certificateLostFound.jsp">
+			<forward name="NEW" path="/transaction/certificateLostFound.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+			
+		<action path="/birthDeathRegistrationUploadDesk"
+				type="mrd.transaction.controller.action.BirthDeathRegistrationUploadDeskACT"
+				name="BirthDeathRegistrationUploadDeskFB"
+				validate="false"
+				scope="request"
+				parameter="deskmode"
+				input="/birthUpload">
+			<forward name="BIRTH" path="/birthUpload"/>
+			<forward name="DEATH" path="/deathUpload"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		<action path="/deathRegistrationUpload"
+				type="mrd.transaction.controller.action.DeathRegistrationUploadACT"
+				name="DeathRegistrationUploadFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/deathRegistrationUpload.jsp">
+			<forward name="NEW" path="/transaction/deathRegistrationUpload.jsp" />
+			<forward name="PRINT" path="/transaction/deathRegUploadSlip.jsp" />
+			<forward name="SEARCH" path="/transaction/deathRegSearchPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/birthRegistrationUpload"
+				type="mrd.transaction.controller.action.BirthRegistrationUploadACT"
+				name="BirthRegistrationUploadFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/birthRegistrationUpload.jsp">
+			<forward name="NEW" path="/transaction/birthRegistrationUpload.jsp" />
+			<forward name="PRINT" path="/transaction/birthRegUploadSlip.jsp" />
+			<forward name="SEARCH" path="/transaction/birthRegSearchPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/onlineCrNoMerge"
+				type="mrd.transaction.controller.action.OnlineCRNoMergeACT"
+				name="OnlineCRNoMergeFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/onlineCRNoMerge.jsp">
+			<forward name="NEW" path="/transaction/onlineCRNoMerge.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/crNoMerged"
+				type="mrd.transaction.controller.action.CrNoMergeDtlACT"
+				name="CrNoMergeDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/crNoMergeDtl.jsp">
+			<forward name="NEW" path="/transaction/crNoMergeDtl.jsp" />
+			<forward name="POPUP" path="/transaction/searchMergingCrNoPopup.jsp" />		
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/patientFamilyDoctorDtl"
+				type="mrd.transaction.controller.action.PatientFamilyDoctorDtlACT"
+				name="PatientFamilyDoctorDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/patientFamilyDoctorDtl.jsp">
+			<forward name="NEW" path="/transaction/patientFamilyDoctorDtl.jsp" />	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/certificateMovement"
+				type="mrd.transaction.controller.action.CertificateMovementACT"
+				name="CertificateMovementFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/certificateMovement.jsp">
+			<forward name="NEW" path="/transaction/certificateMovement.jsp" />
+			<forward name="CHECKLIST" path="/transaction/certificateMovementCheckList.jsp" />	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/caseSheetDispatch"
+				type="mrd.transaction.controller.action.CaseSheetDispatchACT"
+				name="CaseSheetDispatchFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/caseSheetDispatch.jsp">
+			<forward name="NEW" path="/transaction/caseSheetDispatch.jsp" />	
+			<forward name="POPUP" path="/transaction/selectEnclosureForCasesheet.jsp" />	
+			<forward name="CHECKLIST" path="/transaction/selectChecklistForCasesheet.jsp" />	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/issueCertificate"
+				type="mrd.transaction.controller.action.IssueCertificateACT"
+				name="IssueCertificateFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/issueCertificate.jsp">
+			<forward name="NEW" path="/transaction/issueCertificate.jsp" />	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/fitnessCertificate"
+				type="mrd.transaction.controller.action.FitnessCertificateACT"
+				name="FitnessCertificateFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/fitnessCertificate.jsp">
+			<forward name="NEW" path="/transaction/fitnessCertificate.jsp" />	
+		</action>
+		
+		<action path="/medicalCertificate"
+				type="mrd.transaction.controller.action.MedicalCertificateACT"
+				name="medicalCertificateFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/medicalCertificate.jsp">
+			<forward name="NEW" path="/transaction/medicalCertificate.jsp" />
+			<forward name="POPUP" path="/transaction/mcDiagnosisPopup.jsp" />	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/certificateReceived"
+				type="mrd.transaction.controller.action.CertificateReceivedACT"
+				name="certificateReceivedFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/certificateReceived.jsp">
+			<forward name="NEW" path="/transaction/certificateReceived.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/emrDesk"
+				type="mrd.transaction.controller.action.EmrCommonDeskACT"
+				name="EmrCommonDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/emrLogin.jsp">
+			<forward name="NEW" path="/transaction/emrLogin.jsp" />
+			<forward name="DESK" path="/transaction/emrCommonDesk.jsp" />
+			<forward name="NODE" path="/transaction/emrTreeNode1.jsp" />
+			<forward name="COMMON" path="/emrCommonLayout" />
+			<forward name="PATDTL" path="/transaction/emrPatientDtl.jsp" />
+			<forward name="PERSONALPROFILE" path="/transaction/emrPersonalProfile.jsp" />
+			<forward name="ALLERGIES" path="/transaction/emrEpisodeAllergiesDetails.jsp" />
+			<forward name="TREATMENT" path="/transaction/emrPatientTreatmentDetail.jsp" />
+			<forward name="INVESTIGATION" path="/transaction/emrPatientInvestigation.jsp" />
+			<forward name="INVESTIGATIONPOPUP" path="/transaction/emrInvestigationResultPopUp.jsp" />
+			<forward name="ALLIMAGES" path="/transaction/showAllImagesPopoUp.jsp" />
+			<forward name="CHRONICDESASE" path="/transaction/emrPatientChronicDisease.jsp" />
+			<forward name="DIAGNOSIS" path="/transaction/emrDiagnosisDetailsVisit.jsp" />
+			<forward name="INTAKEOUTTAKE" path="/transaction/emrIntakeOutakeDetails.jsp" />
+			<forward name="PROGRESSNOTES" path="/transaction/emrPatientProgressNotes.jsp" />
+			<forward name="PROGRESSNOTESPOPUP" path="/transaction/emrProgressNotesPopUp.jsp" />
+			<forward name="VITALS" path="/transaction/emrPatientVitals.jsp" />
+			<forward name="EXTINESTIGATION" path="/transaction/emrPatientExternalInvestigation.jsp" />
+			<forward name="COMPLAINTS" path="/transaction/emrPatientComplaints.jsp" />
+			<forward name="HISTORY" path="/transaction/emrPatientHistoryDetail.jsp" />
+			<forward name="EXAMINATION" path="/transaction/emrPatientExaminationDetail.jsp" />
+			<forward name="PROFILE" path="/transaction/emrPatientProfileDetails.jsp" />
+			<forward name="IMAGEEXAMINATION" path="/transaction/emrPatientImageExamination.jsp" />
+			<forward name="OPERATION" path="/transaction/emrPatientOperationDetail.jsp" />
+			<forward name="OPERATIONPOPUP" path="/transaction/emrOTTemplateDetails.jsp" />
+			<forward name="ANCDETAIL" path="/transaction/emrPatientANCDetail.jsp" />
+			<forward name="VISITSUMMARY" path="/transaction/emrPatientVisitSummary.jsp" />
+			<forward name="VIEWSCANDOCS" path="/transaction/emrViewScannedDocs.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action>
+		
+		<action path="/patientImageUpload"
+				type="mrd.transaction.controller.action.PatImageUploadACT"
+				name="patImageUploadFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/patientImageUpload.jsp">
+			<forward name="NEW" path="/transaction/patientImageUpload.jsp" />
+
+		</action>
+		
+
+		<action path="/caseSheetMonitoring"
+				type="mrd.transaction.controller.action.CaseSheetMonitoringACT"
+				name="caseSheetMonitoringFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/caseSheetMonitoring.jsp">
+			<forward name="NEW" path="/transaction/caseSheetMonitoring.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+		
+
+		<action path="/caseSheetReceived"
+				type="mrd.transaction.controller.action.CaseSheetReceivedACTION"
+				name="caseSheetReceivedFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/caseSheetReceived.jsp">
+			<forward name="NEW" path="/transaction/caseSheetReceived.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+		
+		<action path="/patientDischargePrinting"
+				type="mrd.transaction.controller.action.PatientDischargePrintingACTION"
+				name="patientDischargePrintingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/patientDischargePrinting.jsp">
+			<forward name="NEW" path="/transaction/patientDischargePrinting.jsp" />
+			<forward name="POPUP" path="/transaction/patientDischargePrintingPopup.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+		
+		<action path="/duplicateDischargePrinting"
+				type="mrd.transaction.controller.action.DuplicateDischargePrintingACTION"
+				name="duplicateDischargePrintingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/duplicateDischargePrinting.jsp">
+			<forward name="NEW" path="/transaction/duplicateDischargePrinting.jsp" />
+			<forward name="POPUP" path="/transaction/patientDischargePrintingPopup.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+		
+		<action path="/summonDetailConfigration"
+				type="mrd.transaction.controller.action.SummonDetailConfigACT"
+				name="SummonDetailConfigFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/summonDetailConfig.jsp">
+			<forward name="NEW" path="/transaction/summonDetailConfig.jsp" />
+			<forward name="DESK" path="/summonDetailDesk.cnt" />
+			<forward name="SUMMONPROCESS" path="/computerizedSummonDetail.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+				
+		<action path="/summonDetailDesk"
+				type="mrd.transaction.controller.action.SummonDetailDeskACT"
+				name="SummonDetailDeskFB"
+				validate="false"
+				scope="request"
+				parameter="deskmode"
+				input="/computerizedUpload">
+			<forward name="COMPUTERIZED" path="/computerizedUpload"/>
+			<forward name="MANUAL" path="/manualUpload"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/summonDetail"
+				type="mrd.transaction.controller.action.SummonDetailACTION"
+				name="SummonDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/summonDetail.jsp">
+			<forward name="NEW" path="/transaction/summonDetail.jsp" />
+			<forward name="CIDNO" path="/transaction/CIDNoPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/computerizedSummonDetail"
+				type="mrd.transaction.controller.action.computSummonDtlACT"
+				name="SummonDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/summonDetail.jsp">
+			<forward name="NEW" path="/transaction/summonDetail.jsp" />
+			<forward name="SEARCHPAT" path="/transaction/patSearchPopup.jsp" />
+			<forward name="CIDNO" path="/transaction/CIDNoPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/summonAssignmentDtl"
+				type="mrd.transaction.controller.action.SummonAssignmentACT"
+				name="SummonAssigmentFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/summonAssignment.jsp">
+			<forward name="NEW" path="/transaction/summonAssignment.jsp" />
+			<forward name="SEARCHEMP" path="/transaction/empSearchPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/summonAssignmentChangeDtl"
+				type="mrd.transaction.controller.action.SummonAssignChangeACT"
+				name="SummonAssigmentChangeFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/summonAssignChange.jsp">
+			<forward name="NEW" path="/transaction/summonAssignChange.jsp" />
+			<forward name="SEARCHEMP" path="/transaction/empSearchPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/postSummonDetail"
+				type="mrd.transaction.controller.action.PostSummonDetailACT"
+				name="PostSummonDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/postSummonDetail.jsp">
+			<forward name="NEW" path="/transaction/postSummonDetail.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/summonTracking"
+				type="mrd.transaction.controller.action.SummonTrackingACT"
+				name="SummonTrackingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/summonTracking.jsp">
+			<forward name="NEW" path="/transaction/summonTracking.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/summonInbox"
+				type="mrd.transaction.controller.action.SummonInboxACTION"
+				name="SummonInboxFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/summonInbox.jsp">
+			<forward name="NEW" path="/transaction/summonInbox.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/insuranceClaimReceive"
+				type="mrd.transaction.controller.action.InsuranceClaimReceiveACT"
+				name="InsuranceClaimReceiveFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/insuranceClaimReceive.jsp">
+			<forward name="NEW" path="/transaction/insuranceClaimReceive.jsp" />
+			<forward name="CIDNO" path="/transaction/insuranceCIDNoPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+			<forward name="SEARCHPOPUP" path="/transaction/insurancePatSearchPopup.jsp" />		
+		</action>
+		
+		<action path="/insuranceClaimRecordEntry"
+				type="mrd.transaction.controller.action.InsuranceClaimRecordEntryACT"
+				name="InsuranceClaimRecordEntryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/insuranceClaimRecordEntry.jsp">
+			<forward name="NEW" path="/transaction/insuranceClaimRecordEntry.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+
+		<action path="/caseSheetEnquiry"
+				type="mrd.transaction.controller.action.CaseSheetEnquiryACT"
+				name="CaseSheetEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/caseSheetEnquiry.jsp">
+			<forward name="NEW" path="/transaction/caseSheetEnquiry.jsp" />
+			<forward name="VIEW" path="/transaction/caseSheetEnquiryViewDischarge.jsp" />
+			<forward name="POPUP" path="/transaction/caseSheetEnquiryDiagnosisPopUp.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+
+		<action path="/caseSheetHandover"
+				type="mrd.transaction.controller.action.CaseSheetHandoverACTION"
+				name="caseSheetHandoverFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/caseSheetHandover.jsp">
+			<forward name="NEW" path="/transaction/caseSheetHandover.jsp" />
+			<forward name="ENCLOSURE" path="/transaction/enclosureForCasesheetHandover.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/caseSheetApproval"
+				type="mrd.transaction.controller.action.CaseSheetApprovalACTION"
+				name="caseSheetApprovalFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/caseSheetApproval.jsp">
+			<forward name="NEW" path="/transaction/caseSheetApproval.jsp" />
+			<forward name="POPUP" path="/transaction/viewDelayReason.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/recordRequestApproval"
+				type="mrd.transaction.controller.action.RecordRequestApprovalACTION"
+				name="recordRequestApprovalFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/recordRRequestApproval.jsp">
+			<forward name="NEW" path="/transaction/recordRRequestApproval.jsp" />
+			<forward name="POPUP" path="/transaction/mrdRecordStatus.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action>
+		
+		<action path="/mrdRecordIssue"
+				type="mrd.transaction.controller.action.MrdRecordIssueACTION"
+				name="mrdRecordIssueFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/mrdRecordIssue.jsp">
+			<forward name="NEW" path="/transaction/mrdRecordIssue.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action>
+		
+		<action path="/mrdRecordReturn"
+				type="mrd.transaction.controller.action.MrdRecordReturnACTION"
+				name="mrdRecordReturnFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/mrdRecordReturn.jsp">
+			<forward name="NEW" path="/transaction/mrdRecordReturn.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action>
+		
+		<action path="/cdBurn"
+				type="mrd.transaction.controller.action.CDBurnACTION"
+				name="cdBurnFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/cdBurn.jsp">
+			<forward name="NEW" path="/transaction/cdBurn.jsp" />
+			<forward name="SHOWPROFILE" path="/transaction/viewPatientProfile.jsp" />
+			<forward name="POPUP" path="/../hisglobal/utility/burnDisc/burnDisc.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action>
+		
+		<action path="/insuranceEnquiry"
+				type="mrd.transaction.controller.action.InsuranceEnquiryACTION"
+				name="InsuranceEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/insuranceEnquiry.jsp">
+			<forward name="NEW" path="/transaction/insuranceEnquiry.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action>
+		
+	<action path="/opdFileTracking"
+				type="mrd.transaction.controller.action.OPDFileTrackingACTION"
+				name="OPDFileTrackingFB"
+				validate="false"
+				scope="request"
+				parameter="mode"
+				input="/transaction/opdFileTrackingTile.jsp">
+			<forward name="NEW" path="/transaction/opdFileTrackingTile.jsp" />
+			<forward name="DESK" path="/opdFileTrackingDesk.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/opdFileTrackingDesk"
+				type="mrd.transaction.controller.action.OPDFileTrackingDeskACTION"
+				name="OPDFileTrackingDeskFB"
+				validate="false"
+				scope="request"
+				parameter="deskmode"
+				input="/opdFileMovement">
+			<forward name="MOVEMENT" path="/opdFileMovement"/>
+			<forward name="RETURN" path="/opdFileReturn"/>
+			<forward name="CANCEL" path="/opdFileTracking.cnt" />
+		</action>
+
+	<action path="/opdFileMovement"
+				type="mrd.transaction.controller.action.OPDFileMovementACTION"
+				name="opdFileMovementFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/opdFileMovementTile.jsp">
+			<forward name="NEW" path="/transaction/opdFileMovementTile.jsp" />
+			<forward name="CANCEL" path="/opdFileTracking.cnt"/>
+		</action>
+		
+		<action path="/opdFileReturn"
+				type="mrd.transaction.controller.action.OPDFileReturnACTION"
+				name="opdFileReturnFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/opdFileReturnTile.jsp">
+			<forward name="NEW" path="/transaction/opdFileReturnTile.jsp" />
+			<forward name="CANCEL" path="/opdFileTracking.cnt"/>
+		</action>
+
+		<action path="/employeePopUp"
+				name="employeePopUp"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				type="mrd.transaction.controller.action.EmployeePopUpACTION"
+				input="/transaction/employeePopUpTile.jsp" >
+		 <forward name="NEW" path="/transaction/employeePopUpTile.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		 </action>
+		 
+		 <action path="/patientEmrAudit"
+				type="mrd.transaction.controller.action.PatientEmrAuditACTION"
+				name="patientEmrAuditFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/patientEmrAudit.jsp">
+			<forward name="NEW" path="/transaction/patientEmrAudit.jsp" />
+			<forward name="MOVEMENT" path="/transaction/patientEmrAuditDiagnosisDtlByPrimaryKey.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action>
+		 
+		 <action path="/medicalCamp"
+				type="mrd.transaction.controller.action.mrdMedicalCampACTION"
+				name="mrdMedicalCampFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/mrdMedicalCamp.jsp">
+			<forward name="NEW" path="/transaction/mrdMedicalCamp.jsp" />
+			<forward name="ADDCAMPDETAIL" path="/transaction/mrdAddMedicalCamp.jsp"></forward>
+			<forward name="MODIFYCAMPDETAIL" path="/transaction/mrdModifyMedicalCamp.jsp"></forward>
+			<forward name="VIEWCAMPDETAIL" path="/transaction/mrdViewMedicalCamp.jsp"></forward>
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action>
+		
+		<action path="/estimateCertificateIssue"
+				type="mrd.transaction.controller.action.EstimateCertificateIssueACTION"
+				name="EstimateCertificateIssuetFB"
+				validate="false"
+				parameter="hmode"
+				scope="request" 
+				input="/transaction/estimateCertificateIssue.jsp">
+			<forward name="NEW" path="/transaction/estimateCertificateIssue.jsp" />
+			<forward name="GETDTL" path="/transaction/estimateCertificateIssueDtl.jsp" />	
+			<forward name="POPUP" path="/transaction/estimateCertificateIssueGeneration.jsp" />		
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+	
+		<action path="/medicalCertificateRequest"
+				type="mrd.transaction.controller.action.MedicalCertificateRequestACT"
+				name="MedicalCertificateRequestFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/medicalCertificateRequest.jsp">
+			<forward name="NEW" path="/transaction/medicalCertificateRequest.jsp" />
+			<forward name="SAVE" path="/transaction/medicalCertificateRequest.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+	
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Mrd-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+		
+</struts-config>	

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="TemplateParameterMasterFB" type="hisglobal.utility.generictemplate.controller.fb.TemplateParameterMasterFB" />
+		<form-bean name="GenericChartTileFB" type="hisglobal.utility.generictemplate.controller.fb.GenericChartTileFB" />
+		<form-bean name="ParameterMasterFB" type="hisglobal.utility.generictemplate.controller.fb.ParameterMasterFB" />
+		<form-bean name="PDFPrintingUtilityFB" type="hisglobal.utility.generictemplate.controller.fb.PDFPrintingUtilityFB" />
+		<form-bean name="TemplateImageViewUploadFB" type="hisglobal.utility.generictemplate.controller.fb.TemplateImageViewUploadFB" />
+	</form-beans>
+
+	<action-mappings>
+		
+		<action path="/master/TemplateParameterMaster"
+				type="hisglobal.utility.generictemplate.controller.action.TemplateParameterMasterACT"
+				name="TemplateParameterMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/templateParameterMasterAdd.jsp">
+			<forward name="ADDMOD" path="/templateParameterMasterAddMod.jsp" />
+			<forward name="MODIFY" path="/templateParameterMasterModify.jsp" />
+			<forward name="TEMPDESIGN" path="/templateParameterMasterDesigner.jsp" />
+			<forward name="VIEW" path="/templateParameterMasterView.jsp" />
+			<forward name="LIST" path="/../../../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+
+		<action path="/templateImageViewUpload"
+				type="hisglobal.utility.generictemplate.controller.action.TemplateImageViewUploadACTION"
+				name="TemplateImageViewUploadFB"
+				validate="false"
+				scope="request"
+				parameter="transactionMode"
+				input="/templateImageViewUpload.jsp">
+			<forward name="NEW" path="/templateImageViewUpload.jsp"/>
+			<forward name="SHOW" path="/templateImageViewUploadShow.jsp"/>	
+		</action>		
+
+		<action path="/chartTile"
+				type="hisglobal.utility.generictemplate.controller.action.GenericChartTileACT"
+				name="GenericChartTileFB"
+				validate="false"
+				scope="request"
+				input="/genericChartTableTempWiseTile.jsp">
+			<forward name="TempWiseTable" path="/genericChartTableTempWiseTile.jsp"/>
+			<forward name="ParaWiseTable" path="/genericChartTableParaWiseTile.jsp"/>
+			<forward name="ParaWiseChartTable" path="/genericChartTableParaWiseChartTableTile.jsp"/>			
+			<forward name="ERROR" path="/genericChartErrorTile.jsp"/>
+		</action>				
+
+		<action path="/printingTile"
+				type="hisglobal.utility.generictemplate.controller.action.PDFPrintingUtilityACT"
+				name="PDFPrintingUtilityFB"
+				validate="false"
+				scope="request"
+				input="/pdfprintingUtility.jsp">
+			<forward name="HTML" path="/pdfprintingUtility.jsp"/>
+			<forward name="ONLYHTML" path="/pdfprintingUtility.jsp"/>
+			<forward name="PDF" path="/ConvertHTMLToPDF"/>
+		</action>				
+
+		<action path="/master/ParameterMaster"
+				type="hisglobal.utility.generictemplate.controller.action.ParameterMasterACT"
+				name="ParameterMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/parameterMasterAddPage.jsp">
+			<forward name="ADD" path="/parameterMasterAddPage.jsp" />
+			<forward name="MODIFY" path="/parameterMasterModify.jsp" />
+			<forward name="VIEW" path="/parameterMasterView.jsp" />
+			<forward name="CANCEL" path="/../../../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+</struts-config>

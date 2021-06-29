@@ -1,0 +1,33 @@
+      <jboss-deployment-structure>  
+    
+   		<!-- PRASHANT WILDFLY -->
+        <deployment>  
+            <exclusions>  
+                <!-- <module name="org.jboss.resteasy.*" />  
+                 <module name="javax.ws.*" />  --> 
+             </exclusions>  
+            <dependencies>
+        <module name="com.hmis" >
+            <imports>
+                <include path="META-INF**"/>
+                <include path="org**"/>
+            </imports>
+        </module>
+        <module name="com.hisinv" >
+            <imports>
+                <include path="META-INF**"/>
+                <include path="org**"/>
+            </imports>
+        </module>
+        
+        <module name="org.jboss.log4j.logmanager" >
+            <imports>
+                <include path="META-INF**"/>
+                <include path="org**"/>
+            </imports>
+        </module>
+        
+        
+    </dependencies>
+        </deployment>  
+    </jboss-deployment-structure>    

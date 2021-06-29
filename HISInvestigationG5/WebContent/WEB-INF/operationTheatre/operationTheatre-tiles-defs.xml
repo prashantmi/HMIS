@@ -1,0 +1,204 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+
+<definition name="/OpenEpisodeList" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="PAC Requistion Raising" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/openEpisodeList.cnt"/>
+      <put name="footer" value="/operationTheatre/footer.jsp" />  
+</definition> 
+
+<definition name="/OpenPACReqList" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="PAC Requistion Listing" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/openEpisodeList.cnt"/>
+      <put name="footer" value="/operationTheatre/footer.jsp" />  
+</definition> 
+<definition name="/otListRaising" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="OT List Raising" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/otListRaising.cnt"/>
+      <put name="footer" value="/operationTheatre/footer.jsp" />  
+</definition> 
+<definition name="/otPatientSearching" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="Patient Information" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/otPatientSearching.cnt"/>
+      <put name="footer" value="/operationTheatre/footer.jsp" />  
+</definition> 
+<definition name="/PACResultEntry" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="Patient Information" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/PACResultEntry.cnt"/>
+      <put name="footer" value="/operationTheatre/footer.jsp" />  
+</definition> 
+
+
+<definition name="/MinorOTRequisition" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/MinorOTRequisition.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition>
+<definition name="/MinorOTResultEntry" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="MINOR OT" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/MinorOTResultEntry.cnt"/>
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition> 
+
+<definition name="/AddOperationRecordEntry" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/AddOperationRecordEntry.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition>
+
+<definition name="/PatientAcceptancePage" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="Patient Acceptance" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/PatientAcceptancePage.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition>
+
+<definition name="/TemplateTransactionDataSave" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/OTTemplateTransactionList.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition>
+
+<definition name="/OTDossier" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="Operation Theater Dossier" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/OTDossier.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition> 
+
+<definition name="/OtCancellationRescheduling" 
+
+path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="Operation Cancellation/Rescheduling" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/OtCancellationRescheduling.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition>
+<!--  Reports of operation theatre -->
+
+ <definition name="/countPacreqdefinition" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Count of PAC Requisition" type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/countPacReqReport.cnt"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+<definition name="/countPacPerformedDefinition" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Department WIse Count  of Male and femle Patient" type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/countPacReqReport.cnt?pacStatus=2"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+   <definition name="/CountOfCancelledOperationdefinition" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Count of Cancelled Operations " type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/CountOfCancelledOperation.cnt"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+   <definition name="/ListPacPerformedDefinition" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Department Wise List Of PAC Performed " type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/ListPacReqReport.cnt"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/deptWisePacReqReportdefinition" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Department Wise List of PAC Requisition for the Period" type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/deptWisePacReqReport.cnt"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/DtlOfOpRaisedDefinition" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Department Wise List Of PAC Performed " type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/DtlOfOpRaisedReport.cnt"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/AgeWisePreOperativeDiagnosisReportdefinition" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Department WIse Count  of Male and femle Patient" type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/AgeWisePreOperativeDiagnosisReport.cnt"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/SurgeryWiseBookingDtlReport" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Surgery wise Date wise Booking Details Report" type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/SurgeryWiseBookingDtlReport.cnt"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+   <definition name="/DiagnosisWiseGenderWiseStats" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Diagnosis wise Gender wise Statistics" type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/DiagnosisWiseGenderWiseStats.cnt"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+   <definition name="/OtNotesReportdefinition" path="/operationTheatre/reports/jsp/commonReportLayout.jsp">      
+	    <put name="title"  value="Patient Surgery Ot Notes Report" type="string"/> 
+	     <put name="action" value="/report.cnt" type="string"/>
+  	     <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	    <put name="body"  value="/operationTheatre/reports/OtNotesReport.cnt"/>	  
+        <put name="footer" value="/operationTheatre/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/SendPatientPage" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="Send Patient To Ward" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/SendPatientPage.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition>
+<definition name="/OperationTheatreListValidationListingPage" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">
+      <put name="title" value="OT LIST VALIDATION" type="string"/>
+      <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/OperationTheatreListValidationListingPage.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition>
+
+<definition name="/PostOperativeMonitoring" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/AddPostOpMonitoringEntry.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition>
+
+<definition name="/VitalMonitoring" path="/operationTheatre/transactions/jsp/initialOperationTheatreTransactionLayout.jsp">      
+	  <put name="title"  value="" type="string"/>
+  	  <put name="action" value="/initialAction.cnt" type="string"/>
+  	  <put name="header" value="/operationTheatre/header.jsp"/>	  
+  	  <put name="body"   value="/operationTheatre/transactions/VitalMonitoring.cnt"/>	  
+      <put name="footer" value="/operationTheatre/footer.jsp" />   
+</definition>
+</tiles-definitions>

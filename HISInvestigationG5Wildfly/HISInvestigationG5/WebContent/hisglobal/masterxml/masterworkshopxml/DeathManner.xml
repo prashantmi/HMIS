@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='DeathMaster'>
+		<common-values>
+			<master-name>DeathMaster</master-name>
+			<master-title>Death Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Death Master</tableHeading> 
+				<list-table>GBLT_DEATH_MANNER_MST</list-table>
+				
+				<columns>
+					 <column>Death Manner</column>
+				     
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.GSTR_COUNTRYNAME) </field>
+						
+						</fields>
+					<primaryKey>
+						<field>A.GNUM_DEATH_MANNER_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_DEATH_MANNER_MST</table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>								             
+					
+					<control type="combo" index="0" >
+						<label>Death Manner</label>
+						<constraints inputType='alphanumeric' mandatory="true"  maxlength ='15' size ='16'/>						
+						<readOnly>0</readOnly>
+					</control>					
+
+					<control type="text" index="1" >
+						<label>Death Description</label>
+						<constraints  maxlength = "40" size='41' inputType='alphanumeric' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>
+					
+					
+					<control type="combo" index="2">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				 
+				    <control type="text" index="3" >
+						<label>Nationality</label>
+						<constraints maxlength='30' size='30' inputType='alphanumeric' />						
+						<readOnly>0</readOnly>
+					</control>		
+				  <control type="text" index="4" >
+						<label>HL7</label>
+						<constraints maxlength='10' size='10' inputType='numeric' />						
+						<readOnly>0</readOnly>
+					</control>		
+				
+				</controls>
+				<insert-query>
+					<primary-key>
+						<field>GNUM_COUNTRYCODE</field>
+						<value>SELECT nvl(MAX(GNUM_COUNTRYCODE),100)+1 FROM GBLT_COUNTRY_MST</value>
+					</primary-key>					
+				
+					<fields valueMap='#0'>GSTR_COUNTRYNAME</fields>
+					<fields valueMap='#1'>GSTR_COUNTRYSHORT</fields>
+					<fields valueMap='@seatId'>	GNUM_SEATID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRYDATE</fields>
+					<!-- <fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields> -->
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+					<fields valueMap='#3'>GSTR_NATIONALITY</fields>
+					<fields valueMap='#4'>GNUM_HL7_CODE</fields>
+					<table>GBLT_COUNTRY_MST</table>				
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+		<modify-page>
+		  <dynamic-page>
+		   <controls>		
+					<control type="text" index="0">
+						<label>Country Name </label>
+						<constraints maxlength="40" size ="41" mandatory = 'true'/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+				   <control type="text" index="1">
+						<label>Country Short Name </label>
+						<constraints maxlength = "2" size="3" mandatory ='true'/>
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>				
+					<control type="combo" index="2">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>                          
+						  <control type="text" index="3">
+						<label>Nationality</label>
+						<constraints  size='31' maxlength = "30"/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					
+					<control type="text" index="4">
+						<label>HL7</label>
+						<constraints  size='11' maxlength = "10"  inputType='numeric'/>
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>						   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>A.GSTR_COUNTRYNAME</field>
+					 <field>A.GSTR_COUNTRYSHORT</field>										
+				     <field>A.GSTR_NATIONALITY</field>		
+					 <field>A.GNUM_HL7_CODE</field>		
+				    
+				 </fields>					
+					<tables>
+						<table alias='A'>GBLT_COUNTRY_MST</table>
+						
+					</tables>
+					<condition>						
+						<dependent>
+						    <clause>A.GNUM_COUNTRYCODE= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>				
+	
+					<fields valueMap='#0'>GSTR_COUNTRYNAME</fields>
+					<fields valueMap='#1'>GSTR_COUNTRYSHORT</fields>
+					<fields valueMap='@seatId'>GNUM_SEATID</fields>					
+					<fields valueMap='@entryDate'>GDT_ENTRYDATE</fields>	
+					<fields valueMap='#2'>GNUM_ISVALID</fields>			
+					<fields valueMap='#3'>GSTR_NATIONALITY</fields>		
+					<fields valueMap='#4'>GNUM_HL7_CODE</fields>	
+					
+					<table>GBLT_COUNTRY_MST</table>
+					<condition>GNUM_COUNTRYCODE = #1</condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

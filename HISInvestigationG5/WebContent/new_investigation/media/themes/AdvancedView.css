@@ -1,0 +1,68 @@
+.dataTables_filter {
+   float: right !important;
+    width: 20%;
+}
+.dataTables_filter input {
+   background-color: #DCDCDC;
+   color: blue;
+}
+
+#processHeadDiv{
+	background-color: #096EA6;
+	padding: 2px;
+				
+}
+
+#processHeading{
+	color: white;
+	margin: 0 0 0 20px;
+	font-weight: bold;
+}
+
+.newGo{
+	height: 30px;
+	width: 30px;
+}
+
+#patListFilter{
+    background-color: #227caf;
+    border-bottom: 0.5px solid;
+}
+        
+#advancedFilter{
+   background-color: #1174AF;
+}
+
+#adFltr{
+   background-color : #ec5f5f;
+   border-radius: 5px;
+   border: none;
+   text-align: center;
+   text-decoration: none;
+   cursor: pointer;
+   color: white;
+   margin: 4px 2px;
+   padding: 5px; 
+   display: inline-block;
+   font-weight: bold;
+}
+
+#adFltrImg{ 
+   width: 30px;
+   height: 30px;
+}
+
+#fltrDefault{
+   color: white;
+   font-weight: bold;
+}
+
+.dataTables_info {
+width: auto;
+float: right !important;
+}
+
+.dataTables_paginate {
+	width: auto;
+	float: left !important;
+}

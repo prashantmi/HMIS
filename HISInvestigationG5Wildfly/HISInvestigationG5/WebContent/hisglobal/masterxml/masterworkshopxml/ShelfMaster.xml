@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='ShelfMaster'>
+		<common-values>
+			<master-name>ShelfMaster</master-name>
+			<master-title>Shelf Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Shelf Master</tableHeading> 
+				<list-table>HPMRT_SHELF_MST</list-table>
+				<columns>
+					 <column>Shelf Name</column>
+				</columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HPMRSTR_SHELF_NAME) </field>
+					</fields>
+					<primaryKey>
+						<field>A.HPMRNUM_SHELF_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HPMRNUM_SLNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HPMRT_SHELF_MST</table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                            <orderby>order by INITCAP(A.HPMRSTR_SHELF_NAME)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>		
+					<control type="text" index="0" >
+						<label>Shelf Name</label>
+						<constraints  maxlength ="20" size="20" inputType='alphanumeric' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>
+			</controls>
+		    
+		    <redundent-check>
+				SELECT COUNT (*) FROM HPMRT_SHELF_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper(HPMRSTR_SHELF_NAME)  =  controlindex0
+			</redundent-check>	
+		    
+		    <insert-query>
+				<primary-key>
+					<field>HPMRNUM_SHELF_ID</field>
+					<value>SELECT nvl(MAX(HPMRNUM_SHELF_ID),10)+1 FROM HPMRT_SHELF_MST</value>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</primary-key>					
+				<fields valueMap='#I0'>HPMRSTR_SHELF_NAME</fields>
+				<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+				<fields valueMap='@defaultOne'>HPMRNUM_SLNO</fields>
+				<fields valueMap='@seatId'>	GNUM_SEAT_ID</fields>
+				<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+				<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+				<table>HPMRT_SHELF_MST</table>				
+			</insert-query>
+		</dynamic-page>			
+	</add-page>
+	
+	<modify-page>
+	  <dynamic-page>
+		   <controls>	
+			    <control type="text" index="0">
+					<label>Shelf Name</label>
+					<constraints maxlength = "20" size="20" mandatory ='true' inputType="alphabets"/>
+					<data>
+						<static>#Q0</static>
+					</data>
+					<readOnly>0</readOnly>
+				</control>		
+			    <control type="combo" index="1">
+					<label>IsActive Status</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<static>
+							<option value='1'>Active </option>
+							<option value='2'>In Active </option>
+						</static>
+					</data>
+					<default>#S</default>
+					<submitRequired>0</submitRequired>
+				</control>                          			
+			</controls>
+			<redundent-check>
+				SELECT COUNT (*) FROM HPMRT_SHELF_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper(HPMRSTR_SHELF_NAME)  =  controlindex0
+			</redundent-check>	
+		    <initialise-query>
+			   	 <fields>
+					 <field>INITCAP(A.HPMRSTR_SHELF_NAME)</field>
+				 </fields>					
+					<tables>
+						<table alias='A'>HPMRT_SHELF_MST</table>
+					</tables>
+					<condition>	
+						<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>						
+						<dependent>
+						    <clause>A.HPMRNUM_SHELF_ID= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>				
+					<fields valueMap='#I0'>HPMRSTR_SHELF_NAME</fields>
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>					
+					<fields valueMap='@entryDate'>GDT_LSTMOD_DATE</fields>	
+                    <fields valueMap='#1'>GNUM_ISVALID</fields>							
+					<table>HPMRT_SHELF_MST</table>
+					<condition>HPMRNUM_SHELF_ID = #1</condition>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

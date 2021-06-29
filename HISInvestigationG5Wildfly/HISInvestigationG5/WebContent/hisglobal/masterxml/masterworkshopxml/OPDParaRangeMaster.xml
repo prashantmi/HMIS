@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='User Desk Menu Master'>
+		<common-values>
+			<master-name>OPDParaRangeMaster</master-name>
+			<master-title>Parameter Range Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Parameter Range Master</tableHeading>
+			<list-table>HGBT_PARA_RANGE_MST</list-table>
+			 <controls>
+				<control type="combo" index="0">
+					<label>Parameter Name</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>A.HGSTR_PARA_NAME</text-field>
+								<value-field>A.HGNUM_PARA_ID</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HGBT_PARAMETER_MST</table>
+							</tables>
+							<condition>
+									<general>A.GNUM_HOSPITAL_CODE=100 and A.GNUM_ISVALID = 1 order by A.HGSTR_PARA_NAME </general>	
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+			<columns>
+				<column>Parameter Name</column>
+				<column>Gender</column>
+				<column>Low Age</column>
+				<column>High Age</column>
+				<column>Low Value</column>
+				<column>High Value</column>
+				<column>Value UOM</column>
+			</columns>
+			
+			<query-detail>
+				<fields>
+					<field>INITCAP(B.HGSTR_PARA_NAME)</field>
+					<field>DECODE(A.GNUM_GENDER_CODE,'0','Both','1','Male','2','Female',3,'Not Required')</field>
+					<field>DECODE(A.HGNUM_LOW_AGE,null,'-',A.HGNUM_LOW_AGE)</field>
+					<field>DECODE(A.HGNUM_HIGH_AGE,null,'-',A.HGNUM_HIGH_AGE)</field>
+					<field>DECODE(A.HGSTR_LOW_VALUE,null,'-',A.HGSTR_LOW_VALUE)</field>
+					<field>DECODE(A.HGSTR_HIGH_VALUE,null,'-',A.HGSTR_HIGH_VALUE)</field>
+					<field>DECODE(A.HGSTR_VALUE_UOM,null,'-',A.HGSTR_VALUE_UOM)</field>
+				</fields>
+				<primaryKey>
+					
+					<field>A.HGNUM_PARA_ID</field>
+					<field>A.HGNUM_PARA_RANGE_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HGBT_PARA_RANGE_MST</table>
+					<table alias='B'>HGBT_PARAMETER_MST</table>
+				</tables>
+				<condition>
+					<isvalid-field> A.HGNUM_PARA_ID=B.HGNUM_PARA_ID AND b.gnum_isvalid=1 and A.GNUM_HOSPITAL_CODE=100 and A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND A.GNUM_ISVALID</isvalid-field>
+						<dependent>
+						<clause> A.HGNUM_PARA_ID = #0 </clause>
+					</dependent>
+					<orderby> ORDER BY A.HGNUM_PARA_ID</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+		
+	<add-page>	
+			<static-page>/opd/master/ParaRangeMaster.cnt</static-page>		
+		</add-page>
+		<modify-page>
+		  <static-page>/opd/master/ParaRangeMaster.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

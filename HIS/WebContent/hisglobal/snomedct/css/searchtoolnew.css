@@ -1,0 +1,41 @@
+
+        .clearable-input
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-weight: bold;
+            font-size: 1.4em;
+            padding: 0 0.2em;
+            line-height: 1em;
+            cursor: pointer;
+        }
+        .clearable
+        { 
+            background: #fff url('/HIS/hisglobal/snomedct/css/images/cross.gif') no-repeat right 5px center;
+            border: 1px solid #999;
+            padding: 3px 18px 3px 4px; /* Use the same right padding (18) in jQ! */
+            border-radius: 3px;
+        }
+        .clearable.onX
+        {
+            cursor: pointer;
+        }
+        /* (jQ) hover cursor style */
+        .clearable::-ms-clear
+        {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+        /* Remove IE default X */
+        .style4
+        {
+            color: #FF0000;
+            font-size: x-small;
+        }
+        .newStyle1
+        {
+            color: #FF3300;
+        }
+    

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC 
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+	
+		<form-bean name="commonReportFB" type="hisglobal.presentation.ReportFB"/>
+		
+		<form-bean name="DoctorCallBookLogReportFB" type="inpatient.reports.controller.fb.DoctorCallBookLogReportFB"/>
+		<form-bean name="ListOfCaseSheetFB" type="inpatient.reports.controller.fb.ListOfCaseSheetFB"/>
+		<form-bean name="JSYRegistrationReportFB" type="inpatient.reports.controller.fb.JSYRegistrationReportFB"/>
+		<form-bean name="SpecialityWiseOperationFB" type="inpatient.reports.controller.fb.SpecialityWiseOperationFB"/>
+		<form-bean name="registeredMlcPatientsFB" type="inpatient.reports.controller.fb.RegisteredMlcPatientsFB"/>
+		<form-bean name="diseaseCodeReportFB" type="inpatient.reports.controller.fb.DiseaseCodeReportFB"/>
+		<form-bean name="deathDetailsReportFB" type="inpatient.reports.controller.fb.DeathDetailsReportFB"/>
+		<form-bean name="listofAbscondingPatientReportFB" type="inpatient.reports.controller.fb.ListofAbscondingPatientReportFB"/>
+		<form-bean name="listOfNonMlcPatientReportFB" type="inpatient.reports.controller.fb.ListOfNonMlcPatientReportFB"/>
+		<form-bean name="dailyIndooreRegisterForWardReportFB" type="inpatient.reports.controller.fb.DailyIndooreRegisterForWardReportFB"/>
+		
+	</form-beans>
+	
+	<action-mappings>
+	
+	<action path="/report"
+				type="inpatient.reports.controller.action.InpatientCommonReportACTION"
+				name="DoctorCallBookLogReportFB"
+				scope="request"
+				parameter="mode">
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+			<forward name="DOCTORCALLBOOKLOGREPORT" path="/doctorCallBookLogReportdefinition"/>
+			<forward name="DOCTORCALLBOOKLOGREPORTVIEW" path="/report/doctorCallBookLogReport.cnt"/>
+			<forward name="LISTOFCASESHEETREPORT" path="/listOfCaseSheetReportdefinition"/>
+			<forward name="LISTOFCASESHEETREPORTVIEW" path="/report/listOfCaseSheetReport.cnt"/>
+			<forward name="JSYREGISTRATIONREPORT" path="/JSYRegistrationReportDefinition"/>
+			<forward name="JSYREGISTRATIONREPORTVIEW" path="/report/JSYRegistrationReport.cnt"/>
+			
+			<forward name="SPECIALITYWISEOPERATION" path="/specialityWiseOperationReportdefinition"/>
+			<forward name="SPECIALITYWISEOPERATIONVIEW" path="/report/specialityWiseOperationReport.cnt"/>
+			
+			<forward name="REGISTEREDMLCPATIENTREPORT" path="/registeredMlcPatientReportdefinition"/>
+			<forward name="REGISTEREDMLCPATIENTREPORTVIEW" path="/report/registeredMlcPatientReport.cnt"/>
+			
+			<forward name="DISEASECODEREPORT" path="/diseaseCodeReportdefinition"/>
+			<forward name="DISEASECODEREPORTVIEW" path="/report/diseaseCodeReport.cnt"/>
+			
+			<forward name="DEATHDETAILSREPORT" path="/deathDetailsReportdefinition"/>
+			<forward name="DEATHDETAILSREPORTVIEW" path="/report/deathDetailsReport.cnt"/>
+			
+			<forward name="LISTOFABSCONDINGPATIENTREPORT" path="/listofAbscondingPatientReportdefinition"/>
+			<forward name="LISTOFABSCONDINGPATIENTREPORTVIEW" path="/report/listofAbscondingPatientReport.cnt"/>
+			
+			<forward name="LISTOFNONMLCPATIENTREPORT" path="/listOfNonMlcPatientReportdefinition"/>
+			<forward name="LISTOFNONMLCPATIENTREPORTVIEW" path="/report/listOfNonMlcPatientReport.cnt"/>
+			
+			<forward name="DAILYINDOOREREGISTERFORWARDREPORT" path="/dailyIndooreRegisterForWardReportdefinition"/>
+			<forward name="DAILYINDOOREREGISTERFORWARDREPORTVIEW" path="/report/dailyIndooreRegisterForWardReport.cnt"/>
+			
+	</action>		
+	
+	<action path="/report/listOfCaseSheetReport"
+				type="inpatient.reports.controller.action.ListOfCaseSheetACT"
+				name="ListOfCaseSheetFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/listOfCaseSheetReport.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+	</action>
+	
+	<action path="/report/JSYRegistrationReport"
+				type="inpatient.reports.controller.action.JSYRegistrationReportACT"
+				name="JSYRegistrationReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsyRegistrationReport.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+	</action>
+	
+	<action path="/report/specialityWiseOperationReport"
+				type="inpatient.reports.controller.action.SpecialityWiseOperationACTION"
+				name="SpecialityWiseOperationFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/specialityWiseOperation.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/registeredMlcPatientReport"
+				type="inpatient.reports.controller.action.RegisteredMlcPatientsACTION"
+				name="registeredMlcPatientsFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/registeredMlcPatients.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/diseaseCodeReport"
+				type="inpatient.reports.controller.action.DiseaseCodeReportACTION"
+				name="diseaseCodeReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/diseaseCodeReport.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/deathDetailsReport"
+				type="inpatient.reports.controller.action.DeathDetailsReportACTION"
+				name="deathDetailsReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/deathDetailsReport.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/listofAbscondingPatientReport"
+				type="inpatient.reports.controller.action.ListofAbscondingPatientReportACTION"
+				name="listofAbscondingPatientReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/listofAbscondingPatientReport.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/listOfNonMlcPatientReport"
+				type="inpatient.reports.controller.action.ListOfNonMlcPatientReportACTION"
+				name="listOfNonMlcPatientReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/listOfNonMlcPatientReport.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/dailyIndooreRegisterForWardReport"
+				type="inpatient.reports.controller.action.DailyIndooreRegisterForWardReportACTION"
+				name="dailyIndooreRegisterForWardReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/dailyIndooreRegisterForWardReport.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+		
+	</action-mappings>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+	 <plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/Inpatient-tiles-def.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+	</plug-in>        
+
+</struts-config>          

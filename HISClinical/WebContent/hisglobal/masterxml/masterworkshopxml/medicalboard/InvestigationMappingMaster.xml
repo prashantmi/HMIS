@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<master-config>
+	<master name='Investigation Mapping Master'>
+		<common-values>
+			<master-name>InvestigationMappingMaster</master-name>
+			<master-title>Investigation Mapping Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Investigation Mapping Master</tableHeading>
+			
+			<list-table>HMBT_INVESTIGATION_MAPPING</list-table>
+
+            <controls>
+				<control type="combo" index="0">
+					<label>Certificate Type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>initcap(A.HMBSTR_CERTIFICATE_TYPE_NAME)</text-field>
+								<value-field>A.HMBNUM_CERTIFICATE_TYPE_ID</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HMBT_CERTIFICATE_TYPE_MST</table>
+							</tables>
+							<condition>
+							   
+					            <general>  A.GNUM_ISVALID=1 and A.GNUM_HOSPITAL_CODE=101 order by initcap(A.HMBSTR_CERTIFICATE_TYPE_NAME)</general>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>  
+			<columns>
+				<column>Lab Test Name</column>
+				<column>Is Optional</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>b.GSTR_LAB_NAME||'('||c.GSTR_TEST_NAME||')'</field>
+					<field>DECODE(A.HMBNUM_IS_OPTIONAL,0,'No',1,'Yes')</field>
+				</fields>
+				<primaryKey>
+					<field>A.HMBNUM_CERTIFICATE_TYPE_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HMBNUM_SNO</field>
+					<field>A.GNUM_LAB_TEST_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HMBT_INVESTIGATION_MAPPING</table>
+					<table alias='B'>GBLT_LABORATORY_MST</table>
+					<table alias='C'>GBLT_TEST_MST</table>
+				</tables>
+				<condition>
+				   <general>  substr(A.GNUM_LAB_TEST_CODE,0,5)=B.GNUM_LAB_CODE and A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE  and A.GNUM_ISVALID=B.GBL_ISVALID and substr(A.GNUM_LAB_TEST_CODE,6,9)=C.GNUM_TEST_CODE and a.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE  and A.GNUM_ISVALID=c.GNUM_ISVALID  AND  </general>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<dependent>
+					  <clause> A.HMBNUM_CERTIFICATE_TYPE_ID = #0 </clause>
+				    </dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+	
+		<add-page>
+			<static-page>/medicalboard/masters/InvetigationMappingMstACTION.cnt</static-page>
+		</add-page>
+		
+		<modify-page>
+			<static-page>/medicalboard/masters/InvetigationMappingMstACTION.cnt</static-page>
+		</modify-page>
+	
+	</master>	
+</master-config>
+   

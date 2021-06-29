@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='RackMaster'>
+		<common-values>
+			<master-name>RackMaster</master-name>
+			<master-title>Rack Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Rack Master</tableHeading> 
+				<list-table>HPMRT_RACK_MST</list-table>
+				<columns>
+					 <column>Rack Name</column>
+					 <column>Rack Status</column>
+					
+				</columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HPMRSTR_RACK_NAME) </field>
+						<field>DECODE(A.HPMRNUM_RACK_STATUS,'0','Not Working','Working') </field>
+						
+					</fields>
+					<primaryKey>
+						<field>A.HPMRNUM_RACK_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HPMRNUM_SLNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HPMRT_RACK_MST</table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                            <orderby>order by INITCAP(A.HPMRSTR_RACK_NAME)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+			<add-page>
+			<static-page>/mrd/master/rackMst.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mrd/master/rackMst.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

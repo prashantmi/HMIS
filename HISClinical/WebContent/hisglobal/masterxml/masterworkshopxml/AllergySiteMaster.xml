@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='AllergySiteMaster'>
+		<common-values>
+			<master-name>AllergySiteMaster</master-name>
+			<master-title>Allergy Site Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Allergy Site Master</tableHeading> 
+				<list-table>HGBT_ALLERGY_SITE_MST</list-table>
+				
+				<columns>
+					 <column>Allergy Site</column>
+					
+				     
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_ALLERGY_SITE) </field>
+						
+						</fields>
+					<primaryKey>
+						<field>A.HGNUM_ALLERGY_SITE_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_ALLERGY_SITE_MST</table>
+					</tables>
+					<condition>					 
+                            <isvalid-field> A.GNUM_HOSPITAL_CODE=100 and A.GNUM_ISVALID</isvalid-field>
+                            <orderby> order by INITCAP(A.HGSTR_ALLERGY_SITE)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>		
+					<control type="text" index="0" >
+						<label>Allergy Site</label>
+						<constraints  maxlength = "100" size="30" inputType='alphabets' mandatory ='true'  />						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="1" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet' styleString="style='display:none'" />			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+						
+					</control>
+					
+			</controls>
+		    
+		    <redundent-check>
+				SELECT COUNT (*) FROM HGBT_ALLERGY_SITE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) and GNUM_HOSPITAL_CODE=100
+				and trim(upper(HGSTR_ALLERGY_SITE))  =  controlindex0
+			</redundent-check>	
+		    
+		    <insert-query>
+				<primary-key>
+					<field>HGNUM_ALLERGY_SITE_ID</field>
+					<value>SELECT nvl(MAX(HGNUM_ALLERGY_SITE_ID),10)+1 FROM HGBT_ALLERGY_SITE_MST where GNUM_HOSPITAL_CODE=100</value>
+				</primary-key>					
+				<fields valueMap='#I0'>HGSTR_ALLERGY_SITE</fields>
+				<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+				<fields valueMap='@seatId'>	GNUM_SEAT_ID</fields>
+				<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+				<fields valueMap='#1'>GNUM_HOSPITAL_CODE</fields>
+				<table>HGBT_ALLERGY_SITE_MST</table>				
+			</insert-query>
+		</dynamic-page>			
+	</add-page>
+	<modify-page>
+	  <dynamic-page>
+		   <controls>	
+			    <control type="text" index="0">
+					<label>Allergy Site</label>
+					<constraints maxlength = "100" size="30" mandatory ='true' inputType="alphabets"/>
+					<data>
+						<static>#Q0</static>
+					</data>
+					<readOnly>0</readOnly>
+				</control>		
+				<control type="combo" index="1">
+					<label>IsActive Status</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<static>
+							<option value='1'>Active </option>
+							<option value='2'>In Active </option>
+						</static>
+					</data>
+					<default>#S</default>
+					<submitRequired>0</submitRequired>
+				</control>                          			
+			</controls>
+			<redundent-check>
+				SELECT COUNT (*) FROM HGBT_ALLERGY_SITE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) and GNUM_HOSPITAL_CODE=100
+				and upper(HGSTR_ALLERGY_SITE)  =  controlindex0
+			</redundent-check>	
+		    <initialise-query>
+			   	 <fields>
+					 <field>INITCAP(A.HGSTR_ALLERGY_SITE)</field>
+				 </fields>					
+					<tables>
+						<table alias='A'>HGBT_ALLERGY_SITE_MST</table>
+					</tables>
+					<condition>	
+						<dependent>
+						    <clause>A.HGNUM_ALLERGY_SITE_ID= #C1 and A.GNUM_HOSPITAL_CODE=100</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>				
+					<fields valueMap='#I0'>HGSTR_ALLERGY_SITE</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>					
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>	
+                    <fields valueMap='#1'>GNUM_ISVALID</fields>							
+					<table>HGBT_ALLERGY_SITE_MST</table>
+					<condition>HGNUM_ALLERGY_SITE_ID = #1 and GNUM_HOSPITAL_CODE=100</condition>					
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

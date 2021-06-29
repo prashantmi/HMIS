@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="false" />
+     <constant name="struts.action.extension" value=","/> 
+    
+    <package name="hislogin" namespace="/hislogin" extends="struts-default">
+		<!-- <global-results>
+	    	<result name="securityerror">/application/jsp/app_error_xss.jsp</result>
+		</global-results>
+	 
+		<global-exception-mappings>
+	  		<exception-mapping exception="java.lang.IllegalStateException" result="securityerror" />
+		</global-exception-mappings> -->
+
+	    <action name="*UserDesk" method="{1}" class="hislogin.transactions.action.UserDeskACT">
+	    	<!-- <interceptor-ref name="tokenSession" >
+	    		<param name="excludeMethods">*</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+	    	<result name="SUCCESS">/hislogin/transactions/jsp/st_login_desk.jsp</result>
+	    	<result name="ERROR">/application/jsp/app_error_page.jsp</result>
+	    </action>
+
+	    <action name="*LgnFtr" method="{1}" class="hislogin.transactions.action.LoginFeaturesACT">
+	    	<!-- <interceptor-ref name="tokenSession" >
+	    		<param name="excludeMethods">getMenuList,execute,initForgetPassword,captcha,initFirstLogin,initChangePassword,initChangeUserDetails,initUserLogDetails,validateForgetPassword,saveForgetPassword,saveFirstLogin,saveChangePassword,validateChangeUserDetails,saveChangeUserDetails</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+	    	<result name="FORGETPASSWORD">/hislogin/transactions/jsp/st_forgot_password.jsp</result>
+	    	<result name="FIRSTLOGIN">/hislogin/transactions/jsp/st_first_login_details.jsp</result>
+	    	<result name="CHANGEPASSWORD">/hislogin/transactions/jsp/st_change_password.jsp</result>
+	    	<result name="CHANGEUSERDETAILS">/hislogin/transactions/jsp/st_change_user_details.jsp</result>
+	    	<result name="USERLOGDETAILS">/hislogin/transactions/jsp/st_user_log_details.jsp</result>
+	    </action>
+    </package>
+</struts>

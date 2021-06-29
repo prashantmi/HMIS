@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.action.extension" value=","/> 
+    <constant name="struts.devMode" value="false" />
+    <include file="/hissso/config/struts-hissso.xml"></include>
+    <include file="/hislogin/config/struts-hislogin.xml"></include>
+    <constant name="struts.action.excludePattern" value="/listener/.*?,/services/rest/[a-zA-Z_0-9]*,/hisssoServlet/.*?,/snomedct/csnoserv/[a-zA-Z_0-9//]*,/snomedct/csnofinder/[a-zA-Z_0-9//]*" />
+   
+</struts>

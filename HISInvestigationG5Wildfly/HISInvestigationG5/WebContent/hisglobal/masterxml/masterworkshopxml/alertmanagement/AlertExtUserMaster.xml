@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='AlertExtUserMaster'>
+        <common-values>
+           <master-name>AlertExtUserMaster</master-name>
+           <master-title>Alert External User Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Alert External User Master</tableHeading>
+           <list-table>GBLT_ALERT_EXTUSER_MST</list-table>
+           
+           <columns>
+              <column>User Name</column>
+              <column>Organization</column>
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.GSTR_USER_NAME)</field>
+	    		 <field>INITCAP(A.GSTR_USER_ORGANIZATION)</field>
+			  </fields>
+				<primaryKey>
+					<field>A.GNUM_EXTUSER_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.GNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>GBLT_ALERT_EXTUSER_MST</table>
+				</tables>
+				<condition>					 
+					<isvalid-field> A.GNUM_ISVALID </isvalid-field>
+					<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+					<orderby> ORDER BY(A.GSTR_USER_NAME) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/alertmanagement/masters/AlertExtUserMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/alertmanagement/masters/AlertExtUserMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

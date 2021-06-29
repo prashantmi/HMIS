@@ -1,0 +1,1440 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!-- ========== Form Bean Definitions =================================== -->
+
+       <form-beans> 
+		<form-bean name="CommonTransactionFB" type="bloodbank.transactions.controller.fb.CommonTransactionFB" />
+		<form-bean name="DonorQuestionnaireFB" type="bloodbank.transactions.controller.fb.DonorQuestionnaireFB" />
+		<form-bean name="DeskFB" type="bloodbank.transactions.controller.fb.DeskFormFB" />
+		<form-bean name="DonorRegistrationFB" type="bloodbank.transactions.controller.fb.DonorRegistrationFB" />
+		<form-bean name="FileUploadFB" type="bloodbank.transactions.controller.fb.FileUploadFB" />
+		<form-bean name="EnlargedImageFB" type="bloodbank.transactions.controller.fb.EnlargedImageFB" />
+		<form-bean name="SearchDonorDetailFB" type="bloodbank.transactions.controller.fb.SearchDonorDetailFB" />
+		<form-bean name="donorDetailFB" type="bloodbank.transactions.controller.fb.DonorDetailFB" />
+		<form-bean name="donorAdverseReactionFB" type="bloodbank.transactions.controller.fb.DonorAdverseReactionFB" />
+		<form-bean name="DonorPhysicalExamFB" type="bloodbank.transactions.controller.fb.DonorPhysicalExamFB" />
+		<form-bean name="donorDetailFB" type="bloodbank.transactions.controller.fb.DonorDetailFB" />		
+		<form-bean name="BloodBankExaminationFB" type="bloodbank.transactions.controller.fb.BloodBankExaminationFB" />
+		<form-bean name="BloodBankQuestionnaireFB" type="bloodbank.transactions.controller.fb.BloodBankQuestionnaireFB" />
+		<form-bean name="BloodDonationFB" type="bloodbank.transactions.controller.fb.BloodDonationFB"/>
+		<form-bean name="LabelGenerationFB" type="bloodbank.transactions.controller.fb.LabelGenerationFB"/>
+		<form-bean name="CellTestGroupingDetailFB" type="bloodbank.transactions.controller.fb.CellTestGroupingDetailFB"/>
+		<form-bean name="CellGroupingValidationFB" type="bloodbank.transactions.controller.fb.CellGroupingValidationFB"/>
+		<form-bean name="CellSerumValidationFB" type="bloodbank.transactions.controller.fb.CellSerumValidationFB"/>
+		<form-bean name="BloodBagInvestigationFB" type="bloodbank.transactions.controller.fb.BloodBagInvestigationFB"/>
+		<form-bean name="BloodBagInvestigationValidationFB" type="bloodbank.transactions.controller.fb.BloodBagInvestigationValidationFB"/>
+		<form-bean name="BagDetailFB" type="bloodbank.transactions.controller.fb.BagDetailFB"/>
+		<form-bean name="BloodBagComponentSeparationFB" type="bloodbank.transactions.controller.fb.BloodBagComponentSeparationFB"/>
+		<form-bean name="BloodRequisitionPatientFB" type="bloodbank.transactions.controller.fb.BloodRequisitionPatientFB"/>
+		<form-bean name="BloodBagConfirmationFB" type="bloodbank.transactions.controller.fb.BloodBagConfirmationFB"/>
+        <form-bean name="ParameterWiseInvestigationFB" type="bloodbank.transactions.controller.fb.ParameterWiseInvestigationFB"/>
+        <form-bean name="ParameterWiseInvestigationValidationFB" type="bloodbank.transactions.controller.fb.ParameterWiseInvestigationValidationFB"/>
+		<form-bean name="donorRefreshmentFB" type="bloodbank.transactions.controller.fb.DonorRefreshmentFB" />
+		<form-bean name="requistionPatientDetailFB" type="bloodbank.transactions.controller.fb.RequistionPatientDetailFB" />
+		<form-bean name="hodSanctionDetailFB" type="bloodbank.transactions.controller.fb.HODSanctionDetailFB" />
+		<form-bean name="AllBagConfirmationFB" type="bloodbank.transactions.controller.fb.AllBagConfirmationFB"/>
+		<form-bean name="CampRequisitionFB" type="bloodbank.transactions.controller.fb.CampRequisitionFB"/>
+        <form-bean name="SearchRequisitionPatientFB" type="bloodbank.transactions.controller.fb.SearchRequisitionPatientFB"/> 
+		<form-bean name="CampRequisitionDeskFB" type="bloodbank.transactions.controller.fb.CampRequisitionDeskFB"/>
+		<form-bean name="CampDeskLoginFB" type="bloodbank.transactions.controller.fb.CampDeskLoginFB"/>
+		<form-bean name="CampAcceptRequisitionFB" type="bloodbank.transactions.controller.fb.CampAcceptRequisitionFB"/>
+		<form-bean name="CampResourceAllocationFB" type="bloodbank.transactions.controller.fb.CampResourceAllocationFB"/> 
+		<form-bean name="CampRequisitionTileFB" type="bloodbank.transactions.controller.fb.CampRequisitionTileFB"/>
+		<form-bean name="CampDonorRegistrationFB" type="bloodbank.transactions.controller.fb.CampDonorRegistrationFB"/>
+		<form-bean name="ChildBagPreparationFB" type="bloodbank.transactions.controller.fb.ChildBagPreparationFB"/>
+		<form-bean name="PostCampDetailFB" type="bloodbank.transactions.controller.fb.PostCampDetailFB"/>
+		<form-bean name="BloodBagCancellationFB" type="bloodbank.transactions.controller.fb.BloodBagCancellationFB"/>
+		<form-bean name="ConfirmBloodBagCancellationFB" type="bloodbank.transactions.controller.fb.ConfirmBloodBagCancellationFB"/>
+        <form-bean name="BloodBagCancellationVeriFB" type="bloodbank.transactions.controller.fb.BloodBagCancellationVeriFB"/>  
+        <form-bean name="ToExtBloodBankRequisitionFB" type="bloodbank.transactions.controller.fb.ToExtBloodBankRequisitionFB"/>
+		<form-bean name="PatientBloodCellSerumGroupingFB" type="bloodbank.transactions.controller.fb.PatientBloodCellSerumGroupingFB" />
+        <form-bean name="PatientGroupingConfirmationFB" type="bloodbank.transactions.controller.fb.PatientGroupingConfirmationFB" /> 
+        <form-bean name="CrossMatchingFB" type="bloodbank.transactions.controller.fb.CrossMatchingFB" />  
+        <form-bean name="BloodBagIssueFB" type="bloodbank.transactions.controller.fb.BloodBagIssueFB"/>   
+        <form-bean name="AntiBodiesDetailFB" type="bloodbank.transactions.controller.fb.AntiBodiesDetailFB"/> 
+        <form-bean name="PatientAntibodiesDetailFB" type="bloodbank.transactions.controller.fb.PatientAntibodiesDetailFB"/>
+        <form-bean name="VoluntaryCardFB" type="bloodbank.transactions.controller.fb.VoluntaryCardDetailFB"/>
+        <form-bean name="VoluntaryDonorExtFB" type="bloodbank.transactions.controller.fb.VoluntaryExtDonorFB"/>
+        <form-bean name="VoluntaryDonorIntFB" type="bloodbank.transactions.controller.fb.VoluntaryIntDonorFB"/>
+        <form-bean name="VoluntaryDeskDonorFB" type="bloodbank.transactions.controller.fb.VoluntaryDonorDeskFB"/>
+		<form-bean name="BloodBankReqAcceptanceFB" type="bloodbank.transactions.controller.fb.BloodBankReqAcceptanceFB"/>
+		<form-bean name="CrossMatchCancelFB" type="bloodbank.transactions.controller.fb.CrossMatchCancelFB"/>
+        <form-bean name="CrossMatchCancelVarificationFB" type="bloodbank.transactions.controller.fb.CrossMatchCancelVarificationFB"/>
+		<form-bean name="FromExtBloodBankRequisitionFB" type="bloodbank.transactions.controller.fb.FromExtBloodBankRequisitionFB"/>
+		<form-bean name="PatientSampleAcceptanceFB" type="bloodbank.transactions.controller.fb.PatientSampleAcceptanceFB"/>
+		<form-bean name="DonorRegistrationModificationFB" type="bloodbank.transactions.controller.fb.DonorRegistrationModificationFB"/>
+        <form-bean name="BloodBagReturnDetailFB" type="bloodbank.transactions.controller.fb.BloodBagReturnDetailFB"/>
+        <form-bean name="SampleCollectionDonationFB" type="bloodbank.transactions.controller.fb.SampleCollectionDonationFB"/>
+        <form-bean name="BulkBloodBagIssueFB" type="bloodbank.transactions.controller.fb.BulkBloodBagIssueFB"/>
+        <form-bean name="BagMovementDetailFB" type="bloodbank.transactions.controller.fb.BagMovementDetailFB"/>
+        <form-bean name="BagReserveDetailFB" type="bloodbank.transactions.controller.fb.BagReserveDetailFB"/>
+        <form-bean name="BagReserveCancelDtlFB" type="bloodbank.transactions.controller.fb.BagReserveCancelDtlFB"/>
+        <form-bean name="onlineBloodBagAcceptDtlFB"	type="bloodbank.transactions.controller.fb.OnlineBloodBagAcceptDtlFB"/>
+        <form-bean name="BloodBankCardLetterPrintingFB"	type="bloodbank.transactions.controller.fb.BloodBankCardLetterPrintingFB"/>
+        <form-bean name="ComponentIrradiationFB" type="bloodbank.transactions.controller.fb.ComponentIrradiationFB"/>
+		<form-bean name="CampCardLetterPrintingFB"	type="bloodbank.transactions.controller.fb.CampCardLetterPrintingFB"/>
+		<form-bean name="scheduleLetterPrintingFB"	type="bloodbank.transactions.controller.fb.scheduleLetterPrintingFB"/>
+		<form-bean name="OfflineBloodBagRequisitionDtlFB"	type="bloodbank.transactions.controller.fb.OfflineBloodBagRequisitionDtlFB"/>
+		<form-bean name="PatientDetailFB"	type="bloodbank.transactions.controller.fb.PatientDetailFB"/>
+        <form-bean name="BloodBankDuplicateCardLetterPrintingFB"  type="bloodbank.transactions.controller.fb.BloodBankDuplicateCardLetterPrintingFB"/>
+        <form-bean name="ExtBloodBankRequisitionTileFB"  type="bloodbank.transactions.controller.fb.ExtBloodBankRequisitionTileFB"/>
+        <form-bean name="SearchByNameFB"	type="bloodbank.transactions.controller.fb.SearchByNameFB"/>
+        <form-bean name="investigationReportPrintingFB"	type="bloodbank.transactions.controller.fb.InvestigationReportPrintingFB"/>
+        <form-bean name="CampViewSchedulerFB"  type="bloodbank.transactions.controller.fb.CampViewSchedulerFB"/>
+
+		<form-bean name="CampLabelGenerationFB"  type="bloodbank.transactions.controller.fb.CampLabelGenerationFB"/>
+		<form-bean name="CampLabelPrintingFB"  type="bloodbank.transactions.controller.fb.CampLabelPrintingFB"/>
+
+		<form-bean name="ExternalTherapeuticRequisitionFB"  type="bloodbank.transactions.controller.fb.ExternalTherapeuticRequisitionFB"/>
+		<form-bean name="TherapeuticProcessEntryFB"  type="bloodbank.transactions.controller.fb.TherapeuticProcessEntryFB"/>
+		<form-bean name="TherapeuticPatientDetailFB"  type="bloodbank.transactions.controller.fb.TherapeuticPatientDetailFB"/>
+		<form-bean name="OfflineInternalTherapeuticRequisitionFB"  type="bloodbank.transactions.controller.fb.OfflineInternalTherapeuticRequisitionFB"/>
+		<form-bean name="QualityControlDetailBean"  type="bloodbank.transactions.controller.fb.QualityControlDetailFB"/>
+		<form-bean name="QualityControlReportFB"  type="bloodbank.transactions.controller.fb.QualityControlReportFB"/>
+		<form-bean name="BloodBankPerformaTestDetailEntryFB"  type="bloodbank.transactions.controller.fb.BloodBankPerformaTestDetailEntryFB"/>
+		<form-bean name="BloodBankPerformaTestDetailEntryReportFB"  type="bloodbank.transactions.controller.fb.BloodBankPerformaTestDetailEntryReportFB"/>
+		<form-bean name="DonorModificationFB"  type="bloodbank.transactions.controller.fb.DonorModificationFB"/>
+		<form-bean name="ExternalPatTransfusionReactFB"  type="bloodbank.transactions.controller.fb.ExternalPatTransfusionReactFB"/>
+        <form-bean name="BloodBankLabelPrintingFB"  type="bloodbank.transactions.controller.fb.BloodBankLabelPrintingFB"/>
+        <form-bean name="PostTransfusionReactionTestDetailFB"  type="bloodbank.transactions.controller.fb.PostTransfusionReactionTestDetailFB"/>
+        <form-bean name="PostReactionTestDtlFB"  type="bloodbank.transactions.controller.fb.PostReactionTestDtlFB"/>
+		<form-bean name="BloodStockEnquiryFB" type="bloodbank.transactions.controller.fb.BloodStockEnquiryFB"/>
+		<form-bean name="BloodDonorEnquiryFB" type="bloodbank.transactions.controller.fb.BloodDonorEnquiryFB"/>
+		<form-bean name="DonorCellSerumGroupingFB"  type="bloodbank.transactions.controller.fb.DonorCellSerumGroupingFB"/>
+		<form-bean name="donorImageUploadFB"  type="bloodbank.transactions.controller.fb.DonorImageUploadFB"/>
+        <form-bean name="BloodBankStaticalStockEnquiryFB" type="bloodbank.transactions.controller.fb.BloodBankStaticalStockEnquiryFB"/>
+		<form-bean name="BloodBankRequisitionCancellationFB" type="bloodbank.transactions.controller.fb.BloodBankRequisitionCancellationFB"/>
+		<form-bean name="CampEnquiryFB" type="bloodbank.transactions.controller.fb.CampEnquiryFB"/>
+		<form-bean name="CrossMatchUpdateFB" type="bloodbank.transactions.controller.fb.CrossMatchUpdateFB"/>
+		<form-bean name="BloodBagTransfusionDetailFB" type="bloodbank.transactions.controller.fb.BloodBagTransfusionDetailFB"/>
+		<form-bean name="MasterDonorCardPrintingFB" type="bloodbank.transactions.controller.fb.MasterDonorCardPrintingFB"/>
+		<form-bean name="DiscardOfBloodBankFB" type="bloodbank.transactions.controller.fb.DiscardOfBloodBankFB" />
+		<form-bean name="BloodBankCampDeskFB" type="bloodbank.transactions.controller.fb.BloodBankCampDeskFB" />
+		
+		<form-bean name="CellSerumRegroupingFB" type="bloodbank.transactions.controller.fb.CellSerumRegroupingFB" />
+		<form-bean name="DonorSampleAcceptanceFB" type="bloodbank.transactions.controller.fb.DonorSampleAcceptanceFB" />
+		<form-bean name="ReinvestigationBloodBagFB" type="bloodbank.transactions.controller.fb.ReinvestigationBloodBagFB" />
+		<form-bean name="BloodBagInvestigationInGroupFB" type="bloodbank.transactions.controller.fb.BloodBagInvestigationInGroupFB" />
+		<form-bean name="multipleBagComponentSeparationFB" type="bloodbank.transactions.controller.fb.MultipleBagComponentSeparationFB" />
+		<form-bean name="CellSerumGroupingFB" type="bloodbank.transactions.controller.fb.CellSerumGroupingFB" />
+		<form-bean name="CellSerumGroupingConfirmationFB" type="bloodbank.transactions.controller.fb.CellSerumGroupingConfirmationFB" />
+	</form-beans>
+
+	<action-mappings>
+	
+		<action path="/reinvestigationBloodBag"
+				type="bloodbank.transactions.controller.action.ReinvestigationBloodBagACT"
+				name="ReinvestigationBloodBagFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/reinvestigationBloodBag.jsp">
+			<forward name="NEW" path="/transactions/reinvestigationBloodBag.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/donorSampleAcceptance"
+				type="bloodbank.transactions.controller.action.DonorSampleAcceptanceACT"
+				name="DonorSampleAcceptanceFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/donorSampleAcceptance.jsp">
+			<forward name="NEW" path="/transactions/donorSampleAcceptance.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/cellSerumRegrouping"
+				type="bloodbank.transactions.controller.action.CellSerumRegroupingACT"
+				name="CellSerumRegroupingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/cellSerumRegrouping.jsp">
+			<forward name="NEW" path="/transactions/cellSerumRegrouping.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+
+		<action path="/bagDetailTile"
+			type="bloodbank.transactions.controller.action.BagDetailACT"
+			name="BagDetailFB" validate="false" scope="request"
+			input="/transactions/bagDetail.jsp">
+			<forward name="SAME" path="/transactions/bagDetailTile.jsp" />
+		</action>
+
+		<action path="/labelGeneration"
+				type="bloodbank.transactions.controller.action.LabelGenerationACT"
+				name="LabelGenerationFB"
+				validate="false"
+				scope="request"
+				parameter="tmode"
+				input="/transactions/labelGeneration.jsp">
+			<forward name="NEW" path="/transactions/labelGeneration.jsp"/>	
+			<forward name="SAMPLE" path="/transactions/sampleCollectionDonation.jsp"/>
+			
+		</action>	
+	
+
+		<action path="/bloodDonation"
+			type="bloodbank.transactions.controller.action.BloodDonationACT"
+			name="BloodDonationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/bloodDonation.jsp">
+			<forward name="NEW" path="/transactions/bloodDonation.jsp" />
+
+		</action>
+
+		<action path="/donorQuestionnaire"
+			type="bloodbank.transactions.controller.action.DonorQuestionnaireACT"
+			name="DonorQuestionnaireFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/donorQuestionnaire.jsp">
+			<forward name="NEW"
+				path="/transactions/donorQuestionnaire.jsp" />
+		</action>
+
+		<action path="/donorRegistrationDesk" name="DeskFB"
+			type="bloodbank.transactions.controller.action.DonorRegistrationDeskACT"
+			validate="false" scope="request" parameter="deskmode"
+			input="/donorRegistration">
+			<forward name="NEWREGT" path="/donorRegistration" />
+			<forward name="DONORMOD" path="/donorRegistrationModification" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<action path="/bloodBankDonorRegistration"
+			type="bloodbank.transactions.controller.action.DonorRegistrationACT"
+			name="DonorRegistrationFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/bloodBankDonorRegistration.jsp">
+			<forward name="NEW" path="/transactions/bloodBankDonorRegistration.jsp" />
+			<forward name="DUPLICATE" path="/transactions/bloodBankDuplicateDonor.jsp" />
+		</action>
+
+
+		<action path="/donorDetail"
+			type="bloodbank.transactions.controller.action.DonorDetailACT"
+			name="donorDetailFB" validate="false" scope="request"
+			input="/transactions/donorDetailTile.jsp">
+			<forward name="SAME"
+				path="/transactions/donorDetailTile.jsp" />
+		</action>
+
+		<action path="/uploadFile"
+			type="bloodbank.transactions.controller.action.FileUploadACTION"
+			name="FileUploadFB" validate="false" scope="request"
+			parameter="hmode" input="/transaction/uploadFileTile.jsp">
+			<forward name="NEW" path="/transactions/uploadFileTile.jsp" />
+			<forward name="CLOSE"
+				path="/transactions/uploadFileTile.jsp" />
+		</action>
+
+		<action path="/enlargedImage" type="bloodbank.transactions.controller.action.EnlargedImageACTION"
+			name="EnlargedImageFB" validate="false" input="/transactions/enlargedImageTile.jsp">
+			<forward name="NEW" path="/transactions/enlargedImageTile.jsp" />
+		</action>
+
+		<action path="/searchDonorDetail" type="bloodbank.transactions.controller.action.SearchDonorDetailACT"
+			name="SearchDonorDetailFB" validate="true" scope="request" parameter="hmode"
+			input="/transactions/searchDonorDetailTile.jsp">
+			<forward name="NEW" path="/transactions/searchDonorDetailTile.jsp" />
+			<forward name="SAME" path="/transactions/searchDonorDetailTile.jsp" />
+			<forward name="SEARCHCARD" path="/transactions/searchDonorCard.jsp" />
+			<forward name="SEARCHMASTERCARD" path="/transactions/searchMasterCard.jsp" />
+			<forward name="SEARCHDUPMASTERCARD" path="/transactions/searchDupMasterCard.jsp" />
+			<forward name="SEARCHINVESTIGATION" path="/transactions/searchDonorInvestigation.jsp" />
+			<forward name="SEARCHDONORGEN" path="/transactions/searchDonorDetailGeneral.jsp" />
+			
+		</action>
+
+		<action path="/donorPhysicalExamination" 
+				type="bloodbank.transactions.controller.action.DonorPhysicalExamACT"
+				name="DonorPhysicalExamFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/donorPhysicalExam.jsp">
+			<forward name="NEW" path="/transactions/donorPhysicalExam.jsp" />
+			<forward name="VIEW" path="/transactions/donorPhysicalExamView.jsp" />
+			<forward name="POPUP" path="/transactions/consentPopUp.jsp" />
+		</action>
+
+		<action path="/commonAction"
+				type="bloodbank.transactions.controller.action.CommonTransactionACT"
+				name="CommonTransactionFB"
+				validate="false"
+				scope="request"
+				parameter="mode"
+				input="/transactions/noMode.jsp">
+			<forward name="UNSPECIFIEDMODE" path="/transactions/commonActionNoMode.jsp" redirect="true" />
+			<forward name="CELLTESTGROUPING" path="/cellGroupingDetailACT" redirect="true" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+			<forward name="DONORPHYSIEXAM" path="/donorPhysicalExam" redirect="true" />
+			 <!-- <forward name="CELLGROUPINGVALIDATION" path="/cellGroupingValidation" redirect="true" />-->
+			<forward name="BLOODBAGINVESTIGATION" path="/bloodBagInvestigation" redirect="true" />
+			<forward name="COMPSEPARATION" path="/componentSeparation" redirect="true" />
+			<forward name="SERUMGROUPING" path="/serumTestGrouping" redirect="true" />
+			<forward name="CELLGROUPINGCONFIRMATION" path="/cellSerumGroupingValidation" redirect="true" />
+			<forward name="CELLGROUPINGVALIDATION" path="/cellSerumGroupingValidation" redirect="true" />
+			<forward name="CHILDBAGPREPARATION" path="/childBagPreparation" redirect="true" />
+			<forward name="BLOODDONATION" path="/bloodDonation" redirect="true" />
+			<forward name="SAMPLEDONATION" path="/sampleCollectionDonation" redirect="true" />
+			<forward name="BAGISSUE" path="/BloodBagIssueACT" redirect="true" />
+			<forward name="PATIENTGROUPINGCONFIRMATION" path="/PatientGroupingConfirmationACT" redirect="true" />
+			<forward name="PATIENTGROUPING" path="/PatientBloodCellSerumGroupingACT" redirect="true" />
+			<forward name="CROSSMATCH" path="/CrossMatchingACT" redirect="true" />
+			<forward name="CROSSMATCHCANCEL" path="/CrossMatchCancel" redirect="true" />
+			<forward name="CROSSMATCHCANCELVERIFICATION" path="/CrossMatchCancelVarification" redirect="true" />
+			<forward name="BAGRESERVEDTL" path="/BagReserveDetail" redirect="true" />
+			<forward name="BAGRESERVECANCELLATION" path="/BagReserveCancelDetail" redirect="true" />
+			<forward name="BAGRETURN" path="/BloodBagReturnDetail" redirect="true" />
+			<forward name="BULKISSUE" path="/BulkBloodBagIssue" redirect="true" />
+			<forward name="DONORANTYBODY" path="/AntybodyIdentificationACT" redirect="true" />
+			<forward name="PATIENTANTYBODY" path="/PatientAntibodies" redirect="true" />
+			<forward name="BAGMOVEMENT" path="/BagMovementDetail" redirect="true" />
+			<forward name="COMPONENTIRRADIATION" path="/ComponentIrradiation" redirect="true" />
+			<forward name="PATIENTSAMPLEACCEPTANCE" path="/SampleAcceptance" redirect="true" />
+			<forward name="DUPLICATECARDPRINTING" path="/DuplicateCardPrinting" redirect="true" />
+			<forward name="DONORCARDPRINTING" path="/DonorCardPrinting" redirect="true" />
+			<forward name="DONORDEMOGRPHICMODIFICATION" path="/DonorDemogrphicModification" redirect="true" />
+            <forward name="SCHEDULELETTERPRINTING" path="/ScheduleLetterPrinting" redirect="true" />
+			<forward name="INVESTIGATIONREPORTPRINTING" path="/InvestigationReportPrinting" redirect="true" />
+		    <forward name="QUALITYCONTROLDETAIL" path="/QualityControlDetail" redirect="true" />
+		    <forward name="QUALITYCONTROLREPORT" path="/QualityControlReport" redirect="true" />
+		    <forward name="THERAPEUTICPROCESSENTRY" path="/TherapeuticProcessEntry" redirect="true" />
+			
+		</action>
+		
+		<action path="/donorAdverseReaction" 
+				type="bloodbank.transactions.controller.action.DonorAdverseReactionACT"
+				name="donorAdverseReactionFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/donorAdverseReactionTile.jsp">
+			<forward name="LIST" path="/transactions/donorAdverseReactionTile.jsp" />
+			<forward name="DETAIL" path="/transactions/donorAdverseReactionTile.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<action path="/bloodbankExaminationTile"
+				type="bloodbank.transactions.controller.action.BloodBankExaminationACT"
+				name="BloodBankExaminationFB"
+				validate="false"
+				scope="request"
+				input="/transactions/bloodBankExaminationTile.jsp">
+			<forward name="SAME" path="/transactions/bloodBankExaminationTile.jsp"/>
+		</action>				
+
+		<action path="/bloodbankQuestionnaireTile" 
+				type="bloodbank.transactions.controller.action.BloodBankQuestionnaireACT"
+				name="BloodBankQuestionnaireFB"
+				validate="false"
+				scope="request"
+				input="/transactions/bloodBankQuestionnaireTile.jsp">
+			<forward name="SAME" path="/transactions/bloodBankQuestionnaireTile.jsp" />
+		</action>
+		
+		<action path="/CellTestGroupingDetailACT" 
+				type="bloodbank.transactions.controller.action.CellTestGroupingDetailACT"
+				name="CellTestGroupingDetailFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transactions/cellTestGroupingDetail.jsp">
+			<forward name="NEW" path="/transactions/cellTestGroupingDetail.jsp" />
+		</action>
+		
+		<action path="/SerumGrouping" 
+				type="bloodbank.transactions.controller.action.CellGropupingValidationACT"
+				name="CellGroupingValidationFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transactions/cellGroupingValidation.jsp">
+			<forward name="NEW" path="/transactions/cellGroupingValidation.jsp" />
+		</action>
+		
+		
+		<action path="/CellSerumValidationACT" 
+				type="bloodbank.transactions.controller.action.CellSerumValidationACT"
+				name="CellSerumValidationFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transactions/cellSerumValidation.jsp">
+			<forward name="NEW" path="/transactions/cellSerumValidation.jsp" />
+
+		</action>
+
+
+		<action path="/CellSerumValidationACT"
+			type="bloodbank.transactions.controller.action.CellSerumValidationACT"
+			name="CellSerumValidationFB" validate="false" parameter="hmode"
+			scope="request" input="/transactions/cellSerumValidation.jsp">
+			<forward name="NEW"
+				path="/transactions/cellSerumValidation.jsp" />
+		</action>
+
+
+		<action path="/bloodBagInvestigation"
+			type="bloodbank.transactions.controller.action.BloodBagInvestigationACT"
+			name="BloodBagInvestigationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/bloodBagInvestigation.jsp">
+			<forward name="LIST"
+				path="/transactions/bloodBagInvestigation.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<action path="/bloodBagInvestigationValidation"
+			type="bloodbank.transactions.controller.action.BloodBagInvestigationValidationACT"
+			name="BloodBagInvestigationValidationFB" validate="false"
+			scope="request" parameter="hmode"
+			input="/transactions/bloodBagInvestigationValidation.jsp">
+			<forward name="LIST"
+				path="/transactions/bloodBagInvestigationValidation.jsp" />
+		    <forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+
+		</action>
+
+
+		<action path="/componentSeparation"
+				type="bloodbank.transactions.controller.action.BloodBagComponentSeparationACT"
+				name="BloodBagComponentSeparationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode" 
+				input="/transactions/bloodBagComponentSeparation.jsp">
+			<forward name="NEW" path="/transactions/bloodBagComponentSeparation.jsp"/>	
+			<forward name="TRANSFERBAG" path="/transactions/bloodBagComponentSeparationTransferBag.jsp"/>	
+		</action>	
+		
+		<action path="/bloodbankDonorQuestionnaire" 
+				type="bloodbank.transactions.controller.action.BloodBankDonorQuestionnaireACT"
+				name="BloodBankQuestionnaireFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBankQuestionnaire.jsp">
+			<forward name="NEW" path="/transactions/bloodBankQuestionnaire.jsp" />
+			<forward name="PRINT" path="/transactions/bloodBankQuestDisplay.jsp" />
+			<forward name="HTML" path="/transactions/bloodBankQuestDisplayHtml.jsp" />
+			<forward name="PDF" path="/../hisglobal/utility/ConvertHTMLToPDF" />
+		</action>
+
+		<action path="/donorRefreshment"
+			type="bloodbank.transactions.controller.action.DonorRefreshmentACT"
+			name="donorRefreshmentFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/donorRefreshment.jsp">
+			<forward name="LIST"
+				path="/transactions/donorRefreshment.jsp" />
+			<forward name="DETAIL"
+				path="/transactions/donorRefreshment.jsp" />
+				<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<action path="/requistionPatientDetailTile"
+			type="bloodbank.transactions.controller.action.RequistionPatientDetailACT"
+			name="requistionPatientDetailFB" validate="false" scope="request"
+			input="/transactions/requistionPatientDetailTile.jsp">
+			<forward name="SAME" path="/transactions/requistionPatientDetailTile.jsp" />
+			
+		</action>
+
+
+		<action path="/bloodBagConfirmation"
+			type="bloodbank.transactions.controller.action.BloodBagConfirmationACT"
+			name="BloodBagConfirmationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/bloodBagConfirmation.jsp">
+			<forward name="LIST"
+				path="/transactions/bloodBagConfirmation.jsp" />
+
+				<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+
+		</action>
+
+		<action path="/parameterWiseInvestigation"
+			type="bloodbank.transactions.controller.action.ParameterWiseInvestigationACT"
+			name="ParameterWiseInvestigationFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/parameterWiseInvestigation.jsp">
+			<forward name="LIST"
+				path="/transactions/parameterWiseInvestigation.jsp" />
+
+				<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+
+		</action>
+
+		<action path="/parameterWiseInvestigationValidation"
+			type="bloodbank.transactions.controller.action.ParameterWiseInvestigationValidationACT"
+			name="ParameterWiseInvestigationValidationFB" validate="false"
+			scope="request" parameter="hmode"
+			input="/transactions/parameterWiseInvestigationValidation.jsp">
+			<forward name="LIST"
+				path="/transactions/parameterWiseInvestigationValidation.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+
+		</action>
+
+
+
+		<action path="/hodSanctionDetail"
+				type="bloodbank.transactions.controller.action.HODSanctionDetailACT"
+				name="hodSanctionDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/hodSanctionDetail.jsp">
+			<forward name="SAME" path="/transactions/hodSanctionDetail.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>		
+		
+
+		<action path="/allBagConfirmation"
+				type="bloodbank.transactions.controller.action.AllBagConfirmationACT"
+				name="AllBagConfirmationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/allBagConfirmation.jsp">
+			<forward name="LIST" path="/transactions/allBagConfirmation.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+
+		</action>
+	
+	   <action path="/campRequisition"
+				type="bloodbank.transactions.controller.action.CampRequisitionACT"
+				name="CampRequisitionFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/campRequisition.jsp">
+			<forward name="LIST" path="/transactions/campRequisition.jsp"/>	
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		
+		<!-- Blood Bank Camp Desk -->
+		<action path="/bloodBankCampDesk"
+				type="bloodbank.transactions.controller.action.BloodBankCampDeskACT"
+				name="BloodBankCampDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/bloodBankCampDesk.jsp">
+			<forward name="NEW" path="/bloodBankCampDesk" />
+			<forward name="CAMPAPPROVAL" path="/campApproval"/>
+			<forward name="RESOURCEALLOCATION" path="/campResourceAllocation"/>
+			<forward name="POSTCAMPDETAIL" path="/postCampDetail"/>
+			<forward name="GENERATEBAGS" path="/generateCampBags"/>
+			<forward name="LABELPRINTING" path="/campLabelPrinting"/>
+		</action>	 
+		
+	   <action path="/campDeskLogin"
+				type="bloodbank.transactions.controller.action.CampDeskLoginACT"
+				name="CampDeskLoginFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+			<forward name="DESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt"/>	
+		</action>	
+		
+
+		<action path="/campDeskHeaderPage"
+			parameter="/bloodbank/transactions/campDeskHeader.jsp"
+			type="org.apache.struts.actions.ForwardAction" />
+
+	   <!-- Requisition List -->
+	   <action path="/campRequisitionDesk"
+				type="bloodbank.transactions.controller.action.CampRequisitionDeskACT"
+				name="CampRequisitionDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/campRequisitionDesk.jsp">
+			<forward name="LIST" path="/transactions/campRequisitionDesk.jsp"/>
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>	
+
+		<action path="/campApprovalDesk"
+			type="bloodbank.transactions.controller.action.CampAcceptRequisitionACT"
+			name="CampAcceptRequisitionFB" validate="false" scope="request"
+			parameter="hmode">
+			<forward name="LIST"
+				path="/transactions/campAcceptRequisition.jsp" />
+			<forward name="VIEW"
+				path="/transactions/campAcceptRequisitionView.jsp" />
+			<forward name="NEW"
+				path="/campRequisitionDesk.cnt?hmode=NEW" />
+		</action>
+
+		<action path="/campResourceAllocationDesk"
+			type="bloodbank.transactions.controller.action.CampResourceAllocationACT"
+			name="CampResourceAllocationFB" validate="false" scope="request"
+			parameter="hmode">
+			<forward name="LIST"
+				path="/transactions/campResourceAllocation.jsp" />
+		</action>
+
+		<action path="/campRequisitionTile"
+			type="bloodbank.transactions.controller.action.CampRequisitionTileACT"
+			name="CampRequisitionTileFB" validate="false" scope="request"
+			input="/transactions/campRequisitionTile.jsp">
+			<forward name="LIST"
+				path="/transactions/campRequisitionTile.jsp" />
+		</action>
+
+		<action path="/bloodRequisitionPatient"
+			type="bloodbank.transactions.controller.action.BloodRequisitionPatientACT"
+			name="BloodRequisitionPatientFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/bloodRequisitionPatient.jsp">
+			<forward name="NEW" path="/transactions/bloodRequisitionPatient.jsp" />
+			<forward name="INDICATION" path="/transactions/indicationPopup.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+
+		</action>
+
+		<action path="/searchRequisitionPatient"
+			type="bloodbank.transactions.controller.action.SearchRequisitionPatientACT"
+			name="SearchRequisitionPatientFB" validate="true" scope="request"
+			parameter="hmode" input="/transactions/searchDonorDetailTile.jsp">
+			<forward name="NEW"
+				path="/transactions/searchRequisitionPatientTile.jsp" />
+			<forward name="SAME"
+				path="/transactions/searchRequisitionPatientTile.jsp" />
+			<forward name="SEARCHTYPE"
+				path="/transactions/searchPatientBagReturnTile.jsp" />	
+		</action>
+
+		<action path="/campDonorRegistration"
+				type="bloodbank.transactions.controller.action.CampDonorRegistrationACT"
+				name="CampDonorRegistrationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/campDonorRegistration.jsp">
+			<forward name="LIST" path="/transactions/campDonorRegistration.jsp"/>	
+			<forward name="SAME" path="/transactions/campDonorExaminationDetail.jsp"/>
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/postCampDetailDesk"
+				type="bloodbank.transactions.controller.action.PostCampDetailACT"
+				name="PostCampDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+			<forward name="LIST" path="/transactions/postCampDetail.jsp"/>	
+			<forward name="NEW"	path="/campRequisitionDesk.cnt?hmode=NEW" />
+		</action>
+		
+		<action path="/bloodBagCancellation"
+				type="bloodbank.transactions.controller.action.BloodBagCancellationACT"
+				name="BloodBagCancellationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBagCancellation.jsp">
+			<forward name="LIST" path="/transactions/bloodBagCancellation.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+
+		</action>
+		
+		<action path="/bloodBagCancellationVerification"
+				type="bloodbank.transactions.controller.action.BloodBagCancellationVeriACT"
+				name="BloodBagCancellationVeriFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBagCancellationVeri.jsp">
+			<forward name="LIST" path="/transactions/bloodBagCancellationVeri.jsp"/>
+				
+		</action>
+		
+		<action path="/confirmBloodBagCancellation"
+				type="bloodbank.transactions.controller.action.ConfirmBloodBagCancellationACT"
+				name="ConfirmBloodBagCancellationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/confirmBloodBagCancellation.jsp">
+			<forward name="LIST" path="/transactions/confirmBloodBagCancellation.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+
+		</action>
+		
+		<action path="/toExtBloodBankRequisition"
+				type="bloodbank.transactions.controller.action.ToExtBloodBankRequisitionACT"
+				name="ToExtBloodBankRequisitionFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/toExtBloodBankRequisition.jsp">
+			<forward name="LIST" path="/transactions/toExtBloodBankRequisition.jsp"/>	
+
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+
+		</action>
+		
+
+		<action path="/childBagPreparation"
+				type="bloodbank.transactions.controller.action.ChildBagPreparationACT"
+				name="ChildBagPreparationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/childBagPreparation.jsp">
+			<forward name="NEW" path="/transactions/childBagPreparation.jsp"/>	
+			<forward name="SAME" path="/transactions/childBagPreparation.jsp"/>	
+		</action>
+		
+		  <action path="/CrossMatchingACT"
+				type="bloodbank.transactions.controller.action.CrossMatchingACT"
+				name="CrossMatchingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/crossMatching.jsp">
+			<forward name="NEW" path="/transactions/crossMatching.jsp"/>	
+		</action>	
+       
+		<action path="/BloodBagIssueACT"
+				type="bloodbank.transactions.controller.action.BloodBagIssueACT"
+				name="BloodBagIssueFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBagIssue.jsp">
+			<forward name="NEW" path="/transactions/bloodBagIssue.jsp"/>	
+		</action> 
+		
+		<action path="/AntybodyIdentificationACT"
+				type="bloodbank.transactions.controller.action.AntiBodiesDetailACT"
+				name="AntiBodiesDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/antiBodiesDetail.jsp">
+			<forward name="NEW" path="/transactions/antiBodiesDetail.jsp"/>	
+		</action> 
+		
+			<action path="/PatientBloodCellSerumGroupingACT"
+				type="bloodbank.transactions.controller.action.PatientBloodCellSerumGroupingACT"
+				name="PatientBloodCellSerumGroupingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/patientBloodCellSerumGrouping.jsp">
+			<forward name="NEW" path="/transactions/patientBloodCellSerumGrouping.jsp"/>	
+		  </action>	
+		  <action path="/PatientGroupingConfirmationACT"
+				type="bloodbank.transactions.controller.action.PatientGroupingConfirmationACT"
+				name="PatientGroupingConfirmationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/patientGroupingConfirmation.jsp">
+			<forward name="NEW" path="/transactions/patientGroupingConfirmation.jsp"/>	
+	   	  </action>	
+		  <action path="/PatientAntibodies"
+				type="bloodbank.transactions.controller.action.PatientAntibodiesDetailACT"
+				name="PatientAntibodiesDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/patientAntibodiesDetail.jsp">
+			<forward name="NEW" path="/transactions/patientAntibodiesDetail.jsp"/>	
+		  </action>	
+
+		  
+		    <action path="/VoluntaryCard"
+				type="bloodbank.transactions.controller.action.VoluntaryCardDetailACT"
+				name="VoluntaryCardFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/voluntaryCardDetail.jsp">
+			<forward name="NEW" path="/transactions/voluntaryCardDetail.jsp"/>	
+		  </action>	
+
+		  
+		  <action path="/bloodBankReqAcceptance"
+				type="bloodbank.transactions.controller.action.BloodBankReqAcceptanceACT"
+				name="BloodBankReqAcceptanceFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBankReqAcceptance.jsp">
+			<forward name="LIST" path="/transactions/bloodBankReqAcceptance.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>	
+
+           <action path="/CrossMatchCancel"
+				type="bloodbank.transactions.controller.action.CrossMatchCancelACT"
+				name="CrossMatchCancelFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/crossMatchCancel.jsp">
+			<forward name="NEW" path="/transactions/crossMatchCancel.jsp"/>	
+		  </action>	
+
+
+
+	<action path="/voluntaryDonorExt"
+				type="bloodbank.transactions.controller.action.VoluntaryExtDonorACT"
+				name="VoluntaryDonorExtFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/VoluntaryExtDonor.jsp">
+			<forward name="NEW" path="/transactions/VoluntaryExtDonor.jsp" />
+		</action>
+		
+	<action path="/voluntaryDonorInt"
+				type="bloodbank.transactions.controller.action.VoluntaryIntDonorACT"
+				name="VoluntaryDonorIntFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/VoluntaryIntDonor.jsp">
+			<forward name="NEW" path="/transactions/VoluntaryIntDonor.jsp" />
+			<forward name="MASTERREPLACEMENT" path="/transactions/masterReplacementDtlPopup.jsp" />
+		</action>
+				
+	<action path="/voluntaryDonorDesk"
+				name="VoluntaryDeskDonorFB"
+				type="bloodbank.transactions.controller.action.VoluntaryCardDeskACT"
+				validate="false"
+				scope="request"
+				parameter="deskmode"
+				input="/voluntaryDonorInt">
+			<forward name="EXTERNALVOLUNTARYCARD" path="/voluntaryDonorExt" />
+			<forward name="INTERNALVOLUNTARYCARD" path="/voluntaryDonorInt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+
+            <action path="/CrossMatchCancelVarification"
+				type="bloodbank.transactions.controller.action.CrossMatchCancelVarificationACT"
+				name="CrossMatchCancelVarificationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/crossMatchCancelVarification.jsp">
+			<forward name="NEW" path="/transactions/crossMatchCancelVarification.jsp"/>	
+		  </action>	
+
+		  
+		  <action path="/fromExtBloodBankRequisition"
+				type="bloodbank.transactions.controller.action.FromExtBloodBankRequisitionACT"
+				name="FromExtBloodBankRequisitionFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/fromExtBloodBankRequisition.jsp">
+			<forward name="LIST" path="/transactions/fromExtBloodBankRequisition.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>	
+    
+
+
+          <action path="/PatientSampleAcceptance"
+				type="bloodbank.transactions.controller.action.PatientSampleAcceptanceACT"
+				name="PatientSampleAcceptanceFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/patientSampleAcceptance.jsp">
+			<forward name="NEW" path="/transactions/patientSampleAcceptance.jsp"/>	
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		  </action>	
+
+		  <action path="/donorRegistrationModification"
+				type="bloodbank.transactions.controller.action.DonorRegistrationModificationACT"
+				name="DonorRegistrationModificationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBankDonorRegistrationModification.jsp">
+			<forward name="NEW" path="/transactions/bloodBankDonorRegistrationModification.jsp"/>	
+		  </action>	
+
+		   <action path="/BloodBagReturnDetail"
+				type="bloodbank.transactions.controller.action.BloodBagReturnDetailACT"
+				name="BloodBagReturnDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBagReturnDetail.jsp">
+			<forward name="NEW" path="/transactions/bloodBagReturnDetail.jsp"/>	
+			<forward name="CHECKLIST" path="/transactions/bldChecklistDetail.jsp"/>	
+		  </action>	
+		  
+
+		   <action path="/sampleCollectionDonation"
+				type="bloodbank.transactions.controller.action.SampleCollectionDonationACT"
+				name="SampleCollectionDonationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodSampleAndDonation.jsp">
+			<forward name="NEW" path="/transactions/bloodSampleAndDonation.jsp"/>
+			<forward name="SAMPLE" path="/transactions/sampleCollectionDonation.jsp"/>
+			<forward name="BAGLABEL" path="/transactions/bagLabelGenration.jsp"/>		
+				
+		  </action>	
+
+		   <action path="/BulkBloodBagIssue"
+				type="bloodbank.transactions.controller.action.BulkBloodBagIssueACT"
+				name="BulkBloodBagIssueFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bulkBloodBagIssue.jsp">
+			<forward name="NEW" path="/transactions/bulkBloodBagIssue.jsp"/>	
+		  </action>	
+		  
+		   <action path="/BagMovementDetail"
+				type="bloodbank.transactions.controller.action.BagMovementDetailACT"
+				name="BagMovementDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bagMovementDetailStoreWise.jsp">
+			<forward name="NEW" path="/transactions/bagMovementDetailStoreWise.jsp"/>	
+			<forward name="INPROCESS" path="/transactions/bagMovementDetailBagWise.jsp"/>	
+		  </action>	
+		    
+		  <action path="/BagReserveDetail"
+				type="bloodbank.transactions.controller.action.BagReserveDetailACT"
+				name="BagReserveDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bagReserveDetail.jsp">
+			<forward name="NEW" path="/transactions/bagReserveDetail.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>	
+		  
+		   <action path="/BagReserveCancelDetail"
+				type="bloodbank.transactions.controller.action.BagReserveCancelDtlACT"
+				name="BagReserveCancelDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bagReserveCancelDtl.jsp">
+			<forward name="NEW" path="/transactions/bagReserveCancelDtl.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />	
+		  </action>	
+
+		<action path="/onlineBloodBagAcceptenceDtl"
+			type="bloodbank.transactions.controller.action.OnlineBloodBagAcceptDtlACT"
+			name="onlineBloodBagAcceptDtlFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/onlineBloodBagAcceptDetail.jsp">
+			<forward name="NEW" path="/transactions/onlineBloodBagAcceptDetail.jsp" />
+			<forward name="DETAIL" path="/transactions/onlineBloodBagAcceptDetail.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/bloodBankCardLetterPrinting"
+			type="bloodbank.transactions.controller.action.BloodBankCardLetterPrintingACT"
+			name="BloodBankCardLetterPrintingFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/bloodBankCardLetterPrinting.jsp">
+			<forward name="LIST" path="/transactions/bloodBankCardLetterPrinting.jsp" />
+			<forward name="POPUP" path="/transactions/bloodBankCardLetterPrintingPopUp.jsp" />
+			
+		</action>
+		
+		<action path="/scheduleLetterPrinting"
+			type="bloodbank.transactions.controller.action.BloodBankScheduleLetterPrintingACT"
+			name="scheduleLetterPrintingFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/bloodBankScheduleLetterPrinting.jsp">
+			<forward name="LIST" path="/transactions/bloodBankScheduleLetterPrinting.jsp" />
+			<forward name="POPUP" path="/transactions/bloodBankScheduleLetterPrinting.jsp"  />
+			
+		</action>
+		
+		<action path="/investigationReportPrinting"
+			type="bloodbank.transactions.controller.action.InvestigationReportPrintingACT"
+			name="investigationReportPrintingFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/bloodbankInvestigationReportPrinting.jsp">
+			<forward name="LIST" path="/transactions/bloodbankInvestigationReportPrinting.jsp" />
+			<forward name="POPUP" path="/transactions/bloodbankInvestigationReportPrinting.jsp"  />
+			
+		</action>
+		
+		<action path="/campCardLetterPrinting"
+			type="bloodbank.transactions.controller.action.CampCardLetterPrintingACT"
+			name="CampCardLetterPrintingFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/campCardLetterPrinting.jsp">
+			<forward name="LIST" path="/transactions/campCardLetterPrinting.jsp" />
+			<forward name="POPUP" path="/transactions/campCardLetterPrintingPopUp.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+	
+	   <action path="/offlineBloodBagRequisitionDtl"
+			type="bloodbank.transactions.controller.action.OfflineBloodBagRequisitionDtlACT"
+			name="OfflineBloodBagRequisitionDtlFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/OfflineBloodBagRequisitionDtl.jsp">
+			<forward name="NEW" path="/transactions/OfflineBloodBagRequisitionDtl.jsp" />
+			<forward name="DETAIL" path="/transactions/OfflineBloodBagRequisitionDtl.jsp" />
+			<forward name="INDICATION" path="/transactions/indicationPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+        <action path="/ComponentIrradiationDetail"
+				type="bloodbank.transactions.controller.action.ComponentIrradiationACT"
+				name="ComponentIrradiationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/componentIrradiation.jsp">
+			<forward name="NEW" path="/transactions/componentIrradiation.jsp"/>	
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		<action path="/patientDetail"
+				type="bloodbank.transactions.controller.action.PatientDetailACT"
+				name="PatientDetailFB"
+				scope="request"
+				parameter="hmode"
+				validate="false"
+				input="/transactions/ipdPatientDetailTile.jsp">
+			<forward name="IPD" path="/transactions/ipdPatientDetailTile.jsp"/>
+			<forward name="OPD" path="/transactions/opdPatientDetailTile.jsp"/>
+		</action>		
+		
+		<action path="/bloodBankDuplicateCardLetterPrinting"
+			type="bloodbank.transactions.controller.action.BloodBankDuplicateCardLetterPrintingACT"
+			name="BloodBankDuplicateCardLetterPrintingFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/bloodBankDuplicateCardLetterPrinting.jsp">
+			<forward name="LIST" path="/transactions/bloodBankDuplicateCardLetterPrinting.jsp" />
+			<forward name="POPUP" path="/transactions/bloodBankDuplicateCardLetterPrintingPopUp.jsp" />
+			
+		</action>
+		
+		<action path="/extBloodBankRequisitionTile"
+			type="bloodbank.transactions.controller.action.ExtBloodBankRequisitionTileACT"
+			name="ExtBloodBankRequisitionTileFB" validate="false" scope="request"
+			input="/transactions/extBloodBankRequisitionTile.jsp">
+			<forward name="LIST"
+				path="/transactions/extBloodBankRequisitionTile.jsp" />
+		</action>
+		
+
+		
+		
+		<action path="/searchByNamePopup"
+				type="bloodbank.transactions.controller.action.SearchByNameACTION"
+				name="SearchByNameFB" validate="false" parameter="hmode"
+				scope="request" input="/transactions/searchByNameTile.jsp">
+			<forward name="NEW" path="/transactions/searchByNameTile.jsp" />
+			<forward name="SAME" path="/transactions/searchByNameTile.jsp" />
+		</action>	
+
+		<action path="/campViewScheduler"
+			type="bloodbank.transactions.controller.action.CampViewSchedulerACT"
+			name="CampViewSchedulerFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/campViewScheduler.jsp">
+			<forward name="LIST"
+				path="/transactions/campViewScheduler.jsp" />
+		</action>
+		
+
+		<action path="/campGenerateBags"
+				type="bloodbank.transactions.controller.action.CampLabelGenerationACT"
+				name="CampLabelGenerationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+			<forward name="LIST" path="/transactions/campLabelGeneration.jsp"/>	
+			<forward name="POPUP" path="/transactions/campLabelGenerationPopUp.jsp" />
+			<forward name="NEW"
+				path="/campRequisitionDesk.cnt?hmode=NEW" />
+		</action>
+		
+		<action path="/campLabelPrinting"
+				type="bloodbank.transactions.controller.action.CampLabelPrintingACT"
+				name="CampLabelPrintingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+			<forward name="LIST" path="/transactions/campLabelPrinting.jsp"/>	
+			
+			<forward name="NEW"
+				path="/campRequisitionDesk.cnt?hmode=NEW" />
+		</action>
+		
+
+		<action path="/bloodRequisitionDesk" name="DeskFB"
+			type="bloodbank.transactions.controller.action.BloodRequisitionDeskACT"
+			validate="false" scope="request" parameter="deskmode">
+			<forward name="INTREQUISITION" path="/internaPatientRequisition" />
+			<forward name="EXTREQUISITION" path="/externalPatientRequisition" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/externalTherapeuticRequisition"
+				type="bloodbank.transactions.controller.action.ExternalTherapeuticRequisitionACT"
+				name="ExternalTherapeuticRequisitionFB" validate="false" parameter="hmode"
+				scope="request" input="/transactions/externalTherapeuticPatientRequisition.jsp">
+			<forward name="NEW" path="/transactions/externalTherapeuticPatientRequisition.jsp" />
+			<forward name="SAME" path="/transactions/externalTherapeuticPatientRequisition.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+
+		<action path="/therapeuticProcessEntry"
+				type="bloodbank.transactions.controller.action.TherapeuticProcessEntryACT"
+				name="TherapeuticProcessEntryFB" validate="false" parameter="hmode"
+				scope="request" input="/transactions/therapeuticProcessEntry.jsp">
+			<forward name="NEW" path="/transactions/therapeuticProcessEntry.jsp" />
+			<forward name="LABEL" path="/transactions/therapeuticBagLabelGenration.jsp" />
+		</action>	
+		
+		<action path="/therapeuticPatientDetailTile"
+				type="bloodbank.transactions.controller.action.TherapeuticPatientDetailTileACT"
+				name="TherapeuticPatientDetailFB" validate="false" 
+				scope="request" input="/transactions/therapeuticPatientDetailTile.jsp">
+			<forward name="SAME" path="/transactions/therapeuticPatientDetailTile.jsp" />
+		</action>
+		
+		<action path="/offlineInternalTherapeuticRequisition"
+				type="bloodbank.transactions.controller.action.OfflineInternalTherapeuticRequisitionACT"
+				name="OfflineInternalTherapeuticRequisitionFB" validate="false" parameter="hmode"
+				scope="request" input="/transactions/offlineInternalTherapeuticRequisition.jsp">
+			<forward name="NEW" path="/transactions/offlineInternalTherapeuticRequisition.jsp" />
+		    <forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+
+			<action path="/qualityControlDetail"
+				type="bloodbank.transactions.controller.action.QualityControlDetailACT"
+				name="QualityControlDetailBean" 
+				validate="false" 
+				parameter="hmode"
+				scope="request" 
+				input="/transactions/qualityControlDetail.jsp">
+			<forward name="NEW" path="/transactions/qualityControlDetail.jsp" />
+			<forward name="REAGENTTEMPLATE" path="/transactions/qualityControlReagentTemplate.jsp" />
+			
+		</action>	
+		
+
+		<action path="/qualityControlReport"
+				type="bloodbank.transactions.controller.action.QualityControlReportACT"
+				name="QualityControlReportFB" validate="false" parameter="hmode"
+				scope="request" input="/transactions/qualityControlReport.jsp">
+			<forward name="NEW" path="/transactions/qualityControlReport.jsp" />
+		</action>	
+
+	
+		<action path="/therapeuticRequisitionDesk" name="DeskFB"
+			type="bloodbank.transactions.controller.action.TherapeuticRequisitionDeskACT"
+			validate="false" scope="request" parameter="deskmode">
+			<forward name="INTERNALREQ" path="/internaTherapeuticRequisition" />
+			<forward name="EXTERNALREQ" path="/externalTherapeuticRequisition" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		
+		<action path="/performaTestDetailEntry"
+				type="bloodbank.transactions.controller.action.BloodBankPerformaTestDetailEntryACT"
+				name="BloodBankPerformaTestDetailEntryFB" validate="false" parameter="hmode"
+				scope="request" input="/transactions/bloodbankPerformaTestDetailEntry.jsp">
+			<forward name="LIST" path="/transactions/bloodbankPerformaTestDetailEntry.jsp" />
+			<forward name="VIEW" path="/transactions/bloodbankPerformaTestDetailEntryView.jsp" />
+		</action>
+		
+		<action path="/performaTestDetailEntryReport"
+				type="bloodbank.transactions.controller.action.BloodBankPerformaTestDetailEntryReportACT"
+				name="BloodBankPerformaTestDetailEntryReportFB" validate="false" parameter="hmode"
+				scope="request" input="/transactions/bloodbankPerformaTestDetailEntryReport.jsp">
+			<forward name="LIST" path="/transactions/bloodbankPerformaTestDetailEntryReport.jsp" />
+			<forward name="VIEW" path="/transactions/bloodbankPerformaTestDetailEntryReportView.jsp" />
+		</action>
+
+		<action path="/donorModification"
+				type="bloodbank.transactions.controller.action.DonorModificationACT"
+				name="DonorModificationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/donorModification.jsp">
+			<forward name="NEW" path="/transactions/donorModification.jsp"/>	
+		 </action>	
+		  
+		<action path="/externalPatTransfusionReact"
+				type="bloodbank.transactions.controller.action.ExternalPatTransfusionReactACT"
+				name="ExternalPatTransfusionReactFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/externalPatTransfusionReact.jsp"> 
+			<forward name="NEW" path="/transactions/externalPatTransfusionReact.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		 </action>	  
+		 
+		 <action path="/donorCellSerumGrouping"
+				type="bloodbank.transactions.controller.action.DonorCellSerumGroupingACT"
+				name="DonorCellSerumGroupingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/donorCellSerumGrouping.jsp">
+			<forward name="NEW" path="/transactions/donorCellSerumGrouping.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		 </action>	
+		 
+		 
+		 
+		 
+		 <action path="/sampleLabelPrinting"
+				type="bloodbank.transactions.controller.action.BloodBankLabelPrintingACT"
+				name="BloodBankLabelPrintingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBankLabelSamplePrinting.jsp">
+			<forward name="NEW" path="/transactions/bloodBankLabelSamplePrinting.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+			<forward name="DONORSAMPLE" path="/transactions/bloodBankLabelSamplePrinting.jsp"/>	
+			<forward name="PATIENTSAMPLE" path="/transactions/bloodBankLabelPatientSamplePrinting.jsp"/>	
+			<forward name="BAGLABEL" path="/transactions/bloodBankLabelBagSamplePrinting.jsp"/>	
+			<forward name="EXPIREDBAGLABEL" path="/transactions/bloodBankLabelExpiredSamplePrinting.jsp"/>	
+			<forward name="INFECTEDBAGLABEL" path="/transactions/bloodBankLabelInfectedSamplePrinting.jsp"/>
+			<forward name="CAMPBAGLABEL" path="/transactions/bloodBankCampBagLabelPrinting.jsp"/>	
+		 </action>	  
+		
+		<!-- For PGIMER -->
+		<action path="/postTransfusionReactionTestDetail"
+				type="bloodbank.transactions.controller.action.PostTransfusionReactionTestDetailACT"
+				name="PostTransfusionReactionTestDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/postTransfusionReactionTestDetail.jsp">
+			<forward name="NEW" path="/transactions/postTransfusionReactionTestDetail.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+			  
+		<!-- For GNCTD -->	  
+		<action path="/postReactionRestDetail"
+				type="bloodbank.transactions.controller.action.PostReactionTestDtlACT"
+				name="PostReactionTestDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/postReactionTestDetail.jsp">
+			<forward name="NEW" path="/transactions/postReactionTestDetail.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		<action path="/bloodStockEnquiry"
+				type="bloodbank.transactions.controller.action.BloodStockEnquiryACT"
+				name="BloodStockEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodStockEnquiry.jsp">
+			<forward name="NEW" path="/transactions/bloodStockEnquiry.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>  
+		
+		<action path="/bloodDonor"
+				type="bloodbank.transactions.controller.action.BloodDonorEnquiryACT"
+				name="BloodDonorEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodDonor.jsp">
+			<forward name="NEW" path="/transactions/bloodDonor.jsp"/>	
+			<forward name="POPUP" path="/transactions/bloodDonorPopUp.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+
+		<action path="/donorImageUpload"
+				type="bloodbank.transactions.controller.action.DonorImageUploadACTION"
+				name="donorImageUploadFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/donorImageUpload.jsp">
+			<forward name="NEW" path="/transactions/donorImageUpload.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/bloodbankStaticalStockEnquiry"
+				type="bloodbank.transactions.controller.action.BloodBankStaticalStockEnquiryACT"
+				name="BloodBankStaticalStockEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodbankStaticalStockEnquiry.jsp">
+			<forward name="NEW" path="/transactions/bloodbankStaticalStockEnquiry.jsp"/>	
+			<forward name="TOBEEXPIRED" path="/transactions/bloodbankStaticalStockEnquiryToBeExpired.jsp"/>
+			<forward name="FETCHBAGNODETAIL" path="/transactions/bloodbankStaticalViewBagNoDetail.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action> 
+		
+		<action path="/requisitionCancellation"
+				type="bloodbank.transactions.controller.action.BloodBankRequisitionCancellationACT"
+				name="BloodBankRequisitionCancellationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBankRequisitionCancellation.jsp">
+			<forward name="NEW" path="/transactions/bloodBankRequisitionCancellation.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />	
+		  </action>	
+
+		  
+		  <action path="/campEnquiry"
+				type="bloodbank.transactions.controller.action.CampEnquiryACT"
+				name="CampEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/campEnquiry.jsp">
+			<forward name="NEW" path="/transactions/campEnquiry.jsp"/>	
+			<forward name="POPUP" path="/transactions/campEnquiry.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		  
+		<action path="/CrossMatchUpdate"
+				type="bloodbank.transactions.controller.action.CrossMatchUpdateACT"
+				name="CrossMatchUpdateFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/crossMatchUpdate.jsp">
+			<forward name="NEW" path="/transactions/crossMatchUpdate.jsp"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/BloodBagTransfusionDetail"
+				type="bloodbank.transactions.controller.action.BloodBagTransfusionDetailACT"
+				name="BloodBagTransfusionDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodBagTransfusionDetail.jsp">
+			<forward name="NEW" path="/transactions/bloodBagTransfusionDetail.jsp"/>
+			<forward name="BAGDETAIL" path="/transactions/bagDetailPopup.jsp" />	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>	
+		  
+		<action path="/MasterDonorCardPrinting"
+				type="bloodbank.transactions.controller.action.MasterDonorCardPrintingACT"
+				name="MasterDonorCardPrintingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/masterDonorCardPrinting.jsp">
+			<forward name="NEW" path="/transactions/masterDonorCardPrinting.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>  
+		  
+		  <action path="/DiscardOfBloodBank"
+				type="bloodbank.transactions.controller.action.DiscardOfBloodBankACT"
+				name="DiscardOfBloodBankFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/discardOfBloodBank.jsp">
+			<forward name="NEW" path="/transactions/discardOfBloodBank.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>  
+		  
+		   <action path="/BloodBagInvestigationInGroupACTION"
+				type="bloodbank.transactions.controller.action.BloodBagInvestigationInGroupACTION"
+				name="BloodBagInvestigationInGroupFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/blood_bag_investigation_in_group.jsp">
+			<forward name="LIST" path="/transactions/blood_bag_investigation_in_group.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>  
+		  
+		   <action path="/multipleBagComponentSeparation"
+				type="bloodbank.transactions.controller.action.MultipleBagComponentSeparationACT"
+				name="multipleBagComponentSeparationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/multipleBagComponentSeparation.jsp">
+			<forward name="NEW" path="/transactions/multipleBagComponentSeparation.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>  
+		  
+		  <action path="/cellSerumGrouping"
+				type="bloodbank.transactions.controller.action.CellSerumGroupingACTION"
+				name="CellSerumGroupingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/cell_serum_grouping.jsp">
+			<forward name="NEW" path="/transactions/cell_serum_grouping.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>  
+		  
+		<action path="/cellSerumGroupingConfirmation"
+				type="bloodbank.transactions.controller.action.CellSerumGroupingConfirmationACTION"
+				name="CellSerumGroupingConfirmationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/cell_serum_grouping_confirmation.jsp">
+			<forward name="NEW" path="/transactions/cell_serum_grouping_confirmation.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>  
+	</action-mappings>
+
+
+	<controller>
+		<set-property property="processorClass"
+			value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources
+		parameter="bloodbank.bloodBankResourceBundle" >
+	</message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/bloodbank-tiles-def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+	<!-- **************** scheduler Plugin which schedule jobs*********************** 
+		The plugin configuration has two properties used for initialization.
+		 @startOnLoad specifies whether or not we want to start the scheduler 
+		 immediately when the container starts and @startupDelay is used to
+		  specify how long before the code will attempt to start the scheduler.	-->
+		  
+
+	 <!--  <plug-in className="hisglobal.presentation.SchedulerDonorPlugIn">
+	     <set-property property="startOnLoad" value="false" />
+	     <set-property property="startupDelay" value="0" />
+  	</plug-in> -->    	
+
+	<!-- **************************************************************************** -->
+</struts-config>

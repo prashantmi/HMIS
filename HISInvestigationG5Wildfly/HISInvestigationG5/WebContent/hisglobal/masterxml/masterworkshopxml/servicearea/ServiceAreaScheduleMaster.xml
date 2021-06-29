@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Area Schedule Master'>
+		<common-values>
+			<master-name>ServiceAreaScheduleMaster</master-name>
+			<master-title>Service Area Schedule Master</master-title>
+		</common-values>	
+	
+	<list-page>
+				<tableHeading>Service Area Schedule Master</tableHeading> 
+				<list-table>HSRV_SERVICE_AREA_SCHEDULE_MST</list-table>
+				
+				<columns>
+					 <column>Service Area</column>
+					 <column>Max Sitting Required</column>
+					 <column>Interval Type</column>				 
+  			   </columns>
+					<query-detail>
+					<fields>
+					    <field>(SELECT INITCAP(HSRSTR_SERVICE_AREA_NAME ) 
+					    || '(' || 
+					    (NVL((SELECT INITCAP (GSTR_DEPT_NAME) 
+					    FROM GBLT_DEPARTMENT_MST DEPT 
+					    WHERE DEPT.GNUM_DEPT_CODE = S.GNUM_DEPT_CODE 
+					    AND DEPT.GNUM_HOSPITAL_CODE = S.GNUM_HOSPITAL_CODE AND GNUM_ISVALID=1), 'GLOBAL SERVICE' ) ) || ')' 
+					    FROM HSRV_SERVICE_AREA_MST  S
+					    WHERE HSRNUM_SERVICE_AREA_CODE = A.HSRNUM_SERVICE_AREA_CODE 
+					    AND GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE)</field>
+					    <field>A.HSRNUM_MAX_SITTING_REQUIRED</field>
+					    <field>DECODE(A.HSRSTR_INTERVAL_TYPE,1,'REGULAR',2,'DISCRETE')</field>					    		    					    					    
+					</fields>
+					<primaryKey>
+						<field>A.HSRNUM_SERVICE_AREA_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>						
+					</primaryKey>
+					<tables>
+						<table alias='A'>HSRV_SERVICE_AREA_SCHEDULE_MST</table>																		
+					</tables>
+					<condition>	
+							<dependent>
+							<clause> B.HSRNUM_SERVICE_AREA_CODE=A.HSRNUM_SERVICE_AREA_CODE</clause>
+							</dependent>		
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>							              				 
+                            <isvalid-field> A.GNUM_ISVALID</isvalid-field>                                                          
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>	
+			<static-page>/servicearea/masters/ServiceAreaScheduleMaster.cnt</static-page>		
+		</add-page>
+
+		<modify-page>
+			<static-page>/servicearea/masters/ServiceAreaScheduleMaster.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>		

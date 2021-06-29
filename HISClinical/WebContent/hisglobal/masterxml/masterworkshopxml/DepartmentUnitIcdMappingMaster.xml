@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <master-config>
+	<master name='DepartmentUnitIcdMappingMaster'>
+		<common-values>
+			<master-name>DepartmentUnitIcdMappingMaster</master-name>
+			<master-title>Department Unit Icd Mapping Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Dept Icd Mapping </tableHeading>
+			
+			<list-table>HGBT_DEPT_ICD_MST</list-table>
+			<controls>
+				<control type="combo" index="0">
+					<label>Unit Name</label>
+					<selection-mandatory>false</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(A.HGSTR_UNITNAME)||')'</text-field>
+								<value-field>A.HGNUM_DEPTUNITCODE</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HGBT_UNIT_MST</table>
+								<table alias='B'>GBLT_DEPARTMENT_MST</table>
+							</tables>
+							<condition>
+								<general> 
+									A.GNUM_HOSPITAL_CODE=100 AND A.HGNUM_DEPT_CODE=B.GNUM_DEPT_CODE AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE
+									AND A.GNUM_ISVALID=1 AND B.GNUM_ISVALID=1 ORDER BY INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(A.HGSTR_UNITNAME)||')'
+								</general>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+			<columns>
+				<column>Unit</column>
+				<column>Disease</column>
+				</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(C.HGSTR_UNITNAME)||')'</field>
+					<field>INITCAP(SUBSTR (D.hgbstr_disease, 1, 40)|| DECODE (SUBSTR (D.hgbstr_disease, 40, 200), '', ' ', '..') || '('|| D.hgbstr_disease_code || ')')</field>
+				</fields>
+				
+				<primaryKey>
+					<field>A.HGNUM_DEPTUNITCODE</field>
+					<field>A.HGBSTR_DISEASE_CODE</field>
+					<field>A.HGNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HGBT_DEPT_ICD_MST</table>
+					<table alias='B'>GBLT_DEPARTMENT_MST</table>
+					<table alias='C'>HGBT_UNIT_MST</table>
+					<table alias='D'>HGBT_ICD_DISEASE_MST</table>					
+				</tables>
+				
+				<condition>
+					<isvalid-field>
+						A.HGNUM_DEPTUNITCODE=C.HGNUM_DEPTUNITCODE AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND
+						C.HGNUM_DEPT_CODE=B.GNUM_DEPT_CODE AND C.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND
+						A.HGBSTR_DISEASE_CODE=D.hgbstr_disease_code AND A.GNUM_HOSPITAL_CODE=D.GNUM_HOSPITAL_CODE AND
+						 a.gnum_isvalid=c.gnum_isvalid AND a.gnum_isvalid=d.gnum_isvalid and
+						A.GNUM_ISVALID
+					</isvalid-field>
+					<orderby> ORDER BY INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(C.HGSTR_UNITNAME)||')' </orderby>
+					<dependent>
+						<clause> A.HGNUM_DEPTUNITCODE = #0 and A.GNUM_HOSPITAL_CODE=100</clause>
+					</dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+		<add-page>
+			<static-page>/opd/master/DeptUnitIcdMapping.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/DeptUnitIcdMapping.cnt</static-page>
+		</modify-page>
+		
+	</master>
+</master-config>
+   

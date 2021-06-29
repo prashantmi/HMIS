@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 
+  <constant name="struts.devMode" value="false" />
+	<package name="appointment.reports" namespace="/appointment/reports" extends="struts-default">
+		 <action name="*AptListReport" method="{1}" class="appointment.reports.controller.action.AppointmentListingReportACTION">
+			 <result name="NEW">/appointment/report/jsp/AppointmentListReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>	
+		 </action>
+		 <action name="*AptstatsReport" method="{1}" class="appointment.reports.controller.action.AptStatisticsReportACTION">
+			 <result name="NEW">/appointment/report/jsp/AppointmentStatisticsReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>	
+		 </action>
+		 
+ 	</package> 
+	 
+</struts>

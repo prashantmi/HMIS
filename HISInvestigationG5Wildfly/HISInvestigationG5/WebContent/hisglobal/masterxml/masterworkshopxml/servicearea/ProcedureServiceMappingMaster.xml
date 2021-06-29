@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Master'>
+		<common-values>
+			<master-name>ProcedureServiceMappingMaster</master-name>
+			<master-title>Procedure Service Mapping Master</master-title>
+		</common-values>	
+	
+	<list-page>
+				<tableHeading>Procedure Service Mapping Master</tableHeading> 
+				<list-table>hsrv_procedure_service_mst</list-table>
+				
+				<columns>
+					 <column>Procedure</column>	
+					 <column>Service</column>				 
+  			   </columns>
+					<query-detail>
+					<fields>
+					    <field>(SELECT INITCAP(HSRSTR_PROCEDURE_NAME) FROM HSRV_PROCEDURE_MST  WHERE HSRNUM_PROCEDURE_CODE = A.HSRNUM_PROCEDURE_CODE AND GNUM_HOSPITAL_CODE=100 AND GNUM_ISVALID=1) PROC</field>					    					    
+						<field>A.hsrnum_proc_service_name</field>
+					</fields>
+					<primaryKey>
+						<field>A.hsrnum_proc_service_code </field>
+						<field>A.gnum_hospital_code</field>						
+					</primaryKey>
+					<tables>
+						<table alias='A'>hsrv_procedure_service_mst</table>												
+					</tables>
+					<condition>			
+							<isvalid-field> A.GNUM_ISVALID</isvalid-field>
+                             <orderby> order by INITCAP(A.hsrnum_proc_service_name)</orderby>                             
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<static-page>/servicearea/masters/ProcedureServiceMappingMaster.cnt</static-page>	
+				
+		</add-page>
+		
+		<modify-page>
+		    <static-page>/servicearea/masters/ProcedureServiceMappingMaster.cnt</static-page>	
+		    
+		</modify-page>
+	</master>	
+</master-config>		

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<!--His Global TLD-->
+<taglib>
+
+<tlibversion>1.0</tlibversion>
+<jspversion>2.0</jspversion>
+<shortname>HisGlobalTags</shortname>
+<info>His Global TLD</info>
+
+<tag>
+	<name>AppointmentTag</name>
+	<tagclass>appointment.tags.AppointmentTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		The Tag provides appointment most recent available slot and also give option for selecting new slot
+	</info>
+	<attribute>
+		<name>tagId</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>crno</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>aptId</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paraId1</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paraId2</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paraId3</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paraId4</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>paraId5</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>paraId6</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>paraId7</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+	
+<tag>
+	<name>AppointmentParameterComboTag</name>
+	<tagclass>appointment.tags.AppointmentParameterComboTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>this tag is used for generating appointment parameter combo</info>
+	<attribute>
+		<name>tagView</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>supportClassName</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>controllerName</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>scriptCallBackFunctionName</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>aptId</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+</tag>
+
+	
+<tag>
+	<name>AppointmentListingTag</name>
+	<tagclass>appointment.tags.AppointmentListingTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>this tag is used for lising appointments on particular date </info>
+	<attribute>
+		<name>supportClassName</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>controllerName</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>scriptCallBackFunctionName</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>aptId</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>listingMode</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	
+	
+</tag>
+
+
+
+</taglib>

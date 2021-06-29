@@ -1,0 +1,326 @@
+<!--
+/*******************************************************************************
+ * Copyright 2014 Centre for Development of Advanced Computing(C-DAC), Pune
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
+ -->
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<!--  JQuery Js is a prerequisite for this plugin -->
+<link href="css/searchtool.css" rel="stylesheet">
+<link rel="icon" href="css/images/csnotk.ico">
+
+<title>CSNOCtrl Demonstration Page</title>
+<!--  JQuery Js is a prerequisite for this plugin -->
+
+<script src="ext/js/jquery.js"></script>
+<script src="ext/js/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="ext/js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="js/demo.js"></script>
+<script type="text/javascript" src="js/searchtool.js"></script>
+<script type="text/javascript">
+
+/*
+*callbck_index defines the callback function that is called once the user selects a particular concept 
+*from the search results list. It is sent as parameter in the selectSNOMEDCT().setValue() is registered
+*in this callback function.This function is used to return the result to the user.
+*/
+
+var callbck_index =function(ret_OUT){setValue(ret_OUT);};
+var semantictag_IN;
+var acceptability_IN;
+var state_IN ;
+var returnlimit_IN;
+var retterm_value ={};
+
+function setValues()
+{
+	if(document.getElementById("forState").value!="")
+		state_IN=document.getElementById("forState").value;
+	else
+		state_IN="both";
+	if(document.getElementById("forSemanticTag").value!="")
+		semantictag_IN=document.getElementById("forSemanticTag").value;
+	else
+		semantictag_IN="all";
+	if(document.getElementById("forAcceptability").value!="")
+		acceptability_IN=document.getElementById("forAcceptability").value;
+	else
+		acceptability_IN="all";
+	if(document.getElementById("txtreturnlimit").value!="")
+		returnlimit_IN=document.getElementById("txtreturnlimit").value;
+	else
+		returnlimit_IN=-1;
+	
+}
+
+/*
+ * setAll() function will set the values of the variables which are passed as arguments to selectSNOMEDCT() 
+ * function. The arguments are semantictag,state,acceptability,returnlimit and callback. The arguments will be served as 
+ input for the term to be searched from the SNOMEDCT repository.
+ 
+ */
+
+function setAll(selectAccept,indexval) {
+	var acceptidx = "";	
+	var Aval = "";
+	if (indexval < 4) 
+	{
+	    acceptidx = selectAccept.selectedIndex;
+	    Aval = selectAccept.options[acceptidx].value;
+	}
+    if (indexval == '1') {
+	    acceptability_IN = Aval;
+	}
+	else if (indexval == '2') {
+	    state_IN = Aval;
+	}
+	else if (indexval == '3') {
+		semantictag_IN = Aval;
+	}
+	else if (indexval == '4') {
+	    selectAccept.value = (selectAccept.value[0] === '-') ? ('-' + selectAccept.value.replace(/[^0-9]/g, '')) : (selectAccept.value.replace(/[^0-9]/g, ''));
+	    returnlimit_IN = selectAccept.value;
+	}
+    
+   
+}
+
+/*
+* setValue() function is called in the callback function.This function is used to display the return value in the HTML control.In
+* index.html page,the value is displayed in the "snomedcttext" textarea.The result includes- Concept id, Description-id and Description  
+* param selectedSNOMEDTerm(var)-is the concept selected by the user from the search result list 
+* 
+*/
+
+function setValue(selectedSNOMEDTerm)
+{
+	document.getElementById("snomedcttxt").value=selectedSNOMEDTerm;
+}
+
+/*
+*
+	isNumeric() function validates input data as it should be numeric only.
+*/
+
+function isNumeric(e)
+{
+e.value = (e.value.replace(/[^0-9]/g, ''));
+}
+</script>
+
+</head>
+<body>
+<div class="main-div">
+	<table >
+	<tr>
+	<td>
+	<div class="header">
+	<img style="width:140px;height:70px;float: left;left:10px;top:0px;" src="css/images/CSNOCtrl.png"/>
+	<label for="title" style="font-size:20pt;font-weight:bold;display: inline-block;vertical-align: middle;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;text-align: center;padding:2% 15%;" >CSNOCtrl Demonstration Page</label>
+	<img style="height: 70px; width: 100px;float: right;right:10px;top: 0px;" src="css/images/CDACLogo.png"/>
+	</div>
+	</td>
+	
+	
+		</tr>
+		<tr>
+			<td id="steps">
+				<fieldset class="step">
+						<legend>Search</legend>
+						
+				<p>
+				<label for="State" style="font-size:12pt;display: inline-block;vertical-align: middle;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" >State</label>
+						<select	id="forState" name="forState" onchange="setAll(this,'2');" style="font-size:9pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+							<option value="BOTH">BOTH</option>
+							<option value="ACTIVE">ACTIVE</option>
+							<option value="INACTIVE">INACTIVE</option>
+						</select>
+				
+				<label for="semantic tag" style="font-size:12pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" >Semantic Tag</label> 
+				
+					
+				 	<select	id="forSemanticTag" name="forSemanticTag" onchange="setAll(this,'3');" style="font-size:9pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+						<option value="ALL">ALL</option>
+						<option value="PROCEDURE">PROCEDURE</option>
+						<option value="DISORDER">DISORDER</option>
+						<option value="FINDING">FINDING</option>
+						<option value="OBSERVABLE_ENTITY">OBSERVABLE ENTITY</option>
+						<option value="BODY_STRUCTURE">BODY STRUCTURE</option>
+						<option value="ORGANISM">ORGANISM</option>
+						<option value="SUBSTANCE">SUBSTANCE</option>
+						<option value="SPECIMEN">SPECIMEN</option>
+						<option value="SPECIAL_CONCEPT">SPECIAL CONCEPT</option>
+						<option value="LINKAGE_CONCEPT">LINKAGE CONCEPT</option>
+						<option value="PHYSICAL_FORCE">PHYSICAL FORCE</option>
+						<option value="EVENT">EVENT</option>
+						<option value="ENVIRONMENT">ENVIRONMENT</option>
+						<option value="GEOGRAPHIC_LOCATION">GEOGRAPHIC LOCATION</option>
+						<option value="SOCIAL_CONCEPT">SOCIAL CONCEPT</option>
+						<option value="SITUATION_WITH_EXPLICIT_CONTEXT">SITUATION WITH EXPLICIT CONTEXT</option>
+						<option value="STAGING_SCALE">STAGING SCALE</option>
+						<option value="PHYSICAL_OBJECT">PHYSICAL OBJECT</option>
+						<option value="QUALIFIER_VALUE">QUALIFIER VALUE</option>
+						<option value="RECORD_ARTIFACT">RECORD ARTIFACT</option>
+						<option value="PERSON">PERSON</option>
+						<option value="LINK_ASSERTION">LINK ASSERTION</option>
+						<option value="NAMESPACE_CONCEPT">NAMESPACE CONCEPT</option>
+						<option value="ATTRIBUTE">ATTRIBUTE</option>
+						<option value="ASSESSMENT_SCALE">ASSESSMENT SCALE</option>
+						<option value="RACIAL_GROUP">RACIAL GROUP</option>
+						<option value="TUMOR_STAGING">TUMOR STAGING</option>
+						<option value="OCCUPATION">OCCUPATION</option>
+						<option value="MORPHOLOGIC_ABNORMALITY">MORPHOLOGIC ABNORMALITY</option>
+						<option value="CELL">CELL</option>
+						<option value="CELL_STRUCTURE">CELL STRUCTURE</option>
+						<option value="ETHNIC_GROUP">ETHNIC GROUP</option>
+						<option value="PRODUCT">PRODUCT</option>
+						<option value="INACTIVE_CONCEPT">INACTIVE CONCEPT</option>
+						<option value="NAVIGATIONAL_CONCEPT">NAVIGATIONAL CONCEPT</option>
+						<option value="LIFE_STYLE">LIFE STYLE</option>
+						<option value="REGIME_THERAPY">REGIME THERAPY</option>
+						<option value="RELIGION_PHILOSOPHY">RELIGION PHILOSOPHY</option>
+					</select><br/><br/>
+					
+				 
+				 <label for="Acceptability" style="font-size:12pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" >Acceptability</label>
+					<select	id="forAcceptability" name="forAcceptability" onchange="setAll(this,'1');" style="font-size:9pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+						<option value="ALL">ALL</option>
+						<option value="PREFERRED">PREFERRED</option>
+						<option value="PREFERRED_EXCLUDING_FSN">PREFERRED EXCLUDING FSN</option>
+						<option value="SYNONYMS">SYNONYMS</option>
+						<option value="ACCEPTABLE">ACCEPTABLE</option>
+					</select>
+				 <label for="returnlimit" style="font-size:12pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" >Return Limit</label>
+					<input type="text" id="txtreturnlimit" onkeyup="setAll(this,'4')" pattern="^-?\d+" >&nbsp;<span id="errmsg"></span>
+					<br/>
+					<br/>
+					
+					
+						
+				<label style="font-size:12pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;">Select Code</label>
+				<textarea readonly rows="5" cols="50" style="font-size:9pt;font-family: Arial, 'Helvetica Neue', sans-serif;letter-spacing: 0.1px;line-height: 1.8;font-weight: bold;" id="snomedcttxt"></textarea>
+				<input id="searchConceptId" onclick="setValues(); selectSNOMEDCT( state_IN,semantictag_IN, acceptability_IN, returnlimit_IN,callbck_index);" type="button" value="Select Code"/>
+				<img alt="Steps to Use Control in your application" onclick="infoDialog('searchCtrl')" title="Steps to use CSNOControl for active SNOMED CT codes in your application" src="images/help.png" style="float: right;width: 70px;height:70px;cursor: pointer;"/>
+				</p>
+				</fieldset>
+			</td>
+		</tr>
+		
+				<tr>
+			<td id="steps">
+				<form name="lookup" onsubmit="return false">
+					<fieldset class="step">
+						<legend>Lookup</legend>
+						<table>
+							<tr>
+								<td>
+									<p>
+							<label for="conceptId" style="font-size:12pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" >Concept ID</label>
+							<input id="conceptId" name="conceptId" onkeyup="isNumeric(this)" type="text"  />
+							<label for="forlangRefset" style="font-size:12pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" >Language</label>
+							<select	id="langRefset" name="langrefset" style="font-size:9pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+								<option value="UK">UK</option>
+								<option value="US">US</option>
+							</select>
+							<input id="byConcept" type="button" onclick="lookupByConcept('conceptId','langRefset','conResult')" value="Search"  style="color: #fff;background-color: #428bca;border-color: #357ebd; width: auto;font-weight: bold;margin-left:15px;display: inline-block;font-weight: normal;text-align: center;vertical-align: middle;cursor: pointer;background-image: none;border: 1px solid transparent;white-space: nowrap;padding: 6px 12px;font-size: 12px;border-radius: 4px;" />
+							<img alt="Steps To Use LookUp In Your Application" onclick="infoDialog('conceptLookup')" title="Steps To Use LookUp In Your Application" src="images/help.png" style="float: right;width: 70px;height:70px;cursor: pointer"/>
+							<br>
+								<b id="blankConceptIdLookup" for="conceptId" style="font-size:8pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal; color:red;">Concept ID is required</b>
+								
+								<b id="wrongConceptIdLookup" for="conceptId" style="font-size:8pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal; color:red;">Please enter valid Concept ID</b>
+									<br>
+
+									<span id="conResult" style="position: relative;"></span>
+
+									</p>
+								</td>
+							</tr>												
+						</table>						
+					</fieldset>
+				</form>
+			</td>
+			
+		</tr>
+		<tr>
+			<td id="steps">
+				<form name="lookup1" onsubmit="return false">
+					<fieldset class="step">
+						<p>
+							<label for="conceptId" style="font-size:12pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" >Concept ID</label> 
+							<input id="cptId" name="cptId" type="text" onkeyup="isNumeric(this)" />
+							
+							<label for="relation" style="font-size:12pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" >Relation</label> 
+							<select	id="relation" name="relation" style="font-size:9pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">								
+								<option value="IS_A">IS A</option>
+								<option value="FINDING_SITE">FINDING SITE</option>
+								<option value="ASSOCIATED_MORPHOLOGY">ASSOCIATED MORPHOLOGY</option>
+								<option value="CAUSATIVE_AGENT">CAUSATIVE AGENT</option>
+								<option value="INTERPRETS">INTERPRETS</option>
+								<option value="AFTER">AFTER</option>
+								<option value="DUE_TO">DUE TO</option>
+								<option value="PROCEDURE_SITE">PROCEDURE SITE</option>
+								<option value="PROCEDURE_DEVICE">PROCEDURE DEVICE</option>
+								<option value="METHOD">METHOD</option>
+								<option value="HAS_INTENT">HAS INTENT</option>
+								<option value="COMPONENT">COMPONENT</option>
+								<option value="SPECIMEN_SUBSTANCE">SPECIMEN SUBSTANCE</option>
+								<option value="SPECIMEN_PROCEDURE">SPECIMEN PROCEDURE</option>
+								<option value="LATERALITY">LATERALITY</option>
+								<option value="HAS_ACTIVE_INGREDIENT">HAS ACTIVE INGREDIENT</option>
+								<option value="HAS_DOSE_FORM">HAS DOSE FORM</option>
+								<option value="ASSOCIATED_FINDING">ASSOCIATED FINDING</option>
+								<option value="ASSOCIATED_PROCEDURE">ASSOCIATED PROCEDURE</option>
+								<option value="FINDING_CONTEXT">FINDING CONTEXT</option>
+								
+							</select>
+							
+							<label for="direction" style="font-size:12pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" >Direction</label>
+						
+							<select id="srcTgt" name="srcTgt" style="font-size:9pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">		
+								  <option value="source">Source</option>
+								  <option value="destination">Destination</option>
+							</select>
+						
+							<input id="byConceptRelation" onclick="lookupByConceptRelation('cptId','relation','srcTgt','conList')" type="button" value="Get Relations" style="color: #fff;background-color: #428bca;border-color: #357ebd; width: auto;font-weight: bold;margin-left:15px;display: inline-block;font-weight: normal;text-align: center;vertical-align: middle;cursor: pointer;background-image: none;border: 1px solid transparent;white-space: nowrap;padding: 6px 12px;font-size: 12px;border-radius: 4px;" />
+							<img alt="Steps To Use LookUp In Your Application" onclick="infoDialog('conceptRelationLookup')" title="Steps To Use LookUp In Your Application" src="images/help.png" style="float: right;width: 70px;height:70px;cursor: pointer"/>
+								<br>
+								<b id="blankConceptIdRelation" for="conceptId" style="font-size:8pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal; color:red;">Concept ID is required</b>
+
+								<b id="wrongConceptIdRelation" for="conceptId" style="font-size:8pt;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal; color:red;">Please enter valid Concept ID</b>
+							<span id="conList"></span>
+						</p>
+					</fieldset>
+				</form>
+			</td>
+		</tr>
+		<tr>
+		<td>
+		<div style="background-color: #f5f5f5;width:208%;height:25px;padding:5px 0px 5px 10px;margin:10px 0px;border-bottom:1px solid #d9d9d9;border-top:1px solid #d9d9d9;">
+			
+			<label for="Version" style=" font-size:10pt;font-weight:bold;margin-left:5px;display: inline-block;vertical-align: middle;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;font-style: normal;font-variant: normal;" > &copy; CSNOtk v2.0 </label>
+			
+		</div>
+		</td>
+		</tr>
+	</table>
+</div>
+	<div id="dialog-howto">
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		
+		<!-- Report Bean by Vivek Aggarwal Start [29/Aug/2011] -->
+
+		<form-bean name="sterilizationRptFB" type="cssd.reports.controller.fb.SterilizationRptFB">
+		</form-bean>
+	
+		<form-bean name="issuedAndReceivedItemsRptFB" type="cssd.reports.controller.fb.IssuedAndReceivedItemsRptFB">
+		</form-bean>
+			
+		<form-bean name="issueRptFB" type="cssd.reports.controller.fb.IssueRptFB">
+		</form-bean>
+			<!-- Report Bean by Deepika Gaba Start [5/Sep/2011] -->
+		<form-bean name="receiveRptFB" type="cssd.reports.controller.fb.ReceiveRptFB">
+		</form-bean>
+			<!-- Report Bean by Deepika Gaba Start [7/Sep/2011] -->
+		<form-bean name="secShiftSterilizationRptFB" type="cssd.reports.controller.fb.SecShiftSterilizationRptFB">
+		</form-bean>
+		
+		<!-- Report Bean by Deepika Gaba Start [12/Sep/2011] -->
+		<form-bean name="condemnationRptFB" type="cssd.reports.controller.fb.CondemnationRptFB">
+		</form-bean>
+		
+		<!-- Report Bean by Deepika Gaba Start [15/Sep/2011] -->
+		<form-bean name="workOrderRptFB" type="cssd.reports.controller.fb.WorkOrderRptFB">
+		</form-bean>
+		
+		<!-- Report Bean by Deepika Gaba Start [19/Sep/2011] -->
+		<form-bean name="workOrderSlipRptFB" type="cssd.reports.controller.fb.WorkOrderSlipRptFB">
+		</form-bean>
+		
+		<!-- Report Bean by Deepika Gaba Start [21/Sep/2011] -->
+		<form-bean name="receiptSlipRptFB" type="cssd.reports.controller.fb.ReceiptSlipRptFB"></form-bean>
+		
+		<!-- Report Bean by Adil Start [22/Nov/2012] -->
+		<form-bean name="issueRegisterRptFB" type="cssd.reports.controller.fb.IssueRegisterRptFB"></form-bean>
+		
+		<!-- Report Bean by Adil Start [22/Nov/2012] -->
+		<form-bean name="requestRegisterRptFB" type="cssd.reports.controller.fb.RequestRegisterRptFB"></form-bean>
+		
+		<!-- Report Bean by Adil Start [22/Nov/2012] -->
+		<form-bean name="receiptRegisterRptFB" type="cssd.reports.controller.fb.ReceiptRegisterRptFB"></form-bean>
+		
+		<!-- Report Bean by Adil Start [23/Nov/2012] -->
+		<form-bean name="workOrderMachineDtlForLoadRegisterRptFB" type="cssd.reports.controller.fb.WorkOrderMachineDtlForLoadRegisterRptFB"></form-bean>
+		
+		<!-- Report Bean by Deepika Gaba Start [5/Sep/2011] -->
+		<form-bean name="issueSlipRptFB" type="cssd.reports.controller.fb.IssueSlipRptFB"></form-bean>
+		
+		<!-- Report Bean by Deepika Gaba Start [7/Sep/2011] -->
+		<form-bean name="newWorkOrderSlipRptFB" type="cssd.reports.controller.fb.NewWorkOrderSlipRptFB">
+		</form-bean>
+		
+	</form-beans>
+
+	<action-mappings>
+
+
+
+		<action path="/switchModule" type="org.apache.struts.actions.SwitchAction" />
+
+		
+		<!-- Sterilization Report by Vivek Aggarwal [29/Aug/2011] -->
+
+		<action path="/reports/SterilizationRptACTION" type="cssd.reports.controller.action.SterilizationRptACTION"
+			name="sterilizationRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_sterilization_report.jsp" />
+
+		</action>
+		<!-- Sterilization Report by Vivek Aggarwal END [30/Aug/2011] -->
+
+		<!-- Issue Report by Vivek Aggarwal [05/Aug/2011] -->
+
+		<action path="/reports/IssueRptACTION" type="cssd.reports.controller.action.IssueRptACTION"
+			name="issueRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_issue_report.jsp" />
+
+		</action>
+		<!-- Issue Report by Vivek Aggarwal END [06/Aug/2011] -->
+
+		
+		<!-- Receive Report by Deepika Gaba [05/Sep/2011] -->
+
+		<action path="/reports/ReceiveRptACTION" type="cssd.reports.controller.action.ReceiveRptACTION"
+			name="receiveRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_receive_report.jsp" />
+
+		</action>
+		<!-- Receive Report by Deepika Gaba [05/Sep/2011] -->
+		
+		<!-- SecShiftSterilization Report by Deepika Gaba [07/Sep/2011] -->
+		
+		
+		<action path="/reports/SecShiftSterilizationRptACTION" type="cssd.reports.controller.action.SecShiftSterilizationRptACTION"
+			name="secShiftSterilizationRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_secshift_sterilization_report.jsp" />
+
+		</action>
+		<!-- SecShiftSterilization Report by Deepika Gaba [07/Sep/2011] -->
+		
+		<!-- Condemnation Report by Deepika Gaba [12/Sep/2011] -->
+		
+		
+		<action path="/reports/CondemnationRptACTION" type="cssd.reports.controller.action.CondemnationRptACTION"
+			name="condemnationRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_condemnation_report.jsp" />
+
+		</action>
+		<!-- Condemnation Report by Deepika Gaba [12/Sep/2011] -->
+	
+	
+	<!--WorkOrder Report by Deepika Gaba [15/Sep/2011] -->
+		
+		
+		<action path="/reports/WorkOrderRptACTION" type="cssd.reports.controller.action.WorkOrderRptACTION"
+			name="workOrderRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_work_order_report.jsp" />
+
+		</action>
+		<!-- Work Order Report by Deepika Gaba [15/Sep/2011] -->
+		
+		<!--Work Order Slip Report by Deepika Gaba [19/Sep/2011] -->
+		
+		
+		<action path="/reports/WorkOrderSlipRptACTION" type="cssd.reports.controller.action.WorkOrderSlipRptACTION"
+			name="workOrderSlipRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_work_order_slip_report.jsp" />
+
+		</action>
+		<!-- Work Order Slip Report by Deepika Gaba [19/Sep/2011] -->
+		
+		<!--Receipt Slip Report by Deepika Gaba [21/Sep/2011] -->
+		<action path="/reports/ReceiptSlipRptACTION" type="cssd.reports.controller.action.ReceiptSlipRptACTION"
+			name="receiptSlipRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_receipt_slip_report.jsp" />
+
+		</action>
+		
+		<action path="/reports/IssuedAndReceivedItemsRptACTION" type="cssd.reports.controller.action.IssuedAndReceivedItemsRptACTION"
+			name="issuedAndReceivedItemsRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_issuedAndReceivedItems_report.jsp" />
+
+		</action>
+		<action path="/reports/NewWorkOrderSlipRptACTION" type="cssd.reports.controller.action.NewWorkOrderSlipRptACTION"
+			name="newWorkOrderSlipRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/newcssd_workorder_report.jsp" />
+
+		</action>
+		<action path="/reports/issueRegisterRptACTION" type="cssd.reports.controller.action.IssueRegisterRptACTION"
+			name="issueRegisterRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_issue_register_report.jsp" />
+
+		</action>
+		
+		<action path="/reports/requestRegisterRptACTION" type="cssd.reports.controller.action.RequestRegisterRptACTION"
+			name="requestRegisterRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_request_register_report.jsp" />
+
+		</action>
+		
+		<action path="/reports/receiptRegisterRptACTION" type="cssd.reports.controller.action.ReceiptRegisterRptACTION"
+			name="receiptRegisterRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_receipt_register_report.jsp" />
+
+		</action>
+		
+		<action path="/reports/workOrderMachineDtlForLoadRegisterRptACTION" type="cssd.reports.controller.action.WorkOrderMachineDtlForLoadRegisterRptACTION"
+			name="workOrderMachineDtlForLoadRegisterRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_workOrderMachineDtlForLoadRegister_report.jsp" />
+		</action>
+		
+		<action path="/reports/issueSlipRptACTION" type="cssd.reports.controller.action.IssueSlipRptACTION"
+			name="issueSlipRptFB" scope="request" validate="false" parameter="hmode">
+			<forward name="main" path="/reports/jsp/cssd_issue_slip_report.jsp" />
+		</action>
+		
+	</action-mappings>
+
+
+
+
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="cssd.cssdResourceBundle">
+	</message-resources>
+
+
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

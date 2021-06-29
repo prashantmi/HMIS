@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Consent Mapping Master'>
+		<common-values>
+			<master-name>ServiceConsent/GuidelineMappingMaster</master-name>
+			<master-title>Service Consent/Guideline Mapping Master</master-title>
+		</common-values>
+		<list-page>
+			<tableHeading>Consent Mapping Master</tableHeading> 
+			<list-table>HGBT_CONSENT_MAPPING</list-table>
+
+			
+			<columns>
+				<column>Service Type</column>
+				<column>Service Name</column>
+				<column>Template Type</column>
+				<column>Template Name</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HBSTR_SERVICE_TYPE)</field>
+					<field>INITCAP(B.HGSTR_SERVICE_DESC)</field>
+					<field>DECODE(b.hgnum_template_type,'1','Consent','2','Guideline',null)</field>
+					<field>INITCAP(C.HGSTR_TEMPLATE_NAME)</field>
+				</fields>
+				<primaryKey>
+					<field>B.HGNUM_SERVICE_TYPE_ID</field>
+					<field>B.HGNUM_TEMPLATE_ID</field>
+					<field>B.HGSTR_SERVICE_ID</field>
+					<field>B.HGNUM_SLNO</field>
+					<field>B.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HGBT_CONSENT_SERVICE_MST</table>
+					<table alias='B'>HGBT_CONSENT_MAPPING</table>
+					<table alias='C'>HGBT_TEMPLATE_MST</table>
+				</tables>
+				<condition>	
+					<general> b.HGNUM_SERVICE_TYPE_ID=a.HGNUM_SERVICE_TYPE_ID and b.HGNUM_TEMPLATE_ID=c.HGNUM_TEMPLATE_ID and A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE and C.GNUM_HOSPITAL_CODE=100 and a.GNUM_ISVALID=b.GNUM_ISVALID and b.GNUM_ISVALID=c.GNUM_ISVALID  </general>
+					<general-inactive> b.HGNUM_SERVICE_TYPE_ID=a.HGNUM_SERVICE_TYPE_ID and b.HGNUM_TEMPLATE_ID=c.HGNUM_TEMPLATE_ID and A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE and C.GNUM_HOSPITAL_CODE=100 and a.GNUM_ISVALID=b.GNUM_ISVALID and b.GNUM_ISVALID=c.GNUM_ISVALID  </general-inactive>
+			 		<isvalid-field> and B.GNUM_ISVALID </isvalid-field>
+					<hospital-code> B.GNUM_HOSPITAL_CODE </hospital-code>
+				</condition>
+			</query-detail>				
+		</list-page>
+		<add-page>
+			<static-page>/opd/master/AddConsentMappingMaster.cnt</static-page>
+		</add-page>
+		<modify-page>
+			<static-page>/opd/master/AddConsentMappingMaster.cnt</static-page>
+		</modify-page>
+
+		
+	</master>
+</master-config>

@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ <!-- ========== Form Bean Definitions =================================== -->
+<form-beans>       
+	    
+	    <form-bean name="AddUnitFB" type="registration.master.controller.fb.AddUnitFB"/>     	    
+	    <form-bean name="AddUnitConsultantFB" type="registration.master.controller.fb.AddUnitConsultantFB"/>     	    
+	    <form-bean name="AddRoomToUnitFB" type="registration.master.controller.fb.AddRoomToUnitFB"/>     	    
+	    <form-bean name="ModifyUnitLayoutFB" type="registration.master.controller.fb.ModifyUnitFB"/>
+	    <form-bean name="AddRoomToUnitFB" type="registration.master.controller.fb.AddRoomToUnitFB"/>  
+	    <form-bean name="DeptUnitRosterFB" type="registration.master.controller.fb.DeptUnitRosterFB"/>  
+  	    <form-bean name="ModifyUnitConsultantFB" type="registration.master.controller.fb.ModifyUnitConsultantFB"/>    
+  	    <form-bean name="DeptShiftRosterFB" type="registration.master.controller.fb.DeptShiftRosterFB"/>  	    
+  	    <form-bean name="ModifyRoomToUnitFB" type="registration.master.controller.fb.ModifyRoomToUnitFB"/>  	    
+   	    <form-bean name="DeleteRoomFromUnitFB" type="registration.master.controller.fb.DeleteRoomFromUnitFB"/>  	    
+   	    <form-bean name="DeptUnitRoomMasterSequenceFB" type="registration.master.controller.fb.DeptUnitRoomMasterSequenceFB"/>  	    
+   	    <form-bean name="SequencePopupFB" type="registration.master.controller.fb.SequencePopUpFB"/>  	    
+   	    <form-bean name="DeletionofUnitFB" type="registration.master.controller.fb.DeletionofUnitFB"/>  	    
+   	    <form-bean name="UnitConsultantFB" type="registration.master.controller.fb.UnitConsultantMasterFB"/>  	    
+   	    <form-bean name="AddDepartmentMstFB" type="registration.master.controller.fb.AddDepartmmentMstFB"/>  	    
+   	    <form-bean name="ModifyDepartmentMstFB" type="registration.master.controller.fb.ModifyDeptMstFB"/>  	    
+   	    <form-bean name="ViewDeptMasterFB" type="registration.master.controller.fb.ViewDeptMasterFB"/>  
+   	   	<form-bean name="modifyPatientCategoryMasterFB" type="registration.master.controller.fb.ModifyPatientCategoryMasterFB"/>			    
+		<form-bean name="modifyRegistrationCatMstFB" type="registration.master.controller.fb.ModifyRegistrationCatMstFB"/>			    
+		<form-bean name="modifyExternalInstituteMasterFB" type="registration.master.controller.fb.ModifyExternalInstituteMasterFB"/>
+		<form-bean name="seasonMasterFB" type="registration.master.controller.fb.SeasonMasterFB"/>
+        <form-bean name="RegOccupMstFB" type="registration.master.controller.fb.RegOccupMstFB"/>
+        <form-bean name="registrationTimingMasterFB" type="registration.master.controller.fb.RegistrationTimingMasterFB"/>
+        <form-bean name="RegPatStatusMstFB" type="registration.master.controller.fb.RegPatStatusMstFB"/>
+		<form-bean name="deptUnitGroupingMasterFB" type="registration.master.controller.fb.DeptUnitGroupingMasterFB"/>
+		<form-bean name="RegEmergencyCaseMstFB" type="registration.master.controller.fb.RegEmergencyCaseMstFB"/>
+        <form-bean name="InjuryTypeMasterFB" type="registration.master.controller.fb.InjuryTypeMasterFB"/>
+		<form-bean name="CityLocationMstFB" type="registration.master.controller.fb.AddCityLocationMstFB"/>
+		<form-bean name="RoomMasterFB" type="registration.master.controller.fb.RoomMasterFB"/>
+		<form-bean name="AddLocationFB" type="registration.master.controller.fb.AddLocationMstFB"/>  
+		<form-bean name="ModifyLocationFB" type="registration.master.controller.fb.ModifyLocationMstFB"/>  
+        <form-bean name="AddDisclaimerFB" type="registration.master.controller.fb.AddDisclaimerMsFB"/>
+         <form-bean name="ModifyDisclaimerFB" type="registration.master.controller.fb.ModifyDisclaimerMsFB"/>
+         <form-bean name="deptUnitRoomUsablityMstFB" type="registration.master.controller.fb.DeptUnitRoomUsablityMstFB"/>
+         <form-bean name="deptUnitRoomConsultantRosterMstFB" type="registration.master.controller.fb.DeptUnitRoomConsultantRosterMstFB"/>
+         <form-bean name="categoryVerificationDocMstFB" type="registration.master.controller.fb.CategoryVerificationDocumentMstFB" ></form-bean>
+		  <form-bean name="deptUnitRoomDayWiseCapacityMstFB" type="registration.master.controller.fb.DeptUnitRoomDayWiseCapacityMstFB"/>
+
+		  <form-bean name="departmentCounterFB" type="registration.master.controller.fb.DeptCounterMappingFB"/>
+		  <form-bean name="unitCounterFB" type="registration.master.controller.fb.UnitCounterMappingFB"/>
+
+		  <form-bean name="deptUnitConsultantInitialMstFB" type="registration.master.controller.fb.DeptUnitConsultantInitialMstFB"/>
+		  <form-bean name="EmployeeMasterFB" type="registration.master.controller.fb.EmployeeMasterFB"/>
+
+</form-beans>       
+
+
+<action-mappings> 
+
+	<action  path="/master/addRoomMaster"
+	    type="registration.master.controller.action.AddRoomMasterACTION"
+	    name="RoomMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/addRoomMaster.jsp">
+	    <forward name="NEW" path="/Master/addRoomMaster.jsp" />
+	  	<forward name="SAME" path="/Master/addRoomMaster.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+     </action> 
+     <action  path="/master/modifyRoomMaster"
+	    type="registration.master.controller.action.ModifyRoomMasterACTION"
+	    name="RoomMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyRoomMaster.jsp">
+	    <forward name="NEW" path="/Master/modifyRoomMaster.jsp" />
+	  	<forward name="SAME" path="/Master/modifyRoomMaster.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+     </action>
+
+	<action  path="/master/addCityLocationMaster"
+	    type="registration.master.controller.action.AddCityLocationMstACTION"
+	    name="CityLocationMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/addCityLocationMst.jsp">
+	    <forward name="NEW" path="/Master/addCityLocationMst.jsp" />
+	  	<forward name="SAME" path="/Master/addCityLocationMst.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+     </action> 
+     <action  path="/master/modifyCityLocationMaster"
+	    type="registration.master.controller.action.ModifyCityLocationMstACTION"
+	    name="CityLocationMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyCityLocationMst.jsp">
+	    <forward name="NEW" path="/Master/modifyCityLocationMst.jsp" />
+	  	<forward name="SAME" path="/Master/modifyCityLocationMst.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+     </action>
+	<action path="/master/deptUnitGroupingMaster"
+			type="registration.master.controller.action.DeptUnitGroupingMasterACTION"
+			name="deptUnitGroupingMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/Master/deptUnitGroupingMaster.jsp">
+		<forward name="NEW"	path="/Master/deptUnitGroupingMaster.jsp"/>
+	</action>	
+
+	<action path="/master/registrationTimingMaster"
+			type="registration.master.controller.action.RegistrationTimingMasterACTION"
+			name="registrationTimingMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/Master/registrationTimingMaster.jsp">
+		<forward name="NEW" path="/Master/registrationTimingMaster.jsp"/>	
+	</action>		
+
+	<action path="/master/seasonMaster"
+			type="registration.master.controller.action.SeasonMasterACTION"
+			name="seasonMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/Master/seasonMaster.jsp">
+		<forward name="NEW" path="/Master/seasonMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+	</action>		
+
+	<action path="/master/modifyExternalInstituteMaster"
+			type="registration.master.controller.action.ModifyExternalInstituteMasterACTION"
+			name="modifyExternalInstituteMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/Master/modifyExternalInstituteMaster.jsp">
+		<forward name="NEW" path="/Master/modifyExternalInstituteMaster.jsp"/>
+		<forward name="SAME" path="/Master/modifyExternalInstituteMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+	</action>		
+			
+
+     <action  path="/master/deptRosterUnitSequencing"
+	    type="registration.master.controller.action.DeptShiftRosterACTION"
+	    name="DeptShiftRosterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/deptRosterUnitInitial">
+	    <forward name="new" path="/deptRosterUnitInitial" />
+	  	<forward name="selection" path="/deptRosterUnitInitial" />  	
+	  	<forward name="roster" path="/deptRosterUnitSequencing" />
+    </action> 
+
+<action  path="/master/deptUnitRoster"
+	    type="registration.master.controller.action.DeptUnitRosterACTION"
+	    name="DeptUnitRosterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/deptUnitShiftAssignTile.jsp">
+	    <forward name="new" path="/departmentUnitRoster" />
+	  	<forward name="selection" path="/departmentUnitRoster" />  	
+	  	<forward name="roster" path="/departmentUnitAssignRoster" />
+    </action>	
+  
+    <action  path="/master/addUnit"
+	    type="registration.master.controller.action.AddUnitACTION"
+	    name="AddUnitFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/addUnitTile.jsp">
+	    <forward name="NEW" path="/Master/addUnitTile.jsp" />
+	  	<forward name="SAME" path="/Master/addUnitTile.jsp" />  	
+	  	<forward name="VIEW" path="/master/unitMaster.cnt?source=master" />  	
+    </action>
+    
+    <action  path="/master/addUnitConsultant"
+	    type="registration.master.controller.action.AddUnitConsultantACTION"
+	    name="AddUnitConsultantFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/addUnitConsultantTile.jsp">
+	    <forward name="NEW" path="/Master/addUnitConsultantTile.jsp" />
+	  	<forward name="SAME" path="/Master/addUnitConsultantTile.jsp" />  	
+	  	<forward name="VIEW" path="/master/unitConsultantMaster.cnt?source=master" />  	
+    </action>  
+    
+     <action  path="/master/addRoomToUnit"
+	    type="registration.master.controller.action.AddRoomToUnitACTION"
+	    name="AddRoomToUnitFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/addRoomToUnitTile.jsp">
+	    <forward name="NEW" path="/Master/addRoomToUnitTile.jsp" />
+	  	<forward name="SAME" path="/Master/addRoomToUnitTile.jsp" />  	
+	  	<forward name="SEQUENCE" path="/master/deptunitroomsequence.cnt?source=addroom" />  	
+	  	<forward name="VIEW" path="/master/deptUnitRoomMaster.cnt?source=master" />  	
+    </action>
+    
+    <action  path="/master/modifyUnitLayout"
+	    type="registration.master.controller.action.ModifyUnitACTION"
+	    name="ModifyUnitLayoutFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyUnitLayout.jsp">
+	    <forward name="NEW" path="/Master/modifyUnitLayout.jsp" />
+	  	<forward name="SAME" path="/Master/modifyUnitLayout.jsp" />  	
+	  	<forward name="VIEW" path="/master/unitMaster.cnt?source=master" />  		  	
+    </action>     
+    
+     <action  path="/master/modifyUnitConsultant"
+	    type="registration.master.controller.action.ModifyUnitConsultantACTION"
+	    name="ModifyUnitConsultantFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyUnitConsultantTile.jsp">
+	    <forward name="NEW" path="/Master/modifyUnitConsultantTile.jsp" />
+	  	<forward name="SAME" path="/Master/modifyUnitConsultantTile.jsp" />  	
+	  	<forward name="VIEW" path="/master/unitConsultantMaster.cnt?source=master" />  	
+	  	<forward name="INIT" path="/master/unitConsultantMaster.cnt" />
+     </action>  
+     
+      <action  path="/master/modifyRoomToUnit"
+	    type="registration.master.controller.action.ModifyRoomToUnitACTION"
+	    name="ModifyRoomToUnitFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyRoomToUnitLayout.jsp">
+	    <forward name="NEW" path="/Master/modifyRoomToUnitLayout.jsp" />
+	  	<forward name="SAME" path="/Master/modifyRoomToUnitLayout.jsp" />  	
+	  	<forward name="SEQUENCE" path="/master/deptunitroomsequence.cnt?source=modroom" />  	
+	  	<forward name="VIEW" path="/master/deptUnitRoomMaster.cnt?source=master" />  	
+     </action>    
+     
+     <action  path="/master/deptUnitRoomMaster"
+	    type="registration.master.controller.action.DeleteRoomFromUnitACTION"
+	    name="DeleteRoomFromUnitFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/deleteRoomFromUnitTile.jsp">
+	    <forward name="NEW" path="/Master/deleteRoomFromUnitTile.jsp" />
+	  	<forward name="SAME" path="/Master/deleteRoomFromUnitTile.jsp" />  	
+        <forward name="ADD" path="/master/addRoomToUnit.cnt?source=fromview"/>  	
+	  	<forward name="MODIFY" path="/master/modifyRoomToUnit.cnt?source=fromview"/>  	
+	  		  
+     </action> 
+     
+  
+     
+      <action  path="/master/deptunitroomsequence"
+	    type="registration.master.controller.action.DeptUnitRoomMasterSequenceACTION"
+	    name="DeptUnitRoomMasterSequenceFB"
+	    validate="false"
+	    scope="request"
+	    parameter="sequenceMode"
+	    input="/Master/deptUnitRoomMasterSequence.jsp">
+	    <forward name="NEW" path="/Master/deptUnitRoomMasterSequence.jsp" />
+	  	<forward name="SAME" path="/Master/deptUnitRoomMasterSequence.jsp" />  	
+	   	<forward name="NEWADDROOM" path="/master/addRoomToUnit.cnt" />  	
+     	<forward name="NEWMODROOM" path="/master/modifyRoomToUnit.cnt" />  	
+     	<forward name="MODROOM" path="/master/modifyRoomToUnit.cnt" />  	
+	   	
+     </action> 
+     
+     
+     <!-- To be checked if it is used anymore  -->
+     
+     <action  path="/master/sequencepopup"
+	    type="registration.master.controller.action.DeptUnitRoomMasterSequenceACTION"
+	    name="SequencePopupFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/sequencePopup.jsp">
+	    <forward name="NEW" path="/Master/sequencePopup.jsp" />
+	  	<forward name="SAME" path="/Master/sequencePopup.jsp" />  	
+     </action> 
+    
+    
+     <action  path="/master/unitMaster"
+	    type="registration.master.controller.action.DeletionofUnitACTION"
+	    name="DeletionofUnitFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/deleteUnitTile.jsp">
+	    <forward name="NEW" path="/Master/deleteUnitTile.jsp" />
+	  	<forward name="SAME" path="/Master/deleteUnitTile.jsp" />  	
+	  	<forward name="ADD" path="/master/addUnit.cnt?source=fromview"/>  	
+	  	<forward name="MODIFY" path="/master/modifyUnitLayout.cnt?source=fromview"/>  	
+	  	<forward name="CANCEL" path="/../startup/initPage.jsp"/>  	
+     </action>
+
+     <action  path="/master/unitConsultantMaster"
+	    type="registration.master.controller.action.UnitConsultantMasterACTION"
+	    name="UnitConsultantFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/unitConsultantMst.jsp">
+	    <forward name="NEW" path="/Master/unitConsultantMst.jsp" />
+	  	<forward name="SAME" path="/Master/unitConsultantMst.jsp" />  	
+	  	<forward name="ADD" path="/master/addUnitConsultant.cnt?source=fromview"/>  	
+	  	<forward name="MODIFY" path="/master/modifyUnitConsultant.cnt?source=fromview"/>  	
+     </action>  
+     
+     <action  path="/master/addDepartmentMaster"
+	    type="registration.master.controller.action.AddDepartmmentMstACTION"
+	    name="AddDepartmentMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/addDepartmentMst.jsp">
+	    <forward name="NEW" path="/Master/addDepartmentMst.jsp" />
+	  	<forward name="SAME" path="/Master/addDepartmentMst.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+     </action>  
+     
+     <action  path="/master/modifyDepartmentMaster"
+	    type="registration.master.controller.action.ModifyDeptMstACTION"
+	    name="ModifyDepartmentMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyDepartmentMst.jsp">
+	    <forward name="NEW" path="/Master/modifyDepartmentMst.jsp" />
+	  	<forward name="SAME" path="/Master/modfyDepartmentMst.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+     </action> 
+     
+     <!-- To be checked if it is used anymore  -->
+     
+      <action  path="/master/ViewDeptMaster"
+	    type="registration.master.controller.action.ModifyDeptMstACTION"
+	    name="ViewDeptMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/departmentMasterView.jsp">
+	    <forward name="NEW" path="/Master/departmentMasterView.jsp" />
+	  	<forward name="SAME" path="/Master/departmentMasterView.jsp" />  	
+	  	<forward name="LIST" path="/Master/departmentMasterView.jsp"/>	
+     </action>    
+     
+       
+	 
+     <action  path="/master/modifyPatientCategoryMaster"
+	    type="registration.master.controller.action.ModifyPatientCategoryMasterACTION"
+	    name="modifyPatientCategoryMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyPatientCategoryMaster.jsp">
+	    <forward name="NEW" path="/Master/modifyPatientCategoryMaster.jsp" />
+	  	<forward name="SAME" path="/Master/modifyPatientCategoryMaster.jsp" />  	
+	  <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+    </action>
+    
+    <action  path="/master/modifyRegistrationCatMst"
+	    type="registration.master.controller.action.ModifyRegistrationCatMstACTION"
+	    name="modifyRegistrationCatMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyRegistrationCatMst.jsp">
+	    <forward name="NEW" path="/Master/modifyRegistrationCatMst.jsp" />
+	  	<forward name="SAME" path="/Master/modifyPatientCategoryMaster.jsp" />  	
+	  <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+    </action>
+     
+
+     
+      
+    <action  path="/masters/RegOccupMstACTION"
+	    type="registration.master.controller.action.RegOccupMstACTION"
+	    name="RegOccupMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/regOccupMst.jsp">
+	    <forward name="ADD" path="/Master/regOccupMst.jsp" />
+	   <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+    </action>
+
+     <action  path="/master/addPatientCategoryMaster"
+	    type="registration.master.controller.action.AddPatientCategoryMasterACTION"
+	    name="modifyPatientCategoryMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/addPatientCategoryMaster.jsp">
+	    <forward name="NEW" path="/Master/addPatientCategoryMaster.jsp" />
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+    </action>
+    
+    
+     <action  path="/masters/RegPatStatusMstACTION"
+	    type="registration.master.controller.action.RegPatStatusMstACTION"
+	    name="RegPatStatusMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/regPatStatusMstAddMod.jsp">
+	    <forward name="ADD" path="/Master/regPatStatusMstAddMod.jsp" />
+	   <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+    </action>
+    
+    
+     <action  path="/masters/RegEmergencyCaseMstACTION"
+	    type="registration.master.controller.action.RegEmergencyCaseMstACTION"
+	    name="RegEmergencyCaseMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/regEmergencyCaseMstAddMod.jsp">
+	    <forward name="ADD" path="/Master/regEmergencyCaseMstAddMod.jsp" />
+	   <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+     </action>
+    
+    
+     <action  path="/masters/InjuryTypeMasterACTION"
+	    type="registration.master.controller.action.InjuryTypeMasterACTION"
+	    name="InjuryTypeMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/injuryTypeMstAddMod.jsp">
+	    <forward name="ADD" path="/Master/injuryTypeMstAddMod.jsp" />
+	   <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+    </action>
+    
+    <action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+	
+	
+	<action  path="/master/addLocationMaster"
+	    type="registration.master.controller.action.AddLocationMstACTION"
+	    name="AddLocationFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/addLocationMst.jsp">
+	    <forward name="NEW" path="/Master/addLocationMst.jsp" />
+	  	<forward name="SAME" path="/Master/addLocationMst.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+     </action> 
+     
+     <action  path="/master/modifyLocationMaster"
+	    type="registration.master.controller.action.ModifyLocationMstACTION"
+	    name="ModifyLocationFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyLocationMst.jsp">
+	    <forward name="NEW" path="/Master/modifyLocationMst.jsp" />
+	  	<forward name="SAME" path="/Master/modifyLocationMst.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+     </action> 
+
+	<action  path="/master/disclaimerMaster"
+	    type="registration.master.controller.action.AddDisclaimerMstACTION"
+	    name="AddDisclaimerFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/selectDisclaimerType.jsp">
+	    <forward name="NEW" path="/Master/selectDisclaimerType.jsp" />
+	  	<forward name="ADD" path="/Master/addDisclaimerMst.jsp" />
+	  	<forward name="EDIT" path="/Master/modifyDisclaimerMst.jsp" />  
+	  	<forward name="VIEW" path="/Master/modifyDisclaimerMst.jsp" /> 
+	  	<forward name="REPORT" path="/Master/addDisclaimerReport.jsp" />   
+	  	<forward name="UPDATE" path="/Master/modifyDisclaimerMst.jsp" />
+	  	<forward name="INITIAL" path="/../startup/initPage.jsp"  redirect="true"/>  	
+	  	<forward name="DEPARTMENT_WISE" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	 
+	  	<forward name="UNIT_WISE" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+     </action>
+     
+     <action  path="/master/deptUnitRoomUsablityMaster"
+	    type="registration.master.controller.action.DeptUnitRoomUsablityMstACTION"
+	    name="deptUnitRoomUsablityMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/deptUnitRoomUsablityMaster.jsp">
+	    <forward name="NEW" path="/Master/deptUnitRoomUsablityMaster.jsp" />
+	    <forward name="CANCEL" path="/../startup/initPage.jsp" />
+	  		  	
+     </action> 
+     
+
+	<action  path="/master/deptUnitRoomConsultantRosterMaster"
+	    type="registration.master.controller.action.DeptUnitRoomConsultantRosterMstACTION"
+	    name="deptUnitRoomConsultantRosterMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/deptUnitRoomConsultantRosterMaster.jsp">
+	    <forward name="NEW" path="/Master/deptUnitRoomConsultantRosterMaster.jsp" />
+	    <forward name="CANCEL" path="/../startup/initPage.jsp" />
+	  		  	
+     </action> 
+
+     
+     <action path = "/master/categoryVerificationDocumentMaster"
+			 type="registration.master.controller.action.CategoryVerificationDocumentMstACTION"
+			name = "categoryVerificationDocMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/Master/categoryVerificationDocMaster.jsp"	>
+			<forward name="ADD" path="/Master/categoryVerificationDocMaster.jsp" />
+			<forward name="MODIFY" path="/Master/categoryVerificationDocMaster.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>
+		</action>
+		
+		
+	 <action  path="/master/deptUnitRoomDayWiseCapacityMaster"
+	    type="registration.master.controller.action.DeptUnitRoomDayWiseCapacityMstACTION"
+	    name="deptUnitRoomDayWiseCapacityMstFB" 
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/deptUnitRoomDayWiseCapacityMaster.jsp">
+	    <forward name="NEW" path="/Master/deptUnitRoomDayWiseCapacityMaster.jsp" />
+	    <forward name="CANCEL" path="/../startup/initPage.jsp" />
+	 </action> 
+
+	 
+     <action  path="/master/departmentCounterMapping"
+	    type="registration.master.controller.action.DeptCounterMappingACTION"
+	    name="departmentCounterFB" 
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/department_counter_mapping.jsp">
+	    <forward name="NEW" path="/Master/department_counter_mapping.jsp" />
+	 </action> 
+	 
+	 <action  path="/master/unitCounterMapping"
+	    type="registration.master.controller.action.UnitCounterMappingACTION"
+	    name="unitCounterFB" 
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/unit_counter_mapping.jsp">
+	    <forward name="NEW" path="/Master/unit_counter_mapping.jsp" />
+	 </action> 
+
+     
+     <action  path="/master/deptUnitConsultantInitialMaster"
+	    type="registration.master.controller.action.DeptUnitConsultantInitialMstACTION"
+	    name="deptUnitConsultantInitialMstFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input="/Master/deptUnitConsultantInitialMaster.jsp">
+	    <forward name="NEW" path="/Master/deptUnitConsultantInitialMaster.jsp" />
+	    <forward name="CANCEL" path="/../startup/initPage.jsp" />
+	  		  	
+     </action>
+     
+     <action  path="/master/addEmployeeMaster"
+	    type="registration.master.controller.action.AddEmployeeMasterACTION"
+	    name="EmployeeMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/addEmployeeMaster.jsp">
+	    <forward name="NEW" path="/Master/addEmployeeMaster.jsp" />
+	  	<forward name="SAME" path="/Master/addEmployeeMaster.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	  	
+     </action> 
+     <action  path="/master/modifyEmployeeMaster"
+	    type="registration.master.controller.action.ModifyEmployeeMasterACTION"
+	    name="EmployeeMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="transactionMode"
+	    input="/Master/modifyEmployeeMaster.jsp">
+	    <forward name="NEW" path="/Master/modifyEmployeeMaster.jsp" />
+	  	<forward name="SAME" path="/Master/modifyEmployeeMaster.jsp" />  	
+	  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+     </action>         
+
+     
+</action-mappings> 
+
+
+  
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/RegistrationDesk-tiles-defs.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in> 
+
+
+</struts-config>

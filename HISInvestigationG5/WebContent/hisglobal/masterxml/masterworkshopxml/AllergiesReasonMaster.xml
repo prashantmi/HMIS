@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='AllergiesReasonMaster'>
+		<common-values>
+			<master-name>AllergiesReasonMaster</master-name>
+			<master-title>Allergies Reason Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Allergies Reason Master</tableHeading> 
+				<list-table>HGBT_ALLERGIES_REASON_MST</list-table>
+				<controls>			     
+				   <control type="combo" index="0">
+			       <label>Allergy Type</label>
+			         <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGSTR_ALLERGIES_TYPE)</text-field>
+									<value-field>A.HGNUM_ALLERGIES_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_ALLERGIES_TYPE_MST</table>	
+								</tables>
+								<condition>
+									<hospital-code> A.GNUM_HOSPITAL_CODE</hospital-code>
+									<general> AND A.GNUM_ISVALID = 1 AND A.HGNUM_SOURCE_FLAG = 1 ORDER BY INITCAP(A.HGSTR_ALLERGIES_TYPE)</general>
+									
+								</condition>
+							</dynamic>					
+						</data>
+						<default>-1</default>
+					</control>
+				</controls>
+				<columns>
+					 <column>Reason Description </column>
+				   
+				  </columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_REASON_DESC) </field>
+						
+						</fields>
+					<primaryKey>
+						<field>A.HGNUM_REASON_CODE </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_ALLERGIES_REASON_MST </table>
+					</tables>
+					<condition>
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>		
+							<isvalid-field> A.GNUM_ISVALID</isvalid-field>
+							<orderby> order by INITCAP(A.HGSTR_REASON_DESC)</orderby>
+							<dependent>
+							<clause> A.HGNUM_ALLERGIES_CODE = #0 </clause>
+							</dependent>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>				
+					<control type="text" index="0">
+						<label>Allergy Type</label>
+						<constraints  size ='50' />
+						<data>
+							<dynamic>
+								<query-detail>
+									<fields>
+										<field>INITCAP(A.HGSTR_ALLERGIES_TYPE)</field>	
+									</fields>
+									<tables>
+										<table alias='A'>HGBT_ALLERGIES_TYPE_MST</table>	
+									</tables>
+									<condition>
+										<general>GNUM_ISVALID=1</general>
+										<dependent>
+											<clause>AND HGNUM_ALLERGIES_CODE =  #L0</clause>
+										</dependent>
+										<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+									</condition>
+								</query-detail>
+							</dynamic>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+							
+					<control type="text" index="1" >
+						<label>Reason Description</label>
+						<constraints inputType='alphabets' size='50'  maxlength ='500' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>						
+					
+					<control type="combo" index="2">
+						<label>IsValid Status</label>
+					<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				  
+				</controls>
+				<insert-query>
+					<primary-key>
+						<field>HGNUM_REASON_CODE</field>
+						<value>SELECT NVL(MAX(HGNUM_REASON_CODE),10)+1 FROM HGBT_ALLERGIES_REASON_MST</value>
+						<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+					</primary-key>
+					<fields valueMap='#L0'>HGNUM_ALLERGIES_CODE</fields>
+					<fields valueMap='#I1'>HGSTR_REASON_DESC</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+				    <table>HGBT_ALLERGIES_REASON_MST</table>				  
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+		<modify-page>
+		  <dynamic-page>
+		   <controls>							
+					<control type="text" index="0">
+						<label>Allergy Type</label>
+						<constraints  size ='50' />						
+						<data>
+							<static>#Q0</static>
+						</data>					
+						<readOnly>1</readOnly>
+					</control>
+					<control type="text" index="1">
+						<label>Reason Description </label>
+						<constraints inputType='alphabets' size='50'  maxlength ='500' mandatory ='true'/>	
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+				   	
+				<control type="combo" index="2">
+				<selection-mandatory>true</selection-mandatory>
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+                  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>B.HGSTR_ALLERGIES_TYPE</field>
+					 <field>A.HGSTR_REASON_DESC</field>
+					 		     
+				 </fields>					
+					<tables>
+						<table alias='A'>HGBT_ALLERGIES_REASON_MST</table>
+						<table alias='B'>HGBT_ALLERGIES_TYPE_MST</table>
+					</tables>
+					<condition>
+						<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>		
+						<general>A.HGNUM_ALLERGIES_CODE=B.HGNUM_ALLERGIES_CODE</general>
+						<dependent>
+						    <clause>AND A.HGNUM_REASON_CODE= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>					
+					<fields valueMap='#I1'>HGSTR_REASON_DESC</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>	
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>				
+					<table>HGBT_ALLERGIES_REASON_MST</table>
+					<condition>HGNUM_REASON_CODE = #1</condition>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

@@ -1,0 +1,1160 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions> 
+  <definition name="/regDeskNewRegistration" path="/registration/RegistrtaionDeskLayout.jsp"> 
+  		<put name="action"  value="/registration/newRegistrationDesk.cnt" />     
+	  <put name="title"  value="Registration Desk New Registration" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  <definition name="/regDeskNewRegistrationDuplicate" path="/registration/RegistrtaionDeskLayoutDuplicate.jsp"> 
+  		<put name="action"  value="/registration/newRegistrationDeskDuplicate.cnt" />     
+	  <put name="title"  value="Registration Desk New Registration" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  <definition name="/emgNewRegistration" path="/registration/transaction/emergencyRegDeskLayout.jsp">    
+  <put name="action"  value="/registration/emgNewPatRegistration.cnt" />  
+	  <put name="title"  value="Emergency Desk New Registration" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+  <definition name="/splregDeskNewRegistration" path="/registration/transaction/specialClinicRegDeskLayout.jsp"> 
+  <put name="action"  value="/registration/specialClinicNewReg.cnt" />          
+	  <put name="title"  value="Special CLinic Registration" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+  <definition name="/roomWiseRegDeskNewRegistration" path="/registration/transaction/roomWiseRegDeskLayout.jsp"> 
+  <put name="action"  value="/registration/offlineRegistration.cnt" />          
+	  <put name="title"  value="Room Wise Registration" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+   <definition name="/regDeskNewDeptVisit" path="/registration/RegistrtaionDeskLayout.jsp">      
+   <put name="action"  value="/registration/newDeptVisitDesk.cnt" />   
+	  <put name="title"  value="Registration Desk New Department Visit" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+     <definition name="/emgDesktVisit" path="/registration/transaction/emergencyRegDeskLayout.jsp">    
+       <put name="action"  value="/registration/emgNewVisit.cnt" />   
+	  <put name="title"  value="Emergency Desk Department Visit" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+   <definition name="/splregDeskNewDeptVisit" path="/registration/transaction/specialClinicRegDeskLayout.jsp">  
+      <put name="action"  value="/registration/newSpecialClinickVisit.cnt" />     
+	  <put name="title"  value="Special Clinic New Department Visit" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+  <definition name="/roomWiseRegDeskNewDeptVisit" path="/registration/transaction/roomWiseRegDeskLayout.jsp">  
+      <put name="action"  value="/registration/newDeptVisitRoomWiseDesk.cnt" />     
+	  <put name="title"  value="Room Wise New Department Visit" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+   <definition name="/regDeskModification" path="/registration/RegistrtaionDeskLayout.jsp">   
+  	 <put name="action"  value="/registration/modificationDesk.cnt" />    
+	  <put name="title"  value="Registration Desk Patient Detial Modification" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>  
+  
+   <definition name="/emergencyDeskModification" path="/registration/transaction/emergencyRegDeskLayout.jsp">  
+   <put name="action"  value="/registration/emgPatDtlModification.cnt" />     
+	  <put name="title"  value="Emergency Desk Patient Detial Modification" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>  
+  
+  <definition name="/emergencyModification" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Emergency Modification" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/emgPatDtlModification.cnt"/>
+  </definition> 
+  
+  <definition name="/newPatRegistration" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="New Patient Registration" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/newRegistrationDeskDuplicate.cnt"/>
+  </definition> 
+  
+  <definition name="/newDeptVisit" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="New Department Visit" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/newDeptVisitDesk.cnt"/>
+  </definition> 
+  
+  <definition name="/emgNewPatRegistration" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Emg New Patient Registration" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/emgNewPatRegistration.cnt"/>
+  </definition> 
+  
+  <definition name="/emgNewDeptVisit" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Emg New Department Visit" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/emgNewVisit.cnt"/>
+  </definition> 
+  
+   
+  
+    <definition name="/splregDeskModification" path="/registration/transaction/specialClinicRegDeskLayout.jsp"> 
+    <put name="action"  value="/registration/modificationDesk.cnt" />         
+	  <put name="title"  value="Spl Clinic Desk Patient Detail Modification" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition> 
+   
+   <definition name="/roomWiseregDeskModification" path="/registration/transaction/roomWiseRegDeskLayout.jsp"> 
+    <put name="action"  value="/registration/modificationDesk.cnt" />         
+	  <put name="title"  value="Room Wise Patient Detial Modification" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition> 
+   
+  <definition name="/emgunknownToKnown" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Unknown to Known Conversion" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/emergency/unknowntoKnown.cnt"/>
+  </definition> 
+  
+   <definition name="/changePatientCategory" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Change Patient Category" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/changePatientCat.cnt"/>	
+  </definition>  
+  
+ <definition name="/changeSecondaryCategory" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Change Secondary Category" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/changeSecondaryCat.cnt"/>	 
+  </definition>
+  
+ <definition name="/changeFileNo" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Change File NO" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/changeFileNo.cnt"/>	
+  </definition>
+  
+  <definition name="/parichitRegistration" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Parichit Registration" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/parichitRegistration.cnt"/>	
+  </definition>
+  
+  <definition name="/renewal" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Renewal Of Registration" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/renewal.cnt"/>	  
+  </definition>
+
+
+  <definition name="/newSpecialClinickVisit" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="New Special Clinic Visit" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/newSpecialClinickVisit.cnt"/>	  
+  </definition>
+
+ <definition name="/newRoomWiseRegistration" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Room Wise New Registration" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/offlineRegistration.cnt"/>	  
+  </definition>
+
+  
+  <definition name="/oldPatientVisit" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Old Patient Visit" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/oldpatientvisit.cnt"/>	  
+  </definition> 
+    
+  <definition name="/unitTransfer" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Unit Transfer" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/unitTransfer.cnt"/>	 
+  </definition> 
+   <definition name="/uploadFile" path="/registration/transaction/uploadFileTile.jsp">      
+	  <put name="title"  value="Image upload" type="string"/>
+  	  <put name="action"  value="/registration/emgNewPatRegistration.cnt" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="paramname"  value="hmode"/>	  
+  	  <put name="paramvalue"  value="UPLOADANDSAVE"/>	  
+  </definition> 
+ 
+  <definition name="/emgPatModification" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Emergency Patient Detail Modification" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/emgPatDtlModification.cnt"/>	
+  </definition> 
+  
+  <definition name="/emgNewRegister" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Emergency new patient registration" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/emgNewPatRegistration.cnt"/>	 
+  </definition>  
+  
+  <definition name="/addressModification" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Address Detail Modification" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/addressModification.cnt"/>	  
+  </definition> 
+
+  <definition name="/duplicateCardGeneration" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Duplicate Card Generation" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/duplicateCardGeneration.cnt"/>	  
+  </definition>
+  
+ <definition name="/refdtlmod" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Refer Dtl Modification at MRD" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/referdtlmodification.cnt"/>	
+  </definition>
+  
+  <definition name="/cmoRegisterPage" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="CMO Register" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/cmoRegisterAction.cnt"/>	  
+      <put name="footer" value="/registration/blank.jsp" />  
+  </definition>   
+    
+  <definition name="/cmoRegisterNew" path="/registration/transaction/registerLayout.jsp">
+	  <put name="patientDtl"  value="/registration/blank.jsp"/>	  
+  	  <put name="registerbody"  value="/registration/blank.jsp"/>
+  </definition>
+  
+  <definition name="/cmoRegisterEpisodeActSelect" path="/registration/transaction/registerLayout.jsp">
+	  <put name="patientDtl"  value="/registration/patientDetail.cnt"/>	  
+  	  <put name="registerbody"  value="/registration/blank.jsp"/>
+  </definition>
+  
+  <definition name="/cmoRegisterDtl" path="/registration/transaction/registerLayout.jsp">
+	  <put name="patientDtl"  value="/registration/patientDetail.cnt"/>	  
+  	  <put name="registerbody"  value="/registration/episodeActTypeACTION.cnt"/>
+  </definition>
+  
+
+ <definition name="/oldPatientVisitDtl" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Old Patient Visit Stamping Detail" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/oldpatientvisitdtl.cnt"/>	  
+  </definition>  
+  
+  <definition name="/emgoldPatVisit" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Registered Patient Visit" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/emergencyOldPatientVisit.cnt"/>	
+  </definition>  
+ 
+  <definition name="/emgoldPatVisitDesk" path="/registration/transaction/emergencyRegDeskLayout.jsp">    
+  <put name="action"  value="/registration/emergencyOldPatientVisit.cnt" />  
+	  <put name="title"  value="Old Emergency Patient Visit" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+ 
+  <definition name="/doctorDeskRegisterPage" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Doctor Desk Register" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/opdDoctorDeskAction.cnt"/>	  
+  </definition>  
+  
+   <definition name="/referDeptVisitStamp" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Referred Department Visit Stamp" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/referDeptVisitStampACTION.cnt"/>	
+  </definition>  
+  
+   <definition name="/opdDoctorDeskRegisterNew" path="/registration/transaction/doctorDesklayout.jsp">
+	  <put name="patientDtl"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/blank.jsp"/>
+  </definition>
+    
+  <definition name="/opdDosctorDeskActSelect" path="/registration/transaction/doctorDesklayout.jsp">
+	  <put name="patientDtl"  value="/registration/patientDetail.cnt"/>	  
+  	  <put name="body"  value="/registration/blank.jsp"/>
+  </definition>    
+
+
+  <definition name="/opdDoctorDeskRegisterDtl" path="/registration/transaction/doctorDesklayout.jsp">
+	  <put name="patientDtl"  value="/registration/patientDetail.cnt"/>	  
+  	  <put name="body"  value="/registration/opdDoctorDeskActTypeACTION.cnt"/>
+  </definition> 
+  
+  <definition name="/mlcDtlPage" path="/registration/transaction/commonTransactionLayout.jsp">      
+  	<put name="title"  value="MLC Detail" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/emergency/mlcDtl.cnt"/>	
+  </definition>  
+  <definition name="/mlcDtlModificationPage" path="/registration/transaction/commonTransactionLayout.jsp">      
+  	<put name="title"  value="MLC Detail Updation" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/emergency/mlcDtlModification.cnt"/>	
+  </definition> 
+  <definition name="/mrdPatientDetailModification" path="/registration/transaction/commonTransactionLayout.jsp">      
+  	<put name="title"  value="MRD Patient Detail Modification" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/mrdPatDtlModification.cnt"/>	 
+  </definition>  
+  <definition name="/mlcDocUpload" path="/registration/transaction/commonTransactionLayout.jsp">      
+  	<put name="title"  value="MLC document upload" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/mlcuploadImage.cnt"/>	  
+  </definition> 
+  
+  
+   <definition name="/patientReferral" path="/registration/transaction/commonTransactionLayout.jsp">      
+  	<put name="title"  value="Patient Referral Detail" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/patientReferral.cnt"/>	  
+  </definition> 
+  
+   <definition name="/departmentUnitRoster" path="/registration/Master/deptUnitRosterMasterLayout.jsp">      
+  	  <put name="title"  value="Department Unit Roster" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>
+  	  <put name="body"  value="/registration/blank.jsp"/>	  
+      <put name="footer" value="/registration/Master/footerCancelClear.jsp" />        
+  </definition>
+
+    <definition name="/departmentUnitAssignRoster" path="/registration/Master/deptUnitRosterMasterLayout.jsp">      
+  	  <put name="title"  value="Department Unit Roster" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>
+  	  <put name="body"  value="/registration/Master/deptUnitShiftAssignTile.jsp"/>	  
+      <put name="footer" value="/registration/Master/footerOkCancelClearGenerate.jsp" />        
+  </definition>  
+  
+  <definition name="/deptRosterUnitInitial" path="/registration/Master/deptRosterShiftSequencingLayout.jsp">      
+  	  <put name="title"  value="Department Roster Unit Sequencing" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>
+  	  <put name="body"  value="/registration/blank.jsp"/>	  
+      <put name="footer" value="/registration/Master/footerCancelClear.jsp" />        
+  </definition>  
+  <definition name="/deptRosterUnitSequencing" path="/registration/Master/deptRosterShiftSequencingLayout.jsp">      
+  	  <put name="title"  value="Department Roster Unit Sequencing" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>
+  	  <put name="body"  value="/registration/Master/deptRosterShiftSequencingTile.jsp"/>	  
+      <put name="footer" value="/registration/Master/footerOkCancelClear.jsp" />        
+  </definition> 
+  <definition name="/ageWiseReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Age Wise Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/ageWiseReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+  <definition name="/broughtDeadPatReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Brought Dead Patient Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/broughtDeadPatReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+  <definition name="/emergencyRegisteredPatReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Emergency Registered Patient Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/emergencyRegisteredPatReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  
+  <definition name="/groupWiseCashCollReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Group Wise Cash Collection Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/groupWiseCashCollReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  <definition name="/mlcPatientListReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Mlc Patient List Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/mlcPatientListReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  <definition name="/pinCodeWiseReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Pin Code Wise Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/pinCodeWiseReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  <definition name="/departmentWiseRegPatReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Department Wise Registered Patient Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/departmentWiseRegPatReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+    <definition name="/categoryWiseReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Category Wise Patient Registration Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/categoryWiseReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  <definition name="/departmentWiseTotalPatReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Department Wise Total Patient Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/departmentWiseTotalPatReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  <definition name="/roomWiseTotalPatReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Room Wise Total Patient Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/roomWiseTotalPatReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  <definition name="/userWiseCashCollReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="User Wise Cash Collection Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/userWiseCashCollReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  <definition name="/totalPatStatReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Total Patient Statistic Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/totalPatStatReport.cnt" />	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  
+  <definition name="/userWisePatListReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="User Wise Patient Listing Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/userWisePatListReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  
+  <definition name="/userWiseRegReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="User Wise Registration Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/userWiseRegReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+ 
+  <definition name="/specialClinicNewReg" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Special Clinic New Registration" type="string"/>
+      <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/specialClinicNewReg.cnt"/>	  
+  </definition>
+  
+  
+  <definition name="/employeeWithDependentDtl" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Employee details with dependent" type="string"/>
+      <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/employeeDtlWithDependents.cnt"/>	  
+  </definition>
+  
+
+  <definition name="/emergencyReportdefination" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Emergency Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/emergencyReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+  <definition name="/unknownPatientReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Unknown Patient Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/unknownPatientReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+  <definition name="/mlcPatientListingByAllCmoReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Mlc Patient Listing By All CMO Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/report/mlcPatientListingByAllCMOReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+  <definition name="/shiftWiseCasesByCmoReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="ShiftWise Cases Seen by CMO " type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	 
+  	  <put name="body"  value="/registration/report/shiftWiseCasesByCmoReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+  <definition name="/ageWiseDeptWiseRegPatReportdefination" path="/registration/reports/jsp/commonReportLayout.jsp">
+  	  <put name="title" value="Age Wise Department Wise Registered patient" type="string"/>
+  	  <put name="header" value="/registration/blank.jsp"/>
+  	  <put name="body" value="/registration/report/ageWiseDeptWiseRegPatReport.cnt"/>
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/deptWisePatCatWiseReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  	  <put name="title" value="Department Wise Patient Category Wise Report" type="string"/>
+  	  <put name="header" value="/registration/blank.jsp"/>
+  	  <put name="body" value="/registration/report/deptWisePatCatWiseReport.cnt"/>
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+
+  <definition name="/yellowSlip" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Yellow Slip Entry" type="string"/>
+      <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/yellowSlipEntry.cnt"/>	  
+  </definition>
+  <definition name="/check" path="/registration/transaction/checklayout.jsp">      
+	  <put name="title"  value="check" type="string"/>
+      <put name="header"  value="/registration/blank.jsp"/>	 
+      <put name="menu"   value="/registration/transaction/checkmenu.jsp"/>
+       <put name="leftmenu"   value="/registration/transaction/checkmenuleft.jsp"/>
+  	  <put name="body"  value="/registration/transaction/check.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  <definition name="/deptWiseRegCategoryWiseReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Department Wise Registration Category Wise Report" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/deptWiseRegCategoryWiseReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  <definition name="/deptUnitWiseTotalPatientReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Department Unit Wise Total Patient Statistics" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/deptUnitWiseTotalPatientReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/deptUnitWiseCashCollectionReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Department Unit Wise Cash Collection" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/deptUnitWiseCashCollectionReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+
+ 
+ 
+	<definition name="/pinCodeWiseStatisticsReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Pin Code Wise Statistical Report" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/pinCodeWiseStatisticsReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/newPatientsRegistrationReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="New Patients Registration Report" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/newPatientsRegistrationReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/newOldTotalPatOPDWiseReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="New Old Total Patients OPD Wise Report" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/newOldTotalPatOPDWiseReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/hospitalPatStatReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Hospital Patients Statistics" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/hospitalPatStatReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/patRegUserWiseReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Patient Registration Analysis User Wise" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/patRegUserWiseReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/hospitalCashColDetailReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Hospital Cash Collection Detailed" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/hospitalCashColDetailReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/hospitalCashColSummaryReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Hospital Cash Collection Summary" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/hospitalCashColSummaryReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+   <definition name="/deptWiseNewRegReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Department Wise New Registration Analysis" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/deptWiseNewRegReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/anonymousPatientPgiReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Anonymous Patient List" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/anonymousPatientPgiReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/anonymousPatAndDetWhoBroughtReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Anonymous Patient And Detail Who Brought" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/anonymousPatAndDetWhoBroughtReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/mlcPatientSListPgiReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="MLC Patients Listing" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/mlcPatientSListPgiReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/followUpPatientsReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Follow Up Patients Listing" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/followUpPatientsReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/poorFreePatientsReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Poor Free Patients Listing" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/poorFreePatientsReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/serviceUnitWiseNewRegReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Service Unit Wise New Registration" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/serviceUnitWiseNewRegReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/mlcPoliceInfoProformaReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="MLC Police Information Proforma" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/mlcPoliceInfoProformaReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/specialClinicPatStatisticsReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Special Clinic Patient Statistics" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/specialClinicPatStatisticsReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/patientBelongingDtlReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Patient Belonging Detail" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/patientBelongingDtlReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/serviceUnitWiseRevisitPatReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Service Unit Wise Revisit Patients" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/serviceUnitWiseRevisitPatReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/diagnosisStatLocationWiseReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Diagnosis Statistical Location Wise Report" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/diagnosisStatLocationWiseReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/deptUnitRoomConsultantTimingReportdefinition" path="/registration/reports/jsp/commonReportLayout.jsp">
+  		<put name="title" value="Department Unit Room, Consultant and Timing Report" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/report/deptUnitRoomConsultantTimingReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+   <definition name="/openEpisode" path="/registration/transaction/commonTransactionLayout.jsp">      
+	    <put name="title"  value="Open of Episode" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/opd/openEpisode.cnt"/>	 
+  </definition>
+  
+  <definition name="/conversionMlcToNonMlc" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Conversion of MLC To Non MLC Case" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/convertMlcToNonMlc.cnt"/>	  
+  </definition>
+  
+  
+   
+  
+   <definition name="/AptPateintwiseReport" path="/appointment/reports/commonReportLayout.jsp">      
+	  <put name="title"  value="Patient Reports" type="string"/>
+  	  <put name="header"  value=""/>	  
+  	  <put name="body"  value="/appointment/report/AptPateintwiseReportACTION.cnt"/>	  
+  	  <put name="footer" value="/appointment/reports/reportFooter.jsp" />  
+  </definition> 
+  
+   <definition name="/AptCancellationReportdefinition" path="/appointment/reports/commonReportLayout.jsp">
+  		<put name="title" value="Appointment Reports" type="string"/>
+  		<put name="header" value=""/>
+  	    <put name="body" value="/appointment/report/AptCancellationReport.cnt"/>
+  	    <put name="footer" value="/appointment/reports/reportFooter.jsp"/>
+  </definition>
+  <definition name="/AptReqStatusReportdefinition" path="/appointment/reports/commonReportLayout.jsp">
+  		<put name="title" value="Appointment Reports" type="string"/>
+  		<put name="header" value=""/>
+  	    <put name="body" value="/appointment/report/AptReqStatusReport.cnt"/>
+  	    <put name="footer" value="/appointment/reports/reportFooter.jsp"/>
+  </definition>
+  <definition name="/AptExtendReportdefinition" path="/appointment/reports/commonReportLayout.jsp">
+  		<put name="title" value="Appointment Reports" type="string"/>
+  		<put name="header" value=""/>
+  	    <put name="body" value="/appointment/report/AptExtendReport.cnt"/>
+  	    <put name="footer" value="/appointment/reports/reportFooter.jsp"/>
+  </definition>
+  
+  
+  
+  
+	<definition name="/cmoDesk" path="/registration/transaction/cmoDeskLayout.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/registration/cmoPatientDesk.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Default -->
+	<definition name="/cmoUnderConstructionDesk" path="/registration/transaction/cmoDeskLayout.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/underConstructionDesk.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>  
+  
+  	<!-- Diagnosis -->
+	<definition name="/cmoDiagnosis" path="/registration/transaction/cmoDeskLayout.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdDiagnosis.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+  
+  <!-- Refer Patient -->
+	<definition name="/cmoReferPatient" path="/registration/transaction/cmoDeskLayout.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdReferPatient.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Next Visit Detail -->
+	<definition name="/cmoNextVisitDetail" path="/registration/transaction/cmoDeskLayout.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdNextVisitDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	
+		<!-- Patient Death Detail -->
+	<definition name="/cmoPatDeathDetail" path="/registration/transaction/cmoDeskLayout.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/registration/patientDeathDetail.cnt" />
+		<!--  <put name="body" value="/opd/casuality/deathDetail.cnt" />-->
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+  
+  	<!-- Admission Advice -->
+	<definition name="/cmoAdmissionAdvice" path="/registration/transaction/cmoDeskLayout.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/ipd/transactions/AdmissionAdviceTransCNT.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Not Attended -->
+	<definition name="/cmoNotAttended" path="/registration/transaction/cmoDeskLayout.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/registration/cmoDeskPatientNotAttended.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Under Observation -->
+	<definition name="/cmoUnderObservation" path="/registration/transaction/cmoDeskLayout.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/registration/cmoDeskPatientUnderObservation.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	
+	
+	<!-- New Reports-->
+	
+	
+	 <definition name="/report1/departmentWiseOutPatientReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="Department Wise OutPatient Report" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/departmentWiseOutPatientReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  
+   <definition name="/report1/followUpPatientsReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="Follow Up Patients Listing" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/followUpPatientsReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+   
+ 
+   <definition name="/report1/listOfPoorFreePatientsReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  	  <put name="title" value="List of Poor Free Patients Report" type="string"/>
+  	  <put name="header" value="/registration/blank.jsp"/>
+  	  <put name="body" value="/registration/reports/report1/listOfPoorFreePatientsReport.cnt"/>
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/report1/listOfPatientsReferInOutReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  	  <put name="title" value="List of Patients Refer In/Out Report" type="string"/>
+  	  <put name="header" value="/registration/blank.jsp"/>
+  	  <put name="body" value="/registration/reports/report1/listOfPatientsReferInOutReport.cnt"/>
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+    <definition name="/report1/feesCollectedForOpdSpecialClinicDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="Registration Fees Collected for OPD/Special Clinic" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/feesCollectedForOpdSpecialClinicReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/report1/specialClinicPatStatisticsReportdefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="Special Clinic Patient Statistics" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/specialClinicPatStatisticsReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  
+  <definition name="/report1/noOfAnonymousPatientListReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="No of Anonymous Patients List" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/noOfAnonymousPatientListReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  
+  <definition name="/report1/anonymousPatAndDetWhoBroughtReportdefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="Anonymous Patient And Detail Who Brought" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/anonymousPatAndDetWhoBroughtReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  
+   <definition name="/report1/mlcPatientSListPgiReportdefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="MLC Patients Listing" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/mlcPatientSListPgiReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  
+  <definition name="/report1/serviceUnitWiseRevisitPatReportdefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="Service Unit Wise Revisit Patients" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/serviceUnitWiseRevisitPatReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  
+   <definition name="/report1/serviceUnitWiseNewRegReportdefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="Service Unit Wise New Registration" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/serviceUnitWiseNewRegReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  <definition name="/report1/hospitalPatStatNewReportdefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="Out Patient Statistics" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/hospitalPatStatNewReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+
+  <definition name="/report1/hospitalPatStatStateNewReportdefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="Daily Census Report" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/hospitalPatStatStateNewReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+  
+  
+
+  <definition name="/report1/ageWiseRegReportdefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Age Wise Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/ageWiseRegReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+
+
+ <definition name="/report1/consultantRosterReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Consultant Roster Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/consultantRosterReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+<definition name="/report1/deptWiseListofPatientsReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Dept Wise List of Patients Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/deptWiseListofPatientsReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+<definition name="/report1/deptWiseUserWiseListofPatientsReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Dept Wise List of Patients Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/deptWiseUserWisePatLst.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+<definition name="/report1/freeNewDeptVisitReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Dept Wise List of Patients Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/freeNewDeptVisitReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+  <definition name="/report1/departmentPercentWiseReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Department Percentage Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/departmentPercentWiseReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+   <definition name="/report1/specialClinicOutPatientStatisticsDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Special Clinic out Patient Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/specialClinicOutPatientStatistics.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+   <definition name="/report1/hospitalWisePatientListingReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Hospital Wise Patient Listing Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/hospitalWisePatientListingReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+	<definition name="/report1/userWiseCashCollectionDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+		<put name="title"  value="Hospital Wise Patient Listing Report" type="string"/>
+		<put name="header"  value="/registration/blank.jsp"/>	  
+		<put name="body"  value="/registration/reports/report1/userWiseCashCollectionReport.cnt"/>	  
+		<put name="footer" value="/registration/blank.jsp" />  
+	</definition> 
+  
+<definition name="/report1/patientListingReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Dept Wise List of Patients Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/patientListingReport.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+
+
+  <definition name="/regDeskNewDeptVisitDuplicate" path="/registration/RegistrtaionDeskLayoutDuplicate.jsp">      
+   <put name="action"  value="/registration/PatientVisitDesk.cnt" />   
+	  <put name="title"  value="Registration Desk Department Visit" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+   
+   <definition name="/regDeskModificationDuplicate" path="/registration/RegistrtaionDeskLayoutDuplicate.jsp">   
+<!--  	 <put name="action"  value="/registration/patientModification.cnt" /> -->
+	  <put name="action"  value="/registration/patientModificationTile.cnt" />
+	  <put name="title"  value="Registration Desk Patient Detial Modification" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>  
+  
+     
+   <definition name="/offlineRegistrationDeskDuplicate" path="/registration/RegistrtaionDeskLayoutDuplicate.jsp"> 
+  	  <put name="action"  value="/registration/offlineRegistration.cnt" />     
+	  <put name="title"  value="Room Wise New Registration " type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+   
+   <definition name="/oldpatientvisitDeskDuplicate" path="/registration/RegistrtaionDeskLayoutDuplicate.jsp">      
+   <put name="action"  value="/registration/oldpatientvisit.cnt" />   
+	  <put name="title"  value="Registration Desk Old Department Visit" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+   
+   
+   
+    <definition name="/PatientVisit" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Patient Visit" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/PatientVisitDesk.cnt"/>	  
+  </definition>  
+       
+      <definition name="/EmergencyPatientVisit" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Emergency Patient Visit" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/EmergencyPatientVisitDesk.cnt"/>	  
+  </definition>
+  
+  <definition name="/report1/userWiseRegistrationReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">
+  		<put name="title" value="User Wise Registration Report" type="string"/>
+  		<put name="header" value="/registration/blank.jsp"/>
+  	    <put name="body" value="/registration/reports/report1/userWiseRegistrationReport.cnt"/>
+  	    <put name="footer" value="/registration/reports/jsp/reportFooter.jsp"/>
+  </definition>
+       
+
+       
+	<definition name="/report1/categoryWiseUserWiseRegistrationReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+		<put name="title"  value=" User Wise Category Wise Registration Report" type="string"/>
+		<put name="header"  value="/registration/blank.jsp"/>	  
+		<put name="body"  value="/registration/reports/report1/categoryWiseUserWiseRegistrationReport.cnt"/>	  
+		<put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+	</definition>
+	
+	
+	<definition name="/report1/ambulanceWiseCasesBroughtReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+		<put name="title"  value=" Ambulance wise Cases Registered Report" type="string"/>
+		<put name="header"  value="/registration/blank.jsp"/>	  
+		<put name="body"  value="/registration/reports/report1/ambulanceWiseCasesBroughtReport.cnt"/>	  
+		<put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+	</definition> 
+	<definition name="/newSplRegDesk" path="/registration/RegistrtaionDeskLayoutDuplicate.jsp"> 
+  		<put name="action"  value="/registration/newSplRegDesk.cnt" />     
+	  <put name="title"  value="Special Clinic Desk New Registration" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+  <definition name="/splDeskNewRegistration" path="/registration/RegistrtaionDeskLayoutDuplicate.jsp"> 
+  		<put name="action"  value="/registration/newRegistrationDeskDuplicate.cnt" />     
+	  <put name="title"  value="Registration Desk New Registration" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/transaction/tabViewLayout.jsp"/>	  
+  	  <put name="footer" value="/registration/blank.jsp" />  
+  </definition>
+  
+  <definition name="/mctsRegistration" path="/registration/transaction/commonTransactionLayout.jsp">      
+	  <put name="title"  value="MCTS Registration" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/header.jsp"/>	  
+  	  <put name="body"  value="/registration/mctsRegistration.cnt"/>	 
+  </definition>
+  
+  <definition name="/report1/patWiseVisitDtlReportDefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="Patient-Wise Visit Detail Report" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/PatientWiseVisitDetailACTION.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition> 
+  
+  <definition name="/report1/mctsPatListdefinition" path="/registration/reports/report1/jsp/registrationCommonReportLayout.jsp">      
+	  <put name="title"  value="MCTS Patient List" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/reports/report1/MctsPatListACTION.cnt"/>	  
+  	  <put name="footer" value="/registration/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+  <!-- ========== Begin Employee Entry Transaction ========== -->
+  
+  <definition name="main.layout" path="/hr/pis/layout/MainLayout.jsp">
+      <put name="title"  value=""/>
+	  <put name="header"  value="/hisglobal/header.jsp"/> 
+	  <put name="body"  value=""/>
+	  <put name="footer" value="" />
+  </definition>
+
+<definition name="EmpEntryAdd.page" extends="main.layout">
+	<put name="title" value=" PIS EMPLOYEE ENTRY ADD PAGE"/>
+	<put name="body" value="/hr/pis/transactions/hr_pis_add_emp_entry_dtl.jsp"/>
+	<put name="footer" value="/hr/pis/transactions/hr_pis_add_footer_dtl.jsp"/>
+</definition>
+<definition name="EmpEntryView.page" extends="main.layout">
+	<put name="title" value=" PIS EMPLOYEE ENTRY ADD PAGE"/>
+	<put name="body" value="/hr/pis/transactions/hr_pis_view_emp_entry_dtl.jsp"/>
+	<put name="footer" value="/hr/pis/transactions/hr_pis_view_footer_data.jsp"/>
+</definition>
+
+<definition name="EmpEntryPopModify.page" extends="main.layout">
+	<put name="title" value="PIS EMPLOYEE DETAIL POP UP PAGE IN MODIFY"/>
+	<put name="body" value="/hr/pis/transactions/hr_pis_lst_common_mst.jsp"/>
+	<put name="footer" value="/hr/pis/transactions/hr_pop_five_variable_footer.jsp"/>
+</definition>
+
+<definition name="EmpEntryModify.page" extends="main.layout">
+	<put name="title" value="PIS EMP DETAIL MODIFY PAGE"/>
+	<put name="body" value="/hr/pis/transactions/hr_pis_modify_emp_entry_dtl.jsp"/>
+	<put name="footer" value="/hr/pis/transactions/hr_pis_modify_only_footer_data.jsp"/>
+</definition>
+<!-- ========== End Employee Entry Transaction ========== -->
+  
+
+ </tiles-definitions>

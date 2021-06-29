@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='EmployeeMaster'>
+		<common-values>
+			<master-name>EmployeeMaster</master-name>
+			<master-title>Employee Master</master-title>
+		</common-values>
+		<list-page>
+			<tableHeading>Employee Master</tableHeading>
+			<list-table>PIST_EMP_ENTRY_DTL</list-table>
+			
+			<columns>
+				<column>Employee Name </column>
+				<column>Designation </column>
+			</columns>
+				
+			<query-detail>
+				<fields>
+					<field>(SELECT INITCAP(STR_SALUTATION_NAME) FROM PIST_SALUTATION_MST WHERE NUM_SALUTATION_ID=A.GNUM_SALUTATION_ID)||''||INITCAP(A.STR_FIRST_NAME)||' '||INITCAP(A.STR_MIDDLE_NAME)||' '||INITCAP(A.STR_LAST_NAME)</field>
+					<field>(SELECT INITCAP(STR_DESIG_NAME) FROM PIST_DESIGNATION_MST WHERE NUM_DESIG_ID=A.NUM_DESIG_ID AND GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE)</field>					
+				</fields>
+				
+				<primaryKey>
+					<field>A.STR_EMP_NO </field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>PIST_EMP_ENTRY_DTL </table>
+					
+				</tables>
+				
+				<condition>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<isvalid-field> A.GNUM_ISVALID	</isvalid-field>
+					<orderby> ORDER BY INITCAP(A.STR_FIRST_NAME)</orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/registration/master/addEmployeeMaster.cnt</static-page>			
+		</add-page>
+
+		<modify-page>	
+   		    <static-page>/registration/master/modifyEmployeeMaster.cnt</static-page>		
+		</modify-page>
+	</master>	
+</master-config>

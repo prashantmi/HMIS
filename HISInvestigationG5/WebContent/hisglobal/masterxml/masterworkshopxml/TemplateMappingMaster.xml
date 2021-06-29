@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='TemplateMappingMaster'>
+		<common-values>
+			<master-name>TemplateMappingMaster</master-name>
+			<master-title>Template Mapping Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Template Mapping Master</tableHeading> 
+				<list-table>HGBT_TEMPLATE_MAPPING_MST</list-table>
+				<controls>
+					<control type="combo" index="0"> 
+						<label>Template Category</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGNUM_TEMPLATE_CATEGORY_TYPE)</text-field>
+									<value-field>A.HGNUM_TEMPLATE_CATEGORY</value-field>
+								</options>
+								<tables>
+									<table alias="A">HGBT_TEMPLATE_CATEGORY_MST</table>
+								</tables>
+								<condition>
+									<hospital-code> A.GNUM_HOSPITAL_CODE</hospital-code>
+									<general> AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HGNUM_TEMPLATE_CATEGORY_TYPE)</general>
+								</condition>
+								
+							</dynamic>
+							</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>	
+					</control>	
+				</controls>
+				<columns>
+					 <column>Template Name</column>
+					 <column>Department</column>
+					 <column>Unit</column>
+					 <column>Ward</column>
+					
+				</columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(C.HGSTR_TEMPLATE_NAME) </field>
+						<field>NVL((Select INITCAP (F.GSTR_DEPT_NAME) FROM GBLT_DEPARTMENT_MST F			 
+							WHERE A.GNUM_DEPT_CODE=F.GNUM_DEPT_CODE 
+                    		AND A.GNUM_HOSPITAL_CODE=F.GNUM_HOSPITAL_CODE
+		                    AND F.GNUM_ISVALID=1),'-')
+		                </field>
+						<field>NVL((Select INITCAP (F.HGSTR_UNITNAME) FROM HGBT_UNIT_MST F			 
+							WHERE A.HGNUM_DEPTUNITCODE=F.HGNUM_DEPTUNITCODE 
+                    		AND A.GNUM_HOSPITAL_CODE=F.GNUM_HOSPITAL_CODE
+		                    AND F.GNUM_ISVALID=1),'-')
+		                </field>
+						<field>NVL((Select INITCAP (F.HIPSTR_WARD_NAME) FROM HIPT_WARD_MST F			 
+							WHERE A.HIPNUM_WARD_CODE=F.HIPNUM_WARD_CODE 
+                    		AND A.GNUM_HOSPITAL_CODE=F.GNUM_HOSPITAL_CODE 
+                    		AND TRUNC(SYSDATE) BETWEEN TRUNC(F.GDT_EFFECTIVE_FRM) 
+                    		AND TRUNC(NVL(F.GDT_EFFECTIVE_TO,SYSDATE))
+		                    AND F.GNUM_ISVALID=1),'-')
+		                 </field>
+					</fields>
+					<primaryKey>
+						<field>A.HGNUM_MAPPING_ID</field>
+						<field>A.HGNUM_TEMPLATE_CATEGORY</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_TEMPLATE_MAPPING_MST</table>
+						<table alias='B'>HGBT_TEMPLATE_CATEGORY_MST</table>
+						<table alias='C'>HGBT_TEMPLATE_MST</table>
+					</tables>
+					<condition>					 
+                         <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                         <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                         <orderby> and b.gnum_isvalid=1 and c.gnum_isvalid=1 and A.HGNUM_TEMPLATE_ID=c.HGNUM_TEMPLATE_ID
+                         and A.HGNUM_TEMPLATE_CATEGORY=B.HGNUM_TEMPLATE_CATEGORY
+                          order by INITCAP(C.HGSTR_TEMPLATE_NAME)</orderby>
+                         <dependent>
+                    		<clause> A.HGNUM_TEMPLATE_CATEGORY = #0 </clause>
+                    	 </dependent> 
+                    </condition>
+                   
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<static-page>/opd/master/templateMappingMstAdd.cnt</static-page>			
+	</add-page>
+	
+	<modify-page>
+	  <static-page>/opd/master/templateMappingMstAdd.cnt</static-page>
+	</modify-page>
+	</master>	
+</master-config>

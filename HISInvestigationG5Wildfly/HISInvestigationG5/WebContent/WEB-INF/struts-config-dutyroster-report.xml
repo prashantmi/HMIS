@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ <!-- ========== Form Bean Definitions =================================== -->
+ 
+  	<form-beans>    
+<form-bean name="MonthWiseEmpRosterReportFB" type="dutyroster.reports.controller.fb.MonthWiseEmpRosterReportFB" ></form-bean>
+<form-bean name="monthWiseDutyRosterReportFB" type="dutyroster.reports.controller.fb.MonthWiseDutyRosterReportFB" ></form-bean>
+<form-bean name="AreaWiseEmpRosterReportFB" type="dutyroster.reports.controller.fb.AreaWiseEmpRosterReportFB" ></form-bean>
+<form-bean name="EmpWiseEmpRosterReportFB" type="dutyroster.reports.controller.fb.EmpWiseEmpRosterReportFB" ></form-bean>
+<form-bean name="EmpWiseSelfEmpRosterReportFB" type="dutyroster.reports.controller.fb.EmpWiseSelfEmpRosterReportFB" ></form-bean>
+<form-bean name="EmpWiseSupervisiorEmpRosterReportFB" type="dutyroster.reports.controller.fb.EmpWiseSupervisiorEmpRosterReportFB" ></form-bean>    
+<form-bean name="MonthlyEmpRosterReportDateWiseFB" type="dutyroster.reports.controller.fb.MonthlyEmpRosterReportDateWiseFB" ></form-bean> 
+<form-bean name="EmpDailyWorkReportFB" type="dutyroster.reports.controller.fb.EmpDailyWorkReportFB" ></form-bean> 
+ 
+   </form-beans>         
+   
+   
+
+
+
+
+ <action-mappings> 
+ 
+ <action path = "/reports/MonthWiseEmpRosterReport"
+			type = "dutyroster.reports.controller.action.MonthWiseEmpRosterReportACT"
+			name = "MonthWiseEmpRosterReportFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/monthWiseEmpRosterReport.jsp"	>
+			<forward name="ADD" path="/reports/monthWiseEmpRosterReport.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+ 
+ <action path = "/reports/monthWiseDutyRosterReport"
+			type = "dutyroster.reports.controller.action.MonthWiseDutyRosterReportACT"
+			name = "monthWiseDutyRosterReportFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/monthWiseDutyRosterReport.jsp"	>
+			<forward name="ADD" path="/reports/monthWiseDutyRosterReport.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+ 
+  <action path = "/reports/AreaWiseEmpRosterReport"
+			type = "dutyroster.reports.controller.action.AreaWiseEmpRosterReportACT"
+			name = "AreaWiseEmpRosterReportFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/areaWiseEmpRosterReport.jsp"	>
+			<forward name="ADD" path="/reports/areaWiseEmpRosterReport.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+		
+ <action path = "/reports/EmpWiseEmpRosterReport"
+			type = "dutyroster.reports.controller.action.EmpWiseEmpRosterReportACT"
+			name = "EmpWiseEmpRosterReportFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/empWiseEmpRosterReport.jsp"	>
+			<forward name="ADD" path="/reports/empWiseEmpRosterReport.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>		
+
+
+
+<action path = "/reports/EmpWiseSelfEmpRosterReport"
+			type = "dutyroster.reports.controller.action.EmpWiseSelfEmpRosterReportACT"
+			name = "EmpWiseSelfEmpRosterReportFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/empWiseSelfEmpRosterReport.jsp"	>
+			<forward name="ADD" path="/reports/empWiseSelfEmpRosterReport.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>	
+		
+
+<action path = "/reports/EmpWiseSupervisiorEmpRosterReport"
+			type = "dutyroster.reports.controller.action.EmpWiseSupervisiorEmpRosterReportACT"
+			name = "EmpWiseSupervisiorEmpRosterReportFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/reports/empWiseSupervisiorEmpRosterReport.jsp"	>
+			<forward name="ADD" path="/reports/empWiseSupervisiorEmpRosterReport.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+		
+		
+		
+	<action path = "/reports/MonthlyEmpRosterReportDateWise"
+			type = "dutyroster.reports.controller.action.MonthlyEmpRosterReportDateWiseACT"
+			name = "MonthlyEmpRosterReportDateWiseFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/monthlyEmpRosterReportDateWise.jsp"	>
+			<forward name="ADD" path="/reports/monthlyEmpRosterReportDateWise.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+		
+		
+		<action path = "/reports/EmpDailyWorkReport"
+			type = "dutyroster.reports.controller.action.EmpDailyWorkReportACT"
+			name = "EmpDailyWorkReportFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/empDailyWorkReport.jsp"	>
+			<forward name="ADD" path="/reports/empDailyWorkReport.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+ 		
+ 		
+		
+<action path="/switchModule" 	type="org.apache.struts.actions.SwitchAction" />
+	 
+	 
+</action-mappings>
+
+<controller>
+	<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+</controller>
+
+<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+  
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/dutyroster-tiles-def.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>   
+</struts-config>

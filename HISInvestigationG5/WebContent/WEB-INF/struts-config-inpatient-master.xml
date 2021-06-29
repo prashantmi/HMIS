@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ <!-- ========== Form Bean Definitions =================================== -->
+<form-beans>       
+	    
+		<form-bean name="UnitInvParaMappingMstFB" type="inpatient.masters.controller.fb.UnitInvParaMappingMstFB"/>     
+		<form-bean name="AbortionTypeMasterFB" type="inpatient.masters.controller.fb.AbortionTypeMasterFB"/>
+		<form-bean name="AbortionMethodMasterFB" type="inpatient.masters.controller.fb.AbortionMethodMasterFB"/>
+		<form-bean name="ComplicationMasterFB" type="inpatient.masters.controller.fb.ComplicationMasterFB"/>
+		<form-bean name="DeliveryPlaceMasterFB" type="inpatient.masters.controller.fb.DeliveryPlaceMasterFB"/>
+		<form-bean name="MethodMasterFB" type="inpatient.masters.controller.fb.MethodMasterFB"/>
+		<form-bean name="PlacentaTypeMasterFB" type="inpatient.masters.controller.fb.PlacentaTypeMasterFB"/>
+		<form-bean name="AnomalyTypeMasterFB" type="inpatient.masters.controller.fb.AnomalyTypeMasterFB"/>
+		<form-bean name="HealthWorkerMasterFB" type="inpatient.masters.controller.fb.HealthWorkerMasterFB"/>
+		<form-bean name="LaborRoomAreaMstFB" type="inpatient.masters.controller.fb.LaborRoomAreaMstFB"/>
+		<form-bean name="LaborRoomMasterFB" type="inpatient.masters.controller.fb.LaborRoomMasterFB"/>
+		     	
+</form-beans>       
+
+
+<action-mappings> 
+
+	
+  
+  	<!-- Unit Wise Investigation Para Mapping (OPD) Add -->
+  	<action  path="/master/AddUnitInvParaMappingMstACT"
+    type="inpatient.masters.controller.action.UnitInvParaMappingMstACT"
+    name="UnitInvParaMappingMstFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/unitInvParaMappingMstAdd.jsp">
+    <forward name="NEW" path="/masters/unitInvParaMappingMstAdd.jsp" />
+    <forward name="SAME" path="/masters/unitInvParaMappingMstAdd.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+   
+   <!-- Unit Wise Investigation Para Mapping (OPD) Modify -->
+   <action  path="/master/ModifyUnitInvParaMappingMstACT"
+    type="inpatient.masters.controller.action.UnitInvParaMappingMstACT"
+    name="UnitInvParaMappingMstFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/unitInvParaMappingMstModify.jsp">
+    <forward name="NEW" path="/masters/unitInvParaMappingMstModify.jsp" />
+    <forward name="SAME" path="/masters/unitInvParaMappingMstModify.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+  	</action>
+  	
+  	<action  path="/master/AbortionTypeMaster"
+    type="inpatient.masters.controller.action.AbortionTypeMstACT"
+    name="AbortionTypeMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/abortionTypeMstAddMod.jsp">
+    <forward name="NEW" path="/masters/abortionTypeMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+   
+   	<action  path="/master/AbortionMethodMaster"
+    type="inpatient.masters.controller.action.AbortionMethodMstACT"
+    name="AbortionMethodMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/abortionMethodMstAddMod.jsp">
+    <forward name="NEW" path="/masters/abortionMethodMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+   
+   	<action  path="/master/ComplicationMaster"
+    type="inpatient.masters.controller.action.ComplicationMstACT"
+    name="ComplicationMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/complicationMstAddMod.jsp">
+    <forward name="NEW" path="/masters/complicationMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+  
+   	<action  path="/master/DeliveryPlaceMaster"
+    type="inpatient.masters.controller.action.DeliveryPlaceMstACT"
+    name="DeliveryPlaceMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/deliveryPlaceMstAddMod.jsp">
+    <forward name="NEW" path="/masters/deliveryPlaceMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+   
+   	<action  path="/master/MethodMaster"
+    type="inpatient.masters.controller.action.MethodMstACT"
+    name="MethodMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/methodMstAddMod.jsp">
+    <forward name="NEW" path="/masters/methodMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+   
+   	<action  path="/master/PlacentaTypeMaster"
+    type="inpatient.masters.controller.action.PlacentaTypeMstACT"
+    name="PlacentaTypeMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/placentaTypeMstAddMod.jsp">
+    <forward name="NEW" path="/masters/placentaTypeMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+   
+   <action  path="/master/AnomalyTypeMaster"
+    type="inpatient.masters.controller.action.AnomalyTypeMstACT"
+    name="AnomalyTypeMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/anomalyTypeMstAddMod.jsp">
+    <forward name="NEW" path="/masters/anomalyTypeMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+   
+   <action  path="/master/HealthWorkerMaster"
+    type="inpatient.masters.controller.action.HealthWorkerMstACT"
+    name="HealthWorkerMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/healthWorkerMstAddMod.jsp">
+    <forward name="NEW" path="/masters/healthWorkerMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+   
+   <action  path="/master/LaborRoomAreaMaster"
+    type="inpatient.masters.controller.action.LaborRoomAreaMstACT"
+    name="LaborRoomAreaMstFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masters/laborRoomAreaMstAddMod.jsp">
+    <forward name="NEW" path="/masters/laborRoomAreaMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>
+	
+	<action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+	
+	 
+	<!-- Labor Room Master  -->
+  	<action  path="/master/LaborRoomMasterACT"
+    type="inpatient.masters.controller.action.LaborRoomMasterACT"
+    name="LaborRoomMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode" 
+    input="/masters/labor_room_master.jsp">
+    <forward name="NEW" path="/masters/labor_room_master.jsp" />
+    <forward name="SAVE" path="/masters/labor_room_master.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+   </action>	
+   
+
+</action-mappings> 
+  
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/OpdDesk-tiles-def.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in> 
+
+
+</struts-config>

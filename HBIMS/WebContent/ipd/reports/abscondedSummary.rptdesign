@@ -1,0 +1,1739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.3.2.v20140211-1400 Build &lt;4.3.2.v20140225-1404></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">63</property>
+            <expression name="value">params["jndi_ds_conn"]</expression>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">63</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <text-property name="displayName">hisReportTemplate</text-property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="jndi_ds_conn" id="22">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">java:comp/env/AHIS</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Header" id="23">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer" id="24">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">Computer Generated Report</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Name" id="26">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer_Visible" id="75">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">true</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="report_user_Remarks" id="191">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address" id="249">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Contact" id="255">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="hosp_Code" id="393">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">101</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="station_offadd" id="394">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pin_Code" id="672">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="adm_Nooo" id="781">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">0</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="63">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.edb.Driver</property>
+            <property name="odaURL">jdbc:edb://10.226.2.98:5444/hmisodisha</property>
+            <property name="odaUser">hmisodisha</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">aG1pc29kaXNoYQ==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set2" id="780">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">hipnum_admno</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">hrgnum_puk</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">pat_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">gender</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">age</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">father_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">hrgstr_address</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">adm_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">dis_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">discharge_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">dept_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">dept_unit_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">ward_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">room_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">bed_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">categ_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">hrgnum_mlc_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">opd_room</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">next_visit_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">discharge_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">advice_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">hipstr_discharge_advise</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">diagnosis</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">religion_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[this.queryText=" SELECT HIPNUM_ADMNO, HRGNUM_PUK, ahis_util.PUK_NAME(HRGNUM_PUK) AS PAT_NAME, ";
+this.queryText=this.queryText+ " (SELECT INITCAP(GSTR_GENDER_NAME) FROM GBLT_GENDER_MST ";
+this.queryText=this.queryText+ "  WHERE gnum_isvalid=1 AND GSTR_GENDER_CODE = A.HRGSTR_SEX) AS GENDER, ";
+this.queryText=this.queryText+ "  ahis_util.puk_age(HRGNUM_PUK) AS AGE, INITCAP(HRGSTR_FATHUSBNAME) AS FATHER_NAME, ";
+this.queryText=this.queryText+ "  HRGSTR_ADDRESS, TO_CHAR(HIPDT_ADMDATETIME,'DD-MM-YYYY /HH24:MI') AS ADM_DATE, ";
+this.queryText=this.queryText+ "  TO_CHAR(HIPDT_DISDATETIME,'DD-MM-YYYY /HH24:MI') AS DIS_DATE, ";
+this.queryText=this.queryText+ "  (SELECT INITCAP(HGSTR_DISCHARGE_DESC) FROM HIPT_DISCHARGE_TYPE_MST ";
+this.queryText=this.queryText+ "  WHERE GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE AND HGNUM_DISHARGE_TYPE_CODE = A.HIPDT_DISSTATUS_CODE) AS DISCHARGE_TYPE, ";
+this.queryText=this.queryText+ "  Ahis_Function.getDeptName(GNUM_DEPT_CODE,GNUM_HOSPITAL_CODE) AS Dept_Name, ";
+this.queryText=this.queryText+ "  Ahis_Function.getDeptUnitName(GNUM_DEPTUNIT_CODE, GNUM_HOSPITAL_CODE) AS DEPT_UNIT_NAME, ";
+this.queryText=this.queryText+ "  Ipd_Mst.getWardName(HIPNUM_WARD_CODE, GNUM_HOSPITAL_CODE) AS WARD_NAME, ";
+this.queryText=this.queryText+ "  Ipd_Mst.getRoomName(HIPNUM_ROOM_CODE,GNUM_HOSPITAL_CODE) AS ROOM_NAME, ";
+this.queryText=this.queryText+ "  Ipd_Mst.getBedName(HIPNUM_BED_CODE,GNUM_HOSPITAL_CODE) AS BED_NAME, ";
+this.queryText=this.queryText+ "  Ahis_Function.getCategoryName(HIPNUM_TREAT_CATEG,GNUM_HOSPITAL_CODE) AS CATEG_NAME, ";
+this.queryText=this.queryText+ "  HRGNUM_MLC_NO, ";
+this.queryText=this.queryText+ "  (SELECT INITCAP(HGSTR_ROOM_NAME) FROM HGBT_ROOM_MST WHERE GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE ";
+this.queryText=this.queryText+ "  AND HGNUM_ROOM_CODE = A.HIPNUM_ROOMNO) AS OPD_ROOM, ";
+this.queryText=this.queryText+ "  TO_CHAR(HIPDT_NEXT_VISITDATE,'DD-MM-YYYY') AS NEXT_VISIT_DATE, ";
+this.queryText=this.queryText+ "  Ahis_Function.fun_emp_name(HIPNUM_CONSULTANT_ID,GNUM_HOSPITAL_CODE) AS DISCHARGE_BY, ";
+this.queryText=this.queryText+ "  Ahis_Function.fun_emp_name(HIPSTR_ADVICE_BY,GNUM_HOSPITAL_CODE) AS ADVICE_BY, ";
+this.queryText=this.queryText+ "  HIPSTR_DISCHARGE_ADVISE, ";
+this.queryText=this.queryText+ "  ( SELECT Ipd_Mst.getDiagnosisName(GNUM_HOSPITAL_CODE,HRGNUM_DIAGNOSTIC_CODE,HRGNUM_DIAGNOSIS_CODE_TYPE) ";
+this.queryText=this.queryText+ "  FROM HRGT_EPISODE_DIAGNOSIS_DTL ";
+this.queryText=this.queryText+ "  WHERE GNUM_ISVALID = 1 ";
+this.queryText=this.queryText+ "  AND GNUM_DIAGNOSTIC_TYPE_CODE = 12 ";
+this.queryText=this.queryText+ "  AND GNUM_HOSPITAL_CODE =  A.GNUM_HOSPITAL_CODE  ";
+this.queryText=this.queryText+ "  AND HRGNUM_ADMISSION_NO =  A.HIPNUM_ADMNO  )  AS DIAGNOSIS, ";
+this.queryText=this.queryText+ "  IPD_MST.getReligionName(HRGNUM_RELGN_CODE,GNUM_HOSPITAL_CODE) AS RELIGION_NAME  ";
+this.queryText=this.queryText+ "  FROM HIPT_PATADMDISC_DTL A ";
+this.queryText=this.queryText+ "  WHERE GNUM_HOSPITAL_CODE = '" +params["hosp_Code"] + "' ";
+this.queryText=this.queryText+ "  AND HIPNUM_ADMNO = '" +params["adm_Nooo"] + "' ";
+this.queryText=this.queryText+ "  AND HIPDT_DISDATETIME IS NOT NULL ";
+this.queryText=this.queryText+ "  AND HIPDT_ADMSTATUS_CODE NOT IN (13,14) ";]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">hipnum_admno</property>
+                    <property name="nativeName">hipnum_admno</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">hrgnum_puk</property>
+                    <property name="nativeName">hrgnum_puk</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">pat_name</property>
+                    <property name="nativeName">pat_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">gender</property>
+                    <property name="nativeName">gender</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">age</property>
+                    <property name="nativeName">age</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">father_name</property>
+                    <property name="nativeName">father_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">hrgstr_address</property>
+                    <property name="nativeName">hrgstr_address</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">adm_date</property>
+                    <property name="nativeName">adm_date</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">dis_date</property>
+                    <property name="nativeName">dis_date</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">discharge_type</property>
+                    <property name="nativeName">discharge_type</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">dept_name</property>
+                    <property name="nativeName">dept_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">dept_unit_name</property>
+                    <property name="nativeName">dept_unit_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">ward_name</property>
+                    <property name="nativeName">ward_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">room_name</property>
+                    <property name="nativeName">room_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">bed_name</property>
+                    <property name="nativeName">bed_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">categ_name</property>
+                    <property name="nativeName">categ_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">hrgnum_mlc_no</property>
+                    <property name="nativeName">hrgnum_mlc_no</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">opd_room</property>
+                    <property name="nativeName">opd_room</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">next_visit_date</property>
+                    <property name="nativeName">next_visit_date</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">discharge_by</property>
+                    <property name="nativeName">discharge_by</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">advice_by</property>
+                    <property name="nativeName">advice_by</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">hipstr_discharge_advise</property>
+                    <property name="nativeName">hipstr_discharge_advise</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">diagnosis</property>
+                    <property name="nativeName">diagnosis</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">religion_name</property>
+                    <property name="nativeName">religion_name</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[  SELECT HIPNUM_ADMNO, HRGNUM_PUK, ahis_util.PUK_NAME(HRGNUM_PUK) AS PAT_NAME,
+  (SELECT INITCAP(GSTR_GENDER_NAME) FROM GBLT_GENDER_MST
+  WHERE gnum_isvalid=1 AND GSTR_GENDER_CODE = A.HRGSTR_SEX) AS GENDER,
+  HRGNUM_AGE || ' ' || HRGSTR_AGEUNIT AS AGE, INITCAP(HRGSTR_FATHUSBNAME) AS FATHER_NAME,
+  HRGSTR_ADDRESS, TO_CHAR(HIPDT_ADMDATETIME,'DD-MM-YYYY /HH24:MI') AS ADM_DATE,
+  TO_CHAR(HIPDT_DISDATETIME,'DD-MM-YYYY /HH24:MI') AS DIS_DATE,
+  (SELECT INITCAP(HGSTR_DISCHARGE_DESC) FROM HIPT_DISCHARGE_TYPE_MST
+  WHERE GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE AND HGNUM_DISHARGE_TYPE_CODE = A.HIPDT_DISSTATUS_CODE) AS DISCHARGE_TYPE,
+  Ahis_Function.getDeptName(GNUM_DEPT_CODE,GNUM_HOSPITAL_CODE) AS Dept_Name,
+  Ahis_Function.getDeptUnitName(GNUM_DEPTUNIT_CODE, GNUM_HOSPITAL_CODE) AS DEPT_UNIT_NAME,
+  Ipd_Mst.getWardName(HIPNUM_WARD_CODE, GNUM_HOSPITAL_CODE) AS WARD_NAME,
+  Ipd_Mst.getRoomName(HIPNUM_ROOM_CODE,GNUM_HOSPITAL_CODE) AS ROOM_NAME,
+  Ipd_Mst.getBedName(HIPNUM_BED_CODE,GNUM_HOSPITAL_CODE) AS BED_NAME,
+  Ahis_Function.getCategoryName(HIPNUM_TREAT_CATEG,GNUM_HOSPITAL_CODE) AS CATEG_NAME,
+  HRGNUM_MLC_NO,
+  (SELECT INITCAP(HGSTR_ROOM_NAME) FROM HGBT_ROOM_MST WHERE GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE
+  AND HGNUM_ROOM_CODE = A.HIPNUM_ROOMNO) AS OPD_ROOM,
+  TO_CHAR(HIPDT_NEXT_VISITDATE,'DD-MM-YYYY') AS NEXT_VISIT_DATE,
+  Ahis_Function.fun_emp_name(HIPNUM_CONSULTANT_ID,GNUM_HOSPITAL_CODE) AS DISCHARGE_BY,
+  Ahis_Function.fun_emp_name(HIPSTR_ADVICE_BY,GNUM_HOSPITAL_CODE) AS ADVICE_BY,
+  HIPSTR_DISCHARGE_ADVISE,
+  ( SELECT Ipd_Mst.getDiagnosisName(GNUM_HOSPITAL_CODE,HRGNUM_DIAGNOSTIC_CODE,HRGNUM_DIAGNOSIS_CODE_TYPE)
+  FROM HRGT_EPISODE_DIAGNOSIS_DTL
+  WHERE GNUM_ISVALID = 1
+  AND GNUM_DIAGNOSTIC_TYPE_CODE = 12
+  AND GNUM_HOSPITAL_CODE =  A.GNUM_HOSPITAL_CODE 
+  AND HRGNUM_ADMISSION_NO =  A.HIPNUM_ADMNO  )  AS DIAGNOSIS,
+  IPD_MST.getReligionName(HRGNUM_RELGN_CODE,GNUM_HOSPITAL_CODE) AS RELIGION_NAME 
+  FROM HIPT_PATADMDISC_DTL A
+  WHERE GNUM_HOSPITAL_CODE = '101'
+  AND HIPDT_DISDATETIME IS NOT NULL
+  AND HIPDT_ADMSTATUS_CODE NOT IN (13,14);
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="textLineThrough">none</property>
+            <property name="textOverline">none</property>
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">0.75in</property>
+            <property name="leftMargin">0.75in</property>
+            <property name="bottomMargin">0.5in</property>
+            <property name="rightMargin">1in</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0.2in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="226">
+            <property name="textAlign">center</property>
+            <property name="width">100%</property>
+            <column id="227"/>
+            <column id="228"/>
+            <column id="229"/>
+            <row id="230">
+                <cell id="231">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="344">
+                        <property name="width">100%</property>
+                        <column id="345">
+                            <property name="width">60%</property>
+                        </column>
+                        <column id="346">
+                            <property name="textAlign">right</property>
+                            <property name="width">40%</property>
+                        </column>
+                        <row id="384">
+                            <property name="verticalAlign">middle</property>
+                            <cell id="385">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">right</property>
+                                <grid id="54">
+                                    <property name="textAlign">right</property>
+                                    <property name="width">100%</property>
+                                    <column id="55">
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="width">80%</property>
+                                    </column>
+                                    <column id="56">
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="width">24%</property>
+                                    </column>
+                                    <row id="57">
+                                        <property name="verticalAlign">middle</property>
+                                        <cell id="58">
+                                            <label id="60">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="textAlign">right</property>
+                                                <text-property name="text">Report Date &amp; Time :</text-property>
+                                            </label>
+                                        </cell>
+                                        <cell id="59">
+                                            <property name="verticalAlign">middle</property>
+                                            <data id="62">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <structure name="dateTimeFormat">
+                                                    <property name="category">Custom</property>
+                                                    <property name="pattern">dd/MM/yyyy kk:mm:ss</property>
+                                                </structure>
+                                                <property name="textAlign">left</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">Column Binding</property>
+                                                        <text-property name="displayName">RunDateTime</text-property>
+                                                        <expression name="expression">new Date()</expression>
+                                                        <property name="dataType">date-time</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">Column Binding</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="347">
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">middle</property>
+                            <cell id="348">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">center</property>
+                                <text-data id="243">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["report_Header"]</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="234">
+                <property name="textAlign">center</property>
+                <cell id="235">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="248">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Address"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="250">
+                <property name="textAlign">center</property>
+                <cell id="251">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="254">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Contact"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="238">
+                <property name="textAlign">center</property>
+                <cell id="239">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="268">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Name"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="380">
+                <cell id="381">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="395">
+                <property name="textAlign">center</property>
+                <cell id="396">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="416">
+                        <property name="width">90%</property>
+                        <column id="445">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="417">
+                            <property name="width">80%</property>
+                        </column>
+                        <row id="420">
+                            <cell id="442"/>
+                            <cell id="421">
+                                <property name="colSpan">1</property>
+                                <property name="rowSpan">1</property>
+                                <label id="432">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">The Station House Officer</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="424">
+                            <cell id="443"/>
+                            <cell id="425">
+                                <property name="colSpan">1</property>
+                                <property name="rowSpan">1</property>
+                                <text id="791">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[____________________]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="428">
+                            <cell id="444"/>
+                            <cell id="429">
+                                <property name="colSpan">1</property>
+                                <property name="rowSpan">1</property>
+                                <text id="792">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[____________________]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="399">
+                <property name="textAlign">center</property>
+                <property name="height">2mm</property>
+                <cell id="400"/>
+                <cell id="401"/>
+                <cell id="402"/>
+            </row>
+            <row id="403">
+                <property name="textAlign">center</property>
+                <cell id="404">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="435">
+                        <property name="width">90%</property>
+                        <column id="441">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="436">
+                            <property name="width">80%</property>
+                        </column>
+                        <row id="437">
+                            <cell id="440"/>
+                            <cell id="438">
+                                <label id="439">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">Subject : INFORMATION REGARDING ABSCONDED PATIENT</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="407">
+                <property name="textAlign">center</property>
+                <property name="height">2mm</property>
+                <cell id="408"/>
+                <cell id="409"/>
+                <cell id="410"/>
+            </row>
+            <row id="411">
+                <property name="textAlign">center</property>
+                <cell id="412">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="446">
+                        <property name="width">90%</property>
+                        <column id="447"/>
+                        <row id="448">
+                            <cell id="449">
+                                <label id="450">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">Sir,</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="451">
+                <property name="textAlign">center</property>
+                <property name="height">2mm</property>
+                <cell id="452"/>
+                <cell id="453"/>
+                <cell id="454"/>
+            </row>
+            <row id="455">
+                <property name="textAlign">center</property>
+                <cell id="456">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="471">
+                        <property name="width">90%</property>
+                        <column id="472">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="473">
+                            <property name="width">85%</property>
+                        </column>
+                        <row id="474">
+                            <cell id="475"/>
+                            <cell id="476">
+                                <label id="477">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">This is report to you that the patient whose particulars are given below has absconded from</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="459">
+                <property name="textAlign">center</property>
+                <cell id="460">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="478">
+                        <property name="width">90%</property>
+                        <column id="479">
+                            <property name="width">17%</property>
+                        </column>
+                        <column id="480">
+                            <property name="width">9%</property>
+                        </column>
+                        <column id="481">
+                            <property name="width">30%</property>
+                        </column>
+                        <column id="482">
+                            <property name="width">35%</property>
+                        </column>
+                        <row id="483">
+                            <cell id="484">
+                                <data id="784">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="paddingTop">1pt</property>
+                                    <structure name="stringFormat">
+                                        <property name="category">Unformatted</property>
+                                    </structure>
+                                    <property name="textAlign">left</property>
+                                    <property name="dataSet">Data Set2</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ward_name</property>
+                                            <expression name="expression">dataSetRow["ward_name"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ward_name</property>
+                                </data>
+                            </cell>
+                            <cell id="485">
+                                <label id="489">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <text-property name="text">ward of</text-property>
+                                </label>
+                            </cell>
+                            <cell id="486">
+                                <data id="490">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Column Binding</property>
+                                            <expression name="expression">params["report_Header"]</expression>
+                                            <property name="dataType">any</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">Column Binding</property>
+                                </data>
+                            </cell>
+                            <cell id="487">
+                                <label id="491">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <text-property name="text">. His / Her particulars as per hospital</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="463">
+                <property name="textAlign">center</property>
+                <cell id="464">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="492">
+                        <property name="width">90%</property>
+                        <column id="493"/>
+                        <row id="494">
+                            <cell id="495">
+                                <label id="496">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">record taken at the time of his / her admission are as under : </text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="256">
+                <property name="textAlign">center</property>
+                <property name="orphans">2</property>
+                <property name="height">100%</property>
+                <cell id="257">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="279">
+                <cell id="280">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="581">
+                        <property name="width">90%</property>
+                        <column id="582"/>
+                        <row id="583">
+                            <cell id="584">
+                                <label id="585">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">It is requested that necessary step may kindly be taken to trace the absconding patient.</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="590">
+                <cell id="591">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="594">
+                <property name="height">9mm</property>
+                <cell id="595">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <table id="497">
+                        <property name="width">90%</property>
+                        <property name="dataSet">Data Set2</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">hipnum_admno</property>
+                                <expression name="expression">dataSetRow["hipnum_admno"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">hrgnum_puk</property>
+                                <expression name="expression">dataSetRow["hrgnum_puk"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">pat_name</property>
+                                <expression name="expression">dataSetRow["pat_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">gender</property>
+                                <expression name="expression">dataSetRow["gender"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">age</property>
+                                <expression name="expression">dataSetRow["age"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">father_name</property>
+                                <expression name="expression">dataSetRow["father_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">hrgstr_address</property>
+                                <expression name="expression">dataSetRow["hrgstr_address"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">adm_date</property>
+                                <expression name="expression">dataSetRow["adm_date"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">dis_date</property>
+                                <expression name="expression">dataSetRow["dis_date"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">discharge_type</property>
+                                <expression name="expression">dataSetRow["discharge_type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">dept_name</property>
+                                <expression name="expression">dataSetRow["dept_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">dept_unit_name</property>
+                                <expression name="expression">dataSetRow["dept_unit_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ward_name</property>
+                                <expression name="expression">dataSetRow["ward_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">room_name</property>
+                                <expression name="expression">dataSetRow["room_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">bed_name</property>
+                                <expression name="expression">dataSetRow["bed_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">categ_name</property>
+                                <expression name="expression">dataSetRow["categ_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">hrgnum_mlc_no</property>
+                                <expression name="expression">dataSetRow["hrgnum_mlc_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">opd_room</property>
+                                <expression name="expression">dataSetRow["opd_room"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">next_visit_date</property>
+                                <expression name="expression">dataSetRow["next_visit_date"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">discharge_by</property>
+                                <expression name="expression">dataSetRow["discharge_by"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">advice_by</property>
+                                <expression name="expression">dataSetRow["advice_by"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">hipstr_discharge_advise</property>
+                                <expression name="expression">dataSetRow["hipstr_discharge_advise"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">diagnosis</property>
+                                <expression name="expression">dataSetRow["diagnosis"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">religion_name</property>
+                                <expression name="expression">dataSetRow["religion_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">50</property>
+                        <column id="510">
+                            <property name="width">20%</property>
+                        </column>
+                        <column id="511">
+                            <property name="width">4%</property>
+                        </column>
+                        <column id="512">
+                            <property name="width">32%</property>
+                        </column>
+                        <header>
+                            <row id="498">
+                                <cell id="499">
+                                    <property name="paddingTop">1pt</property>
+                                </cell>
+                                <cell id="500">
+                                    <property name="paddingTop">1pt</property>
+                                </cell>
+                                <cell id="501">
+                                    <property name="paddingTop">1pt</property>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="502">
+                                <cell id="503">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="537">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">1. Patient Name </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="504">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="566">
+                                        <text-property name="text">:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="505">
+                                    <property name="paddingTop">1pt</property>
+                                    <data id="719">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">pat_name</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="515">
+                                <cell id="516">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="539">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">2. Regd. / CR No. </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="517">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="567">
+                                        <text-property name="text">:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="518">
+                                    <property name="paddingTop">1pt</property>
+                                    <data id="721">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">hrgnum_puk</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="527">
+                                <cell id="528">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="541">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">3. Age </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="529">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="568">
+                                        <text-property name="text">:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="530">
+                                    <property name="paddingTop">1pt</property>
+                                    <data id="723">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">age</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="531">
+                                <cell id="532">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="543">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">4. Year </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="533">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="569">
+                                        <text-property name="text">:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="534">
+                                    <property name="paddingTop">1pt</property>
+                                    <data id="731">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">adm_date</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="523">
+                                <cell id="524">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="545">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">5. Religion</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="525">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="570">
+                                        <text-property name="text">:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="526">
+                                    <property name="paddingTop">1pt</property>
+                                    <data id="725">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">religion_name</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="519">
+                                <cell id="520">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="547">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">6. Father / Husband's Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="521">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="571">
+                                        <text-property name="text">:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="522">
+                                    <property name="paddingTop">1pt</property>
+                                    <data id="727">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">father_name</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="550">
+                                <cell id="551">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="554">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="textAlign">left</property>
+                                        <text-property name="text">7. Address at the time of admission</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="552">
+                                    <property name="paddingTop">1pt</property>
+                                    <label id="572">
+                                        <text-property name="text">:</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="553">
+                                    <property name="paddingTop">1pt</property>
+                                    <data id="729">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">hrgstr_address</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="506">
+                                <cell id="507">
+                                    <property name="paddingTop">1pt</property>
+                                </cell>
+                                <cell id="508">
+                                    <property name="paddingTop">1pt</property>
+                                </cell>
+                                <cell id="509">
+                                    <property name="paddingTop">1pt</property>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                    <grid id="602">
+                        <property name="width">90%</property>
+                        <column id="603">
+                            <property name="width">50%</property>
+                        </column>
+                        <column id="604">
+                            <property name="width">40%</property>
+                        </column>
+                        <row id="605">
+                            <cell id="606"/>
+                            <cell id="607">
+                                <label id="608">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <text-property name="text">Yours faithfully ,</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="598">
+                <cell id="599">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="609">
+                        <property name="width">90%</property>
+                        <column id="610">
+                            <property name="width">50%</property>
+                        </column>
+                        <column id="611">
+                            <property name="width">40%</property>
+                        </column>
+                        <row id="612">
+                            <cell id="613"/>
+                            <cell id="614">
+                                <label id="615">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <text-property name="text">(Signature)</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="577">
+                <cell id="578">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="616">
+                        <property name="width">90%</property>
+                        <column id="632">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="617">
+                            <property name="width">40%</property>
+                        </column>
+                        <column id="618">
+                            <property name="width">40%</property>
+                        </column>
+                        <row id="619">
+                            <cell id="630"/>
+                            <cell id="620"/>
+                            <cell id="621">
+                                <data id="783">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="dataSet">Data Set2</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">advice_by</property>
+                                            <expression name="expression">dataSetRow["advice_by"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">advice_by</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="626">
+                            <cell id="631"/>
+                            <cell id="627"/>
+                            <cell id="628">
+                                <label id="629">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <text-property name="text"> ( Senior Resident )</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="633">
+                            <cell id="634">
+                                <label id="712">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">Dated : </text-property>
+                                </label>
+                            </cell>
+                            <cell id="635">
+                                <data id="714">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <structure name="dateTimeFormat">
+                                        <property name="category">Custom</property>
+                                        <property name="pattern">dd-MMM-yyyy</property>
+                                    </structure>
+                                    <property name="textAlign">left</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Column Binding</property>
+                                            <expression name="expression">new Date();</expression>
+                                            <property name="dataType">date</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">Column Binding</property>
+                                </data>
+                            </cell>
+                            <cell id="636">
+                                <data id="782">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="dataSet">Data Set2</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ward_name</property>
+                                            <expression name="expression">dataSetRow["ward_name"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ward_name</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="638">
+                            <cell id="639">
+                                <label id="713">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">Time : </text-property>
+                                </label>
+                            </cell>
+                            <cell id="640">
+                                <data id="715">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <structure name="dateTimeFormat">
+                                        <property name="category">Medium Time</property>
+                                        <property name="pattern">Medium Time</property>
+                                    </structure>
+                                    <property name="textAlign">left</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Column Binding</property>
+                                            <expression name="expression">new Date();</expression>
+                                            <property name="dataType">date-time</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">Column Binding</property>
+                                </data>
+                            </cell>
+                            <cell id="641">
+                                <data id="642">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Column Binding</property>
+                                            <expression name="expression">params["report_Header"]</expression>
+                                            <property name="dataType">any</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">Column Binding</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="707">
+                            <cell id="708"/>
+                            <cell id="709"/>
+                            <cell id="710">
+                                <data id="711">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Column Binding</property>
+                                            <expression name="expression">params["report_Address"]</expression>
+                                            <property name="dataType">any</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">Column Binding</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="647">
+                <cell id="648">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="651">
+                        <property name="width">90%</property>
+                        <column id="652">
+                            <property name="width">23%</property>
+                        </column>
+                        <column id="669">
+                            <property name="width">65%</property>
+                        </column>
+                        <row id="653">
+                            <cell id="654">
+                                <label id="661">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">Copy to : </text-property>
+                                </label>
+                            </cell>
+                            <cell id="665"/>
+                        </row>
+                        <row id="655">
+                            <cell id="656">
+                                <label id="662">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">1. Medical Supritendent</text-property>
+                                </label>
+                            </cell>
+                            <cell id="666">
+                                <data id="670">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Column Binding</property>
+                                            <expression name="expression">params["report_Name"]</expression>
+                                            <property name="dataType">any</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">Column Binding</property>
+                                </data>
+                            </cell>
+                        </row>
+                        <row id="657">
+                            <cell id="658">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <label id="663">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">2. Dy. Medical Supritendent for information.</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="659">
+                            <cell id="660">
+                                <label id="664">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">3. Vigilence Incharge ,</text-property>
+                                </label>
+                            </cell>
+                            <cell id="668">
+                                <data id="671">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">Column Binding</property>
+                                            <expression name="expression">params["report_Header"]</expression>
+                                            <property name="dataType">any</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">Column Binding</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="643">
+                <property name="height">2mm</property>
+                <cell id="644"/>
+                <cell id="645"/>
+                <cell id="646"/>
+            </row>
+            <row id="678">
+                <cell id="679">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="687">
+                        <property name="width">90%</property>
+                        <column id="688">
+                            <property name="width">5%</property>
+                        </column>
+                        <column id="689">
+                            <property name="width">30%</property>
+                        </column>
+                        <column id="698">
+                            <property name="width">55%</property>
+                        </column>
+                        <row id="690">
+                            <cell id="691"/>
+                            <cell id="692">
+                                <text id="700">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[RECEIVED REPORT
+DUTY OFFICER]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="696"/>
+                        </row>
+                        <row id="693">
+                            <cell id="694"/>
+                            <cell id="695">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <text id="789">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[____________________]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="702">
+                            <cell id="703"/>
+                            <cell id="704">
+                                <text id="790">
+                                    <property name="textAlign">left</property>
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[____________________]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="705"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="357">
+                <cell id="358">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="365">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_user_Remarks"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="361">
+                <cell id="362">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="367">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">params["report_Footer_Visible"]</expression>
+                            </structure>
+                        </list-property>
+                        <expression name="valueExpr">params["report_Footer"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

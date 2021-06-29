@@ -1,0 +1,140 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+  <field name="extInstituteModel.strInstituteName">
+	<field-validator type="requiredstring" >  
+    	    	<message>Institute Name Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">100</param>
+                    <param name="trim">true</param>
+                    <message>Institute Name Length Cannot Be Greater Than 100 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z0-9]+[ a-zA-Z0-9]*</param>
+       	<message>Institute Name is Required. It Excepts AlphaNumeric With Space Only</message>
+    </field-validator>
+</field>
+<field name="extInstituteModel.strShortName">
+	<field-validator type="requiredstring" >  
+    	    	<message>Institute Short Name Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">10</param>
+                    <param name="trim">true</param>
+                    <message>Institute Short Name Length Cannot Be Greater Than 10 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z]+[ a-zA-Z]*</param>
+       	<message>Institute Short Name is Required. It Excepts Alpha Only</message>
+    </field-validator>
+    </field>
+    <field name="extInstituteModel.strInstituteType">
+    <field-validator type="regex">
+    <param name="expression">[0-9]</param>
+       <message>InstituteType Type is required.</message>
+    </field-validator>
+</field>
+     <field name="extInstituteModel.strAddress1">
+
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">100</param>
+                    <param name="trim">true</param>
+                    <message>Address1 Length Cannot Be Greater Than 100 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[0-9A-Za-z,.; -@# $%^*()+={}:";'?/  ]*</param>
+       	<message>Address1 is Required. It Excepts AlphaNumeric Only</message>
+    </field-validator>
+    </field>
+    <field name="extInstituteModel.strAddress2">
+
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">100</param>
+                    <param name="trim">true</param>
+                    <message>Address2 Length Cannot Be Greater Than 100 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[0-9A-Za-z,.; -@# $%^*()+={}:";'?/  ]*</param>
+       	<message>Address2 is Required. It Excepts AlphaNumeric With Space Only</message>
+    </field-validator>
+    </field>
+    <field name="extInstituteModel.strCity">
+	<field-validator type="requiredstring" >  
+    	    	<message>City Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">40</param>
+                    <param name="trim">true</param>
+                    <message>City Length Cannot Be Greater Than 40 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z0-9]+[ a-zA-Z0-9]*</param>
+       	<message>City is Required. It Excepts AlphaNumeric Only</message>
+    </field-validator>
+    </field>
+    <field  name="extInstituteModel.strStateCode">
+    <field-validator type="regex">
+    <param name="expression">[1-9][0-9]*</param>
+       <message>State Is Required.</message>
+    </field-validator>
+    </field>
+<field name="extInstituteModel.strContactPerson">
+	
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">50</param>
+                    <param name="trim">true</param>
+                    <message>ContactPerson Length Cannot Be Greater Than 50 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z0-9]+[ a-zA-Z0-9]*</param>
+       	<message>Contact Person is Required. It Excepts AlphaNumeric Only</message>
+    </field-validator>
+    </field>
+    <field name="extInstituteModel.strPhone">
+
+   
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">13</param>
+                    <param name="trim">true</param>
+                    <message>Phone Length Cannot Be Greater Than 40 Characters</message>
+      </field-validator>
+     <field-validator type="regex" >  
+    	<param name="expression">[0-9]{3,17}$</param>
+       	<message>Phone Number is Required. It Excepts Alphabets With Space Only</message>
+    </field-validator>
+     </field>
+    <field name="extInstituteModel.strFax">
+
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">20</param>
+                    <param name="trim">true</param>
+                    <message>Fax Length Cannot Be Greater Than 20 Characters</message>
+      </field-validator>
+        <field-validator type="regex" >  
+    	<param name="expression">[0-9]+</param>
+       	<message>Fax is Required. It Excepts Numeric Only</message>
+    </field-validator>
+    </field>
+<field name="extInstituteModel.strEmail" >
+
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">30</param>
+                    <param name="trim">true</param>
+                    <message>Email Length Cannot Be Greater Than 20 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[\w-]+@([\w-]+\.)+[\w-]+</param>
+       	<message>Email Required. It Excepts Numeric Only</message>
+    </field-validator>
+    </field>
+    
+</validators>

@@ -1,0 +1,71 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+<field name="patCategoryModel.strPatCategoryCode">
+    <field-validator type="regex">
+    <param name="expression">[1-9][0-9]</param>
+       <message>Category Is Required.</message>
+    </field-validator>
+</field>
+<field name="patCategoryModel.strPatCategoryType">
+	<field-validator type="regex">
+		<param name="expression">[0-9]</param>
+		<message>Patient Category Type Is Required.</message>
+	</field-validator>
+</field>
+<field name="patCategoryModel.strPatCategoryName">
+    <field-validator type="requiredstring">
+       <message>Category Name Is Required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">30</param>
+                    <param name="trim">true</param>
+                    <message>Category Length Cannot Be Greater Than 30 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z0-9]+[ a-zA-Z0-9]*</param>
+       	<message>Category Name is Required. It Excepts Alphabets With Space Only</message>
+    </field-validator>
+</field>
+<field name="patCategoryModel.strPatCategoryShort">
+    <field-validator type="requiredstring">
+       <message>Category Short Name Is Required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">3</param>
+                    <param name="trim">true</param>
+                    <message>Category Short Name Length Cannot Be Greater Than 3 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z]*</param>
+       	<message>Category Name is Required. It Excepts Alphabets With Space Only</message>
+    </field-validator>
+</field>
+<field name="patCategoryModel.strEconomicStatus">
+	<field-validator type="regex">
+		<param name="expression">[0-9]</param>
+		<message> Economy Status Is Required.</message>
+	</field-validator>
+</field>
+
+<field name="patCategoryModel.strCatPriority">
+    <field-validator type="regex">
+    <param name="expression">[0-9]</param>
+       <message>Priority Is Required.</message>
+    </field-validator>
+</field>
+<field name="patCategoryModel.strIsPaid">
+    <field-validator type="regex">
+    <param name="expression">[0-9]</param>
+       <message>Is Paid Is Required.</message>
+    </field-validator>
+</field>
+<field name="patCategoryModel.strIsExpiry">
+	<field-validator type="regex">
+		<param name="expression">[0-9]</param>
+		<message> Is Expiry Is Required.</message>
+	</field-validator>
+</field>
+</validators>

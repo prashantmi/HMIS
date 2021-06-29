@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Unit Investigation Parameter Mapping Master'>
+		<common-values>
+			<master-name>UnitInvParaMappingMaster</master-name>
+			<master-title>Unit Investigation Parameter Mapping Master</master-title>
+		</common-values>
+
+		<list-page>
+			<tableHeading>Unit Investigation Parameter Mapping Master</tableHeading> 
+			<list-table>HGBT_DEPTUNITWISE_INV_MST</list-table>
+
+			<columns>
+				 <column>Unit Name</column>
+				 <column>Ward Name</column>
+				 <column>Parameter Name</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>NVL(( SELECT INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(C.HGSTR_UNITNAME)||')' FROM GBLT_DEPARTMENT_MST B,
+						   HGBT_UNIT_MST C WHERE A.HGNUM_DEPTUNITCODE=C.HGNUM_DEPTUNITCODE AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND 
+						   C.HGNUM_DEPT_CODE=B.GNUM_DEPT_CODE AND C.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE and B.GNUM_ISVALID=1 and C.GNUM_ISVALID=1 ),' ')</field>
+					<field>NVL((Select INITCAP (J.HIPSTR_WARD_NAME) FROM  HIPT_WARD_MST J WHERE A.HIPNUM_WARD_CODE = J.HIPNUM_WARD_CODE
+  						   AND A.GNUM_HOSPITAL_CODE = J.GNUM_HOSPITAL_CODE  AND J.GNUM_ISVALID = 1),' ')</field>
+					<field>NVL((Select INITCAP (H.HGSTR_PARAMETER) FROM  HIVT_PARAMETER_MST H WHERE A.HGNUM_PARAMETER_ID = H.HGNUM_PARAMETER_ID
+  						   AND A.GNUM_HOSPITAL_CODE = H.GNUM_HOSPITAL_CODE  AND H.GNUM_ISVALID = 1),' ')</field>
+							
+					
+				</fields>
+				<primaryKey>
+					<field>A.HGNUM_DEPTUNITCODE</field>
+					<field>A.HGNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HGBT_DEPTUNITWISE_INV_MST</table>
+				</tables>
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby> ORDER BY A.HGNUM_SLNO </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+
+		<add-page>			
+			<static-page>/inpatient/master/AddUnitInvParaMappingMstACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/inpatient/master/ModifyUnitInvParaMappingMstACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

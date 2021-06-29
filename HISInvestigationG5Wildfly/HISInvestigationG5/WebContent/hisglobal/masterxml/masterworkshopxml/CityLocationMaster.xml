@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='CityLocationMaster'>
+		<common-values>
+			<master-name>CityLocationMaster</master-name>
+			<master-title>City Location Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>City Location Master</tableHeading> 
+				<list-table>GBLT_CITY_LOCATION_MST</list-table>
+				<columns>
+					 <column>City Location Name</column> 			  
+					 			  
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>initcap(A.GSTR_CITY_LOC_NAME) </field>			
+											
+					</fields>
+					<primaryKey>
+						<field>A.GNUM_CITY_LOC_CODE </field>						
+						<field>A.GNUM_HOSPITAL_CODE</field>						
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_CITY_LOCATION_MST</table>
+					</tables>
+					<condition>	
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>					         
+							<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+							<orderby> order by INITCAP(A.GSTR_CITY_LOC_NAME)</orderby>	
+                    </condition>                   
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<static-page>/registration/master/addCityLocationMaster.cnt</static-page>			
+		</add-page>
+
+		<modify-page>	
+   		    <static-page>/registration/master/modifyCityLocationMaster.cnt</static-page>		
+		</modify-page>
+	</master>	
+</master-config>

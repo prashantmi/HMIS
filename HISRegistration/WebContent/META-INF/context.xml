@@ -1,0 +1,16 @@
+
+
+
+
+<context> 
+
+<Resource maxWait="5000"
+ maxIdle="2" maxActive="4" 
+ password="nimsnew" 
+ username="nimsnew"
+  url="jdbc:edb://10.0.2.103:5444/nimsnew"
+   driverClassName="com.edb.Driver" 
+   type="javax.sql.DataSource" 
+   auth="Container" name="AHIS"/> 
+   <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    </context>

@@ -1,0 +1,90 @@
+/*
+ 
+Developer  : Pathan Basha 
+Created On 9-07-2015
+for Canned/Macro css
+ 
+*/
+
+
+
+#canned{
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 350px;
+    height: 400px;
+    margin-left: -100px;
+    margin-top: -60px;                 
+    padding: 10px;
+    border: 2px solid #000;
+    background: #E0EBEB;
+/*     	background-image: url(/HISInvestigationG5/hisglobal/images/bg.jpg); */
+ /*    z-index:1002;
+    overflow:visible;
+    padding: 4px 10px 4px 15px; 
+    border-radius: 20px;
+    box-shadow: 0 1px 0 #ccc inset;
+    transition: 500ms all ease;
+    outline: 0; */
+}
+
+
+
+#macro{
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 350px;
+    height: 400px;
+    margin-left: -100px;
+    margin-top: -60px;                 
+    padding: 10px;
+    border: 2px solid #000;
+    background: #E0EBEB;
+/*     	background-image: url(/HISInvestigationG5/hisglobal/images/bg.jpg); */
+/*     z-index:1002;
+    overflow:visible;
+    padding: 4px 10px 4px 15px; 
+    border-radius: 20px;
+    box-shadow: 0 1px 0 #ccc inset;
+    transition: 500ms all ease;
+    outline: 0; */
+}
+
+ 
+
+#cannedField{
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    width: 350px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -60px;                 
+    padding: 10px;
+    border: 2px solid #000;
+    background: #E0EBEB;
+ 
+}
+
+#macroField{
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    width: 350px;
+    height: 200px;
+    margin-left: -100px;
+    margin-top: -60px;                 
+    padding: 10px;
+    border: 2px solid #000;
+    background: #E0EBEB;
+
+}
+
+
+  

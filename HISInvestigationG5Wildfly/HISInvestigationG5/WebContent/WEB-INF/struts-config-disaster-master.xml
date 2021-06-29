@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="disasterTypeMasterFB" type="disaster.master.controller.fb.DisasterTypeMasterFB" />
+		<form-bean name="disasterInfoDtlMasterFB" type="disaster.master.controller.fb.DisasterInfoDtlMasterFB" />
+		<form-bean name="disasterAreaMstFB" type="disaster.master.controller.fb.DisasterAreaMstFB" />
+		<form-bean name="qrtMasterFB" type="disaster.master.controller.fb.QRTMasterFB" />
+		<form-bean name="disasterRoleMstFB" type="disaster.master.controller.fb.DisasterRoleMstFB" ></form-bean>
+	</form-beans>
+	
+	
+	<action-mappings>
+		
+		<action path="/disasterTypeMaster"
+				type="disaster.master.controller.action.DisasterTypeMasterACTION"
+				name="disasterTypeMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/master/disasterTypeMstAddMod.jsp">
+			<forward name="ADD" path="/master/disasterTypeMstAddMod.jsp" />	
+			<forward name="MODIFY" path="/master/disasterTypeMstAddMod.jsp" />	
+			<forward name="CANCEL" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+			
+		</action>
+		
+		<action path="/disasterInfoDtlMaster"
+				type="disaster.master.controller.action.DisasterInfoDtlMasterACTION"
+				name="disasterInfoDtlMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/master/disasterInfoDtlMstAddMod.jsp">
+			<forward name="ADD" path="/master/disasterInfoDtlMstAddMod.jsp" />	
+			<forward name="MODIFY" path="/master/disasterInfoDtlMstAddMod.jsp" />	
+			<forward name="CANCEL" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+			
+		</action>
+		
+		<action path="/disasterAreaMaster"
+				type="disaster.master.controller.action.DisasterAreaMstACTION"
+				name="disasterAreaMstFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/master/disasterAreaMst.jsp">
+			<forward name="NEW" path="/master/disasterAreaMst.jsp" />	
+			<forward name="MODIFY" path="/master/disasterAreaMst.jsp" />	
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+			
+		</action>
+		
+		<action path="/qrtMaster"
+				type="disaster.master.controller.action.QRTMasterACTION"
+				name="qrtMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/master/qrtMaster.jsp">
+			<forward name="ADD" path="/master/qrtMaster.jsp" />	
+			<forward name="MODIFY" path="/master/qrtMaster.jsp" />	
+			<forward name="CANCEL" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+			
+		</action>
+		
+		
+		<action path = "/master/disasterRoleMstAddModACT"
+			type = "disaster.master.controller.action.DisasterRoleMstACTION"
+			name = "disasterRoleMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/master/disasterRoleMstAddMod.jsp"	>
+			<forward name="ADD" path="/master/disasterRoleMstAddMod.jsp" />
+			<forward name="MODIFY" path="/master/disasterRoleMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+		
+</struts-config>	

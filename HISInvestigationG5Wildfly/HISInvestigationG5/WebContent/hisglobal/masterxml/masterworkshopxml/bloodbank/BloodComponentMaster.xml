@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Blood Component Master'>
+		<common-values>
+			<master-name>BloodComponentMaster</master-name>
+			<master-title>Blood Component Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Blood Component Master</tableHeading>
+			
+			<list-table>HBBT_BLD_COMPONENT_MST</list-table>
+
+			<columns>
+				<column>Component Name</column>
+				<column>Bag Expiry Days</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HBSTR_COMPONENT_NAME)</field>
+					<field>NVL(A.HBNUM_BAG_EXPIRY_DAYS ,0)</field>
+				</fields>
+				
+				<primaryKey>
+					<field>A.HBNUM_BLD_COMPONENT_ID</field>
+					<field>A.HBNUM_BLD_COMPONENT_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HBBT_BLD_COMPONENT_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby>ORDER BY(A.HBSTR_COMPONENT_NAME)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/bloodbank/masters/BldCompMstACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/bloodbank/masters/BldCompMstACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

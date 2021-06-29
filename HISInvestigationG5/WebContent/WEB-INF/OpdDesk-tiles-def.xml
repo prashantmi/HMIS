@@ -1,0 +1,1060 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<!-- ICD Main Master Tile Waste -->
+	<definition name="/icdTile" path="/opd/master/icdMasterLayout.jsp">
+		<put name="title" value="ICD Master" type="string" />
+		<put name="action" value="/masterWorkshop/mstHandlerListAction.cnt"/>  
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		  <!-- <put name="body" value="/opdIcdMasterTab" /> -->
+		<put name="body" value="/registration/transaction/tabViewLayout.jsp" /> 
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- ICD Master Tile 
+	<definition name="/opdIcdMasterTab" path="/registration/transaction/tabViewLayout.jsp">
+		<put name="body" value="/masterWorkshop/mstHandlerListAction.cnt" />
+		<put name="action" value="/masterWorkshop/mstHandlerListAction.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition> -->
+
+	<!-- ICD Master Main Modify Save Tile Waste -->
+	<definition name="/modifySaveTile" path="/opd/master/icdMasterLayout.jsp">
+		<put name="title" value="ICD Master" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="action" value="/masterWorkshop/mstHandlerModifyAction.cnt" />
+		<!-- <put name="body" value="/opdIcdMasterModifyTab" />  -->
+		<put name="body" value="/registration/transaction/tabViewLayout.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- ICD Master Modify Tile 
+	<definition name="/opdIcdMasterModifyTab" path="/registration/transaction/tabViewLayout.jsp">
+		<put name="body" value="/masterWorkshop/mstHandlerModifyAction.cnt" />
+		<put name="action" value="/masterWorkshop/mstHandlerModifyAction.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition> -->
+
+	<!-- ICD Master Main Save Tile Waste -->
+	<definition name="/addSaveTile" path="/opd/master/icdMasterLayout.jsp">
+		<put name="title" value="ICD Master" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="action" value="/masterWorkshop/mstHandlerAddAction.cnt" />
+		<!-- <put name="body" value="/opdIcdMasterAddTab" />  -->
+		<put name="body" value="/registration/transaction/tabViewLayout.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- ICD Master Add Tile
+	<definition name="/opdIcdMasterAddTab" path="/registration/transaction/tabViewLayout.jsp">
+		<put name="body" value="/masterWorkshop/mstHandlerAddAction.cnt" />
+		<put name="action" value="/masterWorkshop/mstHandlerAddAction.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition> -->
+
+
+	<!-- Waste -->
+	<definition name="/opdCommonDesk" path="/opd/transaction/opdCommonnDeskLayout.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="subHeader" value="/opd/transaction/deskSubHeader.jsp" />
+		<put name="leftMenu" value="/opd/leftMenuOpdDesk.cnt" />
+		<put name="rightMenu" value="/opd/righttMenuOpdDesk.cnt" />
+		<put name="body" value="/opd/opdDesk.cnt" />
+		<put name="footer" value="/opd/transaction/opdDeskFooter.jsp" />
+	</definition>
+
+	
+	<!-- ***** Start Opd Desk Tiles ***** -->
+		<!-- OPD Doctor Desk Tile -->
+	<definition name="/opdDesk" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdPatientDesk.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Next Visit Detail Tile -->
+	<definition name="/opdNextVisitDetailTile" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdNextVisitDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Next Visit Detail Tile New -->
+	<definition name="/opdNextVisitDetailTileNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdNextVisitDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Consultation In-box Tile -->
+	<definition name="/opdConsultationInbox" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/consultationInbox.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Consultation In-box Tile New -->
+	<definition name="/opdConsultationInboxNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/consultationInbox.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Diagnosis Tile -->
+	<definition name="/opdDiagnosis" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdDiagnosis.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Diagnosis Tile New -->
+	<definition name="/opdDiagnosisNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdDiagnosis.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- E Consultation Tile -->
+	<definition name="/opdConsultation" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdCosultation.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- E Consultation Tile New -->
+	<definition name="/opdConsultationNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdCosultation.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Templates Tile -->
+	<definition name="/DefaultTemplateTab" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdTemplateTab.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Templates Tile New -->
+	<definition name="/DefaultTemplateTabNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdTemplateTab.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+
+		<!-- Refer Patient Tile -->
+	<definition name="/opdReferPatient" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdReferPatient.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Allergies Tile -->
+	<definition name="/opdAllergies" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdEpisodeAllergies.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Allergies Tile New -->
+	<definition name="/opdAllergiesNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdEpisodeAllergies.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Change Treatment Category Tile -->
+	<definition name="/opdChangeTreatmentCategory" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdChangeTreatmentCategory.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Not in Use Next Visit Appointment Tile -->
+	<definition name="/opdNextVisitAppointment" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdNextVisitAppointment.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Not in use Service Requisition Tile -->
+	<definition name="/OpdServiceRequisition" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/OpdServiceRequisition.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Document Archival Tile -->
+	<definition name="/opdDocumentArchival" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdDocumentArchival.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Document Archival Tile New -->
+	<definition name="/opdDocumentArchivalNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdDocumentArchival.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Alerts Tile -->
+	<definition name="/patientAlertsTab" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/patientAlertsTile.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Image Examination Tile -->
+	<definition name="/ImageExaminationTab" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdImageExamTab.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Profile Tile -->
+	<definition name="/opdPatProfile" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdPatientProfile.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Profile Tile New -->
+	<definition name="/opdPatProfileNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdPatientProfile.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Audio Video Player Tile -->
+	<definition name="/opdAudioVideoPlayer" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdAudioVideoUpload.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+	<!-- Not in use Admission Request Tile -->
+	<definition name="/admissionRequest" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/ipd/transactions/AdmissionAdviceTransCNT.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Profile Tiles -->
+	<definition name="/opdPatientProfileInit" path="/opd/transaction/opdPatientProfileJsp/opdPatientProfileLayout.jsp">
+		<put name="title" value="Medical Certificate Issued" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/transaction/opdPatientProfileJsp/opdPatientProfile.jsp" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Treatment Detail Tile -->
+	<definition name="/treatmentDetailTab" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/patTreatmentDetailTile.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Treatment Detail Tile New -->
+	<definition name="/treatmentDetailTabNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/patTreatmentDetailTile.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Not in Use -->
+	<definition name="/opdPatientProfileDiagnosis" path="/opd/transaction/opdPatientProfileJsp/opdPatientProfileLayout.jsp">
+		<put name="title" value="Medical Certificate Issued" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/transaction/opdPatientProfileJsp/opdPatientProfileEpisodeDiagnosis.jsp" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Not in Use -->
+	<definition name="/opdPatientProfileAllergies" path="/opd/transaction/opdPatientProfileJsp/opdPatientProfileLayout.jsp">
+		<put name="title" value="Medical Certificate Issued" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/transaction/opdPatientProfileJsp/opdPatientProfileEpisodeAllergies.jsp" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Default -->
+	<definition name="/opdUnderConstructionDesk" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Blood Bag Request -->
+	<definition name="/bloodbankBagRequest" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/bloodbank/onlineOPDBloodRequest.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Consent Request -->
+	<definition name="/consentRequest" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/consentRequest.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Raise Investigation -->
+	<definition name="/raiseInvestigation" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/investigation/transaction/requisitionRaising.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Raise Investigation New -->
+	<definition name="/raiseInvestigationNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/investigation/transaction/requisitionRaising.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Change Unit Room -->
+	<definition name="/changePatientUnitRoom" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/changePatUnitRoom.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Generic Patient Alerts -->
+	<definition name="/genericPatientAlerts" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/genericPatientAlert.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Generic Patient Alerts New -->
+	<definition name="/genericPatientAlertsNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/genericPatientAlert.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- View Investigation -->
+	<definition name="/opdViewInvestigation" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/investigation/transaction/resultViewing.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- PAC Request -->
+	<definition name="/opdPACRequest" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/OpenPACReqList.cnt?isOnline=1" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- OT Request -->
+	<definition name="/opdOTRequest" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/OtListRaisingListingpage.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Admission Advice -->
+	<definition name="/opdAdmissionAdvice" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/ipd/transactions/AdmissionAdviceTransCNT.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Admission Advice New -->
+	<definition name="/opdAdmissionAdviceNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/ipd/transactions/AdmissionAdviceTransCNT.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Profiles Inbox -->
+	<definition name="/opdPatientProfilesInbox" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/patientProfileInbox.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Patient External Examination -->
+	<definition name="/externalExamination" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/externalExamination.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Patient External Examination New -->
+	<definition name="/externalExaminationNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/externalExamination.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Complaints -->
+	<definition name="/patientComplaints" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/patientComplaints.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Ante Natal Detail -->
+	<definition name="/opdAnteNatalDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/inpatient/antenatalDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Ante Natal Delivery Detail -->
+	<definition name="/opdAnteNatalDeliveryDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/inpatient/antenatalDeliveryDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- ANC New Natal Detail -->
+	<definition name="/opdANCNewNatalDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/inpatient/antenatalNeonatalDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- OT Record View -->
+	<definition name="/opdOTRecordViewing" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/AddOperationRecordEntry.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+	<!-- Patient Death Detail -->
+	<definition name="/opdPatDeathDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/registration/patientDeathDetail.cnt" />
+		<!--  <put name="body" value="/opd/casuality/deathDetail.cnt" />-->
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+	<!-- ANC Trimester Checklist Detail -->
+	<definition name="/opdANCTrimesterChecklistDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/inpatient/ancTrimesterChecklistDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition> 
+	
+	<!-- Tile Definition for EMR -->
+	<definition name="/patientEmrDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<!--  <put name="body" value="/mrd/emrDesk.cnt?hmode=CALLFROMDESK" />-->
+		<put name="body" value="/mrd/transaction/emrCallFromDesk.jsp" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition> 
+	
+	<!-- Patient Attendant Detail -->
+	<definition name="/patientAttendantDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/patAttendantDtl.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+	<!-- Patient Attendant Detail New -->
+	<definition name="/patientAttendantDetailNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/patAttendantDtl.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+	<!-- Chart Reporting -->
+	<definition name="/opdDeskGenericChartReporting" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/genericChartReporting.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+	<!-- Triage Detail -->
+	<definition name="/opdDeskTriageDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/casuality/triageDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+	
+		<!-- Estimate Certificate Request New -->
+	<definition name="/estimateRequest" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/estimateCertificateRequest.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+	
+	<!-- medical Certificate Request New -->
+	<definition name="/medicalCertificateRequestNew" path="/opd/transaction/opdDeskNew.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/mrd/medicalCertificateRequest.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+	<!-- ***** End Opd Desk Tiles ***** -->
+	
+	
+	<!-- ***** Casulaity Desk Tiles ***** -->
+		<!-- Casulaity Doctor Desk Tile -->
+	<definition name="/csultyDesk" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/csultyPatientDesk.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Default -->
+	<definition name="/csultyUnderConstructionDesk" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/underConstructionDesk.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	<definition name="/casulityNextVisitDetailTile" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdNextVisitDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+	<definition name="/policeExamReportGenDtlTile" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/registration/policeExaminationReportGenerationDtl.cnt?isDirectCall=DESK" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+	<definition name="/policeExamRequestDtlTile" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/registration/policeExaminationReqtDtl.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Diagnosis -->
+	<definition name="/csultyDiagnosis" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdDiagnosis.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Refer Patient -->
+	<definition name="/csultyReferPatient" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdReferPatient.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Allergies -->
+	<definition name="/csultyAllergies" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdEpisodeAllergies.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Treatment Category Change -->
+	<definition name="/csultyChangeTreatmentCategory" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdChangeTreatmentCategory.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- E Consultation -->
+	<definition name="/csultyEConsultation" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdCosultation.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Consultation Inbox -->
+	<definition name="/csultyConsultationInbox" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/consultationInbox.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Next Visit Appointment -->
+	<definition name="/csultyNextVisitAppointment" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdNextVisitAppointment.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Document Archival -->
+	<definition name="/csultyDocumentArchival" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdDocumentArchival.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Default Template Tab -->
+	<definition name="/csultyDefaultTemplateTab" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdTemplateTab.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Image Examination -->
+	<definition name="/csultyImageExaminationTab" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdImageExamTab.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Servive Requisition -->
+	<definition name="/csultyServiceRequisition" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/OpdServiceRequisition.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- MLC Detail -->
+	<definition name="/csultyMLCDetail" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/casuality/casualmlcDtl.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Triage Detail -->
+	<definition name="/csultyTriageDetail" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/casuality/triageDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Belongings -->
+	<definition name="/csultyPatBelongingsDetail" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdCasualPatientBelonging.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Profile -->
+	<definition name="/csultyPatProfile" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdPatientProfile.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Audio Video Player -->
+	<definition name="/csultyAudioVideoPlayer" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdAudioVideoUpload.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Death Detail -->
+	<definition name="/csultyPatDeathDetail" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/registration/patientDeathDetail.cnt" />
+		<!--  <put name="body" value="/opd/casuality/deathDetail.cnt" />-->
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Change Unit Room -->
+	<definition name="/csultyChangePatientUnitRoom" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/changePatUnitRoom.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Blood Bag Request -->
+	<definition name="/csultyBloodbankBagRequest" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/bloodbank/onlineOPDBloodRequest.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Raise Investigation -->
+	<definition name="/csultyRaiseInvestigation" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/investigation/transaction/requisitionRaising.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- View Investigation -->
+	<definition name="/csultyViewInvestigation" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/investigation/transaction/resultViewing.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- PAC Request -->
+	<definition name="/csultyPACRequest" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/OpenPACReqList.cnt?isOnline=1" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- OT Request -->
+	<definition name="/csultyOTRequest" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/OtListRaisingListingpage.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Admission Advice -->
+	<definition name="/csultyAdmissionAdvice" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/ipd/transactions/AdmissionAdviceTransCNT.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Generic Patient Alerts -->
+	<definition name="/csultyGenericPatientAlerts" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/genericPatientAlert.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Treatment Detail Tile -->
+	<definition name="/csultyTreatmentDetailTab" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/patTreatmentDetailTile.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- OT Record View -->
+	<definition name="/csultyOTRecordViewing" path="/opd/transaction/csultyDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/AddOperationRecordEntry.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Not in Use -->
+	<definition name="/CasualityMLCDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/casuality/casualmlcDtl.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Not in Use -->
+	<definition name="/CasualityTriageDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/casuality/triageDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Not in Use -->
+	<definition name="/CasualityPatBelongingsDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdCasualPatientBelonging.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Not in Use -->
+	<definition name="/CasualityPatDeathDetail" path="/opd/transaction/opdDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/casuality/deathDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	<!-- ***** End Casulaity Desk Tiles ***** -->
+	
+
+	<!-- Report Tiles -->
+	<definition name="/opdReportInitial" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="OPD Pattient Referral Detail" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/initialAction.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+	<definition name="/opdPatReferralDtlReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="OPD Pattient Referral Detail" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdPatReferralDtlReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDeptWiseReferPatFromReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Department Wise OPD Pattient Referral Detail From" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptWiseReferPatFromReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDeptWiseReferPatToReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Department Wise OPD Pattient Referral Detail To" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptWiseReferPatToReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDeptUnitCatWiseStatReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Department Unit Category Wise OPD Statistical Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptUnitCatWiseStatReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDeptUnitUserWiseStatReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Department Unit User Wise OPD Statistical Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptUnitUserWiseStatReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdCountOldPatNextVisitReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Count of Old Patient on the Basis of Next Visit Date Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdCountOldPatNextVisitReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDeptUnitDiagnosisStatReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Department Unit Diagnosis Statistical Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptUnitDiagnosisStatReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDeptUnitRegCatPatCatReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Department Unit Statistical Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptUnitRegCatPatCatReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdReferredPatientListReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Referred Patient Listing Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdReferredPatientListReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDeptWiseDiseaseCodeListReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Department Wise ICD/Disease Code Listing Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptWiseDiseaseCodeListReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDiscrepancyReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Discrepancy Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDiscrepancyReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDeptUnitEpisodeStatusPatListReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Listing of Patient Episode in Department" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptUnitEpisodeStatusPatListReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdRosterReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="OPD Roster Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdRosterReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdDeptUnitDoctorWiseReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Department Unit Doctor Wise Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptUnitDoctorWiseReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdCaseSheetReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="OPD Case Sheet" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdCaseSheetReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/opdMedicalCertificateIssuedReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Medical Certificate Issued" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdMedicalCertificateIssuedReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+	
+	<definition name="/morbidityReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Morbidity Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/morbidityReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<!--  *** Hospital Disease Master Tile *** -->
+	
+	<definition name="/hospitalDiseaseTile" path="/opd/master/hospitalDiseaseMasterLayout.jsp">
+		<put name="title" value="Hospital Disease Master" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<!-- 	<put name="body" value="/hospitalDiseaseMasterTab" />  -->
+		<put name="action" value="/masterWorkshop/mstHandlerListAction.cnt" />
+		<put name="body" value="/registration/transaction/tabViewLayout.jsp" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+	<!-- <definition name="/hospitalDiseaseMasterTab" path="/registration/transaction/tabViewLayout.jsp">
+		<put name="body" value="/masterWorkshop/mstHandlerListAction.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>  -->
+	
+	<definition name="/modifySaveDiseaseTile" path="/opd/master/hospitalDiseaseMasterLayout.jsp">
+		<put name="title" value="Hospital Disease Master" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<!--  <put name="body" value="/hospitalDiseaseMasterModifyTab" /> -->
+		<put name="action" value="/masterWorkshop/mstHandlerModifyAction.cnt" />
+		<put name="body" value="/registration/transaction/tabViewLayout.jsp" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+	<!-- <definition name="/hospitalDiseaseMasterModifyTab" path="/registration/transaction/tabViewLayout.jsp">
+		<put name="body" value="/masterWorkshop/mstHandlerModifyAction.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>  -->
+
+	<definition name="/addSaveDiseaseTile" path="/opd/master/hospitalDiseaseMasterLayout.jsp">
+		<put name="title" value="ICD Master" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<!-- <put name="body" value="/hospitalDiseaseMasterAddTab" /> -->
+		<put name="action" value="/masterWorkshop/mstHandlerAddAction.cnt" />
+		<put name="body" value="/registration/transaction/tabViewLayout.jsp" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+	<!-- <definition name="/hospitalDiseaseMasterAddTab" path="/registration/transaction/tabViewLayout.jsp">
+		<put name="body"
+			value="/masterWorkshop/mstHandlerAddAction.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>  -->
+	
+	<!-- **** End hospital Disease Master Tile ********** -->
+	
+	<definition name="/opdDeptUnitWiseStatReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Department Unit Wise OPD Statistical Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDeptUnitWiseStatReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+	<definition name="/numberOfPatientImageUploadedReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Number of Patient Image Uploaded" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/numberOfPatientImageUploadedReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+	<definition name="/opdPatientListingReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="OPD Patient Listing" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdPatientListingReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+	<definition name="/patientListingReportForOpdVisitdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Patient listing report for opd visit" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/patientListingReportForOpdVisit.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+	<definition name="/averageStayTimeOfThePatientdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Average Stay time of the patient" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/averageStayTimeOfThePatient.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+	<definition name="/equipmentIssueReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Equipment Issue Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/equipmentIssueReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+
+	<definition name="/diagnosisWiseOpdAndIpdReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Diagnosis Wise Opd And Ipd Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/diagnosisWiseOpdAndIpdReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+	
+	<definition name="/countNoOfPatientOfAnoRectangleDiseaseReportdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="Count No Of Patients Of AnoRectangle Disease Report" type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/countNoOfPatientOfAnoRectangleDiseaseReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+	
+	<!-- OPD Disease Wise number of patients who attended (ALL) -->
+<definition name="/opdDiseaseWiseNoOfPatAttendeddefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="OPD Disease Wise Number Of Patients Who Attended(All) " type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDiseaseWiseNoOfPatAttendedReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>	
+	
+	<!-- OPD Disease Wise number of patients who attended (INDOOROUTDOOR) -->
+<definition name="/opdDiseaseWiseNoOfPatAttendedInOutdefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="OPD Disease Wise number of patients who attended(Indoor/Outdoor) " type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdDiseaseWiseNoOfPatAttendedInOutReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>
+	
+		<!-- OPD Patient Attended/Waiting -->
+<definition name="/opdPatientAttendedReportDefinition" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="OPD Patient Attended/Waiting " type="string" />
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/report/opdPatientAttendedReport.cnt" />
+		<put name="footer" value="/opd/reports/jsp/reportFooter.jsp" />
+	</definition>	
+	
+	
+	
+	
+	<!-- ***** Start Opd  Bay Desk Tiles ***** -->
+	
+	
+	
+		<!-- Next Visit Detail Tile New For Bay Desk -->
+	<definition name="/BayNextVisitDetailTileNew" path="/opd/transaction/opdBayDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdNextVisitDetail.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+
+		<!-- Templates Tile New For Bay Desk -->
+	<definition name="/bayTemplateTabNew" path="/opd/transaction/opdBayDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdTemplateTab.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Patient Treatment Detail Tile New for Bay Desk-->
+	<definition name="/bayTreatmentDetailTabNew" path="/opd/transaction/opdBayDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/patTreatmentDetailTile.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+		<!-- Blood Bag Request For Bay Desk-->
+	<definition name="/bayBloodbankBagRequest" path="/opd/transaction/opdBayDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/bloodbank/onlineOPDBloodRequest.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Raise Investigation New For Bay Desk-->
+	<definition name="/bayRaiseInvestigationNew" path="/opd/transaction/opdBayDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/investigation/transaction/requisitionRaising.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+
+		<!-- Admission Advice New for Bay Desk-->
+	<definition name="/bayAdmissionAdviceNew" path="/opd/transaction/opdBayDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/ipd/transactions/AdmissionAdviceTransCNT.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+	
+	<!-- *******End of OPD Bay Desk tiles********** -->
+	
+		<!-- OPD Doctor Desk Tile -->
+	<definition name="/opdBayDesk" path="/opd/transaction/opdBayDesk.jsp">
+		<put name="header" value="/opd/transaction/blank.jsp" />
+		<put name="body" value="/opd/opdPatientBayDesk.cnt" />
+		<put name="footer" value="/opd/transaction/blank.jsp" />
+	</definition>
+</tiles-definitions>

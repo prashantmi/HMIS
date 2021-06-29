@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='AbortionMethodMaster'>
+        <common-values>
+           <master-name>'AbortionMethodMaster'</master-name>
+           <master-title>Abortion Method Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Mortuary Area Master</tableHeading>
+           <list-table>HANCT_ABORTION_METHOD_MST</list-table>
+           
+            <controls>
+				<control type="combo" index="0">
+					<label>Abortion Type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>A.HANCSTR_ABORTION_TYPE</text-field>
+								<value-field>A.HANCNUM_ABORTION_TYPE_ID</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HANCT_ABORTION_TYPE_MST</table>
+							</tables>
+							<condition>
+								<general>A.GNUM_HOSPITAL_CODE=100 and A.GNUM_ISVALID=1 order by A.HANCSTR_ABORTION_TYPE </general>	
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+           
+           <columns>
+              <column>Abortion Method</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HANCSTR_ABORTION_METHOD)</field>
+	    		 
+			  </fields>
+				<primaryKey>
+					<field>A.HANCNUM_ABORTION_METHOD_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HANCNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HANCT_ABORTION_METHOD_MST</table>
+					<table alias='B'>HANCT_ABORTION_TYPE_MST</table>
+				</tables>
+				<condition>					 
+					<isvalid-field>A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID</isvalid-field>
+					<general> A.HANCNUM_ABORTION_TYPE_ID=B.HANCNUM_ABORTION_TYPE_ID and A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE and A.GNUM_ISVALID=B.GNUM_ISVALID and  </general>
+					<general-inactive> A.HANCNUM_ABORTION_TYPE_ID=B.HANCNUM_ABORTION_TYPE_ID and A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1 and   </general-inactive>
+					<dependent>
+						<clause> A.HANCNUM_ABORTION_TYPE_ID = #0 </clause>
+				    </dependent>
+					<orderby> ORDER BY(A.HANCSTR_ABORTION_METHOD) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/inpatient/master/AbortionMethodMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/inpatient/master/AbortionMethodMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

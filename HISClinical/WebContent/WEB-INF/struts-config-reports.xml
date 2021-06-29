@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC 
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+    <form-beans>
+        <form-bean name="commonReportFB" type="hisglobal.presentation.ReportFB"/>		
+        <form-bean name="ageWiseReportRegFB" type="registration.reports.controller.fb.AgeWiseRegFB"/>		
+        <form-bean name="broughtDeadPatLstFB" type="registration.reports.controller.fb.BroughtDeadPatLstFB"/>		
+        <form-bean name="emergencyRegisteredPatFB" type="registration.reports.controller.fb.EmergencyRegisteredPatFB"/>		
+        <form-bean name="groupWiseCashCollFB" type="registration.reports.controller.fb.GroupWiseCashCollFB"/>
+        <form-bean name="mlcPatientListFB" type="registration.reports.controller.fb.MlcPatientListFB"/>	
+        <form-bean name="broughtDeadPatFB" type="registration.reports.controller.fb.BroughtDeadPatFB"/>	
+        <form-bean name="pinCodeWiseFB" type="registration.reports.controller.fb.PinCodeWiseFB"/>
+        <form-bean name="departmentWiseRegPatFB" type="registration.reports.controller.fb.DepartmentWiseRegPatFB"/>
+        <form-bean name="DepartmentWiseTotalPatFB" type="registration.reports.controller.fb.DepartmentWiseTotalPatFB"/>
+        <form-bean name="RoomWiseTotalPatFB" type="registration.reports.controller.fb.RoomWiseTotalPatFB"/>
+        <form-bean name="userWiseCashCollFB" type="registration.reports.controller.fb.UserWiseCashCollFB"/>
+        <form-bean name="userWisePatListFB" type="registration.reports.controller.fb.UserWisePatListFB"/>
+        <form-bean name="userWiseRegFB" type="registration.reports.controller.fb.UserWiseRegFB"/>
+        <form-bean name="totalPatStatFB" type="registration.reports.controller.fb.TotalPatStatFB"/>         
+   		<form-bean name="categoryWisePatRegFB" type="registration.reports.controller.fb.CategoryWisePatRegFB"/>
+   		<form-bean name="emergencyFB" type="registration.reports.controller.fb.EmergencyPatListFB"/>
+  		<form-bean name="ageWiseDeptWiseRegPatFB" type="registration.reports.controller.fb.AgeWiseDeptWiseRegPatFB"/>
+   		<form-bean name="DeptWisePatCatWiseFB" type="registration.reports.controller.fb.DeptWisePatientCatWiseFB"/>
+    	<form-bean name="deptWiseRegCategoryWiseFB" type="registration.reports.controller.fb.DeptWiseRegCategoryWiseFB" />
+    	<form-bean name="deptUnitWiseTotalPatientFB" type="registration.reports.controller.fb.DeptUnitWiseTotalPatientFB"/>
+    	<form-bean name="deptUnitWiseCashCollectionFB" type="registration.reports.controller.fb.DeptUnitWiseCashCollectionFB"/>
+    	<form-bean name="pinCodeWiseStatisticsFB" type="registration.reports.controller.fb.PinCodeWiseStatisticsFB"/>
+    	<form-bean name="newPatientsRegistrationFB" type="registration.reports.controller.fb.NewPatientsRegistrationFB"/>
+    	<form-bean name="newOldTotalPatOPDWiseFB" type="registration.reports.controller.fb.NewOldTotalPatOPDWiseFB"/>
+    	<form-bean name="hospitalPatStatFB" type="registration.reports.controller.fb.HospitalPatStatFB"/>
+    	<form-bean name="patRegUserWiseFB" type="registration.reports.controller.fb.PatRegUserWiseFB"/>
+    	<form-bean name="hospitalCashColDetailFB" type="registration.reports.controller.fb.HospitalCashColDetailFB"/>
+    	<form-bean name="hospitalCashColSummaryFB" type="registration.reports.controller.fb.HospitalCashColSummaryFB"/>
+    	<form-bean name="deptWiseNewRegFB" type="registration.reports.controller.fb.DeptWiseNewRegFB"/>
+    	
+    	<form-bean name="anonymousPatientPgiFB" type="registration.reports.controller.fb.AnonymousPatientPgiFB"/>
+    	<form-bean name="anonymousPatAndWhoBroughtFB" type="registration.reports.controller.fb.AnonymousPatAndDetWhoBroughtFB"/>
+    	<form-bean name="mlcPatientSListPgiFB" type="registration.reports.controller.fb.MlcPatientsListPgiFB"/>
+    	<form-bean name="followUpPatientsFB" type="registration.reports.controller.fb.FollowUpPatientsFB"/>
+    	<form-bean name="poorFreePatientsFB" type="registration.reports.controller.fb.PoorFreePatientsFB"/>
+    	<form-bean name="serviceUnitWiseNewRegFB" type="registration.reports.controller.fb.ServiceUnitWiseNewRegFB"/>
+    	<form-bean name="mlcPoliceInfoFB" type="registration.reports.controller.fb.MlcPoliceInfoProformaFB"/>
+    	<form-bean name="specialClinicPatStatFB" type="registration.reports.controller.fb.SpecialClinicPatStatisticsFB"/>
+    	<form-bean name="patientBelongingDtlFB" type="registration.reports.controller.fb.PatientBelongingDtlFB"/>
+    	<form-bean name="serviceUnitWiseRevisitPatFB" type="registration.reports.controller.fb.ServiceUnitWiseRevisitPatFB"/>
+    	<form-bean name="shiftWiseCasesByCmoReportFB" type="registration.reports.controller.fb.ShiftWiseCasesByCmoReportFB"/>
+    	<form-bean name="diagnosisStatLocationWiseFB" type="registration.reports.controller.fb.DiagnosisStatLocationWiseFB"/>
+    	<form-bean name="deptUnitRoomConsultantReportFB" type="registration.reports.controller.fb.DeptUnitRoomConsultantReportFB"/>
+    	
+    	
+    </form-beans>    
+    
+	    
+    <action-mappings>   
+
+		
+        <action path="/report"        
+            type="hisglobal.presentation.CommonReportACTION"
+            name="commonReportFB"            
+            scope="request" 
+            parameter="mode">
+            
+            <forward name="SERVICEUNITWISEREVISITPATREPORT" path="/serviceUnitWiseRevisitPatReportdefinition"/>
+            <forward name="SERVICEUNITWISEREVISITPATREPORTVIEW" path="/report/serviceUnitWiseRevisitPatReport.cnt"/>
+            <forward name="PATIENTBELONGINGDTLREPORT" path="/patientBelongingDtlReportdefinition"/>
+            <forward name="PATIENTBELONGINGDTLREPORTVIEW" path="/report/patientBelongingDtlReport.cnt"/>
+            <forward name="SPECIALCLINICPATSTATREPORT" path="/specialClinicPatStatisticsReportdefinition"/>
+            <forward name="SPECIALCLINICPATSTATREPORTVIEW" path="/report/specialClinicPatStatisticsReport.cnt"/>
+            
+            <forward name="MLCPOLICEINFOPROFORMAREPORT" path="/mlcPoliceInfoProformaReportdefinition"/>
+            <forward name="MLCPOLICEINFOPROFORMAREPORTVIEW" path="/report/mlcPoliceInfoProformaReport.cnt"/>
+            
+            <forward name="SERVICEUNITWISENEWREGREPORT" path="/serviceUnitWiseNewRegReportdefinition"/>
+            <forward name="SERVICEUNITWISENEWREGREPORTVIEW" path="/report/serviceUnitWiseNewRegReport.cnt"/>            
+            <forward name="POORFREEPATIENTSREPORT" path="/poorFreePatientsReportdefinition"/>
+            <forward name="POORFREEPATIENTSREPORTVIEW" path="/report/poorFreePatientsReport.cnt"/>            
+            <forward name="FOLLOWUPPATIENTSREPORT" path="/followUpPatientsReportdefinition"/>
+            <forward name="FOLLOWUPPATIENTSREPORTVIEW" path="/report/followUpPatientsReport.cnt"/>
+            <forward name="MLCPATIENTSLISTPGIREPORT" path="/mlcPatientSListPgiReportdefinition"/>
+            <forward name="MLCPATIENTSLISTPGIREPORTVIEW" path="/report/mlcPatientSListPgiReport.cnt"/>
+            <forward name="ANONYMOUSPATANDDETWHOBROUGHTREPORT" path="/anonymousPatAndDetWhoBroughtReportdefinition"/>
+            <forward name="ANONYMOUSPATANDDETWHOBROUGHTREPORTVIEW" path="/report/anonymousPatAndDetWhoBroughtReport.cnt"/>
+            <forward name="ANONYMOUSPATIENTPGIREPORT" path="/anonymousPatientPgiReportdefinition"/>
+            <forward name="ANONYMOUSPATIENTPGIREPORTVIEW" path="/report/anonymousPatientPgiReport.cnt"/>
+            
+           <forward name="DEPTWISENEWREGREPORT" path="/deptWiseNewRegReportdefinition"/>
+           <forward name="DEPTWISENEWREGREPORTVIEW" path="/report/deptWiseNewRegReport.cnt"/>
+           <forward name="HOSPITALCASHCOLSUMMARYREPORT" path="/hospitalCashColSummaryReportdefinition"/>
+           <forward name="HOSPITALCASHCOLSUMMARYREPORTVIEW" path="/report/hospitalCashColSummaryReport.cnt"/>
+           <forward name="HOSPITALCASHCOLDETAILREPORT" path="/hospitalCashColDetailReportdefinition"/> 
+           <forward name="HOSPITALCASHCOLDETAILREPORTVIEW" path="/report/hospitalCashColDetailReport.cnt"/> 
+           <forward name="PATREGUSERWISEREPORT" path="/patRegUserWiseReportdefinition"/>
+           <forward name="PATREGUSERWISEREPORTVIEW" path="/report/patRegUserWiseReport.cnt"/>           
+           <forward name="HOSPITALPATSTATREPORT" path="/hospitalPatStatReportdefinition"/>
+           <forward name="HOSPITALPATSTATREPORTVIEW" path="/report/hospitalPatStatReport.cnt"/>           
+           <forward name="NEWOLDTOTALPATOPDWISEREPORT" path="/newOldTotalPatOPDWiseReportdefinition"/>
+           <forward name="NEWOLDTOTALPATOPDWISEREPORTVIEW" path="/report/newOldTotalPatOPDWiseReport.cnt"/>
+           <forward name="NEWPATIENTSREGISTRATIONREPORT" path="/newPatientsRegistrationReportdefinition"/>
+           <forward name="NEWPATIENTSREGISTRATIONREPORTVIEW" path="/report/newPatientsRegistrationReport.cnt"/>
+           <forward name="PINCODEWISESTATISTICSREPORT" path="/pinCodeWiseStatisticsReportdefinition"/>
+           <forward name="PINCODEWISESTATISTICSREPORTVIEW" path="/report/pinCodeWiseStatisticsReport.cnt"/>
+           <forward name="DEPTUNITWISECASHCOLLECTIONREPORT" path="/deptUnitWiseCashCollectionReportdefinition"/>
+           <forward name="DEPTUNITWISECASHCOLLECTIONREPORTVIEW" path="/report/deptUnitWiseCashCollectionReport.cnt"/>
+           <forward name="DEPTUNITWISETOTALPATIENTREPORT" path="/deptUnitWiseTotalPatientReportdefinition"/>
+           <forward name="DEPTUNITWISETOTALPATIENTREPORTVIEW" path="/report/deptUnitWiseTotalPatientReport.cnt"/>
+           <forward name="DEPTWISEPATCATWISEREPORT" path="/deptWisePatCatWiseReportdefinition"/>
+  		   <forward name="DEPTWISEPATCATWISEREPORTVIEW" path="/report/deptWisePatCatWiseReport.cnt"/> 
+  		   <forward name="AGEWISEDEPTWISEREGPATREPORT" path="/ageWiseDeptWiseRegPatReportdefination"/>
+           <forward name="AGEWISEDEPTWISEREGPATREPORTVIEW" path="/report/ageWiseDeptWiseRegPatReport.cnt"/>
+           <forward name="EMERGENCYREPORT" path="/emergencyReportdefination"/>
+           <forward name="EMERGENCYREPORTVIEW" path="/report/emergencyReport.cnt"/>
+           <forward name="UNKNOWNPATIENTREPORT" path="/unknownPatientReportdefinition"/>
+           <forward name="UNKNOWNPATIENTREPORTVIEW" path="/report/unknownPatientReport.cnt"/>
+           <forward name="MLCPATIENTLISTINGBYALLCMOREPORT" path="/mlcPatientListingByAllCmoReportdefinition"/>
+           <forward name="MLCPATIENTLISTINGBYALLCMOREPORTVIEW" path="/report/mlcPatientListingByAllCMOReport.cnt"/>
+		   <forward name="AGEWISEREPORT" path="/ageWiseReportdefinition"/>
+  		   <forward name="AGEWISEREPORTVIEW" path="/report/ageWiseReport.cnt"/>
+  		   <forward name="BROUGHTDEADPATIENTREPORT" path="/broughtDeadPatReportdefinition"/>
+  		   <forward name="BROUGHTDEADPATIENTREPORTVIEW" path="/report/broughtDeadPatReport.cnt"/>
+  		   <forward name="EMERGENCYREGISTEREDPATIENTREPORT" path="/emergencyRegisteredPatReportdefinition"/>
+  		   <forward name="EMERGENCYREGISTEREDPATIENTREPORTVIEW" path="/report/emergencyRegisteredPatReport.cnt"/>	
+  		   <forward name="GROUPWISECASHCOLLECTIONREPORT" path="/groupWiseCashCollReportdefinition"/>
+  		   <forward name="GROUPWISECASHCOLLECTIONREPORTVIEW" path="/report/groupWiseCashCollReport.cnt"/>
+  		   <forward name="MLCPATIENTLISTREPORT" path="/mlcPatientListReportdefinition"/>
+  		   <forward name="MLCPATIENTLISTREPORTVIEW" path="/report/mlcPatientListReport.cnt"/>	
+  		   <forward name="PINCODEWISEREPORT" path="/pinCodeWiseReportdefinition"/>
+  		   <forward name="PINCODEWISEREPORTVIEW" path="/report/pinCodeWiseReport.cnt"/>  
+  		   <forward name="DEPARTMENTWISEREGPATREPORT" path="/departmentWiseRegPatReportdefinition"/>
+  		   <forward name="DEPARTMENTWISEREGPATREPORTVIEW" path="/report/departmentWiseRegPatReport.cnt"/> 
+  		   <forward name="DEPARTMENTWISETOTALPATREPORT" path="/departmentWiseTotalPatReportdefinition"/>
+  		   <forward name="DEPARTMENTWISETOTALPATREPORTVIEW" path="/report/departmentWiseTotalPatReport.cnt"/>
+  		   <forward name="ROOMWISETOTALPATREPORT" path="/roomWiseTotalPatReportdefinition"/>
+  		   <forward name="ROOMWISETOTALPATREPORTVIEW" path="/report/roomWiseTotalPatReport.cnt"/>
+  		   <forward name="USERWISECASHCOLLREPORT" path="/userWiseCashCollReportdefinition"/>
+  		   <forward name="USERWISECASHCOLLREPORTVIEW" path="/report/userWiseCashCollReport.cnt"/>
+  		   <forward name="TOTALPATSTATREPORT" path="/totalPatStatReportdefinition"/>
+  		   <forward name="TOTALPATSTATREPORTVIEW" path="/report/totalPatStatReport.cnt"/> 
+  		   <forward name="USERWISEPATLISTREPORT" path="/userWisePatListReportdefinition"/>
+  		   <forward name="USERWISEPATLISTREPORTVIEW" path="/report/userWisePatListReport.cnt"/> 
+  		   <forward name="USERWISEREGREPORT" path="/userWiseRegReportdefinition"/>
+  		   <forward name="USERWISEREGREPORTVIEW" path="/report/userWiseRegReport.cnt"/>   
+  		   <forward name="CANCEL" path="/../startup/initPage.jsp"/>   
+  		   <forward name="CATEGORYWISEREPORT" path="/categoryWiseReportdefinition"/>
+           <forward name="CATEGORYWISEREPORTVIEW" path="/report/categoryWiseReport.cnt"/>	
+           <forward name="DEPTWISEREGCATEGORYWISEREPORT" path="/deptWiseRegCategoryWiseReportdefinition"/>
+           <forward name="DEPTWISEREGCATEGORYWISEREPORTVIEW" path="/report/deptWiseRegCategoryWiseReport.cnt"/>	   
+           <forward name="SHIFTWISECAESEBYCMOREPORT" path="/shiftWiseCasesByCmoReportdefinition"/>
+           <forward name="SHIFTWISECAESEBYCMOREPORTVIEW" path="/report/shiftWiseCasesByCmoReport.cnt"/>	   
+           <forward name="DIAGNOSISSTATLOCATIONWISEREPORT" path="/diagnosisStatLocationWiseReportdefinition"/>
+           <forward name="DIAGNOSISSTATLOCATIONWISEREPORTVIEW" path="/report/diagnosisStatLocationWiseReport.cnt"/>	   
+           <forward name="DEPTUNITROOMCONSULTANTTIMINGREPORT" path="/deptUnitRoomConsultantTimingReportdefinition"/>
+           <forward name="DEPTUNITROOMCONSULTANTTIMINGREPORTVIEW" path="/report/deptUnitRoomConsultantTimingReport.cnt"/>	   
+       </action> 
+       	 
+       	 
+       	 <action path="/report/serviceUnitWiseRevisitPatReport"
+       	 		 type="registration.reports.controller.action.ServiceUnitWiseRevisitPatACTION"
+       	 		 name="serviceUnitWiseRevisitPatFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/serviceUnitWiseRevisitPat.jsp"/>
+       	 </action>	
+       	 
+       	 <action path="/report/patientBelongingDtlReport"
+       	 		 type="registration.reports.controller.action.PatientBelongingDtlACTION"
+       	 		 name="patientBelongingDtlFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/patientBelongingDtl.jsp"/>
+       	 </action>	
+       	 
+       	 <action path="/report/specialClinicPatStatisticsReport"
+       	 		 type="registration.reports.controller.action.SpecialClinicPatStatisticsACTION"
+       	 		 name="specialClinicPatStatFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/specialClinicPatStatistics.jsp"/>
+       	 </action>		 
+       	 
+       	 <action path="/report/mlcPoliceInfoProformaReport"
+       	 		 type="registration.reports.controller.action.MlcPoliceInfoProformaACTION"
+       	 		 name="mlcPoliceInfoFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/mlcPoliceInfoProforma.jsp"/>
+       	 </action>		 
+     
+       	 <action path="/report/serviceUnitWiseNewRegReport"
+       	 		 type="registration.reports.controller.action.ServiceUnitWiseNewRegACTION"
+       	 		 name="serviceUnitWiseNewRegFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/serviceUnitWiseNewReg.jsp"/>	 	 
+       	 </action>	
+     
+       	 <action path="/report/poorFreePatientsReport"
+       	 		 type="registration.reports.controller.action.PoorFreePatientsACTION"
+       	 		 name="poorFreePatientsFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/poorFreePatients.jsp"/>	 
+       	 </action>		
+     
+       	 <action path="/report/followUpPatientsReport"
+       	 		 type="registration.reports.controller.action.FollowUpPatientsACTION"
+       	 		 name="followUpPatientsFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/followUpPatients.jsp"/>	 
+       	 </action>	
+     
+       	 <action path="/report/mlcPatientSListPgiReport"
+       	 		 type="registration.reports.controller.action.MlcPatientsListPgiACTION"
+       	 		 name="mlcPatientSListPgiFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/mlcPatientsListPgi.jsp"/>	 
+       	 </action>
+     
+       	 <action path="/report/anonymousPatAndDetWhoBroughtReport"
+       	 		 type="registration.reports.controller.action.AnonymousPatAndDetWhoBroughtACTION"
+       	 		 name="anonymousPatAndWhoBroughtFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/anonymousPatAndDetWhoBrought.jsp"/>	 
+       	 </action>
+       
+       	 <action path="/report/anonymousPatientPgiReport"
+       	 		 type="registration.reports.controller.action.AnonymousPatientPgiACTION"
+       	 		 name="anonymousPatientPgiFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/anonymousPatientPgi.jsp"/>	 
+       	 </action>
+      
+       	 <action path="/report/deptWiseNewRegReport"
+       	 		 type="registration.reports.controller.action.DeptWiseNewRegACTION"
+       	 		 name="deptWiseNewRegFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/deptWiseNewReg.jsp"/>	 
+       	 </action>
+       
+       	 <action path="/report/hospitalCashColSummaryReport"
+       	 		 type="registration.reports.controller.action.HospitalCashColSummaryACTION"
+       	 		 name="hospitalCashColSummaryFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/hospitalCashColSummary.jsp"/>	 
+       	 </action>
+    
+       	 <action path="/report/hospitalCashColDetailReport"
+       	  		 type="registration.reports.controller.action.HospitalCashColDetailACTION"
+       	  		 name="hospitalCashColDetailFB"
+       	  		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/hospitalCashColDetail.jsp"/>		 
+       	 </action>
+      
+       	 <action path="/report/patRegUserWiseReport"
+       	 		 type="registration.reports.controller.action.PatRegUserWiseACTION"
+       	 		 name="patRegUserWiseFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/patRegUserWise.jsp"/>		 
+       	 </action>
+     
+       	 <action path="/report/hospitalPatStatReport"
+       	 		 type="registration.reports.controller.action.HospitalPatStatACTION"
+       	 		 name="hospitalPatStatFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/hospitalPatStat.jsp"/>		 
+       	 </action>	
+	
+		 <action path="/report/newOldTotalPatOPDWiseReport"
+		 		 type="registration.reports.controller.action.NewOldTotalPatOPDWiseACTION"
+		 		 name="newOldTotalPatOPDWiseFB"
+		 		 scope="request"
+         		 parameter="reportMode">
+         		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+         	<forward name="NEW" path="/reports/jsp/newOldTotalPatOPDWise.jsp"/>	 
+		 </action>       
+        
+         <action path="/report/newPatientsRegistrationReport"
+         		 type="registration.reports.controller.action.NewPatientsRegistrationACTION"
+         		 name="newPatientsRegistrationFB"
+         		 scope="request"
+         		 parameter="reportMode">
+         		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+         	<forward name="NEW" path="/reports/jsp/newPatientsRegistration.jsp"/>	 
+         </action>
+      
+       	 <action path="/report/pinCodeWiseStatisticsReport"
+       	 		 type="registration.reports.controller.action.PinCodeWiseStatisticsACTION"
+       	 		 name="pinCodeWiseStatisticsFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/pinCodeWiseStatistics.jsp"/>
+       	 </action>
+       	
+       	 <action path="/report/deptUnitWiseCashCollectionReport"
+       	 		 type="registration.reports.controller.action.DeptUnitWiseCashCollectionACTION"
+       	 		 name="deptUnitWiseCashCollectionFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       	 	<forward name="NEW" path="/reports/jsp/deptUnitWiseCashCollection.jsp"/>	 
+       	 </action> 	
+		
+		 <action path="/report/deptUnitWiseTotalPatientReport"
+		 		 type="registration.reports.controller.action.DeptUnitWiseTotalPatientACTION"
+		 		 name="deptUnitWiseTotalPatientFB"
+		 		 scope="request"
+		 		 parameter="reportMode">
+		 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		 	<forward name="NEW" path="/reports/jsp/deptUnitWiseTotalPatient.jsp"/>	 
+		 </action>       
+		
+		 <action path="/report/deptWiseRegCategoryWiseReport"
+		 		 type="registration.reports.controller.action.DeptWiseRegCategoryWiseACTION"
+		 		 name="deptWiseRegCategoryWiseFB"
+		 		 scope="request"
+		 		 parameter="reportMode">
+		 		 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		 	<forward name="NEW" path="/reports/jsp/deptWiseRegCategoryWise.jsp"/>	 
+		 </action>		 	          
+		
+		 <action path="/report/deptWisePatCatWiseReport"        
+            	 type="registration.reports.controller.action.DeptWisePatCatWiseACTION"
+            	 name="DeptWisePatCatWiseFB"            
+             	 scope="request"
+             	 parameter="reportMode">
+             	 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/deptWisePatCatWise.jsp"/>
+       </action>       
+       
+        <action path="/report/ageWiseDeptWiseRegPatReport"
+        		type="registration.reports.controller.action.AgeWiseDeptWiseRegPatACTION"
+        		name="ageWiseDeptWiseRegPatFB"
+        		scope="request"
+        		parameter="reportMode">
+        		<exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+        	<forward name="NEW" path="/reports/jsp/ageWiseDeptWiseRegpat.jsp"/>
+        </action>      
+		
+		<action path="/report/emergencyReport"
+				type="registration.reports.controller.action.EmergencyPatListACTION"
+				name="emergencyFB"
+				scope="request"
+				parameter="reportMode">
+				<exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+			<forward name="NEW" path="/reports/jsp/emergencyPatList.jsp"/>
+		</action>	
+			
+		<action path="/report/unknownPatientReport"
+				type="registration.reports.controller.action.EmergencyPatListACTION"
+				name="emergencyFB"
+				scope="request"
+				parameter="reportMode">
+				<exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+			<forward name="NEW" path="/reports/jsp/unknownPatientReport.jsp"/>
+		</action>		
+		
+		<action path="/report/mlcPatientListingByAllCMOReport"
+				type="registration.reports.controller.action.EmergencyPatListACTION"
+				name="emergencyFB"
+				scope="request"
+				parameter="reportMode">
+				<exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+			<forward name="NEW" path="/reports/jsp/MlcPatientListingByAllCMOReport.jsp"/>
+		</action>		
+		
+		<action path="/report/shiftWiseCasesByCmoReport"
+				type="registration.reports.controller.action.ShiftWiseCasesByCmoACT"
+				name="shiftWiseCasesByCmoReportFB"
+				scope="request"
+				parameter="reportMode">
+				 <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/>    
+			<forward name="NEW" path="/reports/jsp/shiftWiseCasesSeenByCMOReport.jsp"/>
+		</action>		
+		
+       <action path="/report/categoryWiseReport"
+       		   type="registration.reports.controller.action.CategoryWisePatRegACTION"
+       		   name="categoryWisePatRegFB"
+       		   scope="request"
+       		   parameter="reportMode">
+       		   <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       		<forward name="NEW" path="/reports/jsp/categoryWisePatReg.jsp"/>
+        </action>       
+              
+       <action path="/report/ageWiseReport"        
+            type="registration.reports.controller.action.AgeWiseRegistrationACTION"
+            name="ageWiseReportRegFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/AgeWiseRegdtl.jsp"/>
+		   <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action> 
+       
+        <action path="/report/userWiseCashCollReport"
+		       	type="registration.reports.controller.action.UserWiseCashCollACTION"
+    		   	name="userWiseCashCollFB" scope="request"
+       			parameter="reportMode">
+       			<exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+       		<forward name="NEW" path="/reports/jsp/userWiseCashColl.jsp" />
+       </action>     
+       
+       
+       <action path="/report/broughtDeadPatReport"        
+            type="registration.reports.controller.action.BroughtDeadPatACTION"
+            name="broughtDeadPatLstFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/BroughtDeadPatLst.jsp"/>
+       </action> 
+       
+       <action path="/report/emergencyRegisteredPatReport"        
+            type="registration.reports.controller.action.EmergencyRegisteredPatACTION"
+            name="emergencyRegisteredPatFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/emergencyRegisteredPat.jsp"/>
+       </action> 
+       
+       <action path="/report/groupWiseCashCollReport"        
+            type="registration.reports.controller.action.GroupWiseCashCollACTION"
+            name="groupWiseCashCollFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/>   
+		   <forward name="NEW" path="/reports/jsp/groupWiseCashColl.jsp"/>
+		    <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action>    
+       
+        <action path="/report/mlcPatientListReport"        
+            type="registration.reports.controller.action.MlcPatientListACTION"
+            name="mlcPatientListFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/>    
+            
+		   <forward name="NEW" path="/reports/jsp/mlcPatientList.jsp"/>
+       </action>    
+       
+        <action path="/report/broughtDeadPatReport"        
+            type="registration.reports.controller.action.BroughtDeadPatACTION"
+            name="broughtDeadPatFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/broughtDeadPat.jsp"/>
+       </action>  
+       
+       <action path="/report/pinCodeWiseReport"        
+            type="registration.reports.controller.action.PinCodeWiseACTION"
+            name="pinCodeWiseFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/pinCodeWise.jsp"/>
+       </action>    
+      
+       <action path="/report/departmentWiseRegPatReport"        
+            type="registration.reports.controller.action.DepartmentWiseRegPatACTION"
+            name="departmentWiseRegPatFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/departmentWiseRegPat.jsp"/>
+       </action>  
+       
+         
+       
+       <action path="/report/departmentWiseTotalPatReport"        
+            type="registration.reports.controller.action.DepartmentWiseTotalPatACTION"
+            name="DepartmentWiseTotalPatFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/departmentWiseTotalPat.jsp"/>
+		    <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action>    
+       
+       <action path="/report/roomWiseTotalPatReport"        
+            type="registration.reports.controller.action.RoomWiseTotalPatACTION"
+            name="RoomWiseTotalPatFB"   
+            validate="false"
+            input="/reports/jsp/roomWiseTotalPat.jsp"         
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/roomWiseTotalPat.jsp"/>
+		    <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action>     
+       
+      
+       <action path="/report/totalPatStatReport"        
+            type="registration.reports.controller.action.TotalPatStatACTION"
+            name="totalPatStatFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/totalPatStat.jsp"/>
+		    <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action>  
+       
+        <action path="/report/userWisePatListReport"        
+            type="registration.reports.controller.action.UserWisePatListACTION"
+            name="userWisePatListFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/userWisePatList.jsp"/>
+       </action> 
+       
+       <action path="/report/userWiseRegReport"        
+            type="registration.reports.controller.action.UserWiseRegACTION"
+            name="userWiseRegFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/userWiseReg.jsp"/>
+       </action>                  
+           
+       <action path="/report/diagnosisStatLocationWiseReport"        
+            type="registration.reports.controller.action.DiagnosisStatLocationWiseACTION"
+            name="diagnosisStatLocationWiseFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/DiagnosisStatLocationWiseReport.jsp"/>
+       </action>                      
+            
+       <action path="/report/deptUnitRoomConsultantTimingReport"        
+            type="registration.reports.controller.action.DeptUnitRoomConsultantReportACTION"
+            name="deptUnitRoomConsultantReportFB"            
+            scope="request"
+            parameter="reportMode">
+            <exception key="reportDataNotFound" 
+    		type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    		path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		   <forward name="NEW" path="/reports/jsp/deptUnitRoomConsultantReport.jsp"/>
+		   <forward name="BACK" path="/reports/jsp/errorPageReportDataNotFound.jsp"/>
+       </action>                      
+            
+       <action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+	
+      
+    </action-mappings>
+    
+     <global-exceptions>
+     
+     
+    
+    
+     
+   </global-exceptions>    
+    
+<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+  
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/RegistrationDesk-tiles-defs.xml"/>    	
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>   
+   	
+   	
+
+</struts-config>

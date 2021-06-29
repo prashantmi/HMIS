@@ -1,0 +1,311 @@
+/* to show header. It contains font type, font color, font size and background color */
+TR.HEADER {
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	background-color: #126497 ;
+	height:23px;
+	color: white;
+	text-transform: capitalize;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+/* to show footer. It contains font type, font color, font size and background color */
+TR.FOOTER {
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	background-color: #126497;
+	height:23px;
+	color: white;
+	text-transform: capitalize;
+	text-align:right;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+.Approved {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #151AFB;
+	background-color: #D3D5C9;
+	height: 16px;
+	text-align: center;
+}
+
+.NotApproved {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #F1ECE2;
+	height: 16px;
+	text-align: center;
+}
+
+/* for label field of table's TD. It contains font type, font color, font size and background color */
+TD.LABEL {
+	background-color:#E0EBEB;
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	text-align: right;
+	font-weight: bold;
+	background-image: url('none');
+}
+
+/* for control field of table's TD. It contains font type, font color, font size and background color */
+TD.CONTROL {
+	background-Color: #F1F6F6;
+	height: 16px;
+	color: #333333;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+}
+
+/* to show font type to be used. It contains font type, font color, font size */
+.FONT {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #653232;
+}
+
+/* fot textfield of minimum size. It contains font type, font color, font size, width of the field */
+.txtFldMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 16px;
+	width: 50px;
+}
+
+/* fot textfield of normal size. It contains font type, font color, font size, width of the field */
+.txtFldNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 16px;
+	width: 75px;
+}
+
+/* fot textfield of maximum size. It contains font type, font color, font size, width of the field */
+.txtFldMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 16px;
+	width: 135px;
+}
+
+/* fot textfield of small size. It contains font type, font color, font size, width of the field */
+.txtFldSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 16px;
+	width: 35px;
+}
+
+/* fot textfield of small size and have red font. It contains font type, font color, font size, width of the field */
+.txtFldSmall_Red {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #990000;
+	height: 16px;
+	width: 35px;
+}
+
+/* fot combo of small size. It contains font type, font color, font size, width of the field */
+.comboSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 50px;
+}
+
+/* fot combo of minimum size. It contains font type, font color, font size, width of the field */
+.comboMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 90px;
+}
+
+/* fot combo of normal size. It contains font type, font color, font size, width of the field */
+.comboNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 125px;
+}
+
+/* fot combo of maximum size. It contains font type, font color, font size, width of the field */
+.comboMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 175px;
+}
+
+/* table width is defined for add and modify pages. */
+.TABLEWIDTH {
+	width: 85%;
+}
+
+/* for the title field. It contains font type, font color, font size and background color */
+.TITLE {
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	
+	background-Color:#12699F;
+	font-family: Trebuchet MS;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	height: 16px;
+	text-align:left;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiLabel {
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	background-color:#12699F;	
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color:white;
+	text-align:center;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.redMultiControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: yellow;
+	background-color: #e8506d;
+	height: 16px;
+	text-align: center;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #F1ECE2;
+	height: 16px;
+	text-align: center;
+}
+
+/* to show error messages. */
+.errMsg {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: red;
+	text-align: center;
+}
+
+/* to show normal messages. */
+.normalMsg {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #653232;
+	text-align: center;
+}
+
+/* to show error messages. */
+.warningMsg {
+	font-family: Trebuchet MS;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FF9900;
+	text-align: center;
+}
+
+/* fot combo of Big size. It contains font type, font color, font size, width of the field */
+.comboBig {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 350px;
+}

@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+	
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="NewDeptVisitFB" type="registration.controller.fb.NewDeptVisitFB" />
+		<form-bean name="EmergencyVisitFB" type="registration.controller.fb.EmergencyVisitFB" />
+		<form-bean name="PatDtlDispFB" type="registeration.controller.fb.PatDtlDispFB" />
+		<form-bean name="PatDtlModificationFB" type="registration.controller.fb.PatDtlModificationFB" />
+		<form-bean name="mrdPatientDetailModFB" type="registration.controller.fb.mrdPatientDetailModFB" />
+		<form-bean name="NewRegistrationFB" type="registration.controller.fb.NewRegistrationFB" />
+		
+		<form-bean name="NewRegistrationFBDuplicate" type="registration.controller.fb.NewRegistrationFBDuplicate" />
+		
+		<form-bean name="DeskFB" type="registration.controller.fb.DeskFormBN" />
+		<form-bean name="PrimaryCategoryChangeFB" type="registration.controller.fb.PrimaryCategoryChangeFB" />
+		<form-bean name="FileNoChangeFB" type="registration.controller.fb.FileNoChangeFB" />
+		<form-bean name="RenewalOfRegistrationFB" type="registration.controller.fb.RenewalOfRegistrationFB" />
+		<form-bean name="SecondaryCategoryChangeFB" type="registration.controller.fb.SecondaryCategoryChangeFB" />
+		<form-bean name="commonTransactionFB" type="registration.controller.fb.commonTransactionFB" />
+		<form-bean name="oldPatientVisitFB" type="registration.controller.fb.OldPatientVisitFB" />
+		<form-bean name="OldPatientVisitDtl_FB" type="registration.controller.fb.OldPatientVisitDtl_FB" />
+		<form-bean name="patientDetailFB" type="registration.controller.fb.PatientDetailFB" />
+		<form-bean name="EmgNewRegFB" type="registration.controller.fb.EmgNewPatientRegFBDuplicate" />
+		<form-bean name="registerFB" type="registration.controller.fb.RegisterFB" />
+		<form-bean name="UnitTransferFB" type="registration.controller.fb.UnitTransferFB" />
+		<form-bean name="AddressModificationFB" type="registration.controller.fb.AddressModificationFB" />
+		<form-bean name="EpisodeNotAttendedFB" type="registration.controller.fb.EpisodeActNotAttendedFB" />
+		<form-bean name="EpisodeAttDisposedFB" type="registration.controller.fb.EpisodeActAttendedDisposedFB" />
+		<form-bean name="EpisodeAttendedAdmittedFB" type="registration.controller.fb.EpisodeActAttendedAdmittedFB" />
+		<form-bean name="EpisodeAttendedRefInCasualtyFB" type="registration.controller.fb.EpisodeActAttendedRefInCasualtyFB" />
+		<form-bean name="EpisodeAttendedRefInWardFB" type="registration.controller.fb.EpisodeActAttendedRefInWardFB" />
+		<form-bean name="EpisodeAttendedRefOutFB" type="registration.controller.fb.EpisodeActAttendedRefOutFB" />
+		<form-bean name="EpisodeInObservationFB" type="registration.controller.fb.EpisodeActInObservationFB"/>
+		<form-bean name="EpisodeDeathFB" type="registration.controller.fb.EpisodeActDeathFB" />
+		<form-bean name="EpisodePopupFB" type="registration.controller.fb.EpisodeActionPopupFB" />
+		<form-bean name="DuplicateCardGenerationFB" type="registration.controller.fb.DuplicateCardGenerationFB" />
+		<form-bean name="OpdDoctorDeskFB" type="registration.controller.fb.OpdDoctorDeskFB" />
+		<form-bean name="OpdDoctorDeskVisitConfirmFB" type="registration.controller.fb.OpdDoctorDeskVisitConfirmFB" />
+		<form-bean name="OpdDoctorDeskEpisodeCloseFB" type="registration.controller.fb.OpdDoctorDeskEpisodeCloseFB" />
+		<form-bean name="EmgMlcDtlFB" type="registration.controller.fb.EmgMlcDtlFB" />
+		<form-bean name="EmgPatientVisitStampFB" type="registration.controller.fb.EmgOldPtntVisitFB" />
+		<form-bean name="EmgMlcDtlModificationFB" type="registration.controller.fb.EmgMlcDtlModificationFB" />
+		<form-bean name="EmgPatDetailModificationFB" type="registration.controller.fb.EmgPatDetailModificationFB" />
+		<form-bean name="FileUploadFB" type="registration.controller.fb.FileUploadFB" />
+		<form-bean name="verificationDocumentFB" type="registration.controller.fb.verificationDocumentFB" />
+		<form-bean name="EmgUnKnownTOKnownFB" type="registration.controller.fb.EmgUnKnownTOKnownFB" />
+		<form-bean name="EmgUnkownTOKnownAtDeskFB" type="registration.controller.fb.EmgUnkownTOKnownAtDeskFB" />
+		<form-bean name="ReferDtlModificationFB" type="registration.controller.fb.ReferDtlModificationFB" />
+		<form-bean name="ReferDeptVisitStampFB" type="registration.controller.fb.ReferDeptVisitStampFB" />
+		<form-bean name="EnlargedImageFB" type="registration.controller.fb.EnlargedImageFB" />
+		<form-bean name="MlcuploadFB" type="registration.controller.fb.MlcUploadImageFB" />
+		<form-bean name="SearchByNameFB" type="registration.controller.fb.SearchByNameFB" />
+		<form-bean name="SplPatientVisitFB" type="registration.controller.fb.SplPatientVisitFB" />
+		<form-bean name="SpecialClinicNewReg" type="registration.controller.fb.SpecialClinicNewRegistrationFB" />
+		<form-bean name="EmpDependentFB" type="registration.controller.fb.EmployeeWithDependentFB" />
+		<form-bean name="YellowSlipEntryFB" type="registration.controller.fb.YellowSlipEntryFB" />
+		<form-bean name="YellowSlipDiagnosisPopupFB" type="registration.controller.fb.YellowSlipDiagnosisPopUpFB" />
+		<form-bean name="CheckFb" type="registration.controller.fb.CheckFb" />
+		<form-bean name="CheckLayputFB" type="registration.controller.fb.CheckLayputFB" />
+		<form-bean name="OnlineNewDeptVisitFB" type="registration.controller.fb.OnlineNewDeptVisitFB" />
+		<form-bean name="patReferralFB" type="registration.controller.fb.PatientReferralFB" />
+		<form-bean name="parichitRegistrationFB" type="registration.controller.fb.ParichitRegistrationFB" />
+		<form-bean name="RevokeMLCEpisodeFB" type="registration.controller.fb.RevokeMLCEpisodeFB" />
+		<form-bean name="PatientAuditFB" type="registration.controller.fb.PatientAuditTrailFB" />
+		<form-bean name="CMODeskLoginFB" type="registration.controller.fb.CMODeskLoginFB"/> 
+        <form-bean name="CMODeskFB" type="registration.controller.fb.CMODeskFB"/>
+        <form-bean name="CMOPatientDeskFB" type="registration.controller.fb.CMOPatientDeskFB"/>
+        <form-bean name="PatientNotAttendedFB" type="registration.controller.fb.PatientNotAttendedFB"/>
+        <form-bean name="PatientAttendedUnderObservationFB" type="registration.controller.fb.PatientAttendedUnderObservationFB"/>
+        <form-bean name="PatientDeathDetailFB" type="registration.controller.fb.PatientDeathDetailFB"/>
+        <form-bean name="HandoverToDeadBodyFB" type="registration.controller.fb.HandoverToDeadBodyFB"/>
+        <form-bean name="yellowSlipMonitoringFB" type="registration.controller.fb.YellowSlipMonitoringFB" />
+        <form-bean name="RedirectOfOPDPatFB" type="registration.controller.fb.RedirectOfOPDPatFB" />
+        <form-bean name="offlineRegistrationFB" type="registration.controller.fb.OfflineRegistrationFB" />
+        <form-bean name="DayWiseRosterDeActivationFB" type="registration.controller.fb.DayWiseRosterDeActivationFB" />
+		<form-bean name="NewDeptVisitRoomWiseFB" type="registration.controller.fb.NewDeptVisitRoomWiseFB" />
+		<form-bean name="fileNumberPrintingFB" type="registration.controller.fb.FileNumberPrintingFB" />
+		<form-bean name="oldPatientVisitRoomWiseFB" type="registration.controller.fb.OldPatientVisitRoomWiseFB" />
+		
+        <form-bean name="PatientVisitFB" type="registration.controller.fb.PatientVisitFB" />
+        <form-bean name="PatientModificationFB" type="registration.controller.fb.PatientModificationFB" />
+        <form-bean name="EmergencyPatientVisitFB" type="registration.controller.fb.EmergencyPatientVisitFB" />
+        <form-bean name="SplPatientModificationFB" type="registration.controller.fb.SplPatientModificationFB" />
+        <form-bean name="newSplRegFB" type="registration.controller.fb.newSplRegFB" />
+
+        <form-bean name="policeExaminationReqtDtlFB" type="registration.controller.fb.PoliceExaminationReqtDtlFB" />
+        <form-bean name="policeExaminationReportGenerationDtlFB" type="registration.controller.fb.PoliceExaminationReportGenerationDtlFB" />
+
+        <form-bean name="MCTSRegistrationFB" type="registration.controller.fb.MCTSRegistrationFB" />
+        
+        <!-- Begin Employee Entry Form -->
+		<form-bean name="PISEmpEntryForm" type="hr.pis.transactions.fb.Hr_Trans_Emp_Entry_Form"/>
+	<!-- End Employee Entry Form  -->
+        
+	</form-beans>
+
+	<action-mappings>
+	
+		<action path="/patientDeathDetail"
+				type="registration.controller.action.PatientDeathDetailACTION"
+				name="PatientDeathDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/patientDeathDetail.jsp">
+			<forward name="NEW" path="/transaction/patientDeathDetail.jsp" />
+			<forward name="PRINT" path="/transaction/patientDeathCertificate.jsp" />
+			<forward name="LIST" path="/../registration/cmoPatientDesk.cnt?hmode=NEW" />
+			<forward name="CANCEL" path="../startup/initpage.jsp" />
+		</action>
+		
+		<action path="/onlineNewDeptVisitDesk"
+				type="registration.controller.action.OnlineNewDeptVisitACTION"
+				name="OnlineNewDeptVisitFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/patientRegistrationDeskView.jsp">
+			<forward name="GETPATDTL" path="/transaction/onlineOpdNewDeptVisitTile.jsp" />
+			<forward name="SAME" path="/transaction/onlineOpdNewDeptVisitTile.jsp" />
+			<forward name="NEW" path="/transaction/onlineOpdNewDeptVisitTile.jsp" />
+		</action>
+
+		<action path="/newSpecialClinickVisitOLD"
+				type="registration.controller.action.SplPatientVisitACTION"
+				name="SplPatientVisitFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/newSpecialClinickVisitTile.jsp">
+			<forward name="NEW" path="/transaction/newSpecialClinickVisitTile.jsp" />
+			<forward name="SAME" path="/transaction/newSpecialClinickVisitTile.jsp" />
+			<forward name="GETPATDTL" path="/transaction/newSpecialClinickVisitTile.jsp" />
+		</action>
+		
+		<action path="/newSpecialClinickVisit"
+			type="registration.controller.action.SplPatientVisitACTION"
+			name="SplPatientVisitFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transaction/splPatientVisitTile.jsp">
+			<forward name="SAMENEWPATIENT"
+				path="/transaction/splPatientVisitTile.jsp" />
+			<forward name="NEWPATIENT"
+				path="/transaction/splPatientVisitTile.jsp" />
+			<forward name="GETPATDTL"
+				path="/transaction/splPatientVisitTile.jsp" />
+			<forward name="SAME"
+				path="/transaction/splPatientVisitTile.jsp" />
+			<forward name="NEW"
+				path="/transaction/splPatientVisitTile.jsp" />
+		</action>
+		
+
+		<action path="/newRegistrationDesk"
+				type="registration.controller.action.newRegistrationACTION"
+				name="NewRegistrationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/opdNewPatientRegistrationTile.jsp">
+			<forward name="NEW" path="/transaction/opdNewPatientRegistrationTile.jsp" />
+			<forward name="SAME" path="/transaction/opdNewPatientRegistrationTile.jsp" />
+			<forward name="MENU" path="../startup/initpage.jsp" />
+		</action>
+
+		<action path="/newRegistrationDeskDuplicate"
+				type="registration.controller.action.newRegistrationACTIONDuplicate"
+				name="NewRegistrationFBDuplicate"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/opdNewPatientRegistrationTileDuplicate.jsp">
+			<forward name="NEW" path="/transaction/opdNewPatientRegistrationTileDuplicate.jsp" />
+			<forward name="SAME" path="/transaction/opdNewPatientRegistrationTileDuplicate.jsp" />
+			<forward name="POPUP" path="/transaction/patientDetailPopup.jsp" />
+			<forward name="BPLPOPUP" path="/transaction/regBPLSearchPopup.jsp" />  
+			<forward name="OLD_PATIENT" path="/oldpatientvisit.cnt?hmode=GETPATDTL" /> 
+			<forward name="MENU" path="../startup/initpage.jsp" />
+		</action>
+		
+		<!--  action for new department visit  -->
+
+		<action path="/newDeptVisitDesk"
+			type="registration.controller.action.newDeptVisitACTION"
+			name="NewDeptVisitFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transaction/patientRegistrationDeskView.jsp">
+			<forward name="GETPATDTL"
+				path="/transaction/opdNewDeptVisitTile.jsp" />
+			<forward name="SAME"
+				path="/transaction/opdNewDeptVisitTile.jsp" />
+			<forward name="NEW"
+				path="/transaction/opdNewDeptVisitTile.jsp" />
+		</action>
+
+		<!--modification-->
+	<action path="/modificationDesk"
+				type="registration.controller.action.SplPatientModificationACTION"
+				name="SplPatientModificationFB" 
+				validate="false" 
+				scope="request"
+				parameter="hmode" input="/transaction/splreg_patient_modificationTile.jsp">
+			<forward name="NEW" path="/transaction/splreg_patient_modificationTile.jsp" />
+			<forward name="SAME" path="/transaction/splreg_patient_modificationTile.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+
+
+		<action path="/RegistrationDesk" name="DeskFB"
+			type="registration.controller.action.registrationdeskAction"
+			validate="false" scope="request" parameter="deskmode"
+			input="/regDeskNewRegistration">
+			<forward name="NEWREGT" path="/regDeskNewRegistration" />
+			<forward name="NEWDEPT" path="/regDeskNewDeptVisit" />
+			<forward name="PATIENTMOD" path="/regDeskModification" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+				<action path="/RegistrationDeskDuplicate" name="DeskFB"
+			type="registration.controller.action.registrationdeskActionDuplicate"
+			validate="false" scope="request" parameter="deskmode"
+			input="/regDeskNewRegistrationDuplicate">
+			<forward name="NEWREGT" path="/regDeskNewRegistrationDuplicate" />
+			<forward name="NEWDEPT" path="/regDeskNewDeptVisitDuplicate" />
+			<forward name="PATIENTMOD" path="/regDeskModificationDuplicate" />
+			<forward name="NEWREG_ROOM_WISE" 	path="/offlineRegistrationDeskDuplicate" />
+			<forward name="OLDDEPTVISIT" 	path="/oldpatientvisitDeskDuplicate" />			
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		<action path="/EmergencyDesk" name="DeskFB"
+			type="registration.controller.action.emergencydeskAction"
+			validate="false" scope="request" parameter="deskmode"
+			input="/regDeskNewRegistration">
+			<forward name="NEWREGT" path="/emgNewRegistration" />
+			<forward name="NEWDEPT" path="/emgDesktVisit" />
+			<forward name="PATIENTMOD" path="/emergencyDeskModification" />
+			<forward name="OLDDEPTVISIT" path="/emgoldPatVisitDesk" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+
+		<action path="/SplCinicRegistrationDesk" name="DeskFB"
+			type="registration.controller.action.SpecialClinicRegDeskACTION"
+			validate="false" scope="request" parameter="deskmode"
+			input="/regDeskNewRegistration">
+			<forward name="NEWREGT" path="/splregDeskNewRegistration" />
+			<forward name="NEWDEPT" path="/splregDeskNewDeptVisit" />
+			<forward name="PATIENTDTLMOD"
+				path="/splregDeskModification" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+		
+		<action path="/RoomWiseRegistrationDesk" name="DeskFB"
+			type="registration.controller.action.RoomWiseRegistrationDeskACTION"
+			validate="false" scope="request" parameter="deskmode"
+			input="/roomWiseRegDeskNewRegistration">
+			<forward name="NEWREGT" path="/roomWiseRegDeskNewRegistration" />
+			<forward name="NEWDEPT" path="/roomWiseRegDeskNewDeptVisit" />
+			<forward name="PATIENTDTLMOD"
+				path="/roomWiseregDeskModification" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/commonaction"
+			type="registration.controller.action.commonACTION"
+			name="commonTransactionFB" validate="false" scope="request"
+			parameter="mode" input="/transaction/noMOde.jsp">
+			<forward name="UNSPECIFIEDMODE"
+				path="/transaction/noMOde.jsp" redirect="true" />
+			<forward name="MRDPATDTLMOD"
+				path="/mrdPatientDetailModification" redirect="true" />
+			<forward name="CHANGEPAT" path="/changePatientCategory"
+				redirect="true" />
+			<forward name="SECONDARYCAT" path="/changeSecondaryCategory"
+				redirect="true" />
+			<forward name="FILENO" path="/changeFileNo" redirect="true" />
+			<forward name="PATIENTMOD" path="/splregDeskModification"
+				redirect="true" />
+
+			<forward name="NEWSPECIALCLINICVISIT"
+				path="/newSpecialClinickVisit" redirect="true" />
+
+			<forward name="RENEWAL" path="/renewal" redirect="true" />
+			<forward name="EMGCMOREGISTER" path="/cmoRegisterPage"
+				redirect="true" />
+			<forward name="OLDPATVISIT" path="/oldPatientVisit" />
+			<forward name="UNITTRANSFER" path="/unitTransfer" />
+			<forward name="OldPatientVisitDtl"
+				path="/oldPatientVisitDtl" />
+			<forward name="ADDRESSMODIFICATION"
+				path="/addressModification" redirect="true" />
+			<forward name="DUPLICATECARDGENERATION"
+				path="/duplicateCardGeneration" redirect="true" />
+			<forward name="EMGOLDPATVISIT" path="/emgoldPatVisit"
+				redirect="true" />
+			<forward name="OPDDOCTORDESK" path="/doctorDeskRegisterPage"
+				redirect="true" />
+			<forward name="DUPLICATECARDGENERATION"
+				path="/duplicateCardGeneration" redirect="true" />
+			<forward name="MLCDTL" path="/mlcDtlPage" redirect="true" />
+			<forward name="MLCDTLMOD" path="/mlcDtlModificationPage"
+				redirect="true" />
+			<forward name="EMGPATDTLMOD" path="/emgPatModification"
+				redirect="true" />
+			<forward name="UNKNOWNTOKNOWN" path="/emgunknownToKnown"
+				redirect="true" />
+			<forward name="REFDTLMOD" path="/refdtlmod" redirect="true" />
+			<forward name="REFDEPTVISITSTAMP"
+				path="/referDeptVisitStamp" redirect="true" />
+			<forward name="MLCDOCUPLOAD" path="/mlcDocUpload"
+				redirect="true" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+			<forward name="SPLCLINICNEWREG" path="/specialClinicNewReg"
+				redirect="true" />
+			<forward name="YELLOWSLIP" path="/yellowSlip"
+				redirect="true" />
+			<forward name="EMPWITHDEPENDENT"
+				path="/employeeWithDependentDtl" redirect="true" />
+			<forward name="OPENEPISODE" path="/openEpisode"
+				redirect="true" />
+			<forward name="PATIENTREFERRAL" path="/patientReferral"
+				redirect="true" />
+			<forward name="PARICHITREGISTRATION" path="/parichitRegistration"
+				redirect="true" />
+			<forward name="MLCTONONMLC" path="/conversionMlcToNonMlc"
+				redirect="true" />
+			<forward name="ROOMWISENEWREG" path="/newRoomWiseRegistration"
+				redirect="true" />
+			<forward name="EMGPATIENTMODIFICATION" path="/emergencyModification"
+				redirect="true" />
+			<forward name="NEWPATREG" path="/newPatRegistration"
+				redirect="true" />
+			<forward name="NEWDEPTVISIT" path="/newDeptVisit"
+				redirect="true" />
+			<forward name="EMGNEWPATREG" path="/emgNewPatRegistration"
+				redirect="true" />
+			<forward name="EMGNEWDEPTVISIT" path="/emgNewDeptVisit"
+				redirect="true" />
+				
+			<forward name="PATIENTVISIT" path="/PatientVisit"
+				redirect="true" />	
+			
+			
+			<forward name="EMERGENCYPATIENTVISIT" path="/EmergencyPatientVisit"
+				redirect="true" />	
+				
+				<forward name="MCTSREG" path="/mctsRegistration"
+				redirect="true" />
+					
+		</action>
+
+		<action path="/referdtlmodification"
+			type="registration.controller.action.ReferDtlModificationACTION"
+			name="ReferDtlModificationFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transaction/referDtlModificationTile.jsp">
+			<forward name="NEW"
+				path="/transaction/referDtlModificationTile.jsp" />
+			<forward name="SAME"
+				path="/transaction/referDtlModificationTile.jsp" />
+			<forward name="UPLOAD"
+				path="/transaction/referDtlModificationTile.jsp" />
+		</action>
+		<action path="/emergency/unknowntoKnown"
+			type="registration.controller.action.EmgUnKnownTOKnownACTION"
+			name="EmgUnKnownTOKnownFB" validate="false" scope="request"
+			parameter="hmode" input="/transaction/EmgUnKnownTOKnownTile.jsp">
+			<forward name="NEW"
+				path="/transaction/EmgUnKnownTOKnownTile.jsp" />
+			<forward name="SAME"
+				path="/transaction/EmgUnKnownTOKnownTile.jsp" />
+			<forward name="UPLOAD"
+				path="/transaction/EmgUnKnownTOKnownTile.jsp" />
+		</action>
+
+		<action path="/mrdPatDtlModification"
+			type="registration.controller.action.mrdPatientDetailModACTION"
+			name="mrdPatientDetailModFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transaction/mrdPatientModificationTile.jsp">
+			<forward name="NEW"
+				path="/transaction/mrdPatientModificationTile.jsp" />
+			<forward name="SAME"
+				path="/transaction/mrdPatientModificationTile.jsp" />
+			<forward name="UPLOAD"
+				path="/transaction/mrdPatientModificationTile.jsp" />
+		</action>
+
+		<action path="/emgNewPatRegistration"
+			type="registration.controller.action.EmgNewPatientRegActionDuplicate"
+			name="EmgNewRegFB" validate="false" scope="request" parameter="hmode"
+			input="/transaction/emgNewPatientRegistrationTileDuplicate.jsp">
+			<forward name="NEW"
+				path="/transaction/emgNewPatientRegistrationTileDuplicate.jsp" />
+			<forward name="SAME"
+				path="/transaction/emgNewPatientRegistrationTileDuplicate.jsp" />
+			<forward name="UPLOAD"
+				path="/transaction/uploadFileTileDuplicate.jsp" />
+				
+			<forward name="POPUP" path="/transaction/emgPatientDetailPopup.jsp" />
+		</action>
+
+		<action path="/emgNewVisit"
+			type="registration.controller.action.EmregencyVisitAction"
+			name="EmergencyVisitFB" validate="false" scope="request"
+			parameter="hmode" input="/transaction/emergencyVisit.jsp">
+			<forward name="NEW" path="/transaction/emergencyVisit.jsp" />
+			<forward name="SAME" path="/transaction/emergencyVisit.jsp" />
+			<forward name="GETPATDTL"
+				path="/transaction/emergencyVisit.jsp" />
+
+		</action>
+
+		<action path="/checkaction"
+			type="registration.controller.action.CheckACTION" name="CheckFb"
+			validate="false" scope="request" parameter="hmode"
+			input="/transaction/check.jsp">
+			<forward name="NEW" path="/transaction/check.jsp" />
+			<forward name="CHECK" path="/check" redirect="true" />
+			<forward name="POPUP" path="/transaction/printDialog.jsp"/>
+		</action>
+		<action path="/CheckLayout"
+			type="registration.controller.action.CheckLayout" name="CheckFb"
+			validate="false" scope="request" parameter="mode"
+			input="/transaction/checklayout.jsp">
+			<forward name="CHECK" path="/check" redirect="true" />
+			<forward name="NEW" path="/transaction/check.jsp" />
+		</action>
+		<action path="/uploadFile"
+			type="registration.controller.action.FileUploadACTION"
+			name="FileUploadFB" validate="false" scope="request"
+			parameter="hmode" input="/transaction/uploadFileTile.jsp">
+			<forward name="NEW" path="/transaction/uploadFileTile.jsp" />
+			<forward name="AUDIOVEDIO" path="/transaction/uploadAudioVideoFile.jsp" />
+			<forward name="CLOSE"
+				path="/transaction/uploadFileTile.jsp" />
+		</action>
+		<action path="/enlargedImage"
+			type="registration.controller.action.EnlargedImageACTION"
+			name="EnlargedImageFB" validate="false"
+			input="/transaction/enlargedImageTile.jsp">
+			<forward name="NEW"
+				path="/transaction/enlargedImageTile.jsp" />
+		</action>
+
+
+		<action path="/emgPatDtlModification"
+			type="registration.controller.action.EmgPatDetailModificationACTION"
+			name="EmgPatDetailModificationFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transaction/emgPatDetailModificationTile.jsp">
+			<forward name="NEW"
+				path="/transaction/emgPatDetailModificationTile.jsp" />
+			<forward name="SAME"
+				path="/transaction/emgPatDetailModificationTile.jsp" />
+		 <forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<action path="/oldpatientvisit"
+				type="registration.controller.action.oldPatientVisitACTION"
+				name="oldPatientVisitFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/oldPatientVisitTile.jsp">
+			<forward name="NEW" path="/transaction/oldPatientVisitTile.jsp" />
+			<forward name="SAME" path="/transaction/oldPatientVisitTile.jsp" />
+		</action>
+		
+		<action path="/unitTransfer"
+				type="registration.controller.action.UnitTransferACTION"
+				name="UnitTransferFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/unitTransferTile.jsp">
+			<forward name="NEW" path="/transaction/unitTransferTile.jsp" />
+			<forward name="SAME" path="/transaction/unitTransferTile.jsp" />
+		</action>
+		
+		<action path="/oldpatientvisitdtl"
+				type="registration.controller.action.OldPatientVisitDtl_ACTION"
+				name="OldPatientVisitDtl_FB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/oldPatientVisitDtlTile.jsp">
+			<forward name="NEW" path="/transaction/oldPatientVisitDtlTile.jsp" />
+			<forward name="SAME" path="/transaction/oldPatientVisitDtlTile.jsp" />
+		</action>
+		
+		<action path="/changePatientCat"
+				type="registration.controller.action.PrimaryCategoryChangeACTION"
+				name="PrimaryCategoryChangeFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/patientCategoryChangeTile.jsp">
+			<forward name="NEW" path="/transaction/patientCategoryChangeTile.jsp" />
+			<forward name="SAME" path="/transaction/patientCategoryChangeTile.jsp" />
+		</action>
+		
+		<action path="/patientReferral" name="patReferralFB"
+				type="registration.controller.action.PatientReferralACTION"
+				validate="false" parameter="hmode" scope="request"
+				input="/transaction/patientReferralTile.jsp">
+			<forward name="NEW" path="/transaction/patientReferralTile.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<action path="/changeSecondaryCat"
+				type="registration.controller.action.SecondaryCategoryChangeACTION"
+				name="SecondaryCategoryChangeFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/secondaryCategoryChangeTile.jsp">
+			<forward name="NEW" path="/transaction/secondaryCategoryChangeTile.jsp" />
+			<forward name="SAME" path="/transaction/secondaryCategoryChangeTile.jsp" />
+		</action>
+		
+		<action path="/parichitRegistration"
+				type="registration.controller.action.ParichitRegistrationACTION"
+				name="parichitRegistrationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/parichitRegistrationTile.jsp">
+			<forward name="NEW" path="/transaction/parichitRegistrationTile.jsp" />
+			<forward name="SAME" path="/transaction/parichitRegistrationTile.jsp" />
+			
+		</action>
+
+		<action path="/changeFileNo"
+				type="registration.controller.action.FileNoChangeACTION"
+				name="FileNoChangeFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/changeFileNoTiles.jsp">
+			<forward name="NEW" path="/transaction/changeFileNoTiles.jsp" />
+			<forward name="SAME" path="/transaction/changeFileNoTiles.jsp" />
+		</action>
+
+		<action path="/renewal"
+				type="registration.controller.action.RenewalOfRegistrationACTION"
+				name="RenewalOfRegistrationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/renewalOfRegistration.jsp">
+			<forward name="NEW" path="/transaction/renewalOfRegistration.jsp" />
+			<forward name="SAME" path="/transaction/renewalOfRegistration.jsp" />
+		</action>
+
+		<action path="/emergency/mlcDtl"
+				type="registration.controller.action.EmgMlcDtlACTION"
+				name="EmgMlcDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/emgMlcDtlTile.jsp">
+			<forward name="NEW" path="/transaction/emgMlcDtlTile.jsp" />
+			<forward name="BUILD" path="/transaction/emgMlcDtlTile.jsp" />
+		</action>
+
+		<action path="/emergency/mlcDtlModification"
+				type="registration.controller.action.EmgMlcDtlModificationACTION"
+				name="EmgMlcDtlModificationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/emgMlcDtlTile.jsp">
+			<forward name="NEW" path="/transaction/emgMlcDtlModificationTile.jsp" />
+			<forward name="BUILD" path="/transaction/emgMlcDtlModificationTile.jsp" />
+		</action>
+
+		<action path="/patientDetail"
+				type="registration.controller.action.PatientDetailACTION"
+				name="patientDetailFB"
+				validate="false"
+				scope="request"
+				input="/transaction/patientDetailsTile.jsp">
+			<forward name="SAME" path="/transaction/patientDetailsTile.jsp" />
+		</action>
+
+		<action path="/addressModification"
+				type="registration.controller.action.AddressModificationACTION"
+				name="AddressModificationFB" validate="false" scope="request"
+				parameter="hmode" input="/transaction/addressModificationTile.jsp">
+			<forward name="SAME" path="/transaction/addressModificationTile.jsp" />
+			<forward name="NEW" path="/transaction/addressModificationTile.jsp" />
+		</action>
+
+		<action path="/patientModification"
+				type="registration.controller.action.PatientModificationACTION"
+				name="PatientModificationFB" 
+				validate="false" 
+				scope="request"
+				parameter="hmode" input="/transaction/reg_patient_modification.jsp">
+			<forward name="NEW" path="/transaction/reg_patient_modification.jsp" />
+			<forward name="SAME" path="/transaction/reg_patient_modification.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+		
+		<action path="/patientModificationTile"
+				type="registration.controller.action.PatientModificationACTION"
+				name="PatientModificationFB" 
+				validate="false" 
+				scope="request"
+				parameter="hmode" input="/transaction/reg_patient_modification_desk.jsp">				
+<!--				parameter="hmode" input="/transaction/reg_patient_modificationTile.jsp">-->
+			<forward name="NEW" path="/transaction/reg_patient_modification_desk.jsp" />
+			<forward name="SAME" path="/transaction/reg_patient_modification_desk.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+
+
+		<action path="/duplicateCardGeneration"
+				type="registration.controller.action.DuplicateCardGenerationACTION"
+				name="DuplicateCardGenerationFB" validate="false" scope="request"
+				parameter="hmode"
+				input="/transaction/duplicateCardGenerationTile.jsp">
+			<forward name="SAME" path="/transaction/duplicateCardGenerationTile.jsp" />
+			<forward name="NEW" path="/transaction/duplicateCardGenerationTile.jsp" />
+		</action>
+
+		<action path="/cmoRegisterAction"
+				type="registration.controller.action.CMORegisterACTION"
+				name="registerFB" validate="false" scope="request"
+				parameter="registermode" input="/cmoRegisterNew">
+			<forward name="NEW" path="/cmoRegisterNew" />
+			<forward name="STATUSSELECTION" path="/cmoRegisterEpisodeActSelect" />
+			<forward name="STATUSDTL" path="/cmoRegisterDtl" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<action path="/opdDoctorDeskAction"
+				type="registration.controller.action.OPDDoctorDeskACTION"
+				name="OpdDoctorDeskFB" validate="false" scope="request"
+				parameter="registermode" input="/opdDoctorDeskRegisterNew">
+			<forward name="NEW" path="/opdDoctorDeskRegisterNew" />
+			<forward name="STATUSSELECTION" path="/opdDosctorDeskActSelect" />
+			<forward name="STATUSDTL" path="/opdDoctorDeskRegisterDtl" />
+		</action>
+
+		<action path="/opdDoctorDeskActTypeACTION"
+				type="registration.controller.action.OpdDoctorDeskTypeAction"
+				validate="false" scope="request" input="/opdDoctorDeskRegisterNew">
+			<forward name="VISIT_CONFIRMED" path="/visitConfirmed.cnt" />
+			<forward name="EPISODE_CLOSE" path="/episodeClosed.cnt" />
+		</action>
+
+		<action path="/visitConfirmed"
+				type="registration.controller.action.OpdDoctorDeskVisitConfirmACTION"
+				name="OpdDoctorDeskVisitConfirmFB" validate="false" scope="request"
+				parameter="hmode"
+				input="/transaction/opdDoctorDeskVisitConfirm.jsp">
+			<forward name="NEW" path="/transaction/opdDoctorDeskVisitConfirm.jsp" />
+		</action>
+
+		<action path="/episodeClosed"
+				type="registration.controller.action.OpdDoctorDeskEpisodeCloseACTION"
+				name="OpdDoctorDeskEpisodeCloseFB" validate="false" parameter="hmode"
+				scope="request" input="/transaction/opdDoctorDeskEpisodeClose.jsp">
+			<forward name="NEW" path="/transaction/opdDoctorDeskEpisodeClose.jsp" />
+			<forward name="SAME" path="/transaction/opdDoctorDeskEpisodeClose.jsp" />
+		</action>
+
+		<action path="/episodeActTypeACTION"
+				type="registration.controller.action.EpisodeActTypeACTION"
+				validate="false" scope="request" input="/cmoRegisterNew">
+			<forward name="NOT_ATTENDED" path="/episodeActNotAttendedACTION.cnt" />
+			<forward name="ATTENDED_TREATED_DISPOSED" path="/episodeActAttendedDisposedACTION.cnt" />
+			<forward name="ATTENDED_TREATED_OBSERVATION" path="/episodeActInObservationACTION.cnt" />
+			<forward name="ATTENDED_ADMITTED" path="/episodeActAttendedAdmittedACTION.cnt" />
+			<forward name="ATTENDED_REFFERED_IN_CASUALTY" path="/episodeActAttendedRefInCasualtyACTION.cnt" />
+			<forward name="ATTENDED_REFFERED_IN_WARD" path="/episodeActAttendedRefInWardACTION.cnt" />
+			<forward name="ATTENDED_REFFERED_OUT" path="/episodeActAttendedRefOutACTION.cnt" />
+			<forward name="DEATH" path="/episodeActDeathACTION.cnt" />
+		</action>
+
+		<action path="/episodeActNotAttendedACTION"
+				type="registration.controller.action.EpisodeActNotAttendedACTION"
+				name="EpisodeNotAttendedFB" validate="false" scope="request"
+				parameter="hmode"
+				input="/transaction/episodeActNotAttendedTile.jsp">
+			<forward name="NEW" path="/transaction/episodeActNotAttendedTile.jsp" />
+			<forward name="AFTERSAVE" path="/cmoRegisterAction.cnt" />
+		</action>
+
+		<action path="/episodeActAttendedDisposedACTION"
+			type="registration.controller.action.EpisodeActAttendedDisposedACTION"
+			name="EpisodeAttDisposedFB" validate="false" parameter="hmode"
+			scope="request" input="/transaction/episodeActAttDisposedTile.jsp">
+			<forward name="NEW" path="/transaction/episodeActAttDisposedTile.jsp" />
+			<forward name="SAME" path="/transaction/episodeActAttDisposedTile.jsp" />
+		</action>
+
+		<action path="/episodeActInObservationACTION"
+				type="registration.controller.action.EpisodeActInObservationACTION"
+				name="EpisodeInObservationFB" validate="false" parameter="hmode"
+				scope="request" input="/transaction/episodeActAttDisposedTile.jsp">
+			<forward name="NEW" path="/transaction/episodeActAttendedObservationTile.jsp" />
+			<forward name="SAME" path="/transaction/episodeActAttendedObservationTile.jsp" />
+		</action>
+
+		<action path="/episodeActAttendedAdmittedACTION"
+				type="registration.controller.action.EpisodeActAttendedAdmittedACTION"
+				name="EpisodeAttendedAdmittedFB" validate="false" scope="request"
+				parameter="hmode"
+				input="/transaction/episodeActAttendedAdmittedTile.jsp">
+			<forward name="NEW" path="/transaction/episodeActAttendedAdmittedTile.jsp" />
+		</action>
+
+		<action path="/episodeActAttendedRefInCasualtyACTION"
+				type="registration.controller.action.EpisodeActAttendedRefInCasualtyACTION"
+				name="EpisodeAttendedRefInCasualtyFB" validate="false"
+				scope="request" parameter="hmode"
+				input="/transaction/episodeActAttendedRefinCasualityTile.jsp">
+			<forward name="NEW" path="/transaction/episodeActAttendedRefinCasualityTile.jsp" />
+		</action>
+
+		<action path="/episodeActAttendedRefInWardACTION"
+				type="registration.controller.action.EpisodeActAttendedRefInWardACTION"
+				name="EpisodeAttendedRefInWardFB" validate="false" scope="request"
+				parameter="hmode"
+				input="/transaction/episodeActAttendedRefinWardTile.jsp">
+			<forward name="NEW" path="/transaction/episodeActAttendedRefinWardTile.jsp" />
+		</action>
+
+		<action path="/episodeActAttendedRefOutACTION"
+				type="registration.controller.action.EpisodeActAttendedRefOutACTION"
+				name="EpisodeAttendedRefOutFB" validate="false" scope="request"
+				parameter="hmode"
+				input="/transaction/episodeActRefOutTile.jsp.jsp">
+			<forward name="NEW" path="/transaction/episodeActRefOutTile.jsp" />
+		</action>
+
+		<action path="/episodeActDeathACTION"
+				type="registration.controller.action.EpisodeActDeathACTION"
+				name="EpisodeDeathFB" validate="false" scope="request"
+				parameter="hmode"
+				input="/transaction/episodeActPatientDeathInCasualityTile.jsp">
+			<forward name="NEW" path="/transaction/episodeActPatientDeathInCasualityTile.jsp" />
+		</action>
+
+		<action path="/emergencyOldPatientVisit"
+				type="registration.controller.action.EmgOldPtntVisitACTION"
+				name="EmgPatientVisitStampFB" validate="false" scope="request"
+				parameter="hmode" input="/transaction/emgOldPatientTile.jsp">
+			<forward name="NEW" path="/transaction/emgOldPatientTile.jsp" />
+			<forward name="SAME" path="/transaction/emgOldPatientTile.jsp" />
+		</action>
+		
+		<action path="/episodeActPopup"
+				type="registration.controller.action.EpisodeActAttendedPopupACTION"
+				name="EpisodePopupFB" validate="false" parameter="hmode"
+				scope="request"
+				input="/transaction/EpisodeAttDisposedPopupTile.jsp">
+			<forward name="NEW" path="/transaction/EpisodeAttDisposedPopupTile.jsp" />
+		</action>
+
+		<action path="/verificationDocumentPopup"
+				type="registration.controller.action.verificationDocumentACTION"
+				name="verificationDocumentFB" validate="false" parameter="hmode"
+				scope="request"
+				input="/transaction/verificationDocumentPopUpTile.jsp">
+			<forward name="NEW" path="/transaction/verificationDocumentPopUpTile.jsp" />
+		</action>
+
+		<action path="/searchByNamePopup"
+				type="registration.controller.action.SearchByNameACTION"
+				name="SearchByNameFB" validate="false" parameter="hmode"
+				scope="request" input="/transaction/searchByNameTile.jsp">
+			<forward name="NEW" path="/transaction/searchByNameTile.jsp" />
+			<forward name="SAME" path="/transaction/searchByNameTile.jsp" />
+		</action>
+
+		<action path="/referDeptVisitStampACTION"
+				type="registration.controller.action.ReferDeptVisitStampACTION"
+				name="ReferDeptVisitStampFB" validate="false" parameter="hmode"
+				scope="request" input="/transaction/referDeptVisitStampTile.jsp">
+			<forward name="NEW" path="/transaction/referDeptVisitStampTile.jsp" />
+			<forward name="SAME" path="/transaction/referDeptVisitStampTile.jsp?isNewMode=false" />
+		</action>
+
+		<action path="/mlcuploadImage"
+				type="registration.controller.action.MlcUploadImageACTION"
+				name="MlcuploadFB" validate="false" parameter="hmode" scope="request"
+				input="/transaction/mlDocUploadTile.jsp">
+			<forward name="NEW" path="/transaction/mlDocUploadTile.jsp" />
+			<forward name="SAME" path="/transaction/mlDocUploadTile.jsp" />
+		</action>
+
+		<action path="/specialClinicNewReg" 
+				type="registration.controller.action.newSplRegACTION"
+				name="newSplRegFB" validate="false" parameter="hmode"
+				scope="request" input="/transaction/opdNewSplPatRegistrationTile.jsp">
+			<forward name="NEW" path="/transaction/opdNewSplPatRegistrationTile.jsp" />
+			<forward name="SAME" path="/transaction/opdNewSplPatRegistrationTile.jsp" />
+		</action>
+
+		<action path="/employeeDtlWithDependents" name="EmpDependentFB"
+				type="registration.controller.action.EmployeeWithDependentACTION"
+				validate="false" parameter="hmode" scope="request"
+				input="/transaction/employeeWithdependentTile.jsp">
+			<forward name="NEW" path="/transaction/employeeWithdependentTile.jsp" />
+			<forward name="SAME" path="/transaction/employeeWithdependentTile.jsp" />
+		</action>
+
+		<action path="/employeeDtlAndDependents" name="EmpDependentFB"
+				type="registration.controller.action.EmployeeWithDependentACTION"
+				validate="false" parameter="hmode" scope="request"
+				input="/transaction/employeeWithdependentTile.jsp">
+			<forward name="NEW" path="/transaction/employeeWithdependentTile.jsp" />
+			<forward name="SAME" path="/transaction/employeeWithdependentTile.jsp" />
+		</action>
+
+		<action path="/yellowSlipEntry" name="YellowSlipEntryFB"
+				type="registration.controller.action.YellowSlipEntryACTION"
+				validate="false" parameter="hmode" scope="request"
+				input="/transaction/yellowSlipEntryLayout.jsp">
+			<forward name="NEW" path="/transaction/yellowSlipEntryLayout.jsp" />
+			<forward name="SAME" path="/transaction/yellowSlipEntryLayout.jsp" />
+		</action>
+		
+		<action path="/yellowSlipMonitoring" name="yellowSlipMonitoringFB"
+				type="registration.controller.action.YellowSlipMonitoringACTION"
+				validate="false" parameter="hmode" scope="request"
+				input="/transaction/yellowSlipMonitoring.jsp">
+			<forward name="NEW" path="/transaction/yellowSlipMonitoring.jsp" />
+			<forward name="SAME" path="/transaction/yellowSlipMonitoring.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<action path="/YellowSlipDiagnosisPopUp"
+				type="registration.controller.action.YellowSlipDiagnosisPopUpACTION"
+				name="YellowSlipDiagnosisPopupFB" validate="false" parameter="hmode"
+				scope="request"
+				input="/transaction/YellowSlipDiagnosisPopupTile.jsp">
+			<forward name="NEW" path="/transaction/YellowSlipDiagnosisPopupTile.jsp" />
+			<forward name="SAME" path="/yellowSlipEntry.cnt?mode=POPULATE" />
+		</action>
+
+		<action path="/patientReferral" name="patReferralFB"
+				type="registration.controller.action.PatientReferralACTION"
+				validate="false" parameter="hmode" scope="request"
+				input="/transaction/patientReferralTile.jsp">
+			<forward name="NEW" path="/transaction/patientReferralTile.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<action path="/convertMlcToNonMlc"
+				type="registration.controller.action.RevokeMLCEpisodeACTION"
+				name="RevokeMLCEpisodeFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/revokeMLCEpisodeTile.jsp">
+			<forward name="NEW" path="/transaction/revokeMLCEpisodeTile.jsp" />
+			<forward name="SAME" path="/transaction/revokeMLCEpisodeTile.jsp" />
+		</action>
+
+		<action path="/patientAuditTrail"
+				type="registration.controller.action.PatientAuditTrailACTION"
+				name="PatientAuditFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/patientAuditTrail.jsp">
+			<forward name="NEW" path="/transaction/patientAuditTrail.jsp" />
+			<forward name="SAME" path="/transaction/patientAuditTrail.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+				<!-- CMO Desk -->
+		<action path="/cmoDeskLogin"
+				type="registration.controller.action.CMODeskLoginACTION"
+				name="CMODeskLoginFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/cmoDeskWelcomePage.jsp">
+			<forward name="NEW" path="/transaction/cmoDeskWelcomePage.jsp" />
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+				
+		<action path="/gotoCMODeskHeaderPage"
+				parameter="/registration/transaction/cmoDeskHeader.jsp"
+				type="org.apache.struts.actions.ForwardAction" />		
+
+		<action path="/cmoDesk"
+				type="registration.controller.action.CMODeskACTION"
+				name="CMODeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/cmoDeskLayout.jsp">
+			<forward name="NEW" path="/cmoDesk" />
+			<forward name="DESKDIAGNOSIS" path="/cmoDiagnosis" />
+			<forward name="DESKREFERPATIENT" path="/cmoReferPatient" />
+			<forward name="OPDNEXTVISITDETAIL" path="/cmoNextVisitDetail" />
+			<forward name="MLCDETAIL" path="/cmoMLCDetail" />
+			<forward name="PATIENTDEATHDETAIL" path="/cmoPatDeathDetail" />
+			<forward name="DEFAULT" path="/cmoUnderConstructionDesk"/>
+			<forward name="ADMISSIONADVICE" path="/cmoAdmissionAdvice"/>
+			<forward name="NOTATTENDED" path="/cmoNotAttended"/>
+			<forward name="UNDEROBSERVATION" path="/cmoUnderObservation"/>
+			
+		</action>
+		
+		<action path="/underConstructionDesk"
+				type="hisglobal.utility.dynamicdesk.controller.action.UnderConstructionDeskACTION"
+				name="UnderConstructionDeskFb"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/../hisglobal/utility/dynamicdesk/underConstructionDesk.jsp">
+			<forward name="NEW" path="/../hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+			
+		</action>
+		
+		<action path="/cmoPatientDesk"
+				type="registration.controller.action.CMOPatientDeskACTION"
+				name="CMOPatientDeskFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/cmoPatientDesk.jsp">
+			<forward name="NEW" path="/transaction/cmoPatientDesk.jsp" />
+		</action>
+		
+		<action path="/cmoDeskPatientNotAttended"
+				type="registration.controller.action.PatientNotAttendedACTION"
+				name="PatientNotAttendedFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/patientNotAttendedTile.jsp">
+			<forward name="NEW" path="/transaction/patientNotAttendedTile.jsp" />
+			<forward name="LIST" path="/cmoPatientDesk.cnt?hmode=NEW" />
+			
+			
+		</action>
+		
+		<action path="/cmoDeskPatientUnderObservation"
+				type="registration.controller.action.PatientAttendedUnderObservationACTION"
+				name="PatientAttendedUnderObservationFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/PatientAttendedUnderObservationTile.jsp">
+			<forward name="NEW" path="/transaction/PatientAttendedUnderObservationTile.jsp" />
+			<forward name="LIST" path="/cmoPatientDesk.cnt?hmode=NEW" />
+		</action>
+
+	    <action path="/handoverToDeadBody"
+				type="registration.controller.action.HandoverToDeadBodyACTION"
+				name="HandoverToDeadBodyFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/handoverToDeadBody.jsp">
+			<forward name="NEW" path="/transaction/handoverToDeadBody.jsp" />
+			<forward name="PRINT" path="/transaction/patientDeathCertificateByHanover.jsp" />
+			<forward name="CANCEL" path="../startup/initpage.jsp" />
+		</action>
+        
+        <action path="/redirectOfOPDPatient"
+				type="registration.controller.action.RedirectOfOPDPatACTION"
+				name="RedirectOfOPDPatFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/redirectOfOPDPat.jsp">
+			<forward name="NEW" path="/transaction/redirectOfOPDPat.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+        <action path="/offlineRegistration"
+				type="registration.controller.action.OfflineRegistrationACTION"
+				name="offlineRegistrationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/offlineRegistrationTile.jsp">
+			<forward name="NEW" path="/transaction/offlineRegistrationTile.jsp" />
+			<forward name="POPUP" path="/transaction/patientDetailPopupDuplicateCheck.jsp" /> 
+			<forward name="OLD_PATIENT" path="/oldpatientvisit.cnt?hmode=GETPATDTL" /> 
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/dayWiseRosterDeActivation"
+				type="registration.controller.action.DayWiseRosterDeActivationACTION"
+				name="DayWiseRosterDeActivationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/dayWiseRosterDeActivation.jsp">
+			<forward name="NEW" path="/transaction/dayWiseRosterDeActivation.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!--New Department Visit Room Wise -->
+		
+		<action path="/newDeptVisitRoomWiseDesk"
+			type="registration.controller.action.NewDeptVisitRoomWiseACTION"
+			name="NewDeptVisitRoomWiseFB" 
+			validate="false" 
+			scope="request"
+			parameter="hmode"
+			input="/transaction/patientRegistrationDeskView.jsp" >
+			<forward name="GETPATDTL" 	path="/transaction/opdNewDeptVisitRoomWiseTile.jsp" />
+			<forward name="SAME"  		path="/transaction/opdNewDeptVisitRoomWiseTile.jsp" />
+			<forward name="NEW"		    path="/transaction/opdNewDeptVisitRoomWiseTile.jsp" />
+		</action>
+		
+		<action path="/fileNumberPrinting"
+			type="registration.controller.action.FileNumberPrintingACTION"
+			name="fileNumberPrintingFB" 
+			validate="false" 
+			scope="request"
+			parameter="hmode"
+			input="/transaction/fileNumberPrinting.jsp" >
+			<forward name="NEW" path="/transaction/fileNumberPrinting.jsp" />
+	   		 <forward name="CANCEL" path="/../startup/initPage.jsp" />
+			
+		</action>
+		
+		<action path="/oldPatientVisitRoomWise"
+			type="registration.controller.action.OldPatientVisitRoomWiseACTION"
+			name="oldPatientVisitRoomWiseFB" 
+			validate="false" 
+			scope="request"
+			parameter="hmode"
+			input="/transaction/oldPatientVisitRoomWiseTile.jsp" >
+			<forward name="NEW" path="/transaction/oldPatientVisitRoomWiseTile.jsp" />
+	   		<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+		
+		<action path="/mctsRegistration"
+			type="registration.controller.action.MCTSRegistrationACTION"
+			name="MCTSRegistrationFB" validate="false" scope="request"
+			parameter="hmode" input="/transaction/mctsRegistrationTile.jsp">
+			<forward name="NEW"
+				path="/transaction/mctsRegistrationTile.jsp" />
+			<forward name="SAME"
+				path="/transaction/mctsRegistrationTile.jsp" />
+		</action>
+		
+		
+		<action path="/oldPatientVisitDuplicate"
+			parameter="/oldpatientvisit.cnt?hmode=GETPATDTL"
+			type="org.apache.struts.actions.ForwardAction">
+		</action>
+		<!--  patient visit Mapping start  -->
+
+		<action path="/PatientVisitDesk"
+			type="registration.controller.action.PatientVisitACTION"
+			name="PatientVisitFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transaction/opdPatientVisitTile.jsp">
+			<forward name="SAMENEWPATIENT"
+				path="/transaction/opdPatientVisitTile.jsp" />
+			<forward name="NEWPATIENT"
+				path="/transaction/opdPatientVisitTile.jsp" />
+			<forward name="GETPATDTL"
+				path="/transaction/opdPatientVisitTile.jsp" />
+			<forward name="SAME"
+				path="/transaction/opdPatientVisitTile.jsp" />
+			<forward name="NEW"
+				path="/transaction/opdPatientVisitTile.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action>
+		<!--Emerygency patient visit Mapping end -->
+		
+		<action path="/EmergencyPatientVisitDesk"
+			type="registration.controller.action.EmergencyPatientVisitACTION"
+			name="EmergencyPatientVisitFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transaction/EmergencyPatientVisitTile.jsp">
+			<forward name="SAMENEWPATIENT"
+				path="/transaction/EmergencyPatientVisitTile.jsp" />
+			<forward name="NEWPATIENT"
+				path="/transaction/EmergencyPatientVisitTile.jsp" />
+		</action>
+		<!-- Emergency patient visit Mapping end -->
+			<action path="/newSplRegDesk" name="DeskFB"
+			type="registration.controller.action.SpecialClinicRegDeskACTION"
+			validate="false" scope="request" parameter="deskmode"
+			input="/regDeskNewRegistrationDuplicate">
+			<forward name="NEWREGT" path="/splDeskNewRegistration" />
+			<forward name="NEWDEPT" path="/regDeskNewDeptVisitDuplicate" />
+			<forward name="PATIENTMOD" path="/regDeskModificationDuplicate" />
+			<forward name="NEWREG_ROOM_WISE" 	path="/offlineRegistrationDeskDuplicate" />
+			<forward name="OLDDEPTVISIT" 	path="/oldpatientvisitDeskDuplicate" />			
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		
+		<!-- Special Clinic Registration Mapping start -->
+		<action path="/newSplRegDesk"
+				type="registration.controller.action.newSplRegACTION"
+				name="newSplRegFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/opdNewPatientRegistrationTileDuplicate.jsp">
+			<forward name="NEW" path="/transaction/opdNewSplPatRegistrationTile.jsp" />
+			<forward name="SAME" path="/transaction/opdNewSplPatRegistrationTile.jsp" />
+			<forward name="POPUP" path="/transaction/patientDetailPopup.jsp" />
+			<forward name="BPLPOPUP" path="/transaction/regBPLSearchPopup.jsp" />  
+			<forward name="OLD_PATIENT" path="/oldpatientvisit.cnt?hmode=GETPATDTL" /> 
+			<forward name="MENU" path="../startup/initpage.jsp" />
+		</action>
+		
+		<!-- Police Examination Request Detail (Emergency) -->
+		<action path="/policeExaminationReqtDtl"
+				type="registration.controller.action.PoliceExaminationReqtDtlACTION"
+				name="policeExaminationReqtDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/../registration/transaction/policeExaminationReqtDtl.jsp">
+			<forward name="NEW" path="/../registration/transaction/policeExaminationReqtDtl.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Police Examination Report Generation Detail (Emergency) -->
+		<action path="/policeExaminationReportGenerationDtl"
+				type="registration.controller.action.PoliceExaminationReportGenerationDtlACTION"
+				name="policeExaminationReportGenerationDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+			<forward name="NEW" path="/../registration/transaction/policeExaminationReportGenerationDtl.jsp" />
+			<forward name="TEMPLATEPOPUP" path="/../registration/transaction/policeExaminationReportGenTemplatePopup.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Special Clinic Registration Mapping end -->
+		
+		<!-- PIS Employee Entry Transaction -->
+	<action path="/EmpEntryAction" 
+	type="hr.pis.transactions.action.Hr_Trans_Emp_Entry_Action" 
+	name="PISEmpEntryForm" scope="request" validate="false" parameter="hrMode">
+	<forward name="EmpEntryAdd" path="EmpEntryAdd.page"/>
+	<forward name="EmpEntryView" path="EmpEntryView.page"/>
+	<forward name="EmpEntryPopModify" path="EmpEntryPopModify.page"/>
+	<forward name="EmpEntryModify" path="EmpEntryModify.page"/>
+	
+	</action>
+<!--  PIS Employee Entry Transaction -->
+		<action path="/gotoPageB" parameter="/check"
+				type="org.apache.struts.actions.ForwardAction" />
+
+		<action path="/switchModule"
+				type="org.apache.struts.actions.SwitchAction" />
+
+	</action-mappings>
+
+
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/RegistrationDesk-tiles-defs.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+	<!-- **************** scheduler Plugin which schedule jobs*********************** 
+		The plugin configuration has two properties used for initialization.
+		 @startOnLoad specifies whether or not we want to start the scheduler 
+		 immediately when the container starts and @startupDelay is used to
+		  specify how long before the code will attempt to start the scheduler.	-->
+		  
+
+	<!--    <plug-in className="hisglobal.presentation.SchedulerPlugIn">
+	     <set-property property="startOnLoad" value="false" />
+	     <set-property property="startupDelay" value="0" />
+  	</plug-in>  
+ -->
+ 
+	<!-- **************************************************************************** -->
+</struts-config>

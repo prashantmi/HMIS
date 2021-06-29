@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+
+	<!--  ========== Form Bean Definitions ===================================  -->
+
+	<form-beans>
+
+		<form-bean name="MenuMasterFB"
+			type="dietkitchen.masters.controller.fb.MenuMasterFB" />
+		<form-bean name="MealTimeFB"
+			type="dietkitchen.masters.controller.fb.MealTimeFB" />
+		<form-bean name="NutrientMasterFB"
+			type="dietkitchen.masters.controller.fb.NutrientMasterFB" />
+		<form-bean name="MealTypeMenuMappingMstFB"
+			type="dietkitchen.masters.controller.fb.MealTypeMenuMappingMstFB" />
+		<form-bean name="MealTypeMealTimeMappingMstFB"
+			type="dietkitchen.masters.controller.fb.MealTypeMealTimeMappingMstFB" />
+		<form-bean name="MenuNutrientMappingMstFB"
+			type="dietkitchen.masters.controller.fb.MenuNutrientMappingMstFB" />
+		<form-bean name="MemberTypeMstFB"
+			type="dietkitchen.masters.controller.fb.MemberTypeFB" />
+		<form-bean name="MealTypeMasterFB"
+			type="dietkitchen.masters.controller.fb.MealTypeMasterFB" />
+		<form-bean name="KitchenMemberMappingMasterFB"
+			type="dietkitchen.masters.controller.fb.KitchenMemberMappingMasterFB" />
+		<form-bean name="KitchenMstFB"
+			type="dietkitchen.masters.controller.fb.KitchenMstFB" />
+		<form-bean name="TrolleyMstFB"
+			type="dietkitchen.masters.controller.fb.TrolleyMstFB" />
+		<form-bean name="MealTypeParaDocMstFB"
+			type="dietkitchen.masters.controller.fb.MealTypeParaDocMstFB" />
+		<form-bean name="DeptMemberMstFB"
+			type="dietkitchen.masters.controller.fb.DeptMemberMstFB" />
+		<form-bean name="QualityMasterFB"
+			type="dietkitchen.masters.controller.fb.QualityMasterFB" />
+		<form-bean name="MenuIngredientMasterFB"
+			type="dietkitchen.masters.controller.fb.MenuIngredientMasterFB" />
+		<form-bean name="MealTimeMenuMappingMasterFB"
+			type="dietkitchen.masters.controller.fb.MealTimeMenuMappingMasterFB" />
+		<form-bean name="WardDefMealTypeMasterFB" 
+			type="dietkitchen.masters.controller.fb.WardDefMealTypeMasterFB"/>
+			
+			<form-bean name="DietSuppierMasterFB" 
+			type="dietkitchen.masters.controller.fb.DietSuppierMasterFB"/>
+			
+			<form-bean name="KitchenTrolleyLocationMappingMstFB" 
+			type="dietkitchen.masters.controller.fb.KitchenTrolleyLocationMappingMstFB"/>
+			
+			
+			
+	</form-beans>
+
+
+	<!-- ========== Action Mapping Definitions ==============================  -->
+	<action-mappings>
+
+		<action path="/masters/MenuMaster"
+			type="dietkitchen.masters.controller.action.MenuMasterACTION"
+			name="MenuMasterFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/masters/menu_master_add.jsp" />
+			<forward name="MODIFY"
+				path="/masters/menu_master_modify.jsp" />
+			<forward name="ERROR" path="/masters/errorPage.jsp" />
+		</action>
+
+
+		<action path="/masters/MealTimeMaster"
+			type="dietkitchen.masters.controller.action.MealTimeACTION"
+			name="MealTimeFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/masters/meal_time_master_add.jsp" />
+			<forward name="MODIFY"
+				path="/masters/meal_time_master_modify.jsp" />
+			<forward name="ERROR" path="/masters/errorPage.jsp" />
+		</action>
+
+
+		<action path="/masters/NutrientMasterACTION"
+			type="dietkitchen.masters.controller.action.NutrientMasterACTION"
+			name="NutrientMasterFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/masters/nutrient_master.jsp" />
+			<forward name="SAVE" path="/masters/nutrient_master.jsp" />
+			<forward name="ERROR" path="/masters/errorPage.jsp" />
+			<forward name="LIST"
+				path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+
+		<action path="/masters/MenuMasterACTION"
+			type="dietkitchen.masters.MenuMasterACTION" name="MenuMasterFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/dietkitchen/masters/menu_master_add.jsp" />
+			<!-- <forward name="ERROR" path="/investigation/masters/errorPage.jsp"/>-->
+		</action>
+
+		<action path="/masters/MealTypeMenuMappingACTION"
+			type="dietkitchen.masters.controller.action.MealTypeMenuMappingMstACTION"
+			name="MealTypeMenuMappingMstFB" scope="request" validate="false"
+			parameter="hmode" input="/masters/meal_type_menu_mapping_mst.jsp">
+			<forward name="LIST"
+				path="/../masterWorkshop/mstHandlerListAction.cnt" />
+			<forward name="ADD"
+				path="/masters/meal_type_menu_mapping_mst.jsp" />
+			<forward name="VIEW"
+				path="/masters/meal_type_menu_mapping_mst.jsp" />
+			<forward name="MODIFY"
+				path="/masters/meal_type_menu_mapping_mst.jsp" />
+		</action>
+
+		<action path="/masters/MealTypeMealTimeMappingMstACTION"
+			type="dietkitchen.masters.controller.action.MealTypeMealTimeMappingMstACTION"
+			name="MealTypeMealTimeMappingMstFB" scope="request" validate="false"
+			parameter="hmode"
+			input="/masters/meal_type_meal_time_mapping_mst.jsp">
+			<forward name="LIST"
+				path="/../masterWorkshop/mstHandlerListAction.cnt" />
+			<forward name="ADD"
+				path="/masters/meal_type_meal_time_mapping_mst.jsp" />
+			<forward name="MODIFY"
+				path="/masters/meal_type_meal_time_mapping_mst.jsp" />
+		</action>
+
+		<action path="/masters/MenuNutrientMappingMst"
+			type="dietkitchen.masters.controller.action.MenuNutrientMappingMstACTION"
+			name="MenuNutrientMappingMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/masters/menu_nutrient_mapping_mst_add.jsp" />
+			<forward name="MODIFY"
+				path="/masters/menu_nutrient_mapping_mst_add.jsp" />
+		</action>
+
+		<action path="/masters/memberTypeMst"
+			type="dietkitchen.masters.controller.action.MemberTypeACTION"
+			name="MemberTypeMstFB" scope="request" validate="false"
+			parameter="hmode" input="/masters/dk_member_type_mst.jsp">
+			<forward name="ADD" path="/masters/dk_member_type_mst.jsp" />
+			<forward name="MODIFY"
+				path="/masters/dk_member_type_mst.jsp" />
+		</action>
+
+		<action path="/masters/MealTypeMaster"
+			type="dietkitchen.masters.controller.action.MealTypeMasterACTION"
+			name="MealTypeMasterFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/masters/dk_meal_type_mst.jsp" />
+			<forward name="ERROR" path="/masters/errorPage.jsp" />
+		</action>
+
+		<action path="/masters/kitchenMst"
+			type="dietkitchen.masters.controller.action.KitchenMstACTION"
+			name="KitchenMstFB" scope="request" validate="false"
+			parameter="hmode" input="/masters/">
+			<forward name="ADD" path="/masters/dk_kitchen_mst.jsp" />
+			<forward name="MODIFY" path="/masters/dk_kitchen_mst.jsp" />
+		</action>
+
+		<action path="/masters/kitchenMemberMappingMaster"
+			type="dietkitchen.masters.controller.action.KitchenMemberMappingMasterACTION"
+			name="KitchenMemberMappingMasterFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/masters/kitchen_member_mapping_mst.jsp" />
+			<forward name="MODIFY"
+				path="/masters/kitchen_member_mapping_mst.jsp" />
+		</action>
+		<action path="/masters/trolleyMst"
+			type="dietkitchen.masters.controller.action.TrolleyMstACTION"
+			name="TrolleyMstFB" scope="request" validate="false"
+			parameter="hmode" input="/masters/">
+			<forward name="ADD" path="/masters/dk_trolley_mst.jsp" />
+			<forward name="MODIFY" path="/masters/dk_trolley_mst.jsp" />
+		</action>
+
+		<action path="/masters/mealTypeParaDocMst"
+			type="dietkitchen.masters.controller.action.MealTypeParaDocMstACTION"
+			name="MealTypeParaDocMstFB" scope="request" validate="false"
+			parameter="hmode" input="/masters/">
+			<forward name="ADD"
+				path="/masters/dk_mealtype_para_doc_mst.jsp" />
+			<forward name="MODIFY"
+				path="/masters/dk_mealtype_para_doc_mst.jsp" />
+		</action>
+
+		<action path="/masters/deptMemberMst"
+			type="dietkitchen.masters.controller.action.DeptMemberMstACTION"
+			name="DeptMemberMstFB" scope="request" validate="false"
+			parameter="hmode" input="/masters/">
+			<forward name="ADD" path="/masters/dk_dept_member_mst.jsp" />
+			<forward name="MODIFY"
+				path="/masters/dk_dept_member_mst.jsp" />
+		</action>
+
+		<action path="/masters/QualityMaster"
+			type="dietkitchen.masters.controller.action.QualityMasterACTION"
+			name="QualityMasterFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/masters/dk_quality_mst.jsp" />
+		</action>
+
+		<action path="/masters/MenuIngredientMaster"
+			type="dietkitchen.masters.controller.action.MenuIngredientMasterACTION"
+			name="MenuIngredientMasterFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/masters/dk_menu_ingredient_mst.jsp" />
+		</action>
+
+		<action path="/masters/MealTimeMenuMappingMaster"
+			type="dietkitchen.masters.controller.action.MealTimeMenuMappingMasterACTION"
+			name="MealTimeMenuMappingMasterFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/masters/dk_meal_time_menu_mapping_mst.jsp" />
+		</action>
+		
+		<action path="/masters/WardDefMealTypeMaster" 
+				type="dietkitchen.masters.controller.action.WardDefMealTypeMasterACTION"
+				name="WardDefMealTypeMasterFB" scope="request" 
+				validate="false"
+				parameter="hmode">
+				<forward name="ADD" path="/masters/dk_ward_def_meal_type_mapping_mst.jsp"/>
+				<forward name="MODIFY" path="/masters/dk_ward_def_meal_type_mapping_modify_mst.jsp"/>
+		</action>
+		
+		
+		<action path="/masters/DietSupplierMaster"
+			type="dietkitchen.masters.controller.action.DietSuppierMasterACTION"
+			name="DietSuppierMasterFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/masters/dk_diet_supplier_mst.jsp" />
+			<forward name="ERROR" path="/masters/errorPage.jsp" />
+		</action>
+		
+		
+		
+		
+		<action path="/masters/KitchenTrolleyLocationMappingMaster"
+			type="dietkitchen.masters.controller.action.KitchenTrolleyLocationMappingMstACTION"
+			name="KitchenTrolleyLocationMappingMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/masters/dk_kitchen_trolley_location_mapping_mst.jsp" />
+			<forward name="ERROR" path="/masters/errorPage.jsp" />
+		</action>
+
+	</action-mappings>
+
+
+	<message-resources
+		parameter="dietkitchen.dietKitchenResourceBundle">
+	</message-resources>
+
+</struts-config>

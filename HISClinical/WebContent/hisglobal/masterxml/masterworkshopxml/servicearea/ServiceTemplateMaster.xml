@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Master'>
+		<common-values>
+			<master-name>ServiceTemplateMaster</master-name>
+			<master-title>Service Template Master</master-title>
+		</common-values>
+	<list-page>
+				<tableHeading>Service Template Master</tableHeading>
+				<list-table>HSRV_SERVICE_TEMPLATE_MST</list-table>
+				
+				<columns>					 
+					 <column>Service Area</column>
+					 <column>Procedure</column>
+					 <column>Template</column>
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>(SELECT NVL(INITCAP (HSRSTR_SERVICE_AREA_NAME),'X') || '('|| NVL ((SELECT INITCAP 
+						(gstr_dept_name) FROM gblt_department_mst dept WHERE 
+						dept.gnum_dept_code = c.gnum_dept_code AND dept.gnum_hospital_code = c.gnum_hospital_code 
+						AND GNUM_ISVALID=1),'Global Service' ) || ')' FROM HSRV_SERVICE_AREA_MST C 
+						WHERE HSRNUM_SERVICE_AREA_CODE = A.HSRNUM_SERVICE_AREA_CODE AND 
+						GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE AND GNUM_ISVALID=1) as sa</field>
+					    <field>NVL((SELECT INITCAP (NVL(HSRSTR_PROCEDURE_NAME,'X')) FROM HSRV_PROCEDURE_MST  WHERE HSRNUM_PROCEDURE_CODE = A.HSRNUM_PROCEDURE_CODE AND GNUM_ISVALID=1),'X')</field>
+					    <field>(SELECT INITCAP (HGSTR_TEMPLATE_NAME) FROM HGBT_TEMPLATE_MST   
+					    WHERE HGNUM_TEMPLATE_ID = A.HGNUM_TEMPLATE_ID  
+					    AND GNUM_ISVALID=1)</field>
+					</fields>
+					<primaryKey>
+						<field>A.HSRNUM_SERVICE_AREA_CODE</field>
+						<field>A.HSRNUM_PROCEDURE_CODE</field>
+						<field>A.HGNUM_TEMPLATE_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HSRV_SERVICE_TEMPLATE_MST </table>
+					</tables>
+					<condition>
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                            <isvalid-field> A.GNUM_ISVALID</isvalid-field>
+                             <orderby> order by sa</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<static-page>/servicearea/masters/ServiceTemplateMst.cnt</static-page>			
+		</add-page>
+		
+		<modify-page>
+		    <static-page>/servicearea/masters/ServiceTemplateMst.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

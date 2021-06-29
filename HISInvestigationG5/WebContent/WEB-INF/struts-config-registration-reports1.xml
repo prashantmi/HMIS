@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC 
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+    <form-beans>
+    
+        <form-bean name="commonReportFB" type="registration.reports.report1.controller.fb.ReportFB"/>        		
+    	<form-bean name="departmentWiseOutPatientReportFB" type="registration.reports.report1.controller.fb.DepartmentWiseOutPatientReportFB"/>
+      	<form-bean name="followUpPatientsFB" type="registration.reports.report1.controller.fb.FollowUpPatientsFB"/>
+      	<form-bean name="listOfPoorFreePatientsFB" type="registration.reports.report1.controller.fb.ListOfPoorFreePatientsFB"/>
+      	<form-bean name="feesCollectedForOpdSpecialClinicFB" type="registration.reports.report1.controller.fb.FeesCollectedForOpdSpecialClinicFB"/>
+		<form-bean name="specialClinicPatStatFB1" type="registration.reports.report1.controller.fb.SpecialClinicPatStatisticsFB"/>
+	   	<form-bean name="noOfAnonymousPatientListFB" type="registration.reports.report1.controller.fb.NoOfAnonymousPatientListFB"/>
+	  	<form-bean name="anonymousPatAndWhoBroughtFB" type="registration.reports.report1.controller.fb.AnonymousPatAndDetWhoBroughtFB"/>
+   		<form-bean name="mlcPatientSListPgiFB1" type="registration.reports.report1.controller.fb.MlcPatientsListPgiFB"/> 	
+      	<form-bean name="serviceUnitWiseRevisitPatFB" type="registration.reports.report1.controller.fb.ServiceUnitWiseRevisitPatFB"/>
+      	<form-bean name="serviceUnitWiseNewRegFB" type="registration.reports.report1.controller.fb.ServiceUnitWiseNewRegFB"/>
+  		<form-bean name="ageWiseReportRegFB1" type="registration.reports.report1.controller.fb.AgeWiseRegFB"/>
+  		<form-bean name="hospitalPatStatNewFB" type="registration.reports.report1.controller.fb.HospitalPatStatFB"/>
+ 		<form-bean name="hospitalPatStatStateNewFB" type="registration.reports.report1.controller.fb.HospitalPatStatStateFB"/>
+ 		<form-bean name="consultantRosterFB" type="registration.reports.report1.controller.fb.ConsultantRosterFB"/>
+ 		<form-bean name="deptWiseListofPatientsFB" type="registration.reports.report1.controller.fb.DeptWiseListofPatientsFB"/>
+ 		<form-bean name="deptWiseUserWiseRegPatLstFB" type="registration.reports.report1.controller.fb.DeptWiseUserWiseRegPatLstFB"/>
+ 		<form-bean name="freeNewVisitReportFB" type="registration.reports.report1.controller.fb.FreeNewVisitReportFB"/>
+		<form-bean name="departmentPercentWiseStatisticsFB" type="registration.reports.report1.controller.fb.DepartmentPercentageWiseStattisticsFB"/>
+		<form-bean name="specialClinicOutPatientFB" type="registration.reports.report1.controller.fb.SpecialClinicOutPatientStatisticsFB"/>
+		<form-bean name="hospitalWisePatListingFB" type="registration.reports.report1.controller.fb.HospitalWisePatListingFB"/>
+		<form-bean name="religionCategoryWisePatientReportFB" type="registration.reports.report1.controller.fb.ReligionCategoryWisePatientReportFB"/>
+		<form-bean name="UserWiseCashCollectionFB" type="registration.reports.report1.controller.fb.UserWiseCashCollectionFB"/>
+ 		<form-bean name="PatientListingReportFB" type="registration.reports.report1.controller.fb.PatientListingReportFB"/>
+ 		<form-bean name="UserWiseRegistrationFB" type="registration.reports.report1.controller.fb.UserWiseRegistrationFB"/>
+ 		<form-bean name="DSSParameterConfiguratorFB" type="registration.reports.report1.controller.fb.DSSParameterConfiguratorFB"/>
+ 		<form-bean name="OPDStatisticsDSSReportFB" type="registration.reports.report1.controller.fb.OPDStatisticsDSSReportFB"/>
+ 		<form-bean name="AgeWiseDSSReportFB" type="registration.reports.report1.controller.fb.AgeWiseDSSReportFB"/>
+    	<form-bean name="CategoryWiseUserWiseRegistrationFB" type="registration.reports.report1.controller.fb.CategoryWiseUserWiseRegistrationFB"/>
+        <form-bean name="ambulanceWiseCasesBroughtFB" type="registration.reports.report1.controller.fb.AmbulanceWiseCasesBroughtFB"/>
+        <form-bean name="listOfPatientsReferInOutFB" type="registration.reports.report1.controller.fb.ListOfPatientsReferInOutFB"/>
+        <form-bean name="PatWiseVisitDtlReportFB" type="registration.reports.report1.controller.fb.PatWiseVisitDtlReportFB"/>
+		<form-bean name="MctsPatListFB" type="registration.reports.report1.controller.fb.MctsPatListFB"/>
+    
+    </form-beans>    
+    
+	    
+    <action-mappings>   
+
+		
+        <action path="/report1/report"        
+            type="registration.reports.report1.controller.action.RegistrationCommonReportACTION"
+            name="commonReportFB"            
+            scope="request" 
+            parameter="mode">
+            
+            <forward name="DEPARTMENTWISEOUTPATIENTSREPORT" path="/report1/departmentWiseOutPatientReportDefinition"/>
+            <forward name="DEPARTMENTWISEOUTPATIENTSREPORTVIEW" path="/reports/report1/departmentWiseOutPatientReport.cnt"/>
+         
+         	<forward name="FOLLOWUPPATIENTSREPORT" path="/report1/followUpPatientsReportDefinition"/>
+            <forward name="FOLLOWUPPATIENTSREPORTVIEW" path="/reports/report1/followUpPatientsReport.cnt"/>
+          
+          	<forward name="LISTOFPOORFREEPATIENTSREPORT" path="/report1/listOfPoorFreePatientsReportDefinition"/>
+            <forward name="LISTOFPOORFREEPATIENTSREPORTVIEW" path="/reports/report1/listOfPoorFreePatientsReport.cnt"/>
+            
+            <forward name="LISTOFPATIENTSREFERINOUTREPORT" path="/report1/listOfPatientsReferInOutReportDefinition"/>
+            <forward name="LISTOFPATIENTSREFERINOUTREPORTVIEW" path="/reports/report1/listOfPatientsReferInOutReport.cnt"/>
+            
+            <forward name="FEESCOLLECTEDFOROPDSPECIALCLINICREPORT" path="/report1/feesCollectedForOpdSpecialClinicDefinition"/>
+            <forward name="FEESCOLLECTEDFOROPDSPECIALCLINICREPORTVIEW" path="/reports/report1/feesCollectedForOpdSpecialClinicReport.cnt"/>
+        
+         	<forward name="SPECIALCLINICPATSTATREPORT" path="/report1/specialClinicPatStatisticsReportdefinition"/>
+            <forward name="SPECIALCLINICPATSTATREPORTVIEW" path="/reports/report1/specialClinicPatStatisticsReport.cnt"/>
+                   
+            <forward name="NOOFANONYMOUSPATIENTLISTREPORT" path="/report1/noOfAnonymousPatientListReportDefinition"/>
+            <forward name="NOOFANONYMOUSPATIENTLISTREPORTVIEW" path="/reports/report1/noOfAnonymousPatientListReport.cnt"/>
+         
+         	<forward name="ANONYMOUSPATANDDETWHOBROUGHTREPORT" path="/report1/anonymousPatAndDetWhoBroughtReportdefinition"/>
+            <forward name="ANONYMOUSPATANDDETWHOBROUGHTREPORTVIEW" path="/reports/report1/anonymousPatAndDetWhoBroughtReport.cnt"/>
+           
+            <forward name="MLCPATIENTSLISTPGIREPORT" path="/report1/mlcPatientSListPgiReportdefinition"/>
+            <forward name="MLCPATIENTSLISTPGIREPORTVIEW" path="/reports/report1/mlcPatientSListPgiReport.cnt"/>
+            
+         	<forward name="SERVICEUNITWISEREVISITPATREPORT" path="/report1/serviceUnitWiseRevisitPatReportdefinition"/>
+            <forward name="SERVICEUNITWISEREVISITPATREPORTVIEW" path="/reports/report1/serviceUnitWiseRevisitPatReport.cnt"/>
+            
+         	<forward name="SERVICEUNITWISENEWREGREPORT" path="/report1/serviceUnitWiseNewRegReportdefinition"/>
+            <forward name="SERVICEUNITWISENEWREGREPORTVIEW" path="/reports/report1/serviceUnitWiseNewRegReport.cnt"/> 
+           
+           <forward name="AGEWISEREPORT" path="/report1/ageWiseRegReportdefinition"/>
+            <forward name="AGEWISEREPORTVIEW" path="/reports/report1/ageWiseRegReport.cnt"/> 
+            
+            <forward name="HOSPITALPATSTATREPORT" path="/report1/hospitalPatStatNewReportdefinition"/>
+            <forward name="HOSPITALPATSTATREPORTVIEW" path="/reports/report1/hospitalPatStatNewReport.cnt"/>
+            
+            <forward name="HOSPITALPATSTATSTATEREPORT" path="/report1/hospitalPatStatStateNewReportdefinition"/>
+            <forward name="HOSPITALPATSTATSTATEREPORTVIEW" path="/reports/report1/hospitalPatStatStateNewReport.cnt"/>
+         
+            <forward name="CONSULTANTROSTERREPORT" path="/report1/consultantRosterReportDefinition"/>
+            <forward name="CONSULTANTROSTERREPORTVIEW" path="/reports/report1/consultantRosterReport.cnt"/>
+               
+             
+            <forward name="DEPTWISELISTOFPATIENSREPORT" path="/report1/deptWiseListofPatientsReportDefinition"/>
+            <forward name="DEPTWISELISTOFPATIENSREPORTVIEW" path="/reports/report1/deptWiseListofPatientsReport.cnt"/> 
+                	         
+            <forward name="DEPTWISEUSERWISEPATLIST" path="/report1/deptWiseUserWiseListofPatientsReportDefinition"/>
+            <forward name="DEPTWISEUSERWISEPATLISTVIEW" path="/reports/report1/deptWiseUserWisePatLst.cnt"/> 
+            
+            <forward name="FREENEWDEPTVISITREPORT" path="/report1/freeNewDeptVisitReportDefinition"/>
+            <forward name="FREENEWDEPTVISITREPORTVIEW" path="/reports/report1/freeNewDeptVisitReport.cnt"/> 
+                	        
+			 <forward name="DEPARTMENTPERCENTAGEREPORT" path="/report1/departmentPercentWiseReportDefinition"/>
+			 <forward name="DEPARTMENTPERCENTAGEREPORTVIEW" path="/reports/report1/departmentPercentWiseReport.cnt"/> 
+			            
+			 <forward name="SPECIALOUTPATIENTSTATISTICS" path="/report1/specialClinicOutPatientStatisticsDefinition"/>
+			 <forward name="SPECIALOUTPATIENTSTATISTICSVIEW" path="/reports/report1/specialClinicOutPatientStatistics.cnt"/>  
+			 
+			 <forward name="HOSPITALWISEPATLIST" path="/report1/hospitalWisePatientListingReportDefinition"/>
+			 <forward name="HOSPITALWISEPATLISTVIEW" path="/reports/report1/hospitalWisePatientListingReport.cnt"/>  
+			 
+			 <forward name="RELIGIONCATEGORYWISEPATLIST" path="/report1/religionCategoryWisePatientListingReportDefinition"/>
+			 <forward name="RELIGIONCATEGORYWISEPATLISTVIEW" path="/reports/report1/religionCategoryWisePatientListingReport.cnt"/>  
+           
+			<forward name="USERWISECASHCOLLECTION" path="/report1/userWiseCashCollectionDefinition" />
+			<forward name="USERWISECASHCOLLECTIONVIEW" path="/reports/report1/userWiseCashCollectionReport.cnt"/>  
+
+			<forward name="PATIENTLISTINGREPORT" path="/report1/patientListingReportDefinition"/>
+			<forward name="PATIENTLISTINGREPORTVIEW" path="/reports/report1/patientListingReport.cnt"/> \
+			
+			<forward name="USERWISEREGISTRATION" path="/report1/userWiseRegistrationReportDefinition"/>
+			<forward name="USERWISEREGISTRATIONVIEW" path="/reports/report1/userWiseRegistrationReport.cnt"/> 
+
+			<forward name="CATEGORYWISEUSERWISEREGISTRATION" path="/report1/categoryWiseUserWiseRegistrationReportDefinition"/>
+			<forward name="CATEGORYWISEUSERWISEREGISTRATIONVIEW" path="/reports/report1/categoryWiseUserWiseRegistrationReport.cnt"/> 
+			  
+			<forward name="AMBULANCEWISECASESBROUGHT" path="/report1/ambulanceWiseCasesBroughtReportDefinition"/>
+			<forward name="AMBULANCEWISECASESBROUGHTVIEW" path="/reports/report1/ambulanceWiseCasesBroughtReport.cnt"/> 
+			 
+			 <forward name="PATWISEVISITDTLRPT" path="/report1/patWiseVisitDtlReportDefinition"/>
+		   <forward name="PATWISEVISITDTLRPTVIEW" path="/reports/report1/PatientWiseVisitDetailACTION.cnt"/>  
+        
+           
+            
+			<forward name="MCTSPATLIST" path="/report1/mctsPatListdefinition"/>
+			<forward name="MCTSPATLISTVIEW" path="/reports/report1/MctsPatListACTION.cnt"/>
+
+			<forward name="CANCEL" path="/../startup/initPage.jsp"  redirect="true" /> 
+                        
+       </action> 
+       	 
+       	 
+       	 
+       	 <action path="/reports/report1/departmentWiseOutPatientReport"
+		 		 type="registration.reports.report1.controller.action.DepartmentWiseOutPatientReportACTION"
+		 		 name="departmentWiseOutPatientReportFB"
+		 		 scope="request"
+         		 parameter="reportMode">
+         		<forward name="NEW" path="/reports/report1/jsp/departmentWiseOutPatientReport.jsp"/>	 
+		 </action>   
+		 
+		 
+       	  <action path="/reports/report1/followUpPatientsReport"
+       	 		 type="registration.reports.report1.controller.action.FollowUpPatientsACTION"
+       	 		 name="followUpPatientsFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		<forward name="NEW" path="/reports/report1/jsp/followUpPatients.jsp"/>	 
+       	 </action>	
+       	      
+       	   <action path="/reports/report1/listOfPoorFreePatientsReport"
+       	 		 type="registration.reports.report1.controller.action.ListOfPoorFreePatientsACTION"
+       	 		 name="listOfPoorFreePatientsFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		<forward name="NEW" path="/reports/report1/jsp/listOfPoorFreePatients.jsp"/>	 
+       	 </action>	
+       	 
+       	 <action path="/reports/report1/listOfPatientsReferInOutReport"
+       	 		 type="registration.reports.report1.controller.action.ListOfPatientsReferInOutACTION"
+       	 		 name="listOfPatientsReferInOutFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 		<forward name="NEW" path="/reports/report1/jsp/listOfPatientsReferInOut.jsp"/>	 
+       	 </action>	
+       	 
+         <action path="/reports/report1/feesCollectedForOpdSpecialClinicReport"
+       	 		 type="registration.reports.report1.controller.action.FeesCollectedForOpdSpecialClinicACTION"
+       	 		 name="feesCollectedForOpdSpecialClinicFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/report1/jsp/feesCollectedForOpdSpecialClinic.jsp"/>	 
+       	 </action> 
+           
+          
+           <action path="/reports/report1/specialClinicPatStatisticsReport"
+       	 		 type="registration.reports.report1.controller.action.SpecialClinicPatStatisticsACTION"
+       	 		 name="specialClinicPatStatFB1"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/report1/jsp/specialClinicPatStatistics.jsp"/>
+       	 </action>  
+       	   
+            
+         <action path="/reports/report1/noOfAnonymousPatientListReport"
+       	 		 type="registration.reports.report1.controller.action.NoOfAnonymousPatientListACTION"
+       	 		 name="noOfAnonymousPatientListFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/report1/jsp/noOfAnonymousPatientList.jsp"/>	 
+       	 </action>
+       	 
+       	 
+       	  <action path="/reports/report1/anonymousPatAndDetWhoBroughtReport"
+       	 		 type="registration.reports.report1.controller.action.AnonymousPatAndDetWhoBroughtACTION"
+       	 		 name="anonymousPatAndWhoBroughtFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/report1/jsp/anonymousPatAndDetWhoBrought.jsp"/>	 
+       	 </action>
+       	 
+       	 
+       	 <action path="/reports/report1/mlcPatientSListPgiReport"
+       	 		 type="registration.reports.report1.controller.action.MlcPatientsListPgiACTION"
+       	 		 name="mlcPatientSListPgiFB1"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/report1/jsp/mlcPatientsListPgi.jsp"/>	 
+       	 </action>
+       	 
+       	 
+       	  <action path="/reports/report1/serviceUnitWiseRevisitPatReport"
+       	 		 type="registration.reports.report1.controller.action.ServiceUnitWiseRevisitPatACTION"
+       	 		 name="serviceUnitWiseRevisitPatFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/report1/jsp/serviceUnitWiseRevisitPat.jsp"/>
+       	 </action>	
+       	 
+       	 
+       	<action path="/reports/report1/serviceUnitWiseNewRegReport"
+       	 		 type="registration.reports.report1.controller.action.ServiceUnitWiseNewRegACTION"
+       	 		 name="serviceUnitWiseNewRegFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/report1/jsp/serviceUnitWiseNewReg.jsp"/>	 	 
+       	 </action>	
+       	      
+       	      
+       	      <action path="/reports/report1/hospitalPatStatNewReport"
+       	 		 type="registration.reports.report1.controller.action.HospitalPatStatACTION"
+       	 		 name="hospitalPatStatNewFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/report1/jsp/hospitalPatStat.jsp"/>		 
+       	 </action>
+       	 
+       	 <action path="/reports/report1/hospitalPatStatStateNewReport"
+       	 		 type="registration.reports.report1.controller.action.HospitalPatStatStateACTION"
+       	 		 name="hospitalPatStatStateNewFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/report1/jsp/hospitalPatStatState.jsp"/>		 
+       	 </action>	
+     
+             
+       <action path="/reports/report1/ageWiseRegReport"        
+            type="registration.reports.report1.controller.action.AgeWiseRegistrationACTION"
+            name="ageWiseReportRegFB1"            
+            scope="request"
+            parameter="reportMode">
+		   <forward name="NEW" path="/reports/report1/jsp/AgeWiseRegdtl.jsp"/>
+		   <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action> 
+       
+       
+       <action path="/reports/report1/consultantRosterReport"        
+            type="registration.reports.report1.controller.action.ConsultantRosterACTION"
+            name="consultantRosterFB"            
+            scope="request"
+            parameter="reportMode">
+		   <forward name="NEW" path="/reports/report1/jsp/consultantRoster.jsp"/>
+		   <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action> 
+     
+      
+       <action path="/reports/report1/deptWiseListofPatientsReport"        
+            type="registration.reports.report1.controller.action.DeptWiseListofPatientsACTION"
+            name="deptWiseListofPatientsFB"            
+            scope="request"
+            parameter="reportMode">
+		   <forward name="NEW" path="/reports/report1/jsp/deptWiseListofPatients.jsp"/>
+		   <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action>     
+       	  
+       <action path="/reports/report1/deptWiseUserWisePatLst"        
+            type="registration.reports.report1.controller.action.DeptWiseUserWiseRegPatLstACTION"
+            name="deptWiseUserWiseRegPatLstFB"            
+            scope="request"
+            parameter="reportMode">
+		   <forward name="NEW" path="/reports/report1/jsp/deptWiseUserWisePatLst.jsp"/>
+		   <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action>     
+       	  
+       <action path="/reports/report1/patientListingReport"        
+            type="registration.reports.report1.controller.action.PatientListingReportACTION"
+            name="PatientListingReportFB"            
+            scope="request"
+            parameter="reportMode">
+		   <forward name="NEW" path="/reports/report1/jsp/reg_patient_listing_rpt.jsp"/>
+		   <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action>     
+
+       <action path="/reports/report1/freeNewDeptVisitReport"        
+            type="registration.reports.report1.controller.action.FreeNewVisitReportACTION"
+            name="freeNewVisitReportFB"            
+            scope="request"
+            parameter="reportMode">
+		   <forward name="NEW" path="/reports/report1/jsp/freeNewDeptVisitReport.jsp"/>
+		   <forward name="IMAGE" path="/reports/jsp/genrateGraph.jsp"/>
+       </action>     
+       	<action path="/reports/report1/departmentPercentWiseReport"        
+            type="registration.reports.report1.controller.action.DepartmentPercentageWiseStattisticsACTION"
+            name="departmentPercentWiseStatisticsFB"            
+            scope="request"
+            parameter="reportMode">
+		   <forward name="NEW" path="/reports/report1/jsp/departmentPercentWiseStatistics.jsp"/>
+		   
+		</action>     
+		       	
+		<action path="/reports/report1/specialClinicOutPatientStatistics"
+		       	 		 type="registration.reports.report1.controller.action.SpecialClinicOutPatientStatisticsACTION"
+		       	 		 name="specialClinicOutPatientFB"
+		       	 		 scope="request"
+		       	 		 parameter="reportMode">
+	       	 	<forward name="NEW" path="/reports/report1/jsp/specialClinicOutPatientStatistics.jsp"/>		 
+		</action>   
+       	
+		<action path="/reports/report1/hospitalWisePatientListingReport"
+		       	 		 type="registration.reports.report1.controller.action.HospitalWisePatListingACTION"
+		       	 		 name="hospitalWisePatListingFB"
+		       	 		 scope="request"
+		       	 		 parameter="reportMode">
+	       	 	<forward name="NEW" path="/reports/report1/jsp/hospitalWisePatientListing.jsp"/>		 
+		</action>   
+       	
+		<action path="/reports/report1/religionCategoryWisePatientListingReport"
+		       	 		 type="registration.reports.report1.controller.action.ReligionCategoryWisePatientReportACTION"
+		       	 		 name="religionCategoryWisePatientReportFB"
+		       	 		 scope="request"
+		       	 		 parameter="reportMode">
+	       	 	<forward name="NEW" path="/reports/report1/jsp/hospitalWisePatientListing.jsp"/>		 
+		</action>   
+       	
+		<action path="/reports/report1/userWiseCashCollectionReport"
+				type="registration.reports.report1.controller.action.UserWiseCashCollectionACTION"
+				name="UserWiseCashCollectionFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/report1/jsp/reg_userwise_cashcollection_rpt.jsp"/>		 
+			<forward name="REPORT" path="/reports/report1/jsp/reg_userwise_cashcollection_rpt_page.jsp"/>		 
+		</action>   
+		
+		<action path="/reports/report1/userWiseRegistrationReport"
+				type="registration.reports.report1.controller.action.UserWiseRegistrationACTION"
+				name="UserWiseRegistrationFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/report1/jsp/userWiseRegistration.jsp"/>		 
+			<forward name="REPORT" path="/reports/report1/jsp/userWiseRegistration.jsp"/>		 
+		</action>
+		
+		<!--  DSS Reports -->
+		<!--  DSS Parameter Configurator -->
+		<action path="/reports/report1/dssParameterConfigurator"
+				type="registration.reports.report1.controller.action.DSSParameterConfiguratorACTION"
+				name="DSSParameterConfiguratorFB"
+				scope="request"
+				parameter="hmode">
+			<forward name="NEW" path="/reports/report1/jsp/DSSParameterConfiguratorTile.jsp"/>
+			<forward name="AGEWISE" path="/reports/report1/jsp/AgeWiseDSSReportTile.jsp"/>
+			<forward name="AGEWISECONS" path="/reports/report1/jsp/AgeWiseConsDSSReportTile.jsp"/>
+			<forward name="OPDSTATS" path="/reports/report1/jsp/OPDStatsDSSReportTile.jsp"/>
+			<forward name="OPDSTATCONS" path="/reports/report1/jsp/OPDStatsConsDSSReportTile.jsp"/>
+			<forward name="EMGSTATS" path="/reports/report1/jsp/EmgStatsDSSReportTile.jsp"/>
+			<forward name="EMGSTATSCONS" path="/reports/report1/jsp/EmgStatsConsDSSReportTile.jsp"/>
+		</action> 
+		
+		
+		
+		
+		
+		
+		
+		
+		<!-- Not in use -->
+		<action path="/reports/report1/opdStatisticsDSSReport"
+				type="registration.reports.report1.controller.action.OPDStatisticsDSSReportACTION"
+				name="OPDStatisticsDSSReportFB"
+				scope="request"
+				parameter="mode">
+			<forward name="NEW" path="/reports/report1/jsp/OPDStatisticsDSSReportTile.jsp"/>		 
+				 
+		</action>   
+		
+		<!-- Not in use -->
+		<action path="/reports/report1/ageWiseStatisticsDSSReport"
+				type="registration.reports.report1.controller.action.AgeWiseDSSReportACTION"
+				name="AgeWiseDSSReportFB"
+				scope="request"
+				parameter="mode">
+			<forward name="NEW" path="/reports/report1/jsp/AgeWiseDSSReportTile.jsp"/>		 
+			<forward name="REPORT" path="/reports/report1/jsp/AgeWiseDSSReportTile.jsp"/>
+				 
+		</action>   
+
+		<!-- End DSS Reports -->
+		
+		<action path="/reports/report1/categoryWiseUserWiseRegistrationReport"
+				type="registration.reports.report1.controller.action.CategoryWiseUserWiseRegistrationACTION"
+				name="CategoryWiseUserWiseRegistrationFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/report1/jsp/categoryWiseUserWiseRegistration.jsp"/>		 
+		
+		</action>
+
+		<action path="/reports/report1/ambulanceWiseCasesBroughtReport"
+				type="registration.reports.report1.controller.action.AmbulanceWiseCasesBroughtACTION"
+				name="ambulanceWiseCasesBroughtFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/report1/jsp/ambulanceWiseCasesBrought.jsp"/>		 
+		
+		</action>
+		
+		 <action path="/reports/report1/PatientWiseVisitDetailACTION"
+       	 		 type="registration.reports.report1.controller.action.PatWiseVisitDtlReportACTION"
+       	 		 name="PatWiseVisitDtlReportFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+   	 	<forward name="NEW" path="/reports/report1/jsp/PatWiseVisitDtlReport.jsp"/>
+   	 	<forward name="REPORT" path="/reports/report1/jsp/pat_wise_visit_rpt_page.jsp"/>		 
+       	 </action>		
+
+
+		<action path="/reports/report1/MctsPatListACTION"
+		 		 type="registration.reports.report1.controller.action.MctsPatListACTION"
+		 		 name="MctsPatListFB"
+		 		 scope="request"
+		 		 parameter="reportMode">
+		 		
+		 	<forward name="NEW" path="/reports/report1/jsp/MctsPatList.jsp"/>	 
+		 </action> 
+		
+
+		<action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+      
+    </action-mappings>    
+    
+    
+    
+     <global-exceptions>
+     
+     
+    <exception key="reportDataNotFound" 
+    type="hisglobal.exceptions.HisReportDataNotFoundException" 
+    path="/reports/report1/jsp/errorPageReportDataNotFound.jsp"/>    
+    
+     
+   </global-exceptions>
+    
+
+
+<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+  
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/RegistrationDesk-tiles-defs.xml"/>    	
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>   
+   	
+   	
+
+</struts-config>

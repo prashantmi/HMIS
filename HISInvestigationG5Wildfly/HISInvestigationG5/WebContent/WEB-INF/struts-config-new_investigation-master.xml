@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>  
+		       
+	<form-bean name="InvParameterMstFB" type="new_investigation.masters.controller.fb.InvParameterMstFB"/>
+        
+ 	<form-bean name="MandatoryMstFB" type="new_investigation.masters.controller.fb.MandatoryMstFB"/>
+     		
+    <form-bean name="MandatoryComboMstFB" type="new_investigation.masters.controller.fb.MandatoryComboMstFB"/>
+     
+	<form-bean name="InvSampleMstFB" type="new_investigation.masters.controller.fb.InvSampleMstFB"/>
+
+        <form-bean name="UOMMstFB" type="new_investigation.masters.controller.fb.UOMMstFB"/>
+        
+    <form-bean name="LabMstFB" type="new_investigation.masters.controller.fb.LabMstFB"/>
+    
+    <form-bean name="TestMstFB" type="new_investigation.masters.controller.fb.TestMstFB"/>
+        <form-bean name="LabMstFB" type="new_investigation.masters.controller.fb.LabMstFB"/>
+         
+           
+            <form-bean name="RejectionReasonMstFB" type="new_investigation.masters.controller.fb.RejectionReasonMstFB"/>
+            
+           <form-bean name="MacroMstFB" type="new_investigation.masters.controller.fb.MacroMstFB"/>
+           
+           <form-bean name="TestGroupMstFB" type="new_investigation.masters.controller.fb.TestGroupMstFB"/>
+           
+           <form-bean name="CannedMstFB" type="new_investigation.masters.controller.fb.CannedMstFB"/>
+            
+           <form-bean name="LabMacroMapMstFB" type="new_investigation.masters.controller.fb.LabMacroMapMstFB"/>
+           
+           <form-bean name="LabCannedMstFB" type="new_investigation.masters.controller.fb.LabCannedMstFB"/>
+          
+    <form-bean name="LabTestMstFB" type="new_investigation.masters.controller.fb.LabTestMstFB"/>
+    
+    <form-bean name="TestSampleMstFB" type="new_investigation.masters.controller.fb.TestSampleMstFB"/>
+    
+    <form-bean name="ContainerMstFB" type="new_investigation.masters.controller.fb.ContainerMstFB"/>
+    
+	<form-bean name="CollectionAreaMstFB" type="new_investigation.masters.controller.fb.CollectionAreaMstFB"/>
+	
+	<form-bean name="InvTestSampleMstFB" type="new_investigation.masters.controller.fb.InvTestSampleMstFB"/>
+	
+	<form-bean name="TestParaComboMstFB" type="new_investigation.masters.controller.fb.TestParaComboMstFB"/>
+	
+    <form-bean name="TestParameterMstFB" type="new_investigation.masters.controller.fb.TestParameterMstFB"/>
+    
+    <form-bean name="LabTestGlobalMstFB" type="new_investigation.masters.controller.fb.LabTestGlobalMstFB"/>
+    
+    <form-bean name="LabTestSampleGlobalMstFB" type="new_investigation.masters.controller.fb.LabTestSampleGlobalMstFB"/>
+    
+    <form-bean name="TestMandatoryMstFB" type="new_investigation.masters.controller.fb.TestMandatoryMstFB"/>
+    
+    <form-bean name="UserBookMarkMstFB" type="new_investigation.masters.controller.fb.UserBookMarkMstFB"/>
+    
+    <form-bean name="LabCollectionAreaMstFB" type="new_investigation.masters.controller.fb.LabCollectionAreaMstFB"/>
+
+    <form-bean name="TestGroupInfoMstFB" type="new_investigation.masters.controller.fb.TestGroupInfoMstFB"/>
+
+    <form-bean name="TestGroupInfoLocalMstFB" type="new_investigation.masters.controller.fb.TestGroupInfoLocalMstFB"/>
+
+    <form-bean name="LabNoConfigMstFB" type="new_investigation.masters.controller.fb.LabNoConfigMstFB"/>
+
+    
+    <form-bean name="BookMarkMstFB" type="new_investigation.masters.controller.fb.BookMarkMstFB"/>
+
+    
+    <form-bean name="LocalLabMstFB" type="new_investigation.masters.controller.fb.LabMstFB"/>
+    
+    <form-bean name="SampleNoConfigMstFB" type="new_investigation.masters.controller.fb.SampleNoConfigMstFB"/>
+
+	<form-bean name="LabConfigratorMstFB" type="new_investigation.masters.controller.fb.LabConfigratorMstFB"/>
+
+    <form-bean name="CollAreaSampleNoConfigMstFB" type="new_investigation.masters.controller.fb.CollAreaSampleNoConfigMstFB"/>
+	
+	<form-bean name="LoincMstFB" type="new_investigation.masters.controller.fb.LoincMstFB"/>
+
+    <form-bean name="TestMandRefMstFB" type="new_investigation.masters.controller.fb.TestMandRefMstFB"/>
+
+    <form-bean name="LocalTestMandRefMstFB" type="new_investigation.masters.controller.fb.LocalTestMandRefMstFB"/>
+    
+    <form-bean name="MachineTestParameterMstFB" type="new_investigation.masters.controller.fb.MachineTestParameterMstFB"/>
+
+
+ 	<form-bean name="machineMstFB" type="new_investigation.masters.controller.fb.machineMstFB"/>
+
+
+	<form-bean name="DynamicReportTemplateFB" type="new_investigation.masters.controller.fb.DynamicReportTemplateFB" />
+
+	<form-bean name="PDFPrintingFB" type="new_investigation.masters.controller.fb.PDFPrintingFB" />
+
+	
+	<form-bean name="TemplateMstFB" type="new_investigation.masters.controller.fb.TemplateMstFB"/>
+
+   <form-bean name="filmMstFB" type="new_investigation.masters.controller.fb.filmMstFB"/>
+    
+	<form-bean name="LabConsumableMstFB" type="new_investigation.masters.controller.fb.LabConsumableMstFB"/>
+	
+	<form-bean name="ItemLabTestMappingMstFB" type="new_investigation.masters.controller.fb.ItemLabTestMappingMstFB"/>
+	
+	 <form-bean name="LabItemMappingMstFB" type="new_investigation.masters.controller.fb.LabItemMappingMstFB"/>
+   <form-bean name="invOrganicMstFB" type="new_investigation.masters.controller.fb.invOrganicMstFB"/>
+	
+    <form-bean name="invAntibioticMstFB" type="new_investigation.masters.controller.fb.invAntibioticMstFB"/>
+	
+	<form-bean name="invOrganicAntibioticMappingMstFB" type="new_investigation.masters.controller.fb.invOrganicAntibioticMappingMstFB"/>
+	
+	<form-bean name="invAddendumReasonMstFB" type="new_investigation.masters.controller.fb.invAddendumReasonMstFB"/>
+	
+	<form-bean name="UserwiseBookMarkMstFB" type="new_investigation.masters.controller.fb.UserwiseBookMarkMstFB"/>
+	
+	
+	</form-beans>
+
+	
+	<action-mappings>
+	
+	 
+		 
+		 <action path="/masters/SampleMstACTION"
+				type="new_investigation.masters.controller.action.InvSampleMstACT"
+				name="InvSampleMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/invSampleMstAddMod.jsp">
+			<forward name="ADD" path="/masters/invSampleMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/invSampleMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+ 
+	    <action path="/masters/ParameterMstACTION"
+				type="new_investigation.masters.controller.action.InvParameterMstACT"
+				name="InvParameterMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/invParameterMstAddMod.jsp">
+			<forward name="ADD" path="/masters/invParameterMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/invParameterMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+ 
+ 
+ 		 <action path="/masters/MandatoryMstACTION"
+				type="new_investigation.masters.controller.action.MandatoryMstACT"
+				name="MandatoryMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/MandatoryMstAddMod.jsp">
+			<forward name="ADD" path="/masters/MandatoryMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/MandatoryMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		  <action path="/masters/MandatoryComboMstACTION"
+				type="new_investigation.masters.controller.action.MandatoryComboMstACT"
+				name="MandatoryComboMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/MandatoryComboMstAddMod.jsp">
+			<forward name="ADD" path="/masters/MandatoryComboMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/MandatoryComboMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		   <action path="/masters/ContainerMstACTION"
+				type="new_investigation.masters.controller.action.ContainerMstACT"
+				name="ContainerMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/ContainerMstAddMod.jsp">
+			<forward name="ADD" path="/masters/ContainerMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/ContainerMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		  <action path="/masters/CollectionAreaMstACTION"
+				type="new_investigation.masters.controller.action.CollectionAreaMstACT"
+				name="CollectionAreaMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/CollectionAreaMstAddMod.jsp">
+			<forward name="ADD" path="/masters/CollectionAreaMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/CollectionAreaMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		 
+		 	  <action path="/masters/InvTestSampleMstACTION"
+				type="new_investigation.masters.controller.action.InvTestSampleMstACT"
+				name="InvTestSampleMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/InvTestSampleMstAddMod.jsp">
+			<forward name="ADD" path="/masters/InvTestSampleMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/InvTestSampleMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		 
+		 
+		  
+		  <action path="/masters/TestMstACTION"
+				type="new_investigation.masters.controller.action.TestMstACT"
+				name="TestMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/testAddMod.jsp">
+			<forward name="ADD" path="/masters/testMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/testMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		 
+
+		    
+ 
+		 <action path="/masters/LabMstACT"
+				type="new_investigation.masters.controller.action.LabMstACT"
+				name="LabMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/labAddMod.jsp">
+			<forward name="ADD" path="/masters/labMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/labMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		
+		  <action path="/masters/LabTestMstACT"
+				type="new_investigation.masters.controller.action.LabTestMstACT"
+				name="LabTestMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/labTestAddMod.jsp">
+			<forward name="ADD" path="/masters/labTestMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/labTestMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+
+ 
+		 
+		 
+		  <action path="/masters/TestParameterMstACT"
+				type="new_investigation.masters.controller.action.TestParameterMstACT"
+				name="TestParameterMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/testParameterAddMod.jsp">
+			<forward name="ADD" path="/masters/testParameterMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/testParameterMstAddMod.jsp" />
+			<forward name="MODIFYSAVE" path="/masters/testParameterMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		<action path="/masters/TestParaComboMstACTION"
+				type="new_investigation.masters.controller.action.TestParaComboMstACT"
+				name="TestParaComboMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/TestParaComboMstAddMod.jsp">
+			<forward name="ADD" path="/masters/TestParaComboMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/TestParaComboMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		 
+		   <action path="/masters/LabCollectionAreaMstACTION"
+				type="new_investigation.masters.controller.action.LabCollectionAreaMstACT"
+				name="LabCollectionAreaMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/LabCollectionAreaMstAddMod.jsp">
+			<forward name="ADD" path="/masters/LabCollectionAreaMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/LabCollectionAreaMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		   <action path="/masters/TestGroupInfoMstACTION"
+				type="new_investigation.masters.controller.action.TestGroupInfoMstACT"
+				name="TestGroupInfoMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/TestGroupInfoMstAddMod.jsp">
+			<forward name="ADD" path="/masters/TestGroupInfoMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/TestGroupInfoMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		  <action path="/masters/TestGroupInfoLocalMstACTION"
+				type="new_investigation.masters.controller.action.TestGroupInfoLocalMstACT"
+				name="TestGroupInfoLocalMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/TestGroupInfoLocalMstAddMod.jsp">
+			<forward name="ADD" path="/masters/TestGroupInfoLocalMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/TestGroupInfoLocalMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		 	  <action path="/masters/LabNoConfigMstACTION"
+				type="new_investigation.masters.controller.action.LabNoConfigMstACT"
+				name="LabNoConfigMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/LabNoConfigMstAddMod.jsp">
+			<forward name="ADD" path="/masters/LabNoConfigMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/LabNoConfigMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		 <action path="/masters/LabTestGlobalMstACT"
+				type="new_investigation.masters.controller.action.LabTestGlobalMstACT"
+				name="LabTestGlobalMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/labTestGlobalMstAddMod.jsp">
+			<forward name="ADD" path="/masters/labTestGlobalMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/labTestGlobalMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 <!-- start:yogender -->
+		 <!-- Rejction Reason Action -->
+		  <action path="/masters/RejectionReasonMstACTION"
+				type="new_investigation.masters.controller.action.RejectionReasonMstACT"
+				name="RejectionReasonMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/rejectionReasonMstAddMod.jsp">
+			<forward name="ADD" path="/masters/rejectionReasonMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/rejectionReasonMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 
+		 <!-- Macro Action -->
+		  <action path="/masters/MacroMstACTION"
+				type="new_investigation.masters.controller.action.MacroMstACT"
+				name="MacroMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/MacroMstAddMod.jsp">
+			<forward name="ADD" path="/masters/MacroMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/MacroMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 
+		 
+		 <!-- Global Test Group Action -->
+		  <action path="/masters/GlobalTestGroupMstACTION"
+				type="new_investigation.masters.controller.action.TestGroupMstACT"
+				name="TestGroupMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/TestGroupMstAddMod.jsp">
+			<forward name="ADD" path="/masters/TestGroupMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/TestGroupMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 
+		 <!-- Local Test Group Action -->
+		  <action path="/masters/LocalTestGroupMstACTION"
+				type="new_investigation.masters.controller.action.LocalTestGroupMstACT"
+				name="TestGroupMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/LocalTestGroupMstAddMod.jsp">
+			<forward name="ADD" path="/masters/LocalTestGroupMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/LocalTestGroupMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 
+		  <!-- Canned Action -->
+		  <action path="/masters/CannedMstACTION"
+				type="new_investigation.masters.controller.action.CannedMstACT"
+				name="CannedMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/CannedMstAddMod.jsp">
+			<forward name="ADD" path="/masters/CannedMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/CannedMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 
+		 
+		  <!-- Lab Macro Local Mapping Master Action -->
+		  <action path="/masters/LabMacroLocalMapMstACTION"
+				type="new_investigation.masters.controller.action.LabMacroLocalMapMstACT"
+				name="LabMacroMapMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/LabMacroLocalMapMstAddMod.jsp">
+			<forward name="ADD" path="/masters/LabMacroLocalMapMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/LabMacroLocalMapMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 
+		 <!-- Lab Macro Global Mapping Master Action -->
+		  <action path="/masters/LabMacroGlobalMapMstACTION"
+				type="new_investigation.masters.controller.action.LabMacroGlobalMapMstACT"
+				name="LabMacroMapMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/LabMacroGlobalMapMstAddMod.jsp">
+			<forward name="ADD" path="/masters/LabMacroGlobalMapMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/LabMacroGlobalMapMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 
+		   <!-- Global Lab Canned Master Action -->
+		  <action path="/masters/GlobalLabCannedMstACTION"
+				type="new_investigation.masters.controller.action.GlobalLabCannedMstACT"
+				name="LabCannedMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/GlobalLabCannedMstAddMod.jsp">
+			<forward name="ADD" path="/masters/GlobalLabCannedMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/GlobalLabCannedMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 
+		 
+		 
+		  <!-- Local Lab Canned Master Action -->
+		  <action path="/masters/LocalLabCannedMstACTION"
+				type="new_investigation.masters.controller.action.LocalLabCannedMstACT"
+				name="LabCannedMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/LocalLabCannedMstAddMod.jsp">
+			<forward name="ADD" path="/masters/LocalLabCannedMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/LocalLabCannedMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		 </action>
+		 
+		 <!-- end:yogender -->
+		 
+		 
+		 <action path="/masters/LabTestLocalMstACT"
+				type="new_investigation.masters.controller.action.LabTestLocalMstACT"
+				name="LabTestGlobalMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/labTestLocalMstAddMod.jsp">
+			<forward name="ADD" path="/masters/labTestLocalMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/labTestLocalMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+		 
+		 <action path="/masters/LabTestSampleGlobalMstACT"
+				type="new_investigation.masters.controller.action.LabTestSampleGlobalMstACT"
+				name="LabTestSampleGlobalMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/labTestSampleGlobalMst.jsp">
+			<forward name="ADD" path="/masters/labTestSampleGlobalMst.jsp" />
+			<forward name="MODIFY" path="/masters/labTestSampleGlobalMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+		 
+		 <action path="/masters/LabTestSampleLocalMstACT"
+				type="new_investigation.masters.controller.action.LabTestSampleLocalMstACT"
+				name="LabTestSampleGlobalMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/labTestSampleLocalMst.jsp">
+			<forward name="ADD" path="/masters/labTestSampleLocalMst.jsp" />
+			<forward name="MODIFY" path="/masters/labTestSampleLocalMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+		 
+		  <action path="/masters/TestMandatoryGlobalMstACT"
+				type="new_investigation.masters.controller.action.TestMandatoryGlobalMstACT"
+				name="TestMandatoryMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/testMandatoryGlobalMst.jsp">
+			<forward name="ADD" path="/masters/testMandatoryGlobalMst.jsp" />
+			<forward name="MODIFY" path="/masters/testMandatoryGlobalMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+		 
+		 <action path="/masters/TestMandatoryLocalMstACT"
+				type="new_investigation.masters.controller.action.TestMandatoryLocalMstACT"
+				name="TestMandatoryMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/testMandatoryLocalMst.jsp">
+			<forward name="ADD" path="/masters/testMandatoryLocalMst.jsp" />
+			<forward name="MODIFY" path="/masters/testMandatoryLocalMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+
+		 
+		          <action path="/masters/UnitOfMeasurmentMstACT"
+                           type="new_investigation.masters.controller.action.UOMMstACT"
+                           name="UOMMstFB"
+                           scope="request"
+                           validate="false"
+                           parameter="hmode"
+                           input="/masters/uOMMstAddMod.jsp">
+                     <forward name="ADD" path="/masters/uOMMstAddMod.jsp" />
+                     <forward name="MODIFY" path="/masters/uOMMstAddMod.jsp" />
+                     <forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+               </action>
+		 
+		 
+		 
+
+		 
+		  <action path="/masters/UnitOfMeasurmentMstACT"
+				type="new_investigation.masters.controller.action.UOMMstACT"
+				name="UOMMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/uOMMstAddMod.jsp">
+			<forward name="ADD" path="/masters/uOMMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/uOMMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		 <action path="/masters/UserBookMarkMstACT"
+				type="new_investigation.masters.controller.action.UserBookMarkMstACT"
+				name="UserBookMarkMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/userBookMarkMst.jsp">
+			<forward name="ADD" path="/masters/userBookMarkMst.jsp" />
+			<forward name="MODIFY" path="/masters/userBookMarkMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+
+		 
+		 <action path="/masters/BookMarkMstACT"
+				type="new_investigation.masters.controller.action.BookMarkMstACT"
+				name="BookMarkMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/bookMarkMst.jsp">
+			<forward name="ADD" path="/masters/bookMarkMst.jsp" />
+			<forward name="MODIFY" path="/masters/bookMarkMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+
+		 
+		 		    
+ 
+		 <action path="/masters/LocalLabMstACT"
+				type="new_investigation.masters.controller.action.LocalLabMstACT"
+				name="LabMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/LocalLaMstbAddMod.jsp">
+			<forward name="ADD" path="/masters/LocalLabMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/LocalLabMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		   <action path="/masters/SampleNoConfigMstACTION"
+				type="new_investigation.masters.controller.action.SampleNoConfigMstACT"
+				name="SampleNoConfigMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/SampleNoConfigMstAddMod.jsp">
+			<forward name="ADD" path="/masters/SampleNoConfigMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/SampleNoConfigMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+
+		<action path="/masters/LabConfigratorMstACT"
+				type="new_investigation.masters.controller.action.LabConfigratorMstACT"
+				name="LabConfigratorMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/labConfigratorMst.jsp">
+			<forward name="ADD" path="/masters/labConfigratorMst.jsp" />
+			<forward name="MODIFY" path="/masters/labConfigratorMst.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		  <action path="/masters/CollAreaSampleNoConfigMstACTION"
+				type="new_investigation.masters.controller.action.CollAreaSampleNoConfigMstACT"
+				name="CollAreaSampleNoConfigMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/CollAreaSampleNoConfigMstAddMod.jsp">
+			<forward name="ADD" path="/masters/CollAreaSampleNoConfigMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/CollAreaSampleNoConfigMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+
+		   <action path="/masters/TestMandRefMstACTION"
+				type="new_investigation.masters.controller.action.TestMandRefMstACT"
+				name="TestMandRefMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/TestMandRefMstAddMod.jsp">
+			<forward name="ADD" path="/masters/TestMandRefMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/TestMandRefMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		 
+		<action path="/masters/LoincMstACT"
+				type="new_investigation.masters.controller.action.LoincMstACT"
+				name="LoincMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/loincMst.jsp">
+			<forward name="ADD" path="/masters/loincMst.jsp" />
+			<forward name="MODIFY" path="/masters/loincMst.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+
+ <action path="/masters/LocalTestMandRefMstACTION"
+				type="new_investigation.masters.controller.action.LocalTestMandRefMstACT"
+				name="LocalTestMandRefMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/LocalTestMandRefMstAddMod.jsp">
+			<forward name="ADD" path="/masters/LocalTestMandRefMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/LocalTestMandRefMstAddMod.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+
+		 
+		 <action path="/masters/MachineTestParameterMstACTION"
+				type="new_investigation.masters.controller.action.MachineTestParameterMstACT"
+				name="MachineTestParameterMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/MachineTestParameterDtl.jsp">
+			<forward name="ADD" path="/masters/MachineTestParameterDtl.jsp" />
+			<forward name="MODIFY" path="/masters/MachineTestParameterDtl.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+
+		 
+		  <action path="/masters/machineMstACTION"
+				type="new_investigation.masters.controller.action.machineMstACT"
+				name="machineMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/machineMst.jsp">
+			<forward name="ADD" path="/masters/machineMst.jsp" />
+			<forward name="MODIFY" path="/masters/machineMst.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+
+		 
+		<action path="/masters/DynamicReportTemplateACT"
+				type="new_investigation.masters.controller.action.DynamicReportTemplateACT"
+				name="DynamicReportTemplateFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/DynamicReportTemplateTile.jsp">
+			<forward name="ADD" path="/masters/DynamicReportTemplateTile.jsp"/>	
+			<forward name="REPLACE" path="/masters/DynamicReportTemplateTile.jsp" redirect="true" />
+		</action>
+
+		<action path="/masters/PDFPrintingACT"
+				type="new_investigation.masters.controller.action.PDFPrintingACT"
+				name="PDFPrintingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/newinvestigationPdfPrintingTile.jsp">
+			<forward name="ADD" path="/masters/newinvestigationPdfPrintingTile.jsp"/>	
+			<forward name="REPLACE" path="/masters/newinvestigationPdfPrintingTile.jsp" redirect="true" />
+			<forward name="RESULTPRINTING" path="/masters/newinvestigationPdfPrintingTile.jsp" redirect="true" />
+		</action>
+		
+		
+		<action path="/masters/TemplateMstACT"
+				type="new_investigation.masters.controller.action.TemplateMstACT"
+				name="TemplateMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/templateMst.jsp">
+			<forward name="ADD" path="/masters/templateMst.jsp" />
+			<forward name="MODIFY" path="/masters/templateMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+		
+		
+		<action path="/masters/filmMstACTION"
+				type="new_investigation.masters.controller.action.FilmMstACT"
+				name="filmMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/filmMst.jsp">
+			<forward name="ADD" path="/masters/filmMst.jsp" />
+			<forward name="MODIFY" path="/masters/filmMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+		
+
+		 <action path="/masters/labConsumableMstACT"  
+				type="new_investigation.masters.controller.action.LabConsumableMstACT"
+				name="LabConsumableMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/labConsumableMst.jsp">
+				<forward name="ADD" path="/masters/labConsumableMst.jsp" />
+			<forward name="NEW" path="/masters/labConsumableMst.jsp" />
+			<forward name="MODIFY" path="/masters/labConsumableMst.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action><!-- Added By Jatin 29/7/2016 -->
+		 
+		  <action path="/masters/ItemLabTestMappingMstACT"  
+				type="new_investigation.masters.controller.action.ItemLabTestMappingMstACT"
+				name="ItemLabTestMappingMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/itemLabTestMappingMst.jsp">
+			<forward name="ADD" path="/masters/itemLabTestMappingMst.jsp" />
+			<forward name="MODIFY" path="/masters/itemLabTestMappingMst.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action><!-- Added By Jatin 29/7/2016 -->
+		 
+		   <action path="/masters/LabItemMappingMstACT"
+				type="new_investigation.masters.controller.action.LabItemMappingMstACT"
+				name="LabItemMappingMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/LabItemMappingMst.jsp">
+			<forward name="ADD" path="/masters/LabItemMappingMst.jsp" />
+			<forward name="MODIFY" path="/masters/LabItemMappingMst.jsp" />
+			<forward name="LIST" path="/../hisglobal/masterutil/master/lst_mstTemp_gbl.jsp" />
+		 </action>
+		
+
+		<!-- //chandan -->
+		<action path="/masters/organicprocess"
+				type="new_investigation.masters.controller.action.invOrganicMstACT"
+				name="invOrganicMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/invOrganicMst.jsp">
+			<forward name="ADD" path="/masters/invOrganicMst.jsp" />
+			<forward name="MODIFY" path="/masters/invOrganicMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+
+
+     
+     <action path="/masters/antibioticprocess"
+				type="new_investigation.masters.controller.action.invAntibioticMstACT"
+				name="invAntibioticMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/invAntibioticMst.jsp">
+			<forward name="ADD" path="/masters/invAntibioticMst.jsp" />
+			<forward name="MODIFY" path="/masters/invAntibioticMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+		 
+		 
+		 <action path="/masters/organicantibioticprocess"
+				type="new_investigation.masters.controller.action.invOrganicAntibioticMappingMstACT"
+				name="invOrganicAntibioticMappingMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/invOrganicAntibioticMappingMst.jsp">
+			<forward name="ADD" path="/masters/invOrganicAntibioticMappingMst.jsp" />
+			<forward name="MODIFY" path="/masters/invOrganicAntibioticMappingMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+
+
+
+     <action path="/masters/addendumreason"
+				type="new_investigation.masters.controller.action.invAddendumReasonMstACT"
+				name="invAddendumReasonMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/invAddendumReasonMst.jsp">
+			<forward name="ADD" path="/masters/invAddendumReasonMst.jsp" />
+			<forward name="MODIFY" path="/masters/invAddendumReasonMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+		 
+		 
+		 <action path="/masters/UserwiseBookMarkMstACT"
+				type="new_investigation.masters.controller.action.UserwiseBookMarkMstACT"
+				name="UserwiseBookMarkMstFB"
+				scope="request"
+				validate="false"
+				parameter="hmode"
+				input="/masters/UserwiseBookMarkMst.jsp">
+			<forward name="ADD" path="/masters/UserwiseBookMarkMst.jsp" />
+			<forward name="MODIFY" path="/masters/UserwiseBookMarkMst.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" /> 
+		 </action>
+
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources parameter="new_investigation.investigationResourceBundle"></message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/bloodbank-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+</struts-config>

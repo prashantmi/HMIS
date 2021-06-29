@@ -1,0 +1,42 @@
+package opd.reports.controller.fb;
+
+import hisglobal.presentation.ReportFB;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts.action.ActionMapping;
+
+
+public class OpdDeptUnitEpisodeStatusPatListFB extends ReportFB
+{
+	private String departmentCode;
+	private String unit;
+	private String episodeStatus;
+	
+	public String getDepartmentCode() {
+		return departmentCode;
+	}
+	public void setDepartmentCode(String departmentCode) {
+		this.departmentCode = departmentCode;
+	}
+	public String getUnit() {
+		return unit;
+	}
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+	public String getEpisodeStatus() {
+		return episodeStatus;
+	}
+	public void setEpisodeStatus(String episodeStatus) {
+		this.episodeStatus = episodeStatus;
+	}
+	
+	public void reset(ActionMapping mapping,HttpServletRequest request)
+	{
+		super.reset(mapping, request);
+		this.setDepartmentCode("");
+		this.setUnit("");
+		this.setEpisodeStatus("");
+	}
+}

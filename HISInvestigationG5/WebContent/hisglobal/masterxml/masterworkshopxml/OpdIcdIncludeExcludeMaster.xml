@@ -1,0 +1,138 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='OpdIcdSubDiseaseMaster'>
+		<common-values>
+			<master-name>OpdIcdIncludeExcludeMaster</master-name>
+			<master-title>ICD-10 Disease Include/Exclude/Synonym Master</master-title>
+		</common-values>
+		<list-page>
+			<tableHeading>ICD-10 Disease Include/Exclude/Synonym Master</tableHeading>
+			<list-table>HGBT_ICD_DISEASE_MST</list-table>
+			<controls>
+				<control type="combo" index="0">
+					<label>Group</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>SUBSTR(A.HGBSTR_ICD_GROUP,1,40)||DECODE(SUBSTR(A.HGBSTR_ICD_GROUP,40,200),'',' ','..')||'('||A.HGBSTR_ICD_GROUP_CODE||')'</text-field>
+								<value-field>A.HGBSTR_ICD_GROUP_CODE</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HGBT_ICD_GROUP_MST</table>
+							</tables>
+							<condition>
+								<hospital-code> A.GNUM_HOSPITAL_CODE</hospital-code>
+								<general> AND A.GNUM_ISVALID = 1 ORDER BY A.HGBNUM_CHAPTER_ID</general>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+				<control type="combo" index="1">
+					<label>Sub Group</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>SUBSTR(A.HGBSTR_ICD_SUBGROUP,1,40)||DECODE(SUBSTR(A.HGBSTR_ICD_SUBGROUP,40,125),'',' ','..')||'('||A.HGBSTR_ICD_SUBGRP_CODE||')'</text-field>
+								<value-field>A.HGBSTR_ICD_SUBGRP_CODE</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HGBT_ICD_SUBGROUP_MST</table>
+							</tables>
+							<condition>
+								<hospital-code> A.GNUM_HOSPITAL_CODE</hospital-code>
+								<general> 
+									A.HGBSTR_ICD_SUBGRP_CODE NOT IN (SELECT DISTINCT B.HGBSTR_SUBGRP_PARENT_CODE FROM HGBT_ICD_SUBGROUP_MST B WHERE B.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE AND B.HGBSTR_SUBGRP_PARENT_CODE IS NOT NULL AND B.GNUM_ISVALID=1) AND A.GNUM_ISVALID=1 AND 
+								</general>
+								<dependent>
+									<clause> AND A.HGBSTR_ICD_GROUP_CODE = '#0' ORDER BY A.HGBSTR_ICD_SUBGRP_CODE </clause>
+								</dependent>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+				<control type="combo" index="0">
+					<label>Disease</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>SUBSTR(A.HGBSTR_DISEASE,1,40)||DECODE(SUBSTR(A.HGBSTR_DISEASE,40,200),'',' ','..')||'('||A.HGBSTR_DISEASE_CODE||')'</text-field>
+								<value-field>A.HGBSTR_DISEASE_CODE</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HGBT_ICD_DISEASE_MST</table>
+								<table alias='B'>HGBT_ICD_SUBGROUP_MST</table>
+								<table alias='C'>HGBT_ICD_GROUP_MST</table>
+							</tables>
+							<condition>
+								<hospital-code> A.GNUM_HOSPITAL_CODE</hospital-code>
+								<general> 
+									A.HGBSTR_ICD_SUBGRP_CODE=B.HGBSTR_ICD_SUBGRP_CODE AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1 
+									AND B.HGBSTR_ICD_GROUP_CODE=C.HGBSTR_ICD_GROUP_CODE AND B.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND C.GNUM_ISVALID=1 
+									AND A.HGNUM_RECORD_TYPE=0 AND A.GNUM_ISVALID = 1 AND 
+								</general>
+								<dependent>
+									<clause> AND B.HGBSTR_ICD_GROUP_CODE = '#0' </clause> 
+									<clause> AND A.HGBSTR_ICD_SUBGRP_CODE = '#1' ORDER BY A.HGBSTR_DISEASE_CODE </clause>
+								</dependent>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+			<columns>
+				<column>Disease Code</column>
+				<column>Include/Exclude/Synonym</column>
+				<column>Type</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>A.HGBSTR_DISEASE_CODE</field>
+					<field>INITCAP(A.HGBSTR_DISEASE)</field>
+					<field>DECODE(A.HGNUM_RECORD_TYPE,1,'Include',2,'Exclude',3,'Synonym','Disease')</field>
+				</fields>
+				<primaryKey>
+					<field>A.HGBSTR_DISEASE_CODE</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HGNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HGBT_ICD_DISEASE_MST</table>
+					<table alias='B'>HGBT_ICD_SUBGROUP_MST</table>
+					<table alias='C'>HGBT_ICD_GROUP_MST</table>
+				</tables>
+				<condition>
+					<hospital-code> A.GNUM_HOSPITAL_CODE</hospital-code>
+					<general>
+						A.HGBSTR_ICD_SUBGRP_CODE=B.HGBSTR_ICD_SUBGRP_CODE AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1 
+						AND B.HGBSTR_ICD_GROUP_CODE=C.HGBSTR_ICD_GROUP_CODE AND B.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND C.GNUM_ISVALID=1 
+						AND A.HGNUM_RECORD_TYPE IN (1,2,3) AND
+					</general>
+					<general-inactive>
+						A.HGBSTR_ICD_SUBGRP_CODE=B.HGBSTR_ICD_SUBGRP_CODE AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1 
+						AND B.HGBSTR_ICD_GROUP_CODE=C.HGBSTR_ICD_GROUP_CODE AND B.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND C.GNUM_ISVALID=1 
+						AND A.HGNUM_RECORD_TYPE IN (1,2,3) AND
+					</general-inactive>
+					<isvalid-field> A.GNUM_ISVALID</isvalid-field>
+					<orderby> ORDER BY A.HGBSTR_DISEASE_CODE</orderby>
+					<dependent>
+						<clause-alphanumeric> B.HGBSTR_ICD_GROUP_CODE = #0  </clause-alphanumeric>
+						<clause-alphanumeric> A.HGBSTR_ICD_SUBGRP_CODE = #1  </clause-alphanumeric>
+						<clause-alphanumeric> A.HGBSTR_DISEASE_CODE = #2  </clause-alphanumeric>
+					</dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+		<add-page>
+			<static-page>/opd/master/icdIncludeExcludeMst.cnt</static-page>
+		</add-page>
+		<modify-page>
+			<static-page>/opd/master/icdIncludeExcludeMst.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

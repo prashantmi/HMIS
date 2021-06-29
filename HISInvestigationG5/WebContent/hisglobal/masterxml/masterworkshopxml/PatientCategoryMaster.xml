@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='PatientCategoryMaster'>
+		<common-values>
+			 <master-name>PatientCategoryMaster</master-name> 
+			<master-title>Patient Category Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Patient Category Master</tableHeading> 
+				<list-table>GBLT_PATIENT_CAT_MST</list-table>
+				
+				<columns>
+					<column>Patient Category Name </column>
+				    <column>Patient Category Type</column>
+					
+				  
+				</columns>
+				<query-detail>
+					<fields>
+						<field>INITCAP(A.GSTR_PATIENT_CAT_NAME)</field>
+						<field>DECODE(A.GNUM_PATIENT_CAT_TYPE,'0','Patient Category','1','Treatment Category','2','Other')</field>
+					 
+					   
+					</fields>
+					<primaryKey>
+						<field>A.GNUM_PATIENT_CAT_CODE </field>
+						<field>A.GNUM_CAT_SLNO </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_PATIENT_CAT_MST </table>
+						
+					</tables>
+				<condition>
+						    <general> A.GNUM_ISVALID =1 AND A.GNUM_HOSPITAL_CODE = 100</general>
+        					<general-inactive> A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE = 100</general-inactive>
+							<isvalid-field>false</isvalid-field>
+							
+							<orderby> order by INITCAP(A.GSTR_PATIENT_CAT_NAME)</orderby>
+					</condition>
+				</query-detail>				
+		</list-page>
+		
+		
+		<add-page>
+			<static-page>/registration/master/addPatientCategoryMaster.cnt</static-page>
+		</add-page>
+		
+		<modify-page>	
+   		    <static-page>/registration/master/modifyPatientCategoryMaster.cnt</static-page>		
+		</modify-page>
+	</master>	
+</master-config>

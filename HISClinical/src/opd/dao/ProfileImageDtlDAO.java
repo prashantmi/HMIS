@@ -1,0 +1,171 @@
+package opd.dao;
+
+import java.sql.ResultSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import opd.OpdConfig;
+
+import hisglobal.persistence.TransactionContext;
+import hisglobal.exceptions.HisApplicationExecutionException;
+import hisglobal.exceptions.HisDataAccessException;
+import hisglobal.exceptions.HisRecordNotFoundException;
+import hisglobal.hisconfig.Config;
+import hisglobal.persistence.DataAccessObject;
+import hisglobal.persistence.HelperMethodsDAO;
+import hisglobal.utility.HelperMethods;
+import hisglobal.utility.Sequence;
+import hisglobal.vo.PatientProfileDetailVO;
+import hisglobal.vo.ProfileImageDtlVO;
+import hisglobal.vo.UserVO;
+import hisglobal.vo.ValueObject;
+
+public class ProfileImageDtlDAO extends DataAccessObject implements ProfileImageDtlDAOi 
+{
+	
+	public ProfileImageDtlDAO(TransactionContext _tx)
+	{
+		super(_tx);
+	}
+	
+	public void create(ProfileImageDtlVO _profileImageDtlVO, UserVO _userVO)
+	{
+		String query = "";
+		Map populateMAP = new HashMap();
+		Sequence sq = new Sequence();
+		String filename = OpdConfig.QUERY_FILE_FOR_OPD_DAO;
+		String queryKey = "INSERT.HPMRT_PROFILE_IMAGE_DTL";
+		try
+		{
+			query = HelperMethodsDAO.getQuery(filename, queryKey);
+		}
+		catch (Exception e)
+		{
+			throw new HisApplicationExecutionException("HelperMethodsDAO.loadPropertiesFile(filename)OR getting query out of property file" + e);
+		}
+
+		try
+		{
+			populateMAP.put(sq.next(), _profileImageDtlVO.getProfileId());
+			populateMAP.put(sq.next(), _profileImageDtlVO.getImageName());
+			populateMAP.put(sq.next(), _profileImageDtlVO.getImageFileName());
+			populateMAP.put(sq.next(), _profileImageDtlVO.getRemarks());
+			populateMAP.put(sq.next(), _profileImageDtlVO.getDirPath());
+			populateMAP.put(sq.next(), Config.IS_VALID_ACTIVE);
+			populateMAP.put(sq.next(), _userVO.getSeatId());
+			populateMAP.put(sq.next(), _userVO.getHospitalCode());
+			
+			
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("ProfileImageDtlDAO:populateMap::" + e);
+		}
+		
+		try
+		{
+			HelperMethodsDAO.excecuteUpdate(super.getTransactionContext().getConnection(), query, populateMAP);
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("HelperMethodsDAO.getResultset" + e);
+		}
+	}
+	
+	public ProfileImageDtlVO[] fetchImageProfileDetails(PatientProfileDetailVO _patientProfileDtlVO, UserVO _userVO)
+	{
+
+		ProfileImageDtlVO[] profileImageDtlVO;
+		String query = "";
+		Map _populateMap = new HashMap();
+		String filename = OpdConfig.QUERY_FILE_FOR_OPD_DAO;
+		String queryKey = "SELECT_PROFILE_DTL.HPMRT_PROFILE_IMAGE_DTL";
+
+		try
+		{
+			query = HelperMethodsDAO.getQuery(filename, queryKey);
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("HelperMethodsDAO.loadPropertiesFile(filename)OR getting query out of property file::" + e);
+		}
+
+		Sequence sq = new Sequence();
+		try
+		{
+			_populateMap.put(sq.next(), _patientProfileDtlVO.getProfileId());
+			_populateMap.put(sq.next(), _userVO.getHospitalCode());
+			_populateMap.put(sq.next(), Config.IS_VALID_ACTIVE);
+			
+		}
+		catch (Exception e)
+		{
+			throw new HisApplicationExecutionException("ProfileImageDtlDAO.populateMAP::" + e);
+		}
+
+		ValueObject[] vo = {};
+		try
+		{
+			ResultSet rs = HelperMethodsDAO.executeQuery(super.getTransactionContext().getConnection(), query, _populateMap);
+			if (!rs.next())
+			{
+				//throw new HisRecordNotFoundException("No Diagnosis Record found");
+			}
+			rs.beforeFirst();
+			vo = HelperMethods.populateVOfrmRS(ProfileImageDtlVO.class, rs);
+			profileImageDtlVO = new ProfileImageDtlVO[vo.length];
+			for (int i = 0; i < vo.length; i++)
+			{
+				profileImageDtlVO[i] = (ProfileImageDtlVO) vo[i];
+			}
+		}
+		catch (Exception e)
+		{
+			if (e.getClass() == HisRecordNotFoundException.class)
+			{
+				throw new HisRecordNotFoundException(e.getMessage());
+			}
+			else throw new HisDataAccessException("EpisodeDAO:retrieveByCrNo::Episode Details:: " + e);
+		}
+		return profileImageDtlVO;
+	}
+	
+	public void updateIsValidStatus(ProfileImageDtlVO profileImageDtlVO, UserVO _userVO)
+	{
+		String query = "";
+		Map populateMAP = new HashMap();
+		Sequence sq = new Sequence();
+		String filename = OpdConfig.QUERY_FILE_FOR_OPD_DAO;
+		String queryKey = "UPDATE_IS_VALID.HPMRT_PROFILE_IMAGE_DTL";
+		try
+		{
+			query = HelperMethodsDAO.getQuery(filename, queryKey);
+		}
+		catch (Exception e)
+		{
+			throw new HisApplicationExecutionException("HelperMethodsDAO.loadPropertiesFile(filename)OR getting query out of property file" + e);
+		}
+
+		try
+		{
+			populateMAP.put(sq.next(), Config.IS_VALID_DELETED);
+			populateMAP.put(sq.next(), profileImageDtlVO.getProfileId());
+			populateMAP.put(sq.next(), _userVO.getHospitalCode());
+			
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("ProfileImageDtlDAO:populateMap::" + e);
+		}
+		
+		try
+		{
+			HelperMethodsDAO.excecuteUpdate(super.getTransactionContext().getConnection(), query, populateMAP);
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("HelperMethodsDAO.getResultset" + e);
+		}
+	}
+
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='HealthWorkerMaster'>
+        <common-values>
+           <master-name>HealthWorkerMaster</master-name>
+           <master-title>Health Worker Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Health Worker Master</tableHeading>
+           <list-table>HANCT_HEALTH_WORKER_MST</list-table>
+           
+           <columns>
+              <column>Health Worker Name</column>
+              <column>Short Name</column>
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HANCSTR_HEALTH_WORKER)</field>
+	    		 <field>A.HANCSTR_SHORT_NAME</field>
+			  </fields>
+				<primaryKey>
+					<field>A.HANCNUM_HEALTH_WORKER_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HANCNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HANCT_HEALTH_WORKER_MST</table>
+				</tables>
+				<condition>	
+									 
+					<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+        			
+					<orderby> ORDER BY(A.HANCSTR_HEALTH_WORKER) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/inpatient/master/HealthWorkerMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/inpatient/master/HealthWorkerMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

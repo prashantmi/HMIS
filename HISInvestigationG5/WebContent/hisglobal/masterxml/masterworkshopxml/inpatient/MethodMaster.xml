@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='MethodMaster'>
+        <common-values>
+           <master-name>MethodMaster</master-name>
+           <master-title>Method Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Method Master</tableHeading>
+           <list-table>HANCT_METHOD_MST</list-table>
+           
+            <controls>
+				<control type="combo" index="0">
+					<label>Method Type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<static>
+								<option value='1'>  Induction Method  </option>
+								<option value='2'>  Placenta Removal Method  </option>
+						</static>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+           
+           <columns>
+              <column>Method Name</column>
+           </columns>
+           
+           <query-detail>
+             <fields>
+	    		 <field>INITCAP(A.HANCSTR_METHOD)</field>
+	    	</fields>
+				<primaryKey>
+					<field>A.HANCNUM_METHOD_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HANCNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HANCT_METHOD_MST</table>
+				</tables>
+				<condition>					 
+					<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<dependent>
+						<clause> A.HANCNUM_METHOD_TYPE = #0 </clause>
+				    </dependent>
+					<orderby> ORDER BY(A.HANCSTR_METHOD) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/inpatient/master/MethodMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/inpatient/master/MethodMaster.cnt</static-page>
+		</modify-page>	
+
+	</master>
+</master-config>
+		

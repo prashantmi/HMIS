@@ -1,0 +1,1436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts-config>
+
+	<form-beans>
+
+		<form-bean name="ipdBean" type="ipd.IpdFB"></form-bean>
+
+		
+		<form-bean name="wardDueIPDTransBean"
+			type="ipd.transactions.WardDueIPDTransFB">
+		</form-bean>
+		
+		<form-bean name="nursingDeskFinalTransBean"
+			type="ipd.transactions.NursingDeskFinalTransFB">
+		</form-bean>
+		<form-bean name="DischargeFB"
+			type="ipd.transactions.DischargeDeskFB">
+		</form-bean>
+
+		<form-bean name="hospitalBean"
+			type="ipd.masters.vo.HospitalMstVO">
+		</form-bean>
+
+		<form-bean name="deptWardBean"
+			type="ipd.masters.vo.DepartmentWardMstVO">
+		</form-bean>
+
+		<form-bean name="deptWardDiseaseBean"
+			type="ipd.masters.vo.DepartmentWardDiseaseMstVO">
+		</form-bean>
+
+		<form-bean name="inPatientConfigBean"
+			type="ipd.masters.vo.InPatientConfigMstVO">
+		</form-bean>
+		<form-bean name="nurseCheckListBean"
+			type="ipd.masters.vo.NurseCheckListMstVO">
+		</form-bean>
+
+		<form-bean name="hospitalDiagnosisBean"
+			type="ipd.masters.vo.HospitalDiagnosisMstVO">
+		</form-bean>
+		<form-bean name="advanceAdviceTransBean"
+			type="ipd.transactions.AdmissionAdviceTransFB">
+		</form-bean>
+
+		<form-bean name="paientAdmissionTransBean"
+			type="ipd.transactions.PatientAdmissionTransFB">
+		</form-bean>
+
+		<form-bean name="newBornTransBean"
+			type="ipd.transactions.NewBornBabyTransFB">
+		</form-bean>
+		<form-bean name="patientAdmissionModiTransBean"
+			type="ipd.transactions.PatientAdmissionModificationTransFB">
+		</form-bean>
+		<form-bean name="patientAdmissionCanceTransBean"
+			type="ipd.transactions.PatientAdmissionCancellationTransFB">
+		</form-bean>
+		<form-bean name="deathNotificationTransBean"
+			type="ipd.transactions.DeathNotificationTransFB">
+		</form-bean>
+		<form-bean name="DeskFB"
+			type="ipd.transactions.AdmissionDeskFB">
+		</form-bean>
+		<form-bean name="paientAdmissionTransBean_desk"
+			type="ipd.transactions.PatientAdmissionTransFB">
+		</form-bean>
+
+		<form-bean name="newBornTransBean_desk"
+			type="ipd.transactions.NewBornBabyTransFB">
+		</form-bean>
+		<form-bean name="patientAdmissionModiTransBean_desk"
+			type="ipd.transactions.PatientAdmissionModificationTransFB">
+		</form-bean>
+		<form-bean name="patientAdmissionCanceTransBean_desk"
+			type="ipd.transactions.PatientAdmissionCancellationTransFB">
+		</form-bean>
+
+		<form-bean name="wardroombedBean"
+			type="ipd.masters.vo.WardRoomBedMstVO">
+		</form-bean>
+
+		<form-bean name="roomtypeBean"
+			type="ipd.masters.vo.RoomTypeMstVO">
+		</form-bean>
+
+		<form-bean name="roomconfigBean"
+			type="ipd.masters.vo.RoomConfigMstVO">
+		</form-bean>
+
+		<form-bean name="bedstatusBean"
+			type="ipd.masters.vo.BedStatusMstVO">
+		</form-bean>
+
+		<form-bean name="bedtypeBean" type="ipd.masters.vo.BedTypeMstVO"></form-bean>
+		<form-bean name="deathcauseBean"
+			type="ipd.masters.vo.DeathCauseMstVO">
+		</form-bean>
+
+		<form-bean name="dischargetypeBean"
+			type="ipd.masters.vo.DischargeTypeMstVO">
+		</form-bean>
+
+		<form-bean name="medicalhistoryBean"
+			type="ipd.masters.vo.MedicalHistoryMstVO">
+		</form-bean>
+
+		<form-bean name="birthnatureBean"
+			type="ipd.masters.vo.BirthNatureMstVO">
+		</form-bean>
+
+		<form-bean name="birthtypeBean"
+			type="ipd.masters.vo.BirthTypeMstVO">
+		</form-bean>
+
+		<form-bean name="complicationBean"
+			type="ipd.masters.vo.ComplicationMstVO">
+		</form-bean>
+
+		<form-bean name="deathmannerBean"
+			type="ipd.masters.vo.DeathMannerMstVO">
+		</form-bean>
+
+		<form-bean name="deliverytypeBean"
+			type="ipd.masters.vo.DeliveryTypeMstVO">
+		</form-bean>
+		<form-bean name="diseasetypeBean"
+			type="ipd.masters.vo.WardDiseaseTypeMstVO">
+		</form-bean>
+
+		<form-bean name="duwrbedBean" type="ipd.masters.vo.DUWRBedMstVO">
+		</form-bean>
+		<form-bean name="compexamBean"
+			type="ipd.masters.vo.CompExamMstVO">
+		</form-bean>
+
+
+		<form-bean name="compexamtypeBean"
+			type="ipd.masters.vo.CompExamTypeMstVO">
+		</form-bean>
+
+		<form-bean name="documentBean"
+			type="ipd.masters.vo.ClinicalDocumentMstVO">
+		</form-bean>
+		<form-bean name="compexamvalueBean"
+			type="ipd.masters.vo.CompExamValueMstVO">
+		</form-bean>
+
+		<form-bean name="componentBean"
+			type="ipd.masters.vo.ComponentMstVO">
+		</form-bean>
+		<form-bean name="deptdocBean"
+			type="ipd.masters.vo.DeptDocumentMstVO">
+		</form-bean>
+		<form-bean name="visitorpassTransBean"
+			type="ipd.transactions.VisitorPassTransFB">
+		</form-bean>
+		<form-bean name="patbelongingTransBean"
+			type="ipd.transactions.PatBelongingTransFB">
+		</form-bean>
+		<form-bean name="dischargecancelTransBean"
+			type="ipd.transactions.DischargeCancelTransFB">
+		</form-bean>
+		<form-bean name="admissionReprintTransBean"
+			type="ipd.transactions.AdmissionReprintTransFB">
+		</form-bean>
+
+		<form-bean name="wardtypeBean"
+			type="ipd.masters.vo.WardTypeMstVO">
+		</form-bean>
+		<form-bean name="wardBean" type="ipd.masters.vo.WardMstVO">
+		</form-bean>
+
+		<form-bean name="hservice"
+			type="ipd.masters.vo.HospitalServiceMstVO">
+		</form-bean>
+		<form-bean name="wardcriteria"
+			type="ipd.masters.vo.WardCriteriaMstVO">
+		</form-bean>
+		<form-bean name="wardBean" type="ipd.masters.vo.WardMstVO">
+		</form-bean>
+
+		<form-bean name="msApprovalTransBean"
+			type="ipd.transactions.MsApprovalTransFB">
+		</form-bean>
+
+		<form-bean name="nursingDeskBean"
+			type="ipd.transactions.NursingDeskTransFB">
+		</form-bean>
+		<form-bean name="nursingDeskServiceBean"
+			type="ipd.transactions.NursingDeskServiceTransFB">
+		</form-bean>
+
+		<form-bean name="patientMoveTransBean"
+			type="ipd.transactions.PatientTransferTransFB">
+		</form-bean>
+		<form-bean name="patientLeaveBean"
+			type="ipd.transactions.PatientLeaveFB">
+		</form-bean>
+		<form-bean name="patientLeaveRequestTransBean"
+			type="ipd.transactions.PatientLeaveRequestTransFB">
+		</form-bean>
+		<form-bean name="patientLeaveApprovalTransBean"
+			type="ipd.transactions.PatientLeaveApprovalTransFB">
+		</form-bean>
+		<form-bean name="patientLeaveJoinRecordTransBean"
+			type="ipd.transactions.PatientLeaveJoinRecordTransFB">
+		</form-bean>
+		<form-bean name="patientDischargeBean"
+			type="ipd.transactions.PatientFinalDischargeFB">
+		</form-bean>
+
+		<form-bean name="currentAdmPatRpt"
+			type="ipd.reports.CurrentlyAdmittedPatientRptFB">
+		</form-bean>
+
+		<form-bean name="statDischargePatRpt"
+			type="ipd.reports.StatisticalRptDischargePatRptFB">
+		</form-bean>
+		<form-bean name="wardCensusRpt"
+			type="ipd.reports.WardCensusRptFB">
+		</form-bean>
+		<form-bean name="admCashCollRpt"
+			type="ipd.reports.AdmissionCashCollectionRptFB">
+		</form-bean>
+		<form-bean name="admissionRegRpt"
+			type="ipd.reports.AdmissionRegRptFB">
+		</form-bean>
+		<form-bean name="admPatRpt"
+			type="ipd.reports.AdmittedPatientRptFB">
+		</form-bean>
+		<form-bean name="avgStayDeptRpt"
+			type="ipd.reports.AvgStayDepartmentRptFB">
+		</form-bean>
+		<form-bean name="bedOccupancyRpt"
+			type="ipd.reports.BedOccupancyRptFB">
+		</form-bean>
+		<form-bean name="dailyDischargeRpt"
+			type="ipd.reports.DailyDischargeRptFB">
+		</form-bean>
+		<form-bean name="nonAccPatListRpt"
+			type="ipd.reports.NonAcceptedPatientListingRptFB">
+		</form-bean>
+		<form-bean name="patDischargeRpt"
+			type="ipd.reports.PatientDischargeRptFB">
+		</form-bean>
+		<form-bean name="listIndoorPatRpt"
+			type="ipd.reports.ListIndoorPatientRptFB">
+		</form-bean>
+		<form-bean name="fileDepRecordRpt"
+			type="ipd.reports.FileDepositRecordRptFB">
+		</form-bean>
+		<form-bean name="dailyMasterCensusRpt"
+			type="ipd.reports.DailyMasterCensusRptFB">
+		</form-bean>
+		<form-bean name="indoorInformationRpt"
+			type="ipd.reports.IndoorInformationRptFB">
+		</form-bean>
+		<form-bean name="dailyWardSummaryRpt"
+			type="ipd.reports.DailyWardSummaryRptFB">
+		</form-bean>
+		<form-bean name="dailyWardCensusSumRpt"
+			type="ipd.reports.DailyWardCensusSumRptFB">
+		</form-bean>
+		<form-bean name="mortalityStatRpt"
+			type="ipd.reports.MortalityStatisticsRptFB">
+		</form-bean>
+		<form-bean name="hospStatRpt"
+			type="ipd.reports.HospitalStatisticsRptFB">
+		</form-bean>
+		<form-bean name="indoorStatRpt"
+			type="ipd.reports.IndoorStatisticsRptFB">
+		</form-bean>
+		<form-bean name="listDeathCaseRpt"
+			type="ipd.reports.ListDeathCaseRptFB">
+		</form-bean>
+		<form-bean name="listAbsCaseRpt"
+			type="ipd.reports.ListAbscondingCaseRptFB">
+		</form-bean>
+		<form-bean name="listMLCCaseRpt"
+			type="ipd.reports.ListMLCCaseRptFB">
+		</form-bean>
+		<form-bean name="listMLCDeathRpt"
+			type="ipd.reports.ListMLCDeathRptFB">
+		</form-bean>
+		<form-bean name="listNonMLCDeathRpt"
+			type="ipd.reports.ListNonMLCDeathRptFB">
+		</form-bean>
+		<form-bean name="patTransferDtlRpt"
+			type="ipd.reports.PatientTransferDtlRptFB">
+		</form-bean>
+		<form-bean name="patDiagnosisRpt"
+			type="ipd.reports.PatientDiagnosisRptFB">
+		</form-bean>
+		<form-bean name="inBornBabyAdmRpt"
+			type="ipd.reports.InBornBabyAdmissionRptFB">
+		</form-bean>
+		<form-bean name="listAdmPatRpt"
+			type="ipd.reports.ListAdmittedPatientRptFB">
+		</form-bean>
+		<form-bean name="vacantBedRecordRpt"
+			type="ipd.reports.VacantBedRecordRptFB">
+		</form-bean>
+		<form-bean name="patientDeathRpt"
+			type="ipd.reports.PatientDeathRptFB">
+		</form-bean>
+		<form-bean name="patDisDtlRpt"
+			type="ipd.reports.PatDischargeDtlRptFB">
+		</form-bean>
+		<form-bean name="dischargeSum"
+			type="ipd.reports.DischargeSummaryFB">
+		</form-bean>
+		<form-bean name="DeskAccessBean"
+			type="ipd.masters.controller.fb.DeskAccessDetailsFB">
+		</form-bean>
+		<form-bean name="propertyBean"
+			type="ipd.masters.vo.PropertyMstVO">
+		</form-bean>
+		
+		<form-bean name="completeWardCensusDetailBean"
+			type="ipd.reports.CompleteWardCensusDetailRptFB">
+		</form-bean>
+		
+		/********** Start Global Discharge Type Master [Created By Adil Wasi on 8th-Feb-2012 **************/
+		<form-bean name="globalDischargeTypeBean"
+			type="ipd.masters.vo.GlobalDischargeTypeMstVO">
+		</form-bean>
+		/********** End   Global Discharge Type Master [Created By Adil Wasi on 8th-Feb-2012 **************/
+		
+		
+		/********** Start Global Clinical Document Master [Created By Adil Wasi on 9th-Feb-2012 **************/
+		<form-bean 	name="globalDocumentBean" 
+					type="ipd.masters.vo.GlobalClinicalDocumentMstVO">
+		</form-bean>
+		/********** End   Global Clinical Document Master [Created By Adil Wasi on 9th-Feb-2012 **************/
+		
+		/********** Start Global Bed Type Master [Created By Adil Wasi on 9th-Feb-2012] **************/
+		<form-bean name="globalBedtypeBean" type="ipd.masters.vo.GlobalBedTypeMstVO"></form-bean>
+		/************************** End Global Bed Type Master  **************/
+		
+		/********** Start Global Bed Status Master [Created By Adil Wasi on 9th-Feb-2012] **************/
+		<form-bean 	name="globalBedStatusBean" 
+					type="ipd.masters.vo.GlobalBedStatusMstVO"></form-bean>
+		/********** End   Global Bed Status Master [Created By Adil Wasi on 9th-Feb-2012] **************/
+		
+		
+		/********** Start Global Relief Fund Master [Created By Adil Wasi on 9th-Feb-2012] **************/
+		<form-bean 	name="globalReliefFundBean" 
+					type="ipd.masters.vo.GlobalReliefFundMstVO"></form-bean>
+		/********** End   Global Relief Fund Master [Created By Adil Wasi on 9th-Feb-2012] **************/
+		
+		<form-bean name="globalRoomtypeBean"
+				   type="ipd.masters.vo.GlobalRoomTypeMstVO">
+		</form-bean>
+		
+		<form-bean name="globalWardtypeBean"
+				   type="ipd.masters.vo.GlobalWardTypeMstVO">
+		</form-bean>
+		
+		<form-bean name="treatmentResultBean"
+				   type="ipd.masters.vo.TreatmentResultMstVO">
+		</form-bean>
+		
+	</form-beans>
+
+	<action-mappings>
+
+		<action path="/masters/DeskAccessDetailsCNT"
+			type="ipd.masters.controller.action.DeskAccessDetailsACTION" name="DeskAccessBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="index"
+				path="/masters/ipd_deskAccessDetails_mst.jsp" />
+			<forward name="INIT"
+				path="../../startup/initPage.jsp" redirect="true"/>
+		</action>
+
+		<action path="/masters/CNTHospitalMst"
+			type="ipd.masters.controller.action.HospitalMstACTION" name="hospitalBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_hospital_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_hospital_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTDepartmentWardMst"
+			type="ipd.masters.controller.action.DepartmentWardMstACTION" name="deptWardBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_departmentward_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_departmentward_mst.jsp" />
+		</action>
+		<action path="/masters/CNTDeptDocumentMst"
+			type="ipd.masters.controller.action.DeptDocumentMstACTION" name="deptdocBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_deptdoc_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_deptdoc_mst.jsp" />
+			<forward name="view"
+				path="/masters/ipd_view_deptdoc_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTDepartmentWardDiseaseMst"
+			type="ipd.masters.controller.action.DepartmentWardDiseaseMstACTION"
+			name="deptWardDiseaseBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_departmentwarddisease_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_departmentwarddisease_mst.jsp" />
+		</action>
+
+
+		<action path="/masters/CNTInPatientConfigMst"
+			type="ipd.masters.controller.action.InPatientConfigMstACTION" name="inPatientConfigBean"
+			scope="request" validate="false" parameter="selectedTab">
+
+			<forward name="ipdgeneralsave"
+				path="/masters/ipd_inpatientConfig_mst.jsp" />
+
+			<forward name="ipdgeneral"
+				path="/masters/ipd_inpatientConfig_mst.jsp" />
+
+			<forward name="ipdadmdtls"
+				path="/masters/ipd_inpatientConfig_admdtl_mst.jsp" />
+				
+			<forward name="ipddischargedtls"
+				path="/masters/ipd_inpatientConfig_dischargedtl_mst.jsp" />	
+				
+			<forward name="ipdpassdtls"
+				path="/masters/ipd_inpatientPassDtlConfig_mst.jsp" />
+
+			<forward name="ipdreportdtls"
+				path="/masters/ipd_inpatientReportDtlConfig_mst.jsp" />
+
+			<forward name="ipdbilldtls"
+				path="/masters/ipd_bill_inpatientBillingDtlConfig_mst.jsp" />
+			<forward name="ipdprintdtls"
+				path="/masters/ipd_print_inpatientPrintDtlConfig_mst.jsp" />
+			<forward name="INIT"
+				path="../../startup/initPage.jsp" redirect="true"/>
+
+
+		</action>
+
+		<action path="/masters/CNTNurseCheckListMst"
+			type="ipd.masters.controller.action.NurseCheckListMstACTION" name="nurseCheckListBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_nurseChecklist_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_nurseChecklist_mst.jsp" />
+
+		</action>
+		<action path="/masters/CNTComponentMst"
+			type="ipd.masters.controller.action.ComponentMstACTION" name="componentBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_component_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_component_mst.jsp" />
+
+		</action>
+
+		<action path="/masters/CNTHospitalDiagnosisMst"
+			type="ipd.masters.controller.action.HospitalDiagnosisMstACTION"
+			name="hospitalDiagnosisBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_hospitalDiagnosis_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_hospitalDiagnosis_mst.jsp" />
+
+		</action>
+		
+		
+		<action path="/reports/CompleteWardCensusDetailRptCNT"
+			type="ipd.reports.CompleteWardCensusDetailRptCNT" name="completeWardCensusDetailBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/completeWardCensusDetail_ipdrpt.jsp" />
+
+		</action>
+
+
+		<action path="/ipd/transactions/AdmissionAdviceTransCNT"
+			type="ipd.transactions.AdmissionAdviceTransCNT"
+			name="advanceAdviceTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/ipd/transactions/admissionadvice_add_ipdtrans.jsp" />
+			<forward name="add1"
+				path="/ipd/transactions/admissionadvice_add_ipdtranswithoutDesk.jsp" />
+			<forward name="bedstatus1"
+				path="/ipd/transactions/bedallocation_popup_ipdtrans.jsp" />
+			<forward name="bedstatus"
+				path="/ipd/transactions/bedallocation_popup_ipdtrans_desk.jsp" />
+			<forward name="list"
+				path="/ipd/transactions/list_popup_ipdtrans.jsp" />	
+		</action>
+
+
+		<action path="/transactions/AdmissionAdviceTransCNT"
+			type="ipd.transactions.AdmissionAdviceTransCNT"
+			name="advanceAdviceTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/admissionadvice_add_ipdtrans.jsp" />
+			<forward name="add1"
+				path="/transactions/admissionadvice_add_ipdtranswithoutDesk.jsp" />
+			<forward name="bedstatus1"
+				path="/transactions/bedallocation_popup_ipdtrans.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/bedallocation_popup_ipdtrans_desk.jsp" />
+			<forward name="list"
+				path="/transactions/list_popup_ipdtrans.jsp" />
+		</action>
+
+		<action path="/transactions/DeathNotificationTransCNT"
+			type="ipd.transactions.DeathNotificationTransCNT"
+			name="deathNotificationTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/deathnotification_add_ipdtrans.jsp" />
+			<forward name="addDesk"
+				path="/transactions/deathnotification_addDesk_ipdtrans.jsp" />
+		</action>
+
+		<action path="/transactions/AdmissionDeskCNT"
+			type="ipd.transactions.AdmissionDeskCNT" name="DeskFB"
+			scope="request" validate="false" parameter="deskmode">
+			<forward name="NEWADM" path="/newadmission" />
+			<forward name="NEWBORNBABY" path="/newbornbaby" />
+			<forward name="ADMMODIFY" path="/admissionmodify" />
+			<forward name="ADMCANCEL" path="/admissioncancel" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/transactions/PatientAdmissionDeskTransCNT"
+			type="ipd.transactions.PatientAdmissionTransCNT"
+			name="paientAdmissionTransBean_desk" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/transactions/patientAdmission_add_ipdTrans_desk.jsp" />			
+			<forward name="bedstatus" path="/transactions/bedStatusPatientAdmission_desk.jsp" />
+		</action>
+
+		<action path="/transactions/NewBornBabyDeskTransCNT"
+			type="ipd.transactions.NewBornBabyTransCNT"
+			name="newBornTransBean_desk" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/newBornBaby_add_ipdTrans_desk.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/bedStatusNewBornBaby_desk.jsp" />
+		</action>
+
+		<action
+			path="/transactions/PatientAdmissionModificationDeskTransCNT"
+			type="ipd.transactions.PatientAdmissionModificationTransCNT"
+			name="patientAdmissionModiTransBean_desk" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add"
+				path="/transactions/patientAdmissionModi_add_ipdTrans_desk.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/bedStatusPatientAdmissionModi_desk.jsp" />
+		</action>
+
+		<action
+			path="/transactions/PatientAdmissionCancellationDeskTransCNT"
+			type="ipd.transactions.PatientAdmissionCancellationTransCNT"
+			name="patientAdmissionCanceTransBean_desk" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add"
+				path="/transactions/patientAdmissionCancel_add_ipdTrans_desk.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/bedStatusPatientAdmissionCancel_desk.jsp" />
+		</action>
+
+		<action path="/masters/CNTWardRoomBedMst"
+			type="ipd.masters.controller.action.WardRoomBedMstACTION" name="wardroombedBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_WardRoomBed_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_WardRoomBed_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTRoomTypeMst"
+			type="ipd.masters.controller.action.RoomTypeMstACTION" name="roomtypeBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_roomtype_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_roomtype_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTRoomConfigMst"
+			type="ipd.masters.controller.action.RoomConfigMstACTION" name="roomconfigBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_roomConfig_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_roomConfig_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTBedStatusMst"
+			type="ipd.masters.controller.action.BedStatusMstACTION" name="bedstatusBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_bedStatus_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_bedStatus_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTBedTypeMst"
+			type="ipd.masters.controller.action.BedTypeMstACTION" name="bedtypeBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_bedType_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_bedType_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTDeathCauseMst"
+			type="ipd.masters.controller.action.DeathCauseMstACTION" name="deathcauseBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_deathCause_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_deathCause_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTDischargeTypeMst"
+			type="ipd.masters.controller.action.DischargeTypeACTION" name="dischargetypeBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_dischargeType_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_dischargeType_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTMedicalHistoryMst"
+			type="ipd.masters.controller.action.MedicalHistoryMstACTION" name="medicalhistoryBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_medicalHistory_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_medicalHistory_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTBirthNatureMst"
+			type="ipd.masters.controller.action.BirthNatureMstACTION" name="birthnatureBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_birthNature_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_birthNature_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTBirthTypeMst"
+			type="ipd.masters.controller.action.BirthTypeMstACTION" name="birthtypeBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_birthType_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_birthType_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTComplicationMst"
+			type="ipd.masters.controller.action.ComplicationMstACTION" name="complicationBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_complication_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_complication_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTDeathMannerMst"
+			type="ipd.masters.controller.action.DeathMannerMstACTION" name="deathmannerBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_deathManner_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_deathManner_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTDeliveryTypeMst"
+			type="ipd.masters.controller.action.DeliveryTypeMstACTION" name="deliverytypeBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_deliveryType_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_deliveryType_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTWardDiseaseTypeMst"
+			type="ipd.masters.controller.action.WardDiseaseTypeMstACTION" name="diseasetypeBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_wardDiseaseType_mst.jsp" />
+
+			<forward name="modify"
+				path="/masters/ipd_modify_wardDiseaseType_mst.jsp" />
+
+		</action>
+		<action path="/masters/CNTDUWRBedMst"
+			type="ipd.masters.controller.action.DUWRBedMstACTION" name="duwrbedBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_duwrbed_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_duwrbed_mst.jsp" />
+			<forward name="view"
+				path="/masters/ipd_view_duwrBed_mst.jsp" />
+		</action>
+		<action path="/masters/CNTCompExamMst"
+			type="ipd.masters.controller.action.CompExamMstACTION" name="compexamBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_compexam_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_compexam_mst.jsp" />
+		</action>
+		<action path="/masters/CNTCompExamTypeMst"
+			type="ipd.masters.controller.action.CompExamTypeMstACTION" name="compexamtypeBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_compexamType_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_compexamType_mst.jsp" />
+		</action>
+		<action path="/masters/CNTCompExamValueMst"
+			type="ipd.masters.controller.action.CompExamValueMstACTION" name="compexamvalueBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_compexamValue_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_compexamValue_mst.jsp" />
+			<forward name="view"
+				path="/masters/ipd_view_compexamValue_mst.jsp" />
+		</action>
+		<action path="/masters/CNTClinicalDocumentMst"
+			type="ipd.masters.controller.action.ClinicalDocumentMstACTION" name="documentBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_clinicaldoc_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_clinicaldoc_mst.jsp" />
+
+		</action>
+
+		<action path="/transactions/VisitorPassTransCNT"
+			type="ipd.transactions.VisitorPassTransCNT"
+			name="visitorpassTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/visitorpassGeneration_ipdTrans.jsp">
+			</forward>
+			<forward name="clear"
+				path="/transactions/visitorpassGeneration_ipdTrans.jsp" />
+		</action>
+
+		<action path="/transactions/PatBelongingTransCNT"
+			type="ipd.transactions.PatBelongingTransCNT"
+			name="patbelongingTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/patientBelonging_ipdTrans.jsp">
+			</forward>
+			<forward name="addDesk"
+				path="/transactions/patientBelongingDesk_ipdTrans.jsp">
+			</forward>
+
+		</action>
+
+		<action path="/transactions/DischargeCancelTransCNT"
+			type="ipd.transactions.DischargeCancelTransCNT"
+			name="dischargecancelTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/dischargeCancellationDetails_ipdTrans.jsp">
+			</forward>
+			<forward name="clear"
+				path="/transactions/dischargeCancellationDetails_ipdTrans.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/dischargeCancellation_Bedstatus.jsp" />
+		</action>
+		<action path="/transactions/AdmissionReprintTransCNT"
+			type="ipd.transactions.AdmissionReprintTransCNT"
+			name="admissionReprintTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/admissionReprint_ipdTrans.jsp">
+			</forward>
+			<forward name="clear"
+				path="/transactions/admissionReprint_ipdTrans.jsp" />
+
+		</action>
+
+		<action path="/masters/CNTWardTypeMst"
+			type="ipd.masters.controller.action.WardTypeMstACTION" name="wardtypeBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_wardType_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_wardType_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTWardMst" type="ipd.masters.controller.action.WardMstACTION"
+			name="wardBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_ward_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_ward_mst.jsp" />
+			<forward name="view" path="/masters/ipd_view_ward_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTHospitalServiceMst"
+			type="ipd.masters.controller.action.HospitalServiceMstACTION" name="hservice"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_hservice_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_hservice_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTWardCriteriaMst"
+			type="ipd.masters.controller.action.WardCriteriaMstACTION" name="wardcriteria"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_wardCriteria_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_wardCriteria_mst.jsp" />
+		</action>
+
+		<action path="/transactions/MsApprovalTransCNT"
+			type="ipd.transactions.MsApprovalTransCNT" name="msApprovalTransBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/transactions/msapproval_add_ipdtrans.jsp" />
+			<forward name="approve"
+				path="/transactions/msapproval_approv_ipdtrans.jsp" />
+			<forward name="allotement"
+				path="/transactions/msapproval_wardallotement_ipdtrans.jsp" />
+			<forward name="list"
+				path="/transactions/msapproval_list_ipdtrans.jsp" />
+			<forward name="cancel"
+				path="/transactions/msapproval_cancel_ipdtrans.jsp" />
+
+			<forward name="patlist"
+				path="/transactions/msapproval_patlistpopup_ipdtrans.jsp" />
+
+			<forward name="view"
+				path="/transactions/msapproval_view_ipdtrans.jsp" />
+			<forward name="approvedwaitreport"
+				path="/reports/msapprovel_approvedwaitlisttrans.jsp" />
+			<forward name="notapprovedreport"
+				path="/reports/msapprovel_notapprovedlisttrans.jsp" />
+			<forward name="cancelreport"
+				path="/reports/msapprovel_cancellisttrans.jsp" />
+
+
+		</action>
+		<action path="/transactions/NursingDeskTransCNT"
+			type="ipd.transactions.NursingDeskTransCNT" name="nursingDeskBean"
+			scope="request" validate="false" parameter="hmode">
+
+			<forward name="acceptlist"
+				path="/transactions/nursingdeskl_Acceptlist_ipdtrans.jsp" />
+			<forward name="addDesk"
+				path="/transactions/nursingdeskl_AcceptlistDesk_ipdtrans.jsp" />
+
+			<forward name="bedstatus"
+				path="/transactions/nursingdeskl_Acceptbedstatus_ipdtrans.jsp" />
+
+		</action>
+		<action path="/transactions/NursingDeskServicesTransCNT"
+			type="ipd.transactions.NursingDeskServicesTransCNT"
+			name="nursingDeskServiceBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="acceptlist"
+				path="/transactions/nursingdeskl_Acceptlist_ipdtrans.jsp" />
+
+			<forward name="transfer"
+				path="/transactions/patientAdmission_add_ipdTrans.jsp" />
+
+			<forward name="leave"
+				path="/transactions/PatientLeave_Join.jsp" />
+
+
+			<forward name="discharge"
+				path="/transactions/PatientFinalDischarge.jsp" />
+
+			<forward name="deathnotification"
+				path="/transactions/deathnotification_add_ipdtrans.jsp" />
+
+		</action>
+
+		<action path="/transactions/PatientAdmissionTransCNT"
+			type="ipd.transactions.PatientAdmissionTransCNT"
+			name="paientAdmissionTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/transactions/patientAdmission_add_ipdTrans.jsp" />
+			<forward name="printadmissioncard" path="/transactions/patientAdmission_slip_ipdTrans.jsp" />
+			<forward name="bedstatus" path="/transactions/bedStatusPatientAdmission.jsp" />
+		</action>
+
+		<action path="/transactions/NewBornBabyTransCNT"
+			type="ipd.transactions.NewBornBabyTransCNT" name="newBornTransBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/transactions/newBornBaby_add_ipdTrans.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/bedStatusNewBornBaby.jsp" />
+		</action>
+
+		<action
+			path="/transactions/PatientAdmissionModificationTransCNT"
+			type="ipd.transactions.PatientAdmissionModificationTransCNT"
+			name="patientAdmissionModiTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/patientAdmissionModi_add_ipdTrans.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/bedStatusPatientAdmissionModi.jsp" />
+		</action>
+
+		<action
+			path="/transactions/PatientAdmissionCancellationTransCNT"
+			type="ipd.transactions.PatientAdmissionCancellationTransCNT"
+			name="patientAdmissionCanceTransBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add"
+				path="/transactions/patientAdmissionCancel_add_ipdTrans.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/bedStatusPatientAdmissionCancel.jsp" />
+		</action>
+
+		<action path="/transactions/PatientTransferTransCNT"
+			type="ipd.transactions.PatientTransferTransCNT"
+			name="patientMoveTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="approval"
+				path="/transactions/PatientTransferTrans_movement.jsp" />
+			<forward name="addDesk"
+				path="/transactions/PatientTransferDeskTrans_movement.jsp" />
+			<forward name="cancel"
+				path="/transactions/PatientTransferTrans_movement.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/patientTransfer_Bedstatus.jsp" />
+			<forward name="bsid"
+				path="/transactions/PatientTransferTrans_movement.jsp" />
+			<forward name="popup"
+				path="/transactions/PatientTransferTrans_movement.jsp" />
+			<forward name="reEnter"
+				path="/transactions/PatientTransferTrans_movement.jsp" />
+		</action>
+
+		<action path="/transactions/PatientLeaveCNT"
+			type="ipd.transactions.PatientLeaveCNT" name="patientLeaveBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="addDesk"
+				path="/transactions/PatientLeave_JoinDesk.jsp" />
+			<forward name="approval"
+				path="/transactions/PatientLeave_Join.jsp" />
+			<forward name="cancel"
+				path="/transactions/PatientLeave_Join.jsp" />
+			<forward name="bsid"
+				path="/transactions/PatientLeave_Join.jsp" />
+			<forward name="popup"
+				path="/transactions/PatientLeave_Join.jsp" />
+			<forward name="reEnter"
+				path="/transactions/PatientLeave_Join.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/offlinePatientJoinEntry_Bedstatus.jsp" />
+		</action>
+
+		<action path="/transactions/PatientLeaveRequestTransCNT"
+			type="ipd.transactions.PatientLeaveRequestTransCNT"
+			name="patientLeaveRequestTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="approval"
+				path="/transactions/online_Patient_leave_request_ADTtrans.jsp" />
+			<forward name="addDesk"
+				path="/transactions/online_Patient_leave_requestDesk_ADTtrans.jsp" />
+			<forward name="cancel"
+				path="/transactions/online_Patient_leave_request_ADTtrans.jsp" />
+			<forward name="bsid"
+				path="/transactions/online_Patient_leave_request_ADTtrans.jsp" />
+			<forward name="popup"
+				path="/transactions/online_Patient_leave_request_ADTtrans.jsp" />
+			<forward name="reEnter"
+				path="/transactions/online_Patient_leave_request_ADTtrans.jsp" />
+		</action>
+		<action path="/transactions/PatientLeaveApprovalTransCNT"
+			type="ipd.transactions.PatientLeaveApprovalTransCNT"
+			name="patientLeaveApprovalTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="approval"
+				path="/transactions/online_Patient_leave_approval_ADTtrans.jsp" />
+			<forward name="cancel"
+				path="/transactions/online_Patient_leave_approval_ADTtrans.jsp" />
+			<forward name="bsid"
+				path="/transactions/online_Patient_leave_approval_ADTtrans.jsp" />
+			<forward name="popup"
+				path="/transactions/online_Patient_leave_approval_ADTtrans.jsp" />
+			<forward name="reEnter"
+				path="/transactions/online_Patient_leave_approval_ADTtrans.jsp" />
+		</action>
+		<action path="/transactions/PatientLeaveJoinRecordTransCNT"
+			type="ipd.transactions.PatientLeaveJoinRecordTransCNT"
+			name="patientLeaveJoinRecordTransBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="approval"
+				path="/transactions/online_Patient_leave_join_record_ADTtrans.jsp" />
+			<forward name="addDesk"
+				path="/transactions/online_Patient_leave_join_recordDesk_ADTtrans.jsp" />
+			<forward name="cancel"
+				path="/transactions/online_Patient_leave_join_record_ADTtrans.jsp" />
+			<forward name="bsid"
+				path="/transactions/online_Patient_leave_join_record_ADTtrans.jsp" />
+			<forward name="popup"
+				path="/transactions/online_Patient_leave_join_record_ADTtrans.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/onlinePatientJoinEntry_Bedstatus.jsp" />
+			<forward name="reEnter"
+				path="/transactions/online_Patient_leave_join_record_ADTtrans.jsp" />
+		</action>
+
+
+
+
+		<action path="/transactions/PatientFinalDischargeCNT"
+			type="ipd.transactions.PatientFinalDischargeCNT"
+			name="patientDischargeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="approval"
+				path="/transactions/PatientFinalDischarge.jsp" />
+			<forward name="cancel"
+				path="/transactions/PatientFinalDischarge.jsp" />
+			<forward name="bsid"
+				path="/transactions/PatientFinalDischarge.jsp" />
+			<forward name="popup"
+				path="/transactions/PatientFinalDischarge.jsp" />
+			<forward name="reEnter"
+				path="/transactions/PatientFinalDischarge.jsp" />
+			<forward name="consentForm" path="/transactions/consentForm_ipd_trans.jsp" />
+		</action>
+       
+       <action path="/transactions/PatientFinalDischargeDeskTransCNT"
+			type="ipd.transactions.PatientFinalDischargeDeskTransCNT"
+			name="patientDischargeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="approval"
+				path="/transactions/PatientFinalDischarge_desk.jsp" />
+			<forward name="cancel"
+				path="/transactions/PatientFinalDischarge_desk.jsp" />
+			<forward name="bsid"
+				path="/transactions/PatientFinalDischarge_desk.jsp" />
+			<forward name="popup"
+				path="/transactions/PatientFinalDischarge_desk.jsp" />
+			<forward name="reEnter"
+				path="/transactions/PatientFinalDischarge_desk.jsp" />
+		</action>
+		
+		<action path="/transactions/IpdCNT" type="ipd.IpdCNT"
+			name="ipdBean" scope="request" validate="false" parameter="hmode">
+			<forward name="display"
+				path="/transactions/tariffSearch.jsp" />
+			<forward name="patlist"
+				path="/transactions/searchpatientdtls.jsp" />
+			<forward name="bedstatus"
+				path="/transactions/ipd_BedstatusView.jsp" />
+		</action>
+		<action path="/ipd/transactions/IpdCNT" type="ipd.IpdCNT" name="ipdBean" scope="request" validate="false" parameter="hmode">
+		  <forward name="display" path="/ipd/transactions/tariffSearch.jsp" /> 
+		  <forward name="patlist" path="/ipd/transactions/searchpatientdtls.jsp" /> 
+		  <forward name="bedstatus" path="/ipd/transactions/ipd_BedstatusView.jsp" /> 
+		</action>
+		<action path="/transactions/DischargeDeskCNT"
+			type="ipd.transactions.DischargeDeskCNT" name="DischargeFB"
+			scope="request" validate="false" parameter="deskmode">
+			<forward name="DISCHARGE" path="/discharge" />
+			<forward name="DISCHARGECANCEL" path="/dischargecancel" />
+		</action>
+
+		<action path="/reports/CurrentlyAdmittedPatientRptCNT"
+			type="ipd.reports.CurrentlyAdmittedPatientRptCNT"
+			name="currentAdmPatRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/currentlyAdmittedPatient_ipdrpt.jsp" />
+
+
+		</action>
+
+		<action path="/reports/AdmissionRegRptCNT"
+			type="ipd.reports.AdmissionRegRptCNT" name="admissionRegRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/admissionRegistered_ipdrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/AdmissionCashCollectionRptCNT"
+			type="ipd.reports.AdmissionCashCollectionRptCNT"
+			name="admCashCollRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/admissionCashCollection_ipdrpt.jsp" />
+
+
+		</action>
+
+		<action path="/reports/AdmittedPatientRptCNT"
+			type="ipd.reports.AdmittedPatientRptCNT" name="admPatRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/admittedPatient_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/AvgStayDepartmentRptCNT"
+			type="ipd.reports.AvgStayDepartmentRptCNT" name="avgStayDeptRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/avgStayDepartment_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/BedOccupancyRptCNT"
+			type="ipd.reports.BedOccupancyRptCNT" name="bedOccupancyRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/bedOccupancyRptMed_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/DailyDischargeRptCNT"
+			type="ipd.reports.DailyDischargeRptCNT" name="dailyDischargeRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/dailyDischarge_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/NonAcceptedPatientListingRptCNT"
+			type="ipd.reports.NonAcceptedPatientListingRptCNT"
+			name="nonAccPatListRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/nonAcceptedPatientListing_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/StatisticalRptDischargePatRptCNT"
+			type="ipd.reports.StatisticalRptDischargePatRptCNT"
+			name="statDischargePatRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/statisticalReportDischargePat_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/WardCensusRptCNT"
+			type="ipd.reports.WardCensusRptCNT" name="wardCensusRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/wardCensus_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/PatientDischargeRptCNT"
+			type="ipd.reports.PatientDischargeRptCNT" name="patDischargeRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/patientDischarge_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/ListIndoorPatientRptCNT"
+			type="ipd.reports.ListIndoorPatientRptCNT" name="listIndoorPatRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listIndoorPat_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/FileDepositRecordRptCNT"
+			type="ipd.reports.FileDepositRecordRptCNT" name="fileDepRecordRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/fileDepositRecord_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/DailyMasterCensusRptCNT"
+			type="ipd.reports.DailyMasterCensusRptCNT"
+			name="dailyMasterCensusRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/dailyMasterCensus_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/IndoorInformationRptCNT"
+			type="ipd.reports.IndoorInformationRptCNT"
+			name="indoorInformationRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/indoorInformation_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/DailyWardSummaryRptCNT"
+			type="ipd.reports.DailyWardSummaryRptCNT" name="dailyWardSummaryRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/dailyWardSummary_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/DailyWardCensusSumRptCNT"
+			type="ipd.reports.DailyWardCensusSumRptCNT"
+			name="dailyWardCensusSumRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/dailyWardCensusSum_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/MortalityStatisticsRptCNT"
+			type="ipd.reports.MortalityStatisticsRptCNT" name="mortalityStatRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/mortalityStatistics_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/HospitalStatisticsRptCNT"
+			type="ipd.reports.HospitalStatisticsRptCNT" name="hospStatRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/hospStatistics_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/IndoorStatisticsRptCNT"
+			type="ipd.reports.IndoorStatisticsRptCNT" name="indoorStatRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/indoorStatistics_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/PatientTransferDtlRptCNT"
+			type="ipd.reports.PatientTransferDtlRptCNT" name="patTransferDtlRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/patientTransferDtl_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/PatientDiagnosisRptCNT"
+			type="ipd.reports.PatientDiagnosisRptCNT" name="patDiagnosisRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/patientDiagnosis_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/ListAdmittedPatientRptCNT"
+			type="ipd.reports.ListAdmittedPatientRptCNT" name="listAdmPatRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listAdmittedPatient_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/ListDeathCaseRptCNT"
+			type="ipd.reports.ListDeathCaseRptCNT" name="listDeathCaseRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listDeathCase_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/ListMLCCaseRptCNT"
+			type="ipd.reports.ListMLCCaseRptCNT" name="listMLCCaseRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listMLCCase_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/ListMLCDeathRptCNT"
+			type="ipd.reports.ListMLCDeathRptCNT" name="listMLCDeathRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listMLCDeath_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/ListNonMLCDeathRptCNT"
+			type="ipd.reports.ListNonMLCDeathRptCNT" name="listNonMLCDeathRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listNonMLCDeath_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/InBornBabyAdmissionRptCNT"
+			type="ipd.reports.InBornBabyAdmissionRptCNT" name="inBornBabyAdmRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/inbornBabyAdmission_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/ListAbscondingCaseRptCNT"
+			type="ipd.reports.ListAbscondingCaseRptCNT" name="listAbsCaseRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listAbscondingCase_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/VacantBedRecordRptCNT"
+			type="ipd.reports.VacantBedRecordRptCNT" name="vacantBedRecordRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/vacantBedRecord_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/PatientDeathRptCNT"
+			type="ipd.reports.PatientDeathRptCNT" name="patientDeathRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/patientDeath_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/PatDischargeDtlRptCNT"
+			type="ipd.reports.PatDischargeDtlRptCNT" name="patDisDtlRpt"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/patDischargeDtl_ipdrpt.jsp" />
+
+		</action>
+		<action path="/reports/DischargeSummaryCNT"
+			type="ipd.reports.DischargeSummaryCNT" name="dischargeSum"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/dischargeSummary.jsp" />
+
+		</action>
+
+		<action path="/transactions/NursingDeskFinalTransCNT"
+			type="ipd.transactions.NursingDeskFinalTransCNT"
+			name="nursingDeskFinalTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/dischargeSummary.jsp" />
+
+		</action>
+
+		<action path="/masters/CNTPropertyMst"
+			type="ipd.masters.controller.action.PropertyMstACTION" name="propertyBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_property_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_property_mst.jsp" />
+		</action>
+		
+		<action path="/transactions/WardDueIPDTransCNT"
+			type="ipd.transactions.WardDueIPDTransCNT"
+			name="wardDueIPDTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="returnItem"
+				path="/transactions/wardDueIPDTrans.jsp" />
+		</action>
+		
+		/********** Start Global Discharge Type Master [Created By Adil Wasi on 8th-Feb-2012] **************/
+		<action path="/masters/GlobalDischargeTypeMstACTION"
+			type="ipd.masters.controller.action.GlobalDischargeTypeMstACTION" name="globalDischargeTypeBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/ipd_add_globalDischargeType_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_globalDischargeType_mst.jsp" />
+		</action>
+		/********** End Global Discharge Type Master  **************/
+		
+		/********** Start Global Clinical Document Master [Created By Adil Wasi on 9th-Feb-2012] **************/
+		<action path="/masters/GlobalClinicalDocumentMstACTION"
+			type="ipd.masters.controller.action.GlobalClinicalDocumentMstACTION" name="globalDocumentBean"
+					scope="request" validate="false" parameter="hmode">
+			<forward name="add" 	path="/masters/ipd_add_globalClinicaldoc_mst.jsp" />
+			<forward name="modify"	path="/masters/ipd_modify_globalClinicaldoc_mst.jsp" />
+		</action>
+		/********** End Global Clinical Document Master  **************/
+		
+		/********** Start Global Bed Type Master [Created By Adil Wasi on 9th-Feb-2012] **************/
+		<action path="/masters/GlobalBedTypeMstACTION"
+				type="ipd.masters.controller.action.GlobalBedTypeMstACTION" name="globalBedtypeBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_globalBedType_mst.jsp" />
+			<forward name="modify" path="/masters/ipd_modify_globalBedType_mst.jsp" />
+		</action>
+		/********** End Global Bed Type Master  **************/
+
+		/********** Start Global Bed Status Master [Created By Adil Wasi on 9th-Feb-2012] **************/
+		<action path="/masters/GlobalBedStatusMstACTION"
+			type="ipd.masters.controller.action.GlobalBedStatusMstACTION" name="globalBedStatusBean"
+					scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_globalBedStatus_mst.jsp" />
+			<forward name="modify" path="/masters/ipd_modify_globalBedStatus_mst.jsp" />
+		</action>
+		/********** End Global Bed Status Master  **************/
+		
+		/********** Start Global Relief Fund Master [Created By Adil Wasi on 9th-Feb-2012] **************/
+		<action path="/masters/GlobalReliefFundMstACTION"
+			type="ipd.masters.controller.action.GlobalReliefFundMstACTION" name="globalReliefFundBean"
+					scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_globalReliefFund_mst.jsp" />
+			<forward name="modify" path="/masters/ipd_modify_globalReliefFund_mst.jsp" />
+		</action>
+		/********** End Global Relief Fund Master  **************/
+		
+		
+		/********** Start Global Room Type Master [Created By Adil Wasi on 13th-Feb-2012] **************/
+		<action path="/masters/GlobalRoomTypeMstACTION"
+			type="ipd.masters.controller.action.GlobalRoomTypeMstACTION" name="globalRoomtypeBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_globalRoomtype_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_globalRoomtype_mst.jsp" />
+		</action>
+		/********** End Global Room Type Master  **************/
+		
+		/********** Start Global Ward Type Master [Created By Adil Wasi on 13th-Feb-2012] **************/
+		<action path="/masters/GlobalWardTypeMstACTION"
+			type="ipd.masters.controller.action.GlobalWardTypeMstACTION" name="globalWardtypeBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_globalWardType_mst.jsp" />
+			<forward name="modify"
+				path="/masters/ipd_modify_globalWardType_mst.jsp" />
+		</action>
+		/********** End Global Room Type Master  **************/
+		
+		/********** Start Treatment Result Master [Created By Debashis on 10th-Oct-2012] **************/
+		<action path="/masters/TreatmentResultMstACTION"
+			type="ipd.masters.controller.action.TreatmentResultMstACTION" name="treatmentResultBean"
+					scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/ipd_add_treatmentResult_mst.jsp" />
+			<forward name="modify" path="/masters/ipd_modify_treatmentResult_mst.jsp" />
+		</action>
+		/********** End Treatment Result Master  **************/
+		
+	</action-mappings>
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

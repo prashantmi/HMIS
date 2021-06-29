@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<master-config>
+	<master name='SeasonMaster'>
+		<common-values>
+			<master-name>SeasonMaster</master-name>
+			<master-title>Season Master</master-title>
+		</common-values>
+		
+		<list-page>
+				<tableHeading>Season Master</tableHeading> 
+				<list-table>HRGT_REG_SEASON_MST</list-table>
+				
+				<columns>
+					 <column>Season Description</column>
+					 <column>Season From Date</column>
+					 <column>Season To Date</column>
+			  	</columns>
+					<query-detail>
+					<fields>
+							<field>INITCAP(A.HRGSTR_SEASON_DESC) </field>
+							<field>A.HRGDT_SEASON_FRM_DT</field>
+							<field>A.HRGDT_SEASON_TO_DT</field>							     
+						</fields>
+					<primaryKey>
+						<field>A.HRGNUM_SEASON_CODE</field>
+						<field>A.HRGNUM_SLNO</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HRGT_REG_SEASON_MST</table>
+					</tables>
+					<condition>					 
+							<general> HRGNUM_SLNO=(select max (HRGNUM_SLNO) from HRGT_REG_SEASON_MST where HRGNUM_SEASON_CODE=a.HRGNUM_SEASON_CODE and GNUM_HOSPITAL_CODE=a.GNUM_HOSPITAL_CODE) and </general>
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                            <orderby> order by INITCAP(A.HRGSTR_SEASON_DESC)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+	
+		<add-page>			
+			<static-page>/registration/master/seasonMaster.cnt</static-page>			
+		</add-page>
+		
+		<modify-page>	
+   		    <static-page>/registration/master/seasonMaster.cnt</static-page>		
+		</modify-page>
+			
+	</master>
+</master-config>	

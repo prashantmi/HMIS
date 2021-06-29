@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ 	<form-beans>    
+       <form-bean name="commonReportFB" type="hisglobal.presentation.ReportFB"/>
+       <form-bean name="SampleFB" type="investigation.controller.reports.fb.SampleFB"/>
+       <form-bean name="TestingFB" type="investigation.controller.reports.fb.TestingFB"/>
+       <form-bean name="sampleCollectionListFB" type="investigation.controller.reports.fb.SampleCollectionListFB"/>
+     </form-beans>         
+
+ <action-mappings> 
+ 
+    <action path="/report"        
+            type="hisglobal.presentation.CommonReportACTION"
+            name="commonReportFB"            
+            scope="request" 
+            parameter="mode"
+           >
+   			<forward name="SAMPLEREPORT" path="/sampleReport"/>
+   			<forward name="SAMPLEREPORTVIEW" path="/reports/SampleACTION.cnt"/>
+   			<forward name="TESTINGREPORT" path="/testingReport"/>
+   			<forward name="TESTINGREPORTVIEW" path="/reports/TestingACTION.cnt"/>
+   		
+  
+   </action>
+        
+ <action path="/reports/SampleACTION"
+ 	 type="investigation.controller.reports.action.SampleACTION"
+ 	 name="SampleFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/SampleReport.jsp"/>
+ 	 </action>	
+ 	 
+  <action path="/reports/TestingACTION"
+ 	 type="investigation.controller.reports.action.TestingACTION"
+ 	 name="TestingFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/TestingReport.jsp"/>
+ 	 </action>
+ 
+</action-mappings>
+
+<controller>
+	<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+</controller>
+
+<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+  
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/investigation/investigation-tiles-defs.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>
+   
+</struts-config>

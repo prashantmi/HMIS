@@ -1,0 +1,1430 @@
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="CheckLayputFB" type="registration.controller.fb.CheckLayputFB" />
+		<form-bean name="CsultyEmgMlcDtlFB" type="registration.controller.fb.CsultyEmgMlcDtlFB" />
+		<form-bean name="EpisodeTriageDetailFB" type="registration.controller.fb.EpisodeTriageDetailFB" />
+		<form-bean name="EpisodeDeathDetailFB" type="registration.controller.fb.EpisodeDeathDetailFB" />
+		<form-bean name="PoliceVerificationDtlFB" type="registration.controller.fb.PoliceVerificationDtlFB" />
+
+		<form-bean name="OpdDeskFB" type="opd.transaction.controller.fb.OpdDeskFB" />
+		<form-bean name="OpdReportLeftMenuFB" type="opd.transaction.controller.fb.OpdReportLeftMenuFB" />
+		<form-bean name="OpdPatientDeskFB" type="opd.transaction.controller.fb.OpdPatientDeskFB" />
+		<form-bean name="OpdDeskLoginFb" type="opd.transaction.controller.fb.OpdDeskLoginFb" />
+		<form-bean name="OpdDiagnosisFB" type="opd.transaction.controller.fb.OpdDiagnosisFB" />
+		<form-bean name="OpenEpisodeFB" type="opd.transaction.controller.fb.OpenEpisodeFB" />
+		<form-bean name="OpdDeskFooterFB" type="opd.transaction.controller.fb.OpdDeskFooterFB" />
+		<form-bean name="OpdReferPatientFB" type="opd.transaction.controller.fb.OpdReferPatientFB" />
+		<form-bean name="OpdEpisodeAllergyFB" type="opd.transaction.controller.fb.EpisodeAllergyFB" />
+		<form-bean name="OpdEpisodeAllergyNewFB" type="opd.transaction.controller.fb.EpisodeAllergyNewFB" />
+		<form-bean name="OpdConsultationFB" type="opd.transaction.controller.fb.OpdConsultationFB" />
+		<form-bean name="OpdChangeTreatmentCategoryFB" type="opd.transaction.controller.fb.OpdChangeTreatmentCategoryFB" />
+		<form-bean name="ConsultationInboxFB" type="opd.transaction.controller.fb.ConsultationInboxFB" />
+		<form-bean name="OpdTemplateTabFB" type="opd.transaction.controller.fb.OpdTemplateTabFB" />
+		<!-- <form-bean name="OpdNextVisitAppointmentFB" type="opd.transaction.controller.fb.OpdNextVisitAppointmentFB" /> -->
+		<form-bean name="OpdTemplateTabFB" type="opd.transaction.controller.fb.OpdTemplateTabFB" />
+		<form-bean name="OpdDocumentArchivalFB" type="opd.transaction.controller.fb.OpdDocumentArchivalFB" />
+		<form-bean name="ConsentHtmlParsingFB" type="opd.transaction.controller.fb.ConsentHtmlParsingFB" />
+		<form-bean name="ConsentHtmlParsingFB" type="opd.transaction.controller.fb.ConsentHtmlParsingFB" />
+		<form-bean name="patientBelongingFB" type="opd.transaction.controller.fb.OpdPatientBelongingFB" />
+		<!-- <form-bean name="OpdServiceRequisitionFB" type="opd.transaction.controller.fb.OpdServiceRequisitionFB" /> -->
+		<form-bean name="AudioVideoUploadFB" type="opd.transaction.controller.fb.OpdAudioVideoUploadFB" />
+		<form-bean name="OpdImageExamTabFB" type="opd.transaction.controller.fb.OpdImageExamTabFB" />
+		<form-bean name="OpdImageEditorFB" type="opd.transaction.controller.fb.OpdImageEditorFB" />
+		<form-bean name="OpdCsultyPatientBelongingFB" type="opd.transaction.controller.fb.OpdCsultyPatientBelongingFB" />
+		<form-bean name="CsultyDeskLoginFB" type="opd.transaction.controller.fb.CsultyDeskLoginFB" />
+		<form-bean name="CsultyDeskFB" type="opd.transaction.controller.fb.CsultyDeskFB" />
+		<form-bean name="CsultyPatientDeskFB" type="opd.transaction.controller.fb.CsultyPatientDeskFB" />
+		<form-bean name="UnderConstructionDeskFb" type="hisglobal.utility.dynamicdesk.controller.fb.UnderConstructionDeskFB"/>
+		<form-bean name="OpdNextVisitDetailFB" type="opd.transaction.controller.fb.OpdNextVisitDetailFB"/>
+		<form-bean name="GenericTemplateTileFB" type="opd.transaction.controller.fb.GenericTemplateTileFB" />
+		<form-bean name="consentRequestFB" type="opd.transaction.controller.fb.ConsentRequestFB"/>
+		<form-bean name="changeRoomPatFB" type="opd.transaction.controller.fb.ChangePatientUnitRoomFB"/>
+		<form-bean name="GenericPatientProfileFB" type="opd.transaction.controller.fb.GenericPatientProfileFB" />
+		<form-bean name="PatientTreatmentDetailFB" type="opd.transaction.controller.fb.PatientTreatmentDetailFB" />
+		<form-bean name="GenericPatientAlertFB" type="opd.transaction.controller.fb.GenericPatientAlertFB" />
+		<form-bean name="ConsentOfflineInboxFB" type="opd.transaction.controller.fb.ConsentOfflineInboxFB" />
+		<form-bean name="ExternalInvestigationFB" type="opd.transaction.controller.fb.ExternalInvestigationFB" />
+		<form-bean name="AudioVideoPlayerFB" type="opd.audioVideoPlayer.HisAudioVideoFB" />
+		<form-bean name="PatientProfileReviewFB" type="opd.transaction.controller.fb.PatientProfileReviewFB" />
+		<form-bean name="GenericMacroPopupFB" type="opd.transaction.controller.fb.GenericMacroPopupFB" />
+		<form-bean name="OpdRosterSchedulePopupFB" type="opd.transaction.controller.fb.OpdRosterSchedulePopupFB" />
+		<form-bean name="PatientAttendantFB" type="opd.transaction.controller.fb.PatientAttendantFB"/>
+		<form-bean name="ChartReportingFB" type="opd.transaction.controller.fb.ChartReportingFB"/>
+		<form-bean name="ICDSearchEngineFB" type="opd.icdsearchengine.fb.ICDSearchEngineFB"/>
+		<form-bean name="ICDEngineDiseaseDetailFB" type="opd.icdsearchengine.fb.ICDEngineDiseaseDetailFB"/>
+		<form-bean name="ICDEntryFormDeskFB" type="opd.transaction.controller.fb.ICDEntryFormDeskFB"/>
+		<form-bean name="ICDEntryFormFB" type="opd.transaction.controller.fb.ICDEntryFormFB"/>
+		<form-bean name="ICDEntryFormNewFB" type="opd.transaction.controller.fb.ICDEntryFormNewFB"/>
+		<form-bean name="ICDEntryFormModFB" type="opd.transaction.controller.fb.ICDEntryFormModFB"/>
+		<form-bean name="PatientComplaintsFB" type="opd.transaction.controller.fb.PatientComplaintsFB" />
+		<form-bean name="DoctorDeskFB" type="opd.transaction.controller.fb.DoctorDeskFB" />
+		<form-bean name="OpdBayDeskLoginFB" type="opd.transaction.controller.fb.OpdBayDeskLoginFB" />
+		<form-bean name="EstimateRequestFB" type="opd.transaction.controller.fb.EstimateRequestFB"/>
+		<form-bean name="sppFB" type="clinical.transaction.controller.fb.sppFB"/>
+	<!-- 	<form-bean name="UniPagePrescriptionFB" type="emr.dataentry.spp.presentation.fb.UniPagePrescriptionFB"/>
+	 -->	<!--		<form-bean name="EstimateRequestFB" type="mrd.transaction.controller.fb.EstimateRequestFB"/>-->
+	</form-beans>
+
+	<action-mappings>
+	
+	<!--	 Estimate Certificate Issue Detail
+	
+		<action path="/estimateCertificateRequest"
+				type="mrd.transaction.controller.action.EstimateRequestACTION"
+				name="EstimateRequestFB"
+				validate="false"
+				parameter="hmode"
+				scope="request" 
+				input="/transaction/estimateRequest.jsp">
+			<forward name="NEW" path="/mrd/transaction/estimateRequest.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+	
+	-->
+	
+<!--	 Estimate Certificate Issue Detail -->
+	
+		<action path="/estimateCertificateRequest"
+				type="opd.transaction.controller.action.EstimateRequestACTION"
+				name="EstimateRequestFB"
+				validate="false"
+				parameter="hmode"
+				scope="request" 
+				input="/transaction/estimateRequest.jsp">
+			<forward name="NEW" path="/transaction/estimateRequest.jsp" />
+			<forward name="POPUP" path="/transaction/searchTariff.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+	
+	
+	<!-- Patient Attendant Detail -->
+		<action path="/patAttendantDtl"
+				type="opd.transaction.controller.action.PatientAttendantACTION"
+				name="PatientAttendantFB"
+				validate="false"
+				parameter="hmode"
+				scope="request" 
+				input="/transaction/patientAttendant.jsp">
+			<forward name="NEW" path="/transaction/patientAttendant.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+	
+	<!-- Audio Video Player Applet -->
+		<action path="/hisAudioVideoPlayer"
+				type="opd.audioVideoPlayer.HISAudioVideoACTION"
+				name="AudioVideoPlayerFB"
+				validate="false"
+				parameter="hmode"
+				scope="request" input="/audioVideoPlayer/HisAudioVideoPlayer.jsp">
+			<forward name="NEW" path="/audioVideoPlayer/HisAudioVideoPlayer.jsp" />
+			<forward name="PLAY" path="/audioVideoPlayer/HisAudioVideoPlayer.jsp" />
+		</action>
+		
+		<action path="/switchModule"
+				type="org.apache.struts.actions.SwitchAction" />
+
+		<!-- Police Verification Detail (Emergency) -->
+		<action path="/policeVerificationDtl"
+				type="registration.controller.action.PoliceVerificationDtlACTION"
+				name="PoliceVerificationDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/../registration/transaction/policeVerificationDtl.jsp">
+			<forward name="NEW" path="/../registration/transaction/policeVerificationDtl.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Generic Patient Alerts(Patient Chronic Disease) -->
+		<action path="/genericPatientAlert"
+				type="opd.transaction.controller.action.GenericPatientAlertACTION"
+				name="GenericPatientAlertFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/genericPatientAlert.jsp">
+			<forward name="NEW" path="/transaction/genericPatientAlert.jsp" />
+			<forward name="ALLALERT" path="/transaction/genericPatientAllAlert.jsp" />
+			<forward name="DAYCAL" path="/transaction/daysCalculator.jsp" />
+		</action>
+		
+		<!-- Where ???? -->
+		<action path="/openEpisode"
+				type="opd.transaction.controller.action.OpenEpisodeACTION"
+				name="OpenEpisodeFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/openEpisode.jsp">
+			<forward name="NEW" path="/transaction/openEpisode.jsp" />
+			<forward name="SAME" path="/transaction/openEpisode.jsp" />
+		</action>
+
+		<!-- Where ???? -->
+		<action path="/opdPatientBelonging"
+				type="opd.transaction.controller.action.OpdPatientBelongingACTION"
+				name="patientBelongingFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/opdPatientBelonging.jsp">
+			<forward name="NEW" path="/transaction/opdPatientBelonging.jsp" />
+			<forward name="MODIFY" path="/transaction/opdModifyPatientBelonging.jsp" />
+		</action>
+
+		<!-- ***** Start OPD Doctor Desk ****** -->		
+		<!-- OLD :: OPD Doctor Desk Login -->
+		<action path="/opdDeskLogin"
+				type="opd.transaction.controller.action.OpdDeskLoginACTION"
+				name="OpdDeskLoginFb"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/opdDeskLogin.jsp">
+				<forward name="NEW" path="/transaction/opdDeskLogin.jsp" />
+			<forward name="OPDDESK" path="/gotoPageA.cnt" />
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- OLD :: OPD Doctor Desk Header -->
+		<action path="/gotoDeskHeaderPage"
+				parameter="/opd/transaction/deskSubHeader.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+				
+		<!-- Doctor Desk Header -->
+		<action path="/doctorDeskHeaderNew"
+				type="opd.transaction.controller.action.DoctorDeskHeaderACTION"
+				name="DoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/doctorDeskHeaderNew.jsp">
+			<forward name="HEADER" path="/transaction/doctorDeskHeaderNew.jsp" />
+		</action>
+				
+		<!-- OPD Bay Desk Header -->
+		<action path="/opdBayDeskHeaderNew"
+				type="opd.transaction.controller.action.OpdBayDeskHeaderACTION"
+				name="DoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/singleDeptDeskHeaderNew.jsp">
+			<forward name="HEADER" path="/transaction/singleDeptDeskHeaderNew.jsp" />
+		</action>
+				
+		<!-- IPD Nursing Desk Header -->
+		<action path="/ipdNursingDeskHeaderNew"
+				type="opd.transaction.controller.action.IpdNursingDeskHeaderACTION"
+				name="DoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/singleDeptDeskHeaderNew.jsp">
+			<forward name="HEADER" path="/transaction/singleDeptDeskHeaderNew.jsp" />
+		</action>		
+
+		<!-- Doctor Desk Detail DashBoard -->
+		<action path="/doctorDeskDashboard"
+				type="opd.transaction.controller.action.DoctorDeskDashboardACTION"
+				name="DoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/doctorDeskDashboard.jsp">
+			<forward name="HEADER" path="/transaction/doctorDeskDashboard.jsp" />
+			<forward name="VISITDETAIL" path="/transaction/visitDetail.jsp" />
+			<forward name="DIAGNOSISDETAIL" path="/transaction/diagnosisDetail.jsp" />
+			<forward name="TREATMENTDETAIL" path="/transaction/treatmentDetail.jsp" />
+			<forward name="INVESTIGATIONDETAIL" path="/transaction/investigationDetail.jsp" />
+			<forward name="MEDICALHISTORY" path="/transaction/medicalHistoryDetail.jsp" />
+			<forward name="ADMISSIONDETAIL" path="/transaction/admissionDetail.jsp" />
+		</action>
+		
+
+		<!-- OPD Bay Desk Detail DashBoard -->
+		<action path="/opdBayDeskDashboard"
+				type="opd.transaction.controller.action.OpdBayDeskDashboardACTION"
+				name="DoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/opdBayDeskDashboard.jsp">
+			<forward name="HEADER" path="/transaction/opdBayDeskDashboard.jsp" />
+			<forward name="VISITDETAIL" path="/transaction/VisitDetail_BayDesk.jsp" />
+		</action>		
+
+		<!-- Casualty Desk Detail DashBoard -->
+		<action path="/casualtyDeskDashboard"
+				type="opd.transaction.controller.action.CasualtyDeskDashboardACTION"
+				name="DoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/casualtyDeskDashboard.jsp">
+			<forward name="HEADER" path="/transaction/casualtyDeskDashboard.jsp" />
+			<forward name="VISITDETAIL" path="/transaction/visitDetail.jsp" />
+			<forward name="DIAGNOSISDETAIL" path="/transaction/diagnosisDetail.jsp" />
+			<forward name="TREATMENTDETAIL" path="/transaction/treatmentDetail.jsp" />
+			<forward name="INVESTIGATIONDETAIL" path="/transaction/investigationDetail.jsp" />
+			<forward name="MEDICALHISTORY" path="/transaction/medicalHistoryDetail.jsp" />
+		</action>
+
+		<!--IPD Doctor Desk Detail DashBoard -->
+		<action path="/ipdDoctorDeskDashboard"
+				type="opd.transaction.controller.action.IpdDoctorDeskDashboardACTION"
+				name="DoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/ipdDoctorDeskDashboard.jsp">
+			<forward name="HEADER" path="/transaction/ipdDoctorDeskDashboard.jsp" />
+			<forward name="ADMISSIONDETAIL" path="/transaction/admissionDetail.jsp" />
+			<forward name="DIAGNOSISDETAIL" path="/transaction/diagnosisDetail.jsp" />
+			<forward name="TREATMENTDETAIL" path="/transaction/treatmentDetail.jsp" />
+			<forward name="INVESTIGATIONDETAIL" path="/transaction/investigationDetail.jsp" />
+			<forward name="MEDICALHISTORY" path="/transaction/medicalHistoryDetail.jsp" />
+		</action>
+
+		<!--IPD Nursing Desk Detail DashBoard -->
+		<action path="/ipdNursingDeskDashboard"
+				type="opd.transaction.controller.action.IpdNursingDeskDashboardACTION"
+				name="DoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/ipdNursingDeskDashboard.jsp">
+			<forward name="3" path="/transaction/ipdNursingDeskDashboard.jsp" />
+			<forward name="13" path="/transaction/ipdNursingDeskNonAcceptanceDashboard.jsp" />
+			<forward name="14" path="/transaction/ipdNursingDeskLeaveDashboard.jsp" />
+			<forward name="15" path="/transaction/ipdNursingDeskOnTransitDashboard.jsp" />
+			<forward name="ADMISSIONDETAIL" path="/transaction/admissionDetail.jsp" />
+			<forward name="DIAGNOSISDETAIL" path="/transaction/diagnosisDetail.jsp" />
+			<forward name="TREATMENTDETAIL" path="/transaction/treatmentDetail.jsp" />
+			<forward name="INVESTIGATIONDETAIL" path="/transaction/investigationDetail.jsp" />
+			<forward name="MEDICALHISTORY" path="/transaction/medicalHistoryDetail.jsp" />
+		</action>
+		
+		<!-- OLD :: OPD Doctor Desk footer -->
+		<action path="/gotoOPDDeskFooterPage"
+				type="opd.transaction.controller.action.OpdDeskFooterMainACTION"
+				name="OpdDeskLoginFb"
+				validate="false"
+				scope="request"
+				input="/transaction/opdFooter.jsp">
+			<forward name="FOOTER" path="/transaction/opdFooter.jsp" />
+		</action>
+
+		<!-- OLD :: OPD Doctor Desk Footer Reports -->
+		<action path="/gotoOpdReportDesk"
+				parameter="/opd/transaction/opdCommonReportDesk.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+
+		<!-- OLD :: OPD Doctor Desk Center -->
+		<action path="/opdDesk"
+				type="opd.transaction.controller.action.OpdDeskACTION"
+				name="OpdDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/opdDesk.jsp">
+			<forward name="NEW" path="/opdDesk" /> <!-- go to opd desk tiles -->
+			<forward name="DESKDIAGNOSIS" path="/opdDiagnosis" />
+			<forward name="DESKREFERPATIENT" path="/opdReferPatient" />
+			<forward name="DESKALLERGIES" path="/opdAllergies" />
+			<forward name="OPDSECONDARYCATEGORY" path="/opdChangeTreatmentCategory" />
+			<forward name="ECONSULTATION" path="/opdConsultation" />
+			<forward name="CONSULTATIONINBOX" path="/opdConsultationInbox" />
+			<forward name="OPDNEXTVISITAPPOINTMENT" path="/opdUnderConstructionDesk" /> <!-- Not In Use -->
+			<forward name="DOCUMENTARCHIVAL" path="/opdDocumentArchival" />
+			<forward name="GENERICTEMPLATE" path="/DefaultTemplateTab" />
+			<forward name="IMAGEEXAMINATION" path="/ImageExaminationTab" />
+			<forward name="SERVICEREQUISITION" path="/opdUnderConstructionDesk" /> <!-- Not In Use -->
+			<forward name="PATPROFILE" path="/opdPatProfile" />
+			<forward name="AUDIOVIDEOPLAYER" path="/opdAudioVideoPlayer" />
+			<forward name="DEFAULT" path="/opdUnderConstructionDesk"/>
+			<forward name="OPDNEXTVISITDETAIL" path="/opdNextVisitDetailTile"/>			
+			<forward name="BLOODBAGREQ" path="/bloodbankBagRequest"/>
+			<forward name="CONSENTINBOX" path="/consentRequest"/>
+			<forward name="REQUISITIONRAISING" path="/raiseInvestigation"/>
+			<forward name="CHANGEUNITROOM" path="/changePatientUnitRoom"/>
+			<forward name="DESKTREATMENTDETAIL" path="/treatmentDetailTab"/>
+			<forward name="GENERICPATIENTALERTS" path="/genericPatientAlerts"/>
+			<forward name="RESULTVIEWING" path="/opdViewInvestigation"/>
+			<forward name="PACREQUEST" path="/opdPACRequest"/>
+			<forward name="OTLIST" path="/opdOTRequest"/>
+			<forward name="ADMISSIONADVICE" path="/opdAdmissionAdvice"/>
+			<forward name="PATPROFILEINBOX" path="/opdPatientProfilesInbox"/>
+			<forward name="EXTERNALEXAMINATION" path="/externalExamination"/>
+			<forward name="ANCDETAIL" path="/opdAnteNatalDetail"/>
+			<forward name="ANCDELIVERYDTL" path="/opdAnteNatalDeliveryDetail"/>
+			<forward name="ANCNEONATALDTL" path="/opdANCNewNatalDetail"/>			
+			<forward name="OTVIEWING" path="/opdOTRecordViewing"/>			
+			<forward name="PATIENTDEATHDETAIL" path="/opdPatDeathDetail" />
+			<forward name="ANCTRIMESTERCHKLST" path="/opdANCTrimesterChecklistDetail"/>			
+			<forward name="EMRDETAIL" path="/patientEmrDetail"/>			
+			<forward name="PATIENTATTENDANT" path="/patientAttendantDetail"/>
+			<forward name="CHARTDETAIL" path="/opdDeskGenericChartReporting"/>
+			<forward name="TRIAGEDETAIL" path="/opdDeskTriageDetail" />
+			<forward name="VIEWSCANDOCS" path="/opdDeskViewScanDocs" />
+			<forward name="PATIENTCOMPLAINTS" path="/patientComplaints"/>
+		</action>
+		
+		
+		<!-- OPD Doctor Desk Processes -->
+		<action path="/opdDeskNew"
+				type="opd.transaction.controller.action.OpdDeskACTION"
+				name="OpdDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/opdDeskNew.jsp">
+			<forward name="NEW" path="/opdDesk" /> <!--Default Summary???-->
+			<forward name="CONSULTATIONINBOX" path="/opdConsultationInboxNew" />
+			<forward name="OPDNEXTVISITDETAIL" path="/opdNextVisitDetailTileNew"/>			
+			<forward name="DESKDIAGNOSIS" path="/opdDiagnosisNew" />
+			<forward name="DESKREFERPATIENT" path="/opdReferPatientNew" />
+			<forward name="DESKALLERGIES" path="/opdAllergiesNew" />
+			<forward name="DESKPATIENTALERGIES" path="/opdAllergiesSnomedNew" />
+			<forward name="OPDSECONDARYCATEGORY" path="/opdChangeTreatmentCategory" />
+			<forward name="OPDNEXTVISITAPPOINTMENT" path="/opdUnderConstructionDesk" /> <!-- Not In Use -->
+			<forward name="DOCUMENTARCHIVAL" path="/opdDocumentArchivalNew" />
+			<forward name="GENERICTEMPLATE" path="/DefaultTemplateTabNew" />
+			<forward name="ECONSULTATION" path="/opdConsultationNew" />
+			<forward name="IMAGEEXAMINATION" path="/ImageExaminationTabNew" />
+			<forward name="SERVICEREQUISITION" path="/OPDDeskServiceAreaOfflineRequisition" /> 
+			<forward name="PATPROFILE" path="/opdPatProfileNew" />
+			<forward name="AUDIOVIDEOPLAYER" path="/opdAudioVideoPlayer" /> <!-- Not In Use -->
+			<forward name="DEFAULT" path="/opdUnderConstructionDesk"/> <!-- Not In Use -->
+			<forward name="BLOODBAGREQ" path="/bloodbankBagRequestNew"/>
+			<forward name="CONSENTINBOX" path="/consentRequestNew"/>
+			<forward name="REQUISITIONRAISING" path="/raiseInvestigationNew"/>  <!-- Investigation Reaising -->
+			<forward name="CHANGEUNITROOM" path="/changePatientUnitRoom"/>
+			<forward name="DESKTREATMENTDETAIL" path="/treatmentDetailTabNew"/>
+			<forward name="GENERICPATIENTALERTS" path="/genericPatientAlertsNew"/>
+			<forward name="RESULTVIEWING" path="/opdViewInvestigationNew"/>
+			<forward name="PACREQUEST" path="/opdDocPACRequestNew"/>
+			<forward name="OTLIST" path="/opdOTRequestNew"/>
+			<forward name="ADMISSIONADVICE" path="/opdAdmissionAdviceNew"/>
+			<forward name="PATPROFILEINBOX" path="/opdPatientProfilesInboxNew"/>
+			<forward name="EXTERNALEXAMINATION" path="/externalExaminationNew"/>
+			<forward name="ANCDETAIL" path="/opdAnteNatalDetail"/>
+			<forward name="ANCDELIVERYDTL" path="/opdAnteNatalDeliveryDetail"/>
+			<forward name="ANCNEONATALDTL" path="/opdANCNewNatalDetail"/>			
+			<forward name="OTVIEWING" path="/opdOTRecordViewing"/>			
+			<forward name="PATIENTDEATHDETAIL" path="/opdPatDeathDetail" />
+			<forward name="ANCTRIMESTERCHKLST" path="/opdANCTrimesterChecklistDetail"/>			
+			<forward name="EMRDETAIL" path="/patientEmrDetailNew"/>			
+			<forward name="PATIENTATTENDANT" path="/patientAttendantDetailNew"/>
+			<forward name="CHARTDETAIL" path="/opdDeskGenericChartReportingNew"/>
+			<forward name="TRIAGEDETAIL" path="/opdDeskTriageDetailNew" />
+			<forward name="VIEWSCANDOCS" path="/opdDeskViewScanDocs" />
+			<forward name="PATIENTCOMPLAINTS" path="/patientComplaints"/>
+			<forward name="ESTIMATEREQUEST" path="/estimateRequest"/>
+			<forward name="MEDICALCERTIFICATE" path="/medicalCertificateRequestNew"/>
+			<forward name="PATIENTSUMMARY" path="/patientSummaryNew"/> 		<!-- for Patient Profile -->
+			<forward name="DIETADVICE" path="/opdDietAdvice"/>
+			<forward name="ONEPAGEPRESCRIPTION" path="/singlePagePrescriptionNew"/>
+			<forward name="UNIPAGEPRESCRIPTION" path="/uniPagePrescriptionNew"/>
+			<forward name="PATIENTCLINICALDOCUMENTS" path="/patientClinicalDocumentsNew"/>
+		
+		</action>
+		
+		<!-- OPD Doctor Desk Processes Summary/AJAX Not in Use right now-->
+		<action path="/opdDeskAjax"
+				type="opd.transaction.controller.action.OpdDeskACTION"
+				name="OpdDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/opdDeskNew.jsp">
+			<forward name="NEW" path="/opdDesk" /> <!--Default Summary???-->
+			<forward name="CONSULTATIONINBOX" path="/consultationInbox.cnt" />
+			<forward name="OPDNEXTVISITDETAIL" path="/opdNextVisitDetail.cnt"/>			
+			<forward name="DESKDIAGNOSIS" path="/opdDiagnosis.cnt" />
+			<forward name="DESKREFERPATIENT" path="/opdReferPatient.cnt" />
+			<forward name="DESKALLERGIES" path="/opdEpisodeAllergies.cnt" />
+			<forward name="OPDSECONDARYCATEGORY" path="/opdChangeTreatmentCategory.cnt" />
+			<forward name="OPDNEXTVISITAPPOINTMENT" path="/opdUnderConstructionDesk" /> <!-- Not In Use -->
+			<forward name="DOCUMENTARCHIVAL" path="/opdDocumentArchival.cnt" />
+			<forward name="GENERICTEMPLATE" path="/opdTemplateTab.cnt" />
+			<forward name="ECONSULTATION" path="/opdCosultation.cnt" />
+			<forward name="IMAGEEXAMINATION" path="/opdImageExamTab.cnt" />
+			<forward name="SERVICEREQUISITION" path="/opdUnderConstructionDesk" /> <!-- Not In Use -->
+			<forward name="PATPROFILE" path="/opdPatientProfile.cnt" />
+			<forward name="AUDIOVIDEOPLAYER" path="/opdAudioVideoUpload.cnt" />
+			<forward name="DEFAULT" path="/opdUnderConstructionDesk"/>
+			<forward name="BLOODBAGREQ" path="/../bloodbank/onlineOPDBloodRequest.cnt"/>
+			<forward name="CONSENTINBOX" path="/consentRequest.cnt"/>
+			<forward name="REQUISITIONRAISING" path="/../investigation/transaction/requisitionRaising.cnt"/>
+			<forward name="CHANGEUNITROOM" path="/changePatUnitRoom.cnt"/>
+			<forward name="DESKTREATMENTDETAIL" path="/patTreatmentDetailTile.cnt"/>
+			<forward name="GENERICPATIENTALERTS" path="/genericPatientAlert.cnt"/>
+			<forward name="RESULTVIEWING" path="/../investigation/transaction/resultViewing.cnt"/>
+			<forward name="PACREQUEST" path="/opdPACRequest"/>
+			<forward name="OTLIST" path="/opdOTRequest"/>
+			<forward name="ADMISSIONADVICE" path="/../ipd/transactions/AdmissionAdviceTransCNT.cnt"/>
+			<forward name="PATPROFILEINBOX" path="/opdPatientProfilesInbox"/>
+			<forward name="EXTERNALEXAMINATION" path="/externalExamination.cnt"/>
+			<forward name="ANCDETAIL" path="/opdAnteNatalDetail"/>
+			<forward name="ANCDELIVERYDTL" path="/opdAnteNatalDeliveryDetail"/>
+			<forward name="ANCNEONATALDTL" path="/opdANCNewNatalDetail"/>			
+			<forward name="OTVIEWING" path="/opdOTRecordViewing"/>			
+			<forward name="PATIENTDEATHDETAIL" path="/opdPatDeathDetail" />
+			<forward name="ANCTRIMESTERCHKLST" path="/opdANCTrimesterChecklistDetail"/>			
+			<forward name="EMRDETAIL" path="/patientEmrDetail"/>			
+			<forward name="PATIENTATTENDANT" path="/patientAttendantDetail"/>
+			<forward name="CHARTDETAIL" path="/opdDeskGenericChartReporting"/>
+			<forward name="TRIAGEDETAIL" path="/opdDeskTriageDetail" />
+			<forward name="VIEWSCANDOCS" path="/opdDeskViewScanDocs" />
+			<forward name="PATIENTCOMPLAINTS" path="/patientComplaints"/>
+		</action>
+		
+		
+		<!-- New :: OPD Bay Desk Center -->
+		<action path="/opdBayDesk"
+				type="opd.transaction.controller.action.OpdBayDeskACTION"
+				name="OpdDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/opdBayDesk.jsp">
+			<forward name="NEW" path="/opdBayDesk" />    <!-- go to opd tiles -->
+			<forward name="GENERICTEMPLATE" path="/bayTemplateTabNew" />
+			<forward name="DESKTREATMENTDETAIL" path="/bayTreatmentDetailTabNew"/>
+			<forward name="ADMISSIONADVICE" path="/bayAdmissionAdviceNew"/>
+			<forward name="REQUISITIONRAISING" path="/bayRaiseInvestigationNew"/>			
+			<forward name="BLOODBAGREQ" path="/bayBloodbankBagRequest"/>
+			<forward name="ESTIMATEREQUEST" path="/estimateRequest"/>
+			<forward name="MEDICALCERTIFICATE" path="/medicalCertificateRequestNew"/>
+			<forward name="DOCUMENTARCHIVAL" path="/opdDocumentArchivalNew" />			
+			<forward name="DESKDIAGNOSIS" path="/opdDiagnosisNew" />
+			<forward name="SERVICEREQUISITION" path="/OPDBayServiceAreaOfflineRequisition" />
+			<forward name="PACREQUEST" path="/opdBayPACRequest"/>
+			<forward name="OTLIST" path="/opdBayDocOTRequestNew"/>
+		    <forward name="DIETADVICE" path="/opdDietAdvice"/>
+		    <forward name="UNIPAGEPRESCRIPTION" path="/uniPagePrescriptionNew" />
+		    <forward name="CHANGEUNITROOM" path="/changePatientUnitRoom"/>
+			<forward name="EMRDETAIL" path="/patientEmrDetailNew"/>			
+			<forward name="CHARTDETAIL" path="/bayDeskGenericChartReportingNew"/>
+	
+		</action>
+
+		<!-- Old:: Patient List -->
+		<action path="/opdPatientDesk"
+				type="opd.transaction.controller.action.OpdPatientDeskACTION"
+				name="OpdPatientDeskFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/opdPatientDesk.jsp">
+			<forward name="NEW" path="/transaction/opdPatientDesk.jsp" />
+		</action>
+
+		<!-- Patient List -->
+		<action path="/opdDeskPatientList"
+				type="opd.transaction.controller.action.OpdDeskPatientListACTION"
+				name="OpdPatientDeskFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/opdDeskPatientList.jsp">
+			<forward name="NEW" path="/transaction/opdDeskPatientList.jsp" />
+		</action>
+
+		<!-- Not In Use :: Patient List Footer -->
+		<action path="/OpdDeskFooter"
+				type="opd.transaction.controller.action.OpdDeskFooterACTION"
+				name="OpdDeskFooterFB"
+				parameter="fmode"
+				validate="false"
+				scope="request"
+				input="/transaction/opdDeskFooter.jsp">
+			<forward name="NEW" path="/transaction/opdDeskFooter.jsp" />
+		</action>
+		
+		<!-- one page prescription -->
+		<action path="/singlePagePrescription"
+				type="clinical.transaction.controller.action.singlePagePrescriptionACT"
+				name="sppFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/../clinical/transaction/PatOnePagePrescription.jsp"
+				>
+			<forward name="NEW" path="/../clinical/transaction/PatOnePagePrescription.jsp" />
+			<forward name="VISITREASON" path="/../clinical/transaction/sppSection_VISITREASON.jsp" />
+			<forward name="DESKDIAGNOSIS" path="/../clinical/transaction/sppSection_DESKDIAGNOSIS.jsp" />
+		</action>
+		
+		<!-- Uni page prescription -->
+		<!-- <action path="/uniPagePrescription"
+				type="emr.dataentry.spp.presentation.action.UniPagePrescriptionACTION"
+				name="UniPagePrescriptionFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/../emr/dataentry/spp/UniPagePrescription.jsp"
+				>
+			<forward name="NEW" path="/../emr/dataentry/spp/UniPagePrescription.jsp" />
+			<forward name="VISITREASON" path="/../ehr/visitreason/EHRSection_VISITREASON.jsp" />
+			<forward name="DESKDIAGNOSIS" path="/../ehr/diagnosis/EHRSection_DIAGNOSIS.jsp" />
+		</action> -->
+
+		<!-- Diagnosis -->
+		<action path="/opdDiagnosis"
+				type="opd.transaction.controller.action.OpdDiagnosisACTION"
+				name="OpdDiagnosisFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opdDiagnosis.jsp">
+			<forward name="NEW" path="/transaction/opdDiagnosis.jsp" />
+			<forward name="POPUP" path="/transaction/opdDiagnosisPopup.jsp" />
+			<forward name="SHOWALL" path="/transaction/opdDiagnosisShowAll.jsp" />
+			<forward name="PREVIOUS" path="/transaction/opdAllPreviousDiagnosis.jsp" />
+			<forward name="POPUPMRD" path="/transaction/opdDiagnosisPopupMRD.jsp" />
+			
+		</action>
+
+		<!-- Refer Patient -->
+		<action path="/opdReferPatient"
+				type="opd.transaction.controller.action.OpdReferPatientACTION"
+				name="OpdReferPatientFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opdReferPatient.jsp">
+			<forward name="NEW" path="/transaction/opdReferPatient.jsp" />
+			<forward name="LIST" path="/../registration/cmoPatientDesk.cnt?hmode=NEW" />
+		</action>
+
+		<!-- Allergies -->
+		<action path="/opdEpisodeAllergies"
+				type="opd.transaction.controller.action.EpisodeAllergyACTION"
+				name="OpdEpisodeAllergyFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/episodeAllergy.jsp">
+			<forward name="NEW" path="/transaction/episodeAllergy.jsp" />
+			<forward name="PREVIOUS" path="/transaction/opdAllergyDtl.jsp" />
+			<forward name="ALLERGYSITE" path="/transaction/opdAllergySitePopup.jsp" />
+			<forward name="GETSYMPTOM" path="/transaction/opdSymptomsPopup.jsp" />
+			<forward name="ADDADVICE" path="/transaction/addAdvicePopup.jsp" />
+			<forward name="DAYCAL" path="/transaction/allergyDaysCalculator.jsp" />
+		</action>
+		
+		
+	<!-- Allergies NEW Process , created by Manisha Gangwar Date: 21.9.2016 -->
+		<action path="/opdEpisodeAllergiesNew"
+				type="opd.transaction.controller.action.EpisodeAllergiesNewACT"
+				name="OpdEpisodeAllergyNewFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/episodeAllergyNew.jsp">
+			<forward name="NEW" path="/transaction/episodeAllergyNew.jsp" />
+			<forward name="PREVIOUS" path="/transaction/opdAllergyDtlNew.jsp" />
+			<forward name="ALLERGYSITE" path="/transaction/opdAllergySitePopup.jsp" />
+			<forward name="GETSYMPTOM" path="/transaction/opdSymptomsPopup.jsp" />
+			<forward name="ADDADVICE" path="/transaction/addAdvicePopup.jsp" />
+			<forward name="DAYCAL" path="/transaction/allergyDaysNewCalculator.jsp" />
+		</action>
+		
+		
+		<!-- E Consultation -->
+		<action path="/opdCosultation"
+				type="opd.transaction.controller.action.OpdConsultationACTION"
+				name="OpdConsultationFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opdConsultation.jsp">
+			<forward name="NEW" path="/transaction/opdConsultation.jsp" />
+			<forward name="SHOWPROFILE" path="/transaction/showPatientProfile.jsp" />
+		</action>
+
+		<!-- Change Treatment Category -->
+		<action path="/opdChangeTreatmentCategory"
+				type="opd.transaction.controller.action.OpdChangeTreatmentCategoryACTION"
+				name="OpdChangeTreatmentCategoryFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opdChangeTreatmentCategory.jsp">
+			<forward name="NEW" path="/transaction/opdChangeTreatmentCategory.jsp" />
+			<forward name="SAME" path="/transaction/opdChangeTreatmentCategory.jsp" />
+		</action>
+
+		<!-- Consultation Inbox -->
+		<action path="/consultationInbox"
+				type="opd.transaction.controller.action.ConsultationInboxACTION"
+				name="ConsultationInboxFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/consultationInbox.jsp">
+			<forward name="NEW" path="/transaction/consultationInbox.jsp" />
+			<forward name="MAIL" path="/transaction/consultationInboxMailContent.jsp" />
+			<forward name="REPLY" path="/transaction/consultationInboxReply.jsp" />
+			<forward name="FORWARD" path="/transaction/consultationInboxForward.jsp" />
+			<forward name="CANCEL" path="/transaction/consultationInboxBack.jsp" />
+		</action>
+
+		<!-- Templates -->
+		<action path="/opdTemplateTab"
+				type="opd.transaction.controller.action.GenericTemplateTileACTION"
+				name="GenericTemplateTileFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/genericTemplateTile.jsp">
+			<forward name="NEW" path="/transaction/genericTemplateTile.jsp" />
+			<forward name="MORETEMPLATE" path="/transaction/genericTemplateUndefaultPopUp.jsp" />
+			<forward name="TEMPREPORT" path="/transaction/genericTemplateReportMode.jsp" />
+			<forward name="VIEWREPORT" path="/transaction/genericTemplateViewReport.jsp" />
+			<forward name="GENERICTEMPLATEFORSPD" path="/transaction/genericTemplateTileSPD.jsp" />
+			<forward name="GROWTHCHART" path="/transaction/growthChart.jsp" />
+		</action>
+
+		<!-- Not in Use Patient Alerts -->
+		<action path="/patientAlertsTile"
+				type="opd.transaction.controller.action.PatientAlertsTileACTION"
+				name="GenericTemplateTileFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/patientAlertsTile.jsp">
+				<forward name="NEW" path="/transaction/patientAlertsTile.jsp" />
+		</action>
+
+		<!-- Image Examination -->
+		<action path="/opdImageExamTab"
+				type="opd.transaction.controller.action.OpdImageExamTabACTION"
+				name="OpdImageExamTabFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opdImageExaminationTab.jsp">
+			<forward name="NEW" path="/transaction/opdImageExaminationTab.jsp" />
+			<forward name="VIEW" path="/transaction/opdImageExaminationView.jsp" />
+		</action>
+
+			<!--  Image Examination Image Editor
+		<action path="/imageEditor"
+				type="opd.transaction.controller.action.OpdImageEditorACTION"
+				name="OpdImageEditorFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/OpdImageEditor.jsp">
+			<forward name="EDITOR" path="/transaction/OpdImageEditor.jsp" />
+		</action> -->
+
+		<!-- Image Examination Image Editor -->
+		<action path="/imageEditor"
+				type="opd.transaction.controller.action.OpdImageEditorACTION"
+				name="OpdImageEditorFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/miniPaint-master/imageEditorNew.jsp">
+			<forward name="EDITOR" path="/transaction/miniPaint-master/imageEditorNew.jsp" />
+		</action>
+		
+		<action path="/imageEditorNew"
+				type="opd.transaction.controller.action.OpdImageEditorNewACTION"
+				name="OpdImageEditorFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/miniPaint-master/imageEditorNew.jsp">
+			<forward name="EDITOR" path="/transaction/miniPaint-master/imageEditorNew.jsp" />
+		</action>
+
+		<!-- Document Archival -->
+		<action path="/opdDocumentArchival"
+				type="opd.transaction.controller.action.OpdDocumentArchivalACTION"
+				name="OpdDocumentArchivalFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opdDocumentArchival.jsp">
+			<forward name="NEW" path="/transaction/opdDocumentArchival.jsp" />
+			<forward name="PLAY" path="/transaction/audioVideoAppletPlayer.jsp" />
+		</action>
+		
+		<!-- Report List  -->
+		<action path="/report/leftMenuDesk"
+				type="opd.transaction.controller.action.OpdReportDeskLeftMenuACTION"
+				name="OpdReportLeftMenuFB"
+				validate="false"
+				scope="request"
+				input="/transaction/opdReportDeskLeftMenu.jsp">
+			<forward name="NEW" path="/transaction/opdReportDeskLeftMenu.jsp" />
+		</action>
+
+		<!-- Audio Video Player -->
+		<action path="/opdAudioVideoUpload"
+				type="opd.transaction.controller.action.OpdAudioVideoUploadACTION"
+				name="AudioVideoUploadFB"
+				validate="false"
+				parameter="hmode"
+				scope="request" input="/transaction/opdAudioVideoUpload.jsp">
+			<forward name="NEW" path="/transaction/opdAudioVideoUpload.jsp" />
+			<forward name="PLAY" path="/audioVideoPlayer/opdAudioVideoPlay.jsp" />
+		</action>
+
+		<!-- Patient Profile -->
+		<action path="/opdPatientProfile"
+				type="opd.transaction.controller.action.GenericPatientProfileACTION"
+				name="GenericPatientProfileFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/genericPatientProfileTile.jsp">
+			<forward name="NEW" path="/transaction/genericPatientProfileTile.jsp" />
+			<forward name="ACCESS" path="/transaction/genericPatientProfileAccessPrivil.jsp" />
+			<forward name="OPTIONS" path="/transaction/patientProfile/genericPatientProfileOptions.jsp" />
+			<forward name="PROFILELAYOUT" path="/transaction/patientProfile/patientProfileViewLayout.jsp" />
+			<forward name="DESKDIAGNOSIS" path="/transaction/patientProfile/patientProfileEpisodeDiagnosis.jsp" />
+			<forward name="DESKALLERGIES" path="/transaction/patientProfile/patientProfileEpisodeAllergies.jsp" />
+			<forward name="IMAGEEXAMINATION" path="/transaction/patientProfile/patientProfileEpisodeExamImages.jsp" />
+			<forward name="OPDNEXTVISITDETAIL" path="/transaction/patientProfile/patientProfileNextVisitDetail.jsp" />
+			<forward name="PROFILEFOOTER" path="/transaction/patientProfile/patientProfileFooter.jsp" />
+			<forward name="DISCHARGEPROFILEFOOTER" path="/transaction/patientProfile/patientDischargeProfileFooter.jsp" />
+			<forward name="GENERATE" path="/transaction/patientProfile/profileGeneration.jsp" />
+			<forward name="VIEWPRINT" path="/transaction/patientProfile/profileViewPrint.jsp" />	
+			<forward name="GETPROFILEHEADER" path="/transaction/patientProfile/genericPatientProfileHeader.jsp" />
+			<forward name="RESULTVIEWING" path="/transaction/patientProfile/patientProfileEpisodeInvestigation.jsp" />
+			<forward name="DESKTREATMENTDETAIL" path="/transaction/patientProfile/patientProfileEpisodeTreatment.jsp" />
+			<forward name="DESKPATIENTALERTS" path="/transaction/patientProfile/patientProfilePatientAlerts.jsp" />
+			<forward name="ADVICEONDISCHARGE" path="/transaction/patientProfile/patientProfileAdviceOnDischarge.jsp" />
+			<forward name="DESKGENERICTEMPLATE" path="/transaction/patientProfile/patientProfileParameterComplaints.jsp" />
+			<forward name="OTHERINSTRUCTION" path="/transaction/patientProfile/patientProfileOtherInstructionsPopUp.jsp" />
+			<forward name="DATEWISECOMPLAINT" path="/transaction/patientProfile/patientProfileViewChartDateWise.jsp" />
+			<forward name="PROGRESSNOTES" path="/transaction/patientProfile/patientProfileProgressNotes.jsp" />
+			<forward name="OPDPROGRESSNOTES" path="/transaction/patientProfile/patientProfileOpdProgressNotes.jsp" />
+			<forward name="OTVIEWING" path="/transaction/patientProfile/patientProfileOperationDetails.jsp" />		
+			<forward name="DRUGTIME" path="/transaction/patientProfile/DrugSchedulePopup.jsp" />
+			<forward name="DOCTORROUND" path="/transaction/patientProfile/patientProfileEpisodeProgressNotes.jsp" />
+			<forward name="EXTERNALEXAMINATION" path="/transaction/patientProfile/patientProfileExtInvestigation.jsp" />
+			<forward name="CHARTDETAIL" path="/transaction/patientProfile/patientProfileEpisodeVitalChartView.jsp" />
+			
+			
+			<forward name="AUTOMATICGENERATE" path="/transaction/patientProfile/automaticProfileGeneration.jsp" />
+			<forward name="PATIENTSUMMARY" path="/transaction/patientProfile/automaticProfileSummaryGeneration.jsp" />		
+		</action>
+		
+		<!-- Patient Profile Inbox -->
+		<action path="/patientProfileInbox"
+				type="opd.transaction.controller.action.PatientProfileInboxACTION"
+				name="GenericPatientProfileFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/patientProfileInboxTile.jsp">
+			<forward name="NEW" path="/transaction/patientProfileInboxTile.jsp" />
+			<forward name="VIEWPRINT" path="/transaction/patientProfile/profileViewPrint.jsp" />			
+		</action>
+
+		<!-- Next Visit Detail -->
+		<action path="/opdNextVisitDetail"
+				type="opd.transaction.controller.action.OpdNextVisitDetailACTION"
+				name="OpdNextVisitDetailFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opdNextVisitDetail.jsp">
+			<forward name="NEW" path="/transaction/opdNextVisitDetail.jsp" />
+			<forward name="POPUPKEYWORD" path="/transaction/opdEpisodeKeywordsPopup.jsp" />
+			<forward name="POPUPNOTES" path="/transaction/opdNextVisitNotesPopup.jsp" />
+			<forward name="POPUPSUMMARY" path="/transaction/opdVisitSummaryPopup.jsp" />
+			<forward name="LIST" path="/../registration/cmoPatientDesk.cnt?hmode=NEW" />
+		</action>
+
+		<!-- Not in use Service Requisition -->
+		<!-- <action path="/OpdServiceRequisition"
+				type="opd.transaction.controller.action.OpdServiceRequisitionACTION"
+				name="OpdServiceRequisitionFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/OpdServiceRequisition.jsp">
+			<forward name="OpdServiceRequisitionpPage" path="/transaction/OpdServiceRequisition.jsp" />
+		</action> -->
+		<!-- Not in use  Next Visit Appointment -->
+		<!-- <action path="/opdNextVisitAppointment"
+				type="opd.transaction.controller.action.OpdNextVisitAppointmentACTION"
+				name="OpdNextVisitAppointmentFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opdNextVisitAppointment.jsp">
+			<forward name="showslotdtlPage" path="/transaction/opdNextVisitAppointment.jsp" />
+		</action> -->
+				
+		<!-- Change Patient Unit Room -->
+		<action path="/changePatUnitRoom"
+				type="opd.transaction.controller.action.ChangePatientUnitRoomACTION"
+				name="changeRoomPatFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/changePatientRoom.jsp">
+			<forward name="NEW" path="/transaction/changePatientRoom.jsp" />
+		</action>
+
+		<!-- Patient Treatemnt Detail -->
+		<action path="/patTreatmentDetailTile"
+				type="opd.transaction.controller.action.PatientTreamentDetalACTION"
+				name="PatientTreatmentDetailFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/patientTreatmentTileDrugDetail.jsp">
+			<forward name="NEW" path="/transaction/patientTreatmentTileDrugDetail.jsp" />
+			<forward name="IPD" path="/transaction/patienttreatmentdetailtileIPD.jsp" />
+			<forward name="SEARCHDRUG" path="/transaction/patTreatmentDrugSearchPopup.jsp" />
+			<forward name="DRUGDETAIL" path="/transaction/patientTreatmentTileDrugDetail.jsp" />
+			<forward name="IPDDRUGDETAIL" path="/transaction/patienttreatmentdetailtileIPD.jsp" />
+			<forward name="DRUGTIME" path="/transaction/DrugTimePopup.jsp" />
+			<forward name="PREVDRUGSCHEDULE" path="/transaction/prevSchedulePopup.jsp" />
+			<forward name="INSTRUCTION" path="/transaction/opdInstructionPopup.jsp" />
+			<forward name="ENTERDAYS" path="/transaction/daysPopup.jsp" />
+			<forward name="OTHERINSTRUCTION" path="/transaction/otherInstructionPopup.jsp" />
+			<forward name="DRUGPROPERTIES" path="/transaction/drugPropertyPopup.jsp" />
+			<forward name="LOGDETAIL" path="/transaction/logDetailPopup.jsp" />
+			<forward name="PRINT" path="/transaction/printPopup.jsp" />
+			<forward name="DRUGINSTRUCTION" path="/transaction/drugInstructionPopup.jsp" />
+			<forward name="REVOKEREMARKS" path="/transaction/revokeRemarksPopup.jsp" />
+			
+			
+		</action>	
+			
+		<!-- Patient External Examination -->
+		<action path="/externalExamination"
+				type="opd.transaction.controller.action.ExternalInvestigationACTION"
+				name="ExternalInvestigationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/externalInvestigation.jsp">
+			<forward name="NEW" path="/transaction/externalInvestigation.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Patient Complaints (Replica of Patient External Examination)  -->
+		<action path="/patientComplaints"
+				type="opd.transaction.controller.action.PatientComplaintsACTION"
+				name="PatientComplaintsFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/patientComplaints.jsp">
+			<forward name="NEW" path="/transaction/patientComplaints.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+			
+		<!-- Opd Triage Detail -->
+		<action path="/opdTriageDetail"
+				type="registration.controller.action.EpisodeTriageDetailACTION"
+				name="EpisodeTriageDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/../registration/transaction/episodeTriageDtlTile.jsp">
+			<forward name="NEW" path="/../registration/transaction/episodeTriageDtlTile.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- ***** End OPD Doctor Desk ****** -->
+		
+		<!-- OPD Bay Desk Login -->
+		<action path="/opdBayDeskLogin"
+				type="opd.transaction.controller.action.OpdBayDeskLoginACTION"
+				name="OpdBayDeskLoginFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/opdBayDeskLogin.jsp">
+				<forward name="NEW" path="/transaction/opdBayDeskLogin.jsp" />
+			<forward name="OPDDESK" path="/gotoPageA.cnt" />
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enterBayDesk.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Patient List -->
+		<action path="/opdPatientBayDesk"
+				type="opd.transaction.controller.action.OpdPatientBayDeskACTION"
+				name="OpdPatientDeskFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/opdPatientBayDesk.jsp">
+			<forward name="NEW" path="/transaction/opdPatientBayDesk.jsp" />
+		</action>
+		<!-- End of OPD Bay Desk Login -->
+		
+		
+		
+		<!-- ***** Start Casuality Doctor Desk ****** -->	
+		<!-- Casuality Desk Login-->
+		<action path="/csultyDeskLogin"
+				type="opd.transaction.controller.action.CsultyDeskLoginACTION"
+				name="CsultyDeskLoginFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/csultyDeskLogin.jsp">
+			<forward name="NEW" path="/transaction/csultyDeskLogin.jsp" />
+			<forward name="CSULTYDESK" path="/gotoCsultyDesk.cnt" />
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Waste -->
+		<action path="/gotoCsultyDesk"
+				parameter="/opd/transaction/csultyCommonnDeskLayout.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+				
+		<!-- Casuality Desk Header -->
+		<action path="/gotoCsultyDeskHeaderPage"
+				parameter="/opd/transaction/csultyDeskHeader.jsp"
+				type="org.apache.struts.actions.ForwardAction" />		
+
+		<!-- Casuality Desk Footer -->
+		<action path="/gotoCsultyDeskFooterPage"
+				type="opd.transaction.controller.action.CsultyDeskFooterMainACTION"
+				name="CsultyDeskLoginFB"
+				validate="false"
+				scope="request"
+				input="/transaction/csultyDeskFooter.jsp">
+			<forward name="FOOTER" path="/transaction/csultyDeskFooter.jsp" />
+		</action>
+		<!-- <action path="/gotoCsultyDeskFooterPage"
+				parameter="/opd/transaction/csultyDeskFooter.jsp"
+				type="org.apache.struts.actions.ForwardAction" /> -->
+
+		<!-- OLD ::  Casuality Desk Center -->
+		<action path="/csultyDesk"
+				type="opd.transaction.controller.action.CsultyDeskACTION"
+				name="CsultyDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/csultyDesk.jsp">
+			<forward name="NEW" path="/csultyDesk" />
+			<forward name="DESKDIAGNOSIS" path="/csultyDiagnosis" />
+			<forward name="DESKREFERPATIENT" path="/csultyReferPatient" />
+			<forward name="DESKALLERGIES" path="/csultyAllergies" />
+			<forward name="OPDSECONDARYCATEGORY" path="/csultyChangeTreatmentCategory" />
+			<forward name="ECONSULTATION" path="/csultyEConsultation" />
+			<forward name="CONSULTATIONINBOX" path="/csultyConsultationInbox" />
+			<forward name="OPDNEXTVISITAPPOINTMENT" path="/csultyUnderConstructionDesk" />
+			<forward name="DOCUMENTARCHIVAL" path="/csultyDocumentArchival" />
+			<forward name="GENERICTEMPLATE" path="/csultyDefaultTemplateTab" />
+			<forward name="IMAGEEXAMINATION" path="/csultyImageExaminationTab" />
+			<forward name="SERVICEREQUISITION" path="/csultyUnderConstructionDesk" />
+			<forward name="MLCDETAIL" path="/csultyMLCDetail" />
+			<forward name="TRIAGEDETAIL" path="/csultyTriageDetail" />
+			<forward name="PATBELONGING" path="/csultyPatBelongingsDetail" />
+			<forward name="PATPROFILE" path="/csultyPatProfile" />
+			<forward name="AUDIOVIDEOPLAYER" path="/csultyAudioVideoPlayer" />
+			<forward name="PATIENTDEATHDETAIL" path="/csultyPatDeathDetail" />
+			<forward name="DEFAULT" path="/csultyUnderConstructionDesk"/>
+			<forward name="CHANGEUNITROOM" path="/csultyChangePatientUnitRoom"/>
+			<forward name="BLOODBAGREQ" path="/csultyBloodbankBagRequest"/>
+			<forward name="REQUISITIONRAISING" path="/csultyRaiseInvestigation"/>
+			<forward name="RESULTVIEWING" path="/csultyViewInvestigation"/>
+			<forward name="PACREQUEST" path="/csultyPACRequest"/>
+			<forward name="OTLIST" path="/csultyOTRequest"/>
+			<forward name="ADMISSIONADVICE" path="/csultyAdmissionAdvice"/>
+			<forward name="GENERICPATIENTALERTS" path="/csultyGenericPatientAlerts"/>
+			<forward name="DESKTREATMENTDETAIL" path="/csultyTreatmentDetailTab"/>
+			<forward name="OTVIEWING" path="/csultyOTRecordViewing"/>		
+			<forward name="OPDNEXTVISITDETAIL" path="/casulityNextVisitDetailTile"/>	
+			<forward name="POLICEEXAMREQT" path="/policeExamRequestDtlTile"/>
+			<forward name="POLICEEXAMRPTGEN" path="/policeExamReportGenDtlTile"/>
+			<forward name="UNIPAGEPRESCRIPTION" path="/uniPagePrescriptionNew"/>		
+		</action>
+
+		<!-- Casuality Desk Center -->
+		<action path="/csultyDeskNew"
+				type="opd.transaction.controller.action.CsultyDeskACTION"
+				name="CsultyDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/csultyDesk.jsp">
+			<forward name="NEW" path="/csultyDesk" />
+			<forward name="DESKDIAGNOSIS" path="/csultyDiagnosisNew" />
+			<forward name="DESKREFERPATIENT" path="/csultyReferPatientNew" />
+			<forward name="DESKALLERGIES" path="/csultyAllergiesNew" />
+			<forward name="DESKPATIENTALERGIES" path="/csultylergiesSnomedNew" />
+			<forward name="OPDSECONDARYCATEGORY" path="/csultyChangeTreatmentCategoryNew" />
+			<forward name="ECONSULTATION" path="/csultyEConsultationNew" />
+			<forward name="CONSULTATIONINBOX" path="/csultyConsultationInboxNew" />
+			<forward name="OPDNEXTVISITAPPOINTMENT" path="/csultyUnderConstructionDeskNew" />
+			<forward name="DOCUMENTARCHIVAL" path="/csultyDocumentArchivalNew" />
+			<forward name="GENERICTEMPLATE" path="/csultyDefaultTemplateTabNew" />
+			<forward name="IMAGEEXAMINATION" path="/csultyImageExaminationTabNew" />
+			<forward name="SERVICEREQUISITION" path="/csualtyServiceAreaOfflineRequisition" />
+			<forward name="MLCDETAIL" path="/csultyMLCDetailNew" />
+			<forward name="TRIAGEDETAIL" path="/csultyTriageDetailNew" />
+			<forward name="PATBELONGING" path="/csultyPatBelongingsDetailNew" />
+			<forward name="PATPROFILE" path="/csultyPatProfileNew" />
+			<forward name="PATPROFILEINBOX" path="/csultyPatientProfilesInbox"/>
+			<forward name="AUDIOVIDEOPLAYER" path="/csultyAudioVideoPlayerNew" />
+			<forward name="PATIENTDEATHDETAIL" path="/csultyPatDeathDetailNew" />
+			<forward name="DEFAULT" path="/csultyUnderConstructionDeskNew"/>
+			<forward name="CHANGEUNITROOM" path="/csultyChangePatientUnitRoomNew"/>
+			<forward name="BLOODBAGREQ" path="/csultyBloodbankBagRequestNew"/>
+			<forward name="REQUISITIONRAISING" path="/csultyRaiseInvestigationNew"/>
+			<forward name="RESULTVIEWING" path="/csultyViewInvestigationNew"/>
+			<forward name="PACREQUEST" path="/csultyDocPACRequestNew"/>
+			<forward name="OTLIST" path="/csultyDocOTRequestNew"/>
+			<forward name="ADMISSIONADVICE" path="/csultyAdmissionAdviceNew"/>
+			<forward name="GENERICPATIENTALERTS" path="/csultyGenericPatientAlertsNew"/>
+			<forward name="DESKTREATMENTDETAIL" path="/csultyTreatmentDetailTabNew"/>
+			<forward name="OTVIEWING" path="/csultyOTRecordViewingNew"/>		
+			<forward name="OPDNEXTVISITDETAIL" path="/casulityNextVisitDetailTileNew"/>	
+			<forward name="POLICEEXAMREQT" path="/policeExamRequestDtlTileNew"/>
+			<forward name="POLICEEXAMRPTGEN" path="/policeExamReportGenDtlTileNew"/>			
+			<forward name="EMRDETAIL" path="/csultyPatientEmrDetail"/>		
+			<forward name="PATIENTSUMMARY" path="/patientSummaryNew"/>
+			<forward name="ESTIMATEREQUEST" path="/csultyEstimateRequest"/>
+			<forward name="MEDICALCERTIFICATE" path="/csultyMedicalCertificateRequest"/>
+			<forward name="CONSENTINBOX" path="/csultyConsentRequestNew"/>
+			<forward name="CHARTDETAIL" path="/csualtyDeskGenericChartReporting"/>
+			<forward name="DIETADVICE" path="/opdDietAdvice"/>
+			<forward name="UNIPAGEPRESCRIPTION" path="/uniPagePrescriptionNew"/>
+			<!--  	<forward name="PATPROFILEINBOX" path="/csultyPatProfileInboxNew" />	Added by manisha gangwar on 22.2.2016
+		<forward name="CONSENTINBOX" path="/csultyConsentInboxNew" />	  Added by manisha gangwar on 22.2.2016
+			<forward name="EXTERNALEXAMINATION" path="/csultExtrernalExaminationNew" /> Added by manisha gangwar on 22.2.2016
+			<forward name="DIETADVICE" path="/opdDietAdvice"/> -->
+			
+			
+			
+			<!-- for Patient Profile -->	
+		</action>
+		
+		
+		
+		<!-- Waste -->
+		<action path="/underConstructionDesk"
+				type="hisglobal.utility.dynamicdesk.controller.action.UnderConstructionDeskACTION"
+				name="UnderConstructionDeskFb"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/../hisglobal/utility/dynamicdesk/underConstructionDesk.jsp">
+			<forward name="NEW" path="/../hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		</action>
+		
+		<!-- Casuality Desk Patient List -->
+		<action path="/csultyPatientDesk"
+				type="opd.transaction.controller.action.CsultyPatientDeskACTION"
+				name="CsultyPatientDeskFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/csultyPatientDesk.jsp">
+			<forward name="NEW" path="/transaction/csultyPatientDesk.jsp" />
+		</action>
+		
+		<!-- New Casulity Patient List -->
+		<action path="/casualtyDeskPatientList"
+				type="opd.transaction.controller.action.CasualtyDeskPatientListACTION"
+				name="OpdPatientDeskFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/casualtyDeskPatientList.jsp">
+			<forward name="NEW" path="/transaction/casualtyDeskPatientList.jsp" />
+		</action>
+
+		<!-- MLC Detail -->
+		<action path="/casuality/casualmlcDtl"
+				type="registration.controller.action.CsultyEmgMlcDtlACTION"
+				name="CsultyEmgMlcDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/../registration/transaction/casualEmgMlcDtlTile.jsp">
+			<forward name="NEW" path="/../registration/transaction/casualEmgMlcDtlTile.jsp" />
+			<forward name="ADDPATCONDITION" path="/../registration/transaction/addPatConditionPopup.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+
+		<!-- MLC Detail PGI-->
+		<action path="/casuality/casualmlcDtlPGI"
+				type="registration.controller.action.CsultyEmgMlcDtlACTION"
+				name="CsultyEmgMlcDtlFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/../registration/transaction/mlcDetailPgi.jsp">
+			<forward name="NEW" path="/../registration/transaction/mlcDetailPgi1.jsp" />
+			<forward name="ADDPATCONDITION" path="/../registration/transaction/addPatConditionPopup.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Triage Detail -->
+		<action path="/casuality/triageDetail"
+				type="registration.controller.action.EpisodeTriageDetailACTION"
+				name="EpisodeTriageDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/../registration/transaction/episodeTriageDtlTile.jsp">
+			<forward name="NEW" path="/../registration/transaction/episodeTriageDtlTile.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Patient Belogings & Handover -->
+		<action path="/opdCasualPatientBelonging"
+				type="opd.transaction.controller.action.OpdCsultyPatientBelongingACTION"
+				name="OpdCsultyPatientBelongingFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/opdCsultyPatientBelonging.jsp">
+			<forward name="NEW" path="/transaction/opdCsultyPatientBelonging.jsp" />
+			<forward name="MODIFY" path="/transaction/opdCsultyModifyPatientBelonging.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Patient Death Detail -->
+		<action path="/casuality/deathDetail"
+				type="registration.controller.action.EpisodeDeathDetailACTION"
+				name="EpisodeDeathDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/../registration/transaction/episodePatientDeathInCasualityTile.jsp">
+			<forward name="NEW" path="/../registration/transaction/episodePatientDeathInCasualityTile.jsp" />			
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- ****** End of Casulaity Desk ******* -->
+		
+		<!-- Consent Request Inbox (Online)-->
+		<action path="/consentRequest"
+				type="opd.transaction.controller.action.ConsentRequestACTION"
+				name="consentRequestFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/consentRequest.jsp">
+			<forward name="NEW" path="/transaction/consentRequest.jsp" />
+			<forward name="VIEW" path="/transaction/consentGivenPopup.jsp" />
+			<forward name="POPUP" path="/transaction/consentRequestPopup.jsp" />
+			
+			<forward name="CANCEL" path="/opdDesk.cnt" />			
+		</action>
+		
+		<!-- Consent Request Inbox (Offline)-->
+		<action path="/consentOfflineInbox"
+				type="opd.transaction.controller.action.ConsentOfflineInboxACTION"
+				name="ConsentOfflineInboxFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/consentOfflineInbox.jsp">
+			<forward name="NEW" path="/transaction/consentOfflineInbox.jsp" />
+			<forward name="POPUP" path="/transaction/consentOfflineInboxPopup.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />			
+		</action>
+	
+		<!-- Generic Macro Popup Process -->
+		<action path="/genericMacroPopup"
+				type="opd.transaction.controller.action.GenericMacroPopupACTION"
+				name="GenericMacroPopupFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/genericMacroPopup.jsp">
+			<forward name="MACROPOPUP" path="/transaction/genericMacroPopup.jsp" />
+		</action>
+
+		<!-- Opd Roster Schedule Popup Process -->
+		<action path="/opdRosterSchedulePopup"
+				type="opd.transaction.controller.action.OpdRosterSchedulePopupACTION"
+				name="OpdRosterSchedulePopupFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opdRosterSchedulePopup.jsp">
+			<forward name="POPUP" path="/transaction/opdRosterSchedulePopup.jsp" />
+		</action>
+		
+		<!-- Chart Reporting Process -->
+		<action path="/genericChartReporting"
+				type="opd.transaction.controller.action.ChartReportingACTION"
+				name="ChartReportingFB"
+				validate="false"
+				parameter="hmode"
+				scope="request"
+				input="/transaction/opd_chart_reprting_trans.jsp">
+			<forward name="NEW" path="/transaction/opd_chart_reprting_trans.jsp" />
+			<forward name="VIEW" path="/transaction/opd_chart_view_popup.jsp" />
+			<forward name="CUSTOM" path="/transaction/opd_chart_customize.jsp" />			
+			<forward name="GRAPH" path="/transaction/opd_chart_graph.jsp" />			
+		</action>
+		
+		<action path="/patientProfileReviewDtl"
+				type="opd.transaction.controller.action.PatientProfileReviewACTION"
+				name="PatientProfileReviewFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/patientProfileReview.jsp">
+			<forward name="NEW" path="/transaction/patientProfileReview.jsp" />
+			<forward name="VIEWPRINT" path="/transaction/profileReviewViewPrint.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true"/>
+			<forward name="PROFILEDETAIL" path="/transaction/patientProfileReviewPopUp.jsp" />
+		</action>
+
+		<!-- ICD Search Engine :::: Start -->
+		<action path="/icdSearchEngine"
+			name="ICDSearchEngineFB"
+			parameter="strMainMode"
+			validate="false"
+			scope="request"
+			type="opd.icdsearchengine.action.ICDSearchEngineACT"
+			input="/icdsearchengine/icd_search_engine.jsp" >
+			<forward name="NEW" path="/icdsearchengine/icd_search_engine.jsp" /> 
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/icdsearchengine/icdEngineHeader"
+			name="ICDSearchEngineFB"
+			parameter="strMainMode"
+			validate="false"
+			scope="request"
+			type="opd.icdsearchengine.action.ICDEngineHeaderACT"
+			input="/icdsearchengine/icd_search_engine_header.jsp" >
+			<forward name="NEW" path="/icdsearchengine/icd_search_engine_header.jsp" /> 
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+
+		<action path="/icdsearchengine/icdEngineFooter"
+			name="ICDSearchEngineFB"
+			parameter="strMainMode"
+			validate="false"
+			scope="request"
+			type="opd.icdsearchengine.action.ICDEngineFooterACT"
+			input="/icdsearchengine/icd_search_engine_footer.jsp" >
+			<forward name="NEW" path="/icdsearchengine/icd_search_engine_footer.jsp" /> 
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+
+		<action path="/icdsearchengine/icdEngineSearching"
+			name="ICDSearchEngineFB"
+			parameter="strMainMode"
+			validate="false"
+			scope="request"
+			type="opd.icdsearchengine.action.ICDEngineSearchingACT"
+			input="/icdsearchengine/icd_search_engine_searching.jsp" >
+			<forward name="NEW" path="/icdsearchengine/icd_search_engine_searching.jsp" /> 
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/icdsearchengine/icdEngineResultVol1"
+			name="ICDSearchEngineFB"
+			parameter="strMainMode"
+			validate="false"
+			scope="request"
+			type="opd.icdsearchengine.action.ICDEngineResultVol1ACT"
+			input="/icdsearchengine/icd_search_engine_result_vol1.jsp" >
+			<forward name="NEW" path="/icdsearchengine/icd_search_engine_result_vol1.jsp" /> 
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+
+		<action path="/icdsearchengine/icdEngineResultVol3"
+			name="ICDSearchEngineFB"
+			parameter="strMainMode"
+			validate="false"
+			scope="request"
+			type="opd.icdsearchengine.action.ICDEngineResultVol3ACT"
+			input="/icdsearchengine/icd_search_engine_result_vol3.jsp" >
+			<forward name="NEW" path="/icdsearchengine/icd_search_engine_result_vol3.jsp" /> 
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+
+		<action path="/icdsearchengine/icdEngineDiseaseDtl"
+			name="ICDEngineDiseaseDetailFB"
+			parameter="strDetailMode"
+			validate="false"
+			scope="request"
+			type="opd.icdsearchengine.action.ICDEngineDiseaseSearchDtlACT"
+			input="/icdsearchengine/icd_search_engine_icd_disease_dtl.jsp" >
+			<forward name="NEW" path="/icdsearchengine/icd_search_engine_icd_disease_dtl.jsp" /> 
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		<!-- ICD Search Engine :::: End -->
+
+
+		<!-- ICD Entry Form -->
+		<action path="/icdEntryFormDesk"
+				parameter="/opd/transaction/opd_ICDEntryFormDeskMain.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+
+		<action path="/gotoIcdEntryFormDesk"
+				type="opd.transaction.controller.action.ICDEntryFormDeskACTION"
+				name="ICDEntryFormDeskFB"
+				validate="false"
+				scope="request"
+				parameter="deskMode"
+				input="/icdEntryFormNewEntryTile">
+			<forward name="NEWENTRY" path="/icdEntryFormNewEntryTile"/>
+			<forward name="MODIFICATION" path="/icdEntryFormModificationTile"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/icdEntryForm"
+			name="ICDEntryFormNewFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"
+			type="opd.transaction.controller.action.ICDEntryFormNewACTION"
+			input="/transaction/opd_ICDEntryFormNEW.jsp" >
+			<forward name="NEW" path="/transaction/opd_ICDEntryFormNEW.jsp" /> 
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+
+		<action path="/icdEntryFormMod"
+			name="ICDEntryFormModFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"
+			type="opd.transaction.controller.action.ICDEntryFormModACTION"
+			input="/transaction/opd_ICDEntryFormMOD.jsp" >
+			<forward name="MOD" path="/transaction/opd_ICDEntryFormMOD.jsp" /> 
+			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		<!-- End :: ECD Entry Form -->
+
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/OpdDesk-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+</struts-config>

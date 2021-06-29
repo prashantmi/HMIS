@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		
+		<form-bean name="laundayRequestOfItemBean" type="laundry.transactions.controller.fb.RequestOfItemsFB"/>
+		<form-bean name="DirectReceiptOfItemsFB" type="laundry.transactions.controller.fb.DirectReceiptOfItemsFB"/>
+		<form-bean name="ReceiptOfItemsFB" type="laundry.transactions.controller.fb.DirectReceiptOfItemsFB"/>	
+		<form-bean name="WorkOrderFB" type="laundry.transactions.controller.fb.WorkOrderFB"/>
+		<form-bean name="WorkOrderMachineUsedDetailsFB" type="laundry.transactions.controller.fb.WorkOrderMachineUsedDetailsFB"/>
+		<form-bean name="WorkCompletionFB" type="laundry.transactions.controller.fb.WorkCompletionFB"/>
+		<form-bean name="DeliveryFormFB" type="laundry.transactions.controller.fb.DeliveryFormFB"/>
+		<form-bean name="AcknowledgmentFormFB" type="laundry.transactions.controller.fb.AcknowledgmentFormFB"/>
+		
+		
+	</form-beans>
+
+
+	<action-mappings>
+
+
+	<action path="/switchModule" type="org.apache.struts.actions.SwitchAction" />
+			
+		
+	<action path="/transactions/laundayRequestOfItem" type="laundry.transactions.controller.action.RequestOfItemsACTION"
+			name="laundayRequestOfItemBean" scope="request" validate="false" parameter="hmode"
+			input="/transactions/jsp/laundry_request_of_items_trans.jsp">
+			<forward name="ADD" path="/transactions/jsp/laundry_request_of_items_trans.jsp" />
+			<forward name="LIST" path="/transactions/jsp/laundry_list_request_of_items_trans.jsp" />
+
+	</action>
+	<action path="/transactions/laundryDirectRecieptOfItem" type="laundry.transactions.controller.action.DirectReceiptOfItemsACTION"
+			name="DirectReceiptOfItemsFB" scope="request" validate="false" parameter="hmode"
+			input="/transactions/jsp/laundry_direct_receipt_of_items.jsp">
+			<forward name="ADD" path="/transactions/jsp/laundry_direct_receipt_of_items.jsp"/>
+	</action>	
+	
+	
+	<action path="/transactions/laundryRecieptOfItem" type="laundry.transactions.controller.action.ReceiptOfItemsACTION"
+			name="ReceiptOfItemsFB" scope="request" validate="false" parameter="hmode"
+			input="/transactions/jsp/laundry_direct_receipt_of_items.jsp">
+			<forward name="LIST" path="/transactions/jsp/laundry_receipt_of_items.jsp"/>
+			<forward name="ADD" path="/transactions/jsp/laundry_receipt_of_items_dtls_trans.jsp"/>
+			
+			
+	</action>	
+	
+	
+	
+	<action path="/transactions/workorder" type="laundry.transactions.controller.action.WorkOrderACTION"
+			name="WorkOrderFB" scope="request" validate="false" parameter="hmode"
+			input="/transactions/jsp/laundry_work_order_dtls_trans.jsp">
+			<forward name="ADD" path="/transactions/jsp/laundry_work_order_dtls_trans.jsp"/>
+			<forward name="LIST" path="/transactions/jsp/laundry_list_work_order__trans.jsp"/>
+			<forward name="POPUP" path="/transactions/jsp/laundry_work_order_dtls_pop_up_trans.jsp"/>
+			
+	</action>	
+	
+	
+	<action path="/transactions/workordermachineused" type="laundry.transactions.controller.action.WorkOrderMachineUsedDetailsACTION"
+			name="WorkOrderMachineUsedDetailsFB" scope="request" validate="false" parameter="hmode"
+			input="/transactions/jsp/laundry_work_order_machine_used_dtls_trans.jsp">
+			<forward name="ADD" path="/transactions/jsp/laundry_work_order_machine_used_dtls_trans.jsp"/>
+			
+			
+	</action>	
+	
+	
+	<action path="/transactions/workcompletion" type="laundry.transactions.controller.action.WorkCompletionACTION"
+			name="WorkCompletionFB" scope="request" validate="false" parameter="hmode"
+			input="/transactions/jsp/laundry_list_work_order_completion_trans.jsp">
+			<forward name="ADD" path="/transactions/jsp/laundry_list_work_order_completion_trans.jsp"/>
+			
+			
+	</action>	
+	
+	<action path="/transactions/deliveryform" type="laundry.transactions.controller.action.DeliveryFormACTION"
+			name="DeliveryFormFB" scope="request" validate="false" parameter="hmode"
+			input="/transactions/jsp/laundry_issue_form_trans.jsp">
+			<forward name="ADD" path="/transactions/jsp/laundry_issue_form_trans.jsp"/>
+			
+			
+	</action>	
+	
+	<action path="/transactions/acknowlegmentform" type="laundry.transactions.controller.action.AcknowledgmentFormACTION"
+			name="AcknowledgmentFormFB" scope="request" validate="false" parameter="hmode"
+			input="/transactions/jsp/laundry_acknowledge_form_list.jsp">
+			<forward name="LIST" path="/transactions/jsp/laundry_acknowledge_form_list.jsp"/>
+			
+			<forward name="ADD" path="/transactions/jsp/laundry_acknowledge_form_dtls.jsp"/>
+			
+			
+			
+			
+	</action>	
+	
+	
+	
+	
+		
+		
+	</action-mappings>
+
+	<controller><set-property property="processorClass"	value="hisglobal.presentation.HisRequestProcessor" /></controller>
+	<message-resources parameter="laundry.laundryResourceBundle"></message-resources>
+	
+
+</struts-config>

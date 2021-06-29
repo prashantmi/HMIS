@@ -1,0 +1,1522 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* www.blueornate.com */
+
+@font-face {
+	font-family: 'rupee';
+	src: url('rupee_webfont.eot');
+	src: local('â˜º'), url(data:font/truetype;charset=utf-8;base64,AAEAAAANAIAAAwBQRkZUTVen5G0AAADcAAAAHEdERUYAQAAEAAAA+AAAACBPUy8yRQixzQAAARgAAABgY21hcGmyCE0AAAF4AAABamdhc3D//wADAAAC5AAAAAhnbHlmmuFTtAAAAuwAABAoaGVhZPOmAG0AABMUAAAANmhoZWELSAQOAAATTAAAACRobXR4KSwAAAAAE3AAAABMbG9jYUCgSLQAABO8AAAAKG1heHAAFQP+AAAT5AAAACBuYW1lWObwcQAAFAQAAAIDcG9zdCuGzNQAABYIAAAAuAAAAAEAAAAAxtQumQAAAADIadrpAAAAAMhp2uoAAQAAAA4AAAAYAAAAAAACAAEAAQASAAEABAAAAAIAAAADAigBkAAFAAgFmgUzAAABGwWaBTMAAAPRAGYCEgAAAgAFAAAAAAAAAIAAAKdQAABKAAAAAAAAAABITCAgAEAAICBfBZr+ZgDNBrQBoiAAARFBAAAAAAAFnAAAACAAAQAAAAMAAAADAAAAHAABAAAAAABkAAMAAQAAABwABABIAAAADgAIAAIABgAgAFIAoCAKIC8gX///AAAAIABSAKAgACAvIF/////j/7L/ZeAG3+LfswABAAAAAAAAAAAAAAAAAAAAAAEGAAABAAAAAAAAAAECAAAAAgAAAAAAAAAAAAAAAAAAAAEAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//8AAgABAAAAAAO0BZwD/QAAATMVMzUhFTMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVIxUjNSMVIzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNSE1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1ITUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNSECTBAYATwEBAQEBAQEBAQEBAQEBAQEBAQEBAQQ2AQEBAQEBAQEBAQEBAQEBAT0BAQEBAQEBAQEBAQEBAQEBAQEBAQECJwEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAgEBAQECAQECAQIBAgECAgECAwICAgMCAwMEAwQFBAcHBAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBIAcMAwEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEsCAcEBAMDAwICAgICAgECAQIBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAT9/AQEBAQEBAQEBAQEBAQEBAQEBAQECAGYBAQEBAQEBAQEBAQEBAgECAQIBAwICAwIEBAYFCjwBAQEBAQEBAQEBAQEBAQEBAQEBAQECAH0BZwEBAQIBAgIBAgECAQIBAgIBAgECAQIBAQEDAgECAQIBAgECAwICAwQEAQEBAgECAQICAQIBAgECAgECAQICAQEBAgQEBAMDAgIDAQICAQICAQEBAgEBAgEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBBAECAQEBAgEBAgEBAQECAQECAQEBAgEBAQIBAQIBAQEBAQIBAgEBAgEBAQIBAQECAQEBAgEBAQIBAQEBAQIBAQIBAQECAQEBAgEBAgEBAQEBAgEBAgEBAgEBAQEBAgEBAgEBAQECAQECAQEBAgEBAQECAQECAQECAQEBAQIBAQEBAgEBAQEBAQECAQEBAQIBAQECAQEBAgEBAQIBAQECAQECAQEBAgECAQEBAgEBAQIBAQIBAQEBAgEBAgEBAgEBAQECAQECAQEBAQIBAQECAQECAQEBAQIBAQIBAQEBAQIBAQECAQEBAgEBAgEBAQEBAQIBAQECAQEBAQIBAQECAQEBAQEBAgIeAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECAQECAQICAgIDAwIHBQMCAQICAQIBAgECAQICAQIBAgEBAQEDAgIBAgEBAgEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAgECAQIBAgECAQIBAgECAQICAQEBAQAAAAAAQAAAAADtAWcA/0AAAEzFTM1IRUzFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUjFSMVIxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFTMVMxUzFSMVIzUjFSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUhNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNSE1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUjNSM1IzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUzNTM1MzUhAkwQGAE8BAQEBAQEBAQEBAQEBAQEBAQEBAQEENgEBAQEBAQEBAQEBAQEBAQE9AQEBAQEBAQEBAQEBAQEBAQEBAQEBAicBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQIBAQEBAgEBAgECAQIBAgIBAgMCAgIDAgMDBAMEBQQHBwQBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBASAHDAMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBLAgHBAQDAwMCAgICAgIBAgECAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE/fwEBAQEBAQEBAQEBAQEBAQEBAQEBAgBmAQEBAQEBAQEBAQEBAQIBAgECAQMCAgMCBAQGBQo8AQEBAQEBAQEBAQEBAQEBAQEBAQEBAgB9AWcBAQECAQICAQIBAgECAQICAQIBAgECAQEBAwIBAgECAQIBAgMCAgMEBAEBAQIBAgECAgECAQIBAgIBAgECAgEBAQIEBAQDAwICAwECAgECAgEBAQIBAQIBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQQBAgEBAQIBAQIBAQEBAgEBAgEBAQIBAQECAQECAQEBAQECAQIBAQIBAQECAQEBAgEBAQIBAQECAQEBAQECAQECAQEBAgEBAQIBAQIBAQEBAQIBAQIBAQIBAQEBAQIBAQIBAQEBAgEBAgEBAQIBAQEBAgEBAgEBAgEBAQECAQEBAQIBAQEBAQEBAgEBAQECAQEBAgEBAQIBAQECAQEBAgEBAgEBAQIBAgEBAQIBAQECAQECAQEBAQIBAQIBAQIBAQEBAgEBAgEBAQECAQEBAgEBAgEBAQECAQECAQEBAQECAQEBAgEBAQIBAQIBAQEBAQECAQEBAgEBAQECAQEBAgEBAQEBAQICHgEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAgEBAgECAgICAwMCBwUDAgECAgECAQIBAgECAgECAQIBAQEBAwICAQIBAQIBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQIBAgECAQIBAgECAQIBAgECAgEBAQEAAAAAAEAAAABAACTKPMBXw889QALCAAAAAAAyGna6gAAAADIadrqAAAAAAO0BZwAAAAIAAIAAAAAAAAAAQAABrT+XgDeBZwAAAAAA7QAAQAAAAAAAAAAAAAAAAAAABMD9gAAAAAAAAKqAAAB/AAAA/YAAAH8AAACzgAABZwAAALOAAAFnAAAAd4AAAFnAAAA7wAAAO8AAACzAAABHwAAAE8AAAEfAAABZwAAAAAECgQKBAoECggUCBQIFAgUCBQIFAgUCBQIFAgUCBQIFAgUCBQIFAABAAAAEwP+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgB+AAEAAAAAABMABQAAAAMAAQQJAAAAaAAFAAMAAQQJAAEACgBtAAMAAQQJAAIADgB3AAMAAQQJAAMADgCFAAMAAQQJAAQAGgCTAAMAAQQJAAUAVgCtAAMAAQQJAAYACgEDAAMAAQQJABMACgENAAMAAQQJAMgAbgEXUnVwZWUAVAB5AHAAZQBmAGEAYwBlACAAqQAgACgAeQBvAHUAcgAgAGMAbwBtAHAAYQBuAHkAKQAuACAAMgAwADEAMAAuACAAQQBsAGwAIABSAGkAZwBoAHQAcwAgAFIAZQBzAGUAcgB2AGUAZABSAHUAcABlAGUAUgBlAGcAdQBsAGEAcgB3AGUAYgBmAG8AbgB0AFIAdQBwAGUAZQAgAFIAZQBnAHUAbABhAHIAVgBlAHIAcwBpAG8AbgAgADEALgAwADAAIABKAHUAbAB5ACAAMQA1ACwAIAAyADAAMQAwACwAIABpAG4AaQB0AGkAYQBsACAAcgBlAGwAZQBhAHMAZQBSAHUAcABlAGUAUgB1AHAAZQBlAFQAaABpAHMAIABmAG8AbgB0ACAAdwBhAHMAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAHQAaABlACAARgBvAG4AdAAgAFMAcQB1AGkAcgByAGUAbAAgAEcAZQBuAGUAcgBhAHQAbwByAC4AAAIAAAAAAAD/JwCWAAAAAAAAAAAAAAAAAAAAAAAAAAAAEwAAAAEAAgADADUBAgEDAQQBBQEGAQcBCAEJAQoBCwEMAQ0BDgEPB3VuaTAwQTAHdW5pMjAwMAd1bmkyMDAxB3VuaTIwMDIHdW5pMjAwMwd1bmkyMDA0B3VuaTIwMDUHdW5pMjAwNgd1bmkyMDA3B3VuaTIwMDgHdW5pMjAwOQd1bmkyMDBBB3VuaTIwMkYHdW5pMjA1Rg==) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+.INR
+{ 
+   background:url(/AHIMS/hisglobal/images/INR.png) no-repeat; 
+   width:10px; 
+   height:10px;
+   display: block;
+   position: fixed;
+   vertical-align: middle;
+   
+}
+/* to show header. It contains font type, font color, font size and background color */
+TR.HEADER {
+	/*background-image: url('../../hisglobal/images/LightStrip.png');
+	background-Color:#FFB365;*/
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	height:23px;
+	/*color: #005B88;*/
+	color: white;
+	text-transform: capitalize;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+.Approved 
+   {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #151AFB;
+	background-color: #D3D5C9;
+	height: 16px;
+	text-align:center;
+    }
+    
+   .NotApproved 
+   {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: red;
+	background-color: #F1ECE2;
+	height: 16px;
+	text-align:center;
+    }
+
+
+/* to show footer. It contains font type, font color, font size and background color */
+TR.FOOTER {
+	/*background-image: url('../../hisglobal/images/LightStrip.png');
+	background-Color:#FFB365;*/
+	
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	height:23px;
+	/*color: #005B88;*/
+	color: white;
+	text-transform: capitalize;
+	text-align:right;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+/* for label field of table's TD. It contains font type, font color, font size and background color */
+TD.LABEL {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb; */
+	background-Color:#f1f6f6;
+	height:16;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	/*color:#333333;*/
+	color:#013157;
+	text-align:right;
+	font-weight: bold;
+	background-image: url('none');
+}
+
+/* for control field of table's TD. It contains font type, font color, font size and background color */
+TD.CONTROL {
+	/*background-Color:#F1ECE2;*/
+	background-Color:#f1f6f6;
+	height:16;
+	/*color:#333333;*/
+	color:#013157;
+	text-align:left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+}
+
+/* to show font type to be used. It contains font type, font color, font size */
+.FONT {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #653232;
+}
+
+/* fot textfield of minimum size. It contains font type, font color, font size, width of the field */
+.txtFldMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 50px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+
+}
+/* fot textfield of minimum size. It contains font type, font color, font size, width of the field */
+.txtFldMinYYYY {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 33px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+
+}
+/* fot textfield of minimum size. It contains font type, font color, font size, width of the field */
+.txtFldMinColor {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 50px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #E4CCA8;
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+
+}
+
+/* fot textfield of normal size. It contains font type, font color, font size, width of the field */
+.txtFldNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 75px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+	focus:background-color: yellow;
+}
+input[type=text]:focus 
+{
+    background-color: #FFFFCC;    
+    transition: ease-in-out, width .35s ease-in-out;
+    
+    /*border-color: #6EA2DE;*/
+    /*box-shadow: 0px 0px 10px #6EA2DE;*/
+    /*box-shadow: 0 0 5px rgba(81, 203, 238, 1);*/
+  /*padding: 3px 0px 3px 3px;*/
+  /*margin: 5px 1px 3px 0px;*/
+  /*border: 1px solid rgba(81, 203, 238, 1);*/
+}
+input[type=text]:hover {
+    transition: ease-in-out, width .35s ease-in-out;
+    /*border: 1px solid #999;*/
+    /*border-radius: 5px;*/
+}
+select {
+     -moz-appearance: menulist;
+    -moz-box-sizing: border-box;
+    -moz-user-select: none;    
+    border-color: threedface;
+    border-style: inset;
+    border-width: 2px;
+    color: -moz-comboboxtext;
+    cursor: pointer;
+    background: #FFFFCC;   
+}
+/* fot textfield of small size. It contains font type, font color, font size, width of the field */
+.txtFldDate {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 85px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+}
+
+/* fot textfield of maximum size. It contains font type, font color, font size, width of the field */
+.txtFldMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 135px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+}
+
+/* fot textfield of maximum size. It contains font type, font color, font size, width of the field */
+.txtFldBig {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 135px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+}
+
+/* fot textfield of maximum size. It contains font type, font color, font size, width of the field */
+.txtFldTrfName {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 219px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+}
+
+/* fot textfield of maximum size. It contains font type, font color, font size, width of the field */
+.txtFldTxtArea {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 110px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+}
+
+
+
+/* fot textfield of small size. It contains font type, font color, font size, width of the field */
+.txtFldSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 35px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+}
+/* fot textfield of small size. It contains font type, font color, font size, width of the field */
+.txtFldSmallDD {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 18px;
+	width: 15px;
+	/*border: 1px solid #BCB8B8;*/
+	background-color: #F8F6F3;
+	/*border: 1px inset #F8F6F3; 
+    outline:0;*/ 
+	/*border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 3px #666;*/
+}
+/* fot textfield of small size and have red font. It contains font type, font color, font size, width of the field */
+.txtFldSmall_Red {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	color: #990000;
+	height: 18px;
+	width: 35px;
+}
+
+/* fot combo of small size. It contains font type, font color, font size, width of the field */
+.comboSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 50px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+/* fot combo of minimum size. It contains font type, font color, font size, width of the field */
+.comboMin {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 90px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+/* fot combo of minimum size. It contains font type, font color, font size, width of the field */
+.comboMinNew {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 75px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+/* fot combo of normal size. It contains font type, font color, font size, width of the field */
+.comboNormal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 125px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+/* fot combo of normal size. It contains font type, font color, font size, width of the field */
+.comboRed {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;	
+	height: 20px;
+	width: 125px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: red;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+/* fot combo of maximum size. It contains font type, font color, font size, width of the field */
+.comboMax {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 175px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+
+/* fot combo of Big size. It contains font type, font color, font size, width of the field */
+.comboBig {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	height: 20px;
+	width: 350px;
+	/*border: 1px solid #BCB8B8;*/
+	/*border: 1px inset #848484;*/	
+	-moz-appearance: menulist;
+    box-sizing: border-box;
+    -moz-user-select: none;
+    border-color: #F0F0F0;
+    border-style: inset;
+    border-width: 2px;
+    color: #000;
+    cursor: pointer;
+    /*background: none repeat scroll 0% 0% #FFC;*/
+}
+
+/* table width is defined for add and modify pages. */
+.TABLEWIDTH {	
+	width: 95%;	
+}
+
+/* for the title field. It contains font type, font color, font size and background color */
+.TITLE {
+	/*background-Color:#FFB365;*/
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	font-family: Trebuchet MS;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: bold;
+	/*color: #653232;*/
+	color: white;
+	height: 16px;
+	text-align:left;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiLabel {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb;*/	
+	background-Color:#f1f6f6;		
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*font-size: 12px;*/
+	font-size: 11px;
+	font-weight: bold;
+	/*color: #653232;*/
+	/*color:black;*/
+	color:#013157;
+	text-align:center;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiLabelSmall {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb;*/	
+	background-Color:#f1f6f6;		
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*font-size: 12px;*/
+	font-size: 11px;
+	font-weight: bold;
+	/*color: #653232;*/
+	/*color:black;*/
+	color:#013157;
+	text-align:center;
+}
+
+/* to center align label field. It contains font type, font color, font size and background color */
+.multiLabelNew {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb;*/	
+	background-Color:#f1f6f6;		
+	height: 16px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	/*font-size: 12px;*/
+	font-size: 10px;
+	font-weight: bold;
+	/*color: #653232;*/
+	/*color:black;*/
+	color:#013157;
+	text-align:center;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	/*color: #000000;*/
+	color:#013157;
+	/*background-color: #F1ECE2;*/
+	background-Color:#f1f6f6;
+	height: 16px;
+	text-align:center;
+}
+/* to center align control field. It contains font type, font color, font size and background color */
+.trfTd {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	/*color: #000000;*/
+	color:#013157;
+	/*background-color: #F1ECE2;*/
+	background-Color:#f1f6f6;
+	height: 16px;
+	text-align:center;
+}
+
+.trfTd:nth-child(even) {
+	/*background-color: red;*/
+}
+.trfTd:nth-child(odd) {
+	/*background-color: #E0EBEB;*/
+}
+
+td {
+    position: relative;
+}
+tr.strikeout td:before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-bottom: 1px solid #CD5C5C;
+    width: 100%;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiControlRed {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	/*color: #000000;*/
+	color:red;
+	/*background-color: #F1ECE2;*/
+	background-Color:#f1f6f6;
+	height: 16px;
+	text-align:center;
+}
+
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiControlSmall {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	/*color: #000000;*/
+	color:#013157;
+	/*background-color: #F1ECE2;*/
+	/*background-Color:#f1f6f6;*/
+	height: 16px;
+	text-align:center;
+}
+/* to center align control field. It contains font type, font color, font size and background color */
+.multiControlSmallLeft {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	/*color: #000000;*/
+	color:#013157;
+	/*background-color: #F1ECE2;*/
+	/*background-Color:#f1f6f6;*/
+	height: 16px;
+	text-align:left;
+}
+	
+/* to show error messages. */
+.errMsg {
+	font-family: Trebuchet MS;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	color: red;	
+	text-align:center;
+}
+
+/* to show normal messages. */
+.normalMsg {
+	font-family: Trebuchet MS;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	color: #653232;	
+	text-align:center;
+}
+
+/* to show error messages. */
+.warningMsg {
+	font-family: Trebuchet MS;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	color: #FF9900;	
+	text-align:center;
+}
+
+
+/* for label highliter field of table's TD. It contains font type, font color, font size and background color */
+TD.LABELHIGHLITER {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb;*/
+	background-Color:#f1f6f6;
+	height:16;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:blue;
+	text-align:right;
+	font-weight: bold;
+	background-image: url('none');
+}
+
+
+input.btn { 
+	  
+	  
+	  width: 75px;
+	  height : 25px;	
+	   
+	}
+	.fileUpload {
+	position: relative;
+	overflow: hidden;
+	margin: 1px;
+}
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+
+.widget-reset div,.widget-reset form,.widget-reset a,.widget-reset ul,.widget-reset li{
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+	margin:0;
+	padding:0
+}
+#envato-widget {
+    background: url("images/px.gif") repeat-y scroll right top rgb(244, 244, 244);
+    border-width: 1px 1px 1px medium;
+    border-style: solid solid solid none;
+    border-color: rgb(190, 190, 190) rgb(190, 190, 190) rgb(190, 190, 190) rgb(190, 190, 190) ;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;    
+    font: 13px/17px Helvetica,Arial,sans-serif;
+    height: 20px;
+    width:100px;
+    
+    /*left:0px;*/
+    /*position: fixed;*/
+    /*top: 165px;*/
+    
+    /*z-index: 890;*/
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#envato-widget1 {
+    background: url("images/px.gif") repeat-y scroll right top rgb(244, 244, 244);
+    border-width: 1px 1px 1px medium;
+    border-style: solid solid solid none;
+    border-color: rgb(190, 190, 190) rgb(190, 190, 190) rgb(190, 190, 190) rgb(190, 190, 190) ;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;    
+    font: 13px/17px Helvetica,Arial,sans-serif;
+    height: 200px;
+    
+    left:0px;
+    position: fixed;
+    top: 165px;
+    width:24px;
+    z-index: 890;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+#envato-widget1 a.widget-button.envato {
+    background-position: -4px 0px;
+    border-top: medium none;
+    height: 32px;
+}
+#envato-widget1 a.widget-button {
+    background-image: url("/AHIMS/hisglobal/images/mainPage_UltraSmall.png"); 
+    background-repeat: no-repeat;
+    border-bottom: 1px solid rgb(254, 254, 254);
+    border-top: 1px solid rgb(228, 228, 228);
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 31px;
+     text-indent: -9999px; 
+    width: 23px;
+}
+.NEWTABLEWIDTH {	
+	width: 95%;	
+	border-collapse: collapse;
+}
+/* for label field of table's TD. It contains font type, font color, font size and background color */
+LABEL.DIVLABEL {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb; */
+	background-Color:#f1f6f6;
+	height:16;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	/*color:#333333;*/
+	color:#013157;
+	text-align:left;
+	font-weight: bold;
+	background-image: url('none');
+}
+LABEL.DIVLABELCR {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb; */
+	background-Color:#f1f6f6;
+	height:16;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	/*color:#333333;*/
+	color:#E16D0A;
+	text-align:left;
+	font-weight: bold;
+	background-image: url('none');
+}
+LABEL.DIVLABELCR_NEW {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb; */
+	background-Color:#f1f6f6;
+	height:16;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:13px;
+	/*color:#333333;*/
+	color:#000000;
+	text-align:left;
+	font-weight: bold;
+	background-image: url('none');
+}
+
+
+hr.style-seven:after {
+    /* display: block;
+    content: "$";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: #000;
+    border-width: 0px 0px 1px;
+    border-radius: 20px;*/
+    
+    /*display: inline-block;*/
+position: relative;
+top: -0.7em;
+font-size: 1.5em;
+padding: 0px 0.25em;
+background: none repeat scroll 0% 0% #FFF;
+content: "§";
+
+}
+hr.style-seven {
+    /* height: 30px;
+    border-style: solid;
+    border-color: #115887;
+    border-width: 1px 0px 0px;
+    border-radius: 10px;    */
+    
+    padding: 0px;
+border-right: medium none;
+border-width: medium;
+border-style: double none none;
+border-color: #333 -moz-use-text-color -moz-use-text-color;
+-moz-border-top-colors: none;
+-moz-border-right-colors: none;
+-moz-border-bottom-colors: none;
+-moz-border-left-colors: none;
+border-image: none;
+color: #333;
+text-align: center;
+    
+}
+
+/* Glyph, by Harry Roberts */
+		
+hr.style-eight {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: left;
+}
+hr.style-eight:before {
+    content: "§";
+    display: inline-block;
+    position: relative; 
+    top: -0.7em;  
+    font-size: 1.1em;
+    padding: 0 0;
+    background: white;
+}
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
+.verticalLine2 {
+    background: none repeat scroll 0% 0% rgba(180, 21, 55, 1);
+}
+.hr1 { 
+  height: 100px;
+  border-right: 6px solid blue;
+  width: 6px;
+  voice-family: "\"}/*\"";
+  width: 0px;}
+/* */
+.line:after {
+    background: linear-gradient(to bottom, #1271AA, #0E517D) no-repeat scroll center center / 100% 0.15em transparent;
+    content: "";
+    display: table-cell;
+    width: 98%;
+}
+.line:before {
+    background: linear-gradient(to bottom, #1271AA, #0E517D) no-repeat scroll center center / 98% 0.15em transparent;
+    content: "";
+    display: table-cell;
+    width: 2%;
+}
+.line {
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+    margin-left: 0%;
+    font-size: 20px;
+    color: #0E507C;
+}
+
+.lineContinue {
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+    margin-left: 0%;
+    font-size: 20px;
+    color: #0E507C;
+     background: linear-gradient(to bottom, #1271AA, #0E517D) no-repeat scroll center center / 100% 0.15em transparent;
+    content: "";
+        
+}
+.lineContinue2 {
+    display: table;
+    white-space: nowrap;
+    width: 100%;
+    margin-left: 0%;
+    font-size: 20px;
+    color: #0E507C;
+    text-align:right;
+     background: linear-gradient(to bottom, #1271AA, #0E517D) no-repeat scroll center center / 100% 0.15em transparent;
+    content: "";
+        
+}
+.multiRPTLabel {
+	background-color:#bdd9f0;	
+	height: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #653232;
+	text-align:center;
+}
+.multiRPTControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #E0EBEB;
+	height: 12px;
+	text-align:center;
+}
+.multiPOControl {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	background-color: #E0EBEB;
+	height: 12px;
+	text-align:center;
+}
+.blink {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    color: #ffcc00;
+}
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+#parent_div_1, #parent_div_2, #parent_div_3{
+    width:100px;
+    height:100px;
+    border:1px solid red;
+    margin-right:10px;
+    float:left;
+}
+.child_div_1{
+    float:left;
+    margin-right:5px;
+}
+
+
+.maroonbg {
+    background: none repeat scroll 0% 0% #CD071E;
+    
+}
+.orangebg {
+    background: none repeat scroll 0% 0% #FF6C00;
+    
+}
+.yellowbg {
+    background: none repeat scroll 0% 0% #ffa500;
+    
+}
+.bluebg {
+    background: none repeat scroll 0% 0% #483D8B;
+    
+}
+.greenbg {
+    background: none repeat scroll 0% 0% #1C8941;
+    
+}
+
+
+.xx {    
+    width:100px;/*
+    height:150px;
+    border:1px solid red;*/
+    margin-right:10px;
+    float:left;
+}
+.box {
+    display: block;
+    margin: 10px 0px 10px;/*
+    padding: 15px 20px;*/
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out 0s;
+    font-family: 'source_sans_proregular';
+    font-size: 11pt;
+    font-weight: normal;
+    color: #7A6666;
+    text-align: justify;
+    height:110px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.box h3 {
+    font-size: 20px;
+    color: #FFF;
+    font-family: 'source_sans_probold';
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.txt_right {
+    text-align: right;
+}
+h1, h2, h3 {
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+    color: #454445;
+    font-family: 'ralewaymedium';
+}
+
+element {
+}/*
+.row > * {
+    padding: 0px 0px 0px 2em;
+}
+.\31 2u, .\31 2u\$ {
+    width: 100%;
+    clear: none;
+    margin-left: 0px;
+}*/
+
+.box h4 {
+    font-size: 10px;
+    color: #FFF;
+    font-family: 'source_sans_probold';
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-top: 20px;
+}
+
+
+
+/*
+
+.row > * {
+    padding: 0px 0px 0px 2em;
+}
+.\33 u, .\33 u\$ {
+    width: 25%;
+    clear: none;
+    margin-left: 0px;
+}*/
+
+
+
+
+
+
+
+/*
+.row:after, .row:before {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0px;
+}
+.row:after, .row:before {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0px;
+}*/
+element {
+}/*
+.row {
+    border-bottom: 1px solid transparent;
+}*/
+
+
+
+
+.hg_ico_box {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.fa-user-o:before {
+    content: url(/HBIMS/hisglobal/images/user1.png) ;    
+}
+.fa-bill-o:before {
+    content: url(/HBIMS/hisglobal/images/sum.png) ;    
+}
+.fa-amount-o:before {
+    content: url(/HBIMS/hisglobal/images/receipt.png) ;    
+}
+.fa-refund-o:before {
+    content: url(/HBIMS/hisglobal/images/refund.png) ;    
+}
+.fa-net-o:before {
+    content: url(/HBIMS/hisglobal/images/netamount.png) ;    
+}
+element {
+}
+.maroonbg i {
+    border-color: #870413;
+    color: #870413;
+}
+.hg_ico_box i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid;
+    font-size: 42px;
+    text-align: center;
+    line-height: 62px;
+}
+.maroonbg i {
+    border-color: #870413;
+    color: #870413;
+}
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    -moz-font-feature-settings: normal;
+    -moz-font-language-override: normal;
+    font-size: inherit;
+    text-rendering: auto;
+    transform: translate(0px, 0px);
+}
+
+.style_x:nth-child(2n) {
+    background-color: #C1C8C8;
+}
+.style_x {
+    font-family: Arial;
+}
+.important { 
+	//background-color: #D8BFD8; 
+	color: red;
+	}
+	.noneimportant { 
+	//background-color: #D8BFD8; 
+	color: black;
+	}
+.sorta-important { background-color:lightyellow; }
+.icon-imageVerySmallIcon 
+{
+    height: 35px;
+    width: 35px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+
+
+
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v11/yQiAaD56cjx1AooMTSghGfY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v11/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(https://fonts.gstatic.com/s/raleway/v11/STBOO2waD2LpX45SXYjQBSEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(https://fonts.gstatic.com/s/raleway/v11/xkvoNo9fC8O2RDydKj12b_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* for control field of table's TD. It contains font type, font color, font size and background color */
+TD.WALLETCONTROL {
+	/*background-Color:#F1ECE2;*/
+	background-Color:#f1f6f6;
+	height:16;
+	/*color:#333333;*/
+	color:#013157;
+	text-align:left;
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	font-style: normal;
+}
+/* for label field of table's TD. It contains font type, font color, font size and background color */
+TD.WALLETLABEL {
+	/*background-color:#FFEBD5;*/
+	/*background-color:#e0ebeb; */
+	background-Color:#f1f6f6;
+	height:16;
+	font-family: 'Raleway', sans-serif;
+	font-size:11px;
+	/*color:#333333;*/
+	color:#013157;
+	text-align:right;
+	font-weight: bold;
+	background-image: url('none');
+}
+
+/* to show header. It contains font type, font color, font size and background color */
+TR.WALLETHEADER {
+	/*background-image: url('../../hisglobal/images/LightStrip.png');
+	background-Color:#FFB365;*/
+	background: #1277b5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #135d8c 0%, #1277b5 0%, #1277b5 32%, #135d8c 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#135d8c), color-stop(0%,#1277b5), color-stop(32%,#1277b5), color-stop(100%,#135d8c)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #135d8c 0%,#1277b5 0%,#1277b5 32%,#135d8c 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1277b5', endColorstr='#135d8c',GradientType=0 ); /* IE6-9 */
+	
+	height:23px;
+	/*color: #005B88;*/
+	color: white;
+	text-transform: capitalize;
+	font-family: 'Raleway', sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+.editor-texts {
+    width: 100%;
+    height: 100%;
+    /*border: 0;*/
+    margin: 0;
+    /*background: transparent;*/
+    outline: 0;
+    padding: 0;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 8pt;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.editor-texts1 {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    margin: 0px;
+    /*background: transparent;*/
+    outline: 0px;
+    padding: 0px;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 8pt;
+    white-space: nowrap;
+    cursor: pointer;
+    
+}
+.editor-texts-strike {
+    width: 100%;
+    height: 100%;
+    /*border: 0;*/
+    margin: 0;
+    /*background: transparent;*/
+    outline: 0;
+    padding: 0;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 8pt;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
+.editor-textsmall {
+    width: 11%;
+    height: 100%;
+    /*border: 0;*/
+    margin: 0;
+    /*background: transparent;*/
+    outline: 0;
+    padding: 0;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 8pt;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.editor-textsmallYr {
+    width: 63%;
+    height: 100%;
+    /*border: 0;*/
+    margin: 0;
+    /*background: transparent;*/
+    outline: 0;
+    padding: 0;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 8pt;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.allTrfTable {
+	border: 1px solid transparent;
+	border-right: 1px dotted silver;
+	border-bottom-color: silver;
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	z-index: 1;
+	padding: 1px 2px 2px 1px;
+	margin: 0;
+	white-space: nowrap;
+	cursor: default;
+	background: #e6e6e6 ;
+}
+ .scroll-table{
+       height: 220px;
+       overflow: auto;
+    }

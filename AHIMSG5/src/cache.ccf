@@ -1,0 +1,16 @@
+jcs.default=
+jcs.default.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes
+jcs.default.cacheattributes.MaxObjects=4000
+jcs.default.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache
+
+
+jcs.region.CacheLaboratoryTestVO=
+jcs.region.CacheLaboratoryTestVO.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes
+jcs.region.CacheLaboratoryTestVO.cacheattributes.MaxObjects=4000
+jcs.region.CacheLaboratoryTestVO.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache
+jcs.region.CacheLaboratoryTestVO.elementattributes.IsEternal=false
+jcs.region.CacheLaboratoryTestVO.elementattributes.MaxLifeSeconds=64800
+jcs.region.CacheLaboratoryTestVO.elementattributes.IdleTime=1800
+jcs.region.CacheLaboratoryTestVO.elementattributes.IsSpool=true
+jcs.region.CacheLaboratoryTestVO.elementattributes.IsRemote=true
+jcs.region.CacheLaboratoryTestVO.elementattributes.IsLateral=true

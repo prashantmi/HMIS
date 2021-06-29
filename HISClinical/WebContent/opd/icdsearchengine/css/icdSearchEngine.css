@@ -1,0 +1,466 @@
+input {
+	vertical-align: middle;		 
+	}
+	
+select {
+	vertical-align: middle;		 
+	}
+
+textarea {
+	vertical-align: middle;		 
+	}
+
+img {
+	cursor: pointer;
+	vertical-align: middle;		 
+	}
+	
+a {
+	cursor: pointer;	
+	}
+	
+td {
+	vertical-align: middle;		 
+	}
+
+.engineHeader {
+	color: #005B88;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 15px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+    white-space: nowrap;
+}
+
+.detailHeader {
+	color: #005B88;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+    white-space: nowrap;
+}
+
+#idOptions {
+	background-color: #FFF0DA;
+	}
+	
+.activeTabLeft {
+	cursor: auto;
+	background-color: #FF9900;
+	background-image: url("/HISClinical/hisglobal/images/style01_4_o_left.gif");
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 13px;
+	height: 22px;
+}
+
+.activeTabMid {
+	cursor: auto;
+	background-color: #FF9900;
+	background-image: url("/HISClinical/hisglobal/images/style01_4_o_back.gif");
+	background-position: left;
+	background-repeat: repeat-x;
+	height: 22px;
+	
+	color: #005B88;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+}
+
+.activeTabRight {
+	cursor: auto;
+	background-color: #FF9900;
+	background-image: url("/HISClinical/hisglobal/images/style01_4_o_right.gif");
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 13px;
+	height: 22px;
+}
+
+.inactiveTabLeft {
+	cursor: pointer;
+	background-color: #888888;
+	background-image: url("/HISClinical/hisglobal/images/TabDisLeft.gif");
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 13px;
+	height: 22px;
+}
+
+.inactiveTabMid {
+	cursor: pointer;
+	background-color: #888888;
+	background-image: url("/HISClinical/hisglobal/images/TabDisMid.gif");
+	background-position: left;
+	background-repeat: repeat-x;
+	height: 22px;
+	
+	color: #555555;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: 14pt;
+	font-weight: bold;
+	font-variant: normal;
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+}
+
+.inactiveTabRight {
+	cursor: pointer;
+	background-color: #888888;
+	background-image: url("/HISClinical/hisglobal/images/TabDisRight.gif");
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 13px;
+	height: 22px;
+}
+
+#ResHeader {
+	/*position: fixed;*/
+	}
+
+#ResDetailList {
+	table-layout: fixed;
+	/*padding-top: 20px;*/
+	}
+
+tr.ResHeading {
+	
+	background-color:#FFFFFF;
+	height: 15px;
+	text-align:center;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;		
+	/*color:#990000;*/
+}
+
+tr.ResHeading td {
+	border-top:outset black 2px; 
+	border-bottom:inset black 2px;	
+	line-height: 14pt;
+	height: 15px;
+}
+
+.colorBlock_0, .colorBlock_1, .colorBlock_3 {
+	padding-left: 15px;
+	border: solid 1px #000000; 
+	}
+
+
+tr.ResRowVol1_0, .colorBlock_0 {	
+	height: 15px;
+	background-color:#E0EBEB;//FFEBD5;/*FFCCCC;*/
+	line-height: 14pt;
+	}
+
+tr.ResRowVol1_1, .colorBlock_1 {
+	height: 15px;
+	background-color:#99CCFF;
+	line-height: 14pt;
+	}
+
+tr.ResRowVol1_3, .colorBlock_3 {
+	height: 15px;
+	background-color:#9999FF;
+	line-height: 14pt;
+	}
+
+tr.ResRowVol1_0 td, tr.ResRowVol1_1 td, tr.ResRowVol1_3 td {
+	height: 15px;
+	line-height: 14pt;
+	padding-left: 10px;
+	}
+
+td.label  {
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;		
+	/*color:#990000;*/
+}
+
+td.hyperlink  {
+	font-family: "Verdana";
+	font-size: 12px;
+	font-weight: bold;
+}
+
+td.value  {
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;		
+	/*color:#990000;*/
+}
+
+
+
+.textboxNormal {
+	color: black;
+	text-decoration: none;
+	text-align:left;
+	font-family: Verdana;
+	font-weight: none;
+	font-size: 11;
+	width: 115px;
+	height: 20px;
+	}
+ 
+.textboxDisName {
+	color: black;
+	text-decoration: none;
+	text-align:left;
+	font-family: Verdana;
+	font-weight: none;
+	font-size: 12;
+	width: 180px;
+	height: 22px;
+	}
+
+.textboxShort {
+	color: black;
+	text-decoration: none;
+	text-align:left;
+	font-family: Verdana;
+	font-weight: none;
+	font-size: 12;
+	width: 50px;
+	height: 22px;
+	}
+	
+.textboxNonSize {
+	color: black;
+	text-decoration: none;
+	text-align:left;
+	font-family: Verdana;
+	font-weight: none;
+	font-size: 12;
+	height: 22px;
+	}
+
+.comboNormal {
+	color: black;
+	text-decoration: none;
+	text-align:left;
+	font-family: Verdana;
+	font-weight: none;
+	font-size: 11;
+	width: 115px;
+	height: 20px;
+	}
+
+.comboShort {
+	color: black;
+	text-decoration: none;
+	text-align:left;
+	font-family: Verdana;
+	font-weight: none;
+	font-size: 11;
+	width: 50px;
+	height: 20px;
+	}
+
+
+.anchorNormal {
+	text-decoration: underline;
+	}
+	
+.anchorFocus {
+	color: #990000;
+	text-decoration: underline;
+	}
+
+#tblDetail {
+	}
+
+#tblDetail td {
+	line-height: 14pt;		
+	height:15px;
+}
+
+#tblDetail td.dtlhead {
+	background-color:#E0EBEB;
+	text-align:right;
+	vertical-align: top;
+	padding-right: 5px;
+	color:#990000;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	white-space: nowrap;		
+	}
+
+#tblDetail td.dtlVal {
+	background-color:#F1ECE2;
+	text-align:left;
+	vertical-align: top;
+	padding-left: 5px;
+	color:#004400;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;		
+	}
+
+
+.NextPrev {
+	color:#000066;
+	text-align:right;
+	padding-right: 5px;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;		
+	}
+
+.nofound {
+	background-color:#F1ECE2;
+	line-height: 14pt;		
+	height:15px;
+	text-align:center;
+	vertical-align: middle;
+	color:#FF0000;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;		
+	}
+
+#tblFooter {
+	background-color:#E0EBEB;
+	line-height: 14pt;		
+	height:15px;
+	}
+
+#tblLoading td{
+	vertical-align: middle;
+	text-align: center;
+	}
+	
+#imgLoading {
+	cursor: auto;
+	vertical-align: middle;
+	text-align: center;
+	position: fixed;
+	}
+	
+#tblSearching {
+	}
+
+#tblSearching td {
+	line-height: 14pt;		
+	height:15px;
+	}
+	
+#tblSearching .srchHead {
+	background-color:#E0EBEB;
+	text-align:right;
+	vertical-align: middle;
+	padding-right: 5px;
+	color:#990000;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	white-space: nowrap;		
+	}
+	
+#tblSearching .srchVal {
+	background-color:#E0EBEB;
+	text-align:left;
+	vertical-align: top;
+	padding-left: 5px;
+	color:#004400;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;		
+	}
+
+td.errorMsg {
+	background-color:#E0EBEB;
+	text-align:left;
+	vertical-align: middle;
+	padding-left: 25px;
+	color:#FF0000;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	white-space: nowrap;		
+	}
+
+#idSeeTerm {
+	color:#00FF00;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: italic;
+	font-weight: normal;
+	font-variant: normal;
+	}
+
+#idSeeAlsoTerm {
+	color:#0000FF;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-style: italic;
+	font-weight: normal;
+	font-variant: normal;
+	}
+
+
+.highlight {
+		line-height: 16px;
+		font-weight: bold;
+		font-family: arial;
+		font-size: 11px;
+		padding-top: 1px;
+		vertical-align: middle;
+		padding-left: 6px;
+   		background:#E0EBEB;
+   		border-style:solid;
+		border-width:1px;
+   		}
+.dehighlite {
+	font-family: verdana, arial, sans-serif;
+    font-size:12px;
+    text-decoration: none;
+    color: black;
+    background-color: #E0EBEB;
+    white-space: nowrap;
+    background:#E0EBEB;
+    border-style:solid;
+	border-width:1px;
+   		}

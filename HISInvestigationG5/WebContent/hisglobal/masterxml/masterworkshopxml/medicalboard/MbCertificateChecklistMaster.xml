@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='MbCertificateChecklistMaster'>
+		<common-values>
+			<master-name>MbCertificateChecklistMaster</master-name>
+			<master-title>Certificate Type Wise Checklist Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Certificate Type Wise Checklist Master</tableHeading> 
+				<list-table>HMBT_CERTIFICATE_CHECKLIST_MST</list-table>
+				<controls>			     
+				   <control type="combo" index="0">
+			       <label>Certificate Type</label>
+			         <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HMBSTR_CERTIFICATE_TYPE_NAME)</text-field>
+									<value-field>A.HMBNUM_CERTIFICATE_TYPE_ID</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HMBT_CERTIFICATE_TYPE_MST</table>	
+								</tables>
+								<condition>
+								    <general> 
+									A.GNUM_HOSPITAL_CODE=101 and A.GNUM_ISVALID=1 ORDER BY INITCAP(A.HMBSTR_CERTIFICATE_TYPE_NAME)
+									</general>
+							
+								</condition>
+							</dynamic>					
+						</data>
+						<default>-1</default>
+					</control>
+				</controls>
+				<columns>
+					 <column>CertificateType</column>
+					 <column>Checklist</column>
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(C.HMBSTR_CERTIFICATE_TYPE_NAME) </field>
+						<field>INITCAP(B.HMBSTR_CHECKLIST) </field>
+						</fields>
+					<primaryKey>
+						<field>A.HMBNUM_CERTIFICATE_TYPE_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HMBNUM_CHECKLIST_ID</field>
+						<field>A.HMBNUM_SNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HMBT_CERTIFICATE_CHECKLIST_MST</table>
+						<table alias='B'>HMBT_CHECKLIST_MST</table>
+						<table alias='C'>HMBT_CERTIFICATE_TYPE_MST</table>
+					</tables>
+					<condition>	
+					 		<general>
+					 		A.GNUM_HOSPITAL_CODE=101 and 
+					 		</general>				 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                           <!-- <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code> -->
+                            <orderby> and A.HMBNUM_CERTIFICATE_TYPE_ID=C.HMBNUM_CERTIFICATE_TYPE_ID
+                              and A.HMBNUM_CHECKLIST_ID=B.HMBNUM_CHECKLIST_ID
+                              AND B.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE
+							  AND B.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE
+							  AND B.GNUM_ISVALID=A.GNUM_ISVALID
+							  AND B.GNUM_ISVALID=C.GNUM_ISVALID	
+                              order by INITCAP(C.HMBSTR_CERTIFICATE_TYPE_NAME)</orderby>
+                             <dependent>
+								<clause> A.HMBNUM_CERTIFICATE_TYPE_ID =  #0</clause>
+							</dependent> 
+                              
+                    </condition>
+				</query-detail>				
+		</list-page>
+	<add-page>
+			<static-page>/medicalboard/certificateChecklistMaster.cnt</static-page>
+		</add-page>
+		
+		<modify-page>
+			<static-page>/medicalboard/certificateChecklistMaster.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

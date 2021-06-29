@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='RoleMaster'>
+        <common-values>
+           <master-name>RoleMaster</master-name>
+           <master-title>Role Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Role Master</tableHeading>
+           <list-table>HMRT_ROLE_MST</list-table>
+           
+           <columns>
+              <column>Role Name</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HMRSTR_ROLE_NAME)</field>
+	    		 
+			  </fields>
+				<primaryKey>
+					<field>A.HMRNUM_ROLE_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HMRNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HMRT_ROLE_MST</table>
+				</tables>
+				<condition>					 
+					<general> 
+					A.GNUM_HOSPITAL_CODE =100 and
+					</general>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+        			
+					<orderby> ORDER BY(A.HMRSTR_ROLE_NAME) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/mortuary/master/MorturyRoleMasterMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mortuary/master/MorturyRoleMasterMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config
+  PUBLIC "-//Apache Software Foundation//DTD Struts
+  Configuration 1.1//EN"
+  "http://jakarta.apache.org/struts/dtds/struts-
+  config_1_1.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="ServiceAreaServiceAcceptanceFB" type="servicearea.transactions.controller.fb.ServiceAreaServiceAcceptanceFB" />
+		<form-bean name="ServiceAreaProcessEntryFB" type="servicearea.transactions.controller.fb.ServiceAreaProcessEntryFB" />
+		<form-bean name="OfflineServiceRequisitionFB" type="servicearea.transactions.controller.fb.OfflineServiceRequisitionFB" />
+		<form-bean name="ServiceAreaRequisitionStatusFB" type="servicearea.transactions.controller.fb.ServiceAreaRequisitionStatusFB" />
+		<form-bean name="ServiceAreaOfflineServiceRequisitionFB" type="servicearea.transactions.controller.fb.ServiceAreaOfflineServiceRequisitionFB" />
+		<form-bean name="ServiceAreaRescheduleCancelPatientScheduleFB" type="servicearea.transactions.controller.fb.ServiceAreaRescheduleCancelPatientScheduleFB" />
+		<form-bean name="ServiceAreaDuplicateCardFB" type="servicearea.transactions.controller.fb.ServiceAreaDuplicateCardFB" />
+		<form-bean name="ServiceAreaCannedFilePopupFB" type="servicearea.transactions.controller.fb.ServiceAreaCannedFilePopupFB"/>
+		<form-bean name="ServiceAreaPatientDetailFB" type="servicearea.transactions.controller.fb.ServiceAreaPatientDetailFB"/>
+		<form-bean name="ServiceCancellationFB" type="servicearea.transactions.controller.fb.ServiceCancellationFB"/>
+		<form-bean name="ServiceProvidedPatientDtlFB" type="servicearea.transactions.controller.fb.ServiceProvidedPatientDtlFB" />
+		<form-bean name="ItemConsumptionEntryFB" type="servicearea.transactions.controller.fb.ItemConsumptionEntryFB" />
+	</form-beans>	
+	
+	<action-mappings>		
+		<action path="/ServiceAreaServiceAcceptanceACTION" 
+				type="servicearea.transactions.controller.action.ServiceAreaServiceAcceptanceACT"
+				name="ServiceAreaServiceAcceptanceFB"				
+				parameter="hmode"				
+				validate ="false">				
+			<forward name="SHOWSERVICEAREASERVICEACCEPTANCEPAGE" path="/transactions/ServiceAreaServiceAcceptance.jsp" />
+			<forward name="PRINT" path="/transactions/PrintSchedule.jsp" />
+			<forward name="REMARKSPOPUP" path="/transactions/RemarksPopUp.jsp" />
+		</action>	
+		
+		 <action path="/ServiceAreaProcessEntry" 
+				type="servicearea.transactions.controller.action.ServiceAreaProcessEntryACT"
+				name="ServiceAreaProcessEntryFB"				
+				parameter="hmode"				
+				validate ="false">				
+			<forward name="SERVICE_AREA_PROCESS_ENTRY_PAGE" path="/transactions/ServiceAreaProcessEntry.jsp" />
+			<forward name="RESULTENTRYPAGE" path="/transactions/ServiceAreaProcessEntryTemplate.jsp" />
+			<forward name="VIEWRESULTENTRYPAGE" path="/transactions/ServiceAreaProcessEntryTemplateView.jsp" />
+			<forward name="VIEWTEMPLATERESULTENTRYPAGE" path="/transactions/ServiceAreaProcessEntryViewTemplate.jsp" />
+		</action>		
+		
+		<action path="/ServiceAreaRequisitionStatusACT" 
+				type="servicearea.transactions.controller.action.ServiceAreaRequisitionStatusACT" name="ServiceAreaRequisitionStatusFB"				
+				parameter="hmode"				
+				validate ="false">				
+			<forward name="REQUISITIONSTATUSPAGE" path="/transactions/ServiceAreaRequisitionStatus.jsp" />
+		</action>	
+		<action path="/ServiceAreaOfflineServiceRequisitionACT" 
+				type="servicearea.transactions.controller.action.ServiceAreaOfflineServiceRequisitionACT" name="ServiceAreaOfflineServiceRequisitionFB"				
+				parameter="hmode"				
+				validate ="false">				
+			<forward name="REQUISITIONPAGE" path="/transactions/OfflineServiceRequisition.jsp" />
+			<forward name="ACCEPTANCEPAGE" path="/transactions/ServiceAreaServiceAcceptanceOffline.jsp" />
+			<forward name="PRINT" path="/transactions/PrintSchedule.jsp" />
+			<forward name="ACCEPTANCEPAGEOFFLINE" path="/ServiceAreaServiceAcceptanceACTION.cnt?hmode=SHOWREQLIST" />
+		</action>
+		<action path="/DuplicateCard" 
+				type="servicearea.transactions.controller.action.ServiceAreaDuplicateCardACT" name="ServiceAreaDuplicateCardFB"				
+				parameter="hmode"				
+				validate ="false">				
+			<forward name="CARDGENERATIONPAGE" path="/transactions/ServiceAreaDuplicateCard.jsp" />
+			<forward name="ACCEPTANCEPAGE" path="/transactions/ServiceAreaDuplicateCard.jsp" />
+			<forward name="PRINT" path="/transactions/PrintSchedule.jsp" />
+		</action>
+		<action  path="/patientDetail"
+		    type="registration.controller.action.PatientDetailACTION"
+		    name="patientDetailFB"
+		    validate="false"
+		    scope="request"
+		    input="/registration/transaction/patientDetailsTile.jsp">
+		 	<forward name="SAME" path="/registration/transaction/patientDetailsTile.jsp" />  	
+		</action> 
+		<action  path="/registration/searchByNamePopup"
+    		type="registration.controller.action.SearchByNameACTION"
+    		name="SearchByNameFB"
+    		validate="false"
+    		parameter="hmode"
+    		scope="request"
+    		input="/registration/transaction/searchByNameTile.jsp">    
+ 			<forward name="NEW" path="/registration/transaction/searchByNameTile.jsp"/> 
+ 			<forward name="SAME" path="/registration/transaction/searchByNameTile.jsp"/>
+ 			<forward name="CANCEL" path="/startup/initPage.jsp" redirect="true"/> 
+		</action>
+
+	 <action name="*PatientSearch"  method="{1}" class="registration.transactions.controller.action.PatientSearchACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="excludeMethods">*</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/patientSearch.jsp</result>
+	 </action>
+	 
+		<action path="/ServiceAreaRescheduleCancelPatientScheduleACT" 
+				type="servicearea.transactions.controller.action.ServiceAreaRescheduleCancelPatientScheduleACT"
+				name="ServiceAreaRescheduleCancelPatientScheduleFB"				
+				parameter="hmode"				
+				validate ="false">				
+			<forward name="RESCHEDULEPAGE" path="/transactions/RescheduleCancelPatientSchedule.jsp" />
+			<forward name="PRINT" path="/transactions/PrintSchedule.jsp" />
+		</action>
+		
+		<action path="/serviceAreaPatientDetail"
+				type="servicearea.transactions.controller.action.ServiceAreaPatientDetailACTION"
+				name="ServiceAreaPatientDetailFB"
+				validate="false"
+				scope="request"
+				input="/transactions/ServiceAreaPatientDetailsTile.jsp">
+			<forward name="SAME" path="/transactions/ServiceAreaPatientDetailsTile.jsp" />
+		</action>
+
+		<action  path="/transactions/cannedFilePOPUP"
+				    type="servicearea.transactions.controller.action.ServiceAreaCannedFilePopupACT"
+				    name="ServiceAreaCannedFilePopupFB"
+				    validate="false"
+				    scope="request"
+				    parameter="hmode"
+				    input="/transactions/ServiceAreaCannedFilePOPUP.jsp">
+				 	<forward name="GETCANNEDFILE" path="/transactions/ServiceAreaCannedFileMacroPOPUP.jsp"/>
+				 	<forward name="GETMACRO" path="/transactions/ServiceAreaCannedFileMacroPOPUP.jsp"/> 	
+ 		</action>
+	 	<action path="/ServiceCancellationACT" 
+				type="servicearea.transactions.controller.action.ServiceCancellationACT"
+				name="ServiceCancellationFB"				
+				parameter="hmode"				
+				validate ="false">				
+			<forward name="SERVICE_CANCELLATION_PAGE" path="/transactions/ServiceCancellation.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		<action path="/ServiceProvidedPatientDtl" 
+				type="servicearea.transactions.controller.action.ServiceProvidedPatientDtlACT"
+				name="ServiceProvidedPatientDtlFB"				
+				parameter="hmode"				
+				validate ="false">				
+			<forward name="SERVICE_AREA_PROCESS_ENTRY_PAGE" path="/transactions/ServiceProvidedPatientDtl.jsp" />
+			<forward name="VIEWRESULTENTRYPAGE" path="/transactions/ServiceProvidedPatientDtlTemplate.jsp" />
+			<forward name="VIEWTEMPLATERESULTENTRYPAGE" path="/transactions/ServiceProvidedPatientDtlView.jsp" />
+			<forward name="PRINT" path="/transactions/ServiceProvidedDtlPrint.jsp" />
+		</action>	
+		
+		<action path="/ItemConsumptionEntry" 
+				type="servicearea.transactions.controller.action.ItemConsumptionEntryACT"
+				name="ItemConsumptionEntryFB"				
+				parameter="hmode"				
+				validate ="false">				
+			<forward name="ITEM_CONSUMPTION_ENTRY" path="/transactions/ItemConsumptionEntry.jsp" />
+			<forward name="SHOWCONSUMABLE" path="/transactions/ServiceAreaWiseItemConsumptionEntry.jsp" />
+			<forward name="SHOWCONSUMABLEPATIENTWISE" path="/transactions/PatientWiseItemConsumptionEntry.jsp" />
+			<forward name="PRINTCONSUMPTIONREPORT" path="/transactions/ServiceAreaWiseItemConsumptionEntryPrint.jsp" />
+			<forward name="PRINTCONSUMPTIONREPORTPATWISE" path="/transactions/PatientWiseItemConsumptionEntryPrint.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+	</action-mappings>	
+
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/RegistrationDesk-tiles-defs.xml,/WEB-INF/ServiceAreaDesk-tiles-defs.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+	</plug-in> 	
+		
+</struts-config>
+

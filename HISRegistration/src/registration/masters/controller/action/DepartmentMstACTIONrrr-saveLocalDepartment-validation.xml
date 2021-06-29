@@ -1,0 +1,37 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+<field name="deptModel.strDeptCode">
+    <field-validator type="regex">
+    <param name="expression">[1-9][0-9][0-9]</param>
+       <message>Global Department Is Required.</message>
+ </field-validator>
+ </field>
+ <field name="deptModel.strDeptType">
+    <field-validator type="regex">
+    <param name="expression">[0-9]</param>
+       <message>Department Type Is Required.</message>
+    </field-validator>
+</field>
+ <field name="deptModel.strDeptName">
+    <field-validator type="requiredstring">
+       <message>Department Name Is Required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">50</param>
+                    <param name="trim">true</param>
+                    <message>Department Length Cannot Be Greater Than 50 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z]+[ a-zA-Z]*</param>
+       	<message>Department Name is Required. It Excepts Alphabets With Space Only</message>
+    </field-validator>
+</field>
+<field name="deptModel.strDeptLocCode">
+    <field-validator type="regex">
+    <param name="expression">[1-9][0-9][0-9][0-9]</param>
+       <message>Department Location Is Required.</message>
+    </field-validator>
+</field>
+</validators>

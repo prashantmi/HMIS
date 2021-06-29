@@ -1,0 +1,361 @@
+package hisglobal.persistence;
+
+import hisglobal.utility.Entry;
+
+import java.sql.Statement;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.util.Map;
+import java.util.Set;
+import java.util.Iterator;
+import java.sql.PreparedStatement;
+import java.sql.Connection;
+
+public class HelperMethodsDAO
+{
+	
+	/**
+	 * used for error messages
+	 */
+	private String errMsg = "";
+	public static ResourceBundle loadPropertiesFile(String _fileName) throws Exception
+	{
+		//System.out.println("fileName::::::::::::::::::::::::::::");
+		String BUNDLE_NAME = _fileName;
+		System.out.println("fileName" + _fileName);
+		ResourceBundle rb = ResourceBundle.getBundle(BUNDLE_NAME);
+		try
+		{
+
+		}
+		catch (MissingResourceException e)
+		{
+			//  return '!' +"database"+ '!';
+		}
+
+		
+		return rb;
+	}
+
+	public static List getAlOfEntryObjects(ResultSet rs) throws SQLException
+	{
+		rs.beforeFirst();
+		List alRecord = new ArrayList();
+		ResultSetMetaData rsmd = rs.getMetaData();
+		rs.beforeFirst();
+		//System.out.println("hi...." + rsmd.getColumnCount());
+		if (rsmd.getColumnCount() > 1)
+		{
+			while (rs.next())
+			{
+				Entry objEntry = new Entry();
+				objEntry.setLabel(rs.getString(2));
+				objEntry.setValue(rs.getString(1));
+				//System.out.println("Entry: " + objEntry);
+				alRecord.add(objEntry);
+			}
+		}
+		else
+		{
+			while (rs.next())
+			{
+				Entry objEntry = new Entry();
+				objEntry.setLabel(rs.getString(1));
+				objEntry.setValue(rs.getString(1));
+				//System.out.println("Entry: " + objEntry);
+				alRecord.add(objEntry);
+			}
+		}
+		return alRecord;
+	}
+	
+	public static List getAlOfEntryObjectsInvLabs(ResultSet rs) throws SQLException
+	{
+		rs.beforeFirst();
+		List alRecord = new ArrayList();
+		ResultSetMetaData rsmd = rs.getMetaData();
+		rs.beforeFirst();
+		//System.out.println("hi...." + rsmd.getColumnCount());
+		if (rsmd.getColumnCount() > 1)
+		{
+			while (rs.next())
+			{
+				Entry objEntry = new Entry();
+				objEntry.setLabel(rs.getString(2));
+				objEntry.setValue(rs.getString(1)+"#"+rs.getString(3));
+				//objEntry.setValue(rs.getString(1));
+				//System.out.println("Entry: " + objEntry);
+				alRecord.add(objEntry);
+			}
+		}
+		else
+		{
+			while (rs.next())
+			{
+				Entry objEntry = new Entry();
+				objEntry.setLabel(rs.getString(1));
+				objEntry.setValue(rs.getString(1));
+				//System.out.println("Entry: " + objEntry);
+				alRecord.add(objEntry);
+			}
+		}
+		return alRecord;
+	}
+	
+	
+
+	public static List getAlOfEntryObjectsCallable(ResultSet rs) throws SQLException
+	{
+		// rs.beforeFirst();
+		List alRecord = new ArrayList();
+		ResultSetMetaData rsmd = rs.getMetaData();
+		//  rs.beforeFirst();
+		//System.out.println("hi...." + rsmd.getColumnCount());
+		if (rsmd.getColumnCount() > 1)
+		{
+			while (rs.next())
+			{
+				Entry objEntry = new Entry();
+				objEntry.setLabel(rs.getString(2));
+				objEntry.setValue(rs.getString(1));
+				//System.out.println("Entry: " + objEntry);
+				alRecord.add(objEntry);
+			}
+		}
+		else
+		{
+			while (rs.next())
+			{
+				Entry objEntry = new Entry();
+				objEntry.setLabel(rs.getString(1));
+				objEntry.setValue(rs.getString(1));
+				//System.out.println("Entry: " + objEntry);
+				alRecord.add(objEntry);
+			}
+		}
+		return alRecord;
+	}
+
+	public static List getAlOfResultSet(ResultSet rs) throws SQLException
+	{
+		rs.beforeFirst();
+		List alRecord = new ArrayList();
+		ResultSetMetaData rsmd = rs.getMetaData();
+		rs.beforeFirst();
+		//System.out.println("hi...." + rsmd.getColumnCount());
+		while (rs.next())
+		{
+			for (int i = 1; i <= rsmd.getColumnCount(); i++)
+				alRecord.add(rs.getString(i));
+			/*Entry objEntry=new Entry();
+			objEntry.setLabel(rs.getString(2));
+			objEntry.setValue(rs.getString(1));
+			System.out.println("Entry: "+objEntry);
+			alRecord.add(objEntry);*/
+		}
+		return alRecord;
+	}
+
+	public static List getAllOfResultSetAsListColumnWise(ResultSet rs) throws SQLException
+	{
+		rs.beforeFirst();
+		List outerList = new ArrayList();
+		ResultSetMetaData rsmd = rs.getMetaData();
+		rs.beforeFirst();
+		//System.out.println("hi...." + rsmd.getColumnCount());
+		int col = 0;
+		while (rs.next())
+		{
+			List alRecord = new ArrayList();
+			for (int i = 1; i <= rsmd.getColumnCount(); i++)
+				alRecord.add(rs.getString(i));
+			outerList.add(col, alRecord);
+			col++;
+			/*Entry objEntry=new Entry();
+			objEntry.setLabel(rs.getString(2));
+			objEntry.setValue(rs.getString(1));
+			System.out.println("Entry: "+objEntry);
+			alRecord.add(objEntry);*/
+		}
+		return outerList;
+	}
+
+	public static String getQuery(String _filename, String _queryKey) throws Exception
+	{
+		ResourceBundle rb = loadPropertiesFile(_filename);
+		System.out.println("_queryKey" + _queryKey);
+		String query = rb.getString(_queryKey);
+		//System.out.println("query in getQuery(String _filename,String _queryKey):: " + query);
+		return query;
+	}
+
+	public static ResultSet executeQuery(Connection _conn, String _query) throws Exception
+	{
+		ResultSet rs = null;
+		Statement st = null;
+		System.out.println("Query :: "+_query);
+		
+		st = _conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		rs = st.executeQuery(_query);
+		
+		//System.out.println("inside execute() of class HelperMethodsDAO");
+		return rs;
+	}
+
+	public static ResultSet executeQuery(Connection _conn, String _query, Map _populateMap) throws Exception
+	{
+		ResultSet rs = null;
+		//rs.TYPE_SCROLL_SENSITIVE;
+		PreparedStatement pst = null;
+		pst = _conn.prepareStatement(_query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		//System.out.println("inside executeQuery() of class HelperMethodsDAO");
+		//System.out.println("size of map::" + _populateMap.size());
+		StringBuffer stb = new StringBuffer(_query);
+		Set set = _populateMap.keySet();
+		//System.out.println("sd2");
+		Iterator itr = set.iterator();
+		//System.out.println("ww2");
+		System.out.println("size of map::" + _populateMap.size());
+		java.util.ArrayList al = new java.util.ArrayList();
+		for (int i = 0; i < set.size(); i++)
+		{
+			al.add(null);
+		}
+		//int i=1;
+		while (itr.hasNext())
+		{
+			//System.out.println("SDSDsdd");
+			Integer objKey = (Integer) itr.next();
+			//objKey.getClass();
+			//System.out.println("SDSDsdd");
+			String val = (String) _populateMap.get(objKey);
+			//System.out.println("SDSDsdd1");
+			//System.out.println("[" + objKey.intValue() + ", " + val + "]");
+
+			if(val==null || val.trim().equals("")) // Added By Pragya
+				pst.setNull(objKey.intValue(), Types.NULL);
+			else
+				pst.setString(objKey.intValue(), val);
+			//pst.setString(objKey.intValue(), val);
+			al.set(objKey.intValue() - 1, val); //<><<<<<<<
+			//i++;	
+		}
+
+		String[] value = new String[]
+		{};
+		value = (String[]) al.toArray(value);
+		for (int i = 0; i < value.length; i++)
+		{
+			//System.out.println("value["+i+"]"+value[i]);
+			int x = stb.indexOf("?");
+			if (value[i] == null) stb.replace(x, x + 1, "null");
+			else if (value[i].equals("")) stb.replace(x, x + 1, "\' \'");
+			else stb.replace(x, x + 1, value[i]);
+
+		}
+		System.out.println("stb....  " + stb);
+
+		//System.out.println("al:   +   " + al); //<><<<<<<
+		//System.out.println("after setting values for prepare st. in class helpermethodsDAo");
+		try{
+		rs = pst.executeQuery();
+		}catch(Exception e){
+		e.printStackTrace();
+		}
+		//System.out.println("after executing query");
+		return rs;
+	}
+
+	public static int excecuteUpdate(Connection _conn, String _query, Map _populateMap) throws SQLException
+	{
+		PreparedStatement pst = null;
+		//System.out.println("_conn:   +   " + _conn);
+		System.out.println("_query:   +   " + _query);
+		//System.out.println("_populateMap:   +   " + _populateMap);
+
+		pst = _conn.prepareStatement(_query);
+		//System.out.println("inside excecuteUpdate() of class HelperMethodsDAO");
+		//System.out.println("size of map::" + _populateMap.size());
+		Set set = _populateMap.keySet();
+		Iterator itr = set.iterator();
+		java.util.ArrayList al = new java.util.ArrayList(); //<><<<<<<<
+		for (int i = 0; i < set.size(); i++)
+		{
+			al.add(null);
+		}
+		//int i=1;
+		// pst.setString(1,"1");
+		//pst.setString(2,"2");
+		//pst.setString(3,"1");
+		///<<<<<<<
+		// pst.setString(4,"03-May-2006");
+		StringBuffer stb = new StringBuffer(_query);
+		while (itr.hasNext())
+		{
+			Integer objKey = (Integer) itr.next();
+			//objKey.getClass();
+			//System.out.println();		
+			String val = (String) _populateMap.get(objKey);
+			//System.out.println("[" + objKey.intValue() + ", " + val + "]");
+			if(val==null || val.trim().equals("")) // Added By Pragya
+				pst.setNull(objKey.intValue(), Types.NULL);
+			else
+				pst.setString(objKey.intValue(), val);
+			al.set(objKey.intValue() - 1, val); //<><<<<<<<
+			/*int x=objKey.intValue();
+			//int x=stb.indexOf("?");
+			stb.replace(x,x+1,val);*/
+			//i++;	
+		}
+		//System.out.println("al:   +   " + al); //<><<<<<<
+		String[] value = new String[]
+		{};
+		value = (String[]) al.toArray(value);
+		for (int i = 0; i < value.length; i++)
+		{
+			//System.out.println("value["+i+"]"+value[i]);
+			int x = stb.indexOf("?");
+			if (value[i] == null) stb.replace(x, x + 1, "null");
+			else if (value[i].equals("")) stb.replace(x, x + 1, "\' \'");
+			else stb.replace(x, x + 1, value[i]);
+
+		}
+		System.out.println("stb....  " + stb);
+		//System.out.println("al:   +   " + al); //<><<<<<<
+		//System.out.println("after setting values for prepare st. in class helpermethodsDAo");
+
+		return pst.executeUpdate();
+	}
+
+	public static int excecuteUpdateForMasters(Connection _conn, String _query) throws SQLException
+	{
+		Statement st = null;
+		//System.out.println("_conn:   +   " + _conn);
+		System.out.println("_query:   +   " + _query);
+		st = _conn.createStatement();
+		int num = st.executeUpdate(_query);
+		return num;
+	}
+	
+	
+	/*
+	 * Added By Pawan Kumar B N on 16-05-2012
+	 */
+	public static StringBuffer populateQuery(StringBuffer query_p, List<String> lstParams_p) {
+		for (String param : lstParams_p)
+		{
+			int x = query_p.indexOf("?");
+			if (param == null) query_p.replace(x, x + 1, "null");
+			else if (param.equals("")) query_p.replace(x, x + 1, "\' \'");
+			else query_p.replace(x, x + 1, param);
+		}
+		//System.out.println("strBuff....  " + strBuff);
+		return query_p;
+	}
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='Patient Status Master'>
+        <common-values>
+           <master-name>PatientStatusMaster</master-name>
+           <master-title>Patient Status Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Patient Status Master</tableHeading>
+           <list-table>HRGT_PAT_STATUS_MST</list-table>
+           
+           <columns>
+              <column>Patient Status</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(NVL(A.HRGSTR_STATUS,''))</field>
+				 
+			  </fields>
+				<primaryKey>
+					<field>A.HRGNUM_STATUS_CODE</field>
+				    <field>A.HRGNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HRGT_PAT_STATUS_MST</table>
+				</tables>
+				<condition>					 
+					<general>
+								A.GNUM_ISVALID =1 AND A.GNUM_HOSPITAL_CODE=100  
+							</general>
+							<general-inactive>
+								A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+							</general-inactive>
+							<isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY(A.HRGSTR_STATUS) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/registration/masters/RegPatStatusMstACTION.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/registration/masters/RegPatStatusMstACTION.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

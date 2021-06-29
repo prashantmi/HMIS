@@ -1,0 +1,1359 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<!-- 
+## Copyright Information		: 	C-DAC, Noida  
+## Project Name					: 	HIS-NIMS
+## Name of Developer		 	: 	
+## Module Name					: 	Inpatient Doctor Desk
+## Process/Database Object Name	:	
+## Purpose						:	
+## Date of Creation				: 	
+## Modification Log				:	1.New IPD Nursing Desk Tiles	
+##		Modify Date				: 	17-December-2014
+##		Reason	(CR/PRS)		:	Added new Tiles for IPD Doctor Desk & IPD Nursing Desk
+##		Modify By				:	Akash Singh
+
+ -->
+<tiles-definitions>
+	<!-- IPD Nursing Desk -->
+	<definition name="/nursingDesk" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/inpatient/inpatientDesk.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<definition name="/nursingUnderConstructionDesk" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+		
+		<!-- Monitor Vitals  -->
+	<definition name="/monitorVitals" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/monitorVitals.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Blood Bag Request -->
+	<definition name="/bloodbankBagRequest" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/bloodbank/onlineOPDBloodRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Nurse Progress Note -->
+	<definition name="/nurseRound" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurseRound.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Doctor Round By Nurse-->
+	<definition name="/doctorRoundByOther" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorRoundByOther.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Out Take -->
+	<definition name="/outTake" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/patientOutTake.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Patient Belongings Detail -->
+	<definition name="/belongingHandOver" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdCasualPatientBelonging.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Generic Patient Alerts -->
+	<definition name="/nurGenericPatientAlerts" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/genericPatientAlert.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Template Tile -->
+	<definition name="/nurTemplateTab" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdTemplateTab.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Vitals Recording Tile -->
+	<definition name="/nurVitalsRecordingTab" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ipdVitalRecording.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Raise Investigation -->
+	<definition name="/nurRaiseInvestigation" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigation/transaction/requisitionRaising.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- View Investigation -->
+	<definition name="/nurViewInvestigation" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigation/transaction/resultViewing.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Sample Collection -->
+	<definition name="/nurSampleCollection" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigation/transaction/sampleCollection.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Packing List Generation -->
+	<definition name="/nurPackingListGenearate" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigation/transaction/packingListGeneration.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Drug Administration -->
+	<definition name="/nurDrugAdministration" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurDrugAdministration.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- External Administration -->
+	<definition name="/nurExtTreatAdministration" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurExtTreatAdministration.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+
+	<!-- Doctor Call Book-->
+	<definition name="/doctorCallBook" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorCallBook.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Doctor Call Inbox-->
+	<definition name="/doctorCallInbox" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorCallInbox.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+
+	<!-- Drug Reaction -->
+	<definition name="/nurDrugReaction" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurDrugReaction.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- Stock Entry Of Blood -->
+	<definition name="/nurStockEntryOfBlood" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurStockEntryOfBlood.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Blood Transfusion Detail -->
+	<definition name="/nurBloodTransfusion" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurBloodTransfusion.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Blood Transfusion Reaction -->
+	<definition name="/nurBloodTransfusionReaction" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurBloodTransfusionReaction.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Nurse Role Detail -->
+	<definition name="/nurseRoleDetail" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/dutyroster/transaction/nurseRoleDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Print Label -->
+	<definition name="/printLabelDef" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/inpatientPrintLabel.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Pending Task List -->
+	<definition name="/pendingTaskListTileDef" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/pendingTaskList.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Vital Recording -->
+	<definition name="/nurVitalsRecordingTab" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ipdVitalRecording.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- Consent Inbox -->
+	<definition name="/nurConsentRequest" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/consentRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Document Archival Tile -->
+	<definition name="/nurDocumentArchival" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdDocumentArchival.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Patient External Examination -->
+	<definition name="/nurExternalExamination" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/externalExamination.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Patient Medical Record -->
+	<definition name="/patientMedicalRecord" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/patientMedicalRecord.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Audio Video Player Tile -->
+	<definition name="/nurAudioVideoPlayer" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdAudioVideoUpload.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- ANC Child Handover Detail -->
+	<definition name="/nurANCChildHandoverDetail" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ancChildHandoverDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- ANC Trimester Checklist Detail -->
+	<definition name="/nurANCTrimesterChecklistDetail" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ancTrimesterChecklistDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Chart Reporting -->
+	<definition name="/nurGenericChartReporting" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/genericChartReporting.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Adt "Not Reported" -->
+	<definition name="/nurAdtNotReported" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/ipd/transactions/NursingDeskTransCNT.cnt?hmode=NOTREPORTINGNURSINGDESKIPD" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	
+    <!--Admitted Patient Movement   -->
+   	<definition name="/nurAdtMovementTransfer" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/ipd/transactions/PatientTransferTransCNT.cnt?hmode=GOIPDDESK" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+   	
+	
+
+		<!-- Adt "Acceptance" -->
+	<definition name="/nurAdtAcceptance" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/ipd/transactions/NursingDeskTransCNT.cnt?hmode=ADDNURSINGDESKIPD" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Adt "Join Record" -->
+	<definition name="/nurAdtJoinRecorted" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurAdtJoinRecorted.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Adt "Cancel Transfer" -->
+	<definition name="/nurAdtCancelTransfer" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/ipd/transactions/NursingDeskTransCNT.cnt?hmode=ADDNURSINGDESKIPDCANCEL" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	<!-- End of IPD Nursing Desk -->
+	<!-- Start New IPD Nursing Desk -->
+		
+	<definition name="/nursingDeskNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/inpatient/inpatientDesk.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<definition name="/nursingUnderConstructionDeskNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Monitor Vitals  New -->
+	<definition name="/monitorVitalsNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/monitorVitals.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Blood Bag Request New -->
+	<definition name="/bloodbankBagRequestNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/bloodbank/onlineOPDBloodRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Nurse Progress Note New -->
+	<definition name="/nurseRoundNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurseRound.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Doctor Round By Nurse New -->
+	<definition name="/doctorRoundByOtherNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorRoundByOther.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Out Take New -->
+	<definition name="/outTakeNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/patientOutTake.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Patient Belongings Detail New -->
+	<definition name="/belongingHandOverNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdCasualPatientBelonging.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Generic Patient Alerts New -->
+	<definition name="/nurGenericPatientAlertsNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/genericPatientAlert.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Template Tile New -->
+	<definition name="/nurTemplateTabNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdTemplateTab.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Vitals Recording Tile New -->
+	<definition name="/nurVitalsRecordingTabNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ipdVitalRecording.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Raise Investigation New -->
+	<definition name="/nurRaiseInvestigationNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigationDesk/invRaisingCumSamCollection.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- View Investigation New -->
+	<definition name="/nurViewInvestigationNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigationDesk/viewInvestigation.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Sample Collection New -->
+	<definition name="/nurSampleCollectionNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigationDesk/sampleCollection.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Packing List Generation New -->
+	<definition name="/nurPackingListGenearateNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigationDesk/packingListGeneration.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Drug Administration New -->
+	<definition name="/nurDrugAdministrationNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurDrugAdministration.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- External Administration New -->
+	<definition name="/nurExtTreatAdministrationNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurExtTreatAdministration.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+
+	<!-- Doctor Call Book New -->
+	<definition name="/doctorCallBookNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorCallBook.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Doctor Call Inbox New -->
+	<definition name="/doctorCallInboxNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorCallInbox.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+
+	<!-- Drug Reaction New -->
+	<definition name="/nurDrugReactionNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurDrugReaction.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- Stock Entry Of Blood New -->
+	<definition name="/nurStockEntryOfBloodNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurStockEntryOfBlood.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Blood Transfusion Detail New -->
+	<definition name="/nurBloodTransfusionNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurBloodTransfusion.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Blood Transfusion Reaction New -->
+	<definition name="/nurBloodTransfusionReactionNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/nurBloodTransfusionReaction.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Nurse Role Detail New -->
+	<definition name="/nurseRoleDetailNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/dutyroster/transaction/nurseRoleDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Print Label -->
+	<definition name="/printLabelDefNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/inpatientPrintLabel.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Pending Task List New -->
+	<definition name="/pendingTaskListTileDefNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/pendingTaskList.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Vital Recording New -->
+	<definition name="/nurVitalsRecordingTabNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ipdVitalRecording.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- Consent Inbox New -->
+	<definition name="/nurConsentRequestNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/consentRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Document Archival Tile New -->
+	<definition name="/nurDocumentArchivalNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdDocumentArchival.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Patient External Examination New -->
+	<definition name="/nurExternalExaminationNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/externalExamination.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Patient Medical Record New -->
+	<definition name="/patientMedicalRecordNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/patientMedicalRecord.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Audio Video Player Tile New -->
+	<definition name="/nurAudioVideoPlayerNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdAudioVideoUpload.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- ANC Child Handover Detail New -->
+	<definition name="/nurANCChildHandoverDetailNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ancChildHandoverDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- ANC Trimester Checklist Detail New -->
+	<definition name="/nurANCTrimesterChecklistDetailNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ancTrimesterChecklistDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Chart Reporting New -->
+	<definition name="/nurGenericChartReportingNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/genericChartReporting.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Doctor Ward Round Detail -->
+	<definition name="/doctorWardRoundDetailNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorWardRoundDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Doctor Ward Round Detail -->
+	<definition name="/patientDeathDetailNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/registration/patientDeathDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- patient Summary New -->
+	<definition name="/patientSummaryNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdPatientProfile.cnt?hmode=PATIENTSUMMARY" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Service Area -->
+	<definition name="/nurServiceAreaOfflineRequisition" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/servicearea/ServiceAreaOfflineServiceRequisitionACT.cnt?hmode=SAVESERVICEREQUISITIONDESK" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- OT -->
+	<definition name="/nurOTRequestNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/otListRaising.cnt?hmode=GETPATIENTDTLDESK" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- PAC Request -->
+	<definition name="/nurPACRequestNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/openEpisodeList.cnt?hmode=PACREQDESK" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Patient Treatment Detail Tile -->
+	<definition name="/nurTreatmentDetailTabNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/patTreatmentDetailTile.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Patient Profiles Inbox -->
+	<definition name="/ipdPatientProfilesInbox" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/patientProfileInbox.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Patient Profile Tile -->
+	<definition name="/ipdPatProfileNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdPatientProfile.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- Allergies New Added on date: 21.9.2016-->
+	<definition name="/nurDoctorAllergiesNew" path="/inpatient/transaction/nursingDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdEpisodeAllergies.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>  
+	
+	
+	<!-- End of New IPD Nursing Desk -->
+	<!-- ***** End of Nursing Desk Tiles ***** -->
+
+	
+	<!-- ***** Start IPD Desk Tiles ***** -->
+		<!-- IPD Doctor Desk -->
+	<definition name="/ipdDoctorDesk" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/inpatient/ipdPatDocDesk.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Default -->
+	<definition name="/ipdUnderConstructionDesk" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Diagnosis -->
+	<definition name="/ipdDoctorDiagnosis" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdDiagnosis.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Allergies -->
+	<definition name="/ipdDoctorAllergies" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdEpisodeAllergies.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Document Archival Tile -->
+	<definition name="/ipdDocumentArchival" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdDocumentArchival.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Refer Patient Tile -->
+	<definition name="/ipdReferPatient" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdReferPatient.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Blood Bag Request -->
+	<definition name="/ipdBloodbankBagRequest" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/bloodbank/onlineOPDBloodRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Image Examination Tile -->
+	<definition name="/ImageExaminationTab" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdImageExamTab.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- E Consultation Tile -->
+	<definition name="/opdConsultation" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdCosultation.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Consultation Inbox Tile -->
+	<definition name="/ipdDocConsultationInbox" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/consultationInbox.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- Doctor Round -->
+	<definition name="/ipdDoctorRound" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorRound.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Patient Profile Tile -->
+	<definition name="/ipdPatProfile" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdPatientProfile.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Monitor Vitals  -->
+	<definition name="/ipdDocMonitorVitals" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/monitorVitals.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Generic Patient Alerts -->
+	<definition name="/ipdDocGenericPatientAlerts" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/genericPatientAlert.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Consent Inbox -->
+	<definition name="/ipdDocConsentRequest" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/consentRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Raise Investigation -->
+	<definition name="/ipdDocRaiseInvestigation" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigation/transaction/requisitionRaising.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Patient Treatment Detail Tile -->
+	<definition name="/ipdDocTreatmentDetailTab" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/patTreatmentDetailTile.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Template Tile -->
+	<definition name="/ipdDocTemplateTab" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdTemplateTab.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Patient Death Detail -->
+	<definition name="/ipdPatDeathDetail" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<!-- <put name="body" value="/opd/casuality/deathDetail.cnt" /> -->
+		<put name="body" value="/registration/patientDeathDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Treatment Category Change -->
+	<definition name="/ipdChangeTreatmentCategory" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdChangeTreatmentCategory.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Discharge Request -->
+	<definition name="/ipdDischargeRequest" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/dischargeRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- View Investigation -->
+	<definition name="/ipdDocViewInvestigation" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigation/transaction/resultViewing.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- PAC Request -->
+	<definition name="/ipdDocPACRequest" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/openEpisodeList.cnt?hmode=PACREQDESK" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- OT Request -->
+	<definition name="/ipdDocOTRequest" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/OtListRaisingListingpage.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Doctor Ward Round Detail -->
+	<definition name="/doctorWardRoundDetail" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorWardRoundDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Doctor Call Acknowledge-->
+	<definition name="/doctorCallAcknowledge" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorCallAcknowledge.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Ante Natal Detail -->
+	<definition name="/doctorAnteNatalDetail" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/antenatalDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Ante Natal Delivery Detail -->
+	<definition name="/doctorAnteNatalDeliveryDetail" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/antenatalDeliveryDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- ANC New Natal Detail -->
+	<definition name="/doctorANCNewNatalDetail" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/antenatalNeonatalDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- ANC Child Handover Detail -->
+	<definition name="/doctorANCChildHandoverDetail" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ancChildHandoverDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- ANC Trimester Checklist Detail -->
+	<definition name="/doctorANCTrimesterChecklistDetail" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ancTrimesterChecklistDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Doctor Round By JR/SR-->
+	<definition name="/doctorRoundDByOther" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorRoundByOther.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Patient Profiles Inbox -->
+	<definition name="/ipdPatientProfilesInbox" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/patientProfileInbox.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Audio Video Player Tile -->
+	<definition name="/ipdAudioVideoPlayer" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdAudioVideoUpload.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Patient External Examination -->
+	<definition name="/ipdExternalExamination" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/externalExamination.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- OT Record View -->
+	<definition name="/ipdOTRecordViewing" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/AddOperationRecordEntry.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Tile Definition for EMR -->
+	<definition name="/ipdPatientEmrDetail" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<!--  <put name="body" value="/mrd/emrDesk.cnt?hmode=CALLFROMDESK" />-->
+		<put name="body" value="/mrd/transaction/emrCallFromDesk.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition> 
+
+		<!-- Chart Reporting -->
+	<definition name="/ipdDeskGenericChartReporting" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/genericChartReporting.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	
+	
+	<!--************* IPD Doctor Desk New ************-->
+	<definition name="/ipdDoctorDeskNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/inpatient/ipdPatDocDesk.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Default -->
+	<definition name="/ipdUnderConstructionDeskNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Diagnosis -->
+	<definition name="/ipdDoctorDiagnosisNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdDiagnosis.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+			<!-- Allergies -->
+<!-- 	<definition name="/ipdDoctorAllergiesNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdEpisodeAllergies.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition> -->
+	
+	<!-- Allergies New Added on date: 21.9.2016-->
+	<definition name="/ipdDoctorAllergiesNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdEpisodeAllergies.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition> 
+	
+	
+	<definition name="/ipdAllergiesSnomedNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdEpisodeAllergiesNew.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	
+		<!-- Document Archival Tile -->
+	<definition name="/ipdDocumentArchivalNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdDocumentArchival.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Refer Patient Tile -->
+	<definition name="/ipdReferPatientNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdReferPatient.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Blood Bag Request -->
+	<definition name="/ipdBloodbankBagRequestNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/bloodbank/onlineOPDBloodRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Image Examination Tile -->
+	<definition name="/ImageExaminationTabNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdImageExamTab.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- E Consultation Tile -->
+	<definition name="/opdConsultationNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdCosultation.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Consultation Inbox Tile -->
+	<definition name="/ipdDocConsultationInboxNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/consultationInbox.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- Doctor Round -->
+	<definition name="/ipdDoctorRoundNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorRound.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Patient Profile Tile -->
+	<definition name="/ipdPatProfileNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdPatientProfile.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Monitor Vitals  -->
+	<definition name="/ipdDocMonitorVitalsNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/monitorVitals.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Generic Patient Alerts -->
+	<definition name="/ipdDocGenericPatientAlertsNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/genericPatientAlert.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Consent Inbox -->
+	<definition name="/ipdDocConsentRequestNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/consentRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Raise Investigation New-->
+	<definition name="/ipdDocRaiseInvestigationNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigationDesk/investigationReqRaising.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Patient Treatment Detail Tile -->
+	<definition name="/ipdDocTreatmentDetailTabNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/patTreatmentDetailTile.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Template Tile -->
+	<definition name="/ipdDocTemplateTabNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdTemplateTab.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Patient Death Detail -->
+	<definition name="/ipdPatDeathDetailNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<!-- <put name="body" value="/opd/casuality/deathDetail.cnt" /> -->
+		<put name="body" value="/registration/patientDeathDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Treatment Category Change -->
+	<definition name="/ipdChangeTreatmentCategoryNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdChangeTreatmentCategory.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Discharge Request -->
+	<definition name="/ipdDischargeRequestNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/dischargeRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- View Investigation -->
+	<definition name="/ipdDocViewInvestigationNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/investigationDesk/viewInvestigation.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- PAC Request -->
+	<definition name="/ipdDocPACRequestNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/openEpisodeList.cnt?hmode=PACREQDESK" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- <definition name="/AddOperationRecordEntryNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/OperationResultEntry.cnt?hmode=GETPATIENTLISTDESK" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition> -->
+	
+	<definition name="/AddOperationRecordEntryNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/servicearea/transactions/ServiceAreaOfflineServiceRequisitionACT.cnt?hmode=GETPATDTL" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+		<!-- OT Request -->
+	<definition name="/ipdDocOTRequestNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/otListRaising.cnt?hmode=GETPATIENTDTLDESK" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition> 
+
+	<definition name="/ipdServiceAreaOfflineRequisition" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/servicearea/transactions/ServiceAreaOfflineServiceRequisitionACT.cnt?hmode=GETPATDTL" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+		<!-- Doctor Call Acknowledge-->
+	<definition name="/doctorCallAcknowledgeNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorCallAcknowledge.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Ante Natal Detail -->
+	<definition name="/doctorAnteNatalDetailNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/antenatalDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Ante Natal Delivery Detail -->
+	<definition name="/doctorAnteNatalDeliveryDetailNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/antenatalDeliveryDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- ANC New Natal Detail -->
+	<definition name="/doctorANCNewNatalDetailNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/antenatalNeonatalDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- ANC Child Handover Detail -->
+	<definition name="/doctorANCChildHandoverDetailNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ancChildHandoverDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- ANC Trimester Checklist Detail -->
+	<definition name="/doctorANCTrimesterChecklistDetailNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ancTrimesterChecklistDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Doctor Round By JR/SR-->
+	<definition name="/doctorRoundDByOtherNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorRoundByOther.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Patient Profiles Inbox -->
+	<definition name="/ipdPatientProfilesInboxNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/patientProfileInbox.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+		<!-- Audio Video Player Tile -->
+	<definition name="/ipdAudioVideoPlayerNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdAudioVideoUpload.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Patient External Examination -->
+	<definition name="/ipdExternalExaminationNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/externalExamination.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- OT Record View -->
+	<definition name="/ipdOTRecordViewingNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/operationTheatre/transactions/AddOperationRecordEntry.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- Tile Definition for EMR -->
+	<definition name="/ipdPatientEmrDetailNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<!--  <put name="body" value="/mrd/emrDesk.cnt?hmode=CALLFROMDESK" />-->
+		<put name="body" value="/mrd/transaction/emrCallFromDesk.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition> 
+
+		<!-- Chart Reporting -->
+	<definition name="/ipdDeskGenericChartReportingNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/genericChartReporting.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+		<!-- patient Summary New -->
+	<definition name="/patientSummaryNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/opdPatientProfile.cnt?hmode=PATIENTSUMMARY" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Estimate Certificate Req -->
+	<definition name="/ipdDocEstimateRequest" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/estimateCertificateRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Medical Certifucate Req -->
+	<definition name="/ipdDocMedicalCerificateRequest" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mrd/medicalCertificateRequest.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	<!-- Diet Kitchen : Diet Advice -->
+	<definition name="/opdDietAdvice" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/dietkitchen/dietAdvice.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+
+	<!--	Patient Clinical Documents -->
+	<definition name="/patientClinicalDocumentsNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/emr/patientClinicalDocuments.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- 	Single Page Discharge Entry -->
+	<definition name="/clinicalSummaryEntryNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/emr/uniPagePrescription.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Vitals Recording Tile New -->
+	<definition name="/nurVitalsRecordingTabNew" path="/inpatient/transaction/ipdDoctorDeskNew.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/ipdVitalRecording.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	<!-- ***** End IPD Desk Tiles New ***** -->
+	<!-- ***** End IPD Desk Tiles ***** -->
+	
+	<!-- ***** Start of NURSING STATION Tiles ***** -->
+		<!-- Nursing Station Patient List -->
+	<definition name="/nursingStation" path="/inpatient/transaction/nursingStation.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/inpatient/nursingStationPatList.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<definition name="/nursingStationUnderConstruction" path="/inpatient/transaction/nursingStation.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+
+	
+		<!-- Doctor Call Acknowledge-->
+	<definition name="/doctorCallAcknowledge" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/doctorCallAcknowledge.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+		<!-- Ward bed status-->
+	<definition name="/wardEnquiry" path="/inpatient/transaction/nursingDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalWardEnquiry.cnt?hmode=BEDDETAIL" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	<definition name="/wardEnquiryIpdDocDesk" path="/inpatient/transaction/ipdDoctorDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalWardEnquiry.cnt?hmode=BEDDETAIL" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+
+	<definition name="/doctorCallBookLogReportdefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="Doctor Call Log Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/doctorCallBookLogReport.cnt" />
+		<put name="footer" value="/inpatient/reports/doctorCallLogReportFooter.jsp" />
+	</definition>
+	
+	
+		<definition name="/opdReportInitial" path="/opd/reports/jsp/opdCommonReportLayout.jsp">
+		<put name="title" value="OPD Pattient Referral Detail" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/opd/report/initialAction.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<definition name="/listOfCaseSheetReportdefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="List Of Case Sheets Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/listOfCaseSheetReport.cnt" />
+		<put name="footer" value="/inpatient/reports/inpatientReportFooter.jsp" />
+	</definition>
+
+	<definition name="/JSYRegistrationReportDefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="JSY Registration Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/JSYRegistrationReport.cnt" />
+		<put name="footer" value="/inpatient/reports/inpatientReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/specialityWiseOperationReportdefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="Speciality Wise Operation Between Two Dates Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/specialityWiseOperationReport.cnt" />
+		<put name="footer" value="/inpatient/reports/inpatientReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/registeredMlcPatientReportdefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="Registered MLC Patients Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/registeredMlcPatientReport.cnt" />
+		<put name="footer" value="/inpatient/reports/inpatientReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/diseaseCodeReportdefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="Disease Code Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/diseaseCodeReport.cnt" />
+		<put name="footer" value="/inpatient/reports/inpatientReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/deathDetailsReportdefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="Death Details Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/deathDetailsReport.cnt" />
+		<put name="footer" value="/inpatient/reports/inpatientReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/listofAbscondingPatientReportdefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="List of Absconding Patient Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/listofAbscondingPatientReport.cnt" />
+		<put name="footer" value="/inpatient/reports/inpatientReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/listOfNonMlcPatientReportdefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="List Of Non-Mlc Patient Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/listOfNonMlcPatientReport.cnt" />
+		<put name="footer" value="/inpatient/reports/inpatientReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/dailyIndooreRegisterForWardReportdefinition" path="/inpatient/reports/InpatientCommonReportLayout.jsp">
+		<put name="title" value="Daily Indoore Register For Ward Report" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/inpatient/report/dailyIndooreRegisterForWardReport.cnt" />
+		<put name="footer" value="/inpatient/reports/inpatientReportFooter.jsp" />
+	</definition>
+	
+	
+		<!-- ***** End of NURSING STATION Tiles -->
+
+
+	<!-- ***** End of NURSING STATION Tiles -->
+
+</tiles-definitions>

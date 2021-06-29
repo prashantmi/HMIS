@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Drug List Master'>
+		<common-values>
+			<master-name>DrugListMaster</master-name>
+			<master-title>Drug List Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Drug List Master</tableHeading>
+			
+			<list-table>HGBT_DRUG_LIST_MST</list-table>
+			
+			<columns>
+				<column>Drug List Name</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>A.HGSTR_DRUGLIST_NAME</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HGNUM_DRUGLIST_ID</field>
+					<field>A.HGNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HGBT_DRUG_LIST_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field> A.GNUM_HOSPITAL_CODE=100 and A.GNUM_ISVALID </isvalid-field>
+					<orderby> ORDER BY A.HGSTR_DRUGLIST_NAME </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/opd/master/drugListMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/drugListMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

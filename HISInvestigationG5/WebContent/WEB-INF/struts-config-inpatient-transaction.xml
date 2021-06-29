@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+		<form-bean name="NursingDeskLoginFB" type="inpatient.transaction.controller.fb.NursingDeskLoginFB"/>
+		<form-bean name="NursingDeskFB" type="inpatient.transaction.controller.fb.NursingDeskFB"/>
+		<form-bean name="InpatientDeskFB" type="inpatient.transaction.controller.fb.InpatientDeskFB"/>
+		<form-bean name="InpatientDetailFB" type="inpatient.transaction.controller.fb.InpatientDetailFB"/>
+		<form-bean name="IpdDoctorDeskLoginFB" type="inpatient.transaction.controller.fb.IpdDoctorDeskLoginFB"/>
+		<form-bean name="IpdDoctorDeskFB" type="inpatient.transaction.controller.fb.IpdDoctorDeskFB"/>
+		<form-bean name="IpdPatDocDeskFB" type="inpatient.transaction.controller.fb.IpdPatDocDeskFB"/>
+		<form-bean name="NurseRoundFB" type="inpatient.transaction.controller.fb.NurseRoundFB"/>	
+		<form-bean name="DoctorRoundFB" type="inpatient.transaction.controller.fb.DoctorRoundFB"/>
+		<form-bean name="OutTakeFB" type="inpatient.transaction.controller.fb.OutTakeFB"/>
+	    <form-bean name="InpatientBulletinFB" type="inpatient.transaction.controller.fb.InpatientBulletinDetailFB"/>	
+		<form-bean name="MonitorVitalsFB" type="inpatient.transaction.controller.fb.MonitorVitalsFB"/>
+		<form-bean name="VitalsRecordingFB" type="inpatient.transaction.controller.fb.VitalsRecordingFB"/>
+		<form-bean name="DischargeRequestFB" type="inpatient.transaction.controller.fb.DischargeRequestFB"/>
+		<form-bean name="NursingStationLoginFB" type="inpatient.transaction.controller.fb.NursingStationLoginFB"/>
+		<form-bean name="NursingStationFB" type="inpatient.transaction.controller.fb.NursingStationFB"/>
+		<form-bean name="NursingStationPatListFB" type="inpatient.transaction.controller.fb.NursingStationPatListFB"/>
+		<form-bean name="DrugAdministrationFB" type="inpatient.transaction.controller.fb.DrugAdministrationFB"/>
+		<form-bean name="ExtAdministrationFB" type="inpatient.transaction.controller.fb.ExtAdministrationFB"/>
+		<form-bean name="DoctorCallBookFB" type="inpatient.transaction.controller.fb.DoctorCallBookFB"/>
+		<form-bean name="DoctorCallBookLogReportFB" type="inpatient.reports.controller.fb.DoctorCallBookLogReportFB"/>
+		<form-bean name="DrugReactionFB" type="inpatient.transaction.controller.fb.DrugReactionFB"/>
+		<form-bean name="ANCDetailFB" type="inpatient.transaction.controller.fb.ANCDetailFB"/>
+		<form-bean name="StockEntryOfBloodFB" type="inpatient.transaction.controller.fb.StockEntryOfBloodFB"/>
+		<form-bean name="DoctorWardRoundDetail" type="inpatient.transaction.controller.fb.DoctorWardRoundDetailFB"/>
+		<form-bean name="BloodTransfusionFB" type="inpatient.transaction.controller.fb.BloodTransfusionFB"/>
+		<form-bean name="BloodTransfusionReactionFB" type="inpatient.transaction.controller.fb.BloodTransfusionReactionFB"/>
+		<form-bean name="ANCDeliveryDetailFB" type="inpatient.transaction.controller.fb.ANCDeliveryDetailFB"/>
+		<form-bean name="inPatientPrintLabelFB" type="inpatient.transaction.controller.fb.InPatientPrintLabelFB"/>
+		<form-bean name="pendingTaskListFB" type="inpatient.transaction.controller.fb.PendingTaskListFB"/>
+	    <form-bean name="JSYRegitrationFB" type="inpatient.transaction.controller.fb.JSYRegitrationFB"/>
+		<form-bean name="ANCNeonatalDetailFB" type="inpatient.transaction.controller.fb.ANCNeonatalDetailFB"/>
+	    <form-bean name="ValidateUserFB" type="inpatient.transaction.controller.fb.ValidateUserFB"/>
+	    <form-bean name="PatientMedicalRecordFB" type="inpatient.transaction.controller.fb.PatientMedicalRecordFB"/>
+	    <form-bean name="AncTeamDetailFB" type="inpatient.transaction.controller.fb.AncTeamDetailFB"/>
+	    <form-bean name="ANCChildHandoverDetailFB" type="inpatient.transaction.controller.fb.ANCChildHandoverDetailFB"/>
+	    <form-bean name="ANCTrimesterChecklistDetailFB" type="inpatient.transaction.controller.fb.ANCTrimesterChecklistDetailFB"/>
+	</form-beans>
+
+	<action-mappings>
+		<!-- DESK PATIENT TILE -->
+		<action path="/inpatientDetail"
+				type="inpatient.transaction.controller.action.InpatientDetailACT"
+				name="InpatientDetailFB"
+				scope="request"
+				parameter="hmode"
+				validate="false"
+				input="/transaction/ipdPatientDetailTile.jsp">
+			<forward name="IPD" path="/transaction/ipdPatientDetailTile.jsp"/>
+			<forward name="OPD" path="/transaction/opdPatientDetailTile.jsp"/>
+			<forward name="IPDNEW" path="/transaction/ipdPatientDetailTile.jsp"/>
+			<forward name="OPDNEW" path="/transaction/opdPatientDetailTileNew.jsp"/>
+		</action>		
+		
+		<!-- IPD NURSING DESK LOGIN-->
+		<action path="/nursingDeskLogin"
+				type="inpatient.transaction.controller.action.NursingDeskLoginACT"
+				name="NursingDeskLoginFB"
+				scope="request"
+				parameter="hmode"
+				validate="false"
+				input="/transaction/nursingDeskLogin.jsp">
+			<forward name="NEW" path="/transaction/nursingDeskLogin.jsp"/>
+			<forward name="WARDONLY" path="/transaction/nursingDeskLoginWard.jsp"/>
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>		
+		
+		<!-- Nursing Desk Header -->
+		<action path="/gotoIPDNursingDeskHeaderPage"
+				parameter="/inpatient/transaction/nursingDeskSubHeader.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+	
+		<!-- Nursing Desk Footer -->
+		<action path="/gotoNursingDeskFooterPage"
+				parameter="/inpatient/transaction/nursingDeskFooterPage.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+
+		<!-- Nursing Desk Center -->
+		<action path="/nursingDesk"
+				type="inpatient.transaction.controller.action.NursingDeskACT"
+				name="NursingDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/nursingDesk.jsp">
+			<forward name="NEW" path="/nursingDesk"/>	
+			<forward name="DEFAULT" path="/nursingUnderConstructionDesk"/>
+			<forward name="BLOODBAGREQ" path="/bloodbankBagRequest"/>
+			<forward name="NURSEROUND" path="/nurseRound" />
+			<forward name="DOCTORROUNDBYOTHER" path="/doctorRoundByOther" />
+			<forward name="OUTTAKE" path="/outTake" />
+			<forward name="MONITORVITALS" path="/monitorVitals" />				<!-- Not In Use for Nursing Desk -->
+			<forward name="PATBELONGING" path="/belongingHandOver" />			<!-- Not Working -->
+			<forward name="GENERICTEMPLATE" path="/nurTemplateTab"/>
+			<forward name="VITALSRECORDING" path="/nurVitalsRecordingTab" />	
+			<forward name="REQUISITIONRAISING" path="/nurRaiseInvestigation"/>	<!-- Not In Use for Nursing Desk -->
+			<forward name="RESULTVIEWING" path="/nurViewInvestigation"/>
+			<forward name="SAMPLECOLLECTION" path="/nurSampleCollection"/>
+			<forward name="PACKINGLISTGENERATION" path="/nurPackingListGenearate"/>
+			<forward name="DRUGADMINIS" path="/nurDrugAdministration"/>
+			<forward name="EXTADMINIS" path="/nurExtTreatAdministration"/>
+			<forward name="GENERICPATIENTALERTS" path="/nurGenericPatientAlerts"/>
+			<forward name="DOCTORCALLBOOK" path="/doctorCallBook"/>
+			<forward name="DRUGREACTION" path="/nurDrugReaction"/>
+			<forward name="STOCKENTRYOFBLOOD" path="/nurStockEntryOfBlood"/>
+			<forward name="DOCWARDROUNDDTL" path="/doctorWardRoundDetail"/>
+			<forward name="BLOODTRANSFUSION" path="/nurBloodTransfusion"/>
+			<forward name="BLOODTRANSFUSIONREACTION" path="/nurBloodTransfusionReaction"/>
+			<forward name="PRINTLABEL" path="/printLabelDef"/>
+			<forward name="PENDINGTASKLIST" path="/pendingTaskListTileDef"/>
+			<forward name="CONSENTINBOX" path="/nurConsentRequest"/>
+			<forward name="WARDENQUIRY" path="/wardEnquiry"/>
+			<forward name="VALIDATEUSER" path="/validateUser.cnt"/>
+			<forward name="DOCUMENTARCHIVAL" path="/nurDocumentArchival"/>
+			<forward name="EXTERNALEXAMINATION" path="/nurExternalExamination"/>
+			<forward name="DESKPMR" path="/patientMedicalRecord"/>				<!-- Not In Use for Nursing Desk -->
+			<forward name="AUDIOVIDEOPLAYER" path="/nurAudioVideoPlayer"/>
+			<forward name="NURSEROLEDTL" path="/nurseRoleDetail"/>
+			<forward name="ANCNEONATHANDOVER" path="/nurANCChildHandoverDetail"/>			
+			<forward name="ANCTRIMESTERCHKLST" path="/nurANCTrimesterChecklistDetail"/>			
+			<forward name="CHARTDETAIL" path="/nurGenericChartReporting"/>
+		</action>	
+		
+		<action path="/nursingDeskPatientDataFlag"
+				type="inpatient.transaction.controller.action.PatNursingDeskDataFlagsMenuWise"
+				name="InpatientDeskFB"
+				scope="request"
+				parameter="hmode"
+				validate="false"
+				input="/transaction/nursingDeskLogin.jsp">
+			<forward name="NEW" path="/transaction/nursingDeskLogin.jsp"/>
+			<forward name="WARDONLY" path="/transaction/nursingDeskLoginWard.jsp"/>
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+				<!-- Nursing Desk Patient List -->
+		<action path="/inpatientDesk"
+				type="inpatient.transaction.controller.action.InpatientDeskACT"
+				name="InpatientDeskFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/inpatientDesk.jsp">
+			<forward name="NEW" path="/transaction/inpatientDesk.jsp" />
+		</action>
+		
+		<!-- Nurse Round Detail -->
+		<action path="/nurseRound"
+				type="inpatient.transaction.controller.action.NurseRoundACT"
+				name="NurseRoundFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/nurseRound.jsp">
+			<forward name="NEW" path="/transaction/nurseRound.jsp" />
+			<forward name="PREVIOUS" path="/transaction/patPreviousProgressNotes.jsp" />
+			<forward name="ADDNOTES" path="/transaction/addProgressNotes.jsp" />
+		</action>
+		
+		<!-- Doctor Round Detail -->
+		<action path="/doctorRound"
+				type="inpatient.transaction.controller.action.DoctorRoundACT"
+				name="DoctorRoundFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/doctorRound.jsp">
+			<forward name="DOCTOR" path="/transaction/doctorRoundDocDesk.jsp" />
+			<forward name="DOCPREVROUNDDTL" path="/transaction/doctorPrevRoundDtl.jsp" />
+			<forward name="NURSEPREVROUNDDTL" path="/transaction/nursePrevRoundDtl.jsp" />
+			<forward name="ADDNOTES" path="/transaction/addNurseVisitNotes.jsp" />
+		</action>
+		
+		<!-- Doctor Round By Other Detail -->
+		<action path="/doctorRoundByOther"
+				type="inpatient.transaction.controller.action.DoctorRoundByOtherACT"
+				name="DoctorRoundFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/doctorRound.jsp">
+			<forward name="NURSE" path="/transaction/doctorRoundNurseDesk.jsp" />
+			<forward name="DOCINSTRUCTION" path="/transaction/doctorInstruction.jsp" />
+			<forward name="ADDNOTES" path="/transaction/addNurseVisitNotesByOther.jsp" />
+		</action>
+
+		<!-- Out Take Detail -->
+		<action path="/patientOutTake"
+				type="inpatient.transaction.controller.action.OutTakeACT"
+				name="OutTakeFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/outTake.jsp">
+			<forward name="NEW" path="/transaction/outTake.jsp" />
+			<forward name="VIEW" path="/transaction/outTakeDetail.jsp" />
+			<forward name="ALLSUMMARY" path="/transaction/outTakeAll.jsp" />
+			<forward name="VIEWSUMMARY" path="/transaction/outTakeViewSummary.jsp" />
+		</action>
+		
+		<!-- MONITORVITALS Details  -->
+		<action path="/monitorVitals"
+				type="inpatient.transaction.controller.action.MonitorVitalsACT"
+				name="MonitorVitalsFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/monitorVitals.jsp">
+			<forward name="NEW" path="/transaction/monitorVitals.jsp" />
+			<forward name="VITALCHART" path="/transaction/vitalChartingViewReport.jsp" />
+		</action>
+		
+		<!-- IPD  Nursing Vital Recording -->
+		<action path="/ipdVitalRecording"
+				type="inpatient.transaction.controller.action.VitalsRecordingACT"
+				name="VitalsRecordingFB"
+				scope="request"
+				parameter="hmode"
+				validate="false"
+				input="/transaction/nurseVitalsRecording.jsp">
+			<forward name="NEW" path="/transaction/nurseVitalsRecording.jsp"/>
+			<forward name="VITALCHART" path="/transaction/vitalChartingForNurse.jsp" />
+		</action>	
+		
+		<!--Drug Administration -->
+		<action path="/nurDrugAdministration"
+				type="inpatient.transaction.controller.action.DrugAdministrationACT"
+				name="DrugAdministrationFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/drugAdministration.jsp">
+			<!-- <forward name="NEW" path="/transaction/drugAdministration.jsp" /> -->
+			<forward name="NEW" path="/transaction/drugAdministrationIpd.jsp" />
+			<forward name="SHOWCOMPLETETREATMENT" path="/transaction/completeTreatmentPopup.jsp" />
+			<forward name="PREVDRUGSCHEDULE" path="/transaction/completeTreatmentPopup.jsp" />
+			<!-- <forward name="PREVDRUGSCHEDULE" path="/transaction/ipdPrevSchedulePopup.jsp" /> -->
+			<forward name="DRUGGIVEN" path="/transaction/ipdDrugGivenPopup.jsp" />
+			<forward name="SCHEDULESHIFTWISE" path="/transaction/ipdShiftWiseSchdPopup.jsp" />
+			
+			
+		</action>	
+		
+		<action path="/nurExtTreatAdministration"
+				type="inpatient.transaction.controller.action.ExtAdministrationACT"
+				name="ExtAdministrationFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/drugAdministration.jsp">
+			<!-- <forward name="NEW" path="/transaction/drugAdministration.jsp" /> -->
+			<forward name="NEW" path="/transaction/extAdministration.jsp" />
+			<forward name="INSTRUCTION" path="/transaction/ipdInstructionPopup.jsp" />
+			<forward name="OTHERTREATMENT" path="/transaction/otherTreatmentPopup.jsp" />
+			
+		</action>	
+		
+		<!-- Drug Reaction -->
+		<action path="/nurDrugReaction"
+				type="inpatient.transaction.controller.action.DrugReactionACT"
+				name="DrugReactionFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/drugReaction.jsp">
+			<forward name="NEW" path="/transaction/drugReaction.jsp" />
+			<forward name="SELECTEDDRUGDETAIL" path="/transaction/drugDetailPopup.jsp" />
+			<forward name="PREVREACTIONDETAIL" path="/transaction/prevDrugReacPopup.jsp" />
+			
+		</action>	
+		
+		<!-- Stock Entry Of Blood -->
+		<action path="/nurStockEntryOfBlood"
+				type="inpatient.transaction.controller.action.StockEntryOfBloodACT"
+				name="StockEntryOfBloodFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/stockEntryOfBlood.jsp">
+			<forward name="NEW" path="/transaction/stockEntryOfBlood.jsp" />
+		</action>
+		
+		<!-- Blood Transfusion Detail -->
+		<action path="/nurBloodTransfusion"
+				type="inpatient.transaction.controller.action.BloodTransfusionACT"
+				name="BloodTransfusionFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/bloodTransfusion.jsp">
+			<forward name="NEW" path="/transaction/bloodTransfusion.jsp" />
+			<forward name="BAGDETAIL" path="/transaction/bagDetail.jsp" />
+			<forward name="GETTRANSFUSIONDTL" path="/transaction/bloodTransfusionReaction_popup.jsp" />
+			
+		</action>		
+	
+		<!-- Blood Transfusion Reaction -->
+		<action path="/nurBloodTransfusionReaction"
+				type="inpatient.transaction.controller.action.BloodTransfusionReactionACT"
+				name="BloodTransfusionReactionFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/bloodTransfusionReaction.jsp">
+			<forward name="NEW" path="/transaction/bloodTransfusionReaction.jsp" />
+			<forward name="BAGDETAIL" path="/transaction/reactedBagDetailPopup.jsp" />
+			<forward name="MACROPOPUP" path="/transaction/reacSummaryDtlMacroPopup.jsp" />
+		</action>
+		
+		<action path="/doctorCallBook"
+				type="inpatient.transaction.controller.action.DoctorCallBookACT"
+				name="DoctorCallBookFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/doctorCallBook.jsp">
+			<forward name="NEW" path="/transaction/doctorCallBookList.jsp" />
+			<forward name="ADD" path="/transaction/doctorCallBook.jsp" />
+			<forward name="MODIFY" path="/transaction/doctorCallBookModify.jsp" />
+			<forward name="DOCTORCALLBOOKLOGREPORT" path="/doctorCallBookLogReportdefinition"/>
+			<forward name="DOCTORCALLBOOKLOGREPORTVIEW" path="/report/doctorCallBookLogReport.cnt"/>
+			<forward name="ADDNOTES" path="/transaction/addCallRemarks.jsp" />
+		</action>
+		
+		<action path="/doctorCallAcknowledge"
+				type="inpatient.transaction.controller.action.DoctorCallAcknowledgeACT"
+				name="DoctorCallBookFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/doctorCallAcknowledge.jsp">
+			<forward name="NEW" path="/transaction/doctorCallAcknowledge.jsp" />
+			<forward name="ADDNOTES" path="/transaction/addAckRemarks.jsp" />
+			
+		</action>
+	
+		<action path="/report/doctorCallBookLogReport"
+				type="inpatient.reports.controller.action.DoctorCallBookLogReportACT"
+				name="DoctorCallBookLogReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/doctorCallBookReport.jsp"/>
+			<forward name="ERROR" path="/reports/inpatientErrorPageReportDataNotFound.jsp"/> 
+		</action>
+			
+		<!-- DOCTOR WARD ROUND DETAIL-->
+		<action path="/doctorWardRoundDetail"
+				type="inpatient.transaction.controller.action.DoctorWardRoundDetailACT"
+				name="DoctorWardRoundDetail"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/doctorWardRoundDetail.jsp">
+			<forward name="NEW" path="/transaction/doctorWardRoundDetail.jsp" />
+			<forward name="ROUNDTYPE" path="/transaction/doctorWardRoundDetailPopUp.jsp" />
+		</action>
+		
+		<!-- Patient Medical Record-->
+		<action path="/patientMedicalRecord"
+				type="inpatient.transaction.controller.action.PatientMedicalRecordACT"
+				name="PatientMedicalRecordFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/patientMedicalRecord.jsp">
+			<forward name="NEW" path="/transaction/patientMedicalRecord.jsp" />
+		</action>
+
+			
+
+
+
+		<!-- END OF IPD NURSING DESK -->
+
+
+			
+		<!-- IPD DOCTOR DESK LOGIN-->
+		<action path="/ipdDoctorDeskLogin"
+				type="inpatient.transaction.controller.action.IpdDoctorDeskLoginACT"
+				name="IpdDoctorDeskLoginFB"
+				scope="request"
+				parameter="hmode"
+				validate="false"
+				input="/transaction/ipdDoctorDeskLogin.jsp">
+			<forward name="NEW" path="/transaction/ipdDoctorDeskLogin.jsp"/>
+			<forward name="WARDONLY" path="/transaction/ipdDoctorDeskLoginWard.jsp"/>
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>		
+		
+		<!-- IPD Doctor Desk Center -->
+		<action path="/ipdDoctorDesk"
+				type="inpatient.transaction.controller.action.IpdDoctorDeskACT"
+				name="IpdDoctorDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/ipdDoctorDesk.jsp">
+			<forward name="NEW" path="/ipdDoctorDesk"/>	
+			<forward name="DEFAULT" path="/ipdUnderConstructionDesk"/>
+			<forward name="DESKDIAGNOSIS" path="/ipdDoctorDiagnosis" />
+			<forward name="DESKALLERGIES" path="/ipdDoctorAllergies" />
+			<forward name="DOCUMENTARCHIVAL" path="/ipdDocumentArchival" />
+			<forward name="DESKREFERPATIENT" path="/ipdReferPatient" />
+			<forward name="BLOODBAGREQ" path="/ipdBloodbankBagRequest"/>
+			<forward name="IMAGEEXAMINATION" path="/ImageExaminationTab" />
+			<forward name="ECONSULTATION" path="/opdConsultation" />
+			<forward name="CONSULTATIONINBOX" path="/ipdDocConsultationInbox" />
+			<forward name="DOCTORROUND" path="/ipdDoctorRound" />
+			<forward name="PATPROFILE" path="/ipdPatProfile" />
+			<forward name="MONITORVITALS" path="/ipdDocMonitorVitals" />
+			<forward name="GENERICPATIENTALERTS" path="/ipdDocGenericPatientAlerts"/>
+			<forward name="CONSENTINBOX" path="/ipdDocConsentRequest"/>
+			<forward name="REQUISITIONRAISING" path="/ipdDocRaiseInvestigation"/>
+			<forward name="DESKTREATMENTDETAIL" path="/ipdDocTreatmentDetailTab"/>
+			<forward name="GENERICTEMPLATE" path="/ipdDocTemplateTab"/>
+			<forward name="PATIENTDEATHDETAIL" path="/ipdPatDeathDetail" />
+			<forward name="OPDSECONDARYCATEGORY" path="/ipdChangeTreatmentCategory" />
+			<forward name="DISCHARGEREQUEST" path="/ipdDischargeRequest" />
+			<forward name="RESULTVIEWING" path="/ipdDocViewInvestigation"/>
+			<forward name="PACREQUEST" path="/ipdDocPACRequest"/>
+			<forward name="OTLIST" path="/ipdDocOTRequest"/>
+			<forward name="DOCCALLACKNOWLEDGE" path="/doctorCallAcknowledge"/>
+			<forward name="ANCDETAIL" path="/doctorAnteNatalDetail"/>
+			<forward name="ANCDELIVERYDTL" path="/doctorAnteNatalDeliveryDetail"/>
+			<forward name="ANCNEONATALDTL" path="/doctorANCNewNatalDetail"/>
+			<forward name="DOCTORROUNDBYOTHER" path="/doctorRoundDByOther" />
+			<forward name="PATPROFILEINBOX" path="/ipdPatientProfilesInbox"/>			
+			<forward name="AUDIOVIDEOPLAYER" path="/ipdAudioVideoPlayer"/>
+			<forward name="EXTERNALEXAMINATION" path="/ipdExternalExamination"/>
+			<forward name="OTVIEWING" path="/ipdOTRecordViewing"/>
+			<forward name="ANCNEONATHANDOVER" path="/doctorANCChildHandoverDetail"/>			
+			<forward name="ANCTRIMESTERCHKLST" path="/doctorANCTrimesterChecklistDetail"/>			
+			<forward name="SAMPLECOLLECTION" path="/nurSampleCollection"/>
+			<forward name="PACKINGLISTGENERATION" path="/nurPackingListGenearate"/>
+			<forward name="EMRDETAIL" path="/ipdPatientEmrDetail"/>		
+			<forward name="CHARTDETAIL" path="/ipdDeskGenericChartReporting"/>
+			<forward name="WARDENQUIRY" path="/wardEnquiryIpdDocDesk"/>	
+		</action>
+		
+		<!-- Ipd Doctor Desk Header -->
+		<action path="/gotoIPDDoctorDeskHeaderPage"
+				parameter="/inpatient/transaction/ipdDoctorDeskSubHeader.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+				
+		<!-- Ipd Doctor Desk Footer -->
+		<action path="/gotoIPDDoctorDeskFooterPage"
+				type="inpatient.transaction.controller.action.IpdDoctorDeskFooterACTION"
+				name="IpdDoctorDeskLoginFB"
+				validate="false"
+				scope="request"
+				input="/transaction/ipdDoctorDeskFooterPage.jsp">
+			<forward name="FOOTER" path="/transaction/ipdDoctorDeskFooterPage.jsp" />
+		</action>
+		<!-- <action path="/gotoIPDDoctorDeskFooterPage"
+				parameter="/inpatient/transaction/ipdDoctorDeskFooterPage.jsp"
+				type="org.apache.struts.actions.ForwardAction" /> -->
+
+		<!-- Old :: IPD DOCTOR Patient List -->
+		<action path="/ipdPatDocDesk"
+				type="inpatient.transaction.controller.action.IpdPatDocDeskACT"
+				name="IpdPatDocDeskFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/ipdPatDocDesk.jsp">
+			<forward name="NEW" path="/transaction/ipdPatDocDesk.jsp" />
+		</action>		
+		
+		<!-- IPD DOCTOR Desk Patient List -->
+		<action path="/ipdDocDeskPatList"
+				type="inpatient.transaction.controller.action.IpdDocDeskPatListACT"
+				name="IpdPatDocDeskFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/ipdDocDeskPatList.jsp">
+			<forward name="NEW" path="/transaction/ipdDocDeskPatList.jsp" />
+		</action>		
+
+		<!-- Bulletin Detail (Enquiry, Bulletin Borad) -->
+		<action path="/inpatientBulletinDetail"
+				type="inpatient.transaction.controller.action.InpatientBulletinDetailACT"
+				name="InpatientBulletinFB"
+				scope="request"
+				parameter="hmode"
+				validate="false"
+				input="/transaction/bulletinBoard.jsp">
+			<forward name="NEW" path="/transaction/bulletinBoard.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+			<forward name="ADDREMARKS" path="/transaction/addBulletinRemarksPopup.jsp"/>
+		</action>
+		
+		<!-- Discharge Request -->
+		<action path="/dischargeRequest"
+				type="inpatient.transaction.controller.action.DischargeRequestACT"
+				name="DischargeRequestFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/dischargeRequest.jsp">
+			<forward name="NEW" path="/transaction/dischargeRequest.jsp" />
+		</action>		
+		
+		
+	
+		<!-- END OF IPD DOCTOR DESK LOGIN-->
+		
+		<!-- IPD NURSING STATION LOGIN-->
+		<action path="/nursingStationLogin"
+				type="inpatient.transaction.controller.action.NursingStationLoginACT"
+				name="NursingStationLoginFB"
+				scope="request"
+				parameter="hmode"
+				validate="false"
+				input="/transaction/nursingStationLogin.jsp">
+			<forward name="NEW" path="/transaction/nursingStationLogin.jsp"/>
+			<forward name="WARDONLY" path="/transaction/nursingStationLoginWard.jsp"/>
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		<!-- Nursing Station Header -->
+		<action path="/gotoIPDNursingStationHeaderPage"
+				parameter="/inpatient/transaction/nursingStationSubHeader.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+		
+		<!-- IPD Nursing Station Center -->
+		<action path="/nursingStation"
+				type="inpatient.transaction.controller.action.NursingStationACT"
+				name="NursingStationFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/nursingStation.jsp">
+			<forward name="NEW" path="/nursingStation"/>
+			<forward name="DEFAULT" path="/nursingStationUnderConstruction"/>	
+		</action>	
+		
+		<!-- Nursing Station Patient Listing -->
+		<action path="/nursingStationPatList"
+				type="inpatient.transaction.controller.action.NursingStationPatListACT"
+				name="NursingStationPatListFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/nursingStationPatList.jsp">
+			<forward name="NEW" path="/transaction/nursingStationPatList.jsp" />
+		</action>
+		
+		<action path="/inpatientPrintLabel"
+				type="inpatient.transaction.controller.action.InPatientPrintLabelACT"
+				name="inPatientPrintLabelFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/inPatientPrintLabel.jsp">
+			<forward name="NEW" path="/transaction/inPatientPrintLabel.jsp" />
+		</action>
+		
+		
+		<action path="/pendingTaskList"
+				type="inpatient.transaction.controller.action.PendingTaskListACTION"
+				name="pendingTaskListFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/pendingTaskList.jsp">
+			<forward name="NEW" path="/transaction/pendingTaskList.jsp" />
+		</action>
+		
+		
+			
+		
+		
+		
+
+	
+	<!-- IPD Nursing Common Deks Layout -->
+	
+		<!-- Common Desk Tab -->
+	<action path="/gotoIPDNursingCommonDeskPage"
+		parameter="/inpatient/transaction/nursingCommonDeskLayout.jsp"
+		type="org.apache.struts.actions.ForwardAction" />
+	
+	<action path="/nursingCommonDesksHeader"
+		parameter="/inpatient/transaction/tabViewLayout.jsp"
+		type="org.apache.struts.actions.ForwardAction" />
+
+	<!-- End of IPD Nursing Common Desks Layout -->
+
+	<!-- ANC Detail Process -->
+	<action path="/antenatalDetail"
+			type="inpatient.transaction.controller.action.ANCDetailACT"
+			name="ANCDetailFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"
+			input="/transaction/ancDetail.jsp">
+		<forward name="NEW" path="/transaction/ancDetail.jsp" />
+		<forward name="FOLLOW" path="/transaction/ancDetailFollowUp.jsp" />
+		<forward name="MACROPOPUP" path="/transaction/ancDtlMacroPopup.jsp" />		
+	</action>	
+	
+	<action path="/jsyRegistration"
+			type="inpatient.transaction.controller.action.JSYRegitrationACT"
+			name="JSYRegitrationFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"
+			input="/transaction/jsyRegistration.jsp">
+		<forward name="NEW" path="/transaction/jsyRegistration.jsp" />
+	</action>	
+
+	<!-- ANC Delivery Detail Process -->
+	<action path="/antenatalDeliveryDetail"
+			type="inpatient.transaction.controller.action.ANCDeliveryDetailACT"
+			name="ANCDeliveryDetailFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"
+			input="/transaction/ancDeliveryDetail.jsp">
+		<forward name="NEW" path="/transaction/ancDeliveryDetail.jsp" />
+	</action>
+
+	<!-- ANC Neo Natal Detail Process -->
+	<action path="/antenatalNeonatalDetail"
+			type="inpatient.transaction.controller.action.ANCNeonatalDetailACT"
+			name="ANCNeonatalDetailFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"
+			input="/transaction/ancNeonatalDetail.jsp">
+		<forward name="NEW" path="/transaction/ancNeonatalDetail.jsp" />
+		<forward name="BIRTHCERT" path="/transaction/neoNatalBirthCertificate.jsp" />
+		<forward name="APGARDTL" path="/transaction/ancNeoNatalApgarPopup.jsp" />
+	</action>
+	
+	<!-- ANC Team Detail -->
+	<action path="/ancTeamDetail"
+			type="inpatient.transaction.controller.action.AncTeamDetailACT"
+			name="AncTeamDetailFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"
+			input="/transaction/ancTeamDetail.jsp">
+		<forward name="NEW" path="/transaction/ancTeamDetail.jsp" />
+	</action>
+
+	<!-- ANC Child Handover Detail -->
+	<action path="/ancChildHandoverDetail"
+			type="inpatient.transaction.controller.action.ANCChildHandoverDetailACT"
+			name="ANCChildHandoverDetailFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"
+			input="/transaction/ancChildHandoverDetail.jsp">
+		<forward name="NEW" path="/transaction/ancChildHandoverDetail.jsp" />
+	</action>
+
+	<!-- ANC Trimester Wise CheckList Detail -->
+	<action path="/ancTrimesterChecklistDetail"
+			type="inpatient.transaction.controller.action.ANCTrimesterChecklistDetailACT"
+			name="ANCTrimesterChecklistDetailFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"
+			input="/transaction/ancTrimesterChecklistDetail.jsp">
+		<forward name="NEW" path="/transaction/ancTrimesterChecklistDetail.jsp" />
+		<forward name="ALLCHKLSTPOPUP" path="/transaction/ancAllTrimesterChklstPopup.jsp" />		
+	</action>
+
+	<!-- Validate user id  for Nursing Desk -->
+	<action path="/validateUser"
+			type="inpatient.transaction.controller.action.ValidateUserACT"
+			name="ValidateUserFB"
+			parameter="transactionMode"
+			validate="false"
+			scope="request"
+			input="/transaction/nursingDesk.jsp">
+		<forward name="NEW" path="/nursingDesk" />
+		<forward name="PROCESS" path="/nursingDesk" />
+		
+	</action>
+
+	</action-mappings>
+
+
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Inpatient-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	 
+</struts-config>          

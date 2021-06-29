@@ -1,0 +1,8 @@
+    <jboss-deployment-structure>  
+        <deployment>  
+            <exclusions>  
+                <module name="org.jboss.resteasy.*" />  
+                 <module name="javax.ws.*" />  
+            </exclusions>  
+        </deployment>  
+    </jboss-deployment-structure>  

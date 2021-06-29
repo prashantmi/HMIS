@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Master'>
+		<common-values>
+			<master-name>ProcedureScheduleMaster</master-name>
+			<master-title>Procedure Schedule Master</master-title>
+		</common-values>	
+	
+	<list-page>
+				<tableHeading>Procedure Schedule Master</tableHeading> 
+				<list-table>HSRV_PROCEDURE_SCHEDULE_MST</list-table>
+				
+				<columns>
+					 <column>Procedure</column>
+					 <column>Max Sitting Required</column>
+					 			 
+  			   </columns>
+					<query-detail>
+					<fields>
+					    <field>(SELECT INITCAP(HSRSTR_PROCEDURE_NAME) FROM HSRV_PROCEDURE_MST  WHERE HSRNUM_PROCEDURE_CODE = A.HSRNUM_PROCEDURE_CODE AND GNUM_HOSPITAL_CODE=100 AND GNUM_ISVALID=1) PROC</field>
+					    <field>A.HSRNUM_MAX_SITTING_REQUIRED</field>
+					   					    		    					    					    
+					</fields>
+					<primaryKey>
+						<field>DISTINCT(A.HSRNUM_PROCEDURE_CODE) </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>						
+					</primaryKey>
+					<tables>
+						<table alias='A'>HSRV_PROCEDURE_SCHEDULE_MST</table>																		
+					</tables>
+					<condition>	
+							<dependent>
+							<clause> B.HSRNUM_PROCEDURE_CODE=A.HSRNUM_PROCEDURE_CODE</clause>
+							</dependent>		
+													              				 
+                            <isvalid-field> A.GNUM_ISVALID</isvalid-field>
+                            <orderby> order by PROC</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>	
+			<static-page>/servicearea/masters/ProcedureScheduleMaster.cnt</static-page>		
+		</add-page>
+
+		<modify-page>
+			<static-page>/servicearea/masters/ProcedureScheduleMaster.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>		

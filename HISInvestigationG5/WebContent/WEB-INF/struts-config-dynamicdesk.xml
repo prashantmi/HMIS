@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="DynamicDeskFB" type="hisglobal.utility.dynamicdesk.controller.fb.DynamicDeskFB" />
+	</form-beans>
+
+	<action-mappings>
+		<!-- Dynamic Desk -->
+		<action path="/enter"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayout.jsp">
+			<forward name="DESK" path="/dynamicDeskCommonLayout.jsp" />
+		</action>
+
+		<action path="/header"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskForwardACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayoutNew.jsp">
+			<forward name="1" path="/../../../opd/gotoDeskHeaderPage.cnt" />
+			<forward name="2" path="/../../../opd/gotoCsultyDeskHeaderPage.cnt" />
+			<forward name="3" path="/../../../inpatient/gotoIPDNursingDeskHeaderPage.cnt" />
+			<forward name="4" path="/../../../inpatient/gotoIPDDoctorDeskHeaderPage.cnt" />
+			<forward name="6" path="/../../../inpatient/gotoIPDNursingStationHeaderPage.cnt" />
+			<forward name="7" path="/../../../enquiry/gotoHelpDeskHeaderPage.cnt" />
+			<forward name="8" path="/../../../registration/gotoCMODeskHeaderPage.cnt" />
+			<forward name="9" path="/../../../mortuary/gotoPostmortemDeskHeaderPage.cnt" />
+			<forward name="10" path="/empty.jsp" />
+			<forward name="11" path="/../../../dietkitchen/gotoDietKitchenDeskHeader.cnt" />
+		</action>
+
+		<action path="/menus"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskMenusACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				parameter="deskMode"
+				scope="request"
+				input="/dynamicDeskCommonLayout.jsp">
+			<forward name="TOP" path="/topMenus.jsp" />
+			<forward name="LEFT" path="/leftMenus.jsp" />
+			<forward name="RIGHT" path="/rightMenus.jsp" />
+			<forward name="BOTTOM" path="/bottomMenus.jsp" />
+		</action>
+
+		<action path="/center"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskForwardACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayoutNew.jsp">
+			<forward name="1" path="/../../../opd/opdDesk.cnt" />
+			<forward name="2" path="/../../../opd/csultyDesk.cnt" />
+			<forward name="3" path="/../../../inpatient/nursingDesk.cnt" />
+			<forward name="4" path="/../../../inpatient/ipdDoctorDesk.cnt" />
+			<forward name="6" path="/../../../inpatient/nursingStation.cnt" />
+			<forward name="7" path="/../../../enquiry/hisHelpDesk.cnt" />
+			<forward name="8" path="/../../../registration/cmoDesk.cnt" />
+			<forward name="9" path="/../../../mortuary/postmortemDesk.cnt" />
+			<forward name="10" path="/../../../disaster/disasterDesk.cnt" />
+			<forward name="11" path="/../../../dietkitchen/dietKitchenDesk.cnt" />
+		</action>
+
+		<action path="/footer"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskForwardACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayoutNew.jsp">
+			<forward name="1" path="/../../../opd/gotoOPDDeskFooterPage.cnt" />
+			<forward name="2" path="/../../../opd/gotoCsultyDeskFooterPage.cnt" />
+			<forward name="3" path="/../../../inpatient/gotoNursingDeskFooterPage.cnt" />
+			<forward name="4" path="/../../../inpatient/gotoIPDDoctorDeskFooterPage.cnt" />
+			<forward name="6" path="/empty.jsp" />
+			<forward name="7" path="/../../../enquiry/gotoHelpDeskFooterPage.cnt" />
+			<forward name="8" path="/empty.jsp" />
+			<forward name="9" path="/empty.jsp" />
+			<forward name="10" path="/empty.jsp" />
+			<forward name="11" path="/empty.jsp" />
+		</action>
+		<!-- End of Dynamic Desk -->
+		
+		<!-- Start of OPD Bay Dynamic Desk -->
+		<action path="/enterBayDesk"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicOpdBayDeskACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicBayDeskCommonLayout.jsp">
+			<forward name="DESK" path="/dynamicBayDeskCommonLayout.jsp" />
+		</action>
+		
+		
+		
+		
+		<action path="/centerBayDesk"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskForwardACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayoutNew.jsp">
+			<forward name="1" path="/../../../opd/opdBayDesk.cnt" />
+			<forward name="2" path="/../../../opd/csultyDesk.cnt" />
+			<forward name="3" path="/../../../inpatient/nursingDesk.cnt" />
+			<forward name="4" path="/../../../inpatient/ipdDoctorDesk.cnt" />
+			<forward name="6" path="/../../../inpatient/nursingStation.cnt" />
+			<forward name="7" path="/../../../enquiry/hisHelpDesk.cnt" />
+			<forward name="8" path="/../../../registration/cmoDesk.cnt" />
+			<forward name="9" path="/../../../mortuary/postmortemDesk.cnt" />
+			<forward name="10" path="/../../../disaster/disasterDesk.cnt" />
+			<forward name="11" path="/../../../dietkitchen/dietKitchenDesk.cnt" />
+			<forward name="12" path="/../../../opd/opdDesk.cnt" />
+		</action>
+
+	
+		
+		
+		
+		
+	<!-- End of OPD Bay Dynamic Desk -->	
+		
+		<!-- Start of Dynamic Desk New -->
+		<action path="/enterNew"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskNewACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayoutNew.jsp">
+			<forward name="DESK" path="/dynamicDeskCommonLayoutNew.jsp" />
+		</action>
+		
+		<action path="/headerNew"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskForwardACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayoutNew.jsp">
+			<forward name="1" path="/../../../opd/doctorDeskHeaderNew.cnt" />
+			<forward name="2" path="/../../../opd/doctorDeskHeaderNew.cnt" />
+			<forward name="3" path="/../../../inpatient/gotoIPDNursingDeskHeaderPage.cnt" />
+			<forward name="4" path="/../../../opd/doctorDeskHeaderNew.cnt" />
+			<forward name="12" path="/../../../opd/opdBayDeskHeaderNew.cnt" />
+		</action>
+
+		<action path="/list"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskForwardACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayoutNew.jsp">
+			<forward name="1" path="/../../../opd/opdDeskPatientList.cnt" />
+			<forward name="2" path="/../../../opd/csultyDesk.cnt" />
+			<forward name="3" path="/../../../inpatient/nursingDesk.cnt" />
+			<forward name="4" path="/../../../inpatient/ipdDocDeskPatList.cnt" />
+			<forward name="12" path="/../../../opd/opdDeskPatientList.cnt" />
+		</action>
+		
+		<action path="/deskDetail"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskMenuTilesACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				parameter="deskMode"
+				scope="request"
+				input="/dynamicDeskPatientricTab.jsp">
+			<forward name="TILES" path="/dynamicDeskMenuTiles.jsp" />
+			<forward name="1" path="/../../../opd/doctorDeskDashboard.cnt" />
+			<forward name="2" path="/../../../opd/csultyDeskDetails.cnt" />
+			<forward name="3" path="/../../../inpatient/nursingDeskDetails.cnt" />
+			<forward name="4" path="/../../../opd/doctorDeskDashboard.cnt" />
+			<forward name="12" path="/../../../opd/opdBayDeskDashboard.cnt" />
+		</action>
+
+		<action path="/deskSummary"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskForwardACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayoutNew.jsp">
+			<forward name="1" path="/../../../opd/opdDeskAjax.cnt" />
+			<forward name="2" path="/../../../opd/csultyDesk.cnt" />
+			<forward name="3" path="/../../../inpatient/nursingDesk.cnt" />
+			<forward name="4" path="/../../../inpatient/ipdDoctorDesk.cnt" />
+			<forward name="12" path="/../../../opd/opdBayDeskAjax.cnt" />
+		</action>
+
+		<action path="/centerNew"
+				type="hisglobal.utility.dynamicdesk.controller.action.DynamicDeskForwardACTION"
+				name="DynamicDeskFB"
+				validate="false"
+				scope="request"
+				input="/dynamicDeskCommonLayoutNew.jsp">
+			<forward name="1" path="/../../../opd/opdDeskNew.cnt" />
+			<forward name="2" path="/../../../opd/csultyDesk.cnt" />
+			<forward name="3" path="/../../../inpatient/nursingDesk.cnt" />
+			<forward name="4" path="/../../../inpatient/ipdDoctorDesk.cnt" />
+			<forward name="6" path="/../../../inpatient/nursingStation.cnt" />
+			<forward name="7" path="/../../../enquiry/hisHelpDesk.cnt" />
+			<forward name="8" path="/../../../registration/cmoDesk.cnt" />
+			<forward name="9" path="/../../../mortuary/postmortemDesk.cnt" />
+			<forward name="10" path="/../../../disaster/disasterDesk.cnt" />
+			<forward name="11" path="/../../../dietkitchen/dietKitchenDesk.cnt" />
+			<forward name="12" path="/../../../opd/opdBayDesk.cnt" />
+		</action>
+
+		<!-- End of Dynamic Desk New -->
+	
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/DynamicDesk-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+</struts-config>

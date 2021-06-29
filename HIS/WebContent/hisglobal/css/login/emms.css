@@ -1,0 +1,131 @@
+
+#PrintData{
+   width: 95%; 
+   font-style: normal;
+   font-family: Verdana,Arial,Helvetica,sans-serif;
+   padding-left: 5px;
+   padding-right: 40px;
+   
+}
+
+.page-break{
+	page-break-after: always;
+}
+
+@page {
+   font-style: normal;
+   font-family: Calibri;
+   size: 8.75in 11.75in; 
+   margin-left:0in; 
+   margin-right:0in;
+   margin-top:0.87in; 
+   margin-bottom: 0.85in;
+   background-repeat: no-repeat;
+   background-position: center; 
+   @top-center{
+				content: element(header);
+   }
+	@bottom-center{
+				content: element(footer);
+	}
+}
+#page-header {
+			display: block;
+			position: running(header);
+		}
+#page-header img{
+			width: 95%;
+			height: 80px
+		}
+		
+#page-footer {
+			display: block;
+			position: running(footer);
+}
+
+#page-footer img{
+			width: 775px;
+			height: 80px
+}
+
+.pagenumber:before 
+{ 
+	content: counter(page); 
+} 
+.pagecount:after 
+{ 
+	content: counter(pages); 
+} 
+
+/*h3{
+	text-align: center;
+}
+p
+{
+width: 95%;
+}
+
+.print-text{
+	color: #191919;
+	font-size: 12px;
+	height: 16px;
+    /*padding-left: 3px;
+    text-align: left;
+    vertical-align: top;
+}
+
+
+.print-text td div{
+	padding-right: 38px;
+}
+*/
+.header{
+   background-image :url(http://localhost:8080/HIS/hisglobal/images/Gujrat_rc_header-1000X121.jpg) ;
+   background-repeat: no-repeat;
+   background-position: center; 
+}
+/*
+.footer{
+	display: block;
+	text-align: center;
+	position: running(footer);
+}
+
+.content{
+	page-break-after: always;
+	@page { 
+		@top-center { 
+			content: element(header) 
+			}
+		}; 
+	@page { 
+		@bottom-center { 
+			content: element(footer)
+			}
+		};
+}
+.print-text{
+	text-align: justify;
+}
+
+.content img{
+	width: 95%;
+}
+*/
+.print-text table{
+	width: 100%;
+	padding: 0px;
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+.print-text td{
+	vertical-align: top;
+}
+.print-text table p{
+	margin: 0px;
+	width: 100%
+}
+.print-text ol{
+	padding-left: 1%;
+}
+

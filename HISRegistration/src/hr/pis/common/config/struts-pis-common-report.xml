@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 	 		 		 		 	
+	 	
+	<package name="pis.common.reports" namespace="/pis/common/reports" extends="struts-default">
+	
+		<action name="*EmpDetailsRpt" method="{1}"  class="hr.pis.common.reports.controller.action.EmpDtlRptACTION"> 	
+		<interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />	
+			<result name="NEW"></result>	 	
+	 	</action> 
+	</package>
+	 	
+	<package name="pis.reports" namespace="/pis/reports" extends="struts-default">
+	 	
+	 	
+	 </package>
+	 
+</struts>

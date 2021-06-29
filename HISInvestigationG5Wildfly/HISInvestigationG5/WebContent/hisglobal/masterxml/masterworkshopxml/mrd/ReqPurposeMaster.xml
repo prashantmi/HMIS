@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Request Purpose Master'>
+		<common-values>
+			<master-name>ReqPurposeMaster</master-name>
+			<master-title>Req Purpose Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Req Purpose Master</tableHeading>
+			
+			<list-table>HPMRT_REQ_PURPOSE_MST</list-table>
+			<controls>
+				<control type="combo" index="0">
+					<label>Record Type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>INITCAP(B.HPMRSTR_RECORDTYPE_DESC)</text-field>
+								<value-field>B.HPMRNUM_RECORD_TYPE</value-field>
+							</options>
+							<tables>
+								<table alias='B'>HPMRT_MRD_RECORDTYPE_MST</table>
+								
+							</tables>
+							<condition>
+								<general>B.GNUM_HOSPITAL_CODE=100 and B.GNUM_ISVALID = 1 and B.HPMRNUM_MOVABLE_TYPE in (2,3) ORDER BY INITCAP(B.HPMRSTR_RECORDTYPE_DESC) </general>
+								<general-inactive> B.GNUM_HOSPITAL_CODE=100 AND</general-inactive>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>	
+			<columns>
+				<column>Purpose</column>
+				<column>Record Type</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>initcap(A.HPMRSTR_PURPOSE)</field> 
+					<field>initcap(B.HPMRSTR_RECORDTYPE_DESC)</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HPMRNUM_REQ_PURPOSE_ID</field>
+					<field>A.HPMRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HPMRT_REQ_PURPOSE_MST</table>
+					<table alias='B'>HPMRT_MRD_RECORDTYPE_MST</table>
+				</tables>
+				
+				<condition>
+					<general> A.GNUM_HOSPITAL_CODE=100 AND A.HPMRNUM_RECORD_TYPE=B.HPMRNUM_RECORD_TYPE and  A.gnum_isvalid=B.gnum_isvalid and A.gnum_hospital_code=B.gnum_hospital_code AND </general>
+					<general-inactive> A.GNUM_HOSPITAL_CODE=100 AND</general-inactive>
+					<isvalid-field> A.GNUM_ISVALID </isvalid-field>
+					<orderby> ORDER BY INITCAP(A.HPMRSTR_PURPOSE) </orderby>
+					<dependent>
+						<clause> A.HPMRNUM_RECORD_TYPE = #0 </clause>
+					</dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/mrd/master/reqPurposeMater.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mrd/master/reqPurposeMater.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

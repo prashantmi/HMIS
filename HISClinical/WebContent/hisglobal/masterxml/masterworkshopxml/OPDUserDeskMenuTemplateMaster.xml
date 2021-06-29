@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='User Desk Menu Template Master'>
+		<common-values>
+			<master-name>OPDUserDeskMenuTemplateMaster</master-name>
+			<master-title>User Desk Menu Template Master</master-title>
+		</common-values>
+
+		<list-page>
+			<tableHeading>User Desk Menu Template Master</tableHeading> 
+			<list-table>GBLT_USER_DESKMENU_TEMPLATE</list-table>
+
+			<columns>
+				 <column>Unit Name</column>
+				 <column>Ward Name</column>
+				 <column>Seat Name</column>
+				 <column>Desk Name</column>
+				 <column>Desk Menu Name</column>
+				 <column>Template Name</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>NVL(( SELECT INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(C.HGSTR_UNITNAME)||')' FROM GBLT_DEPARTMENT_MST B,
+						   HGBT_UNIT_MST C WHERE A.HGNUM_DEPTUNITCODE=C.HGNUM_DEPTUNITCODE AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND 
+						   C.HGNUM_DEPT_CODE=B.GNUM_DEPT_CODE AND C.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE and B.GNUM_ISVALID=1),' ')</field>
+					<field>NVL((Select INITCAP (J.HIPSTR_WARD_NAME) FROM  HIPT_WARD_MST J WHERE A.HIPNUM_WARD_CODE = J.HIPNUM_WARD_CODE
+  						   AND A.GNUM_HOSPITAL_CODE = J.GNUM_HOSPITAL_CODE  AND J.GNUM_ISVALID = 1),' ')</field>
+					<field>NVL((Select INITCAP (H.GSTR_SEAT_NAME) FROM  GBLT_SEAT_MST H WHERE A.GNUM_USERSEAT_ID = H.GNUM_SEATID
+  						   AND A.GNUM_HOSPITAL_CODE = H.GNUM_HOSPITAL_CODE  AND H.GNUM_ISVALID = 1),' ')</field>
+					<field>INITCAP(E.GSTR_DESK_NAME)</field>
+					<field>INITCAP(F.GSTR_DESK_MENU_NAME)</field>
+					<field>INITCAP(G.HGSTR_TEMPLATE_NAME)</field>
+					
+					
+				</fields>
+				<primaryKey>
+					<field>A.GNUM_SLNO</field>
+					<field>A.GNUM_DESK_MENU_ID</field>
+					<field>A.HGNUM_TEMPLATE_ID</field>
+					<field>A.GNUM_DESK_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>GBLT_USER_DESKMENU_TEMPLATE</table>
+					<table alias='E'>GBLT_DESK_MST</table>
+					<table alias='F'>GBLT_DESK_MENU_MST</table>
+					<table alias='G'>HGBT_TEMPLATE_MST</table>
+				</tables>
+				<condition>
+					<isvalid-field>
+						A.GNUM_DESK_ID=E.GNUM_DESK_ID AND A.GNUM_HOSPITAL_CODE=E.GNUM_HOSPITAL_CODE AND 
+						A.GNUM_DESK_MENU_ID=F.GNUM_DESK_MENU_ID AND A.GNUM_HOSPITAL_CODE=F.GNUM_HOSPITAL_CODE AND 
+						A.HGNUM_TEMPLATE_ID=G.HGNUM_TEMPLATE_ID AND A.GNUM_HOSPITAL_CODE=G.GNUM_HOSPITAL_CODE AND 
+						TRUNC(SYSDATE) BETWEEN TRUNC(G.GDT_EFFECTIVE_FRM) AND TRUNC(NVL (G.GDT_EFFECTIVE_TO, SYSDATE)) AND 
+						A.GNUM_ISVALID
+					</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby> ORDER BY A.GNUM_SLNO </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+
+		<add-page>			
+			<static-page>/opd/master/AddUserDeskMenuTemplateMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/ModifyViewUserDeskMenuTemplateMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

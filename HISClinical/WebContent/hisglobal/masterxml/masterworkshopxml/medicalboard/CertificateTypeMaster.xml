@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='CertificateTypeMaster'>
+		<common-values>
+			<master-name>CertificateTypeMaster</master-name>
+			<master-title>Certificate Type Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>CertificateTypeMaster</tableHeading> 
+				<list-table>HMBT_CERTIFICATE_TYPE_MST</list-table>
+				
+				<columns>
+					 <column>Certificate Type</column>
+				     <column>Certificate Category</column>
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HMBSTR_CERTIFICATE_TYPE_NAME) </field>
+						<field>INITCAP(B.HMBSTR_CERTIFICATE_CAT_NAME)</field>
+						</fields>
+					<primaryKey>
+						<field>A.HMBNUM_CERTIFICATE_TYPE_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HMBNUM_SLNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HMBT_CERTIFICATE_TYPE_MST</table>
+						<table alias='B'>HMBT_CERTIFICATE_CAT_MST</table>
+					</tables>
+					<condition>		
+						<general>
+						  A.HMBNUM_CERTIFICATE_CAT_ID=B.HMBNUM_CERTIFICATE_CAT_ID 
+						  AND A.GNUM_ISVALID=B.GNUM_ISVALID AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE and A.GNUM_HOSPITAL_CODE=101  and 
+					    </general>			 
+                        <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                       
+                    </condition>
+				</query-detail>				
+		</list-page>
+	<add-page>
+			<static-page>/medicalboard/master/CertificateTypeMasterACTION.cnt</static-page>
+		</add-page>
+		
+		<modify-page>
+			<static-page>/medicalboard/master/CertificateTypeMasterACTION.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

@@ -1,0 +1,133 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from InvCrNoServiceService WSDL service -->
+
+  <service name="InvCrNoService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.Investigation_webservice"/>
+      <parameter name="wsdlServiceElement" value="InvCrNoServiceService"/>
+      <parameter name="schemaQualified" value="http://service.Investigation_webservice,http://json.jettison.codehaus.org"/>
+      <parameter name="wsdlServicePort" value="InvCrNoService"/>
+      <parameter name="className" value="Investigation_webservice.service.InvCrNoServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="InvCrNoService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getDetailsBasedOnCRNumber" qname="operNS:getDetailsBasedOnCRNumber" xmlns:operNS="http://service.Investigation_webservice" returnQName="retNS:getDetailsBasedOnCRNumberReturn" xmlns:retNS="http://service.Investigation_webservice" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:crNo" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="authfunction" qname="operNS:authfunction" xmlns:operNS="http://service.Investigation_webservice" returnQName="retNS:authfunctionReturn" xmlns:retNS="http://service.Investigation_webservice" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:ipAddressRequestCameFrom" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:source" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:key" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="messageeror" qname="operNS:messageeror" xmlns:operNS="http://service.Investigation_webservice" returnQName="retNS:messageerorReturn" xmlns:retNS="http://service.Investigation_webservice" returnType="rtns:JSONArray" xmlns:rtns="http://json.jettison.codehaus.org" soapAction="" >
+        <parameter qname="pns:message" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <fault name="JSONException" qname="fns:fault" xmlns:fns="http://service.Investigation_webservice" class="org.codehaus.jettison.json.JSONException" type="tns:JSONException" xmlns:tns="http://json.jettison.codehaus.org"/>
+      </operation>
+      <operation name="logCreate" qname="operNS:LogCreate" xmlns:operNS="http://service.Investigation_webservice" soapAction="" >
+        <parameter qname="pns:ipAddressRequestCameFrom" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:source" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:key" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:url" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:type" xmlns:pns="http://service.Investigation_webservice" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getDetailsBasedOnCRNumber authfunction messageeror logCreate"/>
+
+      <typeMapping
+        xmlns:ns="http://service.Investigation_webservice"
+        qname="ns:>LogCreateResponse"
+        type="java:Investigation_webservice.service.LogCreateResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://service.Investigation_webservice"
+        qname="ns:>authfunction"
+        type="java:Investigation_webservice.service.Authfunction"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://service.Investigation_webservice"
+        qname="ns:>authfunctionResponse"
+        type="java:Investigation_webservice.service.AuthfunctionResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://service.Investigation_webservice"
+        qname="ns:>LogCreate"
+        type="java:Investigation_webservice.service.LogCreate"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://json.jettison.codehaus.org"
+        qname="ns:JSONException"
+        type="java:org.codehaus.jettison.json.JSONException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://json.jettison.codehaus.org"
+        qname="ns:JSONArray"
+        type="java:org.codehaus.jettison.json.JSONArray"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://service.Investigation_webservice"
+        qname="ns:>getDetailsBasedOnCRNumber"
+        type="java:Investigation_webservice.service.GetDetailsBasedOnCRNumber"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://json.jettison.codehaus.org"
+        qname="ns:JSONObject"
+        type="java:org.codehaus.jettison.json.JSONObject"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://service.Investigation_webservice"
+        qname="ns:>messageeror"
+        type="java:Investigation_webservice.service.Messageeror"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://service.Investigation_webservice"
+        qname="ns:>messageerorResponse"
+        type="java:Investigation_webservice.service.MessageerorResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://service.Investigation_webservice"
+        qname="ns:>getDetailsBasedOnCRNumberResponse"
+        type="java:Investigation_webservice.service.GetDetailsBasedOnCRNumberResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

@@ -1,0 +1,1910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.3.1.v201309091055 Build &lt;4.3.1.v20130918-1142></property>
+    <html-property name="description">His Report Template with Datasource and predefined parameters</html-property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">63</property>
+            <expression name="value">params["jndi_ds_conn"]</expression>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">63</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">63</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <text-property name="displayName">His Report Template</text-property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="jndi_ds_conn" id="22">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">java:comp/env/AHIS</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Header" id="23">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer" id="24">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">Computer Generated Report</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Name" id="26">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer_Visible" id="75">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">true</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="report_user_Remarks" id="191">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address" id="249">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Contact" id="255">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="dept_Code" id="439">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">104</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="ward_Code" id="440">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">102</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="fromDate" id="441">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">'01-Dec-2008'</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="toDate" id="442">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">'22-Dec-2008'</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="room_No" id="443">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">20</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="hosp_Code" id="444">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">108</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="rpt_format" id="816">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">true</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="IsDateWise" id="818">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="IsGrandTotal" id="819">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">1</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="IsConsolidated" id="820">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">true</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="modeval" id="839">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_formattype" id="891">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="63">
+            <property name="odaDriverClass">com.edb.Driver</property>
+            <property name="odaURL">jdbc:edb://10.0.2.103/ayush</property>
+            <property name="odaUser">ayush</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YXl1c2g=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="882">
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">dept_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">deptunit_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">stat_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ward_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">room_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">remening</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">adm</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">dis_other</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">trans_in</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">trans_out</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">death</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">tot</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[if(parseInt(params["modeval"]).value==1)
+{
+this.queryText="select Pkg_Rpt_Func.get_dept_name(HOSPITAL_CODE::character varying,dept_code::character varying,STAT_DATE) AS Dept_Name,Pkg_Rpt_Func.get_deptunit_name(HOSPITAL_CODE::character varying,DEPTUNIT_CODE::character varying,STAT_DATE) AS DeptUnit_Name,TO_CHAR(STAT_DATE,'DD-Mon-YYYY') AS STAT_DATE,Pkg_Rpt_Func.get_ward_name(HOSPITAL_CODE::character varying,WARD_CODE::character varying,STAT_DATE) AS Ward_Name,Pkg_Rpt_Func.get_room_name(HOSPITAL_CODE::character varying,ROOM_CODE::character varying) AS room_Name,SUM(patient_rem_male+patient_rem_female+patient_rem_male_child+patient_rem_female_child+patient_rem_other+patient_rem_other_child) AS remening,SUM(patient_adm_male+patient_adm_female+patient_adm_male_child+patient_adm_female_child+patient_adm_other+patient_adm_other_child) AS adm,SUM(patient_disoth_male+patient_disoth_female+patient_disoth_male_child+patient_disoth_female_child+patient_disoth_other+patient_disoth_other_child) AS dis_other,SUM(patient_tin_male+patient_tin_female+patient_tin_male_child+patient_tin_female_child+patient_tin_other+patient_tin_other_child) AS trans_in,SUM(patient_trfout_male+patient_trfout_female+patient_trfout_male_child+patient_trfout_female_child+patient_trfout_other+patient_trfout_other_child) AS trans_out,SUM(patient_disdeath_male+patient_disdeath_female+patient_disdeath_male_child+patient_disdeath_female_child+patient_disdeath_other+patient_disdeath_other_child) AS death,SUM(patient_rem_male+patient_rem_female+patient_rem_male_child+patient_rem_female_child+patient_rem_other+patient_rem_other_child+patient_adm_male+patient_adm_female+patient_adm_male_child+patient_adm_female_child+patient_adm_other+patient_adm_other_child+patient_tin_male+patient_tin_female+patient_tin_male_child+patient_tin_female_child+patient_tin_other+patient_tin_other_child+patient_trfout_male+patient_trfout_female+patient_trfout_male_child+patient_trfout_female_child+patient_trfout_other+patient_trfout_other_child+patient_disoth_male+patient_disoth_female+patient_disoth_male_child+patient_disoth_female_child+patient_disoth_other+patient_disoth_other_child+patient_disdeath_male+patient_disdeath_female+patient_disdeath_male_child+patient_disdeath_female_child+patient_disdeath_other+patient_disdeath_other_child) AS tot FROM HIPT_PATIENT_DSS GROUP BY DEPT_CODE,DEPTUNIT_CODE,STAT_DATE,WARD_CODE,ROOM_CODE,HOSPITAL_CODE ORDER BY DEPT_CODE,DEPTUNIT_CODE,WARD_CODE,HOSPITAL_CODE,STAT_DATE";
+
+this.queryText = this.queryText +  " AND GNUM_HOSPITAL_CODE =  "+  "'" +params["hosp_Code"] + "'" ;
+
+if(parseInt(params["dept_Code"]).value!=0)
+{
+                     this.queryText= this.queryText + "  AND DEPT_CODE= "+"'" +params["dept_Code"] +"'";
+}
+if(parseInt(params["ward_Code"]).value!=0)
+{
+                     this.queryText= this.queryText + "  AND WARD_CODE = "+"'" +params["ward_Code"] +"'";
+}
+
+if(parseInt(params["room_No"]).value!=0)
+{
+                     this.queryText= this.queryText + "   AND ROOM_CODE  = DECODE(ahis_function.num_default(' "+"'" +params["room_No"] +"'"+"',0),0,room_code,ahis_function.num_default('"+"'"+params["room_No"]+"'"+")";
+                     
+}
+
+
+this.queryText=this.queryText+"  AND STAT_DATE >= to_date(to_char("  +  "'" +params["from_Date"]+"'::timestamp,'dd-mm-yyyy'),'dd-mm-yyyy')";
+this.queryText=this.queryText+" AND STAT_DATE <=  to_date(to_char("  +  "'" +params["to_Date"]+ "'::timestamp,'dd-mm-yyyy'),'dd-mm-yyyy')+1" ;
+this.queryText = this.queryText + " GROUP BY DEPT_CODE,DEPTUNIT_CODE,STAT_DATE,WARD_CODE,ROOM_CODE,HOSPITAL_CODE ";
+this.queryText = this.queryText + " ORDER BY DEPT_CODE,DEPTUNIT_CODE,WARD_CODE,HOSPITAL_CODE,STAT_DATE ";
+
+
+
+}
+else
+if(parseInt(params["modeval"]).value==2)
+{
+this.queryText="select Pkg_Rpt_Func.get_dept_name(HOSPITAL_CODE::character varying,dept_code::character varying,STAT_DATE) AS Dept_Name,Pkg_Rpt_Func.get_deptunit_name(HOSPITAL_CODE::character varying,DEPTUNIT_CODE::character varying,STAT_DATE) AS DeptUnit_Name,TO_CHAR(STAT_DATE,'DD-Mon-YYYY') AS STAT_DATE,Pkg_Rpt_Func.get_ward_name(HOSPITAL_CODE::character varying,WARD_CODE::character varying,STAT_DATE) AS Ward_Name,Pkg_Rpt_Func.get_room_name(HOSPITAL_CODE::character varying,ROOM_CODE::character varying) AS room_Name,SUM(patient_rem_male+patient_rem_female+patient_rem_male_child+patient_rem_female_child+patient_rem_other+patient_rem_other_child) AS remening,SUM(patient_adm_male+patient_adm_female+patient_adm_male_child+patient_adm_female_child+patient_adm_other+patient_adm_other_child) AS adm,SUM(patient_disoth_male+patient_disoth_female+patient_disoth_male_child+patient_disoth_female_child+patient_disoth_other+patient_disoth_other_child) AS dis_other,SUM(patient_tin_male+patient_tin_female+patient_tin_male_child+patient_tin_female_child+patient_tin_other+patient_tin_other_child) AS trans_in,SUM(patient_trfout_male+patient_trfout_female+patient_trfout_male_child+patient_trfout_female_child+patient_trfout_other+patient_trfout_other_child) AS trans_out,SUM(patient_disdeath_male+patient_disdeath_female+patient_disdeath_male_child+patient_disdeath_female_child+patient_disdeath_other+patient_disdeath_other_child) AS death, SUM(patient_rem_male+patient_rem_female+patient_rem_male_child+patient_rem_female_child+patient_rem_other+patient_rem_other_child+ patient_adm_male+patient_adm_female+patient_adm_male_child+patient_adm_female_child+patient_adm_other+patient_adm_other_child+ patient_tin_male+patient_tin_female+patient_tin_male_child+patient_tin_female_child+patient_tin_other+patient_tin_other_child+ patient_trfout_male+patient_trfout_female+patient_trfout_male_child+patient_trfout_female_child+patient_trfout_other+patient_trfout_other_child+ patient_disoth_male+patient_disoth_female+patient_disoth_male_child+patient_disoth_female_child+patient_disoth_other+patient_disoth_other_child+ patient_disdeath_male+patient_disdeath_female+patient_disdeath_male_child+patient_disdeath_female_child+patient_disdeath_other+patient_disdeath_other_child) AS tot FROM HIPT_PATIENT_DSS";
+
+this.queryText = this.queryText + " AND GNUM_HOSPITAL_CODE =  "+  "'" +params["hosp_Code"] + "'" ;
+
+if(parseInt(params["dept_Code"]).value!=0)
+{
+                     this.queryText= this.queryText + "  AND DEPT_CODE= "+"'" +params["dept_Code"] +"'";
+}
+if(parseInt(params["ward_Code"]).value!=0)
+{
+                     this.queryText= this.queryText + "  AND WARD_CODE = "+"'" +params["ward_Code"] +"'";
+}
+
+if(parseInt(params["room_No"]).value!=0)
+{
+                     this.queryText= this.queryText + "   AND ROOM_CODE  = DECODE(ahis_function.num_default(' "+"'" +params["room_No"] +"'"+"',0),0,room_code,ahis_function.num_default('"+"'"+params["room_No"]+"'"+")";
+                     
+}
+
+
+this.queryText=this.queryText+"  AND STAT_DATE >= to_date(to_char("  +  "'" +params["from_Date"]+"'::timestamp,'dd-mm-yyyy'),'dd-mm-yyyy')";
+this.queryText=this.queryText+" AND STAT_DATE <=  to_date(to_char("  +  "'" +params["to_Date"]+ "'::timestamp,'dd-mm-yyyy'),'dd-mm-yyyy')+1" ;
+this.queryText = this.queryText + " GROUP BY STAT_DATE,DEPT_CODE,DEPTUNIT_CODE,STAT_DATE,WARD_CODE,ROOM_CODE,HOSPITAL_CODE";
+this.queryText = this.queryText + " ORDER BY STAT_DATE,DEPT_CODE,DEPTUNIT_CODE,ROOM_CODE,HOSPITAL_CODE ";
+}]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">dept_name</property>
+                    <property name="nativeName">dept_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">deptunit_name</property>
+                    <property name="nativeName">deptunit_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">stat_date</property>
+                    <property name="nativeName">stat_date</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ward_name</property>
+                    <property name="nativeName">ward_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">room_name</property>
+                    <property name="nativeName">room_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">remening</property>
+                    <property name="nativeName">remening</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">adm</property>
+                    <property name="nativeName">adm</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">dis_other</property>
+                    <property name="nativeName">dis_other</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">trans_in</property>
+                    <property name="nativeName">trans_in</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">trans_out</property>
+                    <property name="nativeName">trans_out</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">death</property>
+                    <property name="nativeName">death</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">tot</property>
+                    <property name="nativeName">tot</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select Pkg_Rpt_Func.get_dept_name(HOSPITAL_CODE::character varying,dept_code::character varying,STAT_DATE) AS Dept_Name,
+    Pkg_Rpt_Func.get_deptunit_name(HOSPITAL_CODE::character varying,DEPTUNIT_CODE::character varying,STAT_DATE) AS DeptUnit_Name,
+    TO_CHAR(STAT_DATE,'DD-Mon-YYYY') AS STAT_DATE,
+    Pkg_Rpt_Func.get_ward_name(HOSPITAL_CODE::character varying,WARD_CODE::character varying,STAT_DATE) AS Ward_Name,
+    Pkg_Rpt_Func.get_room_name(HOSPITAL_CODE::character varying,ROOM_CODE::character varying) AS room_Name,
+    SUM(patient_rem_male+patient_rem_female+patient_rem_male_child+patient_rem_female_child+patient_rem_other+patient_rem_other_child) AS remening,
+    SUM(patient_adm_male+patient_adm_female+patient_adm_male_child+patient_adm_female_child+patient_adm_other+patient_adm_other_child) AS adm,
+    SUM(patient_disoth_male+patient_disoth_female+patient_disoth_male_child+patient_disoth_female_child+patient_disoth_other+patient_disoth_other_child) AS dis_other,
+    SUM(patient_tin_male+patient_tin_female+patient_tin_male_child+patient_tin_female_child+patient_tin_other+patient_tin_other_child) AS trans_in,
+    SUM(patient_trfout_male+patient_trfout_female+patient_trfout_male_child+patient_trfout_female_child+patient_trfout_other+patient_trfout_other_child) AS trans_out,
+    SUM(patient_disdeath_male+patient_disdeath_female+patient_disdeath_male_child+patient_disdeath_female_child+patient_disdeath_other+patient_disdeath_other_child) AS death,
+    SUM(patient_rem_male+patient_rem_female+patient_rem_male_child+patient_rem_female_child+patient_rem_other+patient_rem_other_child+
+    patient_adm_male+patient_adm_female+patient_adm_male_child+patient_adm_female_child+patient_adm_other+patient_adm_other_child+
+    patient_tin_male+patient_tin_female+patient_tin_male_child+patient_tin_female_child+patient_tin_other+patient_tin_other_child+
+    patient_trfout_male+patient_trfout_female+patient_trfout_male_child+patient_trfout_female_child+patient_trfout_other+patient_trfout_other_child+
+    patient_disoth_male+patient_disoth_female+patient_disoth_male_child+patient_disoth_female_child+patient_disoth_other+patient_disoth_other_child+
+    patient_disdeath_male+patient_disdeath_female+patient_disdeath_male_child+patient_disdeath_female_child+patient_disdeath_other+patient_disdeath_other_child) AS tot
+
+    FROM HIPT_PATIENT_DSS
+
+    GROUP BY DEPT_CODE,DEPTUNIT_CODE,STAT_DATE,WARD_CODE,ROOM_CODE,HOSPITAL_CODE
+    ORDER BY DEPT_CODE,DEPTUNIT_CODE,WARD_CODE,HOSPITAL_CODE,STAT_DATE]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>1.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>dept_name</design:name>
+            <design:position>1</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dept_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>deptunit_name</design:name>
+            <design:position>2</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>deptunit_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>stat_date</design:name>
+            <design:position>3</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>stat_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>ward_name</design:name>
+            <design:position>4</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ward_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>room_name</design:name>
+            <design:position>5</design:position>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>room_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>remening</design:name>
+            <design:position>6</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>remening</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>adm</design:name>
+            <design:position>7</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>adm</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>dis_other</design:name>
+            <design:position>8</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dis_other</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>trans_in</design:name>
+            <design:position>9</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>trans_in</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>trans_out</design:name>
+            <design:position>10</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>trans_out</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>death</design:name>
+            <design:position>11</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>death</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:name>tot</design:name>
+            <design:position>12</design:position>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tot</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0.75in</property>
+            <property name="leftMargin">0.2395833333in</property>
+            <property name="bottomMargin">0.5in</property>
+            <property name="rightMargin">0.21875in</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0.2in</property>
+            <page-footer>
+                <grid id="368">
+                    <property name="width">100%</property>
+                    <column id="369">
+                        <property name="width">48%</property>
+                    </column>
+                    <column id="370">
+                        <property name="width">50%</property>
+                    </column>
+                    <row id="371">
+                        <cell id="372">
+                            <property name="verticalAlign">middle</property>
+                            <label id="374">
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Page</text-property>
+                            </label>
+                        </cell>
+                        <cell id="373">
+                            <grid id="293">
+                                <property name="textAlign">left</property>
+                                <property name="width">10%</property>
+                                <column id="294">
+                                    <property name="width">3%</property>
+                                </column>
+                                <column id="295">
+                                    <property name="width">5%</property>
+                                </column>
+                                <column id="296">
+                                    <property name="width">3%</property>
+                                </column>
+                                <row id="297">
+                                    <property name="verticalAlign">middle</property>
+                                    <cell id="298">
+                                        <auto-text id="299">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">8pt</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                    </cell>
+                                    <cell id="300">
+                                        <text id="301">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">8pt</property>
+                                            <property name="contentType">plain</property>
+                                            <text-property name="content"><![CDATA[of]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="302">
+                                        <auto-text id="303">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">8pt</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="type">total-page</property>
+                                        </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="226">
+            <property name="width">100%</property>
+            <column id="227"/>
+            <column id="228"/>
+            <column id="229"/>
+            <row id="812">
+                <property name="textAlign">right</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr">params["rpt_format"]</expression>
+                    </structure>
+                </list-property>
+                <cell id="813">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text id="817">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<script language="javascript">
+
+function printContent(){
+
+newwin=window.open('','printwin','left=100,top=100,width=700,height=700,scrollbars=yes');
+newwin.document.write('<HTML><HEAD>');
+newwin.document.write((document.getElementsByTagName("head")[0]).innerHTML);
+newwin.document.write('<style type="text/css"> .hidecontrol { display: none; } </style>\n')
+newwin.document.write('<script>\n');
+newwin.document.write('function chkstate(){ \n');
+//newwin.document.write('if(document.readystate=="complete" || document.readystate=="undefined"){\n');
+newwin.document.write('window.close();\n');
+//newwin.document.write('}\n');
+//newwin.document.write('else{\n');
+//newwin.document.write('setTimeout("chkstate()",2000)\n');
+//newwin.document.write('}\n');
+newwin.document.write('}\n');
+newwin.document.write('function print_win(){\n');
+newwin.document.write('window.print();\n');
+newwin.document.write('chkstate();\n');
+newwin.document.write('}\n');
+
+newwin.document.write('<\/script>\n');
+newwin.document.write('</HEAD>\n');
+newwin.document.write('<BODY onload="print_win()">\n');
+newwin.document.write((document.getElementsByTagName("body" )[0]).innerHTML);
+newwin.document.write('</BODY>\n');
+newwin.document.write('</HTML>\n');
+newwin.document.close();
+
+}
+
+</script>
+
+<div id='printAreaDivId' class='hidecontrol'>
+<img  src='../../hisglobal/images/btn-pnt.png' style="cursor: hand;cursor: pointer" onclick='printContent();'>
+<img src='../../hisglobal/images/btn-ccl.png' style="cursor: hand;cursor: pointer" onclick='javascript:history.back(-1);'>
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+
+</div>
+]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="230">
+                <cell id="231">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="344">
+                        <property name="width">100%</property>
+                        <column id="345">
+                            <property name="width">60%</property>
+                        </column>
+                        <column id="346">
+                            <property name="textAlign">right</property>
+                            <property name="width">40%</property>
+                        </column>
+                        <row id="384">
+                            <property name="verticalAlign">middle</property>
+                            <cell id="385">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">right</property>
+                                <grid id="54">
+                                    <property name="textAlign">right</property>
+                                    <property name="width">100%</property>
+                                    <column id="55">
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="width">80%</property>
+                                    </column>
+                                    <column id="56">
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="width">24%</property>
+                                    </column>
+                                    <row id="57">
+                                        <property name="verticalAlign">middle</property>
+                                        <cell id="58">
+                                            <label id="60">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="textAlign">right</property>
+                                                <text-property name="text">Report Date &amp; Time :</text-property>
+                                            </label>
+                                        </cell>
+                                        <cell id="59">
+                                            <property name="verticalAlign">middle</property>
+                                            <data id="62">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <structure name="dateTimeFormat">
+                                                    <property name="category">Custom</property>
+                                                    <property name="pattern">dd/MM/yyyy kk:mm:ss</property>
+                                                </structure>
+                                                <property name="textAlign">left</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">Column Binding</property>
+                                                        <text-property name="displayName">RunDateTime</text-property>
+                                                        <expression name="expression">new Date()</expression>
+                                                        <property name="dataType">date-time</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">Column Binding</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="347">
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">middle</property>
+                            <cell id="348">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">center</property>
+                                <text-data id="243">
+                                    <property name="fontFamily">"Arial"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["report_Header"]</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="234">
+                <property name="textAlign">center</property>
+                <cell id="235">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="248">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Address"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="250">
+                <property name="textAlign">center</property>
+                <cell id="251">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="254">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Contact"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="375">
+                <property name="height">3mm</property>
+                <cell id="376"/>
+                <cell id="377"/>
+                <cell id="378"/>
+            </row>
+            <row id="238">
+                <property name="textAlign">center</property>
+                <cell id="239">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="268">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Name"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="554">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="555">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <data id="801">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Column Binding</property>
+                                <text-property name="displayName">date</text-property>
+                                <expression name="expression">"( From " + params["fromDate"] + " To " + params["toDate"]+" )"</expression>
+                                <property name="dataType">any</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">Column Binding</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="598">
+                <property name="height">3mm</property>
+                <cell id="599"/>
+                <cell id="600"/>
+                <cell id="601"/>
+            </row>
+            <row id="260">
+                <cell id="261">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="256">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="257">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <table id="638">
+                        <property name="width">95%</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">dept_name</property>
+                                <expression name="expression">dataSetRow["dept_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">deptunit_name</property>
+                                <expression name="expression">dataSetRow["deptunit_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">stat_date</property>
+                                <expression name="expression">dataSetRow["stat_date"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ward_name</property>
+                                <expression name="expression">dataSetRow["ward_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">room_name</property>
+                                <expression name="expression">dataSetRow["room_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">remening</property>
+                                <expression name="expression">dataSetRow["remening"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">adm</property>
+                                <expression name="expression">dataSetRow["adm"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">dis_other</property>
+                                <expression name="expression">dataSetRow["dis_other"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">trans_in</property>
+                                <expression name="expression">dataSetRow["trans_in"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">trans_out</property>
+                                <expression name="expression">dataSetRow["trans_out"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">death</property>
+                                <expression name="expression">dataSetRow["death"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">tot</property>
+                                <expression name="expression">dataSetRow["tot"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">STAT_DATE</property>
+                                <expression name="expression">dataSetRow["stat_date"]</expression>
+                                <property name="dataType">any</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding</property>
+                                <expression name="expression">if(dataSetRow["dept_name"]!= null){
+
+ 	if(dataSetRow["ward_name"]!= null){
+ 
+ 		if(dataSetRow["room_name"]!= null){
+ 	
+"Department / Ward :" +dataSetRow["dept_name"]+ " / "+dataSetRow["ward_name"]+ " / "
+ 	
+ 		}else{
+ 	
+"Department / Ward :" +dataSetRow["dept_name"]+" / "+dataSetRow["ward_name"]+ " / "
+ 	
+ 		}
+ 
+ 	}else{
+ 	
+ 		"Department : "+dataSetRow["dept_name"] + " /      /" 
+ 	}
+	
+}</expression>
+                                <property name="dataType">any</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding_1</property>
+                                <expression name="expression">if(dataSetRow["dept_name"]!=null &amp;&amp; dataSetRow["stat_date"]!=null &amp;&amp;
+dataSetRow["remening"]!=null &amp;&amp; dataSetRow["adm"]!=null &amp;&amp;
+dataSetRow["dis_other"]!=null &amp;&amp; dataSetRow["trans_in"]!=null &amp;&amp;
+dataSetRow["trans_out"]!=null &amp;&amp; dataSetRow["death"]!=null &amp;&amp; 
+dataSetRow["tot"]!=null)
+{
+row.__rownum+1;
+}else{
+
+}</expression>
+                                <property name="dataType">any</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation</property>
+                                <expression name="expression">dataSetRow["remening"]</expression>
+                                <property name="dataType">any</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ADM</property>
+                                <expression name="expression">dataSetRow["adm"]</expression>
+                                <property name="dataType">any</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">DIS_OTHER</property>
+                                <expression name="expression">dataSetRow["dis_other"]</expression>
+                                <property name="dataType">any</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TRANS_IN</property>
+                                <expression name="expression">dataSetRow["trans_in"]</expression>
+                                <property name="dataType">any</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TRANS_OUT</property>
+                                <expression name="expression">dataSetRow["trans_out"]</expression>
+                                <property name="dataType">any</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">DEATH</property>
+                                <expression name="expression">dataSetRow["death"]</expression>
+                                <property name="dataType">any</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TOT</property>
+                                <expression name="expression">dataSetRow["tot"]</expression>
+                                <property name="dataType">any</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                        </list-property>
+                        <property name="pageBreakInterval">50</property>
+                        <column id="674">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="852">
+                            <property name="width">15%</property>
+                        </column>
+                        <column id="864">
+                            <property name="width">15%</property>
+                        </column>
+                        <column id="675">
+                            <list-property name="visibility">
+                                <structure>
+                                    <property name="format">all</property>
+                                    <expression name="valueExpr">params["IsConsolidated"]</expression>
+                                </structure>
+                            </list-property>
+                            <property name="width">8%</property>
+                        </column>
+                        <column id="676">
+                            <property name="width">8%</property>
+                        </column>
+                        <column id="677">
+                            <property name="width">8%</property>
+                        </column>
+                        <column id="678">
+                            <property name="width">8%</property>
+                        </column>
+                        <column id="679">
+                            <property name="width">8%</property>
+                        </column>
+                        <column id="680">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="681">
+                            <property name="width">8%</property>
+                        </column>
+                        <column id="705">
+                            <property name="width">8%</property>
+                        </column>
+                        <header>
+                            <row id="708">
+                                <property name="backgroundColor">#FFFFFF</property>
+                                <cell id="709">
+                                    <property name="colSpan">11</property>
+                                    <property name="rowSpan">1</property>
+                                </cell>
+                            </row>
+                            <row id="639">
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <cell id="642">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="686">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Sl No</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="842">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="865">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Department</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="854">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="866">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Ward</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="643">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="688">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Date</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="644">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="690">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Remaining</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="645">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="692">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Admission</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="646">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="694">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Discharge</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="647">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="696">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Transfer In</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="648">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="698">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Transfer Out</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="649">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="700">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Death</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="702">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="706">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Total</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <group id="721">
+                            <property name="groupName">NewTableGroup1</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["dept_name"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["dept_name"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <header>
+                                <row id="722">
+                                    <cell id="725"/>
+                                    <cell id="843"/>
+                                    <cell id="855"/>
+                                    <cell id="726"/>
+                                    <cell id="727"/>
+                                    <cell id="728"/>
+                                    <cell id="729"/>
+                                    <cell id="730"/>
+                                    <cell id="731"/>
+                                    <cell id="732"/>
+                                    <cell id="733"/>
+                                </row>
+                            </header>
+                            <footer>
+                                <row id="734">
+                                    <cell id="737"/>
+                                    <cell id="850"/>
+                                    <cell id="862"/>
+                                    <cell id="738"/>
+                                    <cell id="739"/>
+                                    <cell id="740"/>
+                                    <cell id="741"/>
+                                    <cell id="742"/>
+                                    <cell id="743"/>
+                                    <cell id="744"/>
+                                    <cell id="745"/>
+                                </row>
+                            </footer>
+                        </group>
+                        <group id="747">
+                            <property name="groupName">STAT_DATE</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["stat_date"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["stat_date"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <header>
+                                <row id="828">
+                                    <cell id="829">
+                                        <data id="840">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">9pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <list-property name="visibility">
+                                                <structure>
+                                                    <property name="format">all</property>
+                                                    <expression name="valueExpr">params["IsDateWise"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">STAT_DATE</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="844"/>
+                                    <cell id="856"/>
+                                    <cell id="830"/>
+                                    <cell id="831"/>
+                                    <cell id="832"/>
+                                    <cell id="833"/>
+                                    <cell id="834"/>
+                                    <cell id="835"/>
+                                    <cell id="836"/>
+                                    <cell id="837"/>
+                                </row>
+                            </header>
+                            <footer>
+                                <row id="760">
+                                    <cell id="763"/>
+                                    <cell id="849"/>
+                                    <cell id="861"/>
+                                    <cell id="764"/>
+                                    <cell id="765"/>
+                                    <cell id="766"/>
+                                    <cell id="767"/>
+                                    <cell id="768"/>
+                                    <cell id="769"/>
+                                    <cell id="770"/>
+                                    <cell id="771"/>
+                                </row>
+                            </footer>
+                        </group>
+                        <group id="773">
+                            <property name="groupName">NewTableGroup3</property>
+                            <property name="interval">none</property>
+                            <property name="sortDirection">asc</property>
+                            <expression name="keyExpr">row["room_name"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue">row["room_name"]</expression>
+                            </structure>
+                            <property name="repeatHeader">true</property>
+                            <property name="hideDetail">false</property>
+                            <property name="pageBreakAfter">auto</property>
+                            <property name="pageBreakBefore">auto</property>
+                            <property name="pageBreakInside">auto</property>
+                            <header>
+                                <row id="774">
+                                    <cell id="775">
+                                        <property name="colSpan">11</property>
+                                        <property name="rowSpan">1</property>
+                                        <data id="799">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">9pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">left</property>
+                                            <list-property name="visibility">
+                                                <structure>
+                                                    <property name="format">all</property>
+                                                    <expression name="valueExpr">params["IsConsolidated"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">Column Binding</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                                <row id="802">
+                                    <property name="height">3mm</property>
+                                    <cell id="803"/>
+                                    <cell id="846"/>
+                                    <cell id="858"/>
+                                    <cell id="804"/>
+                                    <cell id="805"/>
+                                    <cell id="806"/>
+                                    <cell id="807"/>
+                                    <cell id="808"/>
+                                    <cell id="809"/>
+                                    <cell id="810"/>
+                                    <cell id="811"/>
+                                </row>
+                            </header>
+                            <footer>
+                                <row id="786">
+                                    <property name="pageBreakAfter">always</property>
+                                    <cell id="789"/>
+                                    <cell id="848"/>
+                                    <cell id="860"/>
+                                    <cell id="790"/>
+                                    <cell id="791"/>
+                                    <cell id="792"/>
+                                    <cell id="793"/>
+                                    <cell id="794"/>
+                                    <cell id="795"/>
+                                    <cell id="796"/>
+                                    <cell id="797"/>
+                                </row>
+                            </footer>
+                        </group>
+                        <detail>
+                            <row id="650">
+                                <cell id="653">
+                                    <data id="800">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">Column Binding_1</property>
+                                    </data>
+                                </cell>
+                                <cell id="847">
+                                    <data id="867">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">dept_name</property>
+                                    </data>
+                                </cell>
+                                <cell id="859">
+                                    <data id="868">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="fontStyle">normal</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">ward_name</property>
+                                    </data>
+                                </cell>
+                                <cell id="654">
+                                    <data id="689">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="fontWeight">normal</property>
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">stat_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="655">
+                                    <data id="691">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="fontWeight">normal</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">remening</property>
+                                    </data>
+                                </cell>
+                                <cell id="656">
+                                    <data id="693">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">adm</property>
+                                    </data>
+                                </cell>
+                                <cell id="657">
+                                    <data id="695">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="fontWeight">normal</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">dis_other</property>
+                                    </data>
+                                </cell>
+                                <cell id="658">
+                                    <data id="697">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">trans_in</property>
+                                    </data>
+                                </cell>
+                                <cell id="659">
+                                    <data id="699">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="fontWeight">normal</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">trans_out</property>
+                                    </data>
+                                </cell>
+                                <cell id="660">
+                                    <data id="701">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">death</property>
+                                    </data>
+                                </cell>
+                                <cell id="703">
+                                    <data id="707">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">tot</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="661">
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <cell id="664"/>
+                                <cell id="851"/>
+                                <cell id="863"/>
+                                <cell id="665">
+                                    <label id="881">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">8pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">center</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr">params["IsGrandTotal"]</expression>
+                                            </structure>
+                                        </list-property>
+                                        <text-property name="text">Grand Total</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="666">
+                                    <data id="884">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="resultSetColumn">Aggregation</property>
+                                    </data>
+                                </cell>
+                                <cell id="667">
+                                    <data id="885">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="resultSetColumn">ADM</property>
+                                    </data>
+                                </cell>
+                                <cell id="668">
+                                    <data id="886">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="resultSetColumn">DIS_OTHER</property>
+                                    </data>
+                                </cell>
+                                <cell id="669">
+                                    <data id="887">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="resultSetColumn">TRANS_IN</property>
+                                    </data>
+                                </cell>
+                                <cell id="670">
+                                    <data id="888">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="resultSetColumn">TRANS_OUT</property>
+                                    </data>
+                                </cell>
+                                <cell id="671">
+                                    <data id="889">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="resultSetColumn">DEATH</property>
+                                    </data>
+                                </cell>
+                                <cell id="704">
+                                    <data id="890">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontSize">9pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="resultSetColumn">TOT</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="279">
+                <cell id="280"/>
+                <cell id="281"/>
+                <cell id="282"/>
+            </row>
+            <row id="357">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="358">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="365">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_user_Remarks"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="275">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="276">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="361">
+                <property name="textAlign">center</property>
+                <property name="verticalAlign">middle</property>
+                <cell id="362">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="367">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">params["report_Footer_Visible"]</expression>
+                            </structure>
+                        </list-property>
+                        <expression name="valueExpr">params["report_Footer"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+        <text id="304">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">9pt</property>
+            <property name="textAlign">center</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[****End of Report****]]></text-property>
+        </text>
+    </body>
+</report>

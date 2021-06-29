@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<!-- ***** Start of Disaster DESK Tiles -->
+		<!-- Help Desk -->
+	<definition name="/disasterDesk" path="/disaster/transaction/disasterDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/helpDeskWelcomePage.jsp" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+		<!-- Under Construction -->
+	<definition name="/deskUnderConstruction" path="/disaster/transaction/disasterDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	<definition name="/deskDisasterInformation" path="/disaster/transaction/disasterDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/disaster/deskDisasterInformation.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	
+	<!-- contact information -->
+	<definition name="/contactInformation" path="/disaster/transaction/disasterDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/disaster/contactInformation.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	<!-- Bulletin Board -->
+	<definition name="/bulletinBoard" path="/disaster/transaction/disasterDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/disaster/disasterBulletin.cnt?transactionMode=ENTRY" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	<!-- Area Key Detail  -->
+	<definition name="/areaKeyDetail" path="/disaster/transaction/disasterDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/disaster/disasterAreaKeyDetail.cnt?transactionMode=DESK" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	<!-- Box Content Detail  -->
+	<definition name="/boxContentDetail" path="/disaster/transaction/disasterDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/disaster/disasterBoxContentDetail.cnt?transactionMode=DESK" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	<!-- Disaster Plan  -->
+	<definition name="/disasterPlanDetail" path="/disaster/transaction/disasterDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/disaster/disasterPlan.cnt?deskMode=DESK" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	
+	<!-- Disaster INFORMATION DETAIL  -->
+	<definition name="/disasterInformationDetail" path="/disaster/transaction/disasterDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/disaster/disasterInformationDtl.cnt?deskMode=DESK" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	
+	<!-- Disaster Date Range Wise Report -->
+	
+	<definition name="/disasterDateRangeWiseTileDefReport" path="/disaster/reports/jsp/commonReportLayout.jsp">
+		<put name="header" value="/disaster/reports/jsp/blank.jsp" />
+		<put name="body" value="/disaster/disasterDateRangeWiseReport.cnt" />
+		<put name="footer" value="/disaster/reports/jsp/reportFooter.jsp" />
+	</definition>
+	
+	
+	<!-- Disaster Wise Patient Detail Report -->
+	
+	<definition name="/disasterWisePatientDetailTileDefReport" path="/disaster/reports/jsp/commonReportLayout.jsp">
+		<put name="header" value="/disaster/reports/jsp/blank.jsp" />
+		<put name="body" value="/disaster/disasterWisePatientDetailReport.cnt" />
+		<put name="footer" value="/disaster/reports/jsp/reportFooter.jsp" />
+	</definition>
+	
+	<!-- Disaster Wise Static Report -->
+	
+	<definition name="/disasterStaticDefReport" path="/disaster/reports/jsp/commonReportLayout.jsp">
+		<put name="header" value="/disaster/reports/jsp/blank.jsp" />
+		<put name="body" value="/disaster/disasterStaticReport.cnt" />
+		<put name="footer" value="/disaster/reports/jsp/reportFooter.jsp" />
+	</definition>
+	
+	
+	<!-- Disaster Year Wise Report -->
+	
+	<definition name="/disasterYearWiseTileDefReport" path="/disaster/reports/jsp/commonReportLayout.jsp">
+		<put name="header" value="/disaster/reports/jsp/blank.jsp" />
+		<put name="body" value="/disaster/disasterYearWiseReport.cnt" />
+		<put name="footer" value="/disaster/reports/jsp/reportFooter.jsp" />
+	</definition>
+	
+	
+	<!-- Disaster Gender Age Range Wise Report -->
+	
+	<definition name="/disasterGenderAgeRangeWiseTileDefReport" path="/disaster/reports/jsp/commonReportLayout.jsp">
+		<put name="header" value="/disaster/reports/jsp/blank.jsp" />
+		<put name="body" value="/disaster/disasterGenderAgeRangeWiseReport.cnt" />
+		<put name="footer" value="/disaster/reports/jsp/reportFooter.jsp" />
+	</definition>
+	
+	
+	<!-- ***** End of Disaster DESK Tiles -->
+</tiles-definitions>

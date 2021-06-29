@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Board Master'>
+		<common-values>
+			<master-name>BoardMaster</master-name>
+			<master-title>Board Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Board Master</tableHeading>
+			
+			<list-table>HMBT_BOARD_MST</list-table>
+
+            <controls>
+				<control type="combo" index="0">
+					<label>Board Type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>A.HPMRSTR_FLAG_DESC</text-field>
+								<value-field>A.HPMRNUM_FLAG_VALUE</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HPMRT_FLAG_MST</table>
+							</tables>
+							<condition>
+								<general>A.HPMRSTR_COLUMN_NAME='HMBNUM_BOARD_TYPE' AND A.HPMRNUM_TABLE_ID = 8 order by A.HPMRSTR_FLAG_DESC </general>	
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>  
+			<columns>
+				<column>Board Name</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>A.HMBSTR_BOARD_NAME</field>
+				</fields>
+				<primaryKey>
+					<field>A.HMBNUM_BOARD_ID</field>
+					<field>A.HMBNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HMBT_BOARD_MST</table>
+				</tables>
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<dependent>
+					  <clause> A.HMBNUM_BOARD_TYPE = #0 </clause>
+				    </dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+	
+	<add-page>
+			<static-page>/medicalboard/masters/BoardMasterACTION.cnt</static-page>
+		</add-page>
+		
+		<modify-page>
+			<static-page>/medicalboard/masters/BoardMasterACTION.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

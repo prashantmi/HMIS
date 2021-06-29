@@ -1,0 +1,239 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='StateMaster'>
+		<common-values>
+			<master-name>StateMaster</master-name>
+			<master-title>State Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>State Master</tableHeading> 
+				<list-table>GBLT_STATE_MST</list-table>
+				<controls>			     
+				   <control type="combo" index="0">
+			       <label>Country</label>
+			         <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_COUNTRYNAME)</text-field>
+									<value-field>A.GNUM_COUNTRYCODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_COUNTRY_MST</table>	
+								</tables>
+								<condition>
+									
+									<general>   A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.GSTR_COUNTRYNAME)</general>
+								</condition>
+							</dynamic>					
+						</data>
+						<default>-1</default>
+					</control>
+				</controls>
+				<columns>
+					 <column>State Name </column>
+					 <column>State Short Name </column>
+				   
+				  </columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.GSTR_STATENAME) </field>
+						<field>UPPER(A.GSTR_STATESHORT) </field>
+						
+						</fields>
+					<primaryKey>
+						<field>A.GNUM_STATECODE </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_STATE_MST </table>
+					</tables>
+					<condition>		
+						<dependent>
+							<clause> A.GNUM_COUNTRYCODE = #0 </clause>
+							</dependent>
+							<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+							
+							<orderby> order by INITCAP(A.GSTR_STATENAME)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>				
+					<control type="text" index="0">
+						<label>Country</label>
+						<constraints  size ='20' />
+						<data>
+							<dynamic>
+								<query-detail>
+									<fields>
+										<field>INITCAP(A.GSTR_COUNTRYNAME)</field>	
+									</fields>
+									<tables>
+										<table alias='A'>GBLT_COUNTRY_MST</table>	
+									</tables>
+									<condition>
+										<general>GNUM_ISVALID=1</general>
+										<dependent>
+											<clause> AND GNUM_COUNTRYCODE =  #L0</clause>
+										</dependent>
+									</condition>
+								</query-detail>
+							</dynamic>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+							
+					<control type="text" index="1" >
+						<label>State Name</label>
+						<constraints inputType='alphabets' size='22'  maxlength ='40' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>						
+					<control type="text" index="2" >
+						<label>State Short Name</label>
+						<constraints  maxlength = "3" size="5" inputType='alphabets' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>
+					
+					
+					<control type="combo" index="3">
+						<label>Is Active Status</label>
+					<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>	
+					<control type="text" index="4" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet'  styleString="style='display:none'"/>			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+						
+					</control>						
+				 
+				</controls>
+				<redundent-check>
+				SELECT COUNT (*) FROM GBLT_STATE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and GNUM_COUNTRYCODE = valueMap#L0 and upper (GSTR_STATENAME)  =  controlindex1
+				</redundent-check>	 
+				<insert-query>
+					<primary-key>
+						<field>GNUM_STATECODE</field>
+						<value>SELECT NVL(MAX(GNUM_STATECODE),10)+1 FROM GBLT_STATE_MST </value>
+						
+					</primary-key>
+					<fields valueMap='#L0'>GNUM_COUNTRYCODE</fields>
+					<fields valueMap='#I1'>GSTR_STATENAME</fields>
+					<fields valueMap='#U2'>GSTR_STATESHORT</fields>
+					<fields valueMap='@seatId'>	GNUM_SEATID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRYDATE</fields>
+					<!-- <fields valueMap='#4'>GNUM_HOSPITAL_CODE</fields> -->
+					<fields valueMap='#3'>GNUM_ISVALID</fields>
+					 <table>GBLT_STATE_MST</table>				  
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+		<modify-page>
+		  <dynamic-page>
+		   <controls>							
+					<control type="text" index="0">
+						<label>Country</label>
+						<constraints  size ='20' />						
+						<data>
+							<static>#Q0</static>
+						</data>					
+						<readOnly>1</readOnly>
+					</control>
+					<control type="text" index="1">
+						<label>State Name </label>
+						<constraints inputType='alphabets' size='22'  maxlength ='40' mandatory ='true'/>	
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+				   <control type="text" index="2">
+						<label>State Short Name </label>
+						<constraints inputType='alphabets' size="5" maxlength = "3"  mandatory ='true'/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>		
+				
+                   	   
+					<control type="textarea" index="3">
+						<label>Remarks </label>
+						<constraints  styleString="style='width:130px; height:30px'" mandatory='true' methodstring="onkeypress='return CheckMaxLength(event,this,50,3);'"/>
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>  
+						   
+				
+				<control type="combo" index="4">
+				<selection-mandatory>true</selection-mandatory>
+						<label>Is Active Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+					
+							   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>B.GSTR_COUNTRYNAME</field>
+					 <field>A.GSTR_STATENAME</field>
+					 <field>A.GSTR_STATESHORT</field>								
+                   	 <field>A.GSTR_REMARKS</field>				     
+				 </fields>					
+					<tables>
+						<table alias='A'>GBLT_STATE_MST</table>
+						<table alias='B'>GBLT_COUNTRY_MST</table>
+					</tables>
+					<condition>	
+					
+					<general> A.GNUM_COUNTRYCODE=B.GNUM_COUNTRYCODE</general>
+						<dependent>
+						    <clause>AND A.GNUM_STATECODE= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>	
+				<redundent-check>
+				SELECT COUNT (*) FROM GBLT_STATE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2)
+				and upper (GSTR_STATENAME)  =  controlindex1
+				</redundent-check>		 
+				<update-query>					
+					<fields valueMap='#I1'>GSTR_STATENAME</fields>
+					<fields valueMap='#U2'>GSTR_STATESHORT</fields>
+					<fields valueMap='#3'>GSTR_REMARKS</fields>	
+					<fields valueMap='#4'>GNUM_ISVALID</fields>					
+					
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>
+					<fields valueMap='@entryDate'>GDT_LSTMOD_DATE</fields>
+												
+					<table>GBLT_STATE_MST</table>
+					<condition> GNUM_STATECODE = #1</condition>
+					
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

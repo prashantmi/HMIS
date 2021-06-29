@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	 <!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		  <form-bean name="disasterInitiationFB" type="disaster.transaction.controller.fb.DisasterInitiationFB"/>
+		  <form-bean name="disasterActivationFB" type="disaster.transaction.controller.fb.DisasterActivationFB"/>
+		  <form-bean name="disasterPlanFB" type="disaster.transaction.controller.fb.DisasterPlanFB"/>
+		  <form-bean name="disasterAreaKeyDetailFB" type="disaster.transaction.controller.fb.DisasterAreaKeyDetailFB"/>
+		  <form-bean name="employeePopUp" type="disaster.transaction.controller.fb.EmployeePopUpFB"/> 
+		  <form-bean name="disasterBoxContentDtlFB" type="disaster.transaction.controller.fb.DisasterBoxContentDtlFB"/>
+		  <form-bean name="disasterBulletinFB" type="disaster.transaction.controller.fb.DisasterBulletinFB"/>
+		  <form-bean name="qrtMemberFB" type="disaster.transaction.controller.fb.QRTMemberFB"/>
+		  <form-bean name="postDisasterSummaryFB" type="disaster.transaction.controller.fb.PostDisasterSummaryFB"/>
+		  <form-bean name="disasterDeskLoginFB" type="disaster.transaction.controller.fb.DisasterDeskLoginFB"/>
+		  <form-bean name="disasterDeskFB" type="disaster.transaction.controller.fb.DisasterDeskFB"/>
+		  <form-bean name="contactInformationFB" type="disaster.transaction.controller.fb.ContactInformationFB"/> 
+		  <form-bean name="disasterInformationDtlFB" type="disaster.transaction.controller.fb.DisasterInformationDtlFB"/>
+		  <form-bean name="deskDisasterInformationFB" type="disaster.transaction.controller.fb.DeskDisasterInformationFB"/>
+	</form-beans>
+	
+	<action-mappings>
+		
+		<action path="/disasterInitiation"
+		name="disasterInitiationFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.DisasterInitiationACTION"
+		input="/transaction/disasterInitiationTile.jsp" >
+		<forward name="NEW" path="/transaction/disasterInitiationTile.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/disasterActivation"
+		name="disasterActivationFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.DisasterActivationACTION"
+		input="/transaction/disasterActivationTile.jsp" >
+		<forward name="NEW" path="/transaction/disasterActivationTile.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/disasterPlan"
+		name="disasterPlanFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.DisasterPlanACTION"
+		input="/transaction/disasterPlanTile.jsp" >
+		<forward name="NEW" path="/transaction/disasterPlanTile.jsp" /> 
+		<forward name="VIEW" path="/transaction/disasterPlanForDesk.jsp" /> 
+		<forward name="POPUP" path="/transaction/disasterPlanLogPopup.jsp" /> 
+		
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/disasterAreaKeyDetail"
+		name="disasterAreaKeyDetailFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.DisasterAreaKeyDetailACTION"
+		input="/transaction/disasterAreaKeyDetailTile.jsp" >
+		<forward name="NEW" path="/transaction/disasterAreaKeyDetailTile.jsp" /> 
+		<forward name="VIEW" path="/transaction/disasterAreaKeyDetailForDesk.jsp" /> 
+		<forward name="POPUP" path="/transaction/previousKeyDetails.jsp" /> 
+		
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/employeePopUp"
+		name="employeePopUp"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.EmployeePopUpACTION"
+		input="/transaction/employeePopUpTile.jsp" >
+		<forward name="NEW" path="/transaction/employeePopUpTile.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/disasterBoxContentDetail"
+		name="disasterBoxContentDtlFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.DisasterBoxContentDtlACTION"
+		input="/transaction/disasterContentDtl.jsp" >
+		<forward name="NEW" path="/transaction/disasterContentDtl.jsp" />
+		<forward name="VIEW" path="/transaction/disasterBoxContentViewForDesk.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/disasterBulletin"
+		name="disasterBulletinFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.DisasterBulletinACTION"
+		input="/transaction/disasterBulletinTile.jsp" >
+		<forward name="NEW" path="/transaction/disasterBulletinTile.jsp" /> 
+		<forward name="POPUP" path="/transaction/allBulletinPopUp.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/qrtMember"
+		name="qrtMemberFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.QRTMemberACTION"
+		input="/transaction/qrtMemberTile.jsp" >
+		<forward name="NEW" path="/transaction/qrtMemberTile.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/postDisasterSummary"
+		name="postDisasterSummaryFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.PostDisasterSummaryACTION"
+		input="/transaction/postDisasterTile.jsp" >
+		<forward name="NEW" path="/transaction/postDisasterTile.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		  <action path="/disasterDeskLogin"
+				type="disaster.transaction.controller.action.DisasterDeskLoginACTION"
+				name="disasterDeskLoginFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+				<forward name="NEW" path="/transaction/disasterDeskLoginTile.jsp"/>
+			<forward name="DESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt"/>	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		
+		 <action path="/disasterDesk"
+				type="disaster.transaction.controller.action.DisasterDeskACTION"
+				name="disasterDeskFB"
+				validate="false"
+				scope="request"
+				parameter="mode"
+				input="/transaction/disasterDesk.jsp">
+			<forward name="WELCOME" path="/deskDisasterInformation"/>
+			<forward name="AREAKEYDETAIL" path="/areaKeyDetail"/>
+			<forward name="DISASTERBOXCONTENTDETAIL" path="/boxContentDetail"/>
+			<forward name="DISASTERPLAN" path="/disasterPlanDetail"/>
+			<forward name="BULLETINBOARD" path="/bulletinBoard"/>
+			<forward name="INFORMATIONDETAIL" path="/disasterInformationDetail"/>
+			<forward name="DEFAULT" path="/deskUnderConstruction"/>
+			<forward name="CANCEL" path="/disasterDesk"/>
+		</action>	 
+		
+		<action path="/contactInformation"
+		name="contactInformationFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.ContactInformationACTION"
+		input="/transaction/contactInformationTile.jsp" >
+		<forward name="NEW" path="/transaction/contactInformationTile.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		<action path="/deskDisasterInformation"
+		name="deskDisasterInformationFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.DeskDisasterInformationACTION"
+		input="/transaction/deskDisasterInformationTile.jsp" >
+		<forward name="NEW" path="/transaction/deskDisasterInformationTile.jsp" /> 
+		<forward name="CANCEL" path="/../hisglobal/utility/dynamicdesk/enter.cnt" /> 
+		</action> 
+		
+		
+		
+		<action path="/disasterInformationDtl"
+		name="disasterInformationDtlFB"
+		parameter="hmode"
+		validate="false"
+		scope="request"
+		type="disaster.transaction.controller.action.DisasterInformationDtlACTION"
+		input="/transaction/disasterInformationDtl.jsp" >
+		<forward name="NEW" path="/transaction/disasterInformationDtl.jsp" /> 
+		<forward name="POPUP" path="/transaction/disasterInfoDetailLogPopup.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+		</action> 
+		
+		
+		
+		
+		
+		<action path="/switchModule" 	type="org.apache.struts.actions.SwitchAction" />
+			 
+
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	  
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Disaster-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+</struts-config>          

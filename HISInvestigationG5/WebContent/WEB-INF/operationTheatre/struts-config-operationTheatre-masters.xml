@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ 	<form-beans> 		
+ 		
+ 		
+ 		<form-bean name="operationtheatermaster" type="operationTheatre.masters.OperationTheaterMaster_actionForm"/>
+		<form-bean name="DepartmentOperationFormBean" type="operationTheatre.masters.OtDeptOperationMstFB" />
+		<form-bean name="MemberTypeFormBean" type="operationTheatre.masters.OtMemberTypeMst_actionForm"/>
+		<form-bean name="OperationNameFormBean" type="operationTheatre.masters.OtOperationMst_actionForm"/>
+		<form-bean name="operationtheatertablemaster" type="operationTheatre.masters.OperationTheaterTableMaster_actionForm"/>
+		<form-bean name="memberDetailFB" type="operationTheatre.masters.memberDtl_ActionForm"/>
+		<form-bean name="departmentMemberFB" type="operationTheatre.masters.OtDeptMemberMasterFB" />
+		<form-bean name="OtTypeFormBean" type="operationTheatre.masters.OtOpTypeMst_actionForm"/>
+		<form-bean name="otTimingFormBean" type="operationTheatre.masters.OtOperationTimingMst_ActionForm"/>
+		<form-bean name="statusFormBean" type="operationTheatre.masters.OtStatusMstActionForm"/>
+		<form-bean name="processConfigFormBean" type="operationTheatre.masters.OtProcessConfigMstActionForm"/>
+		<form-bean name="leftConfigFormBean" type="operationTheatre.masters.OtLeftConfigMstActionForm"/>
+		<form-bean name="surgeonRosterFormBean" type="operationTheatre.masters.SurgeonRosterMaster_actionForm"/>
+		<form-bean name="AnesthesiaTypeFormBean" type="operationTheatre.masters.OtAnesthesiaTypeMst_actionForm"/>  
+		<form-bean name="SiteFormBean" type="operationTheatre.masters.OtSiteMst_actionForm"/>
+		<form-bean name="OperationSiteFormBean" type="operationTheatre.masters.OtOperationSiteMst_actionForm"/>
+		<form-bean name="OtCannedFormBean" type="operationTheatre.masters.OtCannedMst_actionForm"/>
+		<form-bean name="OperationEquipmentFormBean" type="operationTheatre.masters.OperationEquipmentMst_actionForm"/>
+		<form-bean name="OperationDosierFormBean" type="operationTheatre.masters.OperationDosierMst_actionForm"/>
+		<form-bean name="OperationGroupFormBean" type="operationTheatre.masters.OperationGroupMst_actionForm"/>	
+		<form-bean name="OtGroupFormBean" type="operationTheatre.masters.OtGroupMst_actionForm"/>
+		<form-bean name="DepartmentTemplateControllerFB" type="operationTheatre.masters.DeptTemplateControllerMstFB"/>
+		<form-bean name="TransactionMenuFormBean" type="operationTheatre.masters.DeptTransactionMenuMst_actionForm"></form-bean>
+		<form-bean name="OtListScheduleFormBean" type="operationTheatre.masters.OtListScheduleMst_actionForm"/> 
+		<form-bean name="vitalconfigurationmaster" type="operationTheatre.masters.VitalConfigurationMaster_actionForm"/>
+		<form-bean name="TemplatePropertyMstFB" type="operationTheatre.masters.OTTemplate.TemplatePropertyMstFB"/>
+		<form-bean name="TemplateControlMstFB" type="operationTheatre.masters.OTTemplate.TemplateControlMstFB"/>
+		<form-bean name="TemplateDesignerMstFB" type="operationTheatre.masters.OTTemplate.TemplateDesignerMstFB"/>
+		
+		<form-bean name="NurseChkListFormBean" type="operationTheatre.masters.OtNurseChkListMst_actionForm"/>
+        <form-bean name="OTOperationInstrumentsToolsMappingMstFormBean" type="operationTheatre.masters.OTOperationInstrumentsToolsMappingMstFormBean"/>
+		<form-bean name="sharedtheatermaster" type="operationTheatre.masters.SharedTheaterMaster_actionForm"/>	     	     	     	     
+ 		<form-bean name="ProcessConfigMstFB" type="operationTheatre.masters.ProcessConfigMstFB"/>     	     	     	     
+ 	
+ 	</form-beans>
+ 	
+<action-mappings> 
+
+               <action 
+					path ="/operationTheatres/masters/memberMst"
+					type ="operationTheatre.masters.memberDtlAction"
+					name = "memberDetailFB"
+					scope = "request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="EMPCode" path="/operationTheatre/masters/member_dtl.jsp"/>
+			</action> 
+
+               	<action
+                              path="/operationTheatres/masters/OperationDosierMst"
+                              type="operationTheatre.masters.OperationDosierMst_action"   
+                              name="OperationDosierFormBean"                  
+                              scope="request"
+                              validate="false"
+                              parameter="hmode">
+                              <forward name="ADD" path="/operationTheatre/masters/OperationDosierMst_Tile.jsp"/>
+                              <forward name="MODIFY" path="/operationTheatre/masters/OperationDosierMst_Tile.jsp"/>
+                  </action>
+
+				<action
+                              path="/operationTheatres/masters/OperationGroupMst"
+                              type="operationTheatre.masters.OperationGroupMst_action"   
+                              name="OperationGroupFormBean"                  
+                              scope="request"
+                              validate="false"
+                              parameter="hmode">
+                              <forward name="ADD" path="/operationTheatre/masters/OperationGroupMst_Tile.jsp"/>
+                              <forward name="MODIFY" path="/operationTheatre/masters/OperationGroupMst_Tile.jsp"/>
+                  </action>
+                  
+                  <action
+                              path="/operationTheatres/masters/OtGroupMst"
+                              type="operationTheatre.masters.OtGroupMst_action"   
+                              name="OtGroupFormBean"                  
+                              scope="request"
+                              validate="false"
+                              parameter="hmode">
+                              <forward name="ADD" path="/operationTheatre/masters/OtGroupMstTile.jsp"/>
+                              <forward name="MODIFY" path="/operationTheatre/masters/OtMstTile.jsp"/>
+                  </action>
+                 
+                  
+                 
+                  <action 
+                        path = "/operationTheatres/masters/OperationEquipmentMst"
+                        type = "operationTheatre.masters.OperationEquipmentMst_action"
+                        name = "OperationEquipmentFormBean"
+                        scope = "request"
+                        validate ="false" 
+                        parameter ="hmode">           
+                  		<forward name="ADD" path="/operationTheatre/masters/OperationEquipmentMst_Tile.jsp"/>
+                       
+                  </action>
+
+
+
+<action
+				path="/operationTheatres/masters/otCannedMst"
+				type="operationTheatre.masters.OtCannedMst_action"
+				name="OtCannedFormBean"
+				scope="request"
+				validate="false"
+				parameter="hmode">
+				<forward name="ADD" path="/operationTheatre/masters/OtCannedMst_Tile.jsp"/>
+				<forward name="MODIFY" path="/operationTheatre/masters/OtCannedMst_Tile.jsp"/>
+				<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+				
+</action>
+
+<action
+				path="/operationTheatres/masters/operationSiteMst"
+				type="operationTheatre.masters.OtOperationSiteMst_action"
+				name="OperationSiteFormBean"
+				scope="request"
+				validate="false"
+				parameter="hmode">
+				<forward name="ADD" path="/operationTheatre/masters/OperationSiteMaster_Tiles.jsp"/>
+				<forward name="MODIFY" path="/operationTheatre/masters/OperationSiteMaster_Tiles.jsp"/>
+				<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+				
+</action>
+
+<action
+				path="/operationTheatres/masters/siteMst"
+				type="operationTheatre.masters.OtSiteMst_action"
+				name="SiteFormBean"
+				scope="request"
+				validate="false"
+				parameter="hmode">
+				<forward name="ADD" path="/operationTheatre/masters/OtSiteMst_add.jsp"/>
+				<forward name="MODIFY" path="/operationTheatre/masters/OtSiteMst_mod.jsp"/>
+				<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+				
+</action>
+
+<action
+				path="/operationTheatres/masters/AnesthesiaTypeMst"
+				type="operationTheatre.masters.OtAnesthesiaTypeMst_action"
+				name="AnesthesiaTypeFormBean"
+				scope="request"
+				validate="false"
+				parameter="hmode">
+				<forward name="ADD" path="/operationTheatre/masters/OtAnesthesiaTypeMst_add.jsp"/>
+				<forward name="MODIFY" path="/operationTheatre/masters/OtAnesthesiaTypeMst_mod.jsp"/>
+				<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+				
+		</action>
+		
+		
+		
+<action
+				path="/operationTheatres/masters/NurseChkListMst"
+				type="operationTheatre.masters.OtNurseChkListMst_action"
+				name="NurseChkListFormBean"
+				scope="request"
+				validate="false"
+				parameter="hmode">
+				<forward name="ADD" path="/operationTheatre/masters/OtNurseChkListMst_add.jsp"/>
+				
+				
+		</action>
+		
+		
+<action
+					path="/operationTheatres/masters/DeptoperationMst"
+					type="operationTheatre.masters.OtDeptOperationMstACTION"	
+					name="DepartmentOperationFormBean"			
+					scope="request"
+					validate="false"
+					parameter="hmode">
+					<forward name="ADD" path="/operationTheatre/masters/OtDeptOperationMst_Tiles.jsp"/>
+					<forward name="MODIFY" path="/operationTheatre/masters/OtDeptOperationMst_Tiles.jsp"/> 
+			</action>
+	
+					
+			<action 
+					path ="/operationTheatres/masters/memberTypeMst"
+					type ="operationTheatre.masters.OtMemberTypeMst_action"
+					name = "MemberTypeFormBean"
+					scope="request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="ADD" path="/operationTheatre/masters/OtMemberTypeMst_Tile.jsp"/>
+					<forward name="MODIFY" path="/operationTheatre/masters/OtMemberTypeMst_Tile.jsp"/>
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			 </action> 	
+			 
+			 
+			 <action 
+					path ="/operationTheatres/masters/operationMst"
+					type ="operationTheatre.masters.OtOperationMst_action"
+					name = "OperationNameFormBean"
+					scope="request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="ADD" path="/operationTheatre/masters/OtOperationMst_Tile.jsp"/>
+					<forward name="MODIFY" path="/operationTheatre/masters/OtOperationMst_Tile.jsp"/>
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			 </action>
+			 <action
+			 	path="/operationTheatres/masters/operationTheaterMst"
+			 	type="operationTheatre.masters.OperationTheaterMaster_action"
+			 	name="operationtheatermaster" scope="request" validate="false"
+			 	parameter="hmode">
+			 	<forward name="ADD"
+			 		path="/operationTheatre/masters/OperationTheaterMasterTile.jsp" />
+			 	<forward name="MODIFY"
+			 		path="/operationTheatre/masters/OperationTheaterMasterTile.jsp" />
+			 	<forward name="ERROR"
+			 		path="/operationTheatre/masters/errorPage.jsp" />
+			 </action>
+
+			 <action
+					path="/operationTheatres/masters/operationTheaterTableMst"
+					type="operationTheatre.masters.OperationTheaterTableMaster_action"
+					name="operationtheatertablemaster"
+					scope="request"
+					validate="false"
+					parameter="hmode">
+					<forward name="ADD" path="/operationTheatre/masters/OperationTheaterTableMaster_Tile.jsp"/>	
+					<forward name="MODIFY" path="/operationTheatre/masters/OperationTheaterTableMaster_Tile.jsp"/>	
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			</action>
+				
+			<action 
+					path ="/operationTheatre/masters/memberMst"
+					type ="operationTheatre.masters.memberDtlAction"
+					name = "memberDetailFB"
+					scope = "request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="EMPCode" path="/operationTheatre/masters/member_dtl.jsp"/>
+			</action> 
+				
+			<action
+					path="/operationTheatres/masters/departmentMemberMst"
+					type="operationTheatre.masters.OtDeptMemberMasterACTION"
+					name="departmentMemberFB"
+					scope="request"
+					validate="false"
+					parameter="hmode">
+					<forward name="ADD" path="/operationTheatre/masters/OtDeptMemberMasterTile.jsp"/>
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			</action>
+				
+			 <action
+			 	path="/operationTheatres/masters/sharedTheaterMst"
+			 	type="operationTheatre.masters.SharedTheaterMaster_action"
+			 	name="sharedtheatermaster" scope="request" validate="false"
+			 	parameter="hmode">
+			 	<forward name="ADD"
+			 		path="/operationTheatre/masters/SharedTheaterMasterTile.jsp" />
+			 	<forward name="MODIFY"
+			 		path="/operationTheatre/masters/SharedTheaterMasterTile.jsp" />
+			 	<forward name="ERROR"
+			 		path="/operationTheatre/masters/errorPage.jsp" />
+			 </action>
+				
+				
+				
+				
+			<action 
+					path ="/operationTheatres/masters/otStatusMst"
+					type ="operationTheatre.masters.OtStatusMstAction"
+					name = "statusFormBean"
+					scope = "request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="ADD" path="/operationTheatre/masters/OtStatusMstTile.jsp"/>
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			</action>
+			
+			<!-- <action 
+					path ="/operationTheatres/masters/otProcessConfigMstaaaa"
+					type ="operationTheatre.masters.OtProcessConfigMstAction"
+					name = "processConfigFormBean"
+					scope = "request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="ADD" path="/operationTheatre/masters/OtProcessConfigMstTile.jsp"/>
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			</action> 
+			 -->
+			<action 
+					path ="/operationTheatres/masters/OtLeftConfigMst"
+					type ="operationTheatre.masters.OtLeftConfigMstAction"
+					name = "leftConfigFormBean"
+					scope = "request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="ADD" path="/operationTheatre/masters/OtLeftConfigMstTile.jsp"/>
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			</action> 
+			
+	
+			
+			<action 
+					path="/operationTheatres/masters/otTypeMst"
+					type="operationTheatre.masters.OtOpTypeMst_action"
+					name="OtTypeFormBean"
+					scope="request"
+					validate="false"
+					parameter="hmode" >
+					
+					<forward name="ADD"	path="/operationTheatre/masters/otTypeMstTile.jsp"/>
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			</action>	
+				
+			<action 
+					path="/operationTheatres/masters/otTimingMst"
+					type="operationTheatre.masters.OtOperationTimingMst_Action"
+					name="otTimingFormBean"
+					scope="request"
+					validate="false"
+					parameter="hmode" >
+				 	<forward name="ADD"	path="/operationTheatre/masters/OtTimingMstTile.jsp"/> 
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/> 
+			</action>
+			
+			<action 
+					path="/operationTheatres/masters/surgeonRosterMst"
+					type="operationTheatre.masters.SurgeonRosterMaster_action"
+					name="surgeonRosterFormBean"
+					scope="request"
+					validate="false"
+					parameter="hmode" >
+				 	<forward name="ADD"	path="/operationTheatre/masters/SurgeonRosterMasterTile.jsp"/> 
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/> 
+		
+	</action>	
+	
+	<action path="/operationTheatres/masters/DeptTemplateControllerMst"
+		type="operationTheatre.masters.DeptTemplateControllerMstACTION"
+		name="DepartmentTemplateControllerFB"
+		scope="request"
+		validate="false"
+		parameter="hmode">
+		<forward name="ADD" path="/operationTheatre/masters/DeptTemplateControllerMst_add.jsp"/>
+		<forward name="MODIFY" path="/operationTheatre/masters/DeptTemplateControllerMst_modify.jsp"/>
+	</action>
+
+
+<action path ="/operationTheatres/masters/DepartmentTransactionMenuMst"
+ type ="operationTheatre.masters.DeptTransactionMenuMst_action"
+ name = "TransactionMenuFormBean"
+ scope = "request"
+ validate ="false"
+ parameter ="hmode">
+<forward name="ADD" path="/operationTheatre/masters/DepartmentTransactionMenuMstTile.jsp"/>
+<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+</action>	
+
+<!-- /operationTheatres/masters/OtListScheduleMst -->
+<action path="/operationTheatres/masters/otProcessConfigMst"
+		type="operationTheatre.masters.OtListScheduleMst_action"
+		name="OtListScheduleFormBean"
+		scope="request"
+		validate="false"
+		parameter="hmode">
+		<forward name="ADD" path="/operationTheatre/masters/OtListSacheduleMstAdd.jsp"/>
+		<forward name="MODIFY" path="/operationTheatre/masters/OtListSacheduleMstModify.jsp"/>
+	</action>
+
+		<action
+					path="/operationTheatres/masters/VitalConfigurationMst"
+					type="operationTheatre.masters.VitalConfigurationMaster_action"
+					name="vitalconfigurationmaster"
+					scope="request"
+					validate="false"
+					parameter="hmode">
+					<forward name="ADD" path="/operationTheatre/masters/VitalConfigurationMaster_Tile.jsp"/>	
+					<forward name="MODIFY" path="/operationTheatre/masters/VitalConfigurationMaster_Tile.jsp"/>	
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>					
+			</action>
+			
+		   <action	path ="/operationTheatres/masters/TemplatePropertyMstACTION"
+					type ="operationTheatre.masters.OTTemplate.TemplatePropertyMstACTION"
+					name = "TemplatePropertyMstFB"
+					scope = "request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="ADD_MODIFY" path="/operationTheatre/masters/OTTemplate/TemplatePropertyMstAddModify.jsp"/>
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			</action> 	
+			<action	path ="/operationTheatres/masters/TemplateControlMstACTION"
+					type ="operationTheatre.masters.OTTemplate.TemplateControlMstACTION"
+					name = "TemplateControlMstFB"
+					scope = "request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="ADD_MODIFY" path="/operationTheatre/masters/OTTemplate/TemplateControlMstAddModify.jsp"/>
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			</action> 	
+			
+			
+			<action	path ="/operationTheatres/masters/TemplateDesignerMstACTION"
+					type ="operationTheatre.masters.OTTemplate.TemplateDesignerMstACTION"
+					name = "TemplateDesignerMstFB"
+					scope = "request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="ADD_MODIFY" path="/operationTheatre/masters/OTTemplate/OTTemplateDesignerMainPage.jsp"/>
+					<forward name="VIEW_TEMPLATE" path="/operationTheatre/masters/OTTemplate/OTTemplateView.jsp"/>
+					<forward name="DOCUMENT_HTML" path="/operationTheatre/masters/OTTemplate/OTTemplateDocHTML.jsp"/>					
+					<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>
+			</action> 	
+			<action	path ="/operationTheatres/masters/OTOperationInstrumentsToolsMappingMstACTION"
+					type ="operationTheatre.masters.OTOperationInstrumentsToolsMappingMstACTION"
+					name = "OTOperationInstrumentsToolsMappingMstFormBean"
+					scope = "request"
+					validate ="false" 
+					parameter ="hmode">	
+					<forward name="ADD" path="/operationTheatre/masters/OTOperationInstrumentsToolsMappingMst.jsp"/>
+					<forward name="MODIFY" path="/operationTheatre/masters/OTOperationInstrumentsToolsMappingMst.jsp"/>
+					
+			</action> 	
+					
+			<action 
+				path="/operationTheatres/masters/ProcessConfigMst"
+				type="operationTheatre.masters.ProcessConfigMstACTION"
+				name="ProcessConfigMstFB" 
+				scope="request" validate="false"
+				parameter="hmode">
+				<forward name="ADD" path="/operationTheatre/masters/OtProcessConfigListPage.jsp"/>
+				<forward name="ERROR" path="/operationTheatre/masters/errorPage.jsp"/>				
+			</action>	
+
+</action-mappings>
+	
+<controller>
+	<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+</controller>
+
+<message-resources  parameter="hisglobal.hisconfig.operationTheatreResourceBundle"></message-resources>
+ </struts-config>	

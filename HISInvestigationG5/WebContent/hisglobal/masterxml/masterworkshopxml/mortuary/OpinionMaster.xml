@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='OpinionMaster'>
+        <common-values>
+           <master-name>OpinionMaster</master-name>
+           <master-title>Opinion Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Opinion Master</tableHeading>
+           <list-table>HMRT_OPINION_MST</list-table>
+           
+           <columns>
+              <column>Opinion</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HMRSTR_OPINION_NAME)</field>
+	    		 
+			  </fields>
+				<primaryKey>
+					<field>A.HMRNUM_OPINION_CODE</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HMRNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HMRT_OPINION_MST</table>
+				</tables>
+				<condition>		
+				<general>
+				 A.GNUM_HOSPITAL_CODE=100 and 
+				 </general>			 
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+        			
+					<orderby> ORDER BY(A.HMRSTR_OPINION_NAME) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/mortuary/master/OpinionMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mortuary/master/OpinionMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

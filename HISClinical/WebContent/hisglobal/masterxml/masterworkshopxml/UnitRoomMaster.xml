@@ -1,0 +1,284 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='UnitRoomMaster'>
+		<common-values>
+			<master-name>UnitRoomMaster</master-name>
+			<master-title>Unit Room Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Unit Room Master</tableHeading> 
+				<list-table>HGBT_UNIT_ROOM_MST</list-table>
+				
+				<columns>
+					 <column>Room Name </column>
+				      <column>Unit Name</column>
+				  </columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_ROOM_NAME) </field>
+						<field>INITCAP(B.HGSTR_UNITNAME)</field>
+						
+						</fields>
+					<primaryKey>
+						<field>C.HGNUM_DEPTUNITCODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_ROOM_MST </table>
+					    <table alias='B'>HGBT_UNIT_MST </table>
+					    <table alias='c'>HGBT_UNIT_ROOM_MST </table>
+					</tables>
+					<condition>					 
+                           <general>C.HGNUM_DEPTUNITCODE=B.HGNUM_DEPTUNITCODE and C.HGNUM_ROOM_CODE = A.HGNUM_ROOM_CODE </general>
+						    <isvalid-field> AND C.GNUM_ISVALID</isvalid-field>	
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>				
+					
+					<control type="combo" index="0">
+						<label>Department Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>A.GSTR_DEPT_NAME</text-field>
+									<value-field>A.GNUM_DEPT_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_DEPARTMENT_MST</table>	
+								  
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1</general>
+									
+							</condition>
+							</dynamic>
+							
+						</data>
+						<default>-1</default>
+					   <submitRequired>1</submitRequired>
+					
+					</control>
+			
+					
+              <control type="combo" index="1">
+						<label>Unit Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>A.HGSTR_UNITNAME</text-field>
+									<value-field>A.HGNUM_UNIT_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_UNIT_MST</table>	
+								  
+								</tables>
+								<condition>
+									<general>HGNUM_UNIT_CODE IN (select A.HGNUM_UNIT_CODE  from HGBT_UNIT_MST A,GBLT_DEPARTMENT_MST B where A.HGNUM_DEPT_CODE = B.GNUM_DEPT_CODE and B.GNUM_ISVALID=1) </general>
+									 <dependent>
+										<clause>AND A.HGNUM_DEPT_CODE= #0</clause>
+									</dependent> 
+							</condition>
+							</dynamic>
+							
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>
+					
+					</control>
+			   
+			    <control type="combo" index="2">
+						<label>Room Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>A.HGSTR_ROOM_NAME</text-field>
+									<value-field>A.HGNUM_ROOM_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_ROOM_MST</table>	
+								  
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID =1 AND A.HGNUM_ROOM_CODE NOT IN(select B.HGNUM_ROOM_CODE FROM HGBT_UNIT_ROOM_MST B WHERE GNUM_ISVALID =1) </general>
+									
+							</condition>
+							</dynamic>
+							
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>
+					
+					</control>
+			   
+					
+					
+					
+					
+               
+				<control type="combo" index="3">
+						<label>Location Name</label>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGSTR_DESCRIPTION)</text-field>
+									<value-field>A.HGNUM_LOCATION_CODE </value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_LOCATION_MST </table>
+									
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1 </general>
+									
+								</condition>
+							</dynamic>
+							
+						</data>
+						<default>-1</default>
+					 <submitRequired>1</submitRequired>
+					</control>
+											
+				<control type="text" index="4" >
+						<label>Sequence Number</label>
+						<constraints maxlength='2' size='4'  inputType='numeric'  mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="5" >
+						<label>Capicity</label>
+						<constraints maxlength='2' size='3'  inputType='numeric'  mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					
+					<control type="combo" index="6">
+						<label>IsValid Status</label>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				 
+				
+				</controls>
+				<insert-query>
+					<primary-key>
+						<field>HGNUM_DEPTUNITCODE</field>
+							<value>SELECT NVL(MAX(HGNUM_DEPTUNITCODE),0)+1 FROM HGBT_UNIT_ROOM_MST</value>
+					
+					</primary-key>
+					
+					<fields valueMap='#2'>HGNUM_ROOM_CODE</fields>
+					<fields valueMap='@entryDate'>HGDT_ENTRY_DATE</fields>
+					<fields valueMap='@seatId'>HGNUM_SEAT_ID</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='#3'>HGNUM_LOCATION_CODE</fields>
+					<fields valueMap='#6'>GNUM_ISVALID</fields>
+					<fields valueMap='#4'>HGNUM_SEQ_NO</fields>
+					<fields valueMap='#5'>HGNUM_CAPACITY</fields>
+					
+					<table>HGBT_UNIT_ROOM_MST</table>
+					
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+
+		<modify-page>
+		  <dynamic-page>
+		   <controls>
+		
+					 <control type="text" index ="0">
+						<label>Room Name </label>
+						<constraints maxlength = "20" size="21"  inputType = 'alphanumeric'/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+	                	</control>			
+		
+		         <control type="text" index ="1">
+						<label>Location Name</label>
+						<constraint maxlength = '100'  inputType = 'alphanumeric'/>
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>		
+					
+					
+				 <control type="text" index="2">
+						<label>Sequence Number</label>
+						<constraints  size='3' maxlength = '2' inputType ='numeric'/>
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+                    <control type="text" index="3">
+						<label>Capacity</label>
+						<constraints  size='3' maxlength = '2' inputType ='numeric'/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+				
+					<control type="combo" index="4">
+						<label>IsActive Status</label>
+							<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+                    
+						   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>C.HGSTR_ROOM_NAME</field>  
+					 <field>B.HGSTR_DESCRIPTION</field>
+					 <field>A.HGNUM_SEQ_NO</field>             						
+					 <field>A.HGNUM_CAPACITY</field>
+				 </fields>					
+					<tables>
+						<table alias='A'>HGBT_UNIT_ROOM_MST</table>
+						<table alias='B'>HGBT_LOCATION_MST</table>
+					    <table alias='C'>HGBT_ROOM_MST</table>
+				</tables>
+					<condition>						
+						<general>A.HGNUM_ROOM_CODE=C.HGNUM_ROOM_CODE AND B.HGNUM_LOCATION_CODE =A.HGNUM_LOCATION_CODE AND </general>
+						<dependent>
+						    <clause> AND A.HGNUM_DEPTUNITCODE= #C1 </clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>
+					
+					<fields valueMap='#0'>HGNUM_ROOM_CODE</fields>
+					<fields valueMap='@entryDate'>HGDT_ENTRY_DATE</fields>
+					<fields valueMap='@seatId'>HGNUM_SEAT_ID</fields>
+					<fields valueMap='#1'>HGNUM_LOCATION_CODE</fields>
+					<fields valueMap='#4'>GNUM_ISVALID</fields>				
+					<fields valueMap='#2'>HGNUM_SEQ_NO</fields>		
+					<fields valueMap='#3'>HGNUM_CAPACITY</fields>		
+					<table>HGBT_UNIT_ROOM_MST</table>
+					<condition>HGNUM_DEPTUNITCODE = #1</condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

@@ -1,0 +1,348 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='OpdIcdDiseaseMaster'>
+		<common-values>
+			<master-name>OpdIcdDiseaseMaster</master-name>
+			<master-title>ICD-10 Disease Master</master-title>
+		</common-values>
+		<list-page>
+			<tableHeading>ICD-10 Disease Master</tableHeading> 
+			<list-table>HGBT_ICD_DISEASE_MST</list-table>	
+			<controls>
+				<control type="combo" index="0">
+					<label>Group</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>SUBSTR(A.HGBSTR_ICD_GROUP,1,40)||DECODE(SUBSTR(A.HGBSTR_ICD_GROUP,40,200),'',' ','..')||'('||A.HGBSTR_ICD_GROUP_CODE||')'</text-field>
+								<value-field>TRIM(A.HGBSTR_ICD_GROUP_CODE)</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HGBT_ICD_GROUP_MST</table>
+							</tables>
+							<condition>
+								<general> A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID = 1 ORDER BY A.HGBNUM_CHAPTER_ID</general>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+				<control type="combo" index="1">
+					<label>Sub Group</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>SUBSTR(A.HGBSTR_ICD_SUBGROUP,1,40)||DECODE(SUBSTR(A.HGBSTR_ICD_SUBGROUP,40,125),'',' ','..')||'('||A.HGBSTR_ICD_SUBGRP_CODE||')'</text-field>
+								<value-field>TRIM(A.HGBSTR_ICD_SUBGRP_CODE)</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HGBT_ICD_SUBGROUP_MST</table>
+							</tables>
+							<condition>
+								<general> 
+									A.GNUM_HOSPITAL_CODE=100 and A.HGBSTR_ICD_SUBGRP_CODE NOT IN (SELECT DISTINCT B.HGBSTR_SUBGRP_PARENT_CODE FROM HGBT_ICD_SUBGROUP_MST B WHERE B.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE AND B.HGBSTR_SUBGRP_PARENT_CODE IS NOT NULL AND B.GNUM_ISVALID=1) AND A.GNUM_ISVALID=1 
+								</general>
+								<dependent>
+									<clause> AND TRIM(A.HGBSTR_ICD_GROUP_CODE) = '#0' ORDER BY A.HGBSTR_ICD_SUBGRP_CODE </clause>
+								</dependent>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>				
+			<columns>
+				<column>Disease Code</column>
+				<column>Disease Name</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>A.HGBSTR_DISEASE_CODE</field>
+					<field>INITCAP(A.HGBSTR_DISEASE)</field>
+				</fields>
+				<primaryKey>
+					<field>A.HGBSTR_DISEASE_CODE</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HGBT_ICD_DISEASE_MST</table>
+					<table alias='B'>HGBT_ICD_SUBGROUP_MST</table>
+					<table alias='C'>HGBT_ICD_GROUP_MST</table>
+				</tables>
+				<condition>
+					<general> 
+						A.HGBSTR_ICD_SUBGRP_CODE=B.HGBSTR_ICD_SUBGRP_CODE AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1 
+						AND B.HGBSTR_ICD_GROUP_CODE=C.HGBSTR_ICD_GROUP_CODE AND B.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND C.GNUM_ISVALID=1 
+						AND A.HGBSTR_PARENT_CODE IS NULL AND A.HGNUM_RECORD_TYPE=0 AND A.GNUM_HOSPITAL_CODE=100 and
+					</general>
+					<general-inactive>
+						A.HGBSTR_ICD_SUBGRP_CODE=B.HGBSTR_ICD_SUBGRP_CODE AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1 
+						AND B.HGBSTR_ICD_GROUP_CODE=C.HGBSTR_ICD_GROUP_CODE AND B.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND C.GNUM_ISVALID=1 
+						AND A.HGBSTR_PARENT_CODE IS NULL AND A.HGNUM_RECORD_TYPE=0 AND A.GNUM_HOSPITAL_CODE=100 and
+					</general-inactive>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<orderby> ORDER BY A.HGBSTR_DISEASE_CODE</orderby>
+					<dependent>
+						<clause-alphanumeric> TRIM(B.HGBSTR_ICD_GROUP_CODE) = #0  </clause-alphanumeric>
+						<clause-alphanumeric> TRIM(A.HGBSTR_ICD_SUBGRP_CODE) = #1  </clause-alphanumeric>
+					</dependent>
+				</condition>
+			</query-detail>				
+		</list-page>
+		<add-page>
+			<dynamic-page>
+				<controls>
+					<control type="text" index="0">
+						<label>Group</label>
+						<constraints  size ='50'/>
+						<data>
+							<dynamic>
+								<query-detail>
+									<fields>
+										<field>SUBSTR(A.HGBSTR_ICD_GROUP,1,40)||DECODE(SUBSTR(A.HGBSTR_ICD_GROUP,40,200),'',' ','..')||'('||A.HGBSTR_ICD_GROUP_CODE||')'</field>
+									</fields>
+									<tables>
+										<table alias='A'> HGBT_ICD_GROUP_MST </table>
+									</tables>
+									<condition>
+										<general> GNUM_ISVALID=1 and A.GNUM_HOSPITAL_CODE=100</general>
+										<dependent>
+											<clause-alphanumeric> AND TRIM(HGBSTR_ICD_GROUP_CODE) =#L0 </clause-alphanumeric>
+										</dependent>										
+									</condition>
+								</query-detail>
+							</dynamic>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+					<control type="text" index="1">
+						<label>Sub Group</label>
+						<constraints size ='50'/>
+						<data>
+							<dynamic>
+								<query-detail>
+									<fields>
+										<field> SUBSTR(A.HGBSTR_ICD_SUBGROUP,1,40)||DECODE(SUBSTR(A.HGBSTR_ICD_SUBGROUP,40,125),'',' ','..')||'('||A.HGBSTR_ICD_SUBGRP_CODE||')' </field>
+									</fields>
+									<tables>
+										<table alias='A'> HGBT_ICD_SUBGROUP_MST </table>
+									</tables>
+									<condition>
+										<general> A.GNUM_ISVALID=1 and A.GNUM_HOSPITAL_CODE=100 </general>
+										<dependent>
+											<clause-alphanumeric> AND A.HGBSTR_ICD_SUBGRP_CODE=#L1 </clause-alphanumeric>
+										</dependent>
+									</condition>
+								</query-detail>
+							</dynamic>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+					<control type="text" index="2" >
+						<label>Disease Code</label>
+						<constraints maxlength='3' size='6' inputType='alphanumeric'  mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="3" >
+						<label>Disease Name</label>
+						<constraints maxlength='200' size='50' inputType='alphabets' mandatory="true" />						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="4">
+						<label>Disease Type</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGBSTR_DISEASE_TYPE_NAME)</text-field>
+									<value-field>A.HGBNUM_DISEASE_TYPE_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_DISEASE_TYPE_MST</table>									  
+								</tables>
+								<condition>
+									<general> A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HGBSTR_DISEASE_TYPE_NAME)</general>																	
+							</condition>
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>					
+					</control>
+					<control type="radio"  index="5">  
+						<label>Is Commonly Used </label>	
+						<data>
+							<static>
+								<option value='0'>Not Common </option>
+								<option value='1'>Common </option>
+							</static>
+						</data>
+						<default>0</default>
+						<readOnly>0</readOnly>							
+					</control>	
+					<control type="textarea" index="6">
+						<label>Remark </label>
+						<constraints styleString="style='width:250px; height:30px'" mandatory='false' methodstring="onkeypress='return CheckMaxLength(event,this,500,1);'"/>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="7" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet' styleString="style='display:none'" />			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+					</control>
+				</controls>
+				<redundent-check>
+					SELECT COUNT (*) FROM HGBT_ICD_DISEASE_MST WHERE (GNUM_ISVALID = 1 OR GNUM_ISVALID = 2) AND GNUM_HOSPITAL_CODE=100
+					AND TRIM(UPPER(HGBSTR_DISEASE_CODE))  =  controlindex2
+				</redundent-check>
+				<insert-query>
+					<fields valueMap='#U2'>HGBSTR_DISEASE_CODE</fields>
+					<fields valueMap='#3'>HGBSTR_DISEASE</fields>
+					<fields valueMap='#L1'>HGBSTR_ICD_SUBGRP_CODE</fields>
+					<fields valueMap='#4'>HGBNUM_DISEASE_TYPE_CODE</fields>
+					<fields valueMap='#5'>GBL_ISCOMMON</fields>
+					<fields valueMap='#6'>HGBSTR_DISEASE_REMARK</fields>						
+					<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#7'>GNUM_HOSPITAL_CODE</fields>
+					<table>HGBT_ICD_DISEASE_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+		<modify-page>
+			<dynamic-page>
+				<controls>
+					<control type="text" index="0">
+						<label>Group</label>
+						<constraints size ='50'/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+					<control type="text" index="1">
+						<label>Sub Group</label>
+						<constraints size ='50'/>
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+					<control type="text" index="2">
+						<label>Disease Code</label>
+						<constraints  size='6' maxlength = "3" mandatory ='true' inputType="alphanumeric"/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="3">
+						<label>Disease Name</label>
+						<constraints  size='50' maxlength = "200" inputType="alphabets" mandatory="true"/>
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>	
+					<control type="combo" index="4">
+						<label>Disease Type</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGBSTR_DISEASE_TYPE_NAME)</text-field>
+									<value-field>A.HGBNUM_DISEASE_TYPE_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_DISEASE_TYPE_MST</table>									  
+								</tables>
+								<condition>
+									<general> A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HGBSTR_DISEASE_TYPE_NAME)</general>									
+							</condition>
+							</dynamic>							
+						</data>
+						<default>#Q4</default>
+						<submitRequired>0</submitRequired>
+					</control>
+					<control type="radio"  index="5">
+						<label>Is Commonly Used</label>
+						<data>
+							<static>
+								<option value='0'>Not Common</option>
+								<option value='1'>Common  </option>
+							</static>
+						</data>
+						<default>#Q5</default>
+						<readOnly>0</readOnly>							
+					</control> 
+					<control type="textarea" index="6">
+						<label>Remark </label>
+						<constraints styleString="style='width:250px; height:30px'" mandatory='false' methodstring="onkeypress='return CheckMaxLength(event,this,500,1);'"/>
+						<data>
+							<static>#Q6</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="7">
+						<label>Is Active Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>InActive </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+				</controls>
+				<initialise-query>
+					<fields>
+						<field>SUBSTR(B.HGBSTR_ICD_GROUP,1,40)||DECODE(SUBSTR(B.HGBSTR_ICD_GROUP,40,200),'',' ','..')||'('||B.HGBSTR_ICD_GROUP_CODE||')'</field>
+						<field>SUBSTR(C.HGBSTR_ICD_SUBGROUP,1,40)||DECODE(SUBSTR(C.HGBSTR_ICD_SUBGROUP,40,125),'',' ','..')||'('||C.HGBSTR_ICD_SUBGRP_CODE||')'</field>
+						<field>A.HGBSTR_DISEASE_CODE</field>
+						<field>A.HGBSTR_DISEASE</field>
+						<field>A.HGBNUM_DISEASE_TYPE_CODE</field>
+						<field>A.GBL_ISCOMMON</field>
+						<field>A.HGBSTR_DISEASE_REMARK</field>
+					</fields>
+					<tables>
+						<table alias='A'>HGBT_ICD_DISEASE_MST</table>
+						<table alias='B'>HGBT_ICD_GROUP_MST</table>
+						<table alias='C'>HGBT_ICD_SUBGROUP_MST</table>
+					</tables>
+					<condition>	
+						<general>
+							A.HGBSTR_ICD_SUBGRP_CODE=C.HGBSTR_ICD_SUBGRP_CODE AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND C.GNUM_ISVALID=1 
+							AND C.HGBSTR_ICD_GROUP_CODE=B.HGBSTR_ICD_GROUP_CODE AND C.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1 and A.GNUM_HOSPITAL_CODE=100
+						</general>
+						<dependent>
+						    <clause> AND A.HGBSTR_DISEASE_CODE = #C1</clause>
+						</dependent>		
+					</condition>
+				</initialise-query>		 
+				<redundent-check>
+					SELECT COUNT (*) FROM HGBT_ICD_DISEASE_MST WHERE (GNUM_ISVALID = 1 OR GNUM_ISVALID = 2) AND GNUM_HOSPITAL_CODE=100
+					AND TRIM(UPPER(HGBSTR_DISEASE_CODE))  =  controlindex2
+				</redundent-check>
+				<update-query>					
+					<fields valueMap='#U2'>HGBSTR_DISEASE_CODE</fields>
+					<fields valueMap='#3'>HGBSTR_DISEASE</fields>
+					<fields valueMap='#4'>HGBNUM_DISEASE_TYPE_CODE</fields>
+					<fields valueMap='#5'>GBL_ISCOMMON</fields>
+					<fields valueMap='#6'>HGBSTR_DISEASE_REMARK</fields>						
+					<fields valueMap='#7'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>					
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<table>HGBT_ICD_DISEASE_MST</table>
+					<condition>GNUM_HOSPITAL_CODE=100 AND HGBSTR_DISEASE_CODE = #1</condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

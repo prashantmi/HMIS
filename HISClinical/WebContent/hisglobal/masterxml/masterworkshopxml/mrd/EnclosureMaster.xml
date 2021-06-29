@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Enclosure Master'>
+		<common-values>
+			<master-name>EnclosureMaster</master-name>
+			<master-title>Enclosure Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Enclosure Master</tableHeading>
+			
+			<list-table>HPMRT_ENCLOSURE_MST</list-table>
+			
+			<columns>
+				<column>Enclosure</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>A.HPMRSTR_ENCLOSURE</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HPMRNUM_ENCLOSURE_ID</field>
+					<field>A.HPMRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HPMRT_ENCLOSURE_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field> A.GNUM_ISVALID </isvalid-field>
+					<general> A.GNUM_HOSPITAL_CODE=100 AND</general>
+					<general-inactive> A.GNUM_HOSPITAL_CODE=100 AND</general-inactive>
+					<orderby> ORDER BY A.HPMRSTR_ENCLOSURE </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/mrd/master/enclosureMater.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mrd/master/enclosureMater.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

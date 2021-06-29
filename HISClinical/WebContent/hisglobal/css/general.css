@@ -1,0 +1,31 @@
+.onlyWidth200{
+   width:200px;
+}
+
+.wordWrapWithoutWidth
+{   
+    word-wrap: break-word;
+    overflow-wrap: break-word;	
+}
+
+.wordWrapWithWidth200
+{   
+    width:200px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.img-zoom {
+    width: 310px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+}
+		 
+.transition5 {
+    -webkit-transform: scale(5);
+    -moz-transform: scale(5);
+    -o-transform: scale(5);
+    transform: scale(5);
+}

@@ -1,0 +1,1523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts-config>
+
+	<form-beans>
+	
+		<!-- Global Util FormBean Start-->
+		<form-bean name="mmsBean" type="mms.global.controller.MmsFB"></form-bean>
+
+		<!-- Global Util FormBean End-->
+
+		<form-bean name="ProposalDeskTransBean"
+			type="purchase.transactions.controller.fb.ProposalDeskTransFB">
+		</form-bean>
+	
+		<form-bean name="SuppliesProposalDeskTransBean"
+			type="purchase.transactions.controller.fb.SuppliesProposalDeskTransFB">
+		</form-bean>
+		
+		<form-bean name="WorksProposalDeskTransBean"
+			type="purchase.transactions.controller.fb.WorksProposalDeskTransFB">
+		</form-bean>
+		
+		<form-bean name="AmcCmcProposalDeskTransBean"
+			type="purchase.transactions.controller.fb.AmcCmcProposalDeskTransFB">
+		</form-bean>
+		
+		<form-bean name="RateContractSignProposalDeskTransBean"
+			type="purchase.transactions.controller.fb.RateContractSignProposalDeskTransFB">
+		</form-bean>
+		
+		
+			
+		<form-bean name="PODeskTransBean"
+			type="purchase.transactions.controller.fb.PODeskTransFB">
+		</form-bean>
+
+		<form-bean name="poApprovalTransBean"
+			type="purchase.transactions.controller.fb.PoApprovalTransFB">
+		</form-bean>
+
+
+
+		<form-bean name="PODeskGenerateTransBean"
+			type="purchase.transactions.controller.fb.PODeskGenerateTransFB">
+		</form-bean>
+
+		<form-bean name="PODeskScheduleTransBean"
+			type="purchase.transactions.controller.fb.PODeskScheduleTransFB">
+		</form-bean>
+
+		<form-bean name="PODeskViewTransBean"
+			type="purchase.transactions.controller.fb.PODeskViewTransFB">
+		</form-bean>
+
+		<form-bean name="PODeskCancelTransBean"
+			type="purchase.transactions.controller.fb.PODeskCancelTransFB">
+		</form-bean>
+
+		<form-bean name="PODeskShipmentDtlsTransBean"
+			type="purchase.transactions.controller.fb.PODeskShipmentDtlsTransFB">
+		</form-bean>
+
+		<form-bean name="poPrintBean"
+			type="purchase.transactions.controller.fb.PODeskPrintTransFB">
+		</form-bean>
+		
+<!--  Transactions by Anshul start-->
+
+		<form-bean name="EMDPBGRefForfeitReqTransBean"
+			type="purchase.transactions.controller.fb.EMDPBGRefundForfeitRequestTransFB">
+		</form-bean>
+
+		<form-bean name="LCRequestTransBean"
+			type="purchase.transactions.controller.fb.LCRequestDtlTransFB">
+		</form-bean>
+
+		
+		<form-bean name="EMDPBGDeskBean"
+			type="purchase.transactions.controller.fb.EMDPBGDeskTransFB">
+		</form-bean>
+
+
+		<form-bean name="rateContractDtlBean"
+			type="purchase.transactions.controller.fb.RateContractDtlTransFB">
+		</form-bean>
+		
+		<form-bean name="auctionProposalDeskBean"
+			type="purchase.transactions.controller.fb.AuctionProposalDeskTransFB">
+		</form-bean>
+		
+<!--  Transactions by Anshul end-->
+
+
+		<form-bean name="atValidationBean"
+			type="purchase.transactions.controller.fb.ATValidationTransFB">
+		</form-bean>
+		
+		<form-bean name="tenderValidationBean"
+			type="purchase.transactions.controller.fb.TenderValidationTransFB">
+		</form-bean>
+		
+		<!-- Master and Transaction by Deepak : Start -->
+		<form-bean name="docTemplateMstBean"
+			type="purchase.masters.controller.fb.DocumentTemplateMstFB">
+		</form-bean>
+    
+		<form-bean name="docGenerateTransBean"
+			type="purchase.transactions.controller.fb.PurchaseDocGenerateTransFB">
+		</form-bean>
+		
+		<form-bean name="saleTenderBean"
+			type="purchase.transactions.controller.fb.TenderSaleTransFB">
+		</form-bean>
+        
+        <form-bean name="ruleApprovalDtlMstBean"
+			type="purchase.masters.controller.fb.RuleApprovalMstFB">
+		</form-bean>
+		
+		<form-bean name="documentIssueReceiveDtlBean"
+			type="purchase.transactions.controller.fb.DocumentIssueReceiveDtlsTransFB">
+		</form-bean>
+		
+		<form-bean name="finApprovalTransBean"
+			type="purchase.transactions.controller.fb.FinancialApprovalTransFB">
+		</form-bean>
+		
+		 <form-bean name="preTechApprovalTransBean"
+			type="purchase.transactions.controller.fb.PreTechApprovalTransFB">
+		</form-bean>
+		
+		<form-bean name="postTechApprovalTransBean"
+			type="purchase.transactions.controller.fb.PostTechApprovalTransFB">
+		</form-bean>
+		
+		<!-- Master and Transaction by Deepak : End -->
+
+
+<!--  Transactions by Balasubramaniam Start-->
+		<form-bean name="priceBidCompStmtBean"
+			type="purchase.transactions.controller.fb.PriceBidComparativeStatementTransFB">
+		</form-bean>
+
+
+		<form-bean name="negotiationEntryBean"
+			type="purchase.transactions.controller.fb.NegotiationTransFB">
+		</form-bean>
+
+<!--  Transactions by Balasubramaniam End-->
+
+		<!-- Master and Transaction by Amit : Start -->
+
+		<!-- Contract Type Category Master -->
+
+		<form-bean name="contractTypeCategoryMstBean"
+			type="purchase.masters.controller.fb.ContractTypeCategoryMstFB">
+		</form-bean>
+
+        <!-- Contract Type Purchase Mode Master -->
+
+		<form-bean name="contractTypePurchaseModeMstBean"
+			type="purchase.masters.controller.fb.ContractTypePurchaseModeMstFB">
+		</form-bean> 
+
+
+		<!-- Document Master -->
+
+		<form-bean name="documentMstBean"
+			type="purchase.masters.controller.fb.DocumentMstFB">
+		</form-bean>
+
+		<!-- Master and Transaction by Amit : End -->
+
+		<!-- Master and Transaction by Anshul : Start -->
+
+		<!-- Bid Type Master -->
+
+		<form-bean name="bidTypeMstBean"
+			type="purchase.masters.controller.fb.BidTypeMstFB">
+		</form-bean>
+
+		<!-- Payment Mode Master -->
+
+		<form-bean name="paymentModeMstBean"
+			type="purchase.masters.controller.fb.PaymentModeMstFB">
+		</form-bean>
+
+
+		<!-- Envelop Opening Authority Master -->
+
+		<form-bean name="envelopOpeningMstBean"
+			type="purchase.masters.controller.fb.EnvelopOpeningAuthorityMstFB">
+		</form-bean>
+
+		<!-- Document Type Master  -->
+
+		<form-bean name="documentTypeMstBean"
+			type="purchase.masters.controller.fb.DocumentTypeMstFB">
+		</form-bean>
+
+		<!-- Validation Rule Master  -->
+
+		<form-bean name="validationRuleMstBean"
+			type="purchase.masters.controller.fb.RuleValidationMstFB">
+		</form-bean>
+<!-- GLOBAL Commitee Type Remarks Details Bean By Anurudra Goel  -->
+
+         <form-bean name="commiteeBean"
+         	type="purchase.transactions.controller.fb.CommitteeMemberRemarksTransFB">
+		</form-bean>
+		
+		
+		<!-- GLOBAL PURCHASE  -->
+
+		<form-bean name="purchaseGlobalBean"
+			type="purchase.global.controller.GlblPurchaseFB">
+		</form-bean>
+
+		<!-- Master and Transaction by Anshul : End -->
+
+		<!-- Price Bid Rule Master  -->
+
+		<form-bean name="priceBidRuleMstBean"
+			type="purchase.masters.controller.fb.RulePriceBidMstFB">
+		</form-bean>
+
+		<form-bean name="docscreeningBean"
+			type="purchase.transactions.controller.fb.DocumentScreeningTransFB">
+		</form-bean>
+		<!-- Master and Transaction by Anurudra : End -->
+
+		<!-- Master and Transaction by Tanvi : Start -->
+		<!-- EMD_PBG Rule Master -->
+
+		<form-bean name="ruleEMD_PBGBean"
+			type="purchase.masters.controller.fb.RuleEMD_PBGMstFB">
+		</form-bean>
+
+		<!-- Purchase Mode Rule Master -->
+
+		<form-bean name="rulePurchaseModeBean"
+			type="purchase.masters.controller.fb.RulePurchaseModeMstFB">
+		</form-bean>
+		
+		<!-- Component Value Master -->
+
+		<form-bean name="componentValueBean"
+			type="purchase.masters.controller.fb.ComponentValueMstFB">
+		</form-bean>
+		
+		<!-- Follow Up Details Transaction -->
+
+		<form-bean name="followUpDtlsBean"
+			type="purchase.transactions.controller.fb.FollowUpDetailsTransFB">
+		</form-bean>
+
+	    <!-- Tender/Quotation Scrap Details Transaction -->
+
+		<form-bean name="tenderScrapDtlsBean"
+			type="purchase.transactions.controller.fb.TenderScrapDetailTransFB">
+		</form-bean>
+		
+		<!-- Bid Withdrawal Details Transaction -->
+
+		<form-bean name="bidWithdrawDtlsBean"
+			type="purchase.transactions.controller.fb.BidWithDrawDetailTransFB">
+		</form-bean>
+		
+		<!-- Document Comparative Statement Transaction -->
+
+		<form-bean name="docComparativeStatmentBean"
+			type="purchase.transactions.controller.fb.DocumentComparativeStatementTransFB">
+		</form-bean>
+		
+		<!-- Liability Booking Detail Transaction -->
+
+		<form-bean name="liabilityBookingDtlBean"
+			type="purchase.transactions.controller.fb.LiabilityBookingDtlTransFB">
+		</form-bean>
+		
+		<!-- Proposal Validation Transaction -->
+
+		<form-bean name="proposalValidationBean"
+			type="purchase.transactions.controller.fb.ProposalValidationTransFB">
+		</form-bean>
+		
+		
+		<!-- Master and Transaction by Tanvi : End -->
+
+		<form-bean name="tenderDeskBean"
+			type="purchase.transactions.controller.fb.TenderDeskTransFB">
+		</form-bean>
+		
+		<form-bean name="techSpecificationBean"
+			type="purchase.transactions.controller.fb.TechnicalSpecificationTransFB">
+		</form-bean>
+		
+		<form-bean name="momRecordDetailBean"
+			type="purchase.transactions.controller.fb.MOMRecordDetailTransFB">
+		</form-bean>
+		
+<!-- Reports for Purchase Module Start  -->
+		
+		<form-bean name="custonDutyExemptionRpt"
+			type="purchase.reports.controller.fb.CustomDutyExemptionCertificateRptFB">
+		</form-bean>
+		
+		<form-bean name="demandListRpt"
+			type="purchase.reports.controller.fb.DemandListRptFB">
+		</form-bean>
+		
+		<form-bean name="lcDetailsRpt"
+			type="purchase.reports.controller.fb.LCDetailsRptFB">
+		</form-bean>
+		
+		<form-bean name="listActivePendingRpt"
+			type="purchase.reports.controller.fb.ListActivePendingTenderRptFB">
+		</form-bean>
+		
+		<form-bean name="listApprovedEquipRpt"
+			type="purchase.reports.controller.fb.ListApprovedEquipmentsRptFB">
+		</form-bean>
+		
+		<form-bean name="listClearingCasesRpt"
+			type="purchase.reports.controller.fb.ListClearingCasesRptFB">
+		</form-bean>
+		
+		<form-bean name="listEquipAMCExpiredRpt"
+			type="purchase.reports.controller.fb.ListEquipmentAMCExpiredRptFB">
+		</form-bean>
+		
+		<form-bean name="listQuotationsRpt"
+			type="purchase.reports.controller.fb.ListQuotationsRptFB">
+		</form-bean>
+		
+		<form-bean name="listQuotedSuppliersRpt"
+			type="purchase.reports.controller.fb.ListQuotedSuppliersRptFB">
+		</form-bean>
+		
+		<form-bean name="listShortlistedFinancialRpt"
+			type="purchase.reports.controller.fb.ListShortlistedSupplierFinancialRptFB">
+		</form-bean>
+		
+		<form-bean name="listShortlistedScreeningRpt"
+			type="purchase.reports.controller.fb.ListShortlistedSupplierScreeningRptFB">
+		</form-bean>
+		
+		<form-bean name="listShortlistedTechReviewRpt"
+			type="purchase.reports.controller.fb.ListShortlistedSupplierTechReviewRptFB">
+		</form-bean>
+		
+		<form-bean name="listShowingStatusRpt"
+			type="purchase.reports.controller.fb.ListShowingStatusRptFB">
+		</form-bean>
+		
+		<form-bean name="listSuppliersPBGReceiveRpt"
+			type="purchase.reports.controller.fb.ListShowingSuppliersPBGReceivedRptFB">
+		</form-bean>
+		
+		<form-bean name="listSuppliersRpt"
+			type="purchase.reports.controller.fb.ListSupplierRptFB">
+		</form-bean>
+		
+		<form-bean name="listSuppliersEMDReleasedRpt"
+			type="purchase.reports.controller.fb.ListSuppliersEMDReleasedRptFB">
+		</form-bean>
+		
+		<form-bean name="reqDemandProposalRpt"
+			type="purchase.reports.controller.fb.RequirmentDemandProposalDtlRptFB">
+		</form-bean>
+		
+		<form-bean name="summListFloatedRpt"
+			type="purchase.reports.controller.fb.SummaryListFloatedTenderRptFB">
+		</form-bean>
+		
+		<form-bean name="summListSampleRpt"
+			type="purchase.reports.controller.fb.SummaryListSampleRptFB">
+		</form-bean>
+		
+		<form-bean name="documentIssueReceiveRpt"
+			type="purchase.reports.controller.fb.DocumentIssueReceiveDetailsRptFB">
+		</form-bean>
+<!-- Reports for Purchase Module End  -->		
+	<!--  Transactions by Amit-->
+
+         		<form-bean name="indentPrintBean"
+			       type="purchase.transactions.controller.fb.IndentPrintTransFB">
+		         </form-bean>
+         
+
+
+        <form-bean name="tenderDeskBean"
+			type="purchase.transactions.controller.fb.TenderDeskTransFB">
+		</form-bean>
+		
+		<form-bean name="techSpecificationBean"
+			type="purchase.transactions.controller.fb.TechnicalSpecificationTransFB">
+		</form-bean>
+
+
+		<form-bean name="demandScreeningBean"
+			type="purchase.transactions.controller.fb.DemandScreeningPurchTransFB">
+		</form-bean>
+		
+		
+		<form-bean name="requestForLpPatient"
+			type="purchase.transactions.controller.fb.RequestForLPPatientFB">
+		</form-bean>
+		
+		<form-bean name="annualPurchaseIndent"
+			type="purchase.transactions.controller.fb.AnnualPurchaseIndentFB">
+		</form-bean>
+		
+		<form-bean name="purchaseRequest"
+			type="purchase.transactions.controller.fb.PurchaseRequestFB">
+		</form-bean>
+		
+		<form-bean name="rateContractPurchase"
+			type="purchase.transactions.controller.fb.RateContractPurchaseRequestFB">
+		</form-bean>
+		
+		<form-bean name="requestForContigency"
+			type="purchase.transactions.controller.fb.RequestForContigencyFB">
+		</form-bean>
+				
+		
+		<form-bean name="properityItemPurchase"
+			type="purchase.transactions.controller.fb.ProperitryItemPurchaseFB">
+		</form-bean>
+		
+		
+		<form-bean name="reservedItemPurchase"
+			type="purchase.transactions.controller.fb.ReservedItemPurchaseFB">
+		</form-bean>
+				
+		
+		<form-bean name="indentForImportItemsBean"
+			type="purchase.transactions.controller.fb.IndentForImportItemsFB">
+		</form-bean>
+		
+		<form-bean name="indentTransBean"
+			type="purchase.transactions.controller.fb.IndentTransFB">
+		</form-bean>
+		
+		<form-bean name="indentViewBean"
+			type="purchase.transactions.controller.fb.IndentViewTransFB">
+		</form-bean>
+		
+		
+		<form-bean name="technicalCompStmtApproval"
+			type="purchase.transactions.controller.fb.TechCompStatValidTransFB">
+		</form-bean>
+		
+		<form-bean name="priceBidCompStmtApproval"
+			type="purchase.transactions.controller.fb.PriceBidComparativeStmtApprTransFB">
+		</form-bean>
+		
+		<form-bean name="negotiationCompStmtApproval"
+			type="purchase.transactions.controller.fb.NegotiationComparativeStmtTransFB">
+		</form-bean>
+		
+		<form-bean name="atDeskBean"
+			type="purchase.transactions.controller.fb.ATDetailsTransFB">
+		</form-bean>
+		<form-bean name="atViewDeskBean"
+			type="purchase.transactions.controller.fb.ATDetailsViewTransFB">
+		</form-bean>
+		<!--  Transactions by Amit END-->
+
+	</form-beans>
+
+
+
+
+	<action-mappings>
+	
+	 	<!-- Master and Transaction by Amit : Start -->
+          <!-- VIEW(USED IN INDENT DESK) -->
+
+		 <action path="/transactions/IndentViewTransCNT"
+			type="purchase.transactions.controller.action.IndentViewTransCNT"
+			name="indentViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/indentViewTrans_mms.jsp" />
+		</action>
+  
+  
+  
+  
+  
+        <!-- Indent Type Transaction Mapping -->
+		<action path="/transactions/IndentPrintTransCNT"
+			type="purchase.transactions.controller.action.IndentPrintTransCNT"
+			name="indentPrintBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+ 
+       <!-- ATDesk Transaction Mapping -->
+       <action path="/transactions/ATDetailsTransCNT"
+			type="purchase.transactions.controller.action.ATDetailsTransCNT"
+			name="atDeskBean" scope="request" validate="false" parameter="hmode">
+			 
+			 <forward name="create"
+				path="/transactions/atdesk_create_trans_purchase.jsp" />
+			 
+			 <forward name="cancelProcess"
+				path="/transactions/atdesk_cancel_trans_purchase.jsp" />
+				
+			 <forward name="view"
+				path="/transactions/atdesk_view_trans_purchase.jsp" />
+			 
+		</action>
+		
+		<action path="/transactions/ATDetailsViewTransCNT"
+			type="purchase.transactions.controller.action.ATDetailsViewTransCNT"
+			name="atViewDeskBean" scope="request" validate="false" parameter="hmode">
+			 
+			 <forward name="viewATDetails"
+				path="/transactions/atdesk_view_trans_purchase.jsp" />
+			 
+		</action>
+
+
+        <!-- Indent Type Transaction Mapping -->
+	
+		<action path="/transactions/IndentTransCNT"
+			type="purchase.transactions.controller.action.IndentTransCNT"
+			name="indentTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/transactions/" />
+		</action>
+
+       <!-- Technical Comparative Statement Validation -->
+
+       <action path="/transactions/TechCompStatValidTransCNT"
+			type="purchase.transactions.controller.action.TechCompStatValidTransCNT"
+			name="technicalCompStmtApproval" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="techCompStmtValidation"
+				path="/transactions/pur_TechCompStatValidationTrans_purchase.jsp" />
+			<forward name="viewDtls"
+				path="/transactions/pur_view_tecCompStmtValdTrans.jsp" />
+		</action>
+
+
+        <!-- Price Bid Comparative Statement Approval -->
+
+        <action path="/transactions/PriceBidComparativeStmtApprTransCNT"
+			type="purchase.transactions.controller.action.PriceBidComparativeStmtApprTransCNT"
+			name="priceBidCompStmtApproval" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="techCompStmtValidation"
+				path="/transactions/pur_PriceBidCompStmtAppTrans_purchase.jsp" />
+			<forward name="viewDtls"
+				path="/transactions/pur_view_PriceBidCompStmtAppTrans_purchase.jsp" />
+		</action>
+
+
+        <!-- Negotiation Comparative Statement Approval -->
+
+        <action path="/transactions/NegotiationComparativeStmtTransCNT"
+			type="purchase.transactions.controller.action.NegotiationComparativeStmtTransCNT"
+			name="negotiationCompStmtApproval" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="techCompStmtValidation"
+				path="/transactions/pur_NegotiationCompStmtValidTrans_purchase.jsp" />
+			<forward name="viewDtls"
+				path="/transactions/pur_view_NegotiationCompStmtValidTrans_purchase.jsp" />
+		</action>
+
+
+         <!-- Request For  Purchase Request() -->
+
+		<action path="/transactions/PurchaseRequestCNT"
+			type="purchase.transactions.controller.action.PurchaseRequestCNT"
+			name="purchaseRequest" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="PurchaseRequestJsp"
+				path="/transactions/add_PurchaseRequestTrans_purchase.jsp" />
+		</action>
+ 
+        <!-- Request For Annual Purchase Indent() -->
+
+		<action path="/transactions/AnnualPurchaseIndentCNT"
+			type="purchase.transactions.controller.action.AnnualPurchaseIndentCNT"
+			name="annualPurchaseIndent" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="AnnualPurchaseIndentJsp"
+				path="/transactions/add_AnnualPurchaseIndentTrans_purchase.jsp" />
+		</action>
+ 
+ 
+         <!-- Request For Rate Contract Purchase -->
+
+		 <action path="/transactions/RateContractPurchaseRequestCNT"
+			type="purchase.transactions.controller.action.RateContractPurchaseRequestCNT"
+			name="rateContractPurchase" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="RateContractPurchaseJsp"
+				path="/transactions/add_RateContractPurchaseRequest_purchase.jsp" />
+		 </action>
+ 
+
+        <!-- Request For Contigency Indent() -->
+
+		<action path="/transactions/RequestForContigencyCNT"
+			type="purchase.transactions.controller.action.RequestForContigencyCNT"
+			name="requestForContigency" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="RequestForContigencyJsp"
+				path="/transactions/add_RequestForContigencyTrans_purchase.jsp" />
+		</action>
+	
+	
+	
+	     <!-- Request For Properitry Item() -->
+
+		<action path="/transactions/ProperitryItemPurchaseCNT"
+			type="purchase.transactions.controller.action.ProperitryItemPurchaseCNT"
+			name="properityItemPurchase" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ProperitryItemPurchaseJsp"
+				path="/transactions/add_ProperityItemPurchaseTrans_purchase.jsp" />
+		</action>
+		
+			
+		<!-- Request For Reserved item() -->
+
+		<action path="/transactions/ReservedItemPurchaseCNT"
+			type="purchase.transactions.controller.action.ReservedItemPurchaseCNT"
+			name="reservedItemPurchase" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ReservedItemPurchaseJsp"
+				path="/transactions/add_ReservedItemPurchaseTrans_purchase.jsp" />
+		</action>
+	
+	
+		<action path="/transactions/MmsCNT"
+			type="mms.global.controller.MmsCNT" name="mmsBean" scope="request"
+			validate="false" parameter="hmode">
+
+			<forward name="mmslist"
+				path="/transactions/search_mms_dtls.jsp" />
+
+
+		</action>
+        
+
+
+        <!--  DEMAND SCREENING DESK   -->
+		<action path="/transactions/DemandScreeningPurchTransCNT"
+			type="purchase.transactions.controller.action.DemandScreeningPurchTransCNT"
+			name="demandScreeningBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/transactions/" />
+		</action>
+		
+		<!-- Indent for imported items Mapping Start (USED IN INDENT DESK)Indent Desk)-->
+		<action path="/transactions/IndentForImportItemsCNT"
+			type="purchase.transactions.controller.action.IndentForImportItemsCNT"
+			name="indentForImportItemsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/indent_for_imported_items.jsp" />
+		</action>
+		
+		<action path="/transactions/AuctionProposalDeskTransCNT"
+			type="purchase.transactions.controller.action.AuctionProposalDeskTransCNT"
+			name="auctionProposalDeskBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="createCondemned"
+				path="/transactions/auction_Condemnd_ProposalDeskTrans.jsp" />
+			<forward name="createNonCondemned"
+				path="/transactions/auction_NonCondemnd_ProposalDeskTrans.jsp" />
+			<forward name="viewCondemned"
+				path="/transactions/auction_ViewCondemnd_ProposalDeskTrans.jsp" />
+			<forward name="viewNonCondemned"
+				path="/transactions/auction_ViewNonCondemnd_ProposalDeskTrans.jsp" />
+		</action>
+
+		<!-- Document Master -->
+
+		<action path="/masters/DocumentMstCNT"
+			type="purchase.masters.controller.action.DocumentMstCNT"
+			name="documentMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/pur_addDocumentMst.jsp" />
+		</action>
+
+		<!-- Contract Type Category Master -->
+           
+          <action path="/masters/ContractTypeCategoryMstCNT"
+					type="purchase.masters.controller.action.ContractTypeCategoryMstCNT"
+					name="contractTypeCategoryMstBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="add"
+						path="/masters/pur_addContractTypeCategoryMst.jsp" />
+						
+					<forward name="modify"
+						path="/masters/pur_modifyContractTypeCategoryMst.jsp" />	
+		  </action>
+
+		<!-- Master and Transaction by Amit : End -->
+	
+	
+	
+	<!-- Global Util Action Mapping Start for transactions-->
+
+		<action path="/transactions/MmsCNT"
+			type="mms.global.controller.MmsCNT" name="mmsBean" scope="request"
+			validate="false" parameter="hmode">
+
+			<forward name="mmslist"
+				path="/transactions/search_mms_dtls.jsp" />
+
+
+
+		</action>
+
+		<!-- Global Util Action Mapping Start for Masters-->
+		
+		<!-- LC Request Transaction Mapping Start -->
+
+	<action path="/transactions/LCRequestDtlTransCNT"
+			type="purchase.transactions.controller.action.LCRequestDtlTransCNT"
+			name="LCRequestTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/LCRequest_Add_Trans.jsp" />
+			<forward name="view"
+				path="/transactions/LCRequest_view_trans_purchase.jsp" />
+			<forward name="updateStatus"
+				path="/transactions/LCRequest_updateStatus_trans_purchase.jsp" />
+		</action>
+	
+		<!-- EMD PBG DESK Start -->
+
+	<action path="/transactions/EMDPBGDeskTransCNT"
+			type="purchase.transactions.controller.action.EMDPBGDeskTransCNT"
+			name="EMDPBGDeskBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="PBGReceive"
+				path="/transactions/EMDPBGDesk_PBGReceive_trans_purchase.jsp" />
+			<forward name="extend"
+				path="/transactions/EMDPBGDesk_extend_trans_purchase.jsp" />
+			<forward name="refund"
+				path="/transactions/EMDPBGDesk_refund_trans_purchase.jsp" />
+			<forward name="view"
+				path="/transactions/EMDPBGDesk_view_trans_purchase.jsp" />
+			<forward name="forfeit"
+				path="/transactions/EMDPBGDesk_forfeit_trans_purchase.jsp" />
+		
+
+		</action>
+		
+		
+		<action path="/transactions/MOMRecordDetailTransCNT"
+			type="purchase.transactions.controller.action.MOMRecordDetailTransCNT"
+			name="momRecordDetailBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/momRecordDetail_Trans.jsp" />
+			<forward name="viewDtls"
+				path="/transactions/momRecordDetail_View_Trans.jsp" />	
+			
+		</action>
+		
+		
+		<!-- Rate Contract Details Start -->
+
+		<action path="/transactions/RateContractDtlTransCNT"
+			type="purchase.transactions.controller.action.RateContractDtlTransCNT"
+			name="rateContractDtlBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/add_rate_contract_details_trans.jsp" />
+			<forward name="renew"
+				path="/transactions/renew_rate_contract_details_trans.jsp" />
+			<forward name="terminate"
+				path="/transactions/terminate_rate_contract_details_trans.jsp" />
+			<forward name="view"
+				path="/transactions/view_rate_contract_details_trans.jsp" />
+
+		</action>
+		
+			<!-- EMD PBG refund/forfeit request Start -->
+
+	<action path="/transactions/EMDPBGRefundForfeitRequestTransCNT"
+			type="purchase.transactions.controller.action.EMDPBGRefundForfeitRequestTransCNT"
+			name="EMDPBGRefForfeitReqTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/transactions/EMDPBG_RefundForfeitRequest_Trans.jsp" />
+			
+		
+
+		</action>
+		
+		<action path="/transactions/TenderSaleTransCNT"
+			type="purchase.transactions.controller.action.TenderSaleTransCNT"
+			name="saleTenderBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/tenderSale_trans.jsp" />
+			<forward name="viewTender"
+				path="/transactions/view_tenderSale_trans.jsp" />
+			<forward name="cancelTender"
+				path="/transactions/cancel_tenderSale_trans.jsp" />
+			
+		</action>
+
+		<action path="/transactions/TenderValidationTransCNT"
+			type="purchase.transactions.controller.action.TenderValidationTransCNT"
+			name="tenderValidationBean" scope="request" validate="false"
+			parameter="hmode">
+			
+			<forward name="approve"
+				path="/transactions/tender_validation_trans_purchase.jsp" />
+			
+			<forward name="view"
+				path="/transactions/tender_validation_view_trans_purchase.jsp" />
+			
+		</action>
+		
+		<action path="/transactions/ATValidationTransCNT"
+			type="purchase.transactions.controller.action.ATValidationTransCNT"
+			name="atValidationBean" scope="request" validate="false"
+			parameter="hmode">
+			
+			<forward name="approve"
+				path="/transactions/at_validation_trans_purchase.jsp" />
+			
+			<forward name="view"
+				path="/transactions/at_validation_view_trans_purchase.jsp" />
+			
+		</action>
+		
+		<!-- Rate Contract Details  End -->
+
+		<!-- Transactions by Balasubramaniam  Start -->
+
+	<action path="/transactions/PriceBidComparativeStatementTransCNT"
+			type="purchase.transactions.controller.action.PriceBidComparativeStatementTransCNT"
+			name="priceBidCompStmtBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="priceBidCompStmt"
+				path="/transactions/priceBidCompStmt_pur_trans.jsp" />
+			<forward name="viewPage"
+				path="/transactions/priceBidCompStmt_view_pur_trans.jsp" />
+			 
+		</action>
+		
+			<action path="/transactions/NegotiationTransCNT"
+			type="purchase.transactions.controller.action.NegotiationTransCNT"
+			name="negotiationEntryBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="negotiationEntry"
+				path="/transactions/negotiationEntry_pur_trans.jsp" />
+			<forward name="viewPage"
+				path="/transactions/negotiationEntry_view_pur_trans.jsp" />
+			
+		</action>
+		
+<!-- Transactions by Balasubramaniam  Start -->
+
+
+		<!-- Master and Transaction by Deepak : Start -->
+
+		<action path="/masters/DocumentTemplateMstCNT"
+			type="purchase.masters.controller.action.DocumentTemplateMstCNT"
+			name="docTemplateMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="doctemplate"
+				path="/masters/pur_documentTemplateMst.jsp" />
+		</action>
+
+		<action path="/transactions/PurchaseDocGenerateTransCNT"
+			type="purchase.transactions.controller.action.PurchaseDocGenerateTransCNT"
+			name="docGenerateTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="docGenerate"
+				     path="/transactions/pur_documentGenerateTrans.jsp" />
+		</action>
+
+        <action path="/masters/RuleApprovalMstCNT"
+				type="purchase.masters.controller.action.RuleApprovalMstCNT"
+				name="ruleApprovalDtlMstBean" scope="request" validate="false"
+				parameter="hmode">
+				<forward name="init"
+				    	 path="/masters/rule_approvalDtlMst.jsp" />
+		</action>
+		
+		<action path="/transactions/FinancialApprovalTransCNT"
+			type="purchase.transactions.controller.action.FinancialApprovalTransCNT"
+			name="finApprovalTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="approve"
+				path="/transactions/pur_financialApprovalTrans.jsp" />
+			<forward name="viewApprove"
+				path="/transactions/pur_view_financialApprovalTrans.jsp" />
+		</action>
+		
+	<action path="/transactions/PreTechApprovalTransCNT"
+			type="purchase.transactions.controller.action.PreTechApprovalTransCNT"
+			name="preTechApprovalTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="approve"
+				path="/transactions/pre_TechnicalApprovalTrans.jsp" />
+			<forward name="viewApprove"
+				path="/transactions/view_Pre_TechnicalApprovalTrans.jsp" />	
+		</action>
+		
+		<action path="/transactions/PostTechApprovalTransCNT"
+			type="purchase.transactions.controller.action.PostTechApprovalTransCNT"
+			name="postTechApprovalTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="approve"
+				path="/transactions/post_TechnicalApprovalTrans.jsp" />
+			<forward name="viewApprove"
+				path="/transactions/view_Post_TechnicalApprovalTrans.jsp" />
+		</action>
+		
+		<!-- Master and Transaction by Deepak : End -->
+
+		<!-- Master and Transaction by Amit : Start -->
+
+		<!-- Document Master -->
+
+		<action path="/masters/DocumentMstCNT"
+			type="purchase.masters.controller.action.DocumentMstCNT"
+			name="documentMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/pur_addDocumentMst.jsp" />
+			<forward name="modify" path="/masters/pur_modifyDocumentMst.jsp" />
+		</action>
+
+		<!-- Contract Type Category Master -->
+           
+          <action path="/masters/ContractTypeCategoryMstCNT"
+					type="purchase.masters.controller.action.ContractTypeCategoryMstCNT"
+					name="contractTypeCategoryMstBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="add"
+						path="/masters/pur_addContractTypeCategoryMst.jsp" />
+						
+					<forward name="modify"
+						path="/masters/pur_modifyContractTypeCategoryMst.jsp" />	
+		  </action>
+
+		<!-- Master and Transaction by Amit : End -->
+
+		<!-- Master and Transaction by Anshul : Start -->
+
+
+		<!-- Document Type Master  -->
+
+		<action path="/masters/DocumentTypeMstCNT"
+			type="purchase.masters.controller.action.DocumentTypeMstCNT"
+			name="documentTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/pur_addDocumentTypeMst.jsp" />
+			<forward name="modify"
+				path="/masters/pur_modifyDocumentTypeMst.jsp" />
+		</action>
+
+		<!-- Envelop Opening Authority Master -->
+
+		<action path="/masters/EnvelopOpeningAuthorityMstCNT"
+			type="purchase.masters.controller.action.EnvelopOpeningAuthorityMstCNT"
+			name="envelopOpeningMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/pur_addEnvelopOpeningAuthorityMst.jsp" />
+			<forward name="modify"
+				path="/masters/pur_modifyEnvelopOpeningAuthorityMst.jsp" />
+		</action>
+
+		<!-- Payment Mode Master -->
+
+		<action path="/masters/PaymentModeMstCNT"
+			type="purchase.masters.controller.action.PaymentModeMstCNT"
+			name="paymentModeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/pur_addPaymentModeTypeMst.jsp" />
+			<forward name="modify"
+				path="/masters/pur_modifyPaymentModeTypeMst.jsp" />
+		</action>
+
+		<!-- Bid Type Master -->
+
+		<action path="/masters/BidTypeMstCNT"
+			type="purchase.masters.controller.action.BidTypeMstCNT"
+			name="bidTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/pur_addBidTypeMst.jsp" />
+			<forward name="modify"
+				path="/masters/pur_modifyBidTypeMst.jsp" />
+		</action>
+
+
+         <!-- Contract Type Purchase Mode Master -->
+           
+          <action path="/masters/ContractTypePurchaseModeMstCNT"
+					type="purchase.masters.controller.action.ContractTypePurchaseModeMstCNT"
+					name="contractTypePurchaseModeMstBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="add"
+						path="/masters/pur_addContractTypePurchaseModeMst.jsp" />
+					<forward name="modify"
+						path="/masters/pur_modifyContractTypePurchaseModeMst.jsp" />	
+		  </action>
+
+
+		<!-- Validation Rule Master  -->
+
+
+		<action path="/masters/RuleValidationMstCNT"
+			type="purchase.masters.controller.action.RuleValidationMstCNT"
+			name="validationRuleMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/masters/pur_validationRuleMst.jsp" />
+			<forward name="report"
+				path="/masters/pur_validationRuleMst_report.jsp" />
+		</action>
+		
+		<action path="/transactions/CommitteeMemberRemarksTransCNT"
+			type="purchase.transactions.controller.action.CommitteeMemberRemarksTransCNT"
+			name="commiteeBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+
+
+		<!-- Purchase Global  -->
+
+		<action path="/global/GlblPurchaseCNT"
+			type="purchase.global.controller.GlblPurchaseCNT"
+			name="purchaseGlobalBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="report"
+				path="/masters/pur_reportTemplate.jsp" />
+		</action>
+
+
+		<!-- Master and Transaction by Anshul : End -->
+		
+		<action path="/transactions/DocumentScreeningTransCNT"
+					type="purchase.transactions.controller.action.DocumentScreeningTransCNT"
+					name="docscreeningBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="index"
+						path="/transactions/pur_documentscreeningentry_trans.jsp" />
+					<forward name="view"
+						path="/transactions/view_documentScreening_trans.jsp" />
+						
+					
+		</action>
+
+
+		<action path="/masters/RulePriceBidMstCNT"
+			type="purchase.masters.controller.action.RulePriceBidMstCNT"
+			name="priceBidRuleMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/pur_addPriceRuleBidMst.jsp" />
+		</action>
+
+
+
+		<!-- Master and Transaction by Tanvi : Start -->
+		<!-- Purchase Mode Rule Master -->
+
+		<action path="/masters/RulePurchaseModeMstCNT"
+			type="purchase.masters.controller.action.RulePurchaseModeMstCNT"
+			name="rulePurchaseModeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="rulePurchaseMode"
+				path="/masters/pur_rulePurchaseModeMst.jsp" />
+		</action>
+
+		<!-- EMD_PBG Rule Master -->
+
+		<action path="/masters/RuleEMD_PBGMstCNT"
+			type="purchase.masters.controller.action.RuleEMD_PBGMstCNT"
+			name="ruleEMD_PBGBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ruleEMD_PBG"
+				path="/masters/pur_ruleEMD_PBGMst.jsp" />
+		</action>
+		
+		<!-- Component Value Master -->
+
+		<action path="/masters/ComponentValueMstCNT"
+			type="purchase.masters.controller.action.ComponentValueMstCNT"
+			name="componentValueBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/pur_addComponentValueMst.jsp" />
+			<forward name="modify"
+				path="/masters/pur_modifyComponentValueMst.jsp" />
+		</action>
+		
+		<!-- Follow Up Details Transaction -->
+
+		<action path="/transactions/FollowUpDetailsTransCNT"
+			type="purchase.transactions.controller.action.FollowUpDetailsTransCNT"
+			name="followUpDtlsBean" scope="request" validate="false" parameter="hmode">
+			<forward name="followUpDtls"
+				path="/transactions/pur_followupdetails_trans.jsp" />
+			<forward name="viewFollowUpDtls"
+				path="/transactions/pur_view_followupdetails_trans.jsp" />
+		</action>
+		
+		<!-- Tender/Quotation Scrap Details Transaction -->
+
+		<action path="/transactions/TenderScrapDetailTransCNT"
+			type="purchase.transactions.controller.action.TenderScrapDetailTransCNT"
+			name="tenderScrapDtlsBean" scope="request" validate="false" parameter="hmode">
+			<forward name="tenderScrapDtls"
+				path="/transactions/pur_tenderscrapdetails_trans.jsp" />
+			<forward name="viewTenderScrapDtls"
+				path="/transactions/pur_view_tenderscrapdetails_trans.jsp" />
+		</action>
+		
+		<!-- Bid Withdrawal Details Transaction -->
+
+		<action path="/transactions/BidWithDrawDetailTransCNT"
+			type="purchase.transactions.controller.action.BidWithDrawDetailTransCNT"
+			name="bidWithdrawDtlsBean" scope="request" validate="false" parameter="hmode">
+			<forward name="bidWithdrawDtls"
+				path="/transactions/pur_bidwithdrawdetails_trans.jsp" />
+			<forward name="viewBidWithdrawDtls"
+				path="/transactions/pur_view_bidwithdrawdetails_trans.jsp" />
+		</action>
+		
+		<!-- Document Comparative Statement Validation Transaction -->
+
+		<action path="/transactions/DocumentComparativeStatementTransCNT"
+			type="purchase.transactions.controller.action.DocumentComparativeStatementTransCNT"
+			name="docComparativeStatmentBean" scope="request" validate="false" parameter="hmode">
+			<forward name="docComparativeStatment"
+				path="/transactions/pur_docComparativeStatment_trans.jsp" />
+			<forward name="viewDocComparativeStatment"
+				path="/transactions/pur_view_docComparativeStatment_trans.jsp" />
+		</action>
+		
+		<!-- Liability Booking Detail Transaction -->
+
+		<action path="/transactions/LiabilityBookingDtlTransCNT"
+			type="purchase.transactions.controller.action.LiabilityBookingDtlTransCNT"
+			name="liabilityBookingDtlBean" scope="request" validate="false" parameter="hmode">
+			<forward name="liabilityBookingDtl"
+				path="/transactions/pur_liabilityBookingDtl_trans.jsp" />
+		</action>
+		
+		<!-- Proposal Validation Transaction -->
+
+		<action path="/transactions/ProposalValidationTransCNT"
+			type="purchase.transactions.controller.action.ProposalValidationTransCNT"
+			name="proposalValidationBean" scope="request" validate="false" parameter="hmode">
+			<forward name="propsalValidation"
+				path="/transactions/pur_propsalValidation_trans.jsp" />
+			<forward name="viewProposalValidation"
+				path="/transactions/pur_view_propsalValidation_trans.jsp" />
+		</action>
+		
+		<!-- Master and Transaction by Tanvi : End -->
+
+		<action path="/transactions/PODeskTransCNT"
+			type="purchase.transactions.controller.action.PODeskTransCNT"
+			name="PODeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+
+
+		<action path="/transactions/PODeskGenerateTransCNT"
+			type="purchase.transactions.controller.action.PODeskGenerateTransCNT"
+			name="PODeskGenerateTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="generate"
+				path="/transactions/generate_PODeskTrans_purchase.jsp" />
+		</action>
+
+		<action path="/transactions/PODeskScheduleTransCNT"
+			type="purchase.transactions.controller.action.PODeskScheduleTransCNT"
+			name="PODeskScheduleTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="schedule"
+				path="/transactions/schedule_PODeskTrans_purchase.jsp" />
+		</action>
+
+		<action path="/transactions/PODeskViewTransCNT"
+			type="purchase.transactions.controller.action.PODeskViewTransCNT"
+			name="PODeskViewTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/view_PODeskTrans_purchase.jsp" />
+		</action>
+
+		<action path="/transactions/PODeskCancelTransCNT"
+			type="purchase.transactions.controller.action.PODeskCancelTransCNT"
+			name="PODeskCancelTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="cancel"
+				path="/transactions/cancel_PODeskTrans_purchase.jsp" />
+		</action>
+
+		<action path="/transactions/PODeskPrintTransCNT"
+			type="purchase.transactions.controller.action.PODeskPrintTransCNT"
+			name="poPrintBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+		
+		<action path="/transactions/PODeskShipmentDtlsTransCNT"
+			type="purchase.transactions.controller.action.PODeskShipmentDtlsTransCNT"
+			name="PODeskShipmentDtlsTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="shipment"
+				path="/transactions/shipment_PODeskTrans_purchase.jsp" />
+		</action>
+		
+		
+		<action path="/transactions/PoApprovalTransCNT"
+			type="purchase.transactions.controller.action.PoApprovalTransCNT"
+			name="poApprovalTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="approval"
+				path="/transactions/approval_PoApprovalTrans_purchase.jsp" />
+			<forward name="view"
+				path="/transactions/view_PoApprovalTrans_purchase.jsp" />
+		</action>
+		
+		 		
+		<action path="/transactions/DocumentIssueReceiveDtlsTransCNT"
+			type="purchase.transactions.controller.action.DocumentIssueReceiveDtlsTransCNT"
+			name="documentIssueReceiveDtlBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/documentIssueReceiveDtl_trans.jsp" />
+			<forward name="viewDtls"
+				path="/transactions/documentIssueReceiveViewDtl_trans.jsp" />	
+		</action>
+		
+		
+		<action path="/transactions/ProposalDeskTransCNT"
+			type="purchase.transactions.controller.action.ProposalDeskTransCNT"
+			name="ProposalDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+		
+		<action path="/transactions/ProposalDeskViewTransCNT"
+			type="purchase.transactions.controller.action.ProposalDeskViewTransCNT"
+			name="ProposalDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+		
+		
+		<action path="/transactions/SuppliesProposalDeskTransCNT"
+			type="purchase.transactions.controller.action.SuppliesProposalDeskTransCNT"
+			name="SuppliesProposalDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="create" path="/transactions/supplies_ProposalDeskTrans_purchase.jsp" />
+			<forward name="view" path="/transactions/supplies_View_ProposalDeskTrans_purchase.jsp" />
+		</action>
+		
+		<action path="/transactions/WorksProposalDeskTransCNT"
+			type="purchase.transactions.controller.action.WorksProposalDeskTransCNT"
+			name="WorksProposalDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="create" path="/transactions/works_ProposalDeskTrans_purchase.jsp" />
+			<forward name="view" path="/transactions/works_ProposalDeskTrans_View_purchase.jsp" />
+		</action>		
+		
+		<action path="/transactions/AmcCmcProposalDeskTransCNT"
+			type="purchase.transactions.controller.action.AmcCmcProposalDeskTransCNT"
+			name="AmcCmcProposalDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="create" path="/transactions/amccmc_ProposalDeskTrans_purchase.jsp" />
+			<forward name="view" path="/transactions/amccmc_view_ProposalDeskTrans_purchase.jsp" />
+		</action>	
+		
+			<action path="/transactions/RateContractSignProposalDeskTransCNT"
+			type="purchase.transactions.controller.action.RateContractSignProposalDeskTransCNT"
+			name="RateContractSignProposalDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="create" path="/transactions/ratecont_ProposalDeskTrans_purchase.jsp" />
+			<forward name="view" path="/transactions/ratecont_view_ProposalDeskTrans_purchase.jsp" />
+		</action>	
+		
+		
+		<action path="/transactions/TenderDeskTransCNT"
+			type="purchase.transactions.controller.action.TenderDeskTransCNT"
+			name="tenderDeskBean" scope="request" validate="false" parameter="hmode">
+			 
+			 <forward name="create"
+				path="/transactions/tenderdesk_create_trans_purchase.jsp" />
+			 
+			  <forward name="extension"
+				path="/transactions/tenderdesk_extension_trans_purchase.jsp" />
+				
+				 <forward name="submission"
+				path="/transactions/tenderdesk_submission_trans_purchase.jsp" />
+				
+				 <forward name="opening"
+				path="/transactions/tenderdesk_opening_trans_purchase.jsp" />
+				
+				 <forward name="cancelProcess"
+				path="/transactions/tenderdesk_cancel_trans_purchase.jsp" />
+				
+			 	 <forward name="view"
+				path="/transactions/tenderdesk_view_trans_purchase.jsp" />
+			 
+		</action>
+		
+		<action path="/transactions/TechnicalSpecificationTransCNT"
+			type="purchase.transactions.controller.action.TechnicalSpecificationTransCNT"
+			name="techSpecificationBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/technicalSpecification_trans.jsp" />
+			<forward name="viewDtls"
+				path="/transactions/technicalSpecification_view_trans.jsp" />	
+		</action>
+		
+	<!-- Action Mapping for Purchase Start -->
+		
+		<action path="/reports/CustomDutyExemptionCertificateRptCNT"
+			type="purchase.reports.controller.action.CustomDutyExemptionCertificateRptCNT"
+			name="custonDutyExemptionRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/customDutyExemptionCertificate_purchaserpt.jsp" />
+				
+		</action>
+		
+		<action path="/reports/DemandListRptCNT"
+			type="purchase.reports.controller.action.DemandListRptCNT"
+			name="demandListRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/demandList_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/LCDetailsRptCNT"
+			type="purchase.reports.controller.action.LCDetailsRptCNT"
+			name="lcDetailsRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/lcDetails_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/ListActivePendingTenderRptCNT"
+			type="purchase.reports.controller.action.ListActivePendingTenderRptCNT"
+			name="listActivePendingRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listActivePendingTender_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/ListApprovedEquipmentsRptCNT"
+			type="purchase.reports.controller.action.ListApprovedEquipmentsRptCNT"
+			name="listApprovedEquipRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listApprovedEquipments_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/ListClearingCasesRptCNT"
+			type="purchase.reports.controller.action.ListClearingCasesRptCNT"
+			name="listClearingCasesRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listClearingCases_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/ListEquipmentAMCExpiredRptCNT"
+			type="purchase.reports.controller.action.ListEquipmentAMCExpiredRptCNT"
+			name="listEquipAMCExpiredRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listEquipmentAMCExpired_purchaserpt.jsp" />
+				
+		</action>
+		
+		<action path="/reports/ListQuotationsRptCNT"
+			type="purchase.reports.controller.action.ListQuotationsRptCNT"
+			name="listQuotationsRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listQuotations_purchaserpt.jsp" />
+				
+		</action>
+		
+		<action path="/reports/ListQuotedSuppliersRptCNT"
+			type="purchase.reports.controller.action.ListQuotedSuppliersRptCNT"
+			name="listQuotedSuppliersRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listQuotedSuppliers_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/ListShortlistedSupplierFinancialRptCNT"
+			type="purchase.reports.controller.action.ListShortlistedSupplierFinancialRptCNT"
+			name="listShortlistedFinancialRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listShortlistedSupplierFinancial_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/ListShortlistedSupplierScreeningRptCNT"
+			type="purchase.reports.controller.action.ListShortlistedSupplierScreeningRptCNT"
+			name="listShortlistedScreeningRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listShortlistedSupplierScreening_purchaserpt.jsp" />
+				
+		</action>
+		
+		<action path="/reports/ListShortlistedSupplierTechReviewRptCNT"
+			type="purchase.reports.controller.action.ListShortlistedSupplierTechReviewRptCNT"
+			name="listShortlistedTechReviewRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listShortlistedSupplierTechReview_purchaserpt.jsp" />
+				
+		</action>
+		
+		<action path="/reports/ListShowingStatusRptCNT"
+			type="purchase.reports.controller.action.ListShowingStatusRptCNT"
+			name="listShowingStatusRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listShowingStatus_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/ListShowingSuppliersPBGReceivedRptCNT"
+			type="purchase.reports.controller.action.ListShowingSuppliersPBGReceivedRptCNT"
+			name="listSuppliersPBGReceiveRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listShowingSupplierPBGReceived_purchaserpt.jsp" />
+		
+		</action>
+		
+		<action path="/reports/ListSupplierRptCNT"
+			type="purchase.reports.controller.action.ListSupplierRptCNT"
+			name="listSuppliersRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listSuppliers_purchaserpt.jsp" />
+				
+		</action>
+		
+		<action path="/reports/ListSuppliersEMDReleasedRptCNT"
+			type="purchase.reports.controller.action.ListSuppliersEMDReleasedRptCNT"
+			name="listSuppliersEMDReleasedRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listSuppliersEMDReleased_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/RequirmentDemandProposalDtlRptCNT"
+			type="purchase.reports.controller.action.RequirmentDemandProposalDtlRptCNT"
+			name="reqDemandProposalRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/requiredDemandProposal_purchaserpt.jsp" />
+				
+		</action>
+		
+		<action path="/reports/SummaryListFloatedTenderRptCNT"
+			type="purchase.reports.controller.action.SummaryListFloatedTenderRptCNT"
+			name="summListFloatedRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/summaryListFloatedTender_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/SummaryListSampleRptCNT"
+			type="purchase.reports.controller.action.SummaryListSampleRptCNT"
+			name="summListSampleRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/summaryListSample_purchaserpt.jsp" />
+			
+		</action>
+		
+		<action path="/reports/DocumentIssueReceiveDetailsRptCNT"
+			type="purchase.reports.controller.action.DocumentIssueReceiveDetailsRptCNT"
+			name="documentIssueReceiveRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/documentIssueReceiveDtl_purchaserpt.jsp" />
+			
+		</action>
+	<!-- Action Mapping for Purchase End -->
+		
+		
+	</action-mappings>
+
+	<!-- Transaction Action Mappings End -->
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Request Purpose Master'>
+		<common-values>
+			<master-name>RecordtTypeCheckListMaster</master-name>
+			<master-title>Record Type Check List Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Record Type Check List Master</tableHeading>
+			
+			<list-table>HPMRT_RECORD_TYPE_CHECKLIST</list-table>
+			<controls>
+				<control type="combo" index="0">
+					<label>Record Type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>INITCAP(D.HPMRSTR_RECORDTYPE_DESC)</text-field>
+								<value-field>D.HPMRNUM_RECORD_TYPE</value-field>
+							</options>
+							<tables>
+								<table alias='D'>HPMRT_MRD_RECORDTYPE_MST</table>
+								
+							</tables>
+							<condition>
+								
+								<general>D.GNUM_HOSPITAL_CODE=100 AND D.GNUM_ISVALID = 1 ORDER BY INITCAP(D.HPMRSTR_RECORDTYPE_DESC) </general>
+								<general-inactive> D.GNUM_HOSPITAL_CODE=100 AND</general-inactive>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>	
+			<columns>
+				<column>Check List</column>
+				<column>Mode</column>
+				<column>Record Type</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>initcap(C.HPMRSTR_CHECKLIST)</field> 
+					<field>Decode(A.HPMRNUM_CHECKLIST_MODE,1,'Dispatch',2,'Approval',3,'Receiving',4,'Archival') as checkListMode</field> 
+					<field>initcap(B.HPMRSTR_RECORDTYPE_DESC)</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HPMRNUM_RECORD_TYPE</field>
+					<field>A.HPMRNUM_CHECKLIST_ID</field>
+					<field>A.HPMRNUM_CHECKLIST_MODE</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HPMRNUM_SLNO</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HPMRT_RECORD_TYPE_CHECKLIST</table>
+					<table alias='B'>HPMRT_MRD_RECORDTYPE_MST</table>
+					<table alias='C'>HPMRT_CHECKLIST_MST</table>
+				</tables>
+				
+				<condition>
+					<general> A.HPMRNUM_RECORD_TYPE=B.HPMRNUM_RECORD_TYPE and  B.gnum_isvalid=1 and B.gnum_hospital_code=100 AND A.HPMRNUM_CHECKLIST_ID=C.HPMRNUM_CHECKLIST_ID and  C.gnum_isvalid=1 and B.gnum_hospital_code=C.gnum_hospital_code AND </general>
+					<isvalid-field> A.GNUM_ISVALID </isvalid-field>
+					<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+					<orderby> ORDER BY INITCAP(C.HPMRSTR_CHECKLIST),checkListMode </orderby>
+					
+					<dependent>
+						<clause> A.HPMRNUM_RECORD_TYPE = #0 </clause>
+					</dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/mrd/master/recordTypeCheckListMst.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mrd/master/recordTypeCheckListMst.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="EmpDutyRosterFB" type="dutyroster.transaction.controller.fb.EmployeeDutyRosterFB" ></form-bean>
+		<form-bean name="LocationRosterFB" type="dutyroster.transaction.controller.fb.LocationDutyRosterFB" ></form-bean>
+		<form-bean name="DateWiseEmpRosterFB" type="dutyroster.transaction.controller.fb.DateWiseEmployeeDutyRosterFB" ></form-bean>
+		<form-bean name="EmpRosterGenerationFB" type="dutyroster.transaction.controller.fb.EmpRosterGenerationFB" ></form-bean>
+		<form-bean name="ReliverRosterFB" type="dutyroster.transaction.controller.fb.ReliverRosterFB" ></form-bean>
+		<form-bean name="DutyRoleAssignmentFB" type="dutyroster.transaction.controller.fb.DutyRoleAssignmentFB" ></form-bean>
+		<form-bean name="ExChangeOfDutyFB" type="dutyroster.transaction.controller.fb.ExChangeOfDutyFB" ></form-bean>
+		<form-bean name="NurseRoleDetailFB" type="dutyroster.transaction.controller.fb.NurseRoleDetailFB" ></form-bean>
+	</form-beans>
+	
+	
+	<action-mappings>
+		
+		<!-- Monthwise Emp Roster -->
+		<action path = "/transaction/EmpDutyRoster"
+			type = "dutyroster.transaction.controller.action.EmployeeDutyRosterACT"
+			name = "EmpDutyRosterFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/empDutyRoster.jsp"	>
+			<forward name="ADD" path="/transaction/empDutyRoster.jsp" />
+			<forward name="EMP_ROSTER" path="/transaction/empTotalRoster.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+		
+		<!-- Locationwise Capacity Roster -->
+		<action path = "/transaction/LocationDutyRoster"
+			type = "dutyroster.transaction.controller.action.LocationDutyRosterACT"
+			name = "LocationRosterFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/locationDutyRoster.jsp"	>
+			<forward name="ADD" path="/transaction/locationDutyRoster.jsp" />
+			<forward name="REPORT" path="/transaction/locationDutyRosterReport.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true"/> 
+		</action>
+		
+		<!-- Datewise Emp Roster -->
+		<action path = "/transaction/DateWiseEmpDutyRoster"
+			type = "dutyroster.transaction.controller.action.DateWiseEmployeeDutyRosterACT"
+			name = "DateWiseEmpRosterFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/dateWiseEmpDutyRoster.jsp"	>
+			<forward name="ADD" path="/transaction/dateWiseEmpDutyRoster.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+			
+		<!-- Monthwise Emp Roster Generation -->
+		<action path = "/transaction/EmpRosterGeneration"
+			type = "dutyroster.transaction.controller.action.EmpRosterGenerationACT"
+			name = "EmpRosterGenerationFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/empRosterGeneration.jsp"	>
+			<forward name="ADD" path="/transaction/empRosterGeneration.jsp" />
+			<forward name="EMP_ROSTER" path="/transaction/empTotalRoster.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+
+		<!-- Reliver Duty Assignment -->
+		<action path = "/transaction/ReliverRoster"
+			type = "dutyroster.transaction.controller.action.ReliverRosterACT"
+			name = "ReliverRosterFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/reliverRoster.jsp"	>
+			<forward name="ADD" path="/transaction/reliverRoster.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+		
+		<!-- Roster Role Assignment -->
+		<action path = "/transaction/dutyRoleAssignment"
+			type = "dutyroster.transaction.controller.action.DutyRoleAssignmentACT"
+			name = "DutyRoleAssignmentFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/dutyRoleAssignmentTile.jsp"	>
+			<forward name="NEW" path="/transaction/dutyRoleAssignmentTile.jsp" />			
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+		
+		<!-- Exchange Of Duty -->
+		<action path = "/transaction/ExChangeOfDuty"
+			type = "dutyroster.transaction.controller.action.ExChangeOfDutyACT"
+			name = "ExChangeOfDutyFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/exChangeOfDuty.jsp"	>
+			<forward name="ADD" path="/transaction/exChangeOfDuty.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+		
+		<!-- Nurse Role Detail -->
+		<action path = "/transaction/nurseRoleDetail"
+			type = "dutyroster.transaction.controller.action.NurseRoleDetailACT"
+			name = "NurseRoleDetailFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/transaction/nurseRoleDetail.jsp"	>
+			<forward name="NEW" path="/transaction/nurseRoleDetail.jsp" />			
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" /> 
+		</action>
+
+		<action path="/switchModule" type="org.apache.struts.actions.SwitchAction" />
+	</action-mappings>
+
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/dutyroster-tiles-def.xml"/>
+		<set-property property="definitions-validate-parser" value="true"/>
+		<set-property property="moduleAware" value="true"/>
+	</plug-in>
+</struts-config>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Roster Master'>
+		<common-values>
+			<master-name>rosterTypeMst</master-name>
+			<master-title>Roster Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Roster Master</tableHeading>
+			
+			<list-table>HDRT_ROSTER_TYPE_MST</list-table>
+
+			<columns>
+				<column>Roster Name</column>
+				<column>Roster Category Name</column>
+				<column>Area Type</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HDRSTR_ROSTER_TYPE_NAME)</field> 
+					
+					<field>
+				( SELECT INITCAP (hdrstr_roster_cat_name)
+            		FROM hdrt_roster_cat_mst
+           			WHERE hdrnum_roster_cat_id = a.hdrnum_roster_cat_id
+             		AND gnum_hospital_code = a.gnum_hospital_code
+             		AND gnum_isvalid = 1)
+             		</field> 
+             
+					<field>
+				( SELECT INITCAP (hdtstr_duty_area_type)
+           		   FROM hdrt_duty_area_mst
+           		   WHERE hdrnum_area_type_code = a.hdrnum_area_type_code
+             	   AND gnum_isvalid = 1)
+             	   </field>
+             	    
+				</fields>
+				
+				<primaryKey>
+					<field>A.HDRNUM_ROSTER_TYPE_ID</field>
+					<field>A.HDRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDRT_ROSTER_TYPE_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+										
+					 
+				 
+					<orderby>ORDER BY(A.HDRSTR_ROSTER_TYPE_NAME)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/dutyroster/masters/rosterTypeMstAddModACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/dutyroster/masters/rosterTypeMstAddModACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

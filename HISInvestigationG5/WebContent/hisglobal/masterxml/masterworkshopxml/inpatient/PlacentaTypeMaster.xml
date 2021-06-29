@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='PlacentaTypeMaster'>
+        <common-values>
+           <master-name>PlacentaTypeMaster</master-name>
+           <master-title>Placenta Type Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Placenta Type Master</tableHeading>
+           <list-table>HANCT_PLACENTA_TYPE_MST</list-table>
+           
+           <columns>
+              <column>Placenta Type</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HANCSTR_PLACENTA_TYPE)</field>
+	    		 
+			  </fields>
+				<primaryKey>
+					<field>A.HANCNUM_PLACENTA_TYPE_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HANCNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HANCT_PLACENTA_TYPE_MST</table>
+				</tables>
+				<condition>					 
+					<isvalid-field>A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID</isvalid-field>
+					<orderby> ORDER BY(A.HANCSTR_PLACENTA_TYPE) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/inpatient/master/PlacentaTypeMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/inpatient/master/PlacentaTypeMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

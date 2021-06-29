@@ -1,0 +1,149 @@
+<form-validation>
+  <global>
+
+
+  <validator name="registrationDeskRequired"
+         classname="registration.controller.validation.registrationDeskRULES" 
+             method="registrationDeskRequired"
+       methodParams="java.lang.Object,
+                     org.apache.commons.validator.ValidatorAction,
+                     org.apache.commons.validator.Field,
+                     org.apache.struts.action.ActionErrors,
+                     javax.servlet.http.HttpServletRequest"
+                msg="errors.required">
+                <javascript>
+        <![CDATA[
+        function validateRegistrationDeskFB(form) {
+       alert("javascript");
+       //alert("inside validation of form");
+  		    var isValid = true;
+          var focusField = null;
+          var i = 0;
+          var fields = new Array();
+          oRequired = new registrationDeskRequired();
+       
+          for (x in oRequired) 
+          {
+
+            var field = form[oRequired[x][0]];
+            var value ;
+        //  alert(field.name);
+         
+           // alert(field.type);
+             		//if(document.getElementsByName('registrationDeskTab')[0].value==1)
+            		//{
+            		    if(field.name=='patAddCityLoc' || field.name=='patAddCityLocCode')
+            		    {
+            				if(document.getElementsByName('isAddressDelhi')[1].checked)
+            					{
+            					//alert("document.getElementsByName('isAddressDelhi')[1].checked");
+            					if(field.name=='patAddCityLoc')
+            						value = field.value;
+            					else if(field.name=='patAddCityLocCode')
+            						value = "~";
+            					//	alert("value"+value);
+            					}
+            				else if(document.getElementsByName('isAddressDelhi')[0].checked)
+            					{
+            					if(field.name=='patAddCityLocCode')
+            						value = field.value;
+            					else if(field.name=='patAddCityLoc')
+            						value = "~";
+            				//	alert("patAddCityLocCode:  value "+value);
+            				     } 
+            			}else if(field.name=='patAge')
+            			     	{
+            		             if(document.getElementsByName('patDOB')[0].value=="")
+           				         {
+           				         if(field.value>125)
+           				         value="";
+           				         else
+           				         value=field.value;
+           				         }
+                 			     else
+                 			     value="~";
+               					}
+               				else if(field.name=='patAgeUnit')	
+ 								{
+ 								if(document.getElementsByName('patDOB')[0].value=="")
+ 								value=field.value;
+ 								else
+ 								value="~";
+ 								}
+ 							else if(field.name=='isReferred')
+ 							{
+ 							if(document.getElementsByName('isReferred')[0].checked)
+ 							{
+ 							 if(document.getElementsByName('referringInstType')[0].checked)
+ 							 value=document.getElementsByName('patRefHospitalName')[0].value;
+ 							 else if(document.getElementsByName('referringInstType')[1].checked)
+ 							 value=document.getElementsByName('referringInst')[0].value;
+ 							 else 
+ 							 value="";
+ 							}
+ 							else
+ 							value="~";
+ 							}
+ 							else if(field.name=='patAddStateCode')
+ 							{
+ 							if(document.getElementsByName('isAddressDelhi')[1].checked)
+ 							value=document.getElementsByName('patAddStateCode')[0].value;
+ 							else
+ 							value="~";				
+ 							}
+ 						
+                          
+                             else
+                              {
+
+                // get field's value
+              		           if (field.type == 'select-one') 
+                                {
+                  //   alert("select");
+                	var si = field.selectedIndex;
+                	if (si >= 0) {
+                  		value = field.options[si].value;
+                				 }
+             		             }
+             		           
+ 
+             	                 else 
+                               value = field.value;
+              	
+              	                }
+              		  alert(value);
+              if ((value.length == 0)||(value=='-1'))
+               { 
+                if (i == 0) 
+                 {
+                  focusField = field;
+                 }
+                fields[i++] = oRequired[x][1];
+                isValid = false;
+              }
+            
+          		
+
+
+          if (fields.length > 0) {
+            focusField.focus();
+            alert(fields.join('\n'));
+          						}
+			}
+		
+		//}
+		//alert(" isvalid: "+isValid);
+          return isValid;
+        
+
+       } 
+        
+
+       ]]>
+      </javascript>
+     </validator>
+
+                   
+
+</global>
+</form-validation>

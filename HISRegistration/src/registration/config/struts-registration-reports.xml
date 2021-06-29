@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 
+ <constant name="struts.devMode" value="false" />
+	<package name="registration.reports" namespace="/registration/reports" extends="struts-default">
+		  		 
+		<action name="*listReport" method="{1}" class="registration.reports.controller.action.PatientListReportACTION">
+			 <result name="NEW">/registration/reports/jsp/patientListReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+ 		<action name="*deptwiseOPDStatReport" method="{1}" class="registration.reports.controller.action.DeptwiseOPDStatReportACTION">
+			 <result name="NEW">/registration/reports/jsp/deptWiseOPDStatistics.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>	
+		<action name="*unitwiseOPDStatReport" method="{1}" class="registration.reports.controller.action.UnitwiseOPDStatReportACTION">
+			 <result name="NEW">/registration/reports/jsp/unitWiseOPDStatistics.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>	
+		
+				
+		
+		
+		<!--By Raj Kumar for roster report Aug'18  -->
+		<action name="*rosterReport" method="{1}" class="registration.reports.controller.action.RosterReportACTION">
+			 <result name="NEW">/registration/reports/jsp/rosterReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		<!--End: Roster Report  -->
+		
+		<!--By Raj Kumar for  List Report By User	 -->
+		<action name="*listReportByUser" method="{1}" class="registration.reports.controller.action.PatientListReportByUserACTION">
+			 <result name="NEW">/registration/reports/jsp/patientListReportByUser.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		<!-- End List Report By User -->
+		
+		 	
+		
+		
+		
+		 	
+		<action name="*agewiseregistrationReport" method="{1}" class="registration.reports.controller.action.AgeWiseRegistrationReportACTION">
+			 <result name="NEW">/registration/reports/jsp/AgeWiseRegistrationReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		<action name="*mctsPatientlist" method="{1}" class="registration.reports.controller.action.MctsPatientlistingReportACTION">
+			 <result name="NEW">/registration/reports/jsp/MctsPatientListingReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>	
+		<action name="*categorywisecashcollection" method="{1}" class="registration.reports.controller.action.CategoryWiseCashCollectionReportACTION">
+			 <result name="NEW">/registration/reports/jsp/CategoryWiseCashCollectionReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		<action name="*emgunknownpatReport" method="{1}" class="registration.reports.controller.action.UnknownPatientReportACTION">
+			 <result name="NEW">/registration/reports/jsp/UnknownPatientReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		<action name="*broughtbydeathpatReport" method="{1}" class="registration.reports.controller.action.BroughtByDeathPatientReportACTION">
+			 <result name="NEW">/registration/reports/jsp/BroughtByDeathPatientReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		<action name="*crmergeReport" method="{1}" class="registration.reports.controller.action.CrMergeReportACTION">
+			 <result name="NEW">/registration/reports/jsp/CrMergeReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		
+		<action name="*deptwiseOPDStatNewReport" method="{1}" class="registration.reports.controller.action.DeptwiseOPDStatNewReportACTION">
+			 <result name="NEW">/registration/reports/jsp/deptwiseOPDStatisticsNew.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+					
+		<action name="*PatlistReportNew" method="{1}" class="registration.reports.controller.action.PatientListReportNewACTION">
+			 <result name="NEW">/registration/reports/jsp/PatientListNewReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>	
+		
+		<action name="*mlcpatReport" method="{1}" class="registration.reports.controller.action.MlcPatientReportACTION">
+			 <result name="NEW">/registration/reports/jsp/MlcPatientReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		
+		<action name="*outpatstatReport" method="{1}" class="registration.reports.controller.action.GlobalOutPatientStatReportACTION">
+			 <result name="NEW">/registration/reports/jsp/GlobalOutPatientStatReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action> 				
+		 	<action name="*hospitaluserwiseregistrationReport" method="{1}" class="registration.reports.controller.action.HospitalUserWiseRegistrationReportACTION">
+			 <result name="NEW">/registration/reports/jsp/HospitalUserWiseRegistrationReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		
+		<!-- added by manisha -->
+		<action name="*consolidatedCollectionReport" method="{1}" class="registration.reports.controller.action.ConsolidatedCollectionReportACTION">
+			 <result name="NEW">/registration/reports/jsp/ConsolidatedCollectionReportReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		
+			<!-- added by manisha -->
+		<action name="*cashierWiseConsolidatedCollectionAmtReport" method="{1}" class="registration.reports.controller.action.ConsolidatedCollectionReportACTION">
+			 <result name="NEW">/registration/reports/jsp/CashierWiseConsolidatedCollectionAmtReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		</action>
+		
+		<!-- added by Garima for PIS Report -->
+		 <action name="*ListOfRegisteredEmpRpt" method="{1}"  class="hr.pis.empReg.reports.controller.action.ListOfRegisteredEmpRptACTION"> 
+			<result name="NEW">/hr/pis/empReg/reports/jsp/listOfRegisteredEmpRpt.jsp</result>		
+	 	</action> 
+	 	
+	 	 <action name="*RegisteredEmpDtlRpt" method="{1}"  class="hr.pis.empReg.reports.controller.action.RegisteredEmpDtlRptACTION"> 
+			<result name="NEW">/hr/pis/empReg/reports/jsp/registeredEmpDtlRpt.jsp</result>		
+	 	</action> 
+ 	</package> 
+	 
+</struts>

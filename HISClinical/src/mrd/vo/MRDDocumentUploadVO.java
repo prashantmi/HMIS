@@ -1,0 +1,352 @@
+package mrd.vo;
+
+import hisglobal.vo.ValueObject;
+
+/**
+ * DocumentUploadDtlVO is the class that specifies getters and setters for all the identifiers which are used for retrieving
+ * and inserting data in the DB tables.
+ * 
+ * @author AHIS
+ */
+
+public class MRDDocumentUploadVO extends ValueObject
+{
+	private String patCrNo;
+	private String patName;
+	private String serialNo;
+	private String episodeCode;// for HRGNUM_EPISODE_NO
+	private String episodeVisitNo;// for HRGNUM_VISIT_NO
+	private String documentTitle;
+	private String documentCode;
+	private String documentName;
+	private String documentDirectoryPath;
+	private String isValid;
+	private String seatId;
+	private String documentTypeName;
+	private byte[] docFile;
+	private String mlcNo;
+	private String removeReason;
+	private String fileType;
+	private String removeDate;
+	private String removeSeatId;
+	private String pathForWindows;
+	private String pathPathLinux;
+	private String FileName;
+	private String docSlNo;
+	private String hospitalCode;
+	
+	private String departmentUnitCode;
+	
+	private String recordId;
+	private String recordType;
+	private String recordTypeName;
+	private String recordStatus;
+	private String isScanned;
+	private String entryDate;
+	private String admissionNo;
+	private String issueFlag;
+
+
+	public String getMlcNo() {
+		return mlcNo;
+	}
+
+	public void setMlcNo(String mlcNo) {
+		this.mlcNo = mlcNo;
+	}
+
+	public String getRemoveReason() {
+		return removeReason;
+	}
+
+	public void setRemoveReason(String removeReason) {
+		this.removeReason = removeReason;
+	}
+
+	public String getFileType() {
+		return fileType;
+	}
+
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
+	}
+
+	public String getRemoveDate() {
+		return removeDate;
+	}
+
+	public void setRemoveDate(String removeDate) {
+		this.removeDate = removeDate;
+	}
+
+	public String getRemoveSeatId() {
+		return removeSeatId;
+	}
+
+	public void setRemoveSeatId(String removeSeatId) {
+		this.removeSeatId = removeSeatId;
+	}
+
+	public byte[] getDocFile()
+	{
+		return docFile;
+	}
+
+	public void setDocFile(byte[] docFile)
+	{
+		this.docFile = docFile;
+	}
+
+	public String getPatCrNo()
+	{
+		return patCrNo;
+	}
+
+	public void setPatCrNo(String patCrNo)
+	{
+		this.patCrNo = patCrNo;
+	}
+
+	public String getSerialNo()
+	{
+		return serialNo;
+	}
+
+	public void setSerialNo(String serialNo)
+	{
+		this.serialNo = serialNo;
+	}
+
+	public String getEpisodeCode()
+	{
+		return episodeCode;
+	}
+
+	public void setEpisodeCode(String episodeCode)
+	{
+		this.episodeCode = episodeCode;
+	}
+
+	public String getEpisodeVisitNo()
+	{
+		return episodeVisitNo;
+	}
+
+	public void setEpisodeVisitNo(String episodeVisitNo)
+	{
+		this.episodeVisitNo = episodeVisitNo;
+	}
+
+	public String getDocumentTitle()
+	{
+		return documentTitle;
+	}
+
+	public void setDocumentTitle(String documentTitle)
+	{
+		this.documentTitle = documentTitle;
+	}
+
+	public String getDocumentCode()
+	{
+		return documentCode;
+	}
+
+	public void setDocumentCode(String documentCode)
+	{
+		this.documentCode = documentCode;
+	}
+
+	public String getDocumentName()
+	{
+		return documentName;
+	}
+
+	public void setDocumentName(String documentName)
+	{
+		this.documentName = documentName;
+	}
+
+	public String getDocumentDirectoryPath()
+	{
+		return documentDirectoryPath;
+	}
+
+	public void setDocumentDirectoryPath(String documentDirectoryPath)
+	{
+		this.documentDirectoryPath = documentDirectoryPath;
+	}
+
+	public String getIsValid()
+	{
+		return isValid;
+	}
+
+	public void setIsValid(String isValid)
+	{
+		this.isValid = isValid;
+	}
+
+	public String getSeatId()
+	{
+		return seatId;
+	}
+
+	public void setSeatId(String seatId)
+	{
+		this.seatId = seatId;
+	}
+
+	public String getEntryDate()
+	{
+		return entryDate;
+	}
+
+	public void setEntryDate(String entryDate)
+	{
+		this.entryDate = entryDate;
+	}
+
+	public void reset()
+	{
+		this.setDocumentCode("");
+		this.setDocumentDirectoryPath("");
+		this.setDocumentName("");
+		this.setDocumentTitle("");
+		this.setEntryDate("");
+		this.setEpisodeCode("");
+		this.setEpisodeVisitNo("");
+		this.setIsValid("");
+		this.setPatCrNo("");
+		this.setSeatId("");
+		this.setSerialNo("");
+
+	}
+
+	public String getDocumentTypeName()
+	{
+		return documentTypeName;
+	}
+
+	public void setDocumentTypeName(String documentTypeName)
+	{
+		this.documentTypeName = documentTypeName;
+	}
+
+	public String getPathForWindows() {
+		return pathForWindows;
+	}
+
+	public void setPathForWindows(String pathForWindows) {
+		this.pathForWindows = pathForWindows;
+	}
+
+	public String getPathPathLinux() {
+		return pathPathLinux;
+	}
+
+	public void setPathPathLinux(String pathPathLinux) {
+		this.pathPathLinux = pathPathLinux;
+	}
+
+	public String getFileName() {
+		return FileName;
+	}
+
+	public void setFileName(String fileName) {
+		FileName = fileName;
+	}
+
+	public String getDocSlNo() {
+		return docSlNo;
+	}
+
+	public void setDocSlNo(String docSlNo) {
+		this.docSlNo = docSlNo;
+	}
+
+	public String getHospitalCode() {
+		return hospitalCode;
+	}
+
+	public void setHospitalCode(String hospitalCode) {
+		this.hospitalCode = hospitalCode;
+	}
+
+	public String getAdmissionNo() {
+		return admissionNo;
+	}
+
+	public void setAdmissionNo(String admissionNo) {
+		this.admissionNo = admissionNo;
+	}
+
+	public String getDepartmentUnitCode() {
+		return departmentUnitCode;
+	}
+
+	public void setDepartmentUnitCode(String departmentUnitCode) {
+		this.departmentUnitCode = departmentUnitCode;
+	}
+
+	public String getRecordId() {
+		return recordId;
+	}
+
+	public void setRecordId(String recordId) {
+		this.recordId = recordId;
+	}
+
+	public String getRecordType() {
+		return recordType;
+	}
+
+	public void setRecordType(String recordType) {
+		this.recordType = recordType;
+	}
+
+	public String getRecordStatus() {
+		return recordStatus;
+	}
+
+	public void setRecordStatus(String recordStatus) {
+		this.recordStatus = recordStatus;
+	}
+
+	public String getIsScanned() {
+		return isScanned;
+	}
+
+	public void setIsScanned(String isScanned) {
+		this.isScanned = isScanned;
+	}
+
+	public String getIssueFlag() {
+		return issueFlag;
+	}
+
+	public void setIssueFlag(String issueFlag) {
+		this.issueFlag = issueFlag;
+	}
+
+	
+
+	public String getRecordTypeName() {
+		return recordTypeName;
+	}
+
+	public void setRecordTypeName(String recordTypeName) {
+		this.recordTypeName = recordTypeName;
+	}
+
+	public String getPatName() {
+		return patName;
+	}
+
+	public void setPatName(String patName) {
+		this.patName = patName;
+	}
+
+	
+
+}

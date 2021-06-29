@@ -1,0 +1,276 @@
+package ipd.masters.dao;
+
+import ipd.masters.vo.BedTypeMstVO;
+import ipd.masters.vo.ClinicalDocumentMstVO;
+
+import javax.sql.rowset.WebRowSet;
+
+import hisglobal.transactionmgnt.HisDAO;
+
+public class ClinicalDocumentMstDAO {
+	
+	
+	/* To Get Global Clinical Document for Main Page.
+	 * 
+	 * @param vo the vo
+	 */
+	public static void getGlobalClinicalDocumentType(ClinicalDocumentMstVO vo) 
+	throws Exception {
+
+		HisDAO dao = null;
+		int nqryIndex;
+		String strquery = "";
+		WebRowSet wb = null;
+		
+		try {
+			dao = new HisDAO("ipd", "BedTypeMstDAO");
+
+			strquery = ipd.qryHandler_ipd.getQuery(1,"select.clinicaldoc.globalClinicalDocumentType.0");
+			nqryIndex = dao.setQuery(strquery);
+			
+			dao.setQryValue(nqryIndex, 1, vo.getStrHospitalCode());
+			
+			wb = dao.executeQry(nqryIndex);
+			if(wb !=null && wb.size()>0){
+				vo.setWrsGlobalClinicalDocumentType(wb);
+			} 
+				
+			
+		} catch (Exception e) {
+			throw new Exception("ipd.BedTypeMstDAO.getGlobalBedType --> "
+					+ e.getMessage());
+		} finally {
+			dao.free();
+			dao = null;
+		}
+		
+	}
+	
+	/**
+	 * retrieves and executes insert Query
+	 * 
+	 * @param vo -Form Object of the Current Master
+	 * @return - If Record Inserted Successfully. <br> false - If Record Not Inserted Successfully
+	 * @throws Exception
+	 */
+	public static boolean insertQuery(ClinicalDocumentMstVO vo) throws Exception {
+		HisDAO dao = null;
+		int nqryIndex;
+		boolean fretvalue = false;
+		String strquery = new String();
+		try {
+			dao = new HisDAO("ipd", "DAOClinicalDocumentMst");
+			strquery = ipd.qryHandler_ipd.getQuery(1, "insert.clinicaldoc.0");
+			nqryIndex = dao.setQuery(strquery);
+			dao.setQryValue(nqryIndex, 1, vo.getStrGlobalClinicalDocumentType());
+			//dao.setQryValue(nqryIndex, 1, "108");
+			dao.setQryValue(nqryIndex, 2, vo.getStrDocumentName());
+			dao.setQryValue(nqryIndex, 3, vo.getStrEffectiveFrom());
+			dao.setQryValue(nqryIndex, 4, vo.getStrRemarks());
+			dao.setQryValue(nqryIndex, 5, vo.getStrSeatId());
+			//dao.setQryValue(nqryIndex, 5, "10001");
+			dao.setQryValue(nqryIndex, 6, "1");
+			dao.setQryValue(nqryIndex, 7, vo.getStrHospitalCode());
+			dao.setQryValue(nqryIndex, 8, vo.getStrHospitalCode());
+			//dao.setQryValue(nqryIndex, 7, "108");
+			dao.execute(nqryIndex, 0);
+
+			synchronized (dao) {
+				dao.fire();
+				fretvalue = true;
+			}
+		} catch (Exception e) {
+			fretvalue = false;
+			throw new Exception("DAOClinicalDocumentMst.insertQuery() --> "
+					+ e.getMessage());
+		} finally {
+			dao.free();
+			dao = null;
+		}
+		return fretvalue;
+	}
+	
+	/**
+	 * To check for Duplicate Records
+	 * 
+	 * @param vo - Form Object of the Current Master
+	 * @return - true then record already exist else false then record saved
+	 * @throws Exception
+	 */
+	public static boolean initialAddQuery(ClinicalDocumentMstVO vo) throws Exception {
+		HisDAO dao = new HisDAO("ipd", "DAOClinicalDocumentMst");
+		boolean freturnValue = false;
+		int nqryIndex;
+		int ncount = 0;
+		WebRowSet wb = null;
+		String strquery = ipd.qryHandler_ipd.getQuery(1, "select.clinicaldoc.2");
+
+		try {
+			nqryIndex = dao.setQuery(strquery);
+			
+			System.out.println(vo.getStrHospitalCode());
+			System.out.println(vo.getStrDocumentName());
+			
+			dao.setQryValue(nqryIndex, 1, vo.getStrDocumentName());
+			dao.setQryValue(nqryIndex, 2, vo.getStrHospitalCode());
+			//dao.setQryValue(nqryIndex, 2, "108");
+			wb = dao.executeQry(nqryIndex);
+			while (wb.next()) {
+				ncount = Integer.parseInt(wb.getString(1));
+			}
+			if (ncount == 0) {
+				freturnValue = true;
+			} else {
+				freturnValue = false;
+			}
+		} catch (Exception e) {
+			freturnValue = false;
+			throw new Exception("DAOClinicalDocumentMst.initialAddQuery() --> "
+					+ e.getMessage());
+		} finally {
+			dao.free();
+			dao = null;
+		}
+		return freturnValue;
+	}
+	
+	/**
+	 * retrieves and executes modify Query.
+	 * 
+	 * @param chk1 - Primary Keys Concatenated with '@'.
+	 * @param vo - Form Object of the Current Master
+	 * @throws Exception
+	 */
+	public static void modifyQuery(String chk1, ClinicalDocumentMstVO vo)
+	throws Exception {
+
+			HisDAO dao = null;
+			String strtemp[] = null;
+			int nqryIndex;
+			String strquery = new String();
+			try {
+				
+				chk1=chk1.replace('@', '$');
+				strtemp = chk1.replace('$', '#').split("#");
+				
+				dao = new HisDAO("ipd", "DAOClinicalDocumentMst");
+				strquery = ipd.qryHandler_ipd.getQuery(1, "select.clinicaldoc.3");
+				
+				nqryIndex = dao.setQuery(strquery);
+				dao.setQryValue(nqryIndex, 1, strtemp[0]);//document_code
+				dao.setQryValue(nqryIndex, 2, strtemp[1]);//hospital_code
+				dao.setQryValue(nqryIndex, 3, strtemp[2]);//serial no
+				WebRowSet web = dao.executeQry(nqryIndex);
+				while (web.next()) {
+					
+					vo.setStrDocumentName(web.getString(1));
+					vo.setStrEffectiveFrom(web.getString(2));
+					vo.setStrRemarks(web.getString(3));
+					vo.setStrIsValid(web.getString(4));
+				}
+			} catch (Exception e) {
+				throw new Exception("DAOClinicalDocumentMst.modifyQuery() --> "
+						+ e.getMessage());
+			} finally {
+				dao.free();
+				dao = null;
+			}
+		}
+	
+	/**
+	 * For initial update
+	 * 
+	 * @param chk - Primary Keys Concatenated with '@'.
+	 * @param vo - FormBean Object
+	 * @return boolean Value true or false
+	 */
+	public static boolean initialUpdateQuery(String chk, ClinicalDocumentMstVO vo)
+	throws Exception {
+				HisDAO dao = null;
+				String strtemp[] = null;
+				boolean freturnValue = false;
+				int nqryIndex;
+				int ncount = 0;
+				WebRowSet wb = null;
+				String strquery = new String();
+				try {
+					dao = new HisDAO("ipd", "DAOClinicalDocumentMst");
+					strquery = ipd.qryHandler_ipd.getQuery(1, "select.clinicaldoc.4");
+					chk=chk.replace('@', '$');
+					strtemp = chk.replace('$', '#').split("#");
+					
+					nqryIndex = dao.setQuery(strquery);
+					
+					dao.setQryValue(nqryIndex, 1, strtemp[0]);
+					dao.setQryValue(nqryIndex, 2, strtemp[1]);
+					//dao.setQryValue(nqryIndex, 2, "108");
+					dao.setQryValue(nqryIndex, 3, vo.getStrDocumentName());
+					dao.setQryValue(nqryIndex, 4, strtemp[2]);
+					wb = dao.executeQry(nqryIndex);
+					while (wb.next()) {
+						ncount = Integer.parseInt(wb.getString(1));
+					}
+					if (ncount < 1) {
+						freturnValue = true;
+					} else {
+						freturnValue = false;
+					}
+				
+				} catch (Exception e) {
+					freturnValue = false;
+					throw new Exception("DAOClinicalDocumentMst.initialUpdateQuery() --> "
+							+ e.getMessage());
+				} finally {
+					dao.free();
+					dao = null;
+				}
+				return freturnValue;
+		}
+	
+	/**
+	 * updates the Current Record.
+	 * 
+	 * @param chk - Primary Keys Concatenated with '@'.
+	 * @param vo -  Form Object of the Current Master.
+	 * @return -true - if Record Updated Successfully. <br>
+	 * 		   false - if Record Not Updated Successfully.
+	 * @throws Exception
+	 * 
+	 */
+	public static boolean updateQuery(String chk, ClinicalDocumentMstVO vo)
+	throws Exception {
+				boolean fretValue = true;
+				HisDAO dao = null;
+				String strtemp[] = null;
+				int nqryIndex;
+				String strquery = new String();
+				try {
+					dao = new HisDAO("IPD", "DAOClinicalDocumentMst");
+					strquery = ipd.qryHandler_ipd.getQuery(1, "update.clinicaldoc.1");
+					nqryIndex = dao.setQuery(strquery);
+					chk=chk.replace('@', '$');
+					strtemp = chk.replace('$', '#').split("#");
+					dao.setQryValue(nqryIndex, 1, vo.getStrDocumentName());
+					dao.setQryValue(nqryIndex, 2, vo.getStrEffectiveFrom());
+					dao.setQryValue(nqryIndex, 3, vo.getStrLastModifiedSeatId()); 
+					dao.setQryValue(nqryIndex, 4, vo.getStrRemarks());
+					dao.setQryValue(nqryIndex, 5, vo.getStrIsValid());
+					dao.setQryValue(nqryIndex, 6, strtemp[0]);//doc_code
+					dao.setQryValue(nqryIndex, 7, strtemp[1]);//hospital_code
+					dao.setQryValue(nqryIndex, 8, strtemp[2]);//Serial No
+					dao.execute(nqryIndex, 0);
+				
+					synchronized (dao) {
+						dao.fire();
+					}
+				} catch (Exception e) {
+					fretValue = false;
+					throw new Exception("DAOClinicalDocumentMst.updateQuery() --> "
+							+ e.getMessage());
+				} finally {
+					dao.free();
+					dao = null;
+				}
+				return fretValue;
+			}
+}

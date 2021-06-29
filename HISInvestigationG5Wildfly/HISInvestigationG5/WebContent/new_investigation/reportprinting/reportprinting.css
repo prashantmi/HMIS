@@ -1,0 +1,110 @@
+
+
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+.bodyy
+{
+
+font-size:14px;
+}
+
+	#example.dataTable thead th {
+  border-bottom: 0;
+}
+
+#example.dataTable.no-footer {
+  border-bottom: 0;
+}
+
+
+
+	
+.searchtile {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+
+}
+
+.searchtile:hover {
+  box-shadow: 0 8px 16px 0 rgba( 0,0,0,0.2);
+
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.02);
+  
+}
+
+.card{
+border-radius: 25px;
+}
+
+
+.containertile {
+  padding: 30px 30px;
+}
+
+.animated {
+  -webkit-animation-duration: 200ms;
+  -moz-animation-duration: 200ms;
+  animation-duration: 200ms;
+}
+
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+	
+	
+	.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #009AAD;
+  color: white;
+  
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+}

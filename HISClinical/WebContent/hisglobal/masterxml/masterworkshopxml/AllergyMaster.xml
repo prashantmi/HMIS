@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='AllergyMaster'>
+		<common-values>
+			<master-name>AllergyMaster</master-name>
+			<master-title>Allergy Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Allergy Master</tableHeading> 
+				<list-table>HGBT_ALLERGY_MST</list-table>
+				<controls>			     
+				   <control type="combo" index="0">
+			       <label>Allergy Type</label>
+			         <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGSTR_ALLERGY_TYPE)</text-field>
+									<value-field>A.HGNUM_ALLERGY_TYPE_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_ALLERGY_TYPE_MST</table>	
+								</tables>
+								<condition>
+									<general> A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID = 1 AND A.HGNUM_SOURCE_FLAG = 1 ORDER BY INITCAP(A.HGSTR_ALLERGY_TYPE)</general>
+									
+								</condition>
+							</dynamic>					
+						</data>
+						<default>-1</default>
+					</control>
+				</controls>
+				<columns>
+					 <column>Allergy Name </column>
+				</columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_ALLERGY_NAME) </field>
+						
+						</fields>
+					<primaryKey>
+						<field>A.HGNUM_ALLERGY_ID </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_ALLERGY_MST </table>
+					</tables>
+					<condition>
+							
+                           <isvalid-field>A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID</isvalid-field>
+                           <dependent>
+							<clause> A.HGNUM_ALLERGY_TYPE_CODE = #0</clause>
+							</dependent>
+							<orderby> order by INITCAP(A.HGSTR_ALLERGY_NAME)</orderby>
+							
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>				
+					<control type="text" index="0">
+						<label>Allergy Type</label>
+						<constraints  size ='50' />
+						<data>
+							<dynamic>
+								<query-detail>
+									<fields>
+										<field>INITCAP(A.HGSTR_ALLERGY_TYPE)</field>	
+									</fields>
+									<tables>
+										<table alias='A'>HGBT_ALLERGY_TYPE_MST</table>	
+									</tables>
+									<condition>
+										<general> A.GNUM_HOSPITAL_CODE=100 and GNUM_ISVALID=1</general>
+										<dependent>
+											<clause>AND HGNUM_ALLERGY_TYPE_CODE =  #L0</clause>
+										</dependent>										
+									</condition>
+								</query-detail>
+							</dynamic>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+							
+					<control type="text" index="1" >
+						<label>Allergy Name</label>
+						<constraints inputType='alphabets' size='50'  maxlength ='500' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>						
+					<control type="text" index="2" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet' styleString="style='display:none'" />			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+						
+					</control>
+									
+				  
+				</controls>
+				<redundent-check>
+					SELECT COUNT (*) FROM HGBT_ALLERGY_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) and GNUM_HOSPITAL_CODE=100 
+					and HGNUM_ALLERGY_TYPE_CODE = valueMap#L0  and upper(HGSTR_ALLERGY_NAME)=controlindex1
+				</redundent-check>	
+				<insert-query>
+					<primary-key>
+						<field>HGNUM_ALLERGY_ID</field>
+						<value>SELECT NVL(MAX(HGNUM_ALLERGY_ID),10)+1 FROM HGBT_ALLERGY_MST where GNUM_HOSPITAL_CODE=100</value>						
+					</primary-key>
+					<fields valueMap='#L0'>HGNUM_ALLERGY_TYPE_CODE</fields>
+					<fields valueMap='#I1'>HGSTR_ALLERGY_NAME</fields>
+					<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#2'>GNUM_HOSPITAL_CODE</fields>
+				    <table>HGBT_ALLERGY_MST</table>				  
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+		<modify-page>
+		  <dynamic-page>
+		  	<controls>							
+					<control type="text" index="0">
+						<label>Allergy Type</label>
+						<constraints  size ='50' />						
+						<data>
+							<static>#Q0</static>
+						</data>					
+						<readOnly>1</readOnly>
+					</control>
+					<control type="text" index="1">
+						<label>Allergy Name</label>
+						<constraints inputType='alphabets' size='50'  maxlength ='500' mandatory ='true'/>	
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+				   	
+					<control type="combo" index="2">
+					<selection-mandatory>true</selection-mandatory>
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+               </controls>
+               <redundent-check>
+					SELECT COUNT (*) FROM HGBT_ALLERGY_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) and GNUM_HOSPITAL_CODE=100
+					and upper(HGSTR_ALLERGY_NAME)=controlindex1
+			   </redundent-check>	
+		       <initialise-query>
+			   	 <fields>
+					 <field>B.HGSTR_ALLERGY_TYPE</field>
+					 <field>A.HGSTR_ALLERGY_NAME</field>
+					 		     
+				 </fields>					
+					<tables>
+						<table alias='A'>HGBT_ALLERGY_MST</table>
+						<table alias='B'>HGBT_ALLERGY_TYPE_MST</table>
+					</tables>
+					<condition>
+						<general>A.HGNUM_ALLERGY_TYPE_CODE=B.HGNUM_ALLERGY_TYPE_CODE and A.GNUM_HOSPITAL_CODE=100</general>
+						<dependent>
+						    <clause>AND A.HGNUM_ALLERGY_ID= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>					
+					<fields valueMap='#I1'>HGSTR_ALLERGY_NAME</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>	
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>				
+					<table>HGBT_ALLERGY_MST</table>
+					<condition>HGNUM_ALLERGY_ID = #1 and GNUM_HOSPITAL_CODE=100 </condition>					
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

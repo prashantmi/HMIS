@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.15" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__jndi_ds_conn_22_0</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Header_23_1</property>
+            <property name="value">AAAAAA</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Footer_24_2</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Name_26_3</property>
+            <property name="value">BBB</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Address_249_4</property>
+            <property name="value">ASASSASAS</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Contact_255_5</property>
+            <property name="value">1221</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strDeptCode_470_6</property>
+            <property name="value">99903479</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strLabCode_951_7</property>
+            <property name="value">99903480</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strReportDetailType_952_8</property>
+            <property name="value">Pending</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strComplaintNo_953_9</property>
+            <property name="value">1130510009</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strFromDate_954_10</property>
+            <property name="value">01-Jan-2013</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strToDate_955_11</property>
+            <property name="value">31-Dec-2013</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__reportMode_957_12</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__hosCode_958_13</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strIsSchedulingChecked_1931_14</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strIsApprovalChecked_1932_15</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strIsRaisingChecked_1933_16</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strIsAttendChecked_1934_17</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strIsServiceActionChecked_1935_18</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strIsClosingChecked_1936_19</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_20</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_21</property>
+            <property name="value">1221</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strComplaintNo_953_22</property>
+            <property name="value">1130510009</property>
+        </structure>
+        <structure>
+            <property name="name">strComplaintNo_953_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strIsAttendChecked_1934_23</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">strIsAttendChecked_1934_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strReportDetailType_952_24</property>
+            <property name="value">Pending</property>
+        </structure>
+        <structure>
+            <property name="name">strReportDetailType_952_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">hosCode_958_25</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">hosCode_958_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_26</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strFromDate_954_27</property>
+            <property name="value">01-Jan-2013</property>
+        </structure>
+        <structure>
+            <property name="name">strFromDate_954_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strIsClosingChecked_1936_28</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">strIsClosingChecked_1936_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strDeptCode_470_29</property>
+            <property name="value">99903479</property>
+        </structure>
+        <structure>
+            <property name="name">strDeptCode_470_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_30</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">strIsSchedulingChecked_1931_31</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">strIsSchedulingChecked_1931_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_32</property>
+            <property name="value">AAAAAA</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strLabCode_951_33</property>
+            <property name="value">99903480</property>
+        </structure>
+        <structure>
+            <property name="name">strLabCode_951_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strIsRaisingChecked_1933_34</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">strIsRaisingChecked_1933_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">reportMode_957_35</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">reportMode_957_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strIsServiceActionChecked_1935_36</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">strIsServiceActionChecked_1935_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_37</property>
+            <property name="value">BBB</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strIsApprovalChecked_1932_38</property>
+            <property name="value">0</property>
+        </structure>
+        <structure>
+            <property name="name">strIsApprovalChecked_1932_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strToDate_955_39</property>
+            <property name="value">31-Dec-2013</property>
+        </structure>
+        <structure>
+            <property name="name">strToDate_955_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_40</property>
+            <property name="value">ASASSASAS</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+    <styles>
+        <style name="crosstab" id="2">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="3">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+</report>

@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='RackShelfMaster'>
+		<common-values>
+			<master-name>RackShelfMaster</master-name>
+			<master-title>Shelf Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Shelf Master</tableHeading> 
+				<list-table>HPMRT_RACK_SHELF_MST</list-table>
+				<controls>			     
+				   <control type="combo" index="0">
+			       <label>Rack</label>
+			         <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field> (SELECT INITCAP(HPMRSTR_MRD_NAME) FROM HPMRT_MRD_MST  WHERE HPMRNUM_MRD_CODE=a.HPMRNUM_MRD_CODE
+												AND GNUM_HOSPITAL_CODE = a.gnum_hospital_code AND GNUM_ISVALID = a.gnum_isvalid)||'('|| INITCAP (a.hpmrstr_rack_name)||')'</text-field>
+									<value-field>A.HPMRNUM_RACK_ID</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HPMRT_RACK_MST</table>	
+								</tables>
+								<condition>
+									<hospital-code> A.GNUM_HOSPITAL_CODE</hospital-code>
+									<general> AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HPMRSTR_RACK_NAME)</general>
+								</condition>
+							</dynamic>					
+						</data>
+						<default>-1</default>
+					</control>
+				</controls>
+				<columns>
+					 <column>Shelf</column>
+					 <column>Rack </column>
+				</columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HMPRSTR_SHELF_LABEL) </field>
+						<field>  (SELECT INITCAP (hpmrstr_mrd_name)FROM hpmrt_mrd_mst WHERE hpmrnum_mrd_code = b.hpmrnum_mrd_code AND gnum_hospital_code = b.gnum_hospital_code
+                				AND gnum_isvalid = b.gnum_isvalid)|| '(' || INITCAP(B.HPMRSTR_RACK_NAME) || ')' </field>
+					</fields>
+					<primaryKey>
+						<field>A.HPMRNUM_RACKSHELF_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HPMRNUM_SLNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HPMRT_RACK_SHELF_MST</table>
+						<table alias='B'>HPMRT_RACK_MST</table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <hospital-code>A.GNUM_HOSPITAL_CODE </hospital-code>
+                            <orderby>  and A.HPMRNUM_RACK_ID=B.HPMRNUM_RACK_ID
+                            AND a.GNUM_HOSPITAL_CODE=b.GNUM_HOSPITAL_CODE AND b.GNUM_ISVALID=1 
+                            order by INITCAP(A.HMPRSTR_SHELF_LABEL)</orderby>
+                    <dependent>
+							<clause> A.HPMRNUM_RACK_ID = #0 </clause>
+					</dependent>
+                    </condition>
+				</query-detail>				
+		</list-page>
+	<add-page>			
+			<static-page>/mrd/master/rackShelfMst.cnt</static-page>			
+	</add-page>
+	
+	<modify-page>
+	  		<static-page>/mrd/master/rackShelfMst.cnt</static-page>
+	 </modify-page> 	
+	</master>	
+</master-config>

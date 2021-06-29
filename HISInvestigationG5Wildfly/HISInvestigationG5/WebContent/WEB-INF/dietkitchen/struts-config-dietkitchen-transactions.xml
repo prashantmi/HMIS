@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!--
+		========== Form Bean Definitions ===================================
+	-->
+	<form-beans>
+		<form-bean name="DietAdviceFB" type="dietkitchen.transactions.controller.fb.DietAdviceFB" />
+		<form-bean name="DietCalculatorFB" type="dietkitchen.transactions.controller.fb.DietCalculatorFB" />
+		<form-bean name="ViewMenuItemNutrientFB" type="dietkitchen.transactions.controller.fb.ViewMenuItemNutrientFB" />
+		<form-bean name="ViewDiagnosisDetailFB" type="dietkitchen.transactions.controller.fb.ViewDiagnosisDetailFB" />
+		<form-bean name="ViewMealTypeInstructionFB" type="dietkitchen.transactions.controller.fb.ViewMealTypeInstructionFB" />
+		<form-bean name="PatGroupDietRequestFB" type="dietkitchen.transactions.controller.fb.PatGroupDietRequestFB" />
+		<form-bean name="DietDetailFB" type="dietkitchen.transactions.controller.fb.DietDetailFB" />
+		<form-bean name="DietCycleFB" type="dietkitchen.transactions.controller.fb.DietCycleFB" />
+		<form-bean name="GuestDietRequestFB" type="dietkitchen.transactions.controller.fb.GuestDietRequestFB" />
+		<form-bean name="BulkDietRequestFB" type="dietkitchen.transactions.controller.fb.BulkDietRequestFB" />
+		<form-bean name="CookTallyFormFB" type="dietkitchen.transactions.controller.fb.CookTallyFormFB" />
+		<form-bean name="QualityCheckUpFB" type="dietkitchen.transactions.controller.fb.QualityCheckUpFB" />
+		<form-bean name="DietKitchenDeskLoginFB" type="dietkitchen.transactions.controller.fb.DietKitchenDeskLoginFB" />
+		<form-bean name="DietKitchenDeskFB" type="dietkitchen.transactions.controller.fb.DietKitchenDeskFB" />
+		<form-bean name="SinglePatientDietRequestFB" type="dietkitchen.transactions.controller.fb.SinglePatientDietRequestFB" />
+		<form-bean name="DietCompilationFB" type="dietkitchen.transactions.controller.fb.DietCompilationFB" />
+		<form-bean name="DietAcknowledgementFB" type="dietkitchen.transactions.controller.fb.DietAcknowledgementFB" />
+		<form-bean name="DietDispatchFB" type="dietkitchen.transactions.controller.fb.DietDispatchFB" />
+		<form-bean name="BufferDietFB" type="dietkitchen.transactions.controller.fb.BufferDietFB"/>
+		<form-bean name="RationCalculationFB" type="dietkitchen.transactions.controller.fb.RationCalculationFB"/>
+		<form-bean name="NewCookTallyFormFB" type="dietkitchen.transactions.controller.fb.NewCookTallyFormFB"/>
+		<form-bean name="NewDietDispatchFB" type="dietkitchen.transactions.controller.fb.NewDietDispatchFB" />
+	</form-beans>
+
+	<!--
+		========== Action Mapping Definitions ==============================
+	-->
+	<action-mappings>
+		<!-- Diet Advice -->
+		<action path="/dietAdvice"
+			type="dietkitchen.transactions.controller.action.DietAdviceACTION"
+			name="DietAdviceFB" 
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_diet_advice_dtl.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+			<forward name="PRINT" path="/transactions/jsp/dk_view_diet_advice_report.jsp"/>
+		</action>
+
+		<!-- Diet Calculator -->
+		<action path="/dietCalculator"
+			type="dietkitchen.transactions.controller.action.DietCalculatorACTION"
+			name="DietCalculatorFB" 
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="POPUP" path="/transactions/jsp/dk_diet_calculator_dtl.jsp" />
+		</action>
+
+		<!-- Menu Item Nutrient Viewer -->
+		<action path="/viewMenuItemNutri"
+			type="dietkitchen.transactions.controller.action.ViewMenuItemNutrientACTION"
+			name="ViewMenuItemNutrientFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="POPUP" path="/transactions/jsp/dk_view_menu_nutrients.jsp" />
+		</action>
+
+		<!-- Diagnosis Detail Viewer -->
+		<action path="/viewDiagnosisDetail"
+			type="dietkitchen.transactions.controller.action.ViewDiagnosisDetailACTION"
+			name="ViewDiagnosisDetailFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="POPUP" path="/transactions/jsp/dk_view_diagnosis_detail.jsp" />
+		</action>
+
+		<!-- Meal Type Instruction Viewer -->
+		<action path="/viewMealTypeInstructions"
+			type="dietkitchen.transactions.controller.action.ViewMealTypeInstructionACTION"
+			name="ViewMealTypeInstructionFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="POPUP" path="/transactions/jsp/dk_view_meal_type_instructions.jsp" />
+		</action>
+
+		<!-- Patient Group Diet Request -->
+		<action path="/patGroupDietRequest"
+			type="dietkitchen.transactions.controller.action.PatGroupDietRequestACTION"
+			name="PatGroupDietRequestFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_pat_group_diet_request.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Single Patient Diet Request -->
+		<action path="/singlePatDietRequest"
+			type="dietkitchen.transactions.controller.action.SinglePatientDietRequestACTION"
+			name="SinglePatientDietRequestFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_single_patient_diet_request.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Diet Detail Popup -->
+		<action path="/dietDetail"
+			type="dietkitchen.transactions.controller.action.DietDetailACTION"
+			name="DietDetailFB" 
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="POPUP" path="/transactions/jsp/dk_diet_detail_popup.jsp" />
+		</action>
+
+		<!-- Diet Cycle -->
+		<action path="/dietCycle"
+			type="dietkitchen.transactions.controller.action.DietCycleACTION"
+			name="DietCycleFB" scope="request" validate="false" parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_diet_cycle_dtl.jsp" />
+			<forward name="GETMENUDTL" path="/transactions/jsp/dk_diet_cycle_menu_dtl.jsp" />
+			<forward name="CONTINUECYCLE" path="/transactions/jsp/dk_continue_diet_cycle.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Guest Diet Request -->
+		<action path="/guestDietRequest"
+			type="dietkitchen.transactions.controller.action.GuestDietRequestACTION"
+			name="GuestDietRequestFB" 
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_guest_diet_request.jsp" />
+			<forward name="BULKDIETREQUEST" path="/bulkDietRequest.cnt" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Bulk Diet Request -->
+		<action path="/bulkDietRequest"
+			type="dietkitchen.transactions.controller.action.BulkDietRequestACTION"
+			name="BulkDietRequestFB" scope="request" validate="false" parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_bulk_diet_request.jsp" />
+			<forward name="SEARCH" path="/transactions/jsp/dk_bulk_search_popup.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Cook Tally Form -->
+		<action path="/cookTallyForm"
+			type="dietkitchen.transactions.controller.action.CookTallyFormACTION"
+			name="CookTallyFormFB" 
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_cook_tally_form_dtl.jsp" />
+			<forward name="ALLSUMMARY" path="/transactions/jsp/dk_cook_tally_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- New/Redesigned Cook Tally Form -->
+		<action path="/newCookTallyForm"
+			type="dietkitchen.transactions.controller.action.NewCookTallyFormACTION"
+			name="NewCookTallyFormFB" 
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_new_cook_tally_form_dtl.jsp" />
+			<forward name="ALLSUMMARY" path="/transactions/jsp/dk_new_cook_tally_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Quality CheckUp -->
+		<action path="/qualityCheckUp"
+			type="dietkitchen.transactions.controller.action.QualityCheckUpACTION"
+			name="QualityCheckUpFB" 
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_quality_checkup_dtl.jsp" />
+			<forward name="INSTRUCTION" path="/transactions/jsp/dk_quality_checkup_remarks.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+
+		<!-- Diet Acknowledgement -->
+		<action path="/dietAcknowledgement"
+			type="dietkitchen.transactions.controller.action.DietAcknowledgementACTION"
+			name="DietAcknowledgementFB"
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/transactions/jsp/dk_diet_acknowledgement_dtl.jsp" />
+			<forward name="ALLSUMMARY" path="/transactions/jsp/dk_diet_ack_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		
+		<!-- Diet Dispatch -->
+		<action path="/dietDispatch"
+			type="dietkitchen.transactions.controller.action.DietDispatchACTION"
+			name="DietDispatchFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/transactions/jsp/dk_diet_dispatch_dtl.jsp" />
+			<forward name="REASON" path="/transactions/jsp/dk_diet_dispatch_reason.jsp" />
+			<forward name="ALLSUMMARY" path="/transactions/jsp/dk_new_diet_dispatch_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		
+		<!-- New Diet Dispatch -->
+		<action path="/newDietDispatch"
+			type="dietkitchen.transactions.controller.action.NewDietDispatchACTION"
+			name="NewDietDispatchFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/transactions/jsp/dk_new_diet_dispatch_dtl.jsp" />
+			<forward name="ALLSUMMARY" path="/transactions/jsp/dk_new_diet_dispatch_rpt.jsp" />
+			<forward name="ACKDETAILS" path="/transactions/jsp/dk_new_diet_dispatch_ack_dtl.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+
+		<!-- Diet Kitchen Desk Login -->
+		<action path="/dietKitchenDeskLogin"
+			type="dietkitchen.transactions.controller.action.DietKitchenDeskLoginACTION"
+			name="DietKitchenDeskLoginFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt" />
+		</action>
+
+		<!-- Diet Kitchen Desk Header -->
+		<action path="/gotoDietKitchenDeskHeader"
+			parameter="/dietkitchen/transactions/jsp/dk_desk_header_page.jsp"
+			type="org.apache.struts.actions.ForwardAction" />
+
+		<!-- Diet Kitchen Desk Center -->
+		<action path="/dietKitchenDesk"
+				type="dietkitchen.transactions.controller.action.DietKitchenDeskACTION"
+				name="DietKitchenDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transactions/jsp/dk_dietkitchen_desk.jsp">		
+			<forward name="NEW" path="/deskWelcomeTile"/>	
+			<forward name="DEFAULT" path="/underConstructionTile"/>
+			<forward name="DIETCOMPILATION" path="/dietCompilationTile"/>
+			<forward name="RATIONCALCULATE" path="/rationCalculationTile"/>
+			<forward name="COOKTALLYFORM" path="/cookTallyFormTile"/>
+			<forward name="DIETDISPATCH" path="/dietDispatchTile"/>
+			<forward name="QUALITYCHECKUP" path="/qualityCheckupTile"/>
+		</action>
+
+		<!-- Diet Compilation -->
+		<action path="/dietCompilation"
+			type="dietkitchen.transactions.controller.action.DietCompilationACTION"
+			name="DietCompilationFB" 
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_diet_compilation.jsp" />
+			<forward name="VIEWDTL" path="/transactions/jsp/dk_diet_compile_req_dtl_view.jsp"/>
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Buffer Diet -->
+		<action path="/bufferDiet" 
+			type="dietkitchen.transactions.controller.action.BufferDietACTION"
+			name="BufferDietFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_buffer_diet.jsp"/>
+		</action>
+
+		<!-- Ration Calculation -->
+		<action path="/rationCalculation" 
+			type="dietkitchen.transactions.controller.action.RationCalculationACTION"
+			name="RationCalculationFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/dk_ration_calculation.jsp"/>
+			<forward name="PRINT" path="/transactions/jsp/dk_ration_calculation_rpt.jsp"/>
+			<forward name="MENUDTL" path="/transactions/jsp/dk_ration_menu_dtl.jsp"/>
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter="dietkitchen.dietKitchenResourceBundle"></message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/dietkitchen/DietKitchen-tiles-def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+</struts-config>

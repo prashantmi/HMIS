@@ -1,0 +1,1859 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+<!-- ========== Main Tile ========== -->
+  <definition name="main.layout" path="/hr/estate/layout/MainLayout.jsp">
+      <put name="title"  value=""/>
+	  <put name="header"  value="/hisglobal/header.jsp"/>
+	  <put name="body"  value=""/>
+	  <put name="footer" value="" />
+  </definition>
+<!-- ********** Main Tile ********** -->
+
+<!-- ========== Floor Master ========== -->  
+  
+  <definition name="floorList.page" extends="main.layout">
+  	 <put name="title" value="FLOOR MST LIST PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+  </definition>
+  <definition name="floorAdd.page" extends="main.layout">
+  	 <put name="title" value="FLOOR MST ADD PAGE"/>
+	 <put name="body" value="/hr/estate/masters/est_add_floor_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+  </definition>	 
+   <definition name="floorModify.page" extends="main.layout">
+  	 <put name="title" value="FLOOR MST MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_modify_floor_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+  </definition>
+  <definition name="floorView.page" extends="main.layout">
+  	 <put name="title" value="FLOOR MST VIEW PAGE"/>
+	 <put name="body" value="/hr/estate/masters/est_view_floor_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+  </definition>
+
+<!-- ********** Floor Master ********** -->   
+
+
+<!-- ========== Block Master ========== -->  
+  
+  <definition name="blockList.page" extends="main.layout">
+  	 <put name="title" value="BLOCK MST LIST PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+  </definition>
+  <definition name="blockAdd.page" extends="main.layout">
+  	 <put name="title" value="BLOCK MST ADD PAGE"/>
+	 <put name="body" value="/hr/estate/masters/est_add_block_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+  </definition>	 
+   <definition name="blockModify.page" extends="main.layout">
+  	 <put name="title" value="BLOCK MST MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_modify_block_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+  </definition>
+  <definition name="blockView.page" extends="main.layout">
+  	 <put name="title" value="BLOCK MST VIEW PAGE"/>
+	 <put name="body" value="/hr/estate/masters/est_view_block_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+  </definition>
+  
+
+<!-- ********** Block Master ********** --> 
+
+
+<!-- **************** Building Master******** --> 
+
+
+<definition name="buildingList.page" extends="main.layout">
+  	 <put name="title" value="BUILDING MST LIST PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+ </definition>
+<definition name="buildingAdd.page" extends="main.layout">
+  	 <put name="title" value="BUILDING MST ADD PAGE"/>
+	 <put name="body" value="/hr/estate/masters/est_add_buiding_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+  </definition>	 
+  <definition name="buildingModify.page" extends="main.layout">
+  	 <put name="title" value="BUILDING MST MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_modify_building_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+  </definition>
+  <definition name="buildingView.page" extends="main.layout">
+  	 <put name="title" value="BUILDING MST VIEW PAGE"/>
+	 <put name="body" value="/hr/estate/masters/est_view_building_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+  </definition>
+ 
+  
+  <!-- **************** Building Master******** -->
+
+<!-- ==========================Security Personnel Details Master================= -->
+<definition name="SecPerList.page" extends="main.layout">
+<put name="title" value="SECURITY PER MST LIST PAGE" />
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="SecPerAdd.page" extends="main.layout">
+<put name="title" value="SECURITY PER MST ADD PAGE" />
+<put name="body" value="/hr/estate/masters/est_add_ser_per_dtl_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="SecPerModify.page" extends="main.layout">
+<put name="title" value="SECURITY PER MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_ser_per_dtl_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+<definition name="SecPerView.page" extends="main.layout">
+<put name="title" value="SECURITY PER MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_ser_per_dtl_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+<!-- ==========================Security Personnel Details Master================= -->
+
+
+<!-- **********Vehicle Master*********** -->
+<definition name="vehicleList.page"   extends="main.layout">  
+       <put name="title"    value="VEHICLE MST LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="vehicleAdd.page"     extends="main.layout">
+       <put name="title"    value="VEHICLE MST ADD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_vehicle_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="vehicleView.page"     extends="main.layout">
+       <put name="title"    value="VEHICLE MST VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_view_vehicle_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<definition name="vehicleModify.page"   extends="main.layout">
+       <put name="title"    value="VEHICLE MST MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_modify_vehicle_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+<!-- **********Vehicle Master*********** -->
+
+<!-- **********PrivateAgency Master*********** -->
+<definition name="privateagencyList.page"   extends="main.layout">  
+       <put name="title"    value="PRIVTEAGENCY MST LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="privateagencyAdd.page"     extends="main.layout">
+       <put name="title"    value="PRIVTEAGENCY MST ADD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_privateagency_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="privateagencyView.page"     extends="main.layout">
+       <put name="title"    value="PRIVTEAGENCY MST VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_view_privateagency_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<definition name="privateagencyModify.page"   extends="main.layout">
+       <put name="title"    value="PRIVTEAGENCY MST MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_modify_privateagency_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<!-- **********PrivateAgency Master*********** -->
+<!-- ********** Room Master ********** -->
+<definition name="roomList.page"   extends="main.layout">  
+       <put name="title"    value="ROOM MST LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="roomAdd.page"   extends="main.layout">
+       <put name="title"    value="ROOM MST ADD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_room_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="roomModify.page"   extends="main.layout">
+       <put name="title"    value="ROOM MST MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_modify_room_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+<definition name="roomView.page"   extends="main.layout">
+       <put name="title"    value="ROOM MST VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_view_room_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+<!-- ********** Room Master ********** -->
+
+<!-- ========== ServiceType Master ========== -->
+
+<definition name="TypeList.page" extends="main.layout">
+<put name="title" value="SERVICETYPE MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="TypeAdd.page" extends="main.layout">
+<put name="title" value="SEVICETYPE MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_Ser_Type_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="TypeModify.page" extends="main.layout">
+<put name="title" value="SERVICETYPE MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_Ser_type_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<definition name="TypeView.page" extends="main.layout">
+<put name="title" value="SERVICETYPE MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_Ser_Type_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<!-- ==========ServiceType Master ========== -->
+
+
+
+<!-- ========== ServiceAgencyType Master ========== -->
+
+<definition name="AgencyList.page" extends="main.layout">
+<put name="title" value="SERVICEAGENCY MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="AgencyAdd.page" extends="main.layout">
+<put name="title" value="SERVICEAGENCY MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_Ser_Agency_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="AgencyModify.page" extends="main.layout">
+<put name="title" value="SERVICEAGENCY MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_Ser_Agency_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<definition name="AgencyView.page" extends="main.layout">
+<put name="title" value="SERVICEAGENCY MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_Ser_Agency_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+
+<!-- ==========ServiceAgencyType Master ========== -->
+
+
+
+<!-- ================Supplier Master============== -->
+<definition name="SupplierList.page" extends="main.layout">
+<put name="title" value="SUPPLIER MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+ <put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="SupplierAdd.page" extends="main.layout">
+<put name="title" value="SUPPLIER MST ADD PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_supplier_mst.jsp"/>
+ <put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="SupplierModify.page" extends="main.layout">
+<put name="title" value="SUPPLIER MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_supplier_mst.jsp"/>
+ <put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<definition name="SupplierView.page" extends="main.layout">
+<put name="title" value="SUPPLIER MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_supplier_mst.jsp"/>
+ <put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<!-- ================Supplier Master============== -->
+
+
+
+<!-- ========== Bill Nature Master ========== -->
+
+<definition name="billnatureList.page" extends="main.layout">
+<put name="title" value="BILLNATURE MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="billnatureAdd.page" extends="main.layout">
+<put name="title" value="BILL NATURE MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_Bill_Nature_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="billnatureView.page" extends="main.layout">
+<put name="title" value="BILL NATURE MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_Bill_Nature_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<definition name="billnaturesModify.page" extends="main.layout">
+<put name="title" value="BILL NATURE MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_Bill_Nature_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<!-- ==========Bill Nature Master ========== -->
+
+<!-- ========== Shop Master ========== -->
+
+<definition name="shopList.page" extends="main.layout">
+<put name="title" value="SHOP MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="shopAdd.page" extends="main.layout">
+<put name="title" value="SHOP MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_Shop_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="shopView.page" extends="main.layout">
+<put name="title" value="SHOP MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_Shop_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+<definition name="shopModify.page" extends="main.layout">
+<put name="title" value="SHOP MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_Shop_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+
+<!-- ==========Shop Master ========== -->
+
+<!-- ==========  Compliment Sub Category Master ========== -->
+
+<definition name="CompSubCatList.page" extends="main.layout">
+<put name="title" value="COMP SUB CATEGORY MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="CompSubCatAdd.page" extends="main.layout">
+<put name="title" value="COMP SUB CATEGORY MST ADD PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_Com_Sub_Cat_Mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="CompSubCatView.page" extends="main.layout">
+<put name="title" value="COMP SUB CATEGORY MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_Com_Sub_Cat_Mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+<definition name="CompSubCatModify.page" extends="main.layout">
+<put name="title" value="COMP SUB CATEGORY MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_Com_Sub_Cat_Mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+
+<!-- ========== Compliment Sub Category Master ========== -->
+
+<!-- ==========  Revenue Generation Category Master ========== -->
+
+<definition name="RevgencatList.page" extends="main.layout">
+<put name="title" value="REV GEN CATEGORY MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="RevgencatAdd.page" extends="main.layout">
+<put name="title" value="REV GEN CATEGORY MST ADD PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_rev_gen_cat_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="RevgencatView.page" extends="main.layout">
+<put name="title" value="REV GEN CATEGORY MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_rev_gen_cat_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<definition name="RevgencatModify.page" extends="main.layout">
+<put name="title" value="REV GEN CATEGORY MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_rev_gen_cat_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<!-- ==========  Revenue Generation Category Master ========== -->
+
+
+<!-- ==========  Offical Purpose Common Area Type Master ========== -->
+
+<definition name="OffComAreaTypeList.page" extends="main.layout">
+<put name="title" value="OFF PUR COM AREA TYPE LIST MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="OffComAreaTypeAdd.page" extends="main.layout">
+<put name="title" value="OFF PUR COM AREA TYPE LIST MST ADD PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_off_pur_com_area_type_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="OffComAreaTypeView.page" extends="main.layout">
+<put name="title" value="OFF PUR COM AREA TYPE LIST MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_off_pur_com_area_type_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+<definition name="OffComAreaTypeModify.page" extends="main.layout">
+<put name="title" value="OFF PUR COM AREA TYPE LIST MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_off_pur_com_area_type_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<!-- ==========  Offical Purpose Common Area Type Master ========== -->
+
+
+<!-- ==========  Offical Purpose Common Area Master ========== -->
+
+<definition name="OffComAreaList.page" extends="main.layout">
+<put name="title" value="OFF PUR COM AREA LIST MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="OffComAreaAdd.page" extends="main.layout">
+<put name="title" value="OFF PUR COM AREA LIST MST ADD PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_off_pur_com_area_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="OffComAreaView.page" extends="main.layout">
+<put name="title" value="OFF PUR COM AREA LIST MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_off_pur_com_area_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+<definition name="OffComAreaModify.page" extends="main.layout">
+<put name="title" value="OFF PUR COM AREA LIST MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_off_pur_com_area_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<!-- ==========  Offical Purpose Common Area Master ========== -->
+
+<!-- ============Complaint Category Master======== -->
+<definition name="CompCatList.page" extends="main.layout">
+<put name="title" value="COMP CAT MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+ <put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="CompCatAdd.page" extends="main.layout">
+<put name="title" value="COMP CAT MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_comp_cat_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="CompCatModify.page" extends="main.layout">
+<put name="title" value="COMP CAT MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_comp_cat_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<definition name="CompCatView.page" extends="main.layout">
+<put name="title" value="COMP CAT MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_comp_cat_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+<!-- ============Complaint Category Master======== -->
+
+
+<!-- =====================  Telephone  Master ======================= -->
+
+<definition name="TelephoneList.page" extends="main.layout">
+<put name="title" value="TELEPHONE LIST MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="TelephoneAdd.page" extends="main.layout">
+<put name="title" value="TELEPHONE LIST MST ADD PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_telephone_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="TelephoneView.page" extends="main.layout">
+<put name="title" value="TELEPHONE LIST MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_telephone_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<definition name="TelephoneModify.page" extends="main.layout">
+<put name="title" value="TELEPHONE LIST MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_telephone_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<!-- =====================  Telephone  Master ======================= -->
+
+
+<!-- =============Revenue Generation Category Master=============== -->
+<definition name="RevGenList.page" extends="main.layout">
+<put name="title" value="REV GEN SER MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+ <put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="RevGenAdd.page" extends="main.layout">
+<put name="title" value="REV GEN SER MST ADD PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_rev_gen_ser_mst.jsp"/>
+ <put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="RevGenModify.page" extends="main.layout">
+<put name="title" value="REV GEN SER MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_rev_gen_ser_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+<definition name="RevGenView.page" extends="main.layout">
+<put name="title" value="REV GEN SER MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_rev_gen_ser_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<!-- =============Revenue Generation Category Master=============== -->
+
+<!-- ========== Land Master ========== -->
+
+<definition name="landList.page" extends="main.layout">
+<put name="title" value="LAND MST LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="landAdd.page" extends="main.layout">
+<put name="title" value="LAND MST MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_land_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="landModify.page" extends="main.layout">
+<put name="title" value="LAND MST MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_land_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+	<definition name="landView.page" extends="main.layout">
+<put name="title" value="LAND MST VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_land_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<!-- ========== Land Master ========== -->
+
+
+    <!-- ========== Item Master ========== -->  
+  
+<definition name="itemList.page"  extends="main.layout">
+  	   <put name="title"   value="ITEM MST LIST PAGE"/>
+	   <put name="body"    value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	   <put name="footer"  value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="itemAdd.page"   extends="main.layout">
+  	   <put name="title"   value="ITEM MST ADD PAGE"/>
+	   <put name="body"    value="/hr/estate/masters/est_add_item_mst.jsp"/>
+	   <put name="footer"  value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>	 
+<definition name="itemModify.page" extends="main.layout">
+  	   <put name="title"   value="ITEM MST MODIFY PAGE"/>
+	   <put name="body"    value="/hr/estate/masters/est_modify_item_mst.jsp"/>
+	   <put name="footer"  value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+<definition name="itemView.page"   extends="main.layout">
+  	   <put name="title"   value="ITEM MST VIEW PAGE"/>
+	   <put name="body"    value="/hr/estate/masters/est_view_item_mst.jsp"/>
+	   <put name="footer"  value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+
+              <!-- ********** Item Master ********** --> 
+
+           <!-- **********  QuarterType Master********** -->
+
+<definition name="quartertypeList.page"   extends="main.layout">  
+       <put name="title"    value="QUARTERTYPE MST LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="quartertypeAdd.page"   extends="main.layout">
+       <put name="title"    value="QUARTERTYPE MST ADD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_quartertype_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="quartertypeModify.page"   extends="main.layout">
+       <put name="title"    value="QUARTERTYPE MST MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_modify_quartertype_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+<definition name="quartertypeView.page"   extends="main.layout">
+       <put name="title"    value="QUARTERTYPE MST VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_view_quartertype_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+
+              <!-- **********  QuarterType Master********** -->
+                <!-- ********** Quarter Master ********** -->
+<definition name="quarterList.page"   extends="main.layout">  
+       <put name="title"    value="QUARTER MST LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="quarterAdd.page"   extends="main.layout">
+       <put name="title"    value="QUARTER MST ADD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_quarter_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="quarterModify.page"   extends="main.layout">
+       <put name="title"    value="QUARTER MST MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_modify_quarter_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+<definition name="quarterView.page"   extends="main.layout">
+       <put name="title"    value="QUARTER MST VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_view_quarter_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+     
+
+                  <!-- ********** Quarter Master ********** -->
+
+  <!-- ********** RoomType Master ********** -->
+<definition name="roomtypeList.page"   extends="main.layout">  
+       <put name="title"    value="ROOMTYPE MST LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="roomtypeAdd.page"   extends="main.layout">
+       <put name="title"    value="ROOMTYPE MST ADD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_roomtype_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="roomtypeModify.page"   extends="main.layout">
+       <put name="title"    value="ROOMTYPE MST MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_modify_roomtype_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+<definition name="roomtypeView.page"   extends="main.layout">
+       <put name="title"    value="ROOMTYPE MST VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_view_roomtype_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+                  <!-- ********** RoomType Master ********** -->
+                  
+                  <!-- ********** BlockType Master ********** -->
+ <definition name="blocktypeList.page"   extends="main.layout">  
+       <put name="title"    value="BLOCKTYPE MST LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="blocktypeAdd.page"   extends="main.layout">
+       <put name="title"    value="BLOCKTYPE MST ADD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_blocktype_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="blocktypeModify.page"   extends="main.layout">
+       <put name="title"    value="BLOCKTYPE MST MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_modify_blocktype_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+<definition name="blocktypeView.page"   extends="main.layout">
+       <put name="title"    value="BLOCKTYPE MST VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_view_blocktype_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+                  <!-- ********** BlockType Master ********** -->
+                  <!-- **********GuestHouse Master*********** -->
+<definition name="guesthouseList.page"   extends="main.layout">  
+       <put name="title"    value="GUESTHOUSE MST LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="guesthouseAdd.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MST ADD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_guesthouse_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="guesthouseView.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MST VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_view_guesthouse_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<definition name="guesthouseModify.page"   extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MST MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_modify_guesthouse_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+                  <!-- **********GuestHouse Master*********** -->
+
+<!-- **********Commonarea Master*********** -->
+<definition name="commonareaList.page"   extends="main.layout">  
+       <put name="title"    value="COMMONAREA MST LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+<definition name="commonareaAdd.page"     extends="main.layout">
+       <put name="title"    value="COMMONAREA MST ADD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_commonarea_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="commonareaView.page"     extends="main.layout">
+       <put name="title"    value="COMMONAREA MST VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_view_commonarea_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<definition name="commonareaModify.page"   extends="main.layout">
+       <put name="title"    value="COMMONAREA MST MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_modify_commonarea_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<!-- **********Commonarea Master*********** -->
+
+<!-- **********CommonareaMaint*********** -->
+<definition name="commonareaMaint.page"   extends="main.layout">  
+       <put name="title"    value="COMMONAREA MAINT PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_add_common_area_maint.jsp"/>
+       <put name="footer"   value="/hr/estate/masters/est_multirow_footer.jsp"/>
+</definition>
+
+
+<!-- ========== Elec Meter Master ========== -->
+
+
+
+<definition name="elecmtrList.page" extends="main.layout">
+<put name="title" value="ELEC LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="elecmtrAdd.page" extends="main.layout">
+<put name="title" value="ELEC MASTER PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_elec_mtr_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="elecmtrModify.page" extends="main.layout">
+<put name="title" value="ELEC MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_elec_mtr_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<definition name="elecmtrView.page" extends="main.layout">
+<put name="title" value="ELEC VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_elec_mtr_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<!-- ==========Elec Meter Master ========= -->
+
+<!-- ========== Water Meter Master ========== -->
+
+
+
+<definition name="wtrmtrList.page" extends="main.layout">
+<put name="title" value="WATER LIST PAGE"/>
+<put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_lst_footer_mst.jsp"/>
+</definition>
+
+<definition name="wtrmtrAdd.page" extends="main.layout">
+<put name="title" value="WATER ADD PAGE"/>
+<put name="body" value="/hr/estate/masters/est_add_wtr_mtr_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_add_footer_mst.jsp"/>
+</definition>
+
+<definition name="wtrmtrModify.page" extends="main.layout">
+<put name="title" value="WATER MODIFY PAGE"/>
+<put name="body" value="/hr/estate/masters/est_modify_wtr_mtr_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_modify_footer_mst.jsp"/>
+</definition>
+
+<definition name="wtrmtrView.page" extends="main.layout">
+<put name="title" value="WATER VIEW PAGE"/>
+<put name="body" value="/hr/estate/masters/est_view_wtr_mtr_mst.jsp"/>
+<put name="footer" value="/hr/estate/masters/est_view_footer_mst.jsp"/>
+</definition>
+<!-- ==========Water Meter Master ========= -->
+
+      <!-- ********** Room Allot Transaction ********** -->
+
+<definition name="roomAllotAdd.page" extends="main.layout">
+       <put name="title" value="ROOM ALLOT TRANS ADD PAGE"/>
+       <put name="body" value="/hr/estate/transactions/est_add_room_allot_trans.jsp"/>
+       <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+</definition>
+
+<definition name="roomAllotPop.page" extends="main.layout">
+  	 <put name="title" value="ROOM ALLOT TRANS LIST PAGE"/>
+  	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_room_allot_data_footer.jsp"/>
+</definition>
+
+<definition name="roomAllotModify.page" extends="main.layout">
+		<put name="title" value="ROOM ALLOT TRANS MODIFY PAGE"/>
+		<put name="body" value="/hr/estate/transactions/est_modify_room_allot_trans.jsp"/>
+		<put name="footer" value="/hr/estate/transactions/est_modify_footer_trans.jsp"/>
+</definition>
+
+<definition name="roomAllotSave.page" extends="main.layout">
+       <put name="title" value="ROOM ALLOT TRANS SAVE PAGE"/>
+       <put name="body"  value="/hr/estate/transactions/est_add_room_allot_trans_RefNext_dtl.jsp"/>
+       <put name="footer" value="/hr/estate/transactions/est_room_trans_nextfooter.jsp"/>
+</definition>
+
+<definition name="roomAllotList.page" extends="main.layout">
+       <put name="title"    value="ROOM ALLOT TRANS LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_roomallot_list_footer.jsp"/>
+</definition>
+
+<definition name="roomAllotView.page" extends="main.layout">
+       <put name="title" value="ROOM ALLOT TRANS VIEW PAGE"/>
+       <put name="body"  value="/hr/estate/transactions/est_modify_room_allot_trans.jsp"/>
+       <put name="footer" value="/hr/estate/transactions/est_modify_footer_trans.jsp"/>
+</definition>
+<definition name="roomAllotUpdate.page" extends="main.layout">
+       <put name="title" value="ROOM ALLOT TRANS UPDATE PAGE"/>
+       <put name="body" value="/hr/estate/transactions/est_add_room_allot_trans_updateNext_dtl.jsp"/>
+       <put name="footer" value="/hr/estate/transactions/est_room_trans_nextfooter.jsp"/>
+</definition>
+<definition name="roomAllotDelete.page" extends="main.layout">
+       <put name="title" value="ROOM ALLOT TRANS DELETE PAGE"/>
+       <put name="body"  value="/hr/estate/transactions/est_add_room_allot_trans_delNext_dtl.jsp"/>
+       <put name="footer" value="/hr/estate/transactions/est_room_trans_nextfooter.jsp"/>
+</definition>
+    
+     <!-- ********** Room Allot Transaction ********** -->
+        
+     <!-- ********** Room Vacation Transaction ********** -->
+
+<definition name="roomVacationAdd.page"   extends="main.layout">
+       <put name="title"    value="ROOM VACATION TRANS ADD PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_add_room_vacation_trans.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+</definition>
+
+<definition name="roomVacationList.page"     extends="main.layout">
+       <put name="title"    value="ROOM VACATION TRANS LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+
+<definition name="roomVacationModify.page" extends="main.layout">
+		<put name="title" value="ROOM VACATION TRANS MODIFY PAGE"/>
+		<put name="body"  value="/hr/estate/transactions/est_modify_room_vacation_trans.jsp"/>
+		<put name="footer" value="/hr/estate/transactions/est_modify_footer_trans.jsp"/> 
+</definition>
+
+<definition name="roomVacationSave.page"     extends="main.layout">
+       <put name="title"    value="ROOM VACATION TRANS SAVE PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_room_vacation_trans_RefNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_room_trans_nextfooter.jsp"/>
+</definition>
+
+<definition name="roomVacationUpdate.page"        extends="main.layout">
+       <put name="title"    value="ROOM VACATION TRANS UPDATE PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_room_vacation_trans_updateNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_room_trans_nextfooter.jsp"/>
+</definition>
+
+<definition name="roomVacationDelete.page"        extends="main.layout">
+       <put name="title"    value="ROOM VACATION TRANS DELETE PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_add_room_vacation_trans_delNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_room_trans_nextfooter.jsp"/>
+</definition>
+
+
+
+
+<!-- ============Application Storage Form=========== -->
+<definition name="appAdd.page" extends="main.layout">
+  	 <put name="title" value="APPLICATION STORAGE TRANS ADD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_application_storage_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+  </definition>
+  <definition name="appNext.page" extends="main.layout">
+  	 <put name="title" value="APPLICATION STORAGE TRANS ADD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_application_storage_next_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_application_storage_next_footer.jsp"/>
+  </definition>
+  <definition name="appModify.page" extends="main.layout">
+  	 <put name="title" value="APPLICATION STORAGE TRANS MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_application_storage_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+  </definition>
+  <definition name="appPop.page" extends="main.layout">
+  	 <put name="title" value="APPLICATION STORAGE TRANS MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+  </definition>
+   <definition name="appData.page" extends="main.layout">
+  	 <put name="title" value="APPLICATION STORAGE TRANS MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_application_storage_next_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_application_storage_next_footer.jsp"/>
+  </definition>
+<!-- ============Application Storage Form=========== -->
+
+<!-- Quarter Allotment Details Form -->
+<definition name="quartAllotAdd.page" extends="main.layout">
+  	 <put name="title" value="QUARTER ALLOTMENT TRANS ADD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_quarter_allotment_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+  </definition>
+<definition name="quartAllotPop.page" extends="main.layout">
+  	 <put name="title" value="QUARTER ALLOTMENT TRANS PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+  </definition>
+ <definition name="quartAllotNext.page" extends="main.layout">
+  	 <put name="title" value="QUARTER ALLOTMENT TRANS ADD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_quarter_allotment_dtl_next.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_application_storage_next_footer.jsp"/>
+  </definition>
+  <definition name="quartNextData.page" extends="main.layout">
+  	 <put name="title" value="QUARTER ALLOTMENT TRANS MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_quarter_allotment_data_next.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_application_storage_next_footer.jsp"/>
+  </definition>
+   <definition name="quartAllotModify.page" extends="main.layout">
+  	 <put name="title" value="QUARTER ALLOTMENT TRANS MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_quarter_allotment_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+  </definition>
+  
+  <definition name="quartAllotPopup.page" extends="main.layout">
+  	 <put name="title" value="QUARTER ALLOTMENT TRANS PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+  </definition>
+  
+  
+   <definition name="quartChkAddTRNS.page" extends="main.layout">
+  	 <put name="title" value="QUARTER INVENTORY CHK PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_quarter_allotment_trns_chk.jsp"/>
+   </definition>
+   <definition name="quartChkAddMST.page" extends="main.layout">
+  	 <put name="title" value="QUARTER INVENTORY CHK PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_quarter_allotment_mst_chk.jsp"/>
+   </definition>
+  <!-- Quarter Allotment Details Form -->
+  
+ 
+  <!-- Telephone Allotment Details -->
+<definition name="teleAllotAdd.page" extends="main.layout">
+  	 <put name="title" value="TELEPHONE ALLOTMENT TRANS ADD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_telephone_allotment_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+  </definition>
+<definition name="teleAllotPop.page" extends="main.layout">
+  	 <put name="title" value="TELEPHONE ALLOTMENT TRANS PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="teleAllotPop1.page" extends="main.layout">
+  	 <put name="title" value="TELEPHONE ALLOTMENT TRANS PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_tele_allot_dtl_footer.jsp"/>
+</definition>
+
+<definition name="teleAllotPop2.page" extends="main.layout">
+  	 <put name="title" value="TELEPHONE ALLOTMENT TRANS PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_tele_allot_data_footer.jsp"/>
+</definition>
+<definition name="teleAllotNext.page" extends="main.layout">
+  	 <put name="title" value="TELEPHONE ALLOTMENT TRANS ADD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_telehone_allotment_dtl_next.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_application_storage_next_footer.jsp"/>
+  </definition>
+ <definition name="teleAllotModify.page" extends="main.layout">
+  	 <put name="title" value="TELEPHONE ALLOTMENT TRANS MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_telephone_allotment_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+  </definition>
+   <!-- Previous Dues Recovery -->
+    <definition name="prevduesRec.page" extends="main.layout">
+  	 <put name="title" value="PREVIOUS DUES RECOVERY ADD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_prev_dues_rec_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+  </definition>
+<definition name="prevduesRecPop.page" extends="main.layout">
+  	 <put name="title" value="PREVIOUS DUES RECOVERY LIST PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+  </definition>
+  
+  <definition name="prevduesRecMod.page" extends="main.layout">
+  	 <put name="title" value="PREVIOUS DUES RECOVERY MOD LIST PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+  </definition>
+  <definition name="prevduesRecData.page" extends="main.layout">
+  	 <put name="title" value="PREVIOUS DUES RECOVERY MOD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_prev_dues_rec_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+  </definition>
+  <!-- Quarter Vacation -->
+  
+   <definition name="quartvacateAdd.page" extends="main.layout">
+  	 <put name="title" value="QUARTER VACATION ADD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_qtr_vacate_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+  </definition>
+  
+  <definition name="quartvacatePop.page" extends="main.layout">
+  	 <put name="title" value="QUARTER VACATION LIST PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+  </definition>
+  
+   <definition name="quartvacatePopMod.page" extends="main.layout">
+  	 <put name="title" value="QUARTER VACATION LIST PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+  </definition>
+  
+   <definition name="quartvacateModify.page" extends="main.layout">
+  	 <put name="title" value="QUARTER VACATION MODIFY PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_qtr_vacate_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+  </definition>
+  
+  
+  <definition name="teleCancelAdd.page" extends="main.layout">
+  <put name="title" value="TELEPHONE CANCELLATION ADD PAGE"/>
+  <put name="body" value="/hr/estate/transactions/est_telephone_cancel_dtl.jsp"/>
+ <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+ </definition>
+ 
+ <definition name="teleCancelPop.page" extends="main.layout">
+  <put name="title" value="TELEPHONE CANCELLATION INFO PAGE"/>
+   <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+ </definition>
+ 
+ <definition name="teleCancelModify.page" extends="main.layout">
+  <put name="title" value="TELEPHONE CANCELLATION DATA PAGE"/>
+   <put name="body" value="/hr/estate/transactions/est_telephone_cancel_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+ </definition>
+
+
+<definition name="teleCancelPopMod.page" extends="main.layout">
+  <put name="title" value="TELEPHONE CANCELLATION DATA INFO PAGE"/>
+   <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+ </definition>
+ 
+ 
+ <definition name="billGenAdd.page" extends="main.layout">
+  <put name="title" value="BILL GENERATION PAGE"/>
+   <put name="body" value="/hr/estate/transactions/est_bill_gen_dtl.jsp"/>
+   <put name="footer" value="/hr/estate/transactions/est_trans_bill_footer_dtl.jsp"/>
+ </definition>
+ 
+ 
+ <definition name="payRecList.page" extends="main.layout">
+  <put name="title" value="PAYMENT RECEIVED LIST PAGE"/>
+   <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+   <put name="footer" value="/hr/estate/transactions/est_payment_rec_footer_dtl.jsp"/>
+ </definition>
+ 
+ <definition name="payRecAdd.page" extends="main.layout">
+  <put name="title" value="PAYMENT RECEIVED ADD PAGE"/>
+   <put name="body" value="/hr/estate/transactions/est_payment_rec_dtl.jsp"/>
+   <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+ </definition>
+ 
+
+ 
+ <definition name="hospitalBillAdd.page" extends="main.layout">
+  <put name="title" value="HOSPITAL BILL DETAILS ADD PAGE"/>
+   <put name="body" value="/hr/estate/transactions/est_hospital_bill_details.jsp"/>
+   <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+ </definition>
+ 
+  <definition name="hospitalBillNext.page" extends="main.layout">
+  	 <put name="title" value="HOSPITAL BILL DETAILS ADD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_hospital_bill_details_next.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_application_storage_next_footer.jsp"/>
+  </definition>
+  
+  <definition name="hospitalBillPOP.page" extends="main.layout">
+  	 <put name="title" value="HOSPITAL BILL DETAILS LIST PAGE"/>
+	  <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+  </definition>
+  
+   <definition name="hospitalBillMod.page" extends="main.layout">
+  	 <put name="title" value="HOSPITAL BILL DETAILS MOD PAGE"/>
+	  <put name="body" value="/hr/estate/transactions/est_hospital_bill_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+  </definition>
+  
+  
+  <definition name="payMadeList.page" extends="main.layout">
+  <put name="title" value="PAYMENT MADE LIST PAGE"/>
+   <put name="body" value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+   <put name="footer" value="/hr/estate/transactions/est_payment_rec_footer_dtl.jsp"/>
+ </definition>
+ 
+  <definition name="payMadeAdd.page" extends="main.layout">
+  <put name="title" value="PAYMENT MADE ADD PAGE"/>
+   <put name="body" value="/hr/estate/transactions/est_payment_made_form_dtl.jsp"/>
+   <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+ </definition>
+ 
+
+
+<!-- ============Shop Allotment Transaction =========== -->
+<definition name="shopAllotmentAdd.page" extends="main.layout">
+  	 <put name="title" value="SHOP REV ALLOTMANT TRANS ADD PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_shop_rev_allotment_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+</definition>
+<definition name="shopAllotmentsave.page" extends="main.layout">
+  	 <put name="title" value="SHOP REV ALLOTMANT TRANS SAVE PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_shopallotment_refnext_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_after_save_footer_dtl.jsp"/>
+</definition>  
+<definition name="shopAllotmentModify.page" extends="main.layout">
+  	 <put name="title" value="SHOP REV ALLOTMANT TRANS MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_shop_rev_allotment_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="shopAllotmentPop.page" extends="main.layout">
+  	 <put name="title" value="SHOP REV ALLOTMANT TRANS LIST PAGE"/>
+  	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="shopAllotAfterModify.page" extends="main.layout">
+  	 <put name="title" value="SHOP REV ALLOTMANT TRANS AFTER MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_aftermodify_dtl.jsp"/>	 											
+	 <put name="footer" value="/hr/estate/transactions/est_after_save_footer_dtl.jsp"/>
+</definition>  
+ <definition name="shopAllotAfterDelete.page" extends="main.layout">
+  	 <put name="title" value="SHOP REV ALLOTMANT TRANS AFTER DELETE PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_afterdelete_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_after_save_footer_dtl.jsp"/>
+</definition>  
+ 
+  
+ <!-- ============Shop Allotment Transaction =========== --> 
+ 
+ 
+ <!-- ============Shop Vacation Transaction =========== -->
+ <definition name="shopVacateAdd.page" extends="main.layout">
+  	 <put name="title" value="SHOP VACATION TRANS ADD PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_shoprevvacate_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_lst_footer_dtl.jsp"/>
+</definition>
+<definition name="shopVacatePop.page" extends="main.layout">
+  	 <put name="title" value="SHOP ALLOTVACATION TRANS LIST PAGE"/>
+  	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="shopVacateSave.page" extends="main.layout">
+  	 <put name="title" value="SHOP VACATION TRANS SAVE PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_vacate_aftersave_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_after_save_footer_dtl.jsp"/>
+</definition>
+<definition name="shopVacateModify.page" extends="main.layout">
+  	 <put name="title" value="SHOP VACATION TRANS MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_shoprevvacate_data.jsp"/>
+	  <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="shopVacatePop1.page" extends="main.layout">
+  	 <put name="title" value="SHOP VACATION TRANS LIST PAGE"/>
+  	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="shopVacateAfterModify.page" extends="main.layout">
+  	 <put name="title" value="SHOP VACATE TRANS AFTER MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_aftervactemodify_dtl.jsp"/>	 											
+	 <put name="footer" value="/hr/estate/transactions/est_after_save_footer_dtl.jsp"/>
+</definition>  
+<definition name="shopVacateAfterDelete.page" extends="main.layout">
+  	 <put name="title" value="SHOP VACATE TRANS AFTER DELETE PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_aftervacatedelete_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_after_save_footer_dtl.jsp"/>
+</definition>  
+ 
+
+<!-- ============Shop Vacation Transaction =========== -->
+
+<!-- ============Civil RequestTransaction =========== -->
+<definition name="civilRequestAdd.page" extends="main.layout">
+  	 <put name="title" value="CIVIL REQUEST TRANS ADD PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_civilrequest_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_lst_footer_dtl.jsp"/>
+</definition>
+<definition name="civilRequestModify.page" extends="main.layout">
+  	 <put name="title" value="CIVIL REQUEST TRANS MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_civilrequest_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="civilRequestPop.page" extends="main.layout">
+  	 <put name="title" value="CIVIL REQUEST TRANS LIST PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+
+ <!-- ============Civil RequestTransaction =========== -->
+
+<!-- ============Security Gaurd Verification Transaction =========== -->
+<definition name="SecGaurdVerifyList.page" extends="main.layout">
+  	 <put name="title" value="SECURITY GAURD VERIFICATION TRANS LIST PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_gardverifi_footer_dtl.jsp"/>
+</definition>
+<definition name="SecGaurdVerifyModify.page" extends="main.layout">
+  	 <put name="title" value="SECURITY GAURD VERIFICATION TRANS VIEW PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_gaurd_secu_verify_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_gaurd_modify_footer_dtl.jsp"/>
+</definition>
+ <!-- ============Security Gaurd Verification Transaction =========== -->
+
+
+ <!-- ============Roster Form Transaction =========== -->
+<definition name="RosterAdd.page" extends="main.layout">
+  	 <put name="title" value="ROSTER FORM TRANS ADD PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_roster_detail_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_lst_footer_dtl.jsp"/>
+</definition>
+<definition name="RosterModify.page" extends="main.layout">
+  	 <put name="title" value="ROSTER FORM TRANS MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_roster_detail_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+</definition>
+ <definition name="RosterPop.page" extends="main.layout">
+  	 <put name="title" value="ROSTER TRANS LIST PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+  
+  <!-- ============Roster Form Transaction =========== -->
+ 
+ 
+ 
+ <!-- ============External Security Complaint Detail Transaction =========== -->
+<definition name="SecCompDetAdd.page" extends="main.layout">
+  	 <put name="title" value="EXTERNAL SEC COMPT DETAIL TRANS ADD PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_ext_sec_compt_detail_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_lst_footer_dtl.jsp"/>
+</definition>
+<definition name="SecCompDetModify.page" extends="main.layout">
+  	 <put name="title" value="EXTERNAL SEC COMPT DETAIL TRANS MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_ext_sec_compt_detail_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions//est_trans_modify_footer_dtl.jsp"/>
+</definition>
+ <definition name="SecCompDetPop.page" extends="main.layout">
+  	 <put name="title" value="EXTERNAL SEC COMPT DETAIL TRANS LIST PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_pop_up_footer1_mod.jsp"/>
+</definition>
+<definition name="SecCompDetPop1.page" extends="main.layout">
+  	 <put name="title" value="EXTERNAL SEC COMPT DETAIL TRANS LIST PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+  
+  
+  <!-- ============External Security Complaint Detail Transaction =========== -->
+ 
+ 
+ 
+ <!-- ============Security Incharge verification Transaction =========== -->
+<definition name="SecIncVerAdd.page" extends="main.layout">
+  	 <put name="title" value="SECURITY INCHARGE VERIFICATION TRANS ADD PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_sec_incharge_verify_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_lst_footer_dtl.jsp"/>
+</definition>
+<definition name="SecIncVerModify.page" extends="main.layout">
+  	 <put name="title" value="SECURITY INCHARGE VERIFICATION TRANS MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_sec_incharge_verify_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+</definition>
+ <definition name="SecIncVerList.page" extends="main.layout">
+  	 <put name="title" value="SECURITY INCHARGE VERIFICATION TRANS LIST PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_trans_gardverifi_footer_dtl.jsp"/>
+</definition>
+  
+  <!-- ============Security Incharge verification Transaction =========== -->
+ 
+ 
+  <!-- ============Internal Complain Resistration Form=========== -->
+<definition name="IncComRegAdd.page" extends="main.layout">
+  	 <put name="title" value="INTERNAL COMPLAIN REGISTRATION TRANS ADD PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_inc_comp_regis_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_lst_footer_dtl.jsp"/>
+</definition>
+<definition name="IncComRegAftSave.page" extends="main.layout">
+  	 <put name="title" value="INTERNAL COMPLAIN REGISTRATION TRANS AFTER SAVE PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_inc_comp_regis_aftersave_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_after_save_footer_dtl.jsp"/>
+</definition>
+<definition name="IncComRegModify.page" extends="main.layout">
+  	 <put name="title" value="INTERNAL COMPLAIN REGISTRATION TRANS MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_inc_comp_regis_data.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+</definition>
+ <definition name="IncComRegPop.page" extends="main.layout">
+  	 <put name="title" value="INTERNAL COMPLAIN REGISTRATION TRANS LIST PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+     <put name="footer" value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+  
+  <!-- ============Internal Complain Resistration Form =========== -->
+ 
+ 
+ 
+ <!-- ============ Complaint Status Change Form =========== -->
+<definition name="CompStatChangeList.page" extends="main.layout">
+  	 <put name="title" value="COMPLAINT STATUS CHANGE  TRANS LIST PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_gardverifi_footer_dtl.jsp"/>
+</definition>
+<definition name="CompStatChangeModify.page" extends="main.layout">
+  	 <put name="title" value="COMPLAINT STATUS CHANGE  TRANS MODIFY PAGE"/>
+	 <put name="body" value="/hr/estate/transactions/est_trans_inc_comp_stat_change_dtl.jsp"/>
+	 <put name="footer" value="/hr/estate/transactions/est_trans_modify_footer_dtl.jsp"/>
+	 
+</definition>
+   
+ 
+  
+  <!-- ============ Complaint Status Change Form =========== -->
+ 
+
+
+                <!-- GuestHouse Allotment -->
+<definition name="guesthouseAllotmentAdd.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE ALLOT ADD PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_add_guesthouse_allotment_trans.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="guesthouseAllotmentSave.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE ALLOT SAVE PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouseallot_RefNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouseallot_Next_footer_dtl.jsp"/>
+</definition>
+
+<definition name="guesthouseAllotmentList.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE ALLOT LIST PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+
+<definition name="guesthouseAllotModify.page"        extends="main.layout">
+       <put name="title"    value="GUESTHOUSE ALLOT MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_view_guesthouse_allotment_trans.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouse_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseAllotView.page"        extends="main.layout">
+       <put name="title"    value="GUESTHOUSE ALLOT View PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_view_guesthouse_allotment_trans.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouse_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseAllotUpdate.page"        extends="main.layout">
+       <put name="title"    value="GUESTHOUSE ALLOT View PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouseallot_updNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouseallot_Next_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseAllotDelete.page"        extends="main.layout">
+       <put name="title"    value="GUESTHOUSE ALLOT View PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouseallot_delNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouseallot_Next_footer_dtl.jsp"/>
+</definition>
+
+
+
+
+
+                           <!-- GuestHouse Allotment -->
+                            <!-- GuestHouse Vacation -->
+<definition name="guesthouseVacationAdd.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE VACATION ADD PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_vacation_trans_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="guesthouseVacatSave.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE VACATION SAVE PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_vacation_Next_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthousevacat_Next_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseVacatModify.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE VACATION MODIFY PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_vacation_trans_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouse_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseVacatUpdate.page"        extends="main.layout">
+       <put name="title"    value="GUESTHOUSE VACATION PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthousevacat_updNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthousevacat_Next_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseVacatList.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE VACAT LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="guesthouseVacatListMod.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE VACAT LISTMOD PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="guesthouseVacatDelete.page"        extends="main.layout">
+       <put name="title"    value="GUESTHOUSE Vacat Delete PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthousevacat_delNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouseallot_Next_footer_dtl.jsp"/>
+</definition>
+
+
+
+
+
+
+
+                           <!-- GuestHouse Vacation -->
+                           <!-- GuestHouse MntAltCnl -->
+<definition name="guesthouseMntAltCnlAdd.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTALTCNL ADD PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Alt_Cnl_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="guesthouseMntAltCnlSave.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTALTCNL Save PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Alt_Cnl_Next_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouse_Mnt_Alt_Cnl_Next_Footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseMntAltCnlModify.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTALTCNL Modify PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Alt_Cnl_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouse_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseMntAltCnlViewForMod.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTALTCNL Modification PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Alt_Cnl_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouse_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseMntAltCnlList.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTALTCNL List PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="guesthouseMntAltCnlUpdate.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTALTCNL Update PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Alt_Cnl_updNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouseallot_Next_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseMntAltCnlDelete.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTALTCNL Delete PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Alt_Cnl_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouseallot_Next_footer_dtl.jsp"/>
+</definition>
+
+
+
+
+
+
+                           
+                           <!-- GuestHouse MntAltCnl -->
+                           
+                           <!-- GuestHouse MntStatus -->
+ <definition name="guesthouseMntStatusAdd.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTStatus ADD PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Status_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="guesthouseMntStatusSave.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTStatus ADD PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Status_Next_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouse_Mnt_Status_Next_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseMntStatusModify.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTStatus VIEW PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Status_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouse_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseMntStatusViewForMod.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTStatus View For Modification PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Status_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouse_modify_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseMntStatusUpdate.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTStatus View For Modification PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_mnt_status_updnext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouseallot_Next_footer_dtl.jsp"/>
+</definition>
+<definition name="guesthouseMntStatusList.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTStatus List PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="guesthouseMntStatusDelete.page"     extends="main.layout">
+       <put name="title"    value="GUESTHOUSE MNTALTCNL Delete PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_guesthouse_Mnt_Status_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_guesthouseallot_Next_footer_dtl.jsp"/>
+</definition>
+
+
+
+
+
+
+ 
+                           
+                           
+                           
+                           <!-- GuestHouse MntStatus -->
+                           
+                           
+                           <!-- OPCAreaAllotment -->
+<definition name="OPCAreaAllotAdd.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaAllot Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_c_area_allot_trans_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_trans_add_footer_dtl.jsp"/>
+</definition>
+ <definition name="OPCAreaAllotSave.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaAllot SaveDtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_c_area_allot_Next_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+ <definition name="OPCAreaAllotModify.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaAllot ModifyDtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_c_area_allot_trans_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="OPCAreaAllotView.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaAllot ModifyDtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_c_area_allot_trans_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="OPCAreaAllotUpdate.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaAllot UpdateDtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_c_area_updNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="OPCAreaAllotDelete.page"        extends="main.layout">
+       <put name="title"    value="OPCAreaAllot ALLOT Delete PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_c_area_delNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="OPCAreaAllotList.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaAllot ALLOT LIST PAGE"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+
+                             <!-- OPCAreaAllotment -->
+                             
+                             <!-- OPCArea Maintenance Allotment -->
+<definition name="OPMntAltCnlAdd.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintAllot Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_alt_cnl_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="OPMntAltCnlSave.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintAllot Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_alt_cnl_next_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="OPMntAltCnlModify.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintAllot Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_alt_cnl_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="OPMntAltCnlUpdate.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintAllot Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_alt_cnl_updNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="OPMntAltCnlList.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintAllot List Dtls"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="OPMntAltCnlDelete.page"        extends="main.layout">
+       <put name="title"    value="OPCAreaMaintAllot  Delete PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_alt_cnl_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+
+
+                             <!-- OPCArea Maintenance Allotment -->
+
+                              <!-- OPCArea Maintenance Status -->
+<definition name="OPMntStatusAdd.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintStatus Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_status_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="OPMntStatusSave.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintStatus Save Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_status_Next_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="OPMntStatusModify.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintStatus Modify Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_status_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="OPMntStatusUpdate.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintStatus Update Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_status_updNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="OPMntStatusList.page"     extends="main.layout">
+       <put name="title"    value="OPCAreaMaintStatus List Dtls"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="OPMntStatusDelete.page"        extends="main.layout">
+       <put name="title"    value="OPCAreaMaintStatus  Delete PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_o_p_mnt_status_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+
+                                <!-- OPCArea Maintenance Status -->
+                                <!-- Hospital ComArea Maintenance Allotment-->
+<definition name="HosComAreaMntAltCnlAdd.page"     extends="main.layout">
+       <put name="title"    value="HosCAreaMaintAllot Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comArea_mnt_alt_cnl_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="HosComAreaMntAltCnlSave.page"     extends="main.layout">
+       <put name="title"    value="HosCAreaMaintSave Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comArea_mnt_alt_cnl_Nextdtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="HosComAreaMntAltCnlModify.page"     extends="main.layout">
+       <put name="title"    value="HosCAreaMaintModify Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comArea_mnt_alt_cnl_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="HosComAreaMntAltCnlUpdate.page"     extends="main.layout">
+       <put name="title"    value="HosCAreaMaintUpdate Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comArea_mnt_alt_cnl_updNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="HosComAreaMntAltCnlList.page"     extends="main.layout">
+       <put name="title"    value="HosMaintStatus List Dtls"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="HosComAreaMntAltCnlDelete.page"        extends="main.layout">
+       <put name="title"    value="HosCAreaMaintModify  Delete PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comArea_mnt_alt_cnl_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+
+
+
+
+
+
+                                
+                                <!-- Hospital ComArea Maintenance Allotment-->
+                                
+                                
+                                <!-- Hospital ComArea Maintenance Status-->
+<definition name="HosMntStatusAdd.page"     extends="main.layout">
+       <put name="title"    value="HosMaintStatus Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comArea_mnt_status_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="HosMntStatusSave.page"     extends="main.layout">
+       <put name="title"    value="HosMaintStatus Save Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comarea_mnt_status_Nextdtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="HosMntStatusModify.page"     extends="main.layout">
+       <put name="title"    value="HosMaintStatus Modify Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comArea_mnt_status_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="HosMntStatusUpdate.page"     extends="main.layout">
+       <put name="title"    value="HosMaintStatus Update Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comArea_Mnt_status_updNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="HosMntStatusList.page"     extends="main.layout">
+       <put name="title"    value="HosMaintStatus List Dtls"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="HosMntStatusDelete.page"        extends="main.layout">
+       <put name="title"    value="HosMaintStatus  Delete PAGE"/>
+       <put name="body"     value="/hr/estate/transactions/est_hos_comarea_Mnt_status_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+
+
+                                <!-- Hospital ComArea Maintenance Status-->
+                                
+                                
+                                <!-- Block ComArea Maintenance Allotment-->
+<definition name="BlkComAreaMntAltCnlAdd.page"     extends="main.layout">
+       <put name="title"    value="BlkCAreaMaintAllot Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_alt_cnl_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="BlkComAreaMntAltCnlSave.page"     extends="main.layout">
+       <put name="title"    value="BlkCAreaMaintAllot Save Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_alt_cnl_Nextdtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="BlkComAreaMntAltCnlModify.page"     extends="main.layout">
+       <put name="title"    value="BlkCAreaMaintAllot Modify Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_alt_cnl_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="BlkComAreaMntAltCnlUpdate.page"     extends="main.layout">
+       <put name="title"    value="BlkCAreaMaintAllot Update Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_alt_cnl_updNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="BlkComAreaMntAltCnlList.page"     extends="main.layout">
+       <put name="title"    value="BlkCAreaMaintAllot List Dtls"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="BlkComAreaMntAltCnlDelete.page"     extends="main.layout">
+       <put name="title"    value="BlkCAreaMaintAllot Delete Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_alt_cnl_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+
+
+                           <!-- Block ComArea Maintenance Allotment-->
+                           
+                           
+                           <!-- Block ComArea Maintenance Status-->
+<definition name="BlkMntStatusAdd.page"     extends="main.layout">
+       <put name="title"    value="BlkMntStatusAdd Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_status_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="BlkMntStatusSave.page"     extends="main.layout">
+       <put name="title"    value="BlkMntStatusSave Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_status_Nextdtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="BlkMntStatusModify.page"     extends="main.layout">
+       <put name="title"    value="BlkMntStatusModify Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_status_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="BlkMntStatusUpdate.page"     extends="main.layout">
+       <put name="title"    value="BlkCAreaMaintAllot Update Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_status_updNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="BlkMntStatusList.page"     extends="main.layout">
+       <put name="title"    value="BlkMntStatusList Dtls"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="BlkMntStatusDelete.page"     extends="main.layout">
+       <put name="title"    value="BlkMntStatusList Delete Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blk_comArea_mnt_status_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+
+
+                           <!-- Block ComArea Maintenance Status-->
+                           
+                           
+                           
+                           <!-- BlockFloor ComArea Maintenance -->
+<definition name="BlkFlrComAreaMntAdd.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrMntStatusAdd Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comarea_mnt_alt_cnl_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="BlkFlrComAreaMntSave.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrComAreaMntSave Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comArea_mnt_alt_cnl_Nextdtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="BlkFlrComAreaMntModify.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrComAreaMntModify Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comArea_mnt_alt_cnl_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="BlkFlrComAreaMntUpdate.page"     extends="main.layout">
+       <put name="title"    value="BlkCAreaMaintAllot Update Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comArea_mnt_alt_cnl_updNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="BlkFlrComAreaMntList.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrComAreaMntList Dtls"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="BlkFlrComAreaMntDelete.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrComAreaMntDelete Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comArea_mnt_alt_cnl_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+
+
+
+
+
+
+                           <!-- BlockFloor ComArea Maintenance -->
+                           
+                           <!-- BlockFloor ComArea Maintenance -->
+<definition name="BlkFlrMntStatusAdd.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrMntStatusAdd Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comArea_mnt_status_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+</definition>
+<definition name="BlkFlrMntStatusSave.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrMntStatusSave Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comArea_mnt_status_Nextdtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="BlkFlrMntStatusModify.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrComAreaMntModify Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comArea_mnt_status_modify.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_modify_footer.jsp"/>
+</definition>
+<definition name="BlkFlrMntStatusUpdate.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrMntStatusUpdate Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comArea_mnt_status_updNext_dtl.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+<definition name="BlkFlrMntStatusList.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrMntStatusList Dtls"/>
+       <put name="body"     value="/hr/estate/masters/est_lst_common_mst.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_pop_up_footer_mod.jsp"/>
+</definition>
+<definition name="BlkFlrMntStatusDelete.page"     extends="main.layout">
+       <put name="title"    value="BlkFlrMntStatusDelete Dtls"/>
+       <put name="body"     value="/hr/estate/transactions/est_blkflr_comArea_mnt_status_delNext.jsp"/>
+       <put name="footer"   value="/hr/estate/transactions/est_o_p_c_area_Next_footer.jsp"/>
+</definition>
+
+
+                           <!-- BlockFloor ComArea Maintenance -->
+
+
+				
+								<!-- Water & electricity Bill Entry -->
+				
+				<definition name="wtrElecBillAdd.page"     extends="main.layout">
+				       <put name="title"    value="WATER AND ELECTRICITY BILL ENTRY"/>
+				       <put name="body"     value="/hr/estate/transactions/est_wtr_elect_charges_entry_dtl.jsp"/>
+				       <put name="footer"   value="/hr/estate/transactions/est_add_footer_mst.jsp"/>
+				</definition>
+				
+				 				<!-- Water & electricity Bill Entry -->
+
+ </tiles-definitions>

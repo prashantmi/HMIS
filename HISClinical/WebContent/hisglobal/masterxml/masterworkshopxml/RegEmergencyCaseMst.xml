@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='Emergency Case Master'>
+        <common-values>
+           <master-name>EmergencyCaseMaster</master-name>
+           <master-title>Emergency Case Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Emergency Case Master</tableHeading>
+           <list-table>HRGT_EMRGENCY_CASE_MST</list-table>
+           
+           <columns>
+              <column>Emergency Case</column>
+              <column>Is MLC Required</column>
+              <column>Case Type</column>
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(NVL(A.HRGNUM_EMRGENCY_CASE,''))</field>
+				 <field>DECODE(A.HRGNUM_ISMLC_REQ,'1','Yes','0','No',NULL)</field>
+				 <field>DECODE(A.HRGNUM_CASE_TYPE,'0','Normal','1','Trauma','2','Non Trauma','3','Ambulatory','-1')</field>
+			  </fields>
+				
+			  <primaryKey>
+					<field>A.HRGNUM_EMRGENCY_CASE_CODE</field>
+				    <field>A.HRGNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+			  </primaryKey>
+				<tables>
+					<table alias='A'>HRGT_EMRGENCY_CASE_MST</table>
+				</tables>
+				<condition>					 
+					<general>
+								A.GNUM_ISVALID =1 AND A.GNUM_HOSPITAL_CODE=100  
+							</general>
+							<general-inactive>
+								A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+							</general-inactive>
+							<isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY(A.HRGNUM_EMRGENCY_CASE) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/registration/masters/RegEmergencyCaseMstACTION.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/registration/masters/RegEmergencyCaseMstACTION.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

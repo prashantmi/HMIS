@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!-- ========== Form Bean Definitions =================================== -->
+
+	<form-beans>
+		<form-bean name="InvestigationRaisingDtlFB"
+			type="new_investigation.transactions.controller.fb.InvestigationRaisingDtlFB" />
+		<form-bean name="OnlinePatientAcceptanceFB"
+			type="new_investigation.transactions.controller.fb.OnlinePatientAcceptanceFB" />
+
+		<form-bean name="SampleCollectionFB"
+			type="new_investigation.transactions.controller.fb.SampleCollectionFB" />
+		<form-bean name="PackingListGenerationFB"
+			type="new_investigation.transactions.controller.fb.PackingListGenerationFB" />
+
+		<!-- Added by Siddharth for Result Entry Process Date: 13/04/2015 -->
+		<form-bean name="InvResultEntryFB"
+			type="new_investigation.transactions.controller.fb.InvResultEntryFB" />
+
+		<form-bean name="SampleAcceptanceFB"
+			type="new_investigation.transactions.controller.fb.SampleAcceptanceFB" />
+
+		<form-bean name="InvResultValidationFB"
+			type="new_investigation.transactions.controller.fb.InvResultValidationFB" />
+
+		<!-- Added by Anant Patel for Sample Collection Cum Sample Acceptance Process 
+			Date: 25/05/2015 -->
+		<form-bean name="SampleCollectionCumAcceptanceFB"
+			type="new_investigation.transactions.controller.fb.SampleCollectionCumAcceptanceFB" />
+
+
+
+		<form-bean name="InvResultReportPrintingFB"
+			type="new_investigation.transactions.controller.fb.InvResultReportPrintingFB" />
+
+
+		<form-bean name="InvResultReValidationFB"
+			type="new_investigation.transactions.controller.fb.InvResultValidationFB" />
+
+
+		<form-bean name="InvDuplicateResultReportPrintingFB"
+			type="new_investigation.transactions.controller.fb.InvDuplicateResultReportPrintingFB" />
+
+
+		<form-bean name="SampleAcceptanceFB"
+			type="new_investigation.transactions.controller.fb.SampleAcceptanceFB" />
+
+		<form-bean name="machineResultEntryFB"
+			type="new_investigation.transactions.controller.fb.machineResultEntryFB" />
+
+		<form-bean name="machineEnquiryFB"
+			type="new_investigation.transactions.controller.fb.machineEnquiryFB" />
+
+		<form-bean name="externalInvestigationCaptureFB"
+			type="new_investigation.transactions.controller.fb.externalInvestigationCaptureFB" />
+
+		<form-bean name="testAvailabilityFB"
+			type="new_investigation.transactions.controller.fb.testAvailabilityFB" />
+
+		<form-bean name="filmUsedFB"
+			type="new_investigation.transactions.controller.fb.filmUsedFB" />
+
+         		<form-bean name="InvValueAuditFB"
+			type="new_investigation.transactions.controller.fb.InvValueAuditFB" />
+         
+
+	<form-bean name="invRaisingCumSamCollectionFB"
+			type="new_investigation.transactions.controller.fb.invRaisingCumSamCollectionFB" />
+
+	
+	<form-bean name="viewExternalInvFB"
+			type="new_investigation.transactions.controller.fb.viewExternalInvFB" />
+			
+	<form-bean name="TestWiseConsumableFB"
+			type="new_investigation.transactions.controller.fb.TestWiseConsumableFB" />
+	
+	<!-- <form-bean name="LabTestItemConsumptionDtlFB"
+			type="new_investigation.transactions.controller.fb.LabTestItemConsumptionDtlFB" /> -->
+    <form-bean name="invAntibioticProcessFB"
+			type="new_investigation.transactions.controller.fb.invAntibioticProcessFB" />
+
+
+
+<form-bean name="invReportAddendumFB"
+			type="new_investigation.transactions.controller.fb.invReportAddendumFB" />
+
+
+
+    <form-bean name="invRequisitionFormFB"
+			type="new_investigation.transactions.controller.fb.invRequisitionFormFB" />
+
+
+
+
+
+	<form-bean name="departmentSpecificResultEntryFB"
+			type="new_investigation.transactions.controller.fb.departmentSpecificResultEntryFB" />
+			
+	<form-bean name="invReportInProcessFB"
+			type="new_investigation.transactions.controller.fb.invReportInProcessFB" />
+	
+	<form-bean name="NewInvestigationFB"
+			type="new_investigation.transactions.controller.fb.NewInvestigationFB" />
+			
+			<form-bean name="invReportHistoryFB"
+			type="new_investigation.transactions.controller.fb.invReportHistoryFB" />
+	
+	<form-bean name="reportDownloadProcessFB"
+			type="new_investigation.transactions.controller.fb.reportDownloadProcessFB" />		
+			
+			<form-bean name="viewInvestigationFB"
+			type="investigationDesk.transactions.controller.fb.viewInvestigationFB" />
+			
+			<form-bean name="BloodGroupingUploadFB"
+			type="uploadfilesonserver.BloodGroupingUploadFB" />
+			
+			<form-bean name="invStatusDashboardFB"
+            type="new_investigation.transactions.controller.fb.invStatusDashboardFB" />
+            
+            <form-bean name="invListingReportNewFB"
+           type="new_investigation.transactions.controller.fb.invListingReportNewFB"/> 
+
+<form-bean name="invFungusProcessFB"
+			type="new_investigation.transactions.controller.fb.invFungusProcessFB" />
+
+<form-bean name="echoFB"
+			type="new_investigation.transactions.controller.fb.echoFB" />
+
+
+<!-- Added by abhijat -->
+<form-bean name="investigationChatBotFB"
+			type="new_investigation.chatbot.controller.fb.investigationChatBotFB" />			
+			
+	
+	<form-bean name="InvestigationRaisingDtlXrayFB"
+			type="new_investigation.transactions.controller.fb.InvestigationRaisingDtlXrayFB" />
+	
+<form-bean name="InvResultReportPrintingNewFB"
+			type="new_investigation.transactions.controller.fb.InvResultReportPrintingNewFB" />
+			
+<form-bean name="SampleCollectionFB"
+			type="new_investigation.transactions.controller.fb.SampleCollectionFB" />
+
+
+<form-bean name="InvestigationRaisingDtlreqFB"
+			type="new_investigation.transactions.controller.fb.InvestigationRaisingDtlreqFB" />
+			
+			
+<form-bean name="TaskTrackerFB"
+			type="new_investigation.taskTracker.transactions.controller.fb.TaskTrackerFB" />
+     
+     
+<form-bean name="InvpidFB" type="new_investigation.transactions.controller.fb.InvpidFB" />
+     
+<form-bean name="InvResultReportPrintingRespFB" type="new_investigation.transactions.controller.fb.InvResultReportPrintingRespFB" />
+    
+<form-bean name="InvResultValidationRespFB" type="new_investigation.transactions.controller.fb.InvResultValidationRespFB" />
+	 
+            <form-bean name="InvPatientAcceptanceRespFB"
+			type="new_investigation.transactions.controller.fb.InvPatientAcceptanceRespFB" />
+			
+	</form-beans>
+	<action-mappings>
+		
+		
+
+<action path="/invResultReportPrintingResp"
+				type="new_investigation.transactions.controller.action.InvResultReportPrintingRespACT"
+				name="InvResultReportPrintingRespFB" validate="false" scope="request"
+				parameter="hmode" input="/transactions/invResultReportPrintingResp.jsp">
+			<forward name="NEW" path="/transactions/invResultReportPrintingResp.jsp" />
+			<forward name="CANCEL" path="/transactions/invResultReportPrintingResp.jsp" redirect="true" />
+		</action>
+		
+		
+		
+           <action path="/viewInvestigation"
+			type="investigationDesk.transactions.controller.action.viewInvestigationACT"
+			name="viewInvestigationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/viewInvestigationDtl.jsp">
+			<forward name="NEW" path="/transactions/viewInvestigationDtl.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+		
+		<action path="/investigationReqRaising"
+			type="new_investigation.transactions.controller.action.InvestigationRaisingDtlACT"
+			name="InvestigationRaisingDtlFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/investigationRaisingDtl.jsp">
+			<forward name="NEW" path="/transactions/investigationRaisingDtl.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+				<forward name="GOTOADDENDUM"
+				path="/invReportAddendum.cnt?istrue" redirect="true" />
+		</action>
+
+		<action path="/onlinePatientAcceptance"
+			type="new_investigation.transactions.controller.action.OnlinePatientAcceptanceACT"
+			name="OnlinePatientAcceptanceFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/onlinePatientAcceptance.jsp">
+			<forward name="NEW" path="/transactions/onlinePatientAcceptance.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+
+		<action path="/sampleCollection"
+			type="new_investigation.transactions.controller.action.SampleCollectionACT"
+			name="SampleCollectionFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/sampleCollection.jsp">
+			<forward name="NEW" path="/transactions/sampleCollection.jsp" />
+			<forward name="PRINT"
+				path="/transactions/invSampleNoLabelBarcodeHTMLPrinting.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+
+
+<action path="/sampleCollection12"
+			type="new_investigation.transactions.controller.action.SampleCollectionACT"
+			name="SampleCollectionFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/sampleCollection.jsp">
+			<forward name="NEW" path="/transactions/sampleCollection.jsp" />
+			<forward name="PRINT"
+				path="/transactions/invSampleNoLabelBarcodeHTMLPrinting.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+		
+		<action path="/packingListGeneration"
+			type="new_investigation.transactions.controller.action.PackingListGenerationACT"
+			name="PackingListGenerationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/packingListGeneration.jsp">
+			<forward name="NEW" path="/transactions/packingListGeneration.jsp" />
+			<forward name="PACKINGLISTREPORT"
+				path="/transactions/packingListGenerationReportPage.jsp" />
+			<forward name="DUPLICATEPACKINGLISTREPORT"
+				path="/transactions/duplicatePackingListGenerationReportPage.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+
+		<action path="/sampleAcceptance"
+			type="new_investigation.transactions.controller.action.SampleAcceptanceACT"
+			name="SampleAcceptanceFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/sampleAcceptance.jsp">
+			<forward name="NEW" path="/transactions/sampleAcceptance.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+		<!-- Added by Siddharth for ResultEntry Process Date: 13/04/2015 -->
+		<action path="/invResultEntryTemplateTile"
+			type="new_investigation.transactions.controller.action.InvResultEntryACT"
+			name="InvResultEntryFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/invResultEntryTemplateTile.jsp">
+			<forward name="NEW" path="/transactions/invResultEntryTemplateTile.jsp" />
+			<forward name="CANCEL" path="/transactions/invResultEntryTemplateTile.jsp"
+				redirect="true" />
+					
+					<forward name="GETDETAILSSESSION" path="/invResultEntryTemplateTile.cnt"
+				 />
+				 <forward name="GETPATDTL"
+				path="/investigationReqRaising.cnt"  />
+		</action>
+
+
+		<action path="/invResultValidationTemplateTile"
+			type="new_investigation.transactions.controller.action.InvResultValidationACT"
+			name="InvResultValidationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invResultValidationTemplateTile.jsp">
+			<forward name="NEW"
+				path="/transactions/invResultValidationTemplateTile.jsp" />
+			<forward name="CANCEL"
+				path="/transactions/invResultValidationTemplateTile.jsp" redirect="true" />
+				<forward name="GETDETAILSSESSION" path="/invResultValidationTemplateTile"
+				 />
+		</action>
+
+
+		<action path="/sampleCollectionCumAcceptance"
+			type="new_investigation.transactions.controller.action.SampleCollectionCumAcceptanceACT"
+			name="SampleCollectionCumAcceptanceFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/sampleCollectionCumAcceptance.jsp">
+			<forward name="NEW"
+				path="/transactions/sampleCollectionCumAcceptance.jsp" />
+			<forward name="CANCEL"
+				path="/transactions/sampleCollectionCumAcceptance.jsp" redirect="true" />
+		</action>
+
+
+
+
+
+		<action path="/invResultReportPrinting"
+			type="new_investigation.transactions.controller.action.InvResultReportPrintingACT"
+			name="InvResultReportPrintingFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invResultReportPrinting.jsp">
+			<forward name="NEW" path="/transactions/invResultReportPrinting.jsp" />
+			<forward name="CANCEL" path="/transactions/invResultReportPrinting.jsp"
+				redirect="true" />
+		</action>
+		
+		<!--Added by harshita   -->
+		<action path="/invResultReportPrintingAdvanced"
+			type="new_investigation.transactions.controller.action.InvResultReportPrintingAdvancedACT"
+			name="InvResultReportPrintingFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invResultReportPrintingAdvanced.jsp">
+			<forward name="NEW" path="/transactions/invResultReportPrintingAdvanced.jsp" />
+			<forward name="CANCEL" path="/transactions/invResultReportPrintingAdvanced.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/invResultReValidationTemplateTile"
+			type="new_investigation.transactions.controller.action.InvResultReValidationACT"
+			name="InvResultValidationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invResultReValidationTemplateTile.jsp">
+			<forward name="NEW"
+				path="/transactions/invResultReValidationTemplateTile.jsp" />
+			<forward name="CANCEL"
+				path="/transactions/invResultReValidationTemplateTile.jsp" redirect="true" />
+				<forward name="GETDETAILSSESSION" path="/invResultReValidationTemplateTile"
+				 />
+		</action>
+
+
+		<action path="/invDuplicateResultReportPrinting"
+			type="new_investigation.transactions.controller.action.InvDuplicateResultReportPrintingACT"
+			name="InvDuplicateResultReportPrintingFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invDuplicateResultReportPrinting.jsp">
+			<forward name="NEW"
+				path="/transactions/invDuplicateResultReportPrinting.jsp" />
+			<forward name="CANCEL"
+				path="/transactions/invDuplicateResultReportPrinting.jsp" redirect="true" />
+		</action>
+		
+		<!--  Added by harshita -->
+		<action path="/invDuplicateResultReportPrintingAdvanced"
+			type="new_investigation.transactions.controller.action.InvDuplicateResultReportPrintingAdvancedACT"
+			name="InvDuplicateResultReportPrintingFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invDuplicateResultReportPrintingAdvanced.jsp">
+			<forward name="NEW"
+				path="/transactions/invDuplicateResultReportPrintingAdvanced.jsp" />
+			<forward name="CANCEL"
+				path="/transactions/invDuplicateResultReportPrintingAdvanced.jsp" redirect="true" />
+		</action>
+
+		<!-- Added By Pathan Basha -->
+		<action path="/sampleAcceptanceThroughBarCode"
+			type="new_investigation.transactions.controller.action.SampleAcceptanceBarCodeACT"
+			name="SampleAcceptanceFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/sampleAcceptanceBarCode.jsp">
+			<forward name="NEW" path="/transactions/sampleAcceptanceBarCode.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+
+		<action path="/machineResultEntry"
+			type="new_investigation.transactions.controller.action.machineResultEntryACT"
+			name="machineResultEntryFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/machineResultEntry.jsp">
+			<forward name="NEW" path="/transactions/machineResultEntry.jsp" />
+			<forward name="CANCEL" path="/transactions/machineResultEntry.jsp"
+				redirect="true" />
+		</action>
+
+
+		<action path="/machineEnquiry"
+			type="new_investigation.transactions.controller.action.machineEnquiryACT"
+			name="machineEnquiryFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/machineEnquiry.jsp">
+			<forward name="NEW" path="/transactions/machineEnquiry.jsp" />
+			<forward name="CANCEL" path="/transactions/machineEnquiry.jsp"
+				redirect="true" />
+		</action>
+
+
+
+		<action path="/externalInvestigationCapture"
+			type="new_investigation.transactions.controller.action.externalInvestigationCaptureACT"
+			name="externalInvestigationCaptureFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/externalInvestigationCapture.jsp">
+			<forward name="NEW"
+				path="/transactions/externalInvestigationCapture.jsp" />
+			<forward name="UPLOAD" path="/Upload.cnt" />
+
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/Upload"
+			type="hisglobal.utility.filetransfer.action.UploadFileACT" name="externalInvestigationCaptureFB"
+			validate="false" scope="request" parameter="hmode"
+			input="/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp">
+
+			<forward name="file"
+				path="/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp" />
+			<forward name="audiovideo"
+				path="/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp" />
+			<forward name="image"
+				path="/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp" />
+			<forward name="success"
+				path="/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp" />
+			<forward name="input"
+				path="/hisglobal/utility/filetransfer/hg_uploadFileTile.jsp" />
+
+
+		</action>
+
+
+
+
+		<action path="/testAvailability"
+			type="new_investigation.transactions.controller.action.testAvailabilityACT"
+			name="testAvailabilityFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/testAvailability.jsp">
+			<forward name="NEW" path="/transactions/testAvailability.jsp" />
+			<forward name="CANCEL" path="/transactions/testAvailabsility.jsp"
+				redirect="true" />
+			<forward name="VIEWREPORT" path="/transactions/testAvailabilityReport.jsp" />
+		</action>
+
+
+
+	<action path="/filmUsed"
+			type="new_investigation.transactions.controller.action.filmUsedACT"
+			name="filmUsedFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/filmUsed.jsp">
+			<forward name="NEW" path="/transactions/filmUsed.jsp" />
+			<forward name="CANCEL" path="/transactions/filmUsed.jsp"
+				redirect="true" />
+			</action>
+
+      
+	<action path="/auditprocess"
+			type="new_investigation.transactions.controller.action.InvValueAuditACT"
+			name="InvValueAuditFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/invValueAuditTemplateTile.jsp">
+			<forward name="NEW" path="/transactions/invValueAuditTemplateTile.jsp" />
+			<forward name="CANCEL" path="/transactions/invValueAuditTemplateTile.jsp"
+				redirect="true" />
+			</action>
+
+<action path="/invRaisingCumSamCollection"
+			type="new_investigation.transactions.controller.action.invRaisingCumSamCollectionACT"
+			name="invRaisingCumSamCollectionFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invRaisingCumSamCollection.jsp">
+			<forward name="NEW" path="/transactions/invRaisingCumSamCollection.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+					<forward name="PRINT"
+				path="/transactions/invSampleNoLabelBarcodeHTMLPrinting.jsp" />
+		</action>
+		
+
+
+
+
+<action path="/viewexternalprocess"
+			type="new_investigation.transactions.controller.action.viewExternalInvACT"
+			name="viewExternalInvFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/viewExternalInv.jsp">
+			<forward name="NEW" path="/transactions/viewExternalInv.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action>
+		
+<action path="/testWiseConsumableMapping"
+			type="new_investigation.transactions.controller.action.TestWiseConsumableACT"
+			name="TestWiseConsumableFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/testWiseConsumable.jsp">
+			<forward name="NEW" path="/transactions/testWiseConsumable.jsp" />
+			<forward name="CANCEL" path="/transactions/testWiseConsumable.jsp"
+				redirect="true" />
+		</action>
+
+		<action path="/antibioticprocesss"
+			type="new_investigation.transactions.controller.action.invAntibioticProcessACT"
+			name="invAntibioticProcessFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invantibioticprocess.jsp">
+			<forward name="NEW" path="/transactions/invantibioticprocess.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action>
+		<action path="/invReportAddendum"
+			type="new_investigation.transactions.controller.action.invReportAddendumACT"
+			name="invReportAddendumFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invReportAddendum.jsp">
+			<forward name="NEW"
+				path="/transactions/invReportAddendum.jsp" />
+			<forward name="CANCEL"
+				path="/transactions/invReportAddendum.jsp" redirect="true" />
+			<forward name="GETPATDTL"
+				path="/investigationReqRaising.cnt"  />
+				
+		</action>
+
+
+
+		<action path="/departmentSpecificResultEntryTemplateTile"
+			type="new_investigation.transactions.controller.action.departmentSpecificResultEntryACT"
+			name="departmentSpecificResultEntryFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/departmentSpecificResultEntryTemplateTile.jsp">
+			<forward name="NEW" path="/transactions/departmentSpecificResultEntryTemplateTile.jsp" />
+			<forward name="CANCEL" path="/transactions/departmentSpecificResultEntryTemplateTile.jsp"
+				redirect="true" />
+		</action>
+
+
+		<action path="/requisitionformprocess"
+			type="new_investigation.transactions.controller.action.invRequisitionFormACT"
+			name="invRequisitionFormFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invRequisitionForm.jsp">
+			<forward name="NEW" path="/transactions/invRequisitionForm.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action>
+		
+
+
+		<action path="/invReportInProcess"
+			type="new_investigation.transactions.controller.action.invReportInProcessACT"
+			name="invReportInProcessFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invReportInProcess.jsp">
+			<forward name="NEW" path="/transactions/invReportInProcess.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action>
+		
+		
+
+ 		<action path="/investigationJob"
+			type="new_investigation.transactions.controller.action.NewInvestigationJobACT"
+			name="NewInvestigationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/NewInvestigationJob.jsp">
+			<forward name="NEW" path="/transactions/NewInvestigationJob.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action> 
+		
+		
+		<action path="/invReportHisotry"
+			type="new_investigation.transactions.controller.action.invReportHistoryACT"
+			name="invReportHistoryFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invReportHistory.jsp">
+			<forward name="NEW" path="/transactions/invReportHistory.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action>
+		
+		<action path="/publicreportdownload"
+			type="new_investigation.transactions.controller.action.reportDownloadProcessACT"
+			name="reportDownloadProcessFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/ReportDownloadprocess.html">
+			<forward name="NEW" path="/transactions/ReportDownloadprocess.html" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action>
+		
+		
+		<action path="/publicreportdownload"
+			type="new_investigation.transactions.controller.action.reportDownloadProcessACT"
+			name="reportDownloadProcessFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/ReportDownloadprocess.html">
+			<forward name="NEW" path="/transactions/ReportDownloadprocess.html" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action>
+		
+		<action path="/bloodGroupingUpload"
+				type="uploadfilesonserver.BloodGroupingUploadACT"
+				name="BloodGroupingUploadFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transactions/bloodGroupingUploadData.jsp">
+			<forward name="NEW" path="/transactions/bloodGroupingUploadData.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		  </action>		
+		  
+		<!-- Added by krishnan nema on 30/11/2018 -->
+        <action path="/invResultEntryTemplateTileAdvanced"
+                        type="new_investigation.transactions.controller.action.InvResultEntryAdvancedACT"
+                        name="InvResultEntryFB" validate="false" scope="request" parameter="hmode"
+                        input="/transactions/invResultEntryTemplateTileAdvanced.jsp">
+                        <forward name="NEW" path="/transactions/invResultEntryTemplateTileAdvanced.jsp" />
+                        <forward name="CANCEL" path="/transactions/invResultEntryTemplateTileAdvanced.jsp"
+                                redirect="true" />
+                                        
+                                        <forward name="GETDETAILSSESSION" path="/invResultEntryTemplateTileAdvanced.cnt"
+                                 />
+                                 <forward name="GETPATDTL"
+                                path="/investigationReqRaising.cnt"  />
+                </action>          
+                  
+                  
+                  <action path="/invResultValidationTemplateTilenew"
+			type="new_investigation.transactions.controller.action.InvResultValidationACT"
+			name="InvResultValidationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invResultValidationTemplateTilenew.jsp">
+			<forward name="NEW"
+				path="/transactions/invResultValidationTemplateTilenew.jsp" />
+			<forward name="CANCEL"
+				path="/transactions/invResultValidationTemplateTilenew.jsp" redirect="true" />
+				<forward name="GETDETAILSSESSION" path="/invResultValidationTemplateTilenew"
+				 />
+		</action>
+		
+		
+		<action path="/invStatusDashboard"
+            type="new_investigation.transactions.controller.action.invStatusDashboardACT"
+            name="invStatusDashboardFB" validate="false" scope="request" parameter="hmode"
+            input="/transactions/invStatusDashboard.jsp">
+            <forward name="NEW" path="/transactions/invStatusDashboard.jsp" />
+            <forward name="GETSAMPLELIST" path="/transactions/invStatusDashboardList.jsp" />
+        </action>
+                  
+          <action path="/invListingReportNew"
+
+            type="new_investigation.transactions.controller.action.invListingReportNewACT"
+            name="invListingReportNewFB" validate="false" scope="request"
+			parameter="hmode"
+            input="/transactions/invListingReportNew.jsp">
+            <forward name="NEW" path="/transactions/invListingReportNew.jsp" />
+            <forward name="GETDATEWISELISTING" path="/invListingReportNew.cnt"/>
+            <forward name="NEW_AJAX_CLIENT" path="/invListingReportNew.cnt"/>
+            <forward name="NEW_AJAX_SERVER" path="/invListingReportNew.cnt"/>
+        </action> 
+        
+        <action path="/fungusprocesss"
+			type="new_investigation.transactions.controller.action.invFungusProcessACT"
+			name="invFungusProcessFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invFungusprocess.jsp">
+			<forward name="NEW" path="/transactions/invFungusprocess.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action>
+		
+		<action path="/echo"
+			type="new_investigation.transactions.controller.action.echoACT"
+			name="echoFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/echo.jsp">
+			<forward name="NEW" path="/transactions/echo.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+	              redirect="true" />
+		</action>
+		
+		<action path="/invResultValidationTemplateTileAdvanced"
+			type="new_investigation.transactions.controller.action.InvResultValidationAdvancedACT"
+			name="InvResultValidationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invResultValidationTemplateTileAdvanced.jsp">
+			<forward name="NEW"
+				path="/transactions/invResultValidationTemplateTileAdvanced.jsp" />
+			<forward name="CANCEL"
+				path="/transactions/invResultValidationTemplateTileAdvanced.jsp" redirect="true" />
+				<forward name="GETDETAILSSESSION" path="/invResultValidationTemplateTileAdvanced"
+				 />
+		</action>
+		
+		
+		<action path="/invResultReValidationTemplateTileAdvanced"
+			type="new_investigation.transactions.controller.action.InvResultReValidationAdvancedACT"
+			name="InvResultValidationFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invResultReValidationTemplateTileAdvanced.jsp">
+			<forward name="NEW"
+				path="/transactions/invResultReValidationTemplateTileAdvanced.jsp" />
+			<forward name="CANCEL"
+				path="/transactions/invResultReValidationTemplateTileAdvanced.jsp" redirect="true" />
+				<forward name="GETDETAILSSESSION" path="/invResultReValidationTemplateTileAdvanced"
+				 />
+		</action>
+		
+		<action path="/onlineRequisitionRaisingXray"
+			type="new_investigation.transactions.controller.action.OnlineReqRaisingXrayACT"
+			name="InvestigationRaisingDtlXrayFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/onlineRequisitionRaisingXray.jsp">
+			<forward name="NEW" path="/transactions/onlineRequisitionRaisingXray.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+				<!-- <forward name="GOTOADDENDUM"
+				path="/invReportAddendum.cnt?istrue" redirect="true" /> -->
+		</action>
+		
+		
+		<action path="/onlineRequisitionRaisingprevreq"
+			type="new_investigation.transactions.controller.action.OnlineReqRaisingPrevreqACT"
+			name="InvestigationRaisingDtlXrayFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/onlineRequisitionRaisingprevreq.jsp">
+			<forward name="NEW" path="/transactions/onlineRequisitionRaisingprevreq.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+				<!-- <forward name="GOTOADDENDUM"
+				path="/invReportAddendum.cnt?istrue" redirect="true" /> -->
+		</action>
+		
+		
+		<action path="/sampleCollectionAdvanced"
+			type="new_investigation.transactions.controller.action.SampleCollectionAdvancedACT"
+			name="SampleCollectionFB" validate="false" scope="request" parameter="hmode"
+			input="/transactions/sampleCollectionAdvanced.jsp">
+			<forward name="NEW" path="/transactions/sampleCollectionAdvanced.jsp" />
+			<forward name="PRINT"
+				path="/transactions/invSampleNoLabelBarcodeHTMLPrinting.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+		
+		<!-- Added by abhijat -->
+		<action path="/investigationChatBot"
+			type="new_investigation.chatbot.controller.action.InvestigationChatBotACT"
+			name="investigationChatBotFB" validate="false" scope="request"
+			parameter="hmode" input="/ChatBot/investigationChatBot.jsp">
+			<forward name="NEW" path="/ChatBot/investigationChatBot.jsp" />	
+			</action>
+
+		<!-- Added by Prashant -->
+	    <action path="/invListingReportRdNew"
+			  type="new_investigation.transactions.controller.action.invListingReportRdNewACT"
+                 name="invListingReportNewFB" validate="false" scope="request"
+                 parameter="hmode"
+                 input="/transactions/invListingReportRdNew.jsp">
+            <forward name="NEW" path="/transactions/invListingReportRdNew.jsp" />
+            <forward name="GETDATEWISELISTINGRD" path="/invListingReportRdNew.cnt"/>
+            <forward name="NEW_AJAX_CLIENT" path="/invListingReportNew.cnt"/>
+            <forward name="NEW_AJAX_SERVER" path="/invListingReportNew.cnt"/>
+        </action>
+		
+		
+			
+		<action path="/invResultReportPrintingNew"
+			type="new_investigation.transactions.controller.action.InvResultReportPrintingNewACT"
+			name="InvResultReportPrintingNewFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invResultReportPrintingNew.jsp">
+			<forward name="NEW" path="/transactions/invResultReportPrintingNew.jsp" />
+			<forward name="CANCEL" path="/transactions/invResultReportPrintingNew.jsp"
+				redirect="true" />
+		</action>
+		
+				
+		<action path="/barcodee"
+			type="new_investigation.transactions.controller.action.Barcodee"
+			name="SampleCollectionFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/barcodee.jsp">
+			<forward name="NEW" path="/transactions/barcodee.jsp" />
+			<forward name="CANCEL" path="/transactions/barcodee.jsp"
+				redirect="true" />
+		</action>
+		
+		
+		
+		<action path="/onlineRequisitionRaisingreq"
+			type="new_investigation.transactions.controller.action.OnlineReqRaisingreqACT"
+			name="InvestigationRaisingDtlreqFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/onlineRequisitionRaisingreq.jsp">
+			<forward name="NEW" path="/transactions/onlineRequisitionRaisingreq.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+				<!-- <forward name="GOTOADDENDUM"
+				path="/invReportAddendum.cnt?istrue" redirect="true" /> -->
+		</action>
+		
+		
+				<action path="/taskTracker"
+			type="new_investigation.taskTracker.transactions.controller.action.TaskTrackerACT"
+			name="TaskTrackerFB" validate="false" scope="request"
+			parameter="hmode" input="/taskTracker/jsp/TaskTrackerLogin.jsp">
+			<forward name="NEW" path="/taskTracker/jsp/TaskTrackerLogin.jsp"/>
+			<forward name="LOGIN" path="/taskTracker/jsp/TaskViewPage.jsp"/>
+			<forward name="ADDTASK" path="/taskTracker/jsp/AddTask.jsp"	/>
+			<forward name="CANCEL" path="/taskTracker/jsp/TaskViewPage.jsp"	 />
+			<forward name="MODIFY" path="/taskTracker/jsp/taskModify.jsp"  />	
+			<forward name="ADDACTIVITYPAGE" path="/taskTracker/jsp/AddActivity.jsp"  />	
+			<forward name="GETALLACTIVITY" path="/taskTracker/jsp/ActivityViewPage.jsp"  />	
+
+					
+			
+		</action>
+		
+		
+		<action path="/taskTrackerModify"
+			type="new_investigation.taskTracker.transactions.controller.action.TaskTrackerACT"
+			name="TaskTrackerFB" validate="false" scope="request"
+			parameter="hmode" input="/taskTracker/jsp/taskModify.jsp">
+			<forward name="NEW" path="/taskTracker/jsp/taskModify.jsp"/>
+			<forward name="ADDTASK" path="/taskTrackerAdd.cnt"	/>
+			<forward name="CANCEL" path="/taskTracker/jsp/TaskViewPage.jsp"	redirect="true" />
+				
+		</action>
+		<action path="/taskTrackerAdd"
+			type="new_investigation.taskTracker.transactions.controller.action.TaskTrackerACT"
+			name="TaskTrackerFB" validate="false" scope="request"
+			parameter="hmode" input="/taskTracker/jsp/AddTask.jsp">
+			<forward name="NEW" path="/taskTracker/jsp/AddTask.jsp"/>
+			
+			<forward name="CANCEL" path="/taskTracker/jsp/TaskViewPage.jsp"	 />
+				
+		</action>
+		
+		
+		<action path="/onlineRequisitionRaisingprevreqNEW"
+			type="new_investigation.transactions.controller.action.OnlineReqRaisingPrevreqNEWACT"
+			name="InvestigationRaisingDtlreqFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/onlineRequisitionRaisingprevNEWreq.jsp">
+			<forward name="NEW" path="/transactions/onlineRequisitionRaisingprevNEWreq.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+				<!-- <forward name="GOTOADDENDUM"
+				path="/invReportAddendum.cnt?istrue" redirect="true" /> -->
+		</action>
+		
+		
+		<action path="/pidform"
+			type="new_investigation.transactions.controller.action.InvpidACT"
+			name="InvpidFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invpid.jsp">
+			<forward name="NEW" path="/transactions/invpid.jsp" />
+			<forward name="CANCEL" path="/transactions/invpid.jsp"
+				redirect="true" />
+		</action>
+		
+		
+		
+		<!--Added by Prachi Tiwari on 13-03-2020 for New Sample collection Process  -->
+		
+				<action path="/NewsampleCollection"  
+					type="new_investigation.transactions.controller.action.NEWSampleCollectionACT"
+					name="SampleCollectionFB" validate="false" scope="request" parameter="hmode"
+					input="/transactions/NewSampleCollection.jsp">
+					<forward name="NEW" path="/transactions/NewSampleCollection.jsp" />
+					<forward name="PRINT"
+						path="/transactions/invSampleNoLabelBarcodeHTMLPrinting.jsp" />
+					<forward name="CANCEL" path="../startup/initPage.jsp"
+						redirect="true" />
+				</action>
+				
+			<!--Prachi End  -->
+		<action path="/sampleCollection21"
+				type="new_investigation.transactions.controller.action.NEWSampleCollectionACT"
+				name="SampleCollectionFB" validate="false" scope="request" parameter="hmode"
+				input="/transactions/NewSampleCollection.jsp">
+			<forward name="NEW" path="/transactions/NewSampleCollection.jsp" />
+			<forward name="PRINT" path="/transactions/invSampleNoLabelBarcodeHTMLPrinting.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/invMachineResultEntryResp"
+				type="new_investigation.transactions.controller.action.invMachineResultEntryActResp"
+				name="machineResultEntryFB" validate="false" scope="request"
+				parameter="hmode" input="/transactions/invMachineResultEntryResp.jsp">
+			<forward name="NEW"    path="/transactions/invMachineResultEntryResp.jsp" />
+			<forward name="OLDVALIDATION"    path="/transactions/invMachineResultEntryResp.jsp" />
+			<forward name="CANCEL" path="/transactions/invMachineResultEntryResp.jsp" redirect="true" />
+			<forward name="GETDETAILSSESSION" path="/invResultValidationResp" />
+		</action>
+		
+		<action path="/invResultEntryResp"
+				type="new_investigation.transactions.controller.action.InvResultEntryRespACT"
+				name="InvResultValidationRespFB" validate="false" scope="request" parameter="hmode"
+				input="/transactions/invResultEntryResp.jsp">
+			<forward name="NEW" path="/transactions/invResultEntryResp.jsp" />
+			<forward name="OLDENTRY"    path="/transactions/invResultEntryTemplateTile2.jsp" />
+			<forward name="CANCEL" path="/transactions/invResultEntryResp.jsp" redirect="true" />
+			<forward name="GETDETAILSSESSION" path="/invResultEntryResp.cnt" />
+			<forward name="GETPATDTL" path="/investigationReqRaising.cnt"  />
+		</action>
+
+		<action path="/invResultValidationResp"
+				type="new_investigation.transactions.controller.action.InvResultValidationRespACT"
+				name="InvResultValidationRespFB" validate="false" scope="request"
+				parameter="hmode" input="/transactions/invResultValidationResp.jsp">
+			<forward name="NEW"    path="/transactions/invResultValidationResp.jsp" />
+			<forward name="OLDVALIDATION"    path="/transactions/invResultValidationTemplateTile2.jsp" />
+			<forward name="CANCEL" path="/transactions/invResultValidationResp.jsp" redirect="true" />
+			<forward name="GETDETAILSSESSION" path="/invResultValidationResp" />
+		</action>
+
+		<action path="/invResultReValidationResp"
+				type="new_investigation.transactions.controller.action.InvResultReValidationRespACT"
+				name="InvResultValidationRespFB" validate="false" scope="request"
+				parameter="hmode" input="/transactions/invResultReValidationResp.jsp">
+			<forward name="NEW" path="/transactions/invResultReValidationResp.jsp" />
+			<forward name="OLDREVALIDATION" path="/transactions/invResultReValidationTemplateTile2.jsp" />
+			<forward name="CANCEL" path="/transactions/invResultReValidationResp.jsp" redirect="true" />
+			<forward name="GETDETAILSSESSION" path="/invResultReValidationResp" />
+		</action>
+		
+		
+		<action path="/invReportPrintingResp"
+				type="new_investigation.transactions.controller.action.InvResultReportPrintinggRespACT"
+				name="InvResultReportPrintingFB" validate="false" scope="request"
+				parameter="hmode" input="/transactions/invReportPrintingResp.jsp">
+			<forward name="NEW" path="/transactions/invReportPrintingResp.jsp" />
+			<forward name="OLDREVALIDATION" path="/transactions/invReportPrintingResp.jsp" />
+			<forward name="CANCEL" path="/transactions/invReportPrintingResp.jsp" redirect="true" />
+			<forward name="GETDETAILSSESSION" path="/invReportPrintingResp" />
+		</action>
+		
+		<action path="/invPatientAcceptanceResp"
+			type="new_investigation.transactions.controller.action.InvPatientAcceptanceRespACT"
+			name="InvPatientAcceptanceRespFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invPatientAcceptanceResp.jsp">
+			<forward name="NEW" path="/transactions/invPatientAcceptanceResp.jsp" />
+			<forward name="OLDPATACCEPTANCE" path="/transactions/invPatientAcceptanceResp2.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+		
+		<action path="/invPatientAcceptanceResp2"
+			type="new_investigation.transactions.controller.action.InvPatientAcceptanceRespACT"
+			name="InvPatientAcceptanceRespFB" validate="false" scope="request"
+			parameter="hmode" input="/transactions/invPatientAcceptanceResp2.jsp">
+			<forward name="NEW" path="/transactions/invPatientAcceptanceResp2.jsp" />
+			<forward name="CANCEL" path="../startup/initPage.jsp"
+				redirect="true" />
+		</action>
+		
+		
+	</action-mappings>
+
+
+		
+
+	<controller>
+		<set-property property="processorClass"
+			value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="new_investigation.investigationResourceBundle">
+	</message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/new_investigation-tiles-def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+	<!-- **************** scheduler Plugin which schedule jobs*********************** 
+		The plugin configuration has two properties used for initialization. @startOnLoad 
+		specifies whether or not we want to start the scheduler immediately when 
+		the container starts and @startupDelay is used to specify how long before 
+		the code will attempt to start the scheduler. -->
+
+
+	<!-- <plug-in className="hisglobal.presentation.SchedulerDonorPlugIn"> <set-property 
+		property="startOnLoad" value="false" /> <set-property property="startupDelay" 
+		value="0" /> </plug-in> -->
+
+	<!-- **************************************************************************** -->
+</struts-config>

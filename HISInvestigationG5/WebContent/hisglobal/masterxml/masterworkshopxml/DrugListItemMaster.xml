@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Drug List Master'>
+		<common-values>
+			<master-name>DrugListItemMaster</master-name>
+			<master-title>Drug List Item Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Drug List Item Master</tableHeading>
+			
+			<list-table>HGBT_DRUGLIST_ITEM_MST</list-table>
+			
+			<columns>
+				<column>Drug List Name</column>
+				<column>Drug Name</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>B.HGSTR_DRUGLIST_NAME</field> 
+					<field>C.HSTSTR_ITEM_NAME</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HGNUM_DRUGLIST_ID</field>
+					<field>A.HSTNUM_ITEM_ID</field>
+					<field>A.HGNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HGBT_DRUGLIST_ITEM_MST</table>
+					<table alias='B'>HGBT_DRUG_LIST_MST</table>
+					<table alias='C'>HSTT_DRUGBRAND_MST</table>
+				</tables>
+				
+				<condition>
+					<general> A.HGNUM_DRUGLIST_ID=B.HGNUM_DRUGLIST_ID AND A.GNUM_HOSPITAL_CODE = B.GNUM_HOSPITAL_CODE AND A.HSTNUM_ITEM_ID=C.HSTNUM_ITEMBRAND_ID AND A.GNUM_HOSPITAL_CODE = C.GNUM_HOSPITAL_CODE AND A.GNUM_HOSPITAL_CODE=100 AND a.gnum_isvalid = B.GNUM_ISVALID and A.GNUM_ISVALID = C.GNUM_ISVALID and </general>
+					<general-inactive> A.HGNUM_DRUGLIST_ID=B.HGNUM_DRUGLIST_ID AND A.GNUM_HOSPITAL_CODE = B.GNUM_HOSPITAL_CODE AND A.HSTNUM_ITEM_ID=C.HSTNUM_ITEMBRAND_ID AND A.GNUM_HOSPITAL_CODE = C.GNUM_HOSPITAL_CODE AND A.GNUM_HOSPITAL_CODE=100 AND a.gnum_isvalid = B.GNUM_ISVALID and A.GNUM_ISVALID = C.GNUM_ISVALID and </general-inactive>
+					<isvalid-field> A.GNUM_ISVALID </isvalid-field>
+					<orderby> ORDER BY B.HGSTR_DRUGLIST_NAME </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/opd/master/drugListItemMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/drugListItemMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

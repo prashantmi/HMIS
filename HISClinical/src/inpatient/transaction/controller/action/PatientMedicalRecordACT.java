@@ -1,0 +1,27 @@
+package inpatient.transaction.controller.action;
+
+import inpatient.transaction.controller.fb.PatientMedicalRecordFB;
+import inpatient.transaction.controller.utl.PatientMedicalRecordUTL;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
+
+public class PatientMedicalRecordACT extends DispatchAction
+{
+	public ActionForward unspecified(ActionMapping mapping,ActionForm form,HttpServletRequest request,HttpServletResponse response)
+	{
+		return this.NEW(mapping,form,request,response);		
+	}
+	
+	public ActionForward NEW(ActionMapping mapping,ActionForm form,HttpServletRequest request,HttpServletResponse response)
+	{
+		PatientMedicalRecordFB fb=(PatientMedicalRecordFB)form;
+		PatientMedicalRecordUTL.getPatientChronicNAllergy(fb,request);
+		return mapping.findForward("NEW");
+	}
+}

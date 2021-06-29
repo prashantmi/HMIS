@@ -1,0 +1,1133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ 	<form-beans>    
+    <form-bean name="commonTransactionFB" type="investigation.controller.transaction.fb.CommonActionFB"/>
+     <form-bean name="PortalNewRegistrationFB" type="portalregistration.controller.fb.PortalNewRegistrationFB"/>
+     <form-bean name="RequisitionRaisingFB" type="investigation.controller.transaction.fb.RequisitionRaisingFB"/>
+     <form-bean name="RequisitionRaisingOutsideSampleFB" type="investigation.controller.transaction.fb.RequisitionRaisingOutsideSampleFB"/>
+     <form-bean name="TestProfileProcedureFB" type="investigation.controller.transaction.fb.TestProfileProcedureFB"/>
+     <form-bean name="OpenEpisodeFB" type="investigation.controller.transaction.fb.OpenEpisodeFB"/>
+     <form-bean name="RequisitionGroupMasterFB" type="investigation.controller.master.fb.RequisitionGroupMasterFB"/>
+     <form-bean name="RequisitionListingFB" type="investigation.controller.transaction.fb.RequisitionListingFB"/>
+     <form-bean name="SampleCollectionFB" type="investigation.controller.transaction.fb.SampleCollectionFB"/>
+     <form-bean name="PackingListingFB" type="investigation.controller.transaction.fb.PackingListingFB"/>
+      <form-bean name="SampleAcceptanceForEquipmentFB" type="investigation.controller.transaction.fb.SampleAcceptanceForEquipmentFB"/>
+     <form-bean name="SampleAcceptanceFB" type="investigation.controller.transaction.fb.SampleAcceptanceFB"/>
+     <form-bean name="PackingListGenerationFB" type="investigation.controller.transaction.fb.PackingListGenerationFB"/>
+     <form-bean name="ResultEntryFB" type="investigation.controller.transaction.fb.ResultEntryFB"/>
+     <form-bean name="ResultValidationFB" type="investigation.controller.transaction.fb.ResultValidationFB"/>
+     <form-bean name="SlideBasedTestFB" type="investigation.controller.transaction.fb.SlideBasedTestFB"/>
+     <form-bean name="SlideBasedTestUpdatedFB" type="investigation.controller.transaction.fb.SlideBasedTestUpdatedFB"/>
+     <form-bean name="SlideDiscardFB" type="investigation.controller.transaction.fb.SlideDiscardFB"/>
+     <form-bean name="SlideIssueReturnFB" type="investigation.controller.transaction.fb.SlideIssueReturnFB"/>
+     <form-bean name="SlideRequestFB" type="investigation.controller.transaction.fb.SlideRequestFB"/>
+     <form-bean name="RequisitionStatusFB" type="investigation.controller.transaction.fb.RequisitionStatusFB"/> 
+    <form-bean name="PatientAcceptanceFB" type="investigation.controller.transaction.fb.PatientAcceptanceFB"/>
+    <form-bean name="PatAcceptanceMandInfoFB" type="investigation.controller.transaction.fb.InvPatAcceptance_MandInfoFB"/>
+    <form-bean name="PatAcceptanceOverridingFB" type="investigation.controller.transaction.fb.PatAcceptanceOverridingFB"/>
+      <form-bean name="MultiSessionDetailFB" type="investigation.controller.transaction.fb.MultiSessionDetailFB"/>
+	  <form-bean name="ResultReValidationFB" type="investigation.controller.transaction.fb.ResultReValidationFB"/>
+	  <form-bean name="ResultModificationFB" type="investigation.controller.transaction.fb.ResultModificationFB"/>	
+     <form-bean name="ResultPrintingFB" type="investigation.controller.transaction.fb.ResultPrintingFB"/>
+
+     <form-bean name="FilmUsedFB" type="investigation.controller.transaction.fb.FilmUsedFB"/>
+     <form-bean name="FilmIssueFB" type="investigation.controller.transaction.fb.FilmIssueFB"/>
+     <form-bean name="SampleOverridingFB" type="investigation.controller.transaction.fb.SampleOverridingFB"/>
+     <form-bean name="DuplicateSampleLabelFB" type="investigation.controller.transaction.fb.DuplicateSampleLabelFB"/>
+
+	 <form-bean name="RequisitionValidationFB" type="investigation.controller.transaction.fb.RequisitionValidationFB"/>
+	 <form-bean name="ResultViewingFB" type="investigation.controller.transaction.fb.ResultViewingFB"/>
+	 <form-bean name="ResultDuplicatePrintingFB" type="investigation.controller.transaction.fb.ResultDuplicatePrintingFB"/>
+	 <form-bean name="TestCancellationFB" type="investigation.controller.transaction.fb.TestCancellationFB"/>
+     <form-bean name="GetAppointmentFB" type="investigation.controller.transaction.fb.GetAppointmentFB"/>
+
+     <form-bean name="BarcodeReadingFB" type="investigation.controller.transaction.fb.BarcodeReadingFB"/>
+	 <form-bean name="LabRegisterFB" type="investigation.controller.transaction.fb.LabRegisterFB"/>
+	<form-bean name="BarcodeReadingFB" type="investigation.controller.transaction.fb.BarcodeReadingFB"/>
+	 <form-bean name="PatientTransferFB" type="investigation.controller.transaction.fb.PatientTransferFB"/>
+	 <form-bean name="CannedMacroFB" type="investigation.controller.transaction.fb.CannedMacroFB"/>
+	 <form-bean name="SampleTransferFB" type="investigation.controller.transaction.fb.SampleTransferFB"/>
+	  <form-bean name="PatientFileFB" type="investigation.controller.transaction.fb.PatientFileFB"/>
+	 <form-bean name="PatientDiagnosisFB" type="investigation.controller.transaction.fb.PatientDiagnosisFB"/>
+	 <form-bean name="uploadForm" type="investigation.controller.transaction.fb.FileUploadFB"/>
+	  <form-bean name="SampleReqAssocitionFB" type="investigation.controller.transaction.fb.SampleReqAssocitionFB" />
+	<form-bean name="ResultEntryValidationFB" type="investigation.controller.transaction.fb.ResultEntryValidationFB"/>
+	<form-bean name="SampleCollectionAndAcceptanceFB" type="investigation.controller.transaction.fb.SampleCollectionAndAcceptanceFB"/>
+	 <form-bean name="SampleCollectionAndAcceptanceSaveModeFB" type="investigation.controller.transaction.fb.SampleCollectionAndAcceptanceSaveModeFB"/>
+	<form-bean name="RequisitionFormFormBean" type="investigation.controller.transaction.fb.InvRequisitionFormFB" />
+	<form-bean name="SampleFormFormBean" type="investigation.controller.transaction.fb.SampleCollectionFormFB" />
+	<form-bean name="SearchFunctionalityFB" type="investigation.controller.transaction.fb.SearchFunctionalityFB" />
+	<form-bean name="RedesignExistingTemplateFB" type="investigation.controller.transaction.fb.RedesignExistingTemplateFB" />
+	<form-bean name="RadiologicalFindingsFB" type="investigation.controller.transaction.fb.RadiologicalFindingsFB" />
+	<form-bean name="ResultEntryRequisitionRaisingFB" type="investigation.controller.transaction.fb.RequisitionRaisingFB" />
+	 <form-bean name="SampleCancelledValidationFB" type="investigation.controller.transaction.fb.InvSampleCancelledValidationFB"/>
+	  <form-bean name="RejectedPatientValidationFB" type="investigation.controller.transaction.fb.InvRejectedPatientValidationFB"/>
+	  <form-bean name="OrganismAntibioticsMappingFB" type="investigation.controller.transaction.fb.OrganismAntibioticsMappingFB"/>
+	  <form-bean name="PdfPrintingFB" type="investigation.controller.transaction.fb.PdfPrintingFB"/>
+	  <form-bean name="OtherFunctionalityFB" type="investigation.controller.transaction.fb.OtherFunctionalityFB"/>
+	  <form-bean name="PatientDataInterpretationFB" type="investigation.controller.transaction.fb.PatientDataInterpretationFB" />
+	  <form-bean name="IPDResultViewingFB" type="investigation.controller.transaction.fb.IPDResultViewingFB"/>
+	  <form-bean name="AllLabTestRegisterFB" type="investigation.controller.transaction.fb.AllLabTestRegisterFB"/>
+    
+      <form-bean name="TestItemConsumeFB" type="investigation.controller.transaction.fb.TestItemConsumeFB"/>
+      <form-bean name="RequisitionRaisingWithRFFB" type="investigation.controller.transaction.fb.RequisitionRaisingWithRFFB"/>
+	   
+	  <form-bean name="SearchRequisitionFormFB" type="investigation.controller.transaction.fb.SearchRequisitionFormFB"/>
+	  <form-bean name="TestProfileProcedureRFFB" type="investigation.controller.transaction.fb.TestProfileProcedureRFFB"/>
+	  <form-bean name="InvestigationReportLayoutDesignFB" type="investigation.controller.transaction.fb.InvestigationReportLayoutDesignFB"/>
+	  <form-bean name="CreateNewTemplateForTestGroupFB" type="investigation.controller.transaction.fb.CreateNewTemplateForTestGroupFB" />
+	  <form-bean name="PatExaminationComplainFB" type="investigation.controller.transaction.fb.PatExaminationComplainFB"/>
+	   
+	  <form-bean name="InvestigationConfigurationReLoaderFB" type="org.apache.struts.action.DynaActionForm">
+	   		<form-property name="hmode" type="java.lang.String"/><form-property name="selectedValue" type="java.lang.String"/>
+	   </form-bean>
+	  <form-bean name="InvestigationConfigurationUpLoaderFB" type="investigation.controller.transaction.fb.InvestigationConfigurationUpLoaderFB"/>
+	  <form-bean name="InvestigationConfigurationDownLoaderFB" type="investigation.controller.transaction.fb.InvestigationConfiguratorDownLoaderFB"/>
+	  <form-bean name="DirectSampleAcceptanceFB" type="investigation.controller.transaction.fb.DirectSampleAcceptanceFB"/>
+	  <form-bean name="SlideBasedTestUpdatedFBPOPUP" type="investigation.controller.transaction.fb.SlideBasedTestUpdatedFB"/>
+	  <form-bean name="RequisitionRaisingSpeedFB" type="investigation.controller.transaction.fb.RequisitionRaisingFB"/>
+	  <form-bean name="TestProfileProcedureSpeedFB" type="investigation.controller.transaction.fb.TestProfileProcedureSpeedFB"/>
+	  <form-bean name="ADDTestProfileProcedureFB" type="investigation.controller.transaction.fb.ADDTestProfileProcedureFB"/>
+	  <form-bean name="BookmarkTestOrGroupFB" type="investigation.controller.transaction.fb.BookMarkTestOrGroupFB"/>
+	  <form-bean name="BookMarkingFB" type="investigation.controller.transaction.fb.BookMarkingFB"/>
+	  <form-bean name="NewSampleRelatedProcessFB" type="investigation.controller.transaction.fb.NewSampleRelatedProcessFB"/>
+	  <form-bean name="NewSampleRelatedSearchProcessFB" type="investigation.controller.transaction.fb.NewSampleRelatedSearchProcessFB"/>
+
+		
+		<form-bean name="SampleAcceptanceOfflineFB" type="investigation.controller.transaction.fb.SampleAcceptanceOfflineFB"/>
+		
+		<form-bean name="BiochemistryLabRegisterFB" type="investigation.controller.transaction.fb.BiochemistryLabRegisterFB"/>
+    
+     </form-beans>          
+
+ <action-mappings> 
+ <action  path="/commonaction" 
+    type="investigation.controller.transaction.action.commonACTION"
+    name="commonTransactionFB"
+    validate="false"
+    scope="request"
+    parameter="mode"
+    input="/registration/transaction/noMode.jsp">    
+    <forward name="UNSPECIFIEDMODE" path="/noMode.jsp" redirect="true"/>  	
+	<forward name="OPENEPISODELISTING" path="/OpenEpisodeList" redirect="true"/>
+	<forward name="REQUISITIONRAISING" path="/requisitionRaising" redirect="true"/>
+	<forward name="OUTPATIENTREQUISITIONRAISING" path="/outpatientrequisitionRaising" redirect="true"/>
+	<forward name="OUTSIDESAMPLEREQUISITIONRAISING" path="/outsidesamplerequisitionRaising" redirect="true"/>
+	<forward name="REQUISITIONLISTING" path="/requisitionListing" redirect="true"/>
+	<forward name="SAMPLECOLLECTION" path="/sampleCollection" redirect="true"/>
+	<forward name="PACKINGLISTGENERATION" path="/packingListGeneration" redirect="true"/>
+	<forward name="PACKINGLISTGENERATIONREPORT" path="/packingListGenerationReport" redirect="true"/>
+	<forward name="PACKINGLISTING" path="/packingNoListing" redirect="true"/>
+	<forward name="PACKINGLISTINGFOREQUIPMENT" path="/packingNoListing" redirect="true"/>
+	<forward name="SAMPLEACCEPTANCEFOREQUIPMENT" path="/sampleAcceptanceForEquipment" redirect="true"/>
+	<forward name="SAMPLEACCEPTANCE" path="/sampleAcceptance" redirect="true"/>
+	<forward name="SLIDEBASEDTEST" path="/slideBasedTest" redirect="true"/>
+	<forward name="SLIDEBASEDTEST_UPDATED" path="/slideBasedTestUpdated" redirect="true"/>
+	<forward name="SLIDEDISCARD" path="/slideDiscard" redirect="true"/>
+	<forward name="SLIDEISSUERETURN" path="/slideIssueReturn" redirect="true"/>
+	<forward name="SLIDEREQUEST" path="/slideRequest" redirect="true"/>
+	<forward name="REQUISITIONSTATUS" path="/requisitionStatus" redirect="true"/>
+    <forward name="PATIENTACCEPTANCE" path="/patientAcceptance" redirect="true"/>
+    <forward name="PATACCEPTANCEMANDATORY" path="/patAcceptMandatoryInfo" redirect="true"/>
+    <forward name="PATACCEPTANCEOVERRIDING" path="/patAcceptanceOverriding" redirect="true"/>
+    <forward name="RESULTENTRY" path="/resultEntry" redirect="true"/>
+	<forward name="RESULTVALIDATION" path="/resultValidation" redirect="true"/>
+	<forward name="RESULTRETVALIDATION" path="/resultReValidation" redirect="true"/>
+	<forward name="RESULTMODIFICATION" path="/resultModification" redirect="true"/>
+	<forward name="RESULTPRINTING" path="/resultPrinting" redirect="true"/>
+	<forward name="RESULTPRINTINGREPORT" path="/resultPrintingReport" redirect="true"/>
+	<forward name="FILMUSED" path="/filmUsed" redirect="true"/>
+	<forward name="FILMISSUE" path="/filmIssue" redirect="true"/>
+	<forward name="FILMRETURN" path="/filmReturn" redirect="true"/>
+	<forward name="SAMPLEOVERRIDING" path="/sampleoverriding" redirect="true"/>
+	<forward name="DUPLICATESAMPLELABEL" path="/duplicatSampleLabel" redirect="true"/>
+	<forward name="REQRAISINGSAMPLECOLLECTION" path="/OpenEpisodeList" redirect="true"/>
+	<forward name="REQUISITIONVALIDATION" path="/requisitionValidation" redirect="true"/>
+	<forward name="RESULTVIEWING" path="/resultViewing" redirect="true"/>
+	<forward name="RESULTVIEWINGREPORT" path="/resultViewingReport" redirect="true"/>
+	<forward name="RESULTDUPLICATEPRINTING" path="/resultDuplicatePrinting" redirect="true"/>
+	<forward name="RESULTDUPLICATEPRINTINGREPORT" path="/resultDuplicatePrintingReport" redirect="true"/>
+	<forward name="TESTCANCELLATION" path="/testCancellation" redirect="true"/>
+	<forward name="GETAPPOINTMENT" path="/getAppointment" redirect="true"/>
+	<forward name="BARCODEREADING" path="/barcodeReading" redirect="true"/>
+	<forward name="LABREGISTERINV" path="/labRegisterInv" redirect="true"/>
+
+	<forward name="PATIENTTRANSFER" path="/patientTransfer" redirect="true"/>
+	<forward name="SAMPLETRANSFER" path="/sampleTransfer" redirect="true"/>
+	<forward name="PATIENTFILE" path="/patientFile" redirect="true"/>
+	<forward name="SAMPLENUMBERASSOCIATION" path="/sampleReqAssocition" redirect="true"/>
+	<forward name="RESULTENTRYVALIDATION" path="/resultEntryValidation" redirect="true"/>
+	<forward name="SAMPLECOLLECTIONANDACCEPTANCE" path="/sampleCollectionAndAcceptance" redirect="true"/>
+	<forward name="SAMPLECOLLECTIONACCEPTANCESAVEMODE" path="/sampleCollectionAndAcceptanceSaveMode" redirect="true"/>
+	<forward name="REQUISITIONFORM" path="/requisitionFormAction" redirect="true"/>
+	<forward name="SAMPLEFORM" path="/sampleFormAction" redirect="true"/>
+	<forward name="REDESIGNTEMPLATE" path="/redesignTemplate" redirect="true"/>
+	<forward name="RESULTENTRYREQUISITIONRAISING" path="/resultEntryRequisitionRaising" redirect="true"/>
+	<forward name="SAMPLECANCELLEDVALIDATION" path="/sampleCancelledValidation" redirect="true"/>
+	<forward name="REJECTEDPATIENTVALIDATION" path="/rejectedPatientValidation" redirect="true"/>
+	<forward name="ORGANISMANTIBIOTIC" path="/organismAntibiotics" redirect="true"/>
+	<forward name="PDFPRINTING" path="/pdfPrinting" redirect="true"/>
+	<forward name="PATIENTDATAINTERPRETATION" path="/patientDataInterpretation" redirect="true"/>
+	<forward name="IPDRESULTVIEWING" path="/ipdResultViewing" redirect="true"/>
+	<forward name="ALLLABTESTREGISTER" path="/allLabTestRegister" redirect="true"/>
+	<forward name="REGISTERPRINTINGREPORT" path="/registerPrintingReport" redirect="true"/>
+	<forward name="REGISTERCANCELPRINTING" path="/cancelRegisterPrinting" redirect="true"/>
+	<forward name="TESTCONSUME" path="/testConsume" redirect="true"/>
+	<forward name="REQUISITIONRAISINGWITHREQUISITIONFORM" path="/requisitionRaisingWithRequisitionForm" redirect="true"/>
+	<forward name="REDESIGNPRINTINGTEMPLATE" path="/redesignPrintTemplate" redirect="true"/>
+	<forward name="INVESTIGATIONCONFIGURATOR" path="/investigationConfiguratorTemplate" redirect="true"/>
+	<forward name="OPENEPISODELISTINGRF" path="/OpenEpisodeListRF" redirect="true"/>
+	<forward name="DIRECTSAMPLEACCEPTANCE" path="/directSampleAcceptance" redirect="true"/>
+	<forward name="CREATENEWTEMPLATEFORTESTGROUP" path="/createNewTemplateForTestGroup" redirect="true"/>
+	<forward name="OPENEPISODELISTINGSPEED" path="/OpenEpisodeList" redirect="true"/>
+	<forward name="NEWSAMPLERELATEDPROCESS" path="/sampleRelatedProcess" redirect="true"/>
+	
+	<forward name="SAMPLEACCEPTANCEOFFLINE" path="/sampleAcceptanceOffline" redirect="true"/>
+	<forward name="BIOCHEMISTRYLABREGISTER" path="/biochemistryLabRegister" redirect="true"/>
+</action>
+
+<action  path="transaction/slideRequest"
+    type="investigation.controller.transaction.action.SlideRequestACTION"
+    name="SlideRequestFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/slideRequestTile.jsp">
+ 	<forward name="SLIDEREQUEST" path="/transaction/slideRequestTile.jsp"/>  
+ 	</action>
+
+<action  path="/transaction/slideIssueReturn"
+    type="investigation.controller.transaction.action.SlideIssueReturnACTION"
+    name="SlideIssueReturnFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSlideIssueReturnTiles.jsp">
+ 	<forward name="SLIDEISSUERETURN" path="/transaction/investigationSlideIssueReturnTiles.jsp"/>  
+ 	</action>
+
+<action  path="/transaction/slideDiscard"
+    type="investigation.controller.transaction.action.SlideDiscardACTION"
+    name="SlideDiscardFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSlideBasedTestTile.jsp">
+ 	<forward name="SLIDEDISCARD" path="/transaction/investigationSlideDiscardTile.jsp"/>  
+ 	</action>
+
+
+<action  path="/transaction/slideBasedTest"
+    type="investigation.controller.transaction.action.SlideBasedTestACTION"
+    name="SlideBasedTestFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSlideBasedTestTile.jsp">
+ 	<forward name="SLIDEBASEDTEST" path="/transaction/investigationSlideBasedTestTile.jsp"/>  
+ 	<forward name="GROSSINGDETAILS" path="/transaction/slideBasedTestGrossingDetailTiles.jsp"/>
+ 	<forward name="GROSSINGDETAILS" path="/transaction/slideBasedTestGrossingDetailTiles.jsp"/> 
+ 	<forward name="GROSSEDSLIDECOMPLETED" path="/transaction/slideBasedTestGrossingDetailTiles.jsp"/> 
+ 	<forward name="GROSSEDSLIDEDETAIL" path="/transaction/grossedSlideDetailTiles.jsp"/>
+ 	<forward name="PAKINGLISTREPORT" path="/transaction/investigationPackinlListReport.jsp"/>
+ 	<forward name="SLIDEDETAIL" path="/transaction/investigationSlideDetailTile.jsp"/>  		
+</action>
+
+
+<action  path="/transaction/slideBasedTestUpdated"
+    type="investigation.controller.transaction.action.SlideBasedTestUpdatedACTION"
+    name="SlideBasedTestUpdatedFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSlideBasedUpdatedTestTile.jsp">
+ 	<forward name="SLIDEBASEDTEST" path="/transaction/investigationSlideBasedUpdatedTestTile.jsp"/>  
+ 	<forward name="GROSSINGDETAILS" path="/transaction/slideBasedTestUpdatedGrossingDetailTiles.jsp"/> 	
+ 	<forward name="PROCESSINGDETAILS" path="/transaction/slideBasedTestUpdatedProcessingDetailTiles.jsp"/> 
+ 	<forward name="CUTTINGDETAILS" path="/transaction/slideBasedTestUpdatedCuttingDetailTiles.jsp"/>
+ 	<forward name="STAININGDETAIL" path="/transaction/slideBasedTestUpdatedStaningttingDetailTiles.jsp"/>
+ 	<forward name="REPOTINGDETAILS" path="/transaction/slideBasedTestUpdatedReportingDetailTiles.jsp"/>
+ 	<forward name="GROSSEDSLIDECOMPLETED" path="/transaction/slideBasedTestUpdatedStaningttingDetailTiles.jsp"/>
+ 	<forward name="GROSSEDSLIDEREPORTCOMPLETED" path="/transaction/slideBasedTestUpdatedReportingDetailTiles.jsp"/>
+ 	<forward name="GROSSEDSLIDE_FOR_REPORTING_COMPLETED" path="/transaction/slideBasedTestUpdatedReportingDetailTiles.jsp"/> 
+ 	<forward name="GROSSEDSLIDEDETAIL" path="/transaction/grossedSlideUpdatedDetailTiles.jsp"/>
+ 	<forward name="GROSSEDSLIDEDETAIL_FORREPORTING" path="/transaction/grossedSlide_ForReporting_UpdatedDetailTiles.jsp"/>
+ 	<forward name="PAKINGLISTREPORT" path="/transaction/investigationPackinlListUpdatedReport.jsp"/>
+ 	<forward name="SLIDEDETAIL" path="/transaction/investigationSlideUpdatedDetailTile.jsp"/>
+ 	<forward name="BLOCKSLIDEDETAILLIST" path="/transaction/investigationBlockSlideUpdatedDetailTile.jsp"/> 	
+ 	<forward name="SPECIALSTAINDETAIL" path="/transaction/investigationSlideUpdatedDetailSpecialStainTile.jsp"/>
+ 	  		
+</action> 	  		
+<action  path="/transaction/GrossSlidePopUpAction"
+    type="investigation.controller.transaction.action.GrossSlidePopUpAction"
+    name="SlideBasedTestUpdatedFBPOPUP"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSlideBasedUpdatedTestTile.jsp">
+ 	<forward name="SLIDEBASEDTEST" path="/transaction/investigationSlideBasedUpdatedTestTile.jsp"/>  
+ 	<forward name="GROSSINGDETAILS" path="/transaction/slideBasedTestUpdatedGrossingDetailTiles.jsp"/> 	
+ 	<forward name="PROCESSINGDETAILS" path="/transaction/slideBasedTestUpdatedProcessingDetailTiles.jsp"/> 
+ 	<forward name="CUTTINGDETAILS" path="/transaction/slideBasedTestUpdatedCuttingDetailTiles.jsp"/>
+ 	<forward name="STAININGDETAIL" path="/transaction/slideBasedTestUpdatedStaningttingDetailTiles.jsp"/>
+ 	<forward name="REPOTINGDETAILS" path="/transaction/slideBasedTestUpdatedReportingDetailTiles.jsp"/>
+ 	<forward name="GROSSEDSLIDECOMPLETED" path="/transaction/slideBasedTestUpdatedStaningttingDetailTiles.jsp"/>
+ 	<forward name="GROSSEDSLIDE_FOR_REPORTING_COMPLETED" path="/transaction/slideBasedTestUpdatedReportingDetailTiles.jsp"/> 
+ 	<forward name="GROSSEDSLIDEDETAIL123" path="/transaction/grossedSlideUpdatedDetailTiles.jsp"/>
+ 	<forward name="GROSSEDSLIDEDETAIL_FORREPORTING" path="/transaction/grossedSlide_ForReporting_UpdatedDetailTiles.jsp"/>
+ 	<forward name="PAKINGLISTREPORT" path="/transaction/investigationPackinlListUpdatedReport.jsp"/>
+ 	<forward name="SLIDEDETAIL" path="/transaction/investigationSlideUpdatedDetailTile.jsp"/>  		
+</action>
+
+<action  path="/transaction/resultEntry"
+    type="investigation.controller.transaction.action.ResultEntryACTION"
+    name="ResultEntryFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationResultEntryTile.jsp">
+ 	<forward name="RESULTENTRY" path="/transaction/investigationResultEntryTile.jsp"/>
+ 	<forward name="RESULTENTRYTEMPLATEPAGE" path="/transaction/investigationResultEntryTemplateTile.jsp"/>  
+</action>
+
+<action  path="/transaction/sampleAcceptance"
+    type="investigation.controller.transaction.action.SampleAcceptanceACTION"
+    name="SampleAcceptanceFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSampleAcceptanceTile.jsp">
+ 	<forward name="SAMPLEACCEPTANCE" path="/transaction/investigationSampleAcceptanceTile.jsp"/>  		
+</action>
+
+<action  path="/transaction/sampleAcceptanceForEquipment"
+    type="investigation.controller.transaction.action.SampleAcceptanceForEquipmentACTION"
+    name="SampleAcceptanceForEquipmentFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSampleAcceptanceTileForEquipment.jsp">
+ 	<forward name="SAMPLEACCEPTANCEFOREQUIPMENT" path="/transaction/investigationSampleAcceptanceTileForEquipment.jsp"/>
+ 	<forward name="SAMPLEACCEPTANCE_v1FB" path="/transaction/investigationSampleAcceptance_v1_Tile.jsp"/>  		
+</action>
+
+<action  path="/transaction/packingListGeneration"
+    type="investigation.controller.transaction.action.PackingListGenerationACTION"
+    name="PackingListGenerationFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationPackingListGenerationTile.jsp">
+ 	<forward name="PACKINGLISTGENERATION" path="/transaction/investigationPackingListGenerationTile.jsp"/>  		
+ 	<forward name="PAKINGLISTREPORT" path="/transaction/investigationPackinlListReport.jsp"/>  		
+</action>
+ 
+ <action  path="/transaction/sampleCollection"
+    type="investigation.controller.transaction.action.SampleCollectionACTION"
+    name="SampleCollectionFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSampleCollectionTile.jsp">
+ 	<forward name="SAMPLECOLLECTION" path="/transaction/investigationSampleCollectionTile.jsp"/>  
+ 	<forward name="NEW" path="/transaction/requisitionListing.cnt"/> 		
+</action> 
+<action  path="/transaction/packingNoListing"
+    type="investigation.controller.transaction.action.PackingListingACTION"
+    name="PackingListingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationPackingListTile.jsp">
+ 	<forward name="PACKINGLISTING" path="/transaction/investigationPackingListTile.jsp"/> 
+ 	<forward name="SAMPLEACCEPTANCE" path="/transaction/sampleAcceptance.cnt"/>
+ 	<forward name="SAMPLEACCEPTANCEFOREQUIPMENT" path="/transaction/sampleAcceptanceForEquipment.cnt"/>  		 		
+</action>	
+<action  path="/transaction/requisitionListing"
+    type="investigation.controller.transaction.action.RequisitionListingACTION"
+    name="RequisitionListingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigation_RequisitionListingTile.jsp">
+ 	<forward name="REQUISITIONLISTING" path="/transaction/investigationRequisitionListingTile.jsp"/> 
+ 	<forward name="SAMPLECOLLECTION" path="/transaction/sampleCollection.cnt"/>  		 		
+</action> 
+<action  path="/transaction/requisitionRaising"
+    type="investigation.controller.transaction.action.RequisitionRaisingACTION"
+    name="RequisitionRaisingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigation_RequisitionRaisingTile.jsp">
+ 	<forward name="NEW" path="/transaction/investigation_RequisitionRaisingTile.jsp"/>  
+ 	<forward name="REQUISITIONRAISING" path="/transaction/investigation_RequisitionRaisingTile.jsp"/>
+ 	<forward name="SAMPLECOLLECTION" path="/transaction/sampleCollection.cnt"/>  		
+</action> 
+<action  path="/transaction/outpatientrequisitionRaising"
+    type="investigation.controller.transaction.action.RequisitionRaisingACTION"
+    name="RequisitionRaisingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigation_RequisitionRaisingTile.jsp">
+ 	<forward name="NEW" path="/transaction/investigation_RequisitionRaisingTile.jsp"/>  
+ 	<forward name="REQUISITIONRAISING" path="/transaction/investigation_RequisitionRaisingTile.jsp"/>  		
+</action> 
+<action  path="/transaction/outsidesamplerequisitionRaising"
+    type="investigation.controller.transaction.action.RequisitionRaisingOutsideSampleACTION"
+    name="RequisitionRaisingOutsideSampleFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigation_RequisitionRaisingForOutsideSample.jsp">
+ 	<forward name="NEW" path="/transaction/investigation_RequisitionRaisingForOutsideSample.jsp"/>  
+ 	<forward name="REQUISITIONRAISING" path="/transaction/investigation_RequisitionRaisingForOutsideSample.jsp"/>
+ 		
+</action> 
+
+<action  path="/transaction/openEpisodeList"
+    type="investigation.controller.transaction.action.OpenEpisodeACTION"
+    name="OpenEpisodeFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationOpenEpisodeListingTile.jsp">
+    <forward name="NEW" path="/transaction/investigationOpenEpisodeListingTile.jsp"/>  
+    <forward name="REQUISITIONRAISING" path="/transaction/requisitionRaising.cnt" />
+    <forward name="REQUISITIONRAISINGRF" path="/transaction/requisitionRaisingWithRF.cnt" />  	 
+    <forward name="REQUISITIONRAISINGSPEED" path="/transaction/requisitionRaisingSpeed.cnt" />  	
+</action> 
+
+<action  path="/transaction/testprofileprocedure"
+    type="investigation.controller.transaction.action.TestProfileProcedureACTION"
+    name="TestProfileProcedureFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/test_Profile_ProcedureTILE.jsp">
+ 	<forward name="NEW" path="/transaction/test_Profile_ProcedureTILE.jsp" />  	
+</action>
+<action  path="/master/RequisitionGroupMaster"
+    type="investigation.controller.master.action.RequisitionGroupMasterACTION"
+    name="RequisitionGroupMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode">
+ 	<forward name="ADD" path="/master/RequisitionGroupMaster.cnt"/>
+	<forward name="MODIFY" path="/masters/InvPriorityMst_mod.jsp"/>
+	<forward name="ERROR" path="/masters/errorPage.jsp"/>
+ </action>  
+
+ <action  path="/transaction/requisitionStatus"
+    type="investigation.controller.transaction.action.RequisitionStatusACTION"
+    name="RequisitionStatusFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationRequisitionStatusTile.jsp">
+ 	<forward name="REQUISITIONSTATUS" path="/transaction/investigationRequisitionStatusTile.jsp"/>  		
+ 	<forward name="REQUISITIONSTATUSDETAIL" path="/transaction/invRequisitionStatusViewDtl.jsp"/>
+</action>
+<action  path="/transaction/patientAcceptance"
+    type="investigation.controller.transaction.action.PatientAcceptanceACTION"
+    name="PatientAcceptanceFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationPatientAcceptanceTile.jsp">
+ 	<forward name="PATIENTACCEPTANCE" path="/transaction/investigationPatientAcceptanceTile.jsp"/> 
+ 	<forward name="PATIENTACCEPTANCEDETAIL" path="/transaction/invPatientAcceptance_RequisitionDtl.jsp"/>  
+</action>
+<action  path="/transaction/patAcceptMandatoryInfo"
+    type="investigation.controller.transaction.action.InvPatAcceptance_MandInfoACTION"
+    name="PatAcceptanceMandInfoFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/invPatAcceptance_MandInfo.jsp">
+ 	<forward name="PATACCEPTANCEMANDATORY" path="/transaction/invPatAcceptance_MandInfo.jsp"/> 
+</action>
+
+<action  path="/transaction/patAcceptanceOverriding"
+    type="investigation.controller.transaction.action.PatAcceptanceOverridingACTION"
+    name="PatAcceptanceOverridingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/patAcceptanceOverridingTile.jsp">
+ 	<forward name="PATACCEPTANCEOVERRIDING" path="/transaction/patAcceptanceOverridingTile.jsp"/> 
+ 	<forward name="PATACCEPTANCEOVERRIDINGDETAIL" path="/transaction/patAcceptanceOverriding_ReqDtl.jsp"/>  
+</action>
+
+
+<action  path="/transaction/multisessionalDetailCollection"
+    type="investigation.controller.transaction.action.MultiSessionDetailACTION"
+    name="MultiSessionDetailFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationMultiSessional.jsp">
+ 	<forward name="MULTISESSIONDETAIL" path="/transaction/investigationMultiSessional.jsp" />  	
+</action>
+<action  path="/transaction/resultValidation"
+    type="investigation.controller.transaction.action.ResultValidationACTION"
+    name="ResultValidationFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationResultValidationTile.jsp">
+ 	<forward name="RESULTVALIDATION" path="/transaction/investigationResultValidationTile.jsp"/>
+ 	<forward name="RESULTVALIDATIONTEMPLATEPAGE" path="/transaction/investigationResultValidationTemplateTile.jsp"/>    		
+ </action>
+<action  path="/transaction/resultReValidation"
+    type="investigation.controller.transaction.action.ResultReValidationACTION"
+    name="ResultReValidationFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/invResultReValidation_tile.jsp">
+ 	<forward name="RESULTRETVALIDATION" path="/transaction/invResultReValidation_tile.jsp"/>
+ 	<forward name="RESULTREVALIDATIONTEMPLATEPAGE" path="/transaction/investigationResultReValidationTemplateTile.jsp"/>    		
+ </action>
+ <action  path="/transaction/resultModification"
+    type="investigation.controller.transaction.action.ResultModificationACTION"
+    name="ResultModificationFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationResultModificationTile.jsp">
+ 	<forward name="RESULTMODIFICATION" path="/transaction/investigationResultModificationTile.jsp"/>
+ 	<forward name="RESULTMODIFICATIONTEMPLATEPAGE" path="/transaction/investigationResultModificationTemplateTile.jsp"/>    		
+ </action>
+ <action  path="/transaction/resultPrinting"
+    type="investigation.controller.transaction.action.ResultPrintingACTION"
+    name="ResultPrintingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationResultPrintingTile.jsp">
+ 	<forward name="RESULTPRINTING" path="/transaction/investigationResultPrintingTile.jsp"/>
+ 	<forward name="RESULTPRINTINGTEMPLATEPAGE" path="/transaction/investigationResultPrintingTemplateTile.jsp"/>    		
+ </action>
+ 
+  <action  path="/transaction/filmUsed"
+    type="investigation.controller.transaction.action.FilmUsedACTION"
+    name="FilmUsedFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationFilmUsedTile.jsp">
+ 	<forward name="FILMUSED" path="/transaction/investigationFilmUsedTile.jsp"/>
+ 	<forward name="FILMUSEDDETAIL" path="/transaction/investigationFilmUsedDetail.jsp"/>    		
+ </action>
+
+ 
+  <action  path="/transaction/filmIssue"
+    type="investigation.controller.transaction.action.FilmIssueACTION"
+    name="FilmIssueFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationFilmIssueTile.jsp">
+ 	<forward name="FILMISSUE" path="/transaction/investigationFilmIssueTile.jsp"/>
+ 	<forward name="FILMISSUEDETAIL" path="/transaction/investigationFilmIssueDetail.jsp"/>    		
+ </action>
+ 
+  <action  path="/transaction/filmReturn"
+    type="investigation.controller.transaction.action.FilmReturnACTION"
+    name="FilmIssueFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationFilmReturnTile.jsp">
+ 	<forward name="FILMRETURN" path="/transaction/investigationFilmReturnTile.jsp"/>
+ 	<forward name="FILMRETURNDETAIL" path="/transaction/investigationFilmReturnDetail.jsp"/>    		
+ </action>
+  <action  path="/transaction/duplicatSampleLabel"
+    type="investigation.controller.transaction.action.DuplicateSampleLabelACTION"
+    name="DuplicateSampleLabelFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationDuplicateSampleLabelTile.jsp">
+ 	<forward name="DUPLICATESAMPLELABEL" path="/transaction/investigationDuplicateSampleLabelTile.jsp"/>
+  </action>
+  <action  path="/transaction/testCancellation"
+    type="investigation.controller.transaction.action.TestCancellationACTION"
+    name="TestCancellationFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationFilmReturnTile.jsp">
+ 	<forward name="TESTCANCELLATION" path="/transaction/investigatinTestCancellationTile.jsp"/>
+ </action>
+  <action  path="/transaction/getAppointment"
+    type="investigation.controller.transaction.action.GetAppointmentACTION"
+    name="GetAppointmentFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/GetAppointmentTile.jsp">
+ 	<forward name="GETAPPOINTMENT" path="/transaction/GetAppointmentTile.jsp"/>
+ </action>
+
+ <action  path="/transaction/requisitionValidation"
+    type="investigation.controller.transaction.action.RequisitionValidationACTION"
+    name="RequisitionValidationFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/InvestigationRequisitionVaidationTile.jsp">
+ 	<forward name="REQUISITIONVALIDATION" path="/transaction/InvestigationRequisitionVaidationTile.jsp"/>
+ 	    		
+ </action>
+  <action  path="/transaction/resultViewing"
+    type="investigation.controller.transaction.action.ResultViewingACTION"
+    name="ResultViewingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationResultViewingTile.jsp">
+ 	<forward name="RESULTVIEWING" path="/transaction/investigationResultViewingTile.jsp"/>
+ 	<forward name="OPDRESULTVIEWINGMODE" path="/transaction/investigationOPDResultViewing.jsp"/>
+ 	<forward name="RESULTVIEWINGTEMPLATEPAGE" path="/transaction/investigationResultViewingTemplateTile.jsp"/>    		
+ </action>
+ <action  path="/transaction/resultDuplicatePrinting"
+    type="investigation.controller.transaction.action.ResultDuplicatePrintingACTION"
+    name="ResultDuplicatePrintingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationResultDuplicatePrintingTile.jsp">
+ 	<forward name="RESULTDUPLICATEPRINTING" path="/transaction/investigationResultDuplicatePrintingTile.jsp"/>
+ 	<forward name="RESULTDUPLICATEPRINTINGTEMPLATEPAGE" path="/transaction/investigationResultDuplicatePrintingTemplateTile.jsp"/>    		
+ </action>
+<action  path="/transaction/barcodeReading"
+    type="investigation.controller.transaction.action.BarcodeReadingACTION"
+    name="BarcodeReadingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/barcodeReadingTile.jsp">
+ 	<forward name="BARCODEREADING" path="/transaction/barcodeReadingTile.jsp"/>  
+ 	</action>
+
+ <action  path="/transaction/labRegisterInv"
+    type="investigation.controller.transaction.action.LabRegisterACTION"
+    name="LabRegisterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationLabRegister.jsp">
+ 	<forward name="LABREGISTERINV" path="/transaction/investigationLabRegister.jsp"/>
+ 	<forward name="RESULTPRINTINGTEMPLATEPAGE" path="/transaction/investigationLabRegisterTemplateTile.jsp"/>    		
+ </action>
+ <action  path="/transaction/patientTransfer"
+    type="investigation.controller.transaction.action.PatientTransferACTION"
+    name="PatientTransferFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/PatientTransferTile.jsp">
+ 	<forward name="PATIENTTRANSFER" path="/transaction/PatientTransferTile.jsp"/>  
+ 	</action>
+
+
+<action  path="/transaction/sampleoverriding"
+    type="investigation.controller.transaction.action.SampleOverridingACTION"
+    name="SampleOverridingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSampleOverridingTile.jsp">
+ 	<forward name="SAMPLEOVERRIDING" path="/transaction/investigationPackListSampleOverriding.jsp"/>
+ 	<forward name="SAMPLEOVERRIDINGSAMPDTL" path="/transaction/investigationSampleOverridingTile.jsp"/>    		
+ </action>
+
+<action  path="/transaction/resultEntryPOPUP"
+    type="investigation.controller.transaction.action.CannedMacroPopupACTION"
+    name="CannedMacroFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationResultEntryPOPUP.jsp">
+ 	<forward name="GETMACRO" path="/transaction/investigationResultEntryPOPUP.jsp"/>
+ 	<forward name="GETCANNEDFILE" path="/transaction/investigationResultEntryPOPUP.jsp"/>  		
+ </action>
+
+<action  path="/transaction/sampleTransfer"
+    type="investigation.controller.transaction.action.SampleTransferACTION"
+    name="SampleTransferFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSampleTransferTile.jsp">
+ 	<forward name="SAMPLETRANSFER" path="/transaction/investigationSampleTransferTile.jsp"/>  
+ 	</action>
+ 	
+
+<action  path="/transaction/patientDiagnosis"
+    type="investigation.controller.transaction.action.PatientDiagnosisACTION"
+    name="PatientDiagnosisFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationPatientDiagnosis.jsp">
+ 	<forward name="NEW" path="/transaction/investigationPatientDiagnosis.jsp"/>  
+ 	</action>
+ <action path="/fileuploadAction"
+			type="investigation.controller.transaction.action.File_Upload_Action" 
+			name="uploadForm"
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="UPLOAD" path="/transaction/investigation_UploadFile.jsp" />
+			<forward name="UPLOADNEWIMAGE" path="/transaction/investigationPatientAlbum.jsp" />
+		</action>
+		<action  path="/transaction/sampleReqAssocition"
+   			 type="investigation.controller.transaction.action.SampleReqAssocitionACTION"
+    		 name="SampleReqAssocitionFB"
+    		 validate="false"
+    		 scope="request"
+   			 parameter="hmode"
+   			 input="/transaction/sampleReqAssocitionTILE.jsp">
+ 			 <forward name="SAMPLENUMBERASSOCIATION" path="/transaction/sampleReqAssocitionTILE.jsp" />  
+ 	 	
+		</action>	
+		<action  path="/transaction/resultEntryValidation"
+		    type="investigation.controller.transaction.action.ResultEntryValidationACTION"
+		    name="ResultEntryValidationFB"
+		    validate="false"
+		    scope="request"
+		    parameter="hmode"
+		    input="/transaction/investigationResultEntryValidationTile.jsp">
+		 	<forward name="RESULTENTRYVALIDATION" path="/transaction/investigationResultEntryValidationTile.jsp"/>
+		 	<forward name="RESULTENTRYVALIDATIONTEMPLATEPAGE" path="/transaction/investigationResultEntryValidationTemplateTile.jsp"/>  
+		 		
+ </action>
+ 
+ <action  path="/transaction/patientFile"
+    type="investigation.controller.transaction.action.PatientFileACTION"
+    name="PatientFileFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationPatientFile.jsp">
+ 	<forward name="PATIENTFILE" path="/transaction/investigationPatientFile.jsp"/>  
+ 	<forward name="PATIENTFILEVIEW" path="/transaction/investigationPatientFileView.jsp"/>
+ 	<forward name="BATCHWISERESULTVIEWING" path="/transaction/investigationBatchWiseResultViewingData.jsp"/>
+ 	</action> 
+ 	<action  path="/transaction/sampleCollectionAndAcceptance"
+    type="investigation.controller.transaction.action.SampleCollectionAndAcceptanceACTION"
+    name="SampleCollectionAndAcceptanceFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+      input="/transaction/investigationSampleCollectionAndAcceptanceTile.jsp">
+ 	<forward name="SAMPLECOLLECTIONANDACCEPTANCE" path="/transaction/investigationSampleCollectionAndAcceptanceTile.jsp"/>  
+ 	<forward name="SAMPLECOLLECTION" path="/transaction/sampleCollectionAndAcceptanceSaveMode.cnt"/>
+ 	<forward name="NEW" path="/transaction/sampleCollectionAndAcceptance.cnt"/>  		
+</action> 
+<action  path="/transaction/sampleCollectionAndAcceptanceSaveMode"
+    type="investigation.controller.transaction.action.SampleCollectionAndAcceptanceSaveModeACTION"
+    name="SampleCollectionAndAcceptanceSaveModeFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+      input="/transaction/invSampleCollectionAcceptanceSaveMode.jsp">
+ 	<forward name="SAMPLECOLLECTIONACCEPTANCESAVEMODE" path="/transaction/invSampleCollectionAcceptanceSaveMode.jsp"/>  
+ 	<forward name="NEW" path="/transaction/sampleCollectionAndAcceptance.cnt"/> 	
+</action>
+<action  path="/transaction/requisitionFormAct"
+    type="investigation.controller.transaction.action.InvRequisitionFormAction"
+    name="RequisitionFormFormBean"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+      input="/transaction/InvRequisitionFormTile.jsp">
+ 	<forward name="GETREQUISITIONFORM" path="/transaction/InvRequisitionFormTile.jsp"/>  
+ 		<forward name="REQUISITIONRAISING" path="/transaction/requisitionRaising.cnt"/>
+</action> 	
+<action  path="/transaction/sampleFormAction"
+    type="investigation.controller.transaction.action.SampleCollectionFormACTION"
+    name="SampleFormFormBean"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+      input="/transaction/InvSampleFormTile.jsp">
+ 	<forward name="GETSAMPLEFORM" path="/transaction/InvSampleFormTile.jsp"/>  
+</action> 
+<action  path="/transaction/searchFunctionality"
+		    type="investigation.controller.transaction.action.SearchFuncationalityACTION"
+		    name="SearchFunctionalityFB"
+		    validate="false"
+		    scope="request"
+		    parameter="hmode"
+		    input="/transaction/investigationSiteDiagnosisDtl.jsp">
+		 	<forward name="SEARCHFUNCTIONALITY" path="/transaction/investigationSiteDiagnosisDtl.jsp"/>
+		 	<forward name="SAVESEARCHDATA" path="/transaction/investigationSiteDiagnosisDtl.jsp"/>    
+		 		
+ </action>
+ <action 
+				path="/transaction/redesignExistingTemplate"
+				type="investigation.controller.transaction.action.RedesignExistingTemplateACTION"
+				name="RedesignExistingTemplateFB"
+				scope="request"
+				validate="false"
+				parameter="hmode" >
+				<forward name="ADD"	path="/transaction/investigationRedesigningTemplateTile.jsp"/>
+				
+	</action>
+	<action 
+				path="/transaction/redesignExistingTemplateServlet"
+				type="investigation.controller.transaction.action.RedesignExistingTemplateServletACTION"
+				name="RedesignExistingTemplateFB"
+				scope="request"
+				validate="false"
+				parameter="hmode" >
+				<forward name="ADD"	path="/transaction/investigationRedesigningTemplateTile.jsp"/>
+				
+	</action>
+	 <action  path="/transaction/radiologicalFindings"
+		    type="investigation.controller.transaction.action.RadiologicalFindingsACTION"
+		    name="RadiologicalFindingsFB"
+		    validate="false"
+		    scope="request"
+		    parameter="hmode"
+		    input="/transaction/investigationRadiologicalFindingsDtl.jsp">
+		 	<forward name="RADIOLOGICALFINDINGS" path="/transaction/investigationRadiologicalFindingsDtl.jsp"/>
+		 	    
+		 		
+ </action>
+ <action  path="/transaction/resultEntryRequisitionRaising"
+    type="investigation.controller.transaction.action.ResultEntryRequisitionRaisingACTION"
+    name="ResultEntryRequisitionRaisingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigation_RequisitionRaisingAtLaboratory.jsp">
+ 	<forward name="NEW" path="/transaction/investigation_RequisitionRaisingAtLaboratory.jsp"/>  
+ 	<forward name="REQUISITIONRAISING" path="/transaction/investigation_RequisitionRaisingAtLaboratory.jsp"/>
+ 	  		
+</action>
+
+<action  path="/transaction/sampleCancelledValidation"
+    type="investigation.controller.transaction.action.InvSampleCancelledValidationACTION"
+    name="SampleCancelledValidationFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/InvSampleCancelledValidationLISTING.jsp">
+ 	<forward name="SAMPLECANCELLEDVALIDATION" path="/transaction/InvSampleCancelledValidationLISTING.jsp"/>
+ 	<forward name="SAMPLECANCELLEDVALIDATIONDTL" path="/transaction/InvSampleCancelledValidationTILE.jsp"/>    		
+ </action> 
+ 
+ <action  path="/transaction/rejectedPatientValidation"
+    type="investigation.controller.transaction.action.InvRejectedPatientValidationACTION"
+    name="RejectedPatientValidationFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/InvSampleCancelledValidationLISTING.jsp">
+ 	<forward name="REJECTEDPATIENTVALIDATION" path="/transaction/InvRejectedPatientValidationTILE.jsp"/>
+ 	<forward name="REJECTEDPATIENTVALIDATIONDTL" path="/transaction/InvRejectedPatientValidationDTL.jsp"/>    		
+ </action>
+ <action  path="/transaction/invOrganismAntibioticsMapping"
+    type="investigation.controller.transaction.action.OrganismAntibioticsMappingACTION"
+    name="OrganismAntibioticsMappingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/invOrganismAntibioticsMapping.jsp">
+ 	<forward name="ORGANISMANTIBIOTICS" path="/transaction/invOrganismAntibioticsMapping.jsp"/>
+ 		
+ </action>
+ 
+ 
+<action  path="/transaction/pdfPrinting"
+    type="investigation.controller.transaction.action.PdfPrintingACTION"
+    name="PdfPrintingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"    
+ 	input="/transaction/investigationPdfPrintingTile.jsp">
+ 	<forward name="RESULTPRINTING" path="/transaction/investigationPdfPrintingTile.jsp"/>
+ 	<!-- >forward name="RESULTPRINTINGTEMPLATEPAGE" path="/transaction/investigationResultPrintingTemplateTile.jsp"-->      		
+ </action>
+ 
+ 
+ 
+
+<action  path="/transaction/otherFunctionality"
+    type="investigation.controller.transaction.action.OtherFunctionalityACTION"
+    name="OtherFunctionalityFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"    
+ 	input="/transaction/investigationPdfPrintingTile.jsp">
+ 	<forward name="RESULTPRINTING" path="/transaction/investigationPdfPrintingTile.jsp"/>
+ 	<!-- >forward name="RESULTPRINTINGTEMPLATEPAGE" path="/transaction/investigationResultPrintingTemplateTile.jsp"-->      		
+ </action>
+
+  <action  path="/transaction/patientDataInterpretation"
+		    type="investigation.controller.transaction.action.PatientDataInterpretationACTION"
+		    name="PatientDataInterpretationFB"
+		    validate="false"
+		    scope="request"
+		    parameter="hmode"
+		    input="/transaction/invPatientDataInterpretationDtl.jsp">
+		 	<forward name="PATIENTDATAINTERPRETATION" path="/transaction/invPatientDataInterpretationDtl.jsp"/>
+		 	<forward name="DATAINTERPRETATIONTEMPLATEPAGE" path="/transaction/invPatientDataInterpretationTemplateTile.jsp"/>    
+		 		
+ </action>
+   <action  path="/transaction/ipdResultViewing"
+    type="investigation.controller.transaction.action.IPDResultViewingACTION"
+    name="IPDResultViewingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationIpdResultViewingTile.jsp">
+ 	<forward name="IPDRESULTVIEWING" path="/transaction/investigationIpdResultViewingTile.jsp"/>
+ 	<forward name="IPDRESULTVIEWINGMODE" path="/transaction/investigationIPDResultViewing.jsp"/>
+ 	<forward name="GOFORALLRESULTVIEWING" path="/transaction/investigationIpdResultViewingTemplateTile.jsp"/>    		
+ </action>
+ 
+  <action  path="/transaction/allLabTestRegister"
+    type="investigation.controller.transaction.action.AllLabTestRegisterACTION"
+    name="AllLabTestRegisterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/AllLabTestRegisterTile.jsp">
+ 	<forward name="ALLLABTESTREGISTER" path="/transaction/AllLabTestRegisterTile.jsp"/>  
+ 	<forward name="ALLLABTESTREGISTERVIEW" path="/transaction/AllLabTestRegisterDtl.jsp"/>
+ 	
+ 	</action> 
+ 	
+ 	<action  path="/transaction/testItemConsume"
+    type="investigation.controller.transaction.action.TestItemConsumeACTION"
+    name="TestItemConsumeFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationTestItemConsumeTile.jsp">
+ 	<forward name="RESULTENTRY" path="/transaction/investigationTestItemConsumeTile.jsp"/> 	
+ 	<forward name="BATCHWISEITEMCONSUMEPOPUP" path="/transaction/investigationBatchWiseItemCousumeTile.jsp"/>
+ 	<forward name="RESULTENTRYTEMPLATEPAGE" path="/transaction/investigationResultEntryTemplateTile.jsp"/>  
+ 		
+ </action>
+ <action  path="/transaction/requisitionRaisingWithRF"
+    type="investigation.controller.transaction.action.RequisitionRaisingWithRFACTION"
+    name="RequisitionRaisingWithRFFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigation_RequisitionRaisingWithRFTile.jsp">
+ 	<forward name="NEW" path="/transaction/investigation_RequisitionRaisingWithRFTile.jsp"/>  
+ 	<forward name="REQUISITIONRAISINGWITHRF" path="/transaction/investigation_RequisitionRaisingWithRFTile.jsp"/>
+ 	<forward name="SAMPLECOLLECTION" path="/transaction/sampleCollection.cnt"/>  		
+</action>
+
+<action  path="/transaction/searchRequisitionForm"
+    type="investigation.controller.transaction.action.SearchRequisitionFormACTION"
+    name="SearchRequisitionFormFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/searchRequisitionFormTILE.jsp">
+ 	<forward name="NEW" path="/transaction/searchRequisitionFormTILE.jsp" />  	
+</action> 
+<action  path="/transaction/testprofileprocedureRF"
+    type="investigation.controller.transaction.action.TestProfileProcedureRFACTION"
+    name="TestProfileProcedureRFFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/test_Profile_ProcedureRFTILE.jsp">
+ 	<forward name="NEW" path="/transaction/test_Profile_ProcedureRFTILE.jsp" />  	
+</action>
+
+<action  path="/transaction/requisitionFormActRF"
+    type="investigation.controller.transaction.action.InvRequisitionFormRFAction"
+    name="RequisitionFormFormBean"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+      input="/transaction/InvRequisitionFormTile.jsp">
+ 	<forward name="GETREQUISITIONFORM" path="/transaction/InvRequisitionFormRFTile.jsp"/>  
+ 		<forward name="REQUISITIONRAISING" path="/transaction/requisitionRaising.cnt"/>
+</action> 
+ 
+<action  path="/transaction/investigationReportLayoutDesign"
+    type="investigation.controller.transaction.action.InvestigationReportLayoutDesignACTION"
+    name="InvestigationReportLayoutDesignFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+      input="/transaction/investigationReportLayoutDesign.jsp">
+ 	<forward name="MAIN" path="/transaction/investigationReportLayoutDesign.jsp"/>  
+</action>
+<action  path="/transaction/investigationConfigurationReLoader"
+    type="investigation.controller.transaction.action.InvestigationConfigurationReLoaderACTION"
+    name="InvestigationConfigurationReLoaderFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+      input="/transaction/investigationConfigurationReLoader.jsp">
+ 	<forward name="MAIN" path="/transaction/investigationConfigurationReLoader.jsp"/>  
+</action>
+<action  path="/transaction/investigationConfiguratorFileDownLoader"
+    type="investigation.controller.transaction.action.InvestigationConfiguratorDownLoaderACTION"
+    name="InvestigationConfigurationDownLoaderFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+      input="/transaction/investigationConfigurationDownloader.jsp">
+ 	<forward name="MAIN" path="/transaction/investigationConfigurationDownloader.jsp"/>  
+</action>
+<action  path="/transaction/investigationConfiguratorFileUploader"
+    type="investigation.controller.transaction.action.InvestigationConfigurationUpLoaderACTION"
+    name="InvestigationConfigurationUpLoaderFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+      input="/transaction/investigationConfigurationUploader.jsp">
+ 	<forward name="MAIN" path="/transaction/investigationConfigurationUploader.jsp"/>  
+</action>
+
+<action  path="/transaction/directSampleAcceptance"
+    type="investigation.controller.transaction.action.DirectSampleAcceptanceACTION"
+    name="DirectSampleAcceptanceFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/barcodeReadingTile.jsp">
+ 	<forward name="DIRECTSAMPLEACCEPTANCE" path="/transaction/directSampleAcceptanceTile.jsp"/>  
+ 	</action>	
+ 	<action  path="/transaction/patExaminationComplainData"
+		    type="investigation.controller.transaction.action.PatExaminationComplainACTION"
+		    name="PatExaminationComplainFB"
+		    validate="false"
+		    scope="request"
+		    parameter="hmode"
+		    input="/transaction/invPatExaminationComplainDtl.jsp">
+		 	<forward name="PATEXAMINATIONCOMPLAINDATA" path="/transaction/invPatExaminationComplainDtl.jsp"/>
+		 	<forward name="NEW" path="/transaction/invPatExaminationComplainDtl.jsp"/>
+		 	<forward name="PATEXAMINATIONCOMPLAINDATARF" path="/transaction/invPatExaminationComplainDtl.jsp"/>    
+		 		
+ </action>
+  <action path="/transaction/createNewTemplateForTestGroup"	type="investigation.controller.transaction.action.NewTemplateCreatorForTestGroupACTION"
+	name="CreateNewTemplateForTestGroupFB"	scope="request"	validate="false"	parameter="hmode" ><forward name="ADD"	path="/transaction/createNewTemplateForTestGroupTile.jsp"/>
+				
+	</action>
+	
+	<action  path="/transaction/AddModifyBookMarkTestOrTestGroupFunctionality"
+    type="investigation.controller.transaction.action.BookmarkTestOrGroupAction"
+    name="BookmarkTestOrGroupFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"    
+ 	input="/transaction/investigationBookMarkTestOrGroupTile.jsp">
+ 	<forward name="ADD" path="/transaction/investigationBookMarkTestOrGroupTile.jsp"/>
+ 	</action>
+ 	
+ 	<action  path="/transaction/AddBookMarkTestOrTestGroupFunctionality"
+    type="investigation.controller.transaction.action.AddBookmarkTestOrGroupAction"
+    name="ADDTestProfileProcedureFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"    
+ 	input="/transaction/investigationAddBookMarkTestOrGroupTile.jsp">
+ 	<forward name="ADD" path="/transaction/investigationAddBookMarkTestOrGroupTile.jsp"/>
+ 	</action>
+ 	
+	<action  path="/transaction/requisitionRaisingSpeed"
+    type="investigation.controller.transaction.action.RequisitionRaisingSpeedACTION"
+    name="RequisitionRaisingSpeedFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationRequisitionRaisingSpeedTile.jsp">
+ 	<forward name="NEW" path="/transaction/investigationRequisitionRaisingSpeedTile.jsp"/>  
+ 	<forward name="REQUISITIONRAISING" path="/transaction/investigationRequisitionRaisingSpeedTile.jsp"/>
+ 	<forward name="SAMPLECOLLECTION" path="/transaction/sampleCollection.cnt"/>  		
+	</action> 
+ 	
+ 	<action  path="/transaction/testprofileprocedurespeed"
+    type="investigation.controller.transaction.action.TestProfileProcedureSpeedACTION"
+    name="TestProfileProcedureFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/testProfileProcedureSpeedTILE.jsp">
+ 	<forward name="NEW" path="/transaction/testProfileProcedureSpeedTILE.jsp" />  	
+	</action>
+ 	<action  path="/transaction/bookmarkingfuntionality"
+    type="investigation.controller.transaction.action.BookMarkingACTION"
+    name="BookMarkingFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/testProfileProcedureSpeedTILE.jsp">
+ 	<forward name="NEW" path="/transaction/testProfileProcedureSpeedTILE.jsp" />  	
+	</action>
+	<action  path="/transaction/newSampleAcceptanceProcess"
+    type="investigation.controller.transaction.action.NewSampleRelatedProcessACTION"
+    name="NewSampleRelatedProcessFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/newSampleRelatedProcessTILE.jsp">
+ 	<forward name="PACKINGLISTPAGE" path="/transaction/newSampleRelatedProcessTILE.jsp" /> 
+ 	</action>
+ 	<action  path="/transaction/newSampleAcceptanceSearchProcess"
+    type="investigation.controller.transaction.action.NewSampleRelatedSearchProcessACTION"
+    name="NewSampleRelatedSearchProcessFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/newSampleSearchProcessTILE.jsp">
+ 	<forward name="SEARCH" path="/transaction/newSampleSearchProcessTILE.jsp" /> 
+ 	</action>
+ 	
+ 	<action  path="/transaction/sampleAcceptanceOffline"
+    type="investigation.controller.transaction.action.SampleAcceptanceOfflineACTION"
+    name="SampleAcceptanceOfflineFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/investigationSampleAcceptanceOfflineTile.jsp">
+ 	<forward name="SAMPLEACCEPTANCE" path="/transaction/investigationSampleAcceptanceOfflineTile.jsp"/>  		
+</action>
+
+<action  path="/transaction/biochemistryLabRegisterRegister"
+    type="investigation.controller.transaction.action.BiochemistryLabRegisterACTION"
+    name="BiochemistryLabRegisterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/transaction/BiochemistryLabRegisterTile.jsp">
+ 	<forward name="ALLLABTESTREGISTER" path="/transaction/BiochemistryLabRegisterTile.jsp"/>  
+ 	<forward name="ALLLABTESTREGISTERVIEW" path="/transaction/BiochemistryLabRegisterDtl.jsp"/>
+ </action>	
+ 	
+</action-mappings>
+
+
+<controller>
+	<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+</controller>
+
+<message-resources  parameter="investigation.investigationResourceBundle"></message-resources>
+  
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/investigation/investigation-tiles-defs.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>
+   
+</struts-config>

@@ -1,0 +1,64 @@
+.tabFront{
+	/*background-image:url('/HISClinical/hisglobal/images/style01_4_o_back.gif');*/
+	background-color: #1277B5;
+  	cursor:pointer;  
+  	height:22;
+	color: white;
+	vertical-align: middle;
+	text-align: center;
+	text-transform: capitalize;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+.tabCurrent{
+	background-color: #E0EBEB;
+  	cursor:pointer;  
+  	height:22;
+	color: black;
+	text-align: center;
+	vertical-align: middle;
+	text-transform: capitalize;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+.tabHighlight{
+	/*background-image:url('/HISClinical/hisglobal/images/style01_4_o_back.gif');*/
+	background-color: #E0EBEB;
+  	cursor:pointer;  
+  	height:22;
+	color: blue;
+	text-align: center;
+	vertical-align: middle;
+	text-transform: capitalize;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+.tabInactive{
+	background-color: #E0EBEB; 
+  	height:22;
+	vertical-align: middle;
+	text-align: center;
+	text-transform: capitalize;
+	font-family: Trebuchet MS;
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+

@@ -1,0 +1,21 @@
+/**
+ CSS For Text Box 
+ Added By Pathan Basha Khan
+ On 16-04-2015
+ **/
+
+
+#textBoxCss {
+    background: #ccc;
+    color: #135d8c;
+    width: 180px;
+    padding: 4px 10px 4px 15px;
+    border-radius: 20px;
+    box-shadow: 0 1px 0 #ccc inset;
+    transition: 500ms all ease;
+    outline: 0;
+}
+
+#textBoxCss:hover {
+  
+}  

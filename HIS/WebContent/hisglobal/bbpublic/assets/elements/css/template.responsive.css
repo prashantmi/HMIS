@@ -1,0 +1,1062 @@
+/*------------------------------------------------------------------------
+
+* Copyright (c) 2008-2012 ZooTemplate. All Rights Reserved.
+
+* @license - Copyrighted Commercial Software
+
+* Author: ZooTemplate
+
+* Websites:  http://www.zootemplate.com
+
+-------------------------------------------------------------------------*/
+
+/*Super Large desktop */
+
+
+
+
+
+@media (max-width:1024px) {
+
+    .menusys_mega #menusys_mega .menu-title
+
+    {
+
+      padding: 7px 3px 5px 0px;
+		font-size: 12px;
+
+    }
+
+    .menusys_mega #menusys_mega li span.no-image
+
+    {
+
+        padding: 0 0 0 10px;
+
+    }
+
+    .rev_slider .tp-caption.genius_big_bg,
+
+    .rev_slider .tp-caption.genius_medium
+
+    {
+
+        left: 10px !important;
+
+    }
+
+    .zt-col-inside  h1.heading
+
+    {
+
+        font-size: 215%;
+
+    }
+
+    #zt-userwrap3 #zt-userwrap3-inner h3
+
+    {
+
+        font-size: 190%;
+
+    }
+
+    .zt-box-inside .highslide-gallery ul li
+
+    {
+
+        margin: 0 5px 5px 0;
+
+        width: 30%;
+
+    }
+
+    .ztk2ItemsBlock .isotope {
+
+        margin: 20px auto 0;
+
+        width: 800px;
+
+    }
+
+    .page-postion h1.itemTitle
+
+    {
+
+        font-size: 200%;
+
+    }
+
+
+
+    #zt-mainframe.page-postion div.itemHeader,
+
+    #zt-mainframe.page-postion div.itemToolbar {
+
+        width: 78%;
+
+    }
+
+    .zt-field input#modlgn_username,
+
+    .zt-field input#modlgn_passwd
+
+    {
+
+        width: 90%;
+
+    }
+
+
+
+    .itemBody div.itemRatingBlock,
+
+    #zt-component div.itemHeader,
+
+    #zt-component div.itemToolbar,
+
+    .itemBody div.itemIntroText,
+
+    .itemBody div.itemFullText,
+
+    .itemBody div.itemAuthorBlock,
+
+    div.itemSocialSharing,
+
+    .catItemView div.content-inner div.catItemHeader,
+
+    .catItemView div.content-inner div.catItemBody,
+
+    .catItemView div.content-inner div.catItemReadMore,
+
+    .rtl .itemBody div.itemIntroText,
+
+    .rtl .itemBody div.itemFullText,
+
+    .rtl .itemBody div.itemRatingBlock,
+
+    .rtl .itemBody div.itemAuthorBlock,
+
+    .rtl .catItemView div.content-inner div.catItemHeader,
+
+    .rtl .catItemView div.content-inner div.catItemBody,
+
+    .rtl .catItemView div.content-inner div.catItemReadMore
+
+    {
+
+        width: 85%;
+
+    }
+
+
+
+    .rtl .highslide-gallery ul li.gallery-item
+
+    {
+
+        margin: 0 0 5px 5px ;
+
+        width: 30%;
+
+    }
+
+    textarea#description
+
+    {
+
+        width: 90% !important;
+
+    }
+
+    .ztk2ItemsBlock ul
+
+    {
+
+        display: block !important;
+
+        margin: 5px 0 !important;
+
+    }
+
+}
+
+
+
+@media (max-width:768px){
+
+    #zt-mainmenu-inner #zt-text-outer
+
+    {
+
+        width: 100%;
+
+        background-position: center center;
+
+    }
+
+    #zt-text-outer #zt-logo-text
+
+    {
+
+        display: block;
+
+        float: none;
+
+        margin: 0 auto;
+
+    }
+
+    .zt-col-inside h1.heading {
+
+        font-size: 170%;
+
+        margin: 25px 0 20px;
+
+    }
+
+    #zt-col .zt-col-inside p.readmore {
+
+        font-size: 100%;
+
+    }
+
+    #zt-userwrap3 #zt-userwrap3-inner h3 {
+
+        font-size: 146%;
+
+    }
+
+    .ztk2ItemsBlock .isotope
+
+    {
+
+        width: 370px;
+
+    }
+
+    .ztk2ItemsBlock .element
+
+    {
+
+        margin:0 !important;
+
+    }
+
+    div#zt-userwrap7 #zt-userwrap7-inner h3.moduletitle
+
+    {
+
+        font-size: 130%;
+
+    }
+
+    div#zt-userwrap7 #zt-userwrap7-inner,
+
+    #zt-footer #zt-footer-inner
+
+    {
+
+        font-size: 100%;
+
+    }
+
+    .itemComments div.itemCommentsForm
+
+    {
+
+        margin: 0 0 50px 0;
+
+    }
+
+
+
+    div.itemListCategory h1,
+
+    div.itemListSubCategories h1,
+
+    div.userView h1.componentheading,
+
+    div.tagView h1.componentheading,
+
+    div.itemListView h1.componentheading
+
+    {
+
+        line-height: 60px !important;
+
+    }
+
+    .page-postion div.itemComments ul.itemCommentsList li span.commentLink,
+
+    .page-postion div.itemComments ul.itemCommentsList li span.commentDate
+
+    {
+
+        display: block;
+
+        margin: 0;
+
+    }
+
+    .itemHeader h1.itemTitle,
+
+    #zt-mainframe-inner h1
+
+    {
+
+        font-size: 220%;
+
+    }
+
+
+
+    .subCategoryContainer div.subCategory h2,
+
+    .userItemView div.userItemHeader h3.userItemTitle,
+
+    .tagItemIntroText .tagItemHeader h2.tagItemTitle,
+
+    div.catItemView .catbody h3,
+
+    div.content-inner h3.catItemTitle,
+
+    .latestItemList h2.latestItemTitle
+
+    {
+
+        font-size: 200%;
+
+    }
+
+    .page-postion div.itemCommentsForm form input.inputbox
+
+    {
+
+        width: 70%;
+
+    }
+
+    #searchForm fieldset.phrases label
+
+    {
+
+        display: block;
+
+    }
+
+    #zt-component .item-page .pricing_box h2 {
+
+        font-size: 220%;
+
+    }
+
+    #zt-header-inner .bkg-control-down,
+
+    #zt-header-inner .bkg-control-up
+
+    {
+
+        right: 50%;
+
+        z-index: 9999;
+
+    }	
+
+}
+
+
+
+@media (max-width:640px){
+
+
+
+    #zt-header #zt-header-inner,
+
+    #zt-userwrap2 #zt-userwrap2-inner,
+
+    #zt-userwrap3 #zt-userwrap3-inner,
+
+    #zt-mainframe #zt-mainframe-inner,
+
+    #zt-userwrap6 #zt-userwrap6-inner,
+
+    #zt-br-contact .zt-br-contact-inner,
+
+    #zt-userwrap7 #zt-userwrap7-inner,
+
+    #zt-footer #zt-footer-inner,
+
+    #zt-mainmenu
+
+    {
+
+        padding-left:8px ;
+
+        padding-right: 8px;
+
+        width: auto;
+
+    }
+
+    #zt-header-inner #zt-support
+
+    {
+
+        width: 60%;
+
+        float: left;
+
+    }
+
+    #mod-search-searchword
+
+    {
+
+        width: 114px;
+
+    }
+
+    .zt-col-inside h1.heading {
+
+        font-size: 130%;
+
+        margin: 20px 0;
+
+    }
+
+    #zt-col .zt-col-inside
+
+    {
+
+        margin: 15px 0 25px 0;
+
+    }
+
+    #zt-userwrap3-inner .zt-box-inside
+
+    {
+
+        width: 50%;
+
+        margin: 0 auto;
+
+    }
+
+    #zt-userwrap3 #zt-userwrap3-inner
+
+    {
+
+        margin: 0;
+
+        padding-top: 0px;
+
+    }
+
+    #zt-userwrap3-inner .zt-box-inside
+
+    {
+
+        margin: 10px auto 50px;
+
+    }
+
+    #zt-userwrap3 #zt-userwrap3-inner h3
+
+    {
+
+        font-size: 200%;
+
+    }
+
+    #option_btn
+
+    {
+
+        display: none;
+
+    }
+
+    #zt-userwrap7-inner .zt-box-inside
+
+    {
+
+        margin: 0 0 40px 0;
+
+    }
+
+    .zt-box-inside .highslide-gallery ul li
+
+    {
+
+        width: auto;
+
+    }
+
+    #zt-userwrap7 #zt-userwrap7-inner
+
+    {
+
+        padding:28px 8px 10px 8px
+
+
+
+    }
+
+    #zt-footer-inner #zt-footer-copy
+
+    {
+
+        width: 62%;
+
+        margin: 20px auto 0;
+
+        float: none;
+
+    }
+
+    #zt-contact
+
+    {
+
+        display: none;
+
+    }
+
+    #zt-col .zt-col-inside p.readmore
+
+    {
+
+        margin: 12px 0 0;
+
+    }
+
+    #zt-userwrap6 #zt-userwrap6-inner
+
+    {
+
+        padding:30px 8px;
+
+    }
+
+
+
+    .modulecontent #login-form label,
+
+    .modulecontent #login-form #modlgn-remember {
+
+        display: inline-block;
+
+        float: none;
+
+        vertical-align: top;
+
+    }
+
+    .page-postion div.itemCommentsForm form input.inputbox,
+
+    .zt-field input#modlgn_username,
+
+    .zt-field input#modlgn_passwd
+
+    {
+
+        width: 50% ;
+
+    }
+
+    .catbody .catItemHeader,
+
+    .catbody .catItemIntroText,
+
+    .catbody .catItemReadMore
+
+    {
+
+        float: none ;
+
+    }
+
+    .content-inner .catItemReadMore,
+
+    .catItemView div.content-inner div.catItemHeader
+
+    {
+
+        float: right ;
+
+    }
+
+    #zt-mainframe.page-postion div.itemHeader,
+
+    #zt-mainframe.page-postion div.itemToolbar {
+
+        width: 85%;
+
+    }
+
+
+
+    .rtl #zt-header-inner #zt-search
+
+    {
+
+        float: none;
+
+    }
+
+    .rtl #zt-search .box-search
+
+    {
+
+        float: right;
+
+    }
+
+    .rtl .highslide-gallery ul li.gallery-item
+
+    {
+
+        width: auto;
+
+    }
+
+    .zt-typo-row .zt-typo-col .zt-typo-inside,
+
+    .zt-typo-boxes .zt-typo-col .zt-typo-inside
+
+    {
+
+        padding: 0;
+
+        margin: 5px 0;
+
+    }
+
+}
+
+
+
+@media (max-width:480px) {
+
+
+
+    .tp-bullets
+
+    {
+
+        display: none !important;
+
+    }
+
+    #zt-header-inner #zt-support {
+
+          float: none;
+
+          width: 100%;
+
+      }
+
+    #zt-support p.phone
+
+    {
+
+        float: right;
+
+    }
+
+    #zt-search
+
+    {
+
+        display: none;
+
+    }
+
+    #zt-col .zt-col-inside
+
+    {
+
+        padding: 0 10px;
+
+    }
+
+    .zt-col-inside h1.heading {
+
+        text-align: center;
+
+        font-size: 100%;
+
+        float: none;
+
+    }
+
+    #zt-col .zt-col-inside p.readmore
+
+    {
+
+        float: none;
+
+        margin: 5px auto 10px;
+
+        text-align: center;
+
+        display: block;
+
+    }
+
+    .zt-slideshow-inside .tp-leftarrow.default,
+
+    .zt-slideshow-inside .tp-rightarrow.default,
+
+    a#gototop
+
+    {
+
+        display: none !important;
+
+    }
+
+    .pp_expand
+
+    {
+
+        display: none !important;
+
+    }
+
+    .ztk2ItemsBlock ul li a
+
+    {
+
+        font-size: 100% !important;
+
+    }
+
+
+
+    #zt-footer-inner #zt-footer-copy,
+
+    #zt-userwrap3-inner .zt-box-inside,
+
+    .catItemView div.content-inner div.catItemHeader,
+
+    .catItemView div.content-inner div.catItemBody,
+
+    .catItemView div.content-inner div.catItemReadMore,
+
+    .rtl .itemBody div.itemIntroText,
+
+    .rtl .itemBody div.itemFullText,
+
+    .rtl .itemBody div.itemRatingBlock,
+
+    .rtl .itemBody div.itemAuthorBlock,
+
+    .rtl .catItemView div.content-inner div.catItemHeader,
+
+    .rtl .catItemView div.content-inner div.catItemBody,
+
+    .rtl .catItemView div.content-inner div.catItemReadMore
+
+    {
+
+        width: 100%;
+
+    }
+
+    .itemBody div.itemRatingBlock,
+
+    #zt-component div.itemHeader,
+
+    #zt-component div.itemToolbar,
+
+    .itemBody div.itemIntroText,
+
+    .itemBody div.itemFullText,
+
+    .itemBody div.itemAuthorBlock,
+
+    #zt-mainframe.page-postion div.itemHeader,
+
+    #zt-mainframe.page-postion div.itemToolbar
+
+    {
+
+        width: 80%;
+
+    }
+
+    div.itemComments ul.itemCommentsList li span.commentDate,
+
+    div.itemComments ul.itemCommentsList li span.commentLink
+
+    {
+
+        display: block !important;
+
+        margin: 0 !important;
+
+    }
+
+    fieldset .ordering-box
+
+    {
+
+        width: 100%;
+
+        margin: 5px 0;
+
+    }
+
+    #zt-content .item-page ul.tabs li {
+
+        width: 100%;
+
+        margin: 0 !important;
+
+    }
+
+
+
+    .rtl #zt-support p.phone
+
+    {
+
+        float: left;
+
+    }
+
+    .rtl .zt-col-inside h1.heading
+
+    {
+
+        float: none;
+
+    }
+
+    #zt-component .item-page .pricing_box h2 {
+
+        font-size: 185%;
+
+    }
+
+}
+
+@media (max-width:360px){
+
+
+
+    .ztk2ItemsBlock .isotope {
+
+        width: auto;
+
+    }
+
+    .isotope .isotope-item,
+
+    .ztItemBackground,
+
+    .ztItemTitleText
+
+    {
+
+        max-width: 100%;
+
+    }
+
+    .pp_content .pp_gallery
+
+    {
+
+        display: none !important;
+
+    }
+
+
+
+    .ztItemTitleBackground,
+
+    .ztItemTitle,
+
+    .itemBody div.itemRatingBlock,
+
+    #zt-component div.itemHeader,
+
+    #zt-component div.itemToolbar,
+
+    .itemBody div.itemIntroText,
+
+    .itemBody div.itemFullText,
+
+    .itemBody div.itemAuthorBlock,
+
+    #zt-mainframe.page-postion div.itemHeader,
+
+    #zt-mainframe.page-postion div.itemToolbar,
+
+    #zt-component .pricing_wrap_3 .pricing_box,
+
+    #zt-component .pricing_wrap_4 .pricing_box,
+
+    .cat-items table.category
+
+    {
+
+        width: 100%;
+
+    }
+
+    div.itemCommentsForm form#comment-form input.inputbox
+
+    {
+
+        width: 90%;
+
+    }
+
+    .zt-field input#modlgn_username,
+
+    .zt-field input#modlgn_passwd
+
+    {
+
+        width: 80%;
+
+    }
+
+    #adminForm table.category td
+
+    {
+
+        padding: 0 !important;
+
+        font-size: 75%;
+
+    }
+
+    #zt-component .zt-image-frame
+
+    {
+
+        width: 27% !important;
+
+    }
+
+
+
+    #zt-content ol.linenums li
+
+    {
+
+        margin: 0;
+
+    }
+
+    #zt-component .item-page .pricing_box h2 {
+
+        font-size: 220%;
+
+    }
+
+
+
+}
+
+@media (max-width:320px){
+
+
+
+    .rev_slider .tp-caption.genius_medium
+
+    {
+
+        display: none;
+
+    }
+
+    #zt-header-inner #zt-support
+
+    {
+
+        font-size: 80%;
+
+    }
+
+    .page-postion div.itemCommentsForm form input.inputbox
+
+    {
+
+        width: 90%;
+
+    }
+
+    div.itemComments .itemCommentsForm h3
+
+    {
+
+        font-size: 240%;
+
+    }
+
+    #adminForm table.category th,
+
+    #adminForm table.category td
+
+    {
+
+        border-color: #CFCFCF;
+
+        border-style: solid;
+
+        border-width: 0 1px;
+
+        padding: 0;
+
+    }
+
+    #zt-component .inputbox,
+
+    select
+
+    {
+
+        width: 185px;
+
+    }
+
+    textarea#description {
+
+        width: 85% !important;
+
+    }
+
+    input#image,
+
+    input#url
+
+    {
+
+        margin: 0 0 0 -25px;
+
+    }
+
+    .rtl input#image,
+
+    .rtl input#url
+
+    {
+
+        margin: 0 -25px 0 0;
+
+    }
+
+    #remember
+
+    {
+
+        width: auto !important;
+
+    }
+
+}

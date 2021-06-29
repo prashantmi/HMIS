@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="sectionMstBean" type="cssd.masters.controller.fb.SectionMstFB">
+		</form-bean>
+		<form-bean name="methodMstBean" type="cssd.masters.controller.fb.MethodMstFB">
+		</form-bean>
+		<form-bean name="methodProcessItemMstBean"
+			type="cssd.masters.controller.fb.MethodProcessItemMstFB">
+		</form-bean>
+
+
+		<!-- Master Bean by Vivek Aggarwal Start [09/Feb/2011] -->
+
+		<form-bean name="shiftBean" type="cssd.masters.controller.fb.ShiftMstFB">
+		</form-bean>
+
+		<form-bean name="qualityTestBean"
+			type="cssd.masters.controller.fb.QualityTestMstFB">
+		</form-bean>
+
+		<form-bean name="machineParameterBean"
+			type="cssd.masters.controller.fb.MachineParameterMstFB">
+		</form-bean>
+
+		<!-- Master by Vivek Aggarwal End -->
+
+		<!-- Aritra Start -->
+		<form-bean name="sectionShiftMstFB"
+			type="cssd.masters.controller.fb.SectionShiftMstFB">
+		</form-bean>
+		<form-bean name="sectionRoleMstFB"
+			type="cssd.masters.controller.fb.SectionRoleMstFB">
+		</form-bean>
+		<form-bean name="methodChecklistMstFB"
+			type="cssd.masters.controller.fb.MethodChecklistMstFB">
+		</form-bean>
+		<!-- Aritra End -->
+
+    <form-bean name="locationBean" type="cssd.masters.controller.fb.LocationMstFB">
+		</form-bean>
+		
+		<form-bean name="machineBean"	type="cssd.masters.controller.fb.MachineMstFB">
+		</form-bean>
+		<form-bean name="locItemMappingBean"	type="cssd.masters.controller.fb.LocationItemMappingFB">
+		</form-bean>
+		
+	</form-beans>
+
+	<action-mappings>
+
+
+		<action path="/switchModule" type="org.apache.struts.actions.SwitchAction" />
+
+
+		<action path="/masters/SectionMstACTION" type="cssd.masters.controller.action.SectionMstACTION"
+			name="sectionMstBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/cssd_add_section_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/cssd_modify_section_mst.jsp" />
+		</action>
+		<action path="/masters/MethodMstACTION" type="cssd.masters.controller.action.MethodMstACTION"
+			name="methodMstBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/cssd_add_method_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/cssd_modify_method_mst.jsp" />
+		</action>
+
+		<action path="/masters/MethodProcessItemMstACTION"
+			type="cssd.masters.controller.action.MethodProcessItemMstACTION"
+			name="methodProcessItemMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/jsp/cssd_add_method_process_item_mst.jsp" />
+			<forward name="modify"
+				path="/masters/jsp/cssd_modify_method_process_item_mst.jsp" />
+		</action>
+
+		<!-- Shift Master by Vivek Aggarwal [09-Feb-2011] -->
+
+		<action path="/masters/ShiftMstACTION" type="cssd.masters.controller.action.ShiftMstACTION"
+			name="shiftBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/cssd_add_shift_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/cssd_modify_shift_mst.jsp" />
+
+		</action>
+		<!-- Shift Master by Vivek Aggarwal END [11-Feb-2011] -->
+
+
+		<!-- Quality Test Master by Vivek Aggarwal [21-Feb-2011] -->
+
+		<action path="/masters/QualityTestMstACTION"
+			type="cssd.masters.controller.action.QualityTestMstACTION" name="qualityTestBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/cssd_add_qualityTest_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/cssd_modify_qualityTest_mst.jsp" />
+
+		</action>
+		<!-- Quality Test Master by Vivek Aggarwal END [23-Feb-2011] -->
+
+
+		<!-- Machine Parameter Master by Vivek Aggarwal [23-Feb-2011] -->
+		<action path="/masters/MachineParameterMstACTION"
+			type="cssd.masters.controller.action.MachineParameterMstACTION" name="machineParameterBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/jsp/cssd_add_machineParameter_mst.jsp" />
+			<forward name="modify"
+				path="/masters/jsp/cssd_modify_machineParameter_mst.jsp" />
+		</action>
+		<!-- Machine Parameter Master by Vivek Aggarwal END [25-Feb-2011] -->
+
+
+		<!-- Aritra Start -->
+		<action path="/masters/SectionShiftMstACTION"
+			type="cssd.masters.controller.action.SectionShiftMstACTION" name="sectionShiftMstFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add-page" path="/masters/jsp/cssd_add_section_shift_mst.jsp" />
+
+			<forward name="modify-page"
+				path="/masters/jsp/cssd_modify_section_shift_mst.jsp" />
+		</action>
+
+		<action path="/masters/SectionRoleMstACTION"
+			type="cssd.masters.controller.action.SectionRoleMstACTION" name="sectionRoleMstFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add-page" path="/masters/jsp/cssd_add_section_role_mst.jsp" />
+
+			<forward name="modify-page" path="/masters/jsp/cssd_modify_section_role_mst.jsp" />
+		</action>
+		
+		<action path="/masters/MethodChecklistMstACTION"
+			type="cssd.masters.controller.action.MethodChecklistMstACTION" name="methodChecklistMstFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add-page" path="/masters/jsp/cssd_add_method_checklist_mst.jsp" />
+
+			<forward name="modify-page" path="/masters/jsp/cssd_modify_method_checklist_mst.jsp" />
+		</action>
+		<!-- Aritra End -->
+<!-- Master by Anshul Start -->
+<action path="/masters/LocationMstACTION" type="cssd.masters.controller.action.LocationMstACTION"
+			name="locationBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/cssd_add_location_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/cssd_modify_location_mst.jsp" />
+		</action>
+		<!-- Machine  Master  -->
+		<action path="/masters/MachineMstACTION"
+			type="cssd.masters.controller.action.MachineMstACTION" name="machineBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add"
+				path="/masters/jsp/cssd_add_machine_mst.jsp" />
+			<forward name="modify"
+				path="/masters/jsp/cssd_modify_machine_mst.jsp" />
+		</action>
+		
+		<action path="/masters/LocationItemMappingACTION"
+			type="cssd.masters.controller.action.LocationItemMappingACTION" name="locItemMappingBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="NEW"	path="/masters/jsp/cssd_location_item_mapping_mst.jsp" />
+		<forward name="CANCEL" path="/../startup/initPage.jsp"/>		</action>
+		<!-- master by Anshul End -->
+	</action-mappings>
+
+
+
+
+	<controller>
+		<set-property property="processorClass"
+			value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="cssd.cssdResourceBundle">
+	</message-resources>
+
+
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

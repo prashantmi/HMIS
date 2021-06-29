@@ -1,0 +1,206 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='UnitConsultantMaster'>
+		<common-values>
+			<master-name>UnitConsultantMaster</master-name>
+			<master-title>Unit Consultant Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Unit Consultant Master</tableHeading> 
+				<list-table>HGBT_UNIT_CONSULTANT_MST</list-table>
+				
+				<columns>
+					 <column>Employee Name </column>
+				      <column>Location Name </column>
+				  </columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.PSRSTR_FNAME)||INITCAP(A.PSRSTR_MNAME)||INITCAP(A.PSRSTR_LNAME) </field>
+						
+						<field>INITCAP(B.HGSTR_DESCRIPTION)</field>
+						</fields>
+					<primaryKey>
+						<field>A.PSRSTR_EMP_NO</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>PSRT_EMPLOYEE_MST </table>
+					    <table alias='B'>HGBT_LOCATION_MST </table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_LOCATION_CODE=B.HGNUM_LOCATION_CODE and A.GNUM_ISVALID </isvalid-field>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>				
+					<control type="combo" index="0">
+						<label>Employee Name</label>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.PSRSTR_FNAME)||INITCAP(A.PSRSTR_MNAME)||INITCAP(A.PSRSTR_LNAME) </text-field>
+									<value-field>PSRSTR_EMP_NO </value-field>
+								</options>
+								<tables>
+									<table alias='A'>PSRT_EMPLOYEE_MST </table>
+									
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1 </general>
+									
+								</condition>
+							</dynamic>
+							
+						</data>
+						<default>-1</default>
+					   <submitRequired>1</submitRequired>
+					</control>
+                 <control type="combo" index="1">
+						<label>Location Name</label>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGSTR_DESCRIPTION) </text-field>
+									<value-field>HGNUM_LOCATION_CODE </value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_LOCATION_MST </table>
+									
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1 </general>
+									
+								</condition>
+							</dynamic>
+							
+						</data>
+						<default>-1</default>
+					 <submitRequired>1</submitRequired>
+					</control>
+				
+					<control type="combo" index="2">
+						<label>IsValid Status</label>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				 
+				
+				</controls>
+				<insert-query>
+					<primary-key>
+						<field>HGNUM_DEPTUNITCODE</field>
+							<value>SELECT NVL(MAX(HGNUM_DEPTUNITCODE),0)+1 FROM HGBT_UNIT_CONSULTANT_MST</value>
+					
+					</primary-key>
+					
+					<fields valueMap='#0'>HGSTR_EMP_CODE</fields>
+					<fields valueMap='@entryDate'>HGDT_ENTRY_DATE</fields>
+					<fields valueMap='@seatId'>HGNUM_SEAT_ID</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='#1'>HGNUM_LOCATION_CODE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+					<table>HGBT_UNIT_CONSULTANT_MST</table>
+					
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+
+		<modify-page>
+		  <dynamic-page>
+		   <controls>
+		<control type="combo" index="0">
+						<label>Employee Name</label>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.PSRSTR_FNAME)||INITCAP(A.PSRSTR_MNAME)||INITCAP(A.PSRSTR_LNAME)</text-field>
+									<value-field>PSRSTR_EMP_NO </value-field>
+								</options>
+								<tables>
+									<table alias='A'>PSRT_EMPLOYEE_MST</table>	
+								</tables>
+								<condition>
+									<general>GNUM_ISVALID = 1</general>
+							   </condition>								
+							</dynamic>									
+						</data>
+						<default>#Q0</default>	
+						<submitRequired>0</submitRequired>
+					</control>
+					
+					<control type="combo" index="1">
+						<label>Location Name</label>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGSTR_DESCRIPTION)</text-field>
+									<value-field>HGNUM_LOCATION_CODE </value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_LOCATION_MST</table>	
+								</tables>
+								<condition>
+									<general>GNUM_ISVALID = "1"</general>
+							</condition>									
+							</dynamic>									
+						</data>
+						<default>#Q1</default>	
+						<submitRequired>0</submitRequired>
+					</control>
+				
+
+				
+					<control type="combo" index="2">
+						<label>IsActive Status</label>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+                        
+						   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>A.HGSTR_EMP_CODE</field>
+					 <field>A.HGNUM_LOCATION_CODE</field>
+					              						
+				 </fields>					
+					<tables>
+						<table alias='A'>HGBT_UNIT_CONSULTANT_MST</table>
+						
+					</tables>
+					<condition>						
+						<dependent>
+						    <clause>A.GNUM_STATECODE= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>
+					
+					<fields valueMap='#0'>HGSTR_EMP_CODE</fields>
+					<fields valueMap='@entryDate'>HGDT_ENTRY_DATE</fields>
+					<fields valueMap='@seatId'>HGNUM_SEAT_ID</fields>
+					<fields valueMap='#1'>HGNUM_LOCATION_CODE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>				
+					
+					<table>HGBT_UNIT_CONSULTANT_MST</table>
+					<condition>HGNUM_DEPTUNITCODE = #1</condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

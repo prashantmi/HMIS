@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<master-config>
+	<master name='Nutrient Master'>
+		<common-values>
+			<master-name>Nutrient Master</master-name>
+			<master-title>Nutrient Master</master-title>
+		</common-values>
+
+<list-page>
+		<tableHeading>Nutrient Master</tableHeading> 
+		<list-table>HDKT_NUTRIENT_MST</list-table>
+
+		<columns>
+			<column>Nutrient Name</column>
+			<column>Nutrient Description</column>
+			
+		</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HDKSTR_NUTRIENTNAME)</field>
+					<field>NVL(A.HDKSTR_NUTRIENT_DESC,' ')</field>
+					
+				</fields>
+				
+				<primaryKey>
+					<field>A.HDKNUM_NUTRIENT_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDKT_NUTRIENT_MST</table>
+					
+				</tables>
+				
+				
+				<condition>
+				<isvalid-field>A.GNUM_ISVALID </isvalid-field>
+					<general> A.GNUM_HOSPITAL_CODE=100 AND</general>
+					<general-inactive> A.GNUM_HOSPITAL_CODE=100 AND</general-inactive>
+					<orderby>ORDER BY INITCAP(A.HDKSTR_NUTRIENTNAME)</orderby>
+				</condition>
+				
+			</query-detail>				
+</list-page>
+
+		<add-page>
+			<static-page>/dietkitchen/masters/NutrientMasterACTION.cnt</static-page>	
+		</add-page>
+
+
+		<modify-page>
+			<static-page>/dietkitchen/masters/NutrientMasterACTION.cnt</static-page>
+		</modify-page>
+			
+
+	</master>
+</master-config>
+
+<!-- Ending of List Page -->

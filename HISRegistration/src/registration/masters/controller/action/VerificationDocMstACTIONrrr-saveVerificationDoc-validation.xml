@@ -1,0 +1,48 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+<field name="veriDocModel.strDocName">
+	<field-validator type="requiredstring" >  
+    	    	<message>Document Name Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">30</param>
+                    <param name="trim">true</param>
+                    <message>Document Length Cannot Be Greater Than 30 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z]+[ a-zA-Z]*</param>
+       	<message>Document Name is Required. It Excepts Alphabets With Space Only</message>
+    </field-validator>
+</field>
+<field name="veriDocModel.strIsAlternate">
+    <field-validator type="regex">
+    <param name="expression">[0-9]</param>
+       <message>Altername Id Is Required.</message>
+    </field-validator>
+</field>
+<field name="veriDocModel.strIdSize">
+<field-validator type="requiredstring" >  
+    	<message>ID Size Is Required</message>
+</field-validator>
+<field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">2</param>
+                    <param name="trim">true</param>
+                    <message>ID Length Cannot Be Greater Than 97</message>
+ </field-validator>
+    <field-validator type="regex">
+    <param name="expression">^[1-9][0-9]?$</param>
+       <message>ID Size Is Required. It Should Be Numeric Except 0</message>
+    </field-validator>
+</field>
+<field name="veriDocModel.strIdValidationType">
+
+    <field-validator type="regex">
+     <param name="expression">[0-9]</param>
+       <message>ID Validation Type Is Required.</message>
+    </field-validator>
+</field>
+
+</validators>

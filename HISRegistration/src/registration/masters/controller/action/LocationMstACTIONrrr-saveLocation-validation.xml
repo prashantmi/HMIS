@@ -1,0 +1,24 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+<field name="locModel.strLocDescription">
+	<field-validator type="requiredstring" >  
+    	    	<message>Location Name Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">100</param>
+                    <param name="trim">true</param>
+                    <message>Loction Length Cannot Be Greater Than 100 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z0-9]+[ a-zA-Z0-9]*</param>
+       	<message>Location Name is Required. It Excepts Alphanumeric With Space Only</message>
+    </field-validator>
+</field>
+<field name="locModel.strLocTypeCode">
+    <field-validator type="regex">
+    <param name="expression">[1-9][0-9]</param>
+       <message>Location Type Is Required.</message>
+    </field-validator>
+</field>
+</validators>

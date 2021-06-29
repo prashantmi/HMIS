@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='AudioVideoMaster'>
+		<common-values>
+			<master-name>AudioVideoMaster </master-name>
+			<master-title>Audio Video Master </master-title>
+		</common-values>
+		<list-page>
+			<tableHeading>Audio Video Master </tableHeading> 
+			<list-table>HOPT_PLAYERFILE_MST</list-table>
+			<columns>
+				 <column>File Header</column>
+				 <column>Is Default</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HOPSTR_FILE_HEADER)</field>
+					<field>DECODE(A.HOPNUM_IS_DEFAULT,0,'No',1,'Yes')</field>
+				</fields>
+				<primaryKey>
+					<field>A.HOPNUM_FILE_CODE</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HOPNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HOPT_PLAYERFILE_MST </table>
+				</tables>
+				<condition>					 
+                    <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                    <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                    <orderby> order by INITCAP(A.HOPSTR_FILE_HEADER)</orderby>
+                </condition>
+			</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<static-page>/opd/master/audioVideoMaster.cnt</static-page>			
+		</add-page>
+		
+		<modify-page>	
+   		    <static-page>/opd/master/audioVideoMaster.cnt</static-page>		
+		</modify-page>
+		
+	</master>	
+</master-config>

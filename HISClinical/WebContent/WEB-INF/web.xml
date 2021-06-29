@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+ --><web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+	
+	<display-name>HISClinical</display-name>
+	
+	<context-param>
+		<param-name>BIRT_VIEWER_LOCALE</param-name>
+		<param-value>en-US</param-value>
+	</context-param>
+
+	<!-- Report resources directory for preview. Default to ${birt home} -->
+	<context-param>
+		<param-name>BIRT_VIEWER_WORKING_FOLDER</param-name>
+		<param-value></param-value>
+	</context-param>
+	
+	<!-- The generated document files directory. Default to ${birt home}/documents -->
+	<context-param>
+		<param-name>BIRT_VIEWER_DOCUMENT_FOLDER</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- If only access the reprot resources under working folder. Default is false -->
+	<context-param>
+		<param-name>WORKING_FOLDER_ACCESS_ONLY</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+	<!-- Output image/chart directory. Default to ${birt home}/report/images -->
+	<context-param>
+		<param-name>BIRT_VIEWER_IMAGE_DIR</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Engine log directory. Default to ${birt home}/logs -->
+	<context-param>
+		<param-name>BIRT_VIEWER_LOG_DIR</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Report engine log level -->
+	<context-param>
+		<param-name>BIRT_VIEWER_LOG_LEVEL</param-name>
+		<param-value>WARNING</param-value>
+	</context-param>
+
+	<!-- Directory to store all birt report script libraries (JARs). Default to ${birt home}/scriptlib -->
+	<context-param>
+		<param-name>BIRT_VIEWER_SCRIPTLIB_DIR</param-name>
+		<param-value></param-value>
+	</context-param>
+	
+	<!-- Resource location directory. Default to ${birt home} -->
+	<context-param>
+		<param-name>BIRT_RESOURCE_PATH</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Preview report max rows limited. -->
+	<context-param>
+		<param-name>BIRT_VIEWER_MAX_ROWS</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Preview report max cube fetch levels limited.(Only support to preview a report design file using preview pattern.) -->
+	<context-param>
+		<param-name>BIRT_VIEWER_MAX_CUBE_LEVELS</param-name>
+		<param-value></param-value>
+	</context-param>
+
+	<!-- Memory size(MB) for creating cube. -->
+	<context-param>
+		<param-name>BIRT_VIEWER_CUBE_MEMORY_SIZE</param-name>
+		<param-value></param-value>
+	</context-param>
+	
+	<!-- If always overwrite generated document file. For runtime,efalult to true -->
+	<context-param>
+		<param-name>BIRT_OVERWRITE_DOCUMENT</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!-- Define BIRT viewer configuration file -->
+	<context-param>
+		<param-name>BIRT_VIEWER_CONFIG_FILE</param-name>
+		<param-value>WEB-INF/viewer.properties</param-value>
+	</context-param>
+
+	<!-- If turn on the function that supports print on the server side. Default to on. -->
+	<context-param>
+		<param-name>BIRT_VIEWER_PRINT_SERVERSIDE</param-name>
+		<param-value>ON</param-value>
+	</context-param>
+
+	<!-- If force optimized HTML output. Default to true -->
+	<context-param>
+		<param-name>HTML_ENABLE_AGENTSTYLE_ENGINE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<!--  
+	<filter>
+    	<filter-name>ViewerFilter</filter-name>
+        <filter-class>org.eclipse.birt.report.filter.ViewerFilter</filter-class>
+	</filter>
+    <filter-mapping>
+        <filter-name>ViewerFilter</filter-name>
+        <servlet-name>ViewerServlet</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>ViewerFilter</filter-name>
+        <servlet-name>EngineServlet</servlet-name>
+    </filter-mapping>
+
+	-->
+	<filter>
+		<filter-name>HISSSOClientRequestFilter</filter-name>
+		<filter-class>hissso.client.filter.HISSSOClientRequestFilter</filter-class>
+	</filter>
+	<filter-mapping>
+    	<filter-name>HISSSOClientRequestFilter</filter-name>
+    	<url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+	<!--  added on date: 30.11.2016 by manisha gangwar 
+    	<filter>
+	<filter-name>CrossScriptingFilter</filter-name>
+	<filter-class>application.filters.CrossScriptingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CrossScriptingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>-->
+
+	
+	<!--  added on date: 21.05.2018 by shriyansh -->
+	<!-- <filter>
+   <filter-name>FormFieldValidationFilter</filter-name>
+    <filter-class>application.filters.FormFieldValidationFilter</filter-class>
+   </filter>
+	<filter-mapping>
+   <filter-name>FormFieldValidationFilter</filter-name>
+    <url-pattern>*.cnt</url-pattern>
+   <dispatcher>REQUEST</dispatcher>
+   </filter-mapping> -->
+	 <!--Struts2 Filter Dispatcher Added by Singaravelan on 19-Mar-2015 for Struts2 Appointment Class Integration  -->				
+	<!-- <filter>
+  		<filter-name>Struts2Filter</filter-name>
+  		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+  		<init-param>
+			<param-name>config</param-name>
+			<param-value>struts-default.xml</param-value>
+		</init-param>
+  	</filter>
+  	<filter-mapping>
+  		<filter-name>Struts2Filter</filter-name>
+  		<url-pattern>*.action</url-pattern>
+  		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher> 
+  	</filter-mapping>
+  	<filter-mapping>
+  		<filter-name>Struts2Filter</filter-name>
+  		<url-pattern>*.jsp</url-pattern>
+  		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher> 
+  	</filter-mapping> -->
+	<!--Struts2 Filter Dispatcher Ends-->
+	
+	<filter>
+	<filter-name>Struts2Filter</filter-name>
+	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+    
+	
+  	<filter-mapping>
+  		<filter-name>Struts2Filter</filter-name>
+  		<url-pattern>*.action</url-pattern>
+  	</filter-mapping>
+  	<filter-mapping>
+  		<filter-name>Struts2Filter</filter-name>
+  		<url-pattern>*.jsp</url-pattern>
+  	</filter-mapping>
+  	
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config-masterWorkshop.xml</param-value>
+		</init-param>
+	
+		<!-- Added by Neha Sharma on 16th July 2014 -->
+		<!-- Service Area Start -->
+	<!-- 	<init-param>
+	  	   <param-name>config/servicearea</param-name> 
+	 	   <param-value>/WEB-INF/struts-config-servicearea-transactions.xml,/WEB-INF/struts-config-servicearea-master.xml,/WEB-INF/struts-config-servicearea-reports.xml</param-value> 
+	  	</init-param>  	 -->
+		<!-- Service Area  End -->
+
+		<!-- investigation start -->
+		<!-- <init-param>
+			<param-name>config/investigation</param-name>
+			<param-value>/WEB-INF/investigation/struts-config-Investigation.xml,/WEB-INF/investigation/struts-config-investigation-reports.xml</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/investigationDesk</param-name>
+			<param-value>/WEB-INF/struts-config-investigationDesk-transaction.xml</param-value>
+		</init-param> -->
+		<!-- investigation send -->
+		
+		<!-- OT Start -->
+		<!-- <init-param>
+			<param-name>config/operationTheatre</param-name>
+			<param-value>/WEB-INF/operationTheatre/struts-config-operationTheatre-transactions.xml,/WEB-INF/operationTheatre/struts-config-operationTheatre-reports.xml</param-value>
+		</init-param> -->
+		<!-- OT end -->
+	
+		<init-param>
+				<param-name>config/dynamicreports</param-name>
+				<param-value>/WEB-INF/dynamicreports-config.xml</param-value>
+		</init-param>
+	 
+		<init-param>
+			<param-name>config/enquiry</param-name>
+			<param-value>/WEB-INF/struts-config-enquiry.xml</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/opd</param-name>
+			<param-value>/WEB-INF/struts-config-opd-master.xml,/WEB-INF/struts-config-opd-transaction.xml,/WEB-INF/struts-config-opd-reports.xml</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/registration</param-name>
+			<param-value>/WEB-INF/struts-config-RegistrationDesk.xml,/WEB-INF/struts-config-registration-master.xml,/WEB-INF/struts-config-reports.xml,/WEB-INF/struts-config-registration-reports1.xml</param-value>
+		</init-param>
+
+		<!-- <init-param>
+			<param-name>config/bloodbank</param-name>
+			<param-value>/WEB-INF/struts-config-bloodbank-transaction.xml,/WEB-INF/struts-config-bloodbank-master.xml,/WEB-INF/struts-config-bloodbank-report.xml</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>config/alertmanagement</param-name>
+			<param-value>/WEB-INF/struts-config-alertmanagement.xml,/WEB-INF/struts-config-alertmanagement-master.xml</param-value>
+		</init-param> -->
+
+		<init-param>
+			<param-name>config/inpatient</param-name>
+			<param-value>/WEB-INF/struts-config-inpatient-transaction.xml,/WEB-INF/struts-config-inpatient-master.xml,/WEB-INF/struts-config-inpatient-reports.xml</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/hisglobal/utility/dynamicdesk</param-name>
+			<param-value>/WEB-INF/struts-config-dynamicdesk.xml</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/hisglobal/utility/generictemplate</param-name>
+			<param-value>/WEB-INF/struts-config-generictemplate.xml</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/dutyroster</param-name>
+			<param-value>/WEB-INF/struts-config-dutyroster-transaction.xml,/WEB-INF/struts-config-dutyroster-master.xml,/WEB-INF/struts-config-dutyroster-report.xml</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>config/mrd</param-name>
+			<param-value>/WEB-INF/struts-config-mrd-transaction.xml,/WEB-INF/struts-config-mrd-master.xml,/WEB-INF/struts-config-mrd-reports.xml</param-value>
+		</init-param>
+
+		<!-- <init-param>
+			<param-name>config/medicalboard</param-name>
+			<param-value>/WEB-INF/struts-config-medicalboard-transaction.xml,/WEB-INF/struts-config-medicalboard-master.xml</param-value>
+		</init-param>
+		 -->
+		<init-param>
+			<param-name>config/mortuary</param-name>
+			<param-value>/WEB-INF/struts-config-mortuary-transaction.xml,/WEB-INF/struts-config-mortuary-master.xml,/WEB-INF/struts-config-mortuary-reports.xml</param-value>
+		</init-param>
+		
+		<!-- <init-param>
+			<param-name>config/disaster</param-name>
+			<param-value>/WEB-INF/struts-config-disaster.xml,/WEB-INF/struts-config-disaster-master.xml,/WEB-INF/struts-config-disaster-report.xml</param-value>
+		</init-param> -->
+		
+		<init-param>
+			<param-name>config/utility</param-name>
+			<param-value>/WEB-INF/struts-config-utility.xml</param-value>
+		</init-param>
+			
+		<!-- Diet Kitchen  Start -->
+		<!-- Added on 16-May-2012 By Pawan Kumar B N -->
+		<init-param>
+		  <param-name>config/dietkitchen</param-name>
+				<param-value>/WEB-INF/dietkitchen/struts-config-dietkitchen-masters.xml,/WEB-INF/dietkitchen/struts-config-dietkitchen-transactions.xml,/WEB-INF/dietkitchen/struts-config-dietkitchen-reports.xml</param-value>
+		</init-param>
+	    <!-- End Diet Kitchen -->
+	    
+		<init-param>
+			<param-name>config/emr</param-name>
+			<param-value>/WEB-INF/struts-config-emr.xml</param-value>
+		</init-param>
+	    
+	    
+	
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>masterWorkshop.MasterRouter</servlet-name>
+		<servlet-class>hisglobal.masterxml.masterworkshop.MasterRouter</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config-masterWorkshop.xml</param-value>
+		</init-param>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>showImage</servlet-name>
+		<servlet-class>registration.controller.action.ShowImageOutofAnArray</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>showImage</servlet-name>
+		<url-pattern>/image/showImage</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>getValue</servlet-name>
+		<servlet-class>opd.transaction.controller.action.BackgroundQuery</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>getValue</servlet-name>
+		<url-pattern>/getValue</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ipdPatientCount</servlet-name>
+		<servlet-class>inpatient.transaction.controller.action.CountAdmittedPatient</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ipdPatientCount</servlet-name>
+		<url-pattern>/ipdPatientCount</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>csultyPatCount</servlet-name>
+		<servlet-class>opd.transaction.controller.action.CountCsultyPatient</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>csultyPatCount</servlet-name>
+		<url-pattern>/csultyPatCount</url-pattern>
+	</servlet-mapping>
+	
+	<!-- <servlet>
+		<servlet-name>cmoPatCount</servlet-name>
+		<servlet-class>registration.controller.action.CountCMOPatientList</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>cmoPatCount</servlet-name>
+		<url-pattern>/cmoPatientListCount</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<description></description>
+		<display-name>ShowReportACTION</display-name>
+		<servlet-name>ShowReportACTION</servlet-name>
+		<servlet-class>registration.controller.action.ShowReportACTION</servlet-class>
+	</servlet> -->
+	
+	
+	<servlet>
+		<description></description>
+		<display-name>GenerateGraphACTION</display-name>
+		<servlet-name>GenerateGraphACTION</servlet-name>
+		<servlet-class>registration.reports.controller.action.GenerateGraphACTION</servlet-class>
+	</servlet> 
+	
+	<servlet>
+		<description></description>
+		<display-name>GetList</display-name>
+		<servlet-name>GetList</servlet-name>
+		<servlet-class>opd.master.controller.action.GetList</servlet-class>
+	</servlet>
+	
+	<!-- <servlet>
+		<description></description>
+		<display-name>GetBillAmountByPatientCat</display-name>
+		<servlet-name>GetBillAmountByPatientCat</servlet-name>
+		<servlet-class>registration.controller.action.GetBillAmountByPatientCat</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description></description>
+		<display-name>GetDistrictListByState</display-name>
+		<servlet-name>GetDistrictListByState</servlet-name>
+		<servlet-class>registration.controller.action.GetDistrictListByState</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description></description>
+		<display-name>GetDetailsByCityLocation</display-name>
+		<servlet-name>GetDetailsByCityLocation</servlet-name>
+		<servlet-class>registration.controller.action.GetDetailsByCityLocation</servlet-class>
+	</servlet> -->
+	
+	<servlet>
+		<description></description>
+		<display-name>GetNewMailsForOpdConsultaionInbox</display-name>
+		<servlet-name>GetNewMailsForOpdConsultaionInbox</servlet-name>
+		<servlet-class>opd.transaction.controller.action.GetNewMailsForOpdConsultaionInbox</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description></description>
+		<display-name>GetNewConsentRequestConsentInbox</display-name>
+		<servlet-name>GetNewConsentRequestConsentInbox</servlet-name>
+		<servlet-class>opd.transaction.controller.action.GetNewConsentRequestConsentInbox</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description></description>
+		<display-name>ShowFileFromDir</display-name>
+		<servlet-name>ShowFileFromDir</servlet-name>
+		<servlet-class>opd.transaction.controller.action.ShowFileFromDir</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>Displaying a given File with Directory</description>
+		<display-name>DisplayFile</display-name>
+		<servlet-name>DisplayFileServlet</servlet-name>
+		<servlet-class>hisglobal.utility.servlets.DisplayFileServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>Displaying a given Byte Array</description>
+		<display-name>DisplayByteArray</display-name>
+		<servlet-name>DisplayByteArrayServlet</servlet-name>
+		<servlet-class>hisglobal.utility.servlets.DisplayByteArrayServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description></description>
+		<display-name>GetFileFromRepositry</display-name>
+		<servlet-name>GetFileFromRepositry</servlet-name>
+		<servlet-class>opd.transaction.controller.action.GetFileFromRepositry</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>htmlToPdfConvertor</servlet-name>
+		<servlet-class>opd.transaction.controller.action.HtmlConsentToPdfServlet</servlet-class>
+		<load-on-startup>-1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ReadPdfServlet</servlet-name>
+		<servlet-class>hisglobal.utility.print.ReadPdfServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ReadPdfServlet</servlet-name>
+		<url-pattern>/hisglobal/utility/print/readPdfServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ReadPdfServlet</servlet-name>
+		<url-pattern>/hisglobal/utility/burnDisc/readPdfServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>InstallSoftwareServlet</servlet-name>
+		<servlet-class>hisglobal.utility.installSoftware.InstallSoftwareServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>InstallSoftwareServlet</servlet-name>
+		<url-pattern>/installSoftware/installSoftwareServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<description></description>
+		<display-name>ShowHtmlView</display-name>
+		<servlet-name>ShowHtmlView</servlet-name>
+		<servlet-class>opd.transaction.controller.action.ShowHtmlView</servlet-class>
+	</servlet>
+	
+	<!-- Start: investigation -->    
+   <!--  <servlet>
+		<servlet-name>investigationAjaxSer</servlet-name>
+		<servlet-class>investigation.controller.transaction.util.GetInvestigationData</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description></description>
+		<display-name>Re Design Template</display-name>
+		<servlet-name>RedesignAJAXServlet</servlet-name>
+		<servlet-class>investigation.controller.transaction.action.RedeisignTemplateAJAXServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>RedesignAJAXServlet</servlet-name>
+		<url-pattern>/investigation/redesignAJAXServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>investigationAjaxSer</servlet-name>
+		<url-pattern>/investigation/investigationAjaxServlet</url-pattern>
+	</servlet-mapping>
+			<servlet>
+		<servlet-name>showRFandSFServlet</servlet-name>
+		<servlet-class>investigation.controller.transaction.util.ShowRequistionFormAndSampleFormUTIL</servlet-class>
+	</servlet>
+		<servlet-mapping>
+		<servlet-name>showRFandSFServlet</servlet-name>
+		<url-pattern>/investigation/showRFandSF</url-pattern>
+	</servlet-mapping>
+	 -->
+	<!-- Start: Image utility investigation  -->
+	<!-- <servlet>
+		<servlet-name>XmlConfigReadServlet</servlet-name>
+		<servlet-class>hisglobal.tools.imageeditor.XmlConfigReadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XmlConfigReadServlet</servlet-name>
+		<url-pattern>/XmlConfigReadServlet</url-pattern>
+	</servlet-mapping>
+		 -->
+	<!-- <servlet>
+		<servlet-name>CreateNewPrintingTemplateSer</servlet-name>
+		<servlet-class>investigation.transaction.controller.action.CreateNewPrintingTemplate</servlet-class>
+	</servlet>
+	 -->
+	<servlet>
+		<servlet-name>PipelineServlet</servlet-name>
+		<servlet-class>hisglobal.tools.imageeditor.PipelineServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ImageRenderer</servlet-name>
+		<servlet-class>hisglobal.tools.imageupload.ImageRendererServlet</servlet-class>
+	</servlet>
+	<!-- <servlet>
+		<description>
+		</description>
+		<display-name>RequisitionFormImageReadingServlet</display-name>
+		<servlet-name>RequisitionFormImageReadingServlet</servlet-name>
+		<servlet-class>investigation.controller.transaction.action.RequisitionFormImageReadingServlet</servlet-class>
+	</servlet> -->
+	<servlet-mapping>
+		<servlet-name>ImageRenderer</servlet-name>
+		<url-pattern>/ImageRenderer</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet-mapping>
+		<servlet-name>PipelineServlet</servlet-name>
+		<url-pattern>/PipelineServlet</url-pattern>
+	</servlet-mapping>
+	<!-- <servlet-mapping>
+		<servlet-name>RequisitionFormImageReadingServlet</servlet-name>
+		<url-pattern>/investigation/requisitionFormImageReadingServlet</url-pattern>
+	</servlet-mapping> -->
+	
+	<!-- end: Image utility investigation -->
+	<!-- <servlet>
+		<description>
+		</description>
+		<display-name>ShowRequistionFormAndSampleForm</display-name>
+		<servlet-name>ShowRequistionFormAndSampleForm</servlet-name>
+		<servlet-class>
+		investigation.controller.transaction.util.ShowRequistionFormAndSampleForm</servlet-class>
+	</servlet> -->
+	<!-- <servlet>
+		<description>
+		</description>
+		<display-name>CreateNewPrintingTemplate</display-name>
+		<servlet-name>CreateNewPrintingTemplate</servlet-name>
+		<servlet-class>
+		investigation.controller.transaction.action.CreateNewPrintingTemplate</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>MergeAllPdf</display-name>
+		<servlet-name>MergeAllPdf</servlet-name>
+		<servlet-class>
+		investigation.controller.transaction.action.MergeAllPdf</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LoadStyleSheetServlet</display-name>
+		<servlet-name>LoadStyleSheetServlet</servlet-name>
+		<servlet-class>investigation.controller.transaction.action.LoadStyleSheetServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>Used For Ajaxian function response</description>
+		<display-name>RequisitionRaisingUtilityServlet</display-name>
+		<servlet-name>RequisitionRaisingUtilityServlet</servlet-name>
+		<servlet-class>investigation.controller.transaction.action.RequisitionRaisingUtilityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>invuploadlogfile</display-name>
+		<servlet-name>invuploadlogfile</servlet-name>
+		<servlet-class>
+		investigation.controller.transaction.action.invuploadlogfile</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>InvestigationCommServlet</display-name>
+		<servlet-name>InvestigationCommServlet</servlet-name>
+		<servlet-class>
+		investigation.InvestigationCommServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InvestigationCommServlet</servlet-name>
+		<url-pattern>/InvestigationCommServlet</url-pattern>
+	</servlet-mapping>
+	 -->
+	<!--<servlet-mapping>
+		<servlet-name>ShowRequistionFormAndSampleForm</servlet-name>
+		<url-pattern>/ShowRequistionFormAndSampleForm</url-pattern>
+	</servlet-mapping>
+	 <servlet-mapping>
+		<servlet-name>CreateNewPrintingTemplate</servlet-name>
+		<url-pattern>/investigation/transaction/CreateNewPrintingTemplateSer</url-pattern>
+	</servlet-mapping> -->
+	<!-- <servlet-mapping>
+		<servlet-name>MergeAllPdf</servlet-name>
+		<url-pattern>/MergeAllPdf</url-pattern>
+	</servlet-mapping>
+	 <servlet-mapping>
+		<servlet-name>LoadStyleSheetServlet</servlet-name>
+		<url-pattern>/investigation/LoadStyleSheetServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RequisitionRaisingUtilityServlet</servlet-name>
+		<url-pattern>/investigation/requisitionRaisingUtilityServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>invuploadlogfile</servlet-name>
+		<url-pattern>/invuploadlogfile</url-pattern>
+	</servlet-mapping>	 -->
+	<!-- end: investigation  -->
+	<servlet-mapping>
+		<servlet-name>htmlToPdfConvertor</servlet-name>
+		<url-pattern>/opd/consentPrint</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>HTMLToPDFServlet</servlet-name>
+		<servlet-class>hisglobal.utility.servlets.HTMLToPDFServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HTMLToPDFServlet</servlet-name>
+		<url-pattern>/hisglobal/ConvertHTMLToPDF</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ImageEditorServlet</servlet-name>
+		<servlet-class>hisglobal.tools.imageeditor.servlets.ImageEditorServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ImageEditorServlet</servlet-name>
+		<url-pattern>/servlets/ImageEditorServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>masterWorkshop.MasterRouter</servlet-name>
+		<url-pattern>*.mst</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.cnt</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>GenerateGraphACTION</servlet-name>
+		<url-pattern>/GenerateGraphACTION</url-pattern>
+	</servlet-mapping>
+	
+<!-- 	<servlet-mapping>
+		<servlet-name>ShowReportACTION</servlet-name>
+		<url-pattern>/ShowReportACTION</url-pattern>
+	</servlet-mapping>
+	 -->
+	<!-- <servlet-mapping>
+		<servlet-name>Check</servlet-name>
+		<url-pattern>/Check</url-pattern>
+	</servlet-mapping>
+	 -->
+	<servlet-mapping>
+		<servlet-name>GetList</servlet-name>
+		<url-pattern>/GetList</url-pattern>
+	</servlet-mapping>
+	
+	<!-- <servlet-mapping>
+		<servlet-name>GetBillAmountByPatientCat</servlet-name>
+		<url-pattern>/AmountByPatientCat</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>GetDistrictListByState</servlet-name>
+		<url-pattern>/DistrictListByState</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>GetDetailsByCityLocation</servlet-name>
+		<url-pattern>/DetailByCityLocation</url-pattern>
+	</servlet-mapping> -->
+	
+	<servlet-mapping>
+		<servlet-name>GetNewMailsForOpdConsultaionInbox</servlet-name>
+		<url-pattern>/GetNewMailsForOpdConsultaionInbox</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>GetNewConsentRequestConsentInbox</servlet-name>
+		<url-pattern>/GetNewConsentRequestConsentInbox</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DisplayFileServlet</servlet-name>
+		<url-pattern>/DisplayFileServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DisplayByteArrayServlet</servlet-name>
+		<url-pattern>/DisplayByteArrayServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ShowFileFromDir</servlet-name>
+		<url-pattern>/ShowFileFromDir</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>GetFileFromRepositry</servlet-name>
+		<url-pattern>/GetFileFromRepositry</url-pattern>
+	</servlet-mapping>
+	
+	<!-- <servlet-mapping>
+		<servlet-name>CheckSession</servlet-name>
+		<url-pattern>/CheckSession</url-pattern>
+	</servlet-mapping>
+	 -->
+	
+	
+	<servlet-mapping>
+		<servlet-name>ShowHtmlView</servlet-name>
+		<url-pattern>/ShowHtmlView</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- Operation theatre  -->
+	<!-- <servlet>
+		<description>Used For ot Ajax function response</description>
+		<display-name>operationListUtilityServlet</display-name>
+		<servlet-name>operationListUtilityServlet</servlet-name>
+		<servlet-class>operationTheatre.transactions.controller.action.OperationListUtilityServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>operationListUtilityServlet</servlet-name>
+		<url-pattern>/operationTheatre/operationListUtilityServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<description>
+		</description>
+		<display-name>TemplateFetchers</display-name>
+		<servlet-name>TemplateFetchers</servlet-name>
+		<servlet-class>operationTheatre.transactions.controller.action.TemplateFetchers</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>TemplateFetchers</servlet-name>
+		<url-pattern>/operationTheatre/transactions/templateFetchers</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<servlet>
+		<servlet-name>OTAnesth_VitalMonitaGraph</servlet-name>
+		<servlet-class>operationTheatre.usefulmethods.OTAnesth_VitalMonitaGraph</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OTAnesth_VitalMonitaGraph</servlet-name>
+		<url-pattern>/OTAnesth_VitalMonitaGraph</url-pattern>
+	</servlet-mapping>
+	
+	 -->
+	<!-- END Operation theatre  -->
+
+	<session-config>
+		<session-timeout>-1</session-timeout>
+	</session-config>
+	
+	<error-page>
+		<exception-type>hisglobal.exceptions.HisReportDataNotFoundException</exception-type>
+		<location>/registration/reports/jsp/errorPageReportDataNotFound.jsp</location>
+	</error-page>
+	
+	
+	<context-param>
+		<param-name>Client</param-name>
+		<param-value>1</param-value>
+	</context-param>
+	
+ 	<!-- Servlet for RESTEasy Context Parametrs Starts -->
+	<context-param>
+		<param-name>resteasy.scan</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<param-name>resteasy.servlet.mapping.prefix</param-name>
+		<param-value>/services/restful</param-value>
+	</context-param>
+ 	<!-- Servlet for RESTEasy Context Parametrs Ends -->
+	
+	<!-- <listener>
+		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+	</listener> -->
+	<listener>
+		<listener-class>hissso.client.listener.HISSSOClientContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>hissso.client.listener.HISSSOClientSessionListener</listener-class>
+	</listener>
+	
+
+	<!-- <listener>
+		<listener-class>hisglobal.listener.HisContextListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>hisglobal.listener.HisSessionListener</listener-class>
+	</listener>  -->
+	
+	<!-- Viewer Servlet Context Listener 
+	<listener>
+		<listener-class>org.eclipse.birt.report.listener.ViewerServletContextListener</listener-class>
+	</listener>-->
+
+	<!-- Viewer HttpSession Listener 
+	<listener>
+		<listener-class>org.eclipse.birt.report.listener.ViewerHttpSessionListener</listener-class>
+	</listener>-->
+
+
+	
+   
+
+  	<!--<filter>
+		<filter-name>RequestLoginFilter</filter-name>
+		<filter-class>hisglobal.listener.HisRequestLoginFilter</filter-class>
+	</filter> 
+	
+	<filter-mapping>
+		<filter-name>RequestLoginFilter</filter-name>
+		<url-pattern>*.cnt</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>RequestLoginFilter</filter-name>
+		<url-pattern>*.mst</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>RequestLoginFilter</filter-name>
+		<url-pattern>/startup/UpdateUser</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>RequestLoginFilter</filter-name>
+		<url-pattern>/startup/loginAction</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		
+	</filter-mapping>
+	
+	
+	<filter-mapping>
+		<filter-name>RequestLoginFilter</filter-name>
+		<url-pattern>*.*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+		
+	</filter-mapping> -->
+	
+	
+ 	<!-- Servlet for REST Web Service Starts -->
+	<servlet>
+		<servlet-name>Resteasy</servlet-name>
+		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Resteasy</servlet-name>
+		<url-pattern>/services/restful/*</url-pattern>
+	</servlet-mapping>
+	<!-- Servlet for REST Web Service ends
+
+	<servlet>
+		<servlet-name>ViewerServlet</servlet-name>
+		<servlet-class>org.eclipse.birt.report.servlet.ViewerServlet</servlet-class>
+	</servlet> -->
+
+	   <!-- Engine Serlvet 
+	<servlet>
+		<servlet-name>EngineServlet</servlet-name>
+		<servlet-class>org.eclipse.birt.report.servlet.BirtEngineServlet</servlet-class>
+	</servlet>-->
+<!--  
+	<servlet-mapping>
+		<servlet-name>ViewerServlet</servlet-name>
+		<url-pattern>/frameset</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ViewerServlet</servlet-name>
+		<url-pattern>/run</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/preview</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/parameter</url-pattern>
+	</servlet-mapping>	
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/document</url-pattern>
+	</servlet-mapping>	
+
+	<servlet-mapping>
+		<servlet-name>EngineServlet</servlet-name>
+		<url-pattern>/output</url-pattern>
+	</servlet-mapping>	-->
+	
+	<!-- Pagination tag Servlet -->
+	<servlet>
+		<servlet-name>PaginationTagServlet</servlet-name>
+		<servlet-class>hisglobal.utility.servlets.PaginationTagServlet</servlet-class>
+			<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PaginationTagServlet</servlet-name>
+		<url-pattern>/hisglobal/PaginationTag</url-pattern>
+	</servlet-mapping>
+	<!-- End Pagination tag Servlet -->
+	
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/birt.tld</taglib-uri>
+			<taglib-location>/WEB-INF/birt.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	<resource-ref>
+		<description>
+			Resource reference to a factory for java.sql.Connection
+			instances that may be used for talking to a particular
+			database that is configured in the server.xml file.
+		</description>
+		<res-ref-name>AHIS</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	
+		<security-constraint>
+		<display-name>SecurityConstraint</display-name>
+		<web-resource-collection>
+			<web-resource-name>OGNLconsole</web-resource-name>
+			<url-pattern>/struts/webconsole.html</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	
+	
+	<session-config>
+		<cookie-config>
+			<name>USID</name>
+		</cookie-config>
+	</session-config>
+
+
+		<error-page>
+		<!-- Forbidden directory listing -->
+		<error-code>403</error-code>
+		<location>/application/jsp/app_error_under.jsp</location>
+	</error-page>
+	<error-page>
+		<!-- Missing resource -->
+		<error-code>404</error-code>
+		<location>/application/jsp/app_error_under.jsp</location>
+	</error-page>
+	<error-page>
+		<!-- Uncaught exception -->
+		<error-code>500</error-code>
+		<location>/application/jsp/app_error_under.jsp</location>
+	</error-page>
+	<error-page>
+		<!-- Unsupported servlet method -->
+		<error-code>503</error-code>
+		<location>/application/jsp/app_error_under.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>javax.servlet.ServletException</exception-type>
+		<location>/application/jsp/app_error_under.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.io.IOException</exception-type>
+		<location>/application/jsp/app_error_under.jsp</location>
+	</error-page>
+		
+  	
+	
+</web-app>

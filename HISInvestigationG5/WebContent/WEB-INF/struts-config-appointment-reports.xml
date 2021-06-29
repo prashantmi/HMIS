@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config
+  PUBLIC "-//Apache Software Foundation//DTD Struts
+  Configuration 1.1//EN"
+  "http://jakarta.apache.org/struts/dtds/struts-
+  config_1_1.dtd">
+
+
+<struts-config>
+<form-beans>
+<form-bean name="commonReportFB" type="appointment.reports.controller.fb.ReportFB"/>
+<form-bean name="AptCancellationReportFB" type="appointment.reports.controller.fb.AptCancellationReportFB"/>
+<form-bean name="AptReqStatusReportFB" type="appointment.reports.controller.fb.AptReqStatusReportFB"/>
+<form-bean name="AptExtendReportFB" type="appointment.reports.controller.fb.AptExtendReportFB"/>
+<form-bean name="AptPateintwiseReportFB" type="appointment.reports.controller.fb.AptPateintwiseReportFB" />
+</form-beans>
+
+<action-mappings>
+<action path="/appointment/report"        
+            type="appointment.reports.controller.action.CommonReportACTION"
+            name="commonReportFB"            
+            scope="request" 
+            parameter="mode">
+            <forward name="APTPATEINTWISEREPORT" path="/AptPateintwiseReport" />
+            <forward name="APTPATEINTWISEREPORTVIEW" path="/appointment/report/AptPateintwiseReportACTION.cnt" />
+            <forward name="APTCANCELLATIONREPORT" path="/AptCancellationReportdefinition"/>            
+			<forward name="APTCANCELLATIONREPORTVIEW" path="/appointment/report/AptCancellationReport.cnt"/>
+			<forward name="APTREQSTATUSREPORT" path="/AptReqStatusReportdefinition"/>            
+			<forward name="APTREQSTATUSREPORTVIEW" path="/appointment/report/AptReqStatusReport.cnt"/>
+			<forward name="APTEXTENDREPORT" path="/AptExtendReportdefinition"/>            
+			<forward name="APTEXTENDREPORTVIEW" path="/appointment/report/AptExtendReport.cnt"/>                                                
+</action>     
+
+
+<action path="/appointment/report/AptPateintwiseReportACTION" 
+				type="appointment.reports.controller.action.AptPateintwiseReportACTION"
+				name="AptPateintwiseReportFB"				
+				parameter="reportMode"
+				validate ="false"
+				scope="request" >				
+			<forward name="NEW" path="/appointment/reports/AptPateintwiseReport.jsp" />
+</action>			       
+
+<action path="/appointment/report/AptCancellationReport" 
+		type="appointment.reports.controller.action.AptCancellationReportAction" 
+		name="AptCancellationReportFB"
+		parameter="reportMode" 
+		validate="false"
+		scope="request" >
+		<forward name="NEW" path="/appointment/reports/AptCancellationReport.jsp" />			
+</action>	
+
+<action path="/appointment/report/AptReqStatusReport" 
+		type="appointment.reports.controller.action.AptReqStatusReportACTION" 
+		name="AptReqStatusReportFB"
+		parameter="reportMode" 
+		validate="false"
+		 >
+		<forward name="NEW" path="/appointment/reports/AptReqStatusReport.jsp" />			
+</action>	
+<action path="/appointment/report/AptExtendReport" 
+		type="appointment.reports.controller.action.AptExtendReportACTION" 
+		name="AptExtendReportFB"
+		parameter="reportMode" 
+		validate="false"
+		 >
+		<forward name="NEW" path="/appointment/reports/AptExtendReport.jsp" />			
+</action>	
+	
+</action-mappings>			
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/RegistrationDesk-tiles-defs.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+	</plug-in> 	
+	
+</struts-config>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="false" />
+     <!-- <constant name="struts.action.extension" value=","/>  -->
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"/> 
+    <!--  <constant name="struts.multipart.parser" value="jakarta-stream" /> -->
+     
+   
+     
+    <include file="/registration/config/struts-registration-master.xml"></include>
+    <include file="/registration/config/struts-registration.xml"></include>
+    <include file="/registration/config/struts-registration-reports.xml"></include>
+    
+    <include file="/appointment/config/struts-Appointment-master.xml"></include>
+    <include file="/appointment/config/struts-Appointment.xml"></include>
+    <include file="/appointment/config/struts-Appointment-reports.xml"></include>
+    
+    <include file="/hr/pis/common/config/struts-pis-common-master.xml"></include>
+    
+   
+    
+	<include file="/hisglobal/utility/filetransfer/config/struts-filetransfer.xml"></include>
+</struts>

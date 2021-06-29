@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="rackShelfMstFB" type="mrd.masters.controller.fb.RackShelfMstFB" />
+		<form-bean name="rackMstFB" type="mrd.masters.controller.fb.RackMstFB" />
+		<form-bean name="recordTypeWiseEnclosureMstFB" type="mrd.masters.controller.fb.RecordTypeWiseEnclosureMstFB" />
+		<form-bean name="processWiseDesigMappingFB" type="mrd.masters.controller.fb.ProcessWiseDesigMappingFB" />
+		<form-bean name="MrdMasterFB" type="mrd.masters.controller.fb.MrdMasterFB" />
+
+		<form-bean name="RecordBoundingFB" type="mrd.masters.controller.fb.RecordBoundingFB" />
+
+		<form-bean name="ReqPurposeMasterFB" type="mrd.masters.controller.fb.ReqPurposeMasterFB" />
+		<form-bean name="MrdCheckListMasterFB" type="mrd.masters.controller.fb.MrdCheckListMasterFB" />
+		<form-bean name="EnclosureMasterFB" type="mrd.masters.controller.fb.EnclosureMasterFB" />
+		<form-bean name="RecordTypeCheckListMstFB" type="mrd.masters.controller.fb.RecordTypeCheckListMstFB" />
+		<form-bean name="eprTabAccessMasterFB" type="mrd.masters.controller.fb.EprTabAccessMasterFB" />
+		<form-bean name="eprRestrictedCategoryMasterFB" type="mrd.masters.controller.fb.EprRestrictedCategoryMasterFB" />
+
+	</form-beans>
+	
+	
+	<action-mappings>
+	
+		<action path="/master/recordBounding"
+				type="mrd.masters.controller.action.RecordBoundingACT"
+				name="RecordBoundingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/recordBounding.jsp">
+			<forward name="NEW" path="/masters/recordBounding.jsp" />	
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>	
+		</action>
+		
+		<action path="/master/rackShelfMst"
+				type="mrd.masters.controller.action.RackShelfMstACT"
+				name="rackShelfMstFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/rackShelfMstAddMod.jsp">
+			<forward name="ADD" path="/masters/rackShelfMstAdd.jsp" />	
+			<forward name="MODIFY" path="/masters/rackShelfMstMod.jsp" />	
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />	
+				
+		</action>
+		
+		
+		<action path="/master/recordTypeWiseEnclosureMst"
+				type="mrd.masters.controller.action.RecordTypeWiseEnclosureMstACT"
+				name="recordTypeWiseEnclosureMstFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/recordTypeWiseEnclosureMstAddMod.jsp">
+			<forward name="ADD" path="/masters/recordTypeWiseEnclosureMstAddMod.jsp" />	
+			<forward name="POPUP" path="/masters/addEnclosurePopup.jsp" />
+			<forward name="MODIFY" path="/masters/recordTypeWiseEnclosureMstAddMod.jsp" />	
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />	
+		</action>
+		
+		<action path="/master/rackMst"
+				type="mrd.masters.controller.action.RackMstACT"
+				name="rackMstFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/rackMstAddMod.jsp">
+			<forward name="ADD" path="/masters/rackMstAddMod.jsp" />	
+			<forward name="MODIFY" path="/masters/rackMstAddMod.jsp" />	
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />	
+		</action>
+		
+		<action path="/processWiseDesigMapping"
+				type="mrd.masters.controller.action.ProcessWiseDesigMappingACT"
+				name="processWiseDesigMappingFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/processWiseDesigMapping.jsp">
+			<forward name="NEW" path="/masters/processWiseDesigMapping.jsp" />	
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />	
+		</action>
+		
+		<action path="/master/mrdMater"
+				type="mrd.masters.controller.action.MrdMasterACT"
+				name="MrdMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/mrdMaster.jsp">
+			<forward name="NEW" path="/masters/mrdMaster.jsp" />
+			<forward name="MODIFY" path="/masters/mrdModifyMaster.jsp" />		
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>		
+		</action>
+		
+		<action path="/master/reqPurposeMater"
+				type="mrd.masters.controller.action.ReqPurposeMasterACT"
+				name="ReqPurposeMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/reqPurposeMaster.jsp">
+			<forward name="NEW" path="/masters/reqPurposeMaster.jsp" />
+			<forward name="MODIFY" path="/masters/reqPurposeMasterMod.jsp" />	
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>		
+		</action>
+		
+		<action path="/master/mrdCheckListMater"
+				type="mrd.masters.controller.action.MrdCheckListMasterACT"
+				name="MrdCheckListMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/mrdCheckListMaster.jsp">
+			<forward name="NEW" path="/masters/mrdCheckListMaster.jsp" />
+			<forward name="MODIFY" path="/masters/mrdCheckListMasterMod.jsp" />	
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>		
+		</action>
+		
+		<action path="/master/enclosureMater"
+				type="mrd.masters.controller.action.EnclosureMasterACT"
+				name="EnclosureMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/enclosureMaster.jsp">
+			<forward name="NEW" path="/masters/enclosureMaster.jsp" />
+			<forward name="MODIFY" path="/masters/enclosureMasterMod.jsp" />	
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>		
+		</action>
+		
+		<action path="/master/recordTypeCheckListMst"
+				type="mrd.masters.controller.action.RecordTypeCheckListMstACT"
+				name="RecordTypeCheckListMstFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/recordTypeCheckListMst.jsp">
+			<forward name="NEW" path="/masters/recordTypeCheckListMst.jsp" />
+			<forward name="POPUP" path="/masters/addCheckListPopup.jsp" />
+			<forward name="MODIFY" path="/masters/recordTypeCheckListMstMod.jsp" />	
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>		
+		</action>
+		
+		<action path="/master/eprTabAccessMater"
+				type="mrd.masters.controller.action.EprTabAccessMasterACT"
+				name="eprTabAccessMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/eprTabAccessMaster.jsp">
+			<forward name="NEW" path="/masters/eprTabAccessMaster.jsp" />
+			<forward name="USERPOPUP" path="/masters/selectUserForTabAccess.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>
+					
+		</action>
+		
+		<action path="/master/eprRestrictedCategoryMaster"
+				type="mrd.masters.controller.action.EprRestrictedCategoryMasterACTION"
+				name="eprRestrictedCategoryMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/eprRestrictedCategoryMaster.jsp">
+			<forward name="NEW" path="/masters/eprRestrictedCategoryMaster.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>
+					
+		</action>
+		
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+		
+</struts-config>	

@@ -1,0 +1,55 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+<field name="counterModel.strCounterName">
+	<field-validator type="requiredstring" >  
+    	    	<message>Counter Name Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">35</param>
+                    <param name="trim">true</param>
+                    <message>Counter Name Length Cannot Be Greater Than 35 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z0-9]+$</param>
+       	<message>Counter Name is Required. It Excepts Alphanumeric Only</message>
+    </field-validator>
+</field>
+<field name="counterModel.strCounterType">
+    <field-validator type="regex">
+    <param name="expression">[1-9][0-9]*</param>
+       <message>Counter Type Is Required.</message>
+    </field-validator>
+</field>
+
+
+<field name="counterModel.strIPAddress">
+	<field-validator type="requiredstring" >  
+    	    	<message>Counter IP Address Name Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">15</param>
+                    <param name="trim">true</param>
+                    <message>Counter IP Address Name Length Cannot Be Greater Than 15 Characters</message>
+      </field-validator>
+	 
+</field>
+<field name="counterModel.strRemarks">
+	<field-validator type="requiredstring" >  
+    	    	<message>Counter Remarks Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">15</param>
+                    <param name="trim">true</param>
+                    <message>Counter Length Cannot Be Greater Than 50 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z\.\;\@\#\$\%\^\*\()\-\_\+\?\/\'\" \,  \> \: \{}]*</param>
+       	<message>Counter Remarks is Required. It Excepts AlphaWithSpecialChar Only</message>
+    </field-validator>
+</field>
+
+
+</validators>

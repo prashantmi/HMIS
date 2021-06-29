@@ -1,0 +1,194 @@
+package opd.dao;
+
+import hisglobal.exceptions.HisApplicationExecutionException;
+import hisglobal.exceptions.HisDataAccessException;
+import hisglobal.exceptions.HisRecordNotFoundException;
+import hisglobal.hisconfig.Config;
+import hisglobal.persistence.DataAccessObject;
+import hisglobal.persistence.HelperMethodsDAO;
+import hisglobal.persistence.TransactionContext;
+import hisglobal.utility.HelperMethods;
+import hisglobal.utility.Sequence;
+import hisglobal.vo.DrugSheduleDtlVO;
+import hisglobal.vo.PatientProfileDetailVO;
+import hisglobal.vo.ProfileChartViewDtlVO;
+import hisglobal.vo.UserVO;
+import hisglobal.vo.ValueObject;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import ehr.followup.vo.EHRSection_FollowupVO;
+import opd.OpdConfig;
+
+public class ProfileChartViewDetailDAO extends DataAccessObject implements ProfileChartViewDetailDAOi {
+	
+	public ProfileChartViewDetailDAO(TransactionContext _tx)
+		{
+			super(_tx);
+		}
+	
+	
+	
+	
+	
+	public  void updateIsValidStatus(ProfileChartViewDtlVO ProfileChartViewDtlVO, UserVO _userVO)
+	{
+		String query = "";
+		Map populateMAP = new HashMap();
+		Sequence sq = new Sequence();
+		String filename = OpdConfig.QUERY_FILE_FOR_OPD_DAO;
+		String queryKey = "UPDATE_IS_VALID.HPMRT_PROFILE_CHARTVIEW_DTL";
+		try
+		{
+			query = HelperMethodsDAO.getQuery(filename, queryKey);
+		}
+		catch (Exception e)
+		{
+			throw new HisApplicationExecutionException("HelperMethodsDAO.loadPropertiesFile(filename)OR getting query out of property file" + e);
+		}
+
+		try
+		{
+			populateMAP.put(sq.next(), Config.IS_VALID_DELETED);
+			populateMAP.put(sq.next(), ProfileChartViewDtlVO.getProfileId());
+			populateMAP.put(sq.next(), _userVO.getHospitalCode());
+			
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("ProfileProgressNotesDtlDAO:populateMap::" + e);
+		}
+		
+		try
+		{
+			HelperMethodsDAO.excecuteUpdate(super.getTransactionContext().getConnection(), query, populateMAP);
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("HelperMethodsDAO.getResultset" + e);
+		}
+	}
+	
+	
+	
+	public void create(ProfileChartViewDtlVO _profileChartViewDtlVO, UserVO _userVO)
+	{
+		String query = "";
+		Map populateMAP = new HashMap();
+		Sequence sq = new Sequence();
+		String filename = OpdConfig.QUERY_FILE_FOR_OPD_DAO;
+		String queryKey = "INSERT.HPMRT_PROFILE_CHARTVIEW_DTL";
+		try
+		{
+			query = HelperMethodsDAO.getQuery(filename, queryKey);
+		}
+		catch (Exception e)
+		{
+			throw new HisApplicationExecutionException("HelperMethodsDAO.loadPropertiesFile(filename)OR getting query out of property file" + e);
+		}
+		
+		
+		try
+		{
+			String htmlCode=_profileChartViewDtlVO.getChartHtml();
+			htmlCode=htmlCode.replaceAll("\n", "");
+			htmlCode=htmlCode.replaceAll("\t", "");
+			htmlCode=htmlCode.replaceAll("\r", "");
+			populateMAP.put(sq.next(), _profileChartViewDtlVO.getProfileId());
+			populateMAP.put(sq.next(), _profileChartViewDtlVO.getChartId());
+			populateMAP.put(sq.next(), _profileChartViewDtlVO.getFromDate());
+			populateMAP.put(sq.next(), _profileChartViewDtlVO.getToDate());
+			populateMAP.put(sq.next(), _userVO.getSeatId());
+			populateMAP.put(sq.next(), htmlCode);
+			populateMAP.put(sq.next(), Config.IS_VALID_ACTIVE);
+			populateMAP.put(sq.next(), _userVO.getHospitalCode());
+			populateMAP.put(sq.next(), _profileChartViewDtlVO.getEpisodeCode());
+			populateMAP.put(sq.next(), _profileChartViewDtlVO.getEpisodeVisitNo());
+			
+			
+			
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("ProfileChartViewDetailDAO:populateMap::" + e);
+		}
+		
+		try
+		{
+			HelperMethodsDAO.excecuteUpdate(super.getTransactionContext().getConnection(), query, populateMAP);
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("HelperMethodsDAO.getResultset" + e);
+		}
+	}
+	
+	
+		
+	
+	
+	public List<ProfileChartViewDtlVO> fetchChartViewProfileDetails(PatientProfileDetailVO _patientProfileDtlVO, UserVO _userVO)
+	{
+
+		List<ProfileChartViewDtlVO> lstprofileChartViewDtl = new ArrayList<ProfileChartViewDtlVO>();
+		String query = "";
+		Map _populateMap = new HashMap();
+		String filename = OpdConfig.QUERY_FILE_FOR_OPD_DAO;
+		String queryKey = "SELECT_CHARTVIEW_DTL.HPMRT_PROFILE_CHARTVIEW_DTL";
+
+		try
+		{
+			query = HelperMethodsDAO.getQuery(filename, queryKey);
+		}
+		catch (Exception e)
+		{
+			throw new HisDataAccessException("HelperMethodsDAO.loadPropertiesFile(filename)OR getting query out of property file::" + e);
+		}
+
+		Sequence sq = new Sequence();
+		try
+		{
+			_populateMap.put(sq.next(), _patientProfileDtlVO.getProfileId());
+			_populateMap.put(sq.next(), _userVO.getHospitalCode());
+			_populateMap.put(sq.next(), Config.IS_VALID_ACTIVE);
+			
+		}
+		catch (Exception e)
+		{
+			throw new HisApplicationExecutionException("`ProfileChartViewDetailDAO.populateMAP::" + e);
+		}
+     
+		
+		ValueObject vo[] = null;
+		try
+		{
+			ResultSet rs = HelperMethodsDAO.executeQuery(super.getTransactionContext().getConnection(), query, _populateMap);
+			if (rs.next())
+			{
+				rs.beforeFirst();
+	
+				vo = HelperMethods.populateVOfrmRS(ProfileChartViewDtlVO.class, rs);			
+				for (ValueObject v : vo)
+					lstprofileChartViewDtl.add((ProfileChartViewDtlVO)v);
+			}
+		}
+										
+		
+		catch (Exception e)
+		{
+			if (e.getClass() == HisRecordNotFoundException.class)
+			{
+				throw new HisRecordNotFoundException(e.getMessage());
+			}
+			else throw new HisDataAccessException("EpisodeDAO:retrieveByCrNo::Episode Details:: " + e);
+		}
+		return lstprofileChartViewDtl;
+	}
+
+
+
+}

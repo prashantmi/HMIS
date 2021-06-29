@@ -1,0 +1,233 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='DistrictMaster'>
+		<common-values>
+			<master-name>DistrictMaster</master-name>
+			<master-title>District Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>District Master</tableHeading> 
+				<list-table>GBLT_DISTRICT_MST</list-table>
+				<controls>			     
+				   <control type="combo" index="0">
+			       <label>State</label>
+			         <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_STATENAME)</text-field>
+									<value-field>A.GNUM_STATECODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_STATE_MST</table>	
+								</tables>
+								<condition>
+									
+									<general>   A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.GSTR_STATENAME)</general>
+								</condition>
+							</dynamic>					
+						</data>
+						<default>-1</default>
+					</control>
+				</controls>
+				<columns>
+					 <column>District Name </column>
+					 <column>District Short Name </column>
+				   
+				  </columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.STR_DIST_NAME) </field>
+						<field>UPPER(A.STR_DIST_ST_NAME) </field>
+						
+						</fields>
+					<primaryKey>
+						<field>A.NUM_DIST_ID </field>
+						<field>A.GNUM_SLNO </field>
+						<!-- <field>A.GNUM_HOSPITAL_CODE</field> -->
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_DISTRICT_MST </table>
+					</tables>
+					<condition>		
+						<dependent>
+							<clause> A.GNUM_STATECODE = #0 </clause>
+							</dependent>
+							<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+							
+							<orderby>  order by INITCAP(A.STR_DIST_NAME)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>				
+					<control type="text" index="0">
+						<label>State</label>
+						<constraints  size ='20' />
+						<data>
+							<dynamic>
+								<query-detail>
+									<fields>
+										<field>INITCAP(A.GSTR_STATENAME)</field>	
+									</fields>
+									<tables>
+										<table alias='A'>GBLT_STATE_MST</table>	
+									</tables>
+									<condition>
+										<general>GNUM_ISVALID=1</general>
+										<dependent>
+											<clause> AND GNUM_STATECODE =  #L0</clause>
+										</dependent>
+									</condition>
+								</query-detail>
+							</dynamic>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+							
+					<control type="text" index="1" >
+						<label>District Name</label>
+						<constraints inputType='alphabets' size='27'  maxlength ='25' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>						
+					<control type="text" index="2" >
+						<label>District Short Name</label>
+						<constraints  maxlength = "5" size="6" inputType='alphabets' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>
+					
+					
+					<control type="combo" index="3">
+						<label>Is Active Status</label>
+					<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>	
+					<control type="text" index="4" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet'  styleString="style='display:none'"/>			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+						
+					</control>						
+				 
+				</controls>
+				<redundent-check>
+				SELECT COUNT (*) FROM GBLT_DISTRICT_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and GNUM_STATECODE = valueMap#L0 and upper (STR_DIST_NAME)  =  controlindex1
+				</redundent-check>	 
+				<insert-query>
+					<primary-key>
+						<field>NUM_DIST_ID</field>
+						<value>SELECT NVL(MAX(NUM_DIST_ID),10000)+1 FROM GBLT_DISTRICT_MST </value>
+						
+					</primary-key>
+					<fields valueMap='#L0'>GNUM_STATECODE</fields>
+					<fields valueMap='#I1'>STR_DIST_NAME</fields>
+					<fields valueMap='#U2'>STR_DIST_ST_NAME</fields>
+					<fields valueMap='@seatId'>	GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='@entryDate'>GDT_EFFECTIVE_FRM</fields>
+					<!-- <fields valueMap='#4'>GNUM_HOSPITAL_CODE</fields> -->
+					<fields valueMap='#3'>GNUM_ISVALID</fields>
+					<fields valueMap='@defaultOne'>GNUM_SLNO</fields>
+					 <table>GBLT_DISTRICT_MST</table>				  
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+		<modify-page>
+		  <dynamic-page>
+		   <controls>							
+					<control type="text" index="0">
+						<label>State</label>
+						<constraints  size ='20' />						
+						<data>
+							<static>#Q0</static>
+						</data>					
+						<readOnly>1</readOnly>
+					</control>
+					<control type="text" index="1">
+						<label>District Name </label>
+						<constraints inputType='alphabets' size='27'  maxlength ='25' mandatory ='true'/>	
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+				   <control type="text" index="2">
+						<label>District Short Name </label>
+						<constraints inputType='alphabets' size="6" maxlength = "5"  mandatory ='true'/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>		
+				
+                   	   
+					 
+						   
+				
+				<control type="combo" index="3">
+				<selection-mandatory>true</selection-mandatory>
+						<label>Is Active Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+					
+							   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>B.GSTR_STATENAME</field>
+					 <field>A.STR_DIST_NAME</field>
+					 <field>A.STR_DIST_ST_NAME</field>								
+                   	 				     
+				 </fields>					
+					<tables>
+						<table alias='A'>GBLT_DISTRICT_MST</table>
+						<table alias='B'>GBLT_STATE_MST</table>
+					</tables>
+					<condition>	
+					
+					<general>A.GNUM_STATECODE=B.GNUM_STATECODE</general>
+						<dependent>
+						    <clause>AND A.NUM_DIST_ID= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>	
+				<redundent-check>
+				SELECT COUNT (*) FROM GBLT_DISTRICT_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper (STR_DIST_NAME)  =  controlindex1
+				</redundent-check>		 
+				<update-query>					
+					<fields valueMap='#I1'>STR_DIST_NAME</fields>
+					<fields valueMap='#U2'>STR_DIST_ST_NAME</fields>
+					<fields valueMap='#3'>GNUM_ISVALID</fields>					
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>
+					<fields valueMap='@entryDate'>GDT_LSTMOD_DATE</fields>
+												
+					<table>GBLT_DISTRICT_MST</table>
+					<condition> NUM_DIST_ID = #1</condition>
+					
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

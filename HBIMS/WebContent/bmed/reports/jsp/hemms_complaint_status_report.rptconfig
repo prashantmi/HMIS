@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.15" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__jndi_ds_conn_22_0</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Header_23_1</property>
+            <property name="value">SMS Hospital</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Footer_24_2</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Name_26_3</property>
+            <property name="value">Complaint</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Address_249_4</property>
+            <property name="value">Jaipur</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Contact_255_5</property>
+            <property name="value">12342354566</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strDeptCode_470_6</property>
+            <property name="value">99903479</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strLabCode_951_7</property>
+            <property name="value">99903480</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strReportDetailType_952_8</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__strComplaintNo_953_9</property>
+            <property name="value">1130510009</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__reportMode_957_10</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__hosCode_958_11</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_12</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_13</property>
+            <property name="value">12342354566</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strComplaintNo_953_14</property>
+            <property name="value">1130510009</property>
+        </structure>
+        <structure>
+            <property name="name">strComplaintNo_953_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strReportDetailType_952_15</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">strReportDetailType_952_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">hosCode_958_16</property>
+            <property name="value">999</property>
+        </structure>
+        <structure>
+            <property name="name">hosCode_958_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_17</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strDeptCode_470_18</property>
+            <property name="value">99903479</property>
+        </structure>
+        <structure>
+            <property name="name">strDeptCode_470_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_19</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_20</property>
+            <property name="value">SMS Hospital</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">strLabCode_951_21</property>
+            <property name="value">99903480</property>
+        </structure>
+        <structure>
+            <property name="name">strLabCode_951_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">reportMode_957_22</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">reportMode_957_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_23</property>
+            <property name="value">Complaint</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_24</property>
+            <property name="value">Jaipur</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+    <styles>
+        <style name="crosstab" id="2">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="3">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+</report>

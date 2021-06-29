@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="requestOfItemsBean" type="cssd.transactions.controller.fb.RequestOfItemsFB"></form-bean>
+		<form-bean name="receiptOfItemFB" type="cssd.transactions.controller.fb.ReceiptOfItemFB"></form-bean>
+		<form-bean name="quotaAllocationFB" type="cssd.transactions.controller.fb.QuotaAllocationFB"></form-bean>
+		<form-bean name="employeeMedicalCheckUpFB" type="cssd.transactions.controller.fb.EmployeeMedicalCheckUpFB"></form-bean>
+		<form-bean name="condemnationFB" type="cssd.transactions.controller.fb.CondemnationFB"></form-bean>
+		<form-bean name="workOrderMachineParameterTransFB" type="cssd.transactions.controller.fb.WorkOrderMachineParameterTransFB"></form-bean>
+		<form-bean name="workAllocationFB" type="cssd.transactions.controller.fb.WorkAllocationFB"></form-bean>
+		<form-bean name="issueOfItemFB" type="cssd.transactions.controller.fb.IssueOfItemFB"></form-bean>
+    	<form-bean name="offlineRecieptOfItemFB" type="cssd.transactions.controller.fb.OfflineReceiptOfItemsFB"></form-bean>
+		
+	</form-beans>
+
+
+	<action-mappings>
+
+
+		<action path="/switchModule" type="org.apache.struts.actions.SwitchAction" />
+		
+		<action path="/transactions/RequestOfItemsACTION" type="cssd.transactions.controller.action.RequestOfItemsACTION"
+			name="requestOfItemsBean" scope="request" validate="false" parameter="hmode">
+			
+			<forward name="ADD" path="/transactions/jsp/cssd_request_of_items_trans.jsp" />
+			<forward name="MODIFY" path="/transactions/jsp/cssd_request_of_items_modify_trans.jsp" />
+			<forward name="POPUP" path="/transactions/jsp/cssd_requestofitems_sub_item_detail_popup.jsp" />
+			<forward name="NEW" path="/transactions/jsp/cssd_list_request_of_items_trans.jsp" />
+			<forward name="LIST" path="/transactions/jsp/cssd_list_request_of_items_trans.jsp" />
+			<forward name="CANCEL" path="/../startup/initpage.jsp" />
+			
+		</action>
+		
+		<action path="/transactions/receiptOfItem" 
+				type="cssd.transactions.controller.action.ReceiptOfItemACTION"
+				name="receiptOfItemFB" 
+				scope="request" 
+				validate="false" 
+				parameter="hmode">
+				<forward name="LIST" path="/transactions/jsp/cssd_receipt_of_item.jsp" />
+				<forward name="NEW" path="/transactions/jsp/cssd_receipt_of_item.jsp" />
+				<forward name="POPUP" path="/transactions/jsp/cssd_sub_item_detail_popup.jsp" />
+				<forward name="CANCEL" path="/../startup/initpage.jsp" />
+				
+		</action>
+		
+		<action path="/transactions/quotaAllocation" 
+				type="cssd.transactions.controller.action.QuotaAllocationACTION"
+				name="quotaAllocationFB" 
+				scope="request" 
+				validate="false" 
+				parameter="hmode">
+				<forward name="NEW" path="/transactions/jsp/cssd_quota_allocation.jsp" />
+				<forward name="CANCEL" path="/../startup/initpage.jsp" />
+				
+		</action>
+		
+		<action path="/transactions/employeeMedicalCheckUp" 
+				type="cssd.transactions.controller.action.EmployeeMedicalCheckUpACTION"
+				name="employeeMedicalCheckUpFB" 
+				scope="request" 
+				validate="false" 
+				parameter="hmode">
+				<forward name="ADD_PAGE" path="/transactions/jsp/cssd_employee_medical_check_up.jsp" />
+				<forward name="CCANCEL" path="/../hisglobal/initPage.jsp" />
+		</action>
+		
+		<action path="/transactions/condemnation" 
+				type="cssd.transactions.controller.action.CondemnationACTION"
+				name="condemnationFB" 
+				scope="request" 
+				validate="false" 
+				parameter="hmode">
+				<forward name="LIST" path="/transactions/jsp/cssd_condemnation_trans.jsp" />
+				<forward name="NEW" path="/transactions/jsp/cssd_condemnation_trans.jsp" />
+				<forward name="MODIFY" path="/transactions/jsp/cssd_condemnation_trans_modify.jsp" />
+				<forward name="ITEMDETAIL" path="/transactions/jsp/cssd_condemnation_item_trans.jsp" />
+				
+				
+				<forward name="CANCEL" path="/../startup/initpage.jsp" />
+				
+		</action>
+		
+		<action path="/transactions/WorkOrderMachineParameterTransACTION" 
+				type="cssd.transactions.controller.action.WorkOrderMachineParameterTransACTION"
+				name="workOrderMachineParameterTransFB" 
+				scope="request" 
+				validate="false" 
+				parameter="hmode">
+				<forward name="NEW" path="/transactions/jsp/cssd_work_order_machine_parameter_trans.jsp" />
+				<forward name="CANCEL" path="/../startup/initpage.jsp" />
+				
+		</action>
+		
+		<action path="/transactions/workAllocation" 
+				type="cssd.transactions.controller.action.WorkAllocationACTION"
+				name="workAllocationFB" 
+				scope="request" 
+				validate="false" 
+				parameter="hmode">
+				<forward name="LIST" path="/transactions/jsp/cssd_work_allocation.jsp" />
+				<forward name="NEW" path="/transactions/jsp/cssd_work_allocation.jsp" />
+				<forward name="CANCEL" path="/../startup/initpage.jsp" />
+				
+		</action>
+		
+		<action path="/transactions/issueOfItem" 
+				type="cssd.transactions.controller.action.IssueOfItemACTION"
+				name="issueOfItemFB" 
+				scope="request" 
+				validate="false" 
+				parameter="hmode">
+				<forward name="LIST" path="/transactions/jsp/cssd_issue_of_item.jsp" />
+				<forward name="NEW" path="/transactions/jsp/cssd_issue_of_item.jsp" />
+				<forward name="POPUP" path="/transactions/jsp/cssd_sub_item_detail_popup.jsp" />
+				<forward name="CANCEL" path="/../startup/initpage.jsp" />
+				
+		</action>
+		
+		
+		
+		<action path="/transactions/OfflineReceiptOfItemsACTION" type="cssd.transactions.controller.action.OfflineReceiptOfItemsACTION"
+			name="offlineRecieptOfItemFB" scope="request" validate="false" parameter="hmode">
+			
+			<forward name="ADD" path="/transactions/jsp/cssd_offline_receipt_of_items_trans.jsp" />
+			<forward name="MODIFY" path="/transactions/jsp/cssd_request_of_items_modify_trans.jsp" />
+			<forward name="POPUP" path="/transactions/jsp/cssd_requestofitems_sub_item_detail_popup.jsp" />
+			<forward name="NEW" path="/transactions/jsp/cssd_offline_receipt_of_items_trans.jsp" />
+			<forward name="LIST" path="/transactions/jsp/cssd_list_request_of_items_trans.jsp" />
+			
+			<forward name="CANCEL" path="/../startup/initpage.jsp" />
+			
+		</action>
+		
+		
+	</action-mappings>
+
+	<controller>
+		<set-property property="processorClass"
+			value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="cssd.cssdResourceBundle">
+	</message-resources>
+
+
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

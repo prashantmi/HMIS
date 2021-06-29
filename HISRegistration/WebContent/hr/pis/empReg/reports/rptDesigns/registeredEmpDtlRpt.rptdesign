@@ -1,0 +1,1870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.3.1.v201309091055 Build &lt;4.3.1.v20130918-1142></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">7</property>
+            <expression name="value" type="javascript">params["jndi_ds_conn"].value</expression>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="h_code" id="11">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="jndi_ds_conn" id="12">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer" id="14">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Header" id="13">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address" id="1526">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address1" id="1527">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address2" id="1528">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address3" id="1529">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Contact" id="1530">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="isHeaderReq" id="15">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="isLogoReq" id="17">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="isFooterReq" id="16">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="isWatermarkReq" id="18">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">False</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="empno" id="1531">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="lRptDateAndTime" id="1532">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="lFHeading" id="1533">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="lRptPageNo" id="1534">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="isCancelButtonReq" id="1783">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.edb.Driver</property>
+            <property name="odaURL">jdbc:edb://10.226.1.238:5444/nimsnew</property>
+            <property name="odaUser">usm</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">dXNt</encrypted-property>
+            <property name="odaJndiName">java:comp/env/AHIS</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set 1" id="1647">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">dateandtime</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">dateandtime</text-property>
+                    <text-property name="heading">dateandtime</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">dateandtime</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">dateandtime</property>
+                    <property name="nativeName">dateandtime</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select (TO_CHAR(SYSDATE,'DD-Mon-YYYY'))||' / '||(TO_CHAR(SYSDATE,'HH24:MI:SS')) as dateAndTime
+from dual]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dateandtime</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>dateandtime</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dateandtime</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set 2" id="1648">
+            <list-property name="columnHints"/>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">empNo</property>
+                    <property name="paramName">empno</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">hCode</property>
+                    <property name="paramName">h_code</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData"/>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet"/>
+            <xml-property name="queryText"><![CDATA[SELECT DECODE(A.NUM_LAST_EMP_TYPE,null,'Yes','No') AS isExistingEmployee,
+DECODE(A.NUM_LAST_EMP_TYPE,null,'NA',(SELECT T.STR_LAST_EMP_TYPE_NAME FROM AHISM.PIST_LAST_EMP_TYPE_MST T WHERE T.GNUM_ISVALID = 1 AND T.NUM_LAST_EMP_TYPE_ID=A.NUM_LAST_EMP_TYPE)) AS lastEmploymentType,
+A.STR_EMP_NO AS employeeNumber, 
+A.STR_EMP_FULL_NAME AS employeeFullName, 
+A.STR_EMP_FULL_REG_LANG_NAME AS employeeFullRegionalLangName, 
+TO_CHAR (A.DT_BIRTH_DATE, 'DD-Mon-YYYY') AS dtEmployeeDOB,
+(SELECT T.STR_NAT_JOB_NAME FROM AHISM.PIST_NAT_JOB_MST T WHERE T.GNUM_ISVALID = 1 AND T.NUM_NAT_JOB_ID = A.NUM_NAT_JOB_ID) AS natureOfJob , 
+(SELECT T.GSTR_APPELLATION_NAME FROM AHISM.GBLT_APPELLATION_MST T WHERE T.GNUM_ISVALID = 1 AND T.GNUM_APPELLATION_CODE = A.GNUM_APPELLATION_CODE_1 AND T.GNUM_APPELLATION_TYPE = 1) AS appellation1, 
+DECODE(A.GNUM_APPELLATION_CODE_2,null,'NA',(SELECT T.GSTR_APPELLATION_NAME FROM AHISM.GBLT_APPELLATION_MST T WHERE T.GNUM_ISVALID = 1 AND T.GNUM_APPELLATION_CODE = A.GNUM_APPELLATION_CODE_2 AND T.GNUM_APPELLATION_TYPE = 2)) AS appellation2, 
+A.STR_EMP_SHORT_NAME AS employeeShortName , 
+A.STR_EMP_SHORT_REG_LANG_NAME AS  employeeShortRegionalLangName, 
+DECODE(A.GNUM_SUFFIX_CODE,null,'NA',(SELECT T.GSTR_SUFFIX_NAME FROM AHISM.GBLT_SUFFIX_MST T WHERE T.GNUM_ISVALID = 1 AND T.GNUM_SUFFIX_CODE = A.GNUM_SUFFIX_CODE)) AS suffix, 
+(SELECT T.GSTR_GENDER_NAME FROM AHISM.GBLT_GENDER_MST T WHERE T.GNUM_ISVALID = 1 AND T.GSTR_GENDER_CODE=A.GSTR_GENDER_CODE) AS gender, 
+(SELECT T.GSTR_NATIONALITY_NAME FROM AHISM.GBLT_NATIONALITY_MST T WHERE T.GNUM_ISVALID = 1 AND T.GNUM_NATIONALITY_CODE = A.GNUM_NATIONALITY_CODE) AS nationality, 
+(SELECT T.GSTR_DEPT_NAME FROM AHISM.GBLT_DEPARTMENT_MST T WHERE T.GNUM_ISVALID = 1 AND T.GNUM_DEPT_CODE =A.GNUM_DEPT_CODE AND T.GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE) AS department,
+(SELECT T.GSTR_DESIG_NAME FROM AHISM.GBLT_DESIGNATION_MST T WHERE T.GNUM_ISVALID = 1 AND T.GNUM_DESIG_CODE=A.GNUM_DESIG_CODE AND T.GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE) AS designation, 
+DECODE(A.STR_OLD_EMP_NO,null,'NA',A.STR_OLD_EMP_NO) AS oldEmployeeNumber, 
+(SELECT T.STR_CONFIGURATION_NAME FROM AHISM.PIST_CONFIGURATION_MST T WHERE T.GNUM_ISVALID = 1 AND T.NUM_CONFIGURATION_ID=A.num_final_status_id AND T.STR_ATTRI_CODE = 'FST') AS employeeFinalStatus,
+DECODE(A.NUM_MOBILE_NO,null,'NA',A.NUM_MOBILE_NO) AS intMobileNumber, DECODE(A.STR_PER_EMAIL_ID,null,'NA',A.STR_PER_EMAIL_ID) AS emailId, 
+DECODE(A.STR_PAN_NO,null,'NA',A.STR_PAN_NO) AS panNumber
+from pist_emp_registration_dtl A where A.gnum_isvalid=1
+and A.str_emp_no=? and A.gnum_hospital_code=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes/>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes/>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>isexistingemployee</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>isexistingemployee</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>isexistingemployee</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>lastemploymenttype</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>lastemploymenttype</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>lastemploymenttype</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>employeenumber</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>employeenumber</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>employeenumber</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>employeefullname</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>99</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>employeefullname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>employeefullname</design:label>
+            <design:formattingHints>
+              <design:displaySize>99</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>employeefullregionallangname</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>99</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>employeefullregionallangname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>employeefullregionallangname</design:label>
+            <design:formattingHints>
+              <design:displaySize>99</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dtemployeedob</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>dtemployeedob</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dtemployeedob</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>aatureofjob</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>25</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>aatureofjob</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>aatureofjob</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>appellation1</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>appellation1</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>appellation1</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>appellation2</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>appellation2</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>appellation2</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>employeeshortname</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>employeeshortname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>employeeshortname</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>employeeshortregionallangname</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>employeeshortregionallangname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>employeeshortregionallangname</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>suffix</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>suffix</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>suffix</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>gender</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>gender</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>gender</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>nationality</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>nationality</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>nationality</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>department</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>department</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>department</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>designation</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>designation</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>designation</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>oldemployeenumber</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>oldemployeenumber</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>oldemployeenumber</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>employeefinalstatus</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>employeefinalstatus</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>employeefinalstatus</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>intmobilenumber</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>intmobilenumber</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>intmobilenumber</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>emailid</design:name>
+              <design:position>20</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>emailid</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>emailid</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pannumber</design:name>
+              <design:position>21</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>pannumber</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pannumber</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <page-footer>
+                <grid id="295">
+                    <column id="296"/>
+                    <row id="297">
+                        <cell id="298">
+                            <grid id="303">
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">8pt</property>
+                                <column id="304"/>
+                                <column id="305">
+                                    <property name="width">2.4375in</property>
+                                </column>
+                                <column id="306">
+                                    <property name="width">0.5208333333333334in</property>
+                                </column>
+                                <column id="307">
+                                    <property name="width">0.20833333333333334in</property>
+                                </column>
+                                <column id="308">
+                                    <property name="width">2.0104166666666665in</property>
+                                </column>
+                                <column id="309"/>
+                                <row id="310">
+                                    <cell id="311"/>
+                                    <cell id="312">
+                                        <data id="394">
+                                            <property name="fontWeight">bold</property>
+                                            <property name="textAlign">right</property>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">lRptPageNo</property>
+                                                    <expression name="expression" type="javascript">params["lRptPageNo"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">lRptPageNo</property>
+                                        </data>
+                                    </cell>
+                                    <cell id="313">
+                                        <auto-text id="319">
+                                            <property name="textAlign">right</property>
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                    </cell>
+                                    <cell id="314">
+                                        <text id="320">
+                                            <property name="textAlign">center</property>
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[of]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="315">
+                                        <auto-text id="321">
+                                            <property name="textAlign">left</property>
+                                            <property name="type">total-page</property>
+                                        </auto-text>
+                                    </cell>
+                                    <cell id="316"/>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="299">
+                        <cell id="300"/>
+                    </row>
+                    <row id="301">
+                        <cell id="302">
+                            <data id="318">
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">params["isFooterReq"].value==false</expression>
+                                    </structure>
+                                </list-property>
+                                <list-property name="boundDataColumns">
+                                    <structure>
+                                        <property name="name">report_Footer</property>
+                                        <expression name="expression" type="javascript">params["report_Footer"]</expression>
+                                        <property name="dataType">string</property>
+                                    </structure>
+                                </list-property>
+                                <property name="resultSetColumn">report_Footer</property>
+                            </data>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1122">
+            <property name="height">0.7083333333333334in</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">pdf</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">xls</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">xls_spudsoft</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+                <structure>
+                    <property name="format">xlsx</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+            </list-property>
+            <column id="1123"/>
+            <row id="1124">
+                <cell id="1125">
+                    <text id="1126">
+                        <property name="textAlign">right</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">(params["isCancelButtonReq"].value==1)</expression>
+                            </structure>
+                        </list-property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<script language="javascript">
+
+function printContent(){
+document.getElementById('printAreaDivId').style.display='none';
+window.print();
+document.getElementById('printAreaDivId').style.display='';
+}
+
+function cancel(url)
+{
+  //alert(params["isCancelButtonReq"].value);
+  //parent.callMenu(url);
+  window.location=url;
+  //history.back(-1);
+  //javascript:history.back(-1);
+}
+
+</script>
+
+<div id='printAreaDivId' class='hidecontrol'>
+<img  src='/HIS/hisglobal/images/nonclinical/nc_printer.png' style="cursor: pointer" title="Print" onclick='printContent();' width='22' height='22'>&amp;nbsp;&amp;nbsp;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+
+</div>
+<CODE>
+
+</CODE>]]></text-property>
+                    </text>
+                    <text id="2383">
+                        <property name="backgroundAttachment">scroll</property>
+                        <property name="backgroundPositionX">0%</property>
+                        <property name="backgroundPositionY">0%</property>
+                        <property name="backgroundRepeat">repeat</property>
+                        <property name="fontFamily">sans-serif</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="fontStyle">normal</property>
+                        <property name="fontVariant">normal</property>
+                        <property name="color">black</property>
+                        <property name="textLineThrough">none</property>
+                        <property name="textOverline">none</property>
+                        <property name="textUnderline">none</property>
+                        <property name="borderBottomColor">black</property>
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftColor">black</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightColor">black</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopColor">black</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="borderTopWidth">medium</property>
+                        <property name="marginTop">0pt</property>
+                        <property name="marginLeft">0pt</property>
+                        <property name="marginBottom">0pt</property>
+                        <property name="marginRight">0pt</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="paddingBottom">1pt</property>
+                        <property name="paddingRight">1pt</property>
+                        <property name="textAlign">right</property>
+                        <property name="textIndent">0em</property>
+                        <property name="letterSpacing">normal</property>
+                        <property name="lineHeight">normal</property>
+                        <property name="orphans">2</property>
+                        <property name="textTransform">none</property>
+                        <property name="whiteSpace">normal</property>
+                        <property name="widows">2</property>
+                        <property name="wordSpacing">normal</property>
+                        <property name="display">block</property>
+                        <property name="pageBreakAfter">auto</property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakInside">auto</property>
+                        <property name="showIfBlank">false</property>
+                        <property name="canShrink">false</property>
+                        <property name="overflow">hidden</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">(params["isCancelButtonReq"].value==0)</expression>
+                            </structure>
+                        </list-property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<script language="javascript">
+
+function printContent(){
+document.getElementById('printAreaDivId').style.display='none';
+window.print();
+document.getElementById('printAreaDivId').style.display='';
+}
+
+function cancel(url)
+{
+  //alert(params["isCancelButtonReq"].value);
+  //parent.callMenu(url);
+  window.location=url;
+  //history.back(-1);
+  //javascript:history.back(-1);
+}
+</script>
+
+<div id='printAreaDivId' class='hidecontrol'>
+<img  src='/HIS/hisglobal/images/nonclinical/nc_printer.png' style="cursor: pointer" title="Print" onclick='printContent();' width='22' height='22'>&amp;nbsp;&amp;nbsp;
+<img src='/HIS/hisglobal/images/nonclinical/nc_cancel.png' style="cursor: pointer" title="Go Back" onclick="cancel('/HISPis/pis/pr/reports/RegisteredEmpDtlRpt.action?rptMode=3');">
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+
+</div>
+<CODE>
+
+</CODE>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <grid id="106">
+            <property name="fontFamily">"Arial"</property>
+            <property name="fontSize">8pt</property>
+            <property name="textAlign">right</property>
+            <property name="width">100%</property>
+            <column id="107">
+                <property name="width">80%</property>
+            </column>
+            <column id="108">
+                <property name="width">20%</property>
+            </column>
+            <row id="109">
+                <cell id="110">
+                    <data id="381">
+                        <property name="fontWeight">bold</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">lRptDateAndTime</property>
+                                <expression name="expression" type="javascript">params["lRptDateAndTime"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">lRptDateAndTime</property>
+                    </data>
+                </cell>
+                <cell id="111">
+                    <data id="1781">
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">Data Set 1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">dateandtime</property>
+                                <text-property name="displayName">dateandtime</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["dateandtime"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">dateandtime</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="1279">
+            <property name="textAlign">center</property>
+            <property name="width">7.75in</property>
+            <column id="1280"/>
+            <row id="1281">
+                <cell id="1282">
+                    <grid id="474">
+                        <property name="textAlign">left</property>
+                        <column id="475">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="476">
+                            <property name="width">10%</property>
+                        </column>
+                        <column id="477">
+                            <property name="width">40%</property>
+                        </column>
+                        <column id="478">
+                            <property name="width">20%</property>
+                        </column>
+                        <row id="479">
+                            <cell id="480"/>
+                            <cell id="481">
+                                <property name="textAlign">right</property>
+                                <text id="1260">
+                                    <list-property name="visibility">
+                                        <structure>
+                                            <property name="format">html</property>
+                                            <expression name="valueExpr" type="javascript">params["isLogoReq"].value!=true</expression>
+                                        </structure>
+                                        <structure>
+                                            <property name="format">pdf</property>
+                                            <expression name="valueExpr" type="javascript">params["isLogoReq"].value!=true</expression>
+                                        </structure>
+                                    </list-property>
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<div id='logoDivId'>
+<img  src='../../../../../hisglobal/images/logo.png'>
+</div>]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="482">
+                                <grid id="495">
+                                    <list-property name="visibility">
+                                        <structure>
+                                            <property name="format">all</property>
+                                            <expression name="valueExpr" type="javascript">params["isHeaderReq"].value==false</expression>
+                                        </structure>
+                                    </list-property>
+                                    <column id="496"/>
+                                    <row id="499">
+                                        <cell id="500">
+                                            <data id="1633">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">12pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="textAlign">center</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">report_Header</property>
+                                                        <expression name="expression" type="javascript">params["report_Header"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">report_Header</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                    <row id="501">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">params["report_Address1"].value==null || params["report_Address1"].value=="" || params["report_Address1"].value==" "</expression>
+                                            </structure>
+                                        </list-property>
+                                        <cell id="502">
+                                            <data id="1634">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="textAlign">center</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">report_Address1</property>
+                                                        <expression name="expression" type="javascript">params["report_Address1"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">report_Address1</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                    <row id="503">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">params["report_Address2"].value==null || params["report_Address2"].value=="" || params["report_Address2"].value==" "</expression>
+                                            </structure>
+                                        </list-property>
+                                        <cell id="504">
+                                            <data id="1635">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="textAlign">center</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">report_Address2</property>
+                                                        <expression name="expression" type="javascript">params["report_Address2"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">report_Address2</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                    <row id="1636">
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">params["report_Address3"].value==null || params["report_Address3"].value=="" || params["report_Address3"].value==" "</expression>
+                                            </structure>
+                                        </list-property>
+                                        <cell id="1637">
+                                            <data id="1638">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="textAlign">center</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">report_Address3</property>
+                                                        <expression name="expression" type="javascript">params["report_Address3"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="resultSetColumn">report_Address3</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                            <cell id="483"/>
+                        </row>
+                    </grid>
+                    <text id="1646">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">11pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textUnderline">underline</property>
+                        <property name="marginTop">10pt</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[EMPLOYEE REGISTRATION DETAIL REPORT]]></text-property>
+                    </text>
+                    <table id="1649">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="marginTop">5pt</property>
+                        <property name="width">100%</property>
+                        <property name="dataSet">Data Set 2</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">isexistingemployee</property>
+                                <text-property name="displayName">isexistingemployee</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["isexistingemployee"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">lastemploymenttype</property>
+                                <text-property name="displayName">lastemploymenttype</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["lastemploymenttype"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">employeenumber</property>
+                                <text-property name="displayName">employeenumber</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["employeenumber"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">employeefullname</property>
+                                <text-property name="displayName">employeefullname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["employeefullname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">employeefullregionallangname</property>
+                                <text-property name="displayName">employeefullregionallangname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["employeefullregionallangname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">dtemployeedob</property>
+                                <text-property name="displayName">dtemployeedob</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["dtemployeedob"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">natureofjob</property>
+                                <text-property name="displayName">natureofjob</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["natureofjob"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">appellation1</property>
+                                <text-property name="displayName">appellation1</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["appellation1"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">appellation2</property>
+                                <text-property name="displayName">appellation2</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["appellation2"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">employeeshortname</property>
+                                <text-property name="displayName">employeeshortname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["employeeshortname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">employeeshortregionallangname</property>
+                                <text-property name="displayName">employeeshortregionallangname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["employeeshortregionallangname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">suffix</property>
+                                <text-property name="displayName">suffix</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["suffix"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">gender</property>
+                                <text-property name="displayName">gender</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["gender"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">nationality</property>
+                                <text-property name="displayName">nationality</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["nationality"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">department</property>
+                                <text-property name="displayName">department</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["department"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">designation</property>
+                                <text-property name="displayName">designation</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["designation"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">oldemployeenumber</property>
+                                <text-property name="displayName">oldemployeenumber</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["oldemployeenumber"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">employeefinalstatus</property>
+                                <text-property name="displayName">employeefinalstatus</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["employeefinalstatus"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">intmobilenumber</property>
+                                <text-property name="displayName">intmobilenumber</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["intmobilenumber"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">emailid</property>
+                                <text-property name="displayName">emailid</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["emailid"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">pannumber</property>
+                                <text-property name="displayName">pannumber</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["pannumber"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="1735">
+                            <property name="width">25%</property>
+                        </column>
+                        <column id="1736">
+                            <property name="width">25%</property>
+                        </column>
+                        <column id="1737">
+                            <property name="width">25%</property>
+                        </column>
+                        <column id="1738">
+                            <property name="width">25%</property>
+                        </column>
+                        <detail>
+                            <row id="1660">
+                                <cell id="1661">
+                                    <text id="1739">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Is Existing Employee :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1662">
+                                    <data id="1761">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">isexistingemployee</property>
+                                    </data>
+                                </cell>
+                                <cell id="1663">
+                                    <text id="1740">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Last Employement Type :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1664">
+                                    <data id="1763">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">lastemploymenttype</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1665">
+                                <cell id="1666">
+                                    <text id="1742">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Nature Of Job :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1667">
+                                    <data id="1764">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">natureofjob</property>
+                                    </data>
+                                </cell>
+                                <cell id="1668"/>
+                                <cell id="1669"/>
+                            </row>
+                            <row id="1670">
+                                <cell id="1671">
+                                    <text id="1743">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Appellation 1 :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1672">
+                                    <data id="1765">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">appellation1</property>
+                                    </data>
+                                </cell>
+                                <cell id="1673">
+                                    <text id="1744">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Appellation 2 :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1674">
+                                    <data id="1766">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">appellation2</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1675">
+                                <cell id="1676">
+                                    <text id="1741">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Employee No. :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1677">
+                                    <data id="1767">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">employeenumber</property>
+                                    </data>
+                                </cell>
+                                <cell id="1678">
+                                    <text id="1745">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Employee Full Name :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1679">
+                                    <data id="1768">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">employeefullname</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1680">
+                                <cell id="1681">
+                                    <text id="1746">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Employee Short Name :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1682">
+                                    <data id="1769">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">employeeshortname</property>
+                                    </data>
+                                </cell>
+                                <cell id="1683">
+                                    <text id="1748">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">true</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Suffix :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1684">
+                                    <data id="1770">
+                                        <property name="textAlign">left</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">true</expression>
+                                            </structure>
+                                        </list-property>
+                                        <property name="resultSetColumn">suffix</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1685">
+                                <cell id="1686">
+                                    <text id="1749">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Date Of Birth :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1687">
+                                    <data id="1780">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">dtemployeedob</property>
+                                    </data>
+                                </cell>
+                                <cell id="1688">
+                                    <text id="1750">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Gender :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1689">
+                                    <data id="1771">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">gender</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1690">
+                                <cell id="1691">
+                                    <text id="1751">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Nationality :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1692">
+                                    <data id="1772">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">nationality</property>
+                                    </data>
+                                </cell>
+                                <cell id="1693">
+                                    <text id="1752">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Department :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1694">
+                                    <data id="1773">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">department</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1695">
+                                <cell id="1696">
+                                    <text id="1753">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Designation :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1697">
+                                    <data id="1774">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">designation</property>
+                                    </data>
+                                </cell>
+                                <cell id="1698">
+                                    <text id="2384">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Old Employement Reference No. :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1699">
+                                    <data id="1775">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">oldemployeenumber</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1700">
+                                <cell id="1701">
+                                    <text id="1755">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Employee Final Status :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1702">
+                                    <data id="1776">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">employeefinalstatus</property>
+                                    </data>
+                                </cell>
+                                <cell id="1703">
+                                    <text id="1756">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Mobile No. :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1704">
+                                    <data id="1777">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">intmobilenumber</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="1705">
+                                <cell id="1706">
+                                    <text id="1757">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[Email Id :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1707">
+                                    <data id="1778">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">emailid</property>
+                                    </data>
+                                </cell>
+                                <cell id="1708">
+                                    <text id="1758">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">right</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[PAN Card No. :]]></text-property>
+                                    </text>
+                                </cell>
+                                <cell id="1709">
+                                    <data id="1779">
+                                        <property name="textAlign">left</property>
+                                        <property name="resultSetColumn">pannumber</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="1730">
+                                <list-property name="visibility">
+                                    <structure>
+                                        <property name="format">all</property>
+                                        <expression name="valueExpr" type="javascript">!(row["employeenumber"]==null)</expression>
+                                    </structure>
+                                </list-property>
+                                <cell id="1731">
+                                    <property name="colSpan">4</property>
+                                    <property name="rowSpan">1</property>
+                                    <text id="2385">
+                                        <property name="fontSize">10pt</property>
+                                        <property name="fontWeight">bold</property>
+                                        <property name="contentType">auto</property>
+                                        <text-property name="content"><![CDATA[No Record Found]]></text-property>
+                                    </text>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                    <data id="1645">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="marginTop">5pt</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">lFHeading</property>
+                                <expression name="expression" type="javascript">params["lFHeading"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">lFHeading</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

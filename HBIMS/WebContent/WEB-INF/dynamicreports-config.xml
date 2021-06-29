@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts-config>
+
+	<form-beans>
+
+ 
+	<!--  Master Bean Start-->
+		<form-bean name="templateBean" type="dynamicreports.masters.controller.fb.DynamicReportTemplateMstFB"></form-bean>
+		
+		<form-bean name="rptparamBean" type="dynamicreports.masters.controller.fb.DynamicReportParamMstFB"></form-bean>
+		
+	 <!--  Master Bean End-->
+		   
+		   
+
+	<!--  Reports Bean  Start-->
+		
+			<form-bean name="drptBean" type="dynamicreports.reports.controller.fb.DynamicReportsTransFB"></form-bean>
+			
+		
+		 	<!--  Reports Bean  End-->
+
+ 
+	</form-beans>
+
+
+	<action-mappings>
+		 
+		  
+ 
+ 	<!--  Master Action Start-->
+ 
+ 		<action path="/masters/DynamicReportTemplateMstCNT" type="dynamicreports.masters.controller.action.DynamicReportTemplateMstCNT" name="templateBean" scope="request" validate="false" parameter="hmode">
+			
+			<forward name="add"    path="/masters/drpt_add_template_mst.jsp" />
+			<forward name="modify" path="/masters/drpt_modify_template_mst.jsp" />
+
+	    </action>
+	
+		<action path="/masters/DynamicReportParamMstCNT" type="dynamicreports.masters.controller.action.DynamicReportParamMstCNT" name="rptparamBean" scope="request" validate="false" parameter="hmode">
+			
+			<forward name="init"    path="/masters/drpt_init_templateparam_mst.jsp" />
+			<forward name="rowbased"    path="/masters/drpt_rowbased_rpt_mst.jsp" />
+			<forward name="colbased"    path="/masters/drpt_colbased_rpt_mst.jsp" />
+			<forward name="drilldown"    path="/masters/drpt_drilldown_rpt_mst.jsp" />
+			<forward name="merge"    path="/masters/drpt_merge_rpt_mst.jsp" />
+	    </action>
+		
+		 
+ 	<!--  Master Action End-->		
+ 
+ 
+ 
+ 	<!--  Services Action Start-->	
+  
+ 		 	<action path="/reports/DynamicReportsTransCNT" type="dynamicreports.reports.controller.action.DynamicReportsTransCNT" name="drptBean" scope="request" validate="false" parameter="hmode">
+			
+			<forward name="init"    path="/reports/drpt_interface_trans.jsp" />
+			<forward name="reportPage"    path="/reports/drpt_report.jsp" />
+		     </action>
+		     
+		<action path="/reports/DynamicReportsTransBSCNT" type="dynamicreports.reports.controller.action.DynamicReportsTransBSCNT" name="drptBean" scope="request" validate="false" parameter="hmode">
+			
+			<forward name="init"    path="/reports/drpt_interface_transNew.jsp" />
+			<forward name="reportPage"    path="/reports/drpt_report.jsp" />
+		     </action>
+		
+ 
+ 	<!--  Services Action End-->	
+   
+	</action-mappings>
+
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

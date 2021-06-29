@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	 <!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+	
+	<form-bean name="AlertCategoryMstBean" type="alertmanagement.masters.controller.hlp.AlertCategoryMstFB" />
+
+	<form-bean name="AlertMstBean" type="alertmanagement.masters.controller.hlp.AlertMstFB" />
+	
+    <form-bean name="AlertUserMasterBean" type="alertmanagement.masters.controller.hlp.AlertMappingMasterFB"/>
+    <form-bean name="AlertExtUserMasterBean" type="alertmanagement.masters.controller.hlp.AlertExtUserMasterFB"/>
+    
+    
+    <form-bean name="AlertRecipientMstBean" type="alertmanagement.masters.controller.hlp.AlertRecipientMstFB"/>
+
+    </form-beans>
+	
+	<action-mappings>
+	
+	<action path="/masters/AlertExtUserMaster"
+			type="alertmanagement.masters.controller.action.AlertExtUserMasterACT"
+			name="AlertExtUserMasterBean"
+			scope="request"
+			validate="false"
+			parameter="hmode"
+			input="/masters/alertExtUserMaster.jsp">
+		<forward name="NEW" path="/masters/alertExtUserMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+	</action>		
+	
+	<action path="/masters/AlertUserMaster"
+			type="alertmanagement.masters.controller.action.AlertMappingMasterACT"
+			name="AlertUserMasterBean"
+			scope="request"
+			validate="false"
+			parameter="hmode"
+			input="/masters/alertMappingMaster.jsp">
+		<forward name="NEW" path="/masters/alertMappingMaster.jsp"/>	
+	</action>		
+		
+	<action path = "/masters/AlertCategoryMstACTION"
+			type = "alertmanagement.masters.controller.action.AlertCategoryMstACT"
+			name = "AlertCategoryMstBean"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/alertCategoryMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/alertCategoryMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+			
+			
+	<action path = "/masters/AlertMstACTION"
+			type = "alertmanagement.masters.controller.action.AlertMstACT"
+			name = "AlertMstBean"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/alertMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/alertMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+					
+		
+	<action path = "/masters/AlertRecipientMstACTION"
+			type = "alertmanagement.masters.controller.action.AlertRecipientMstACT"
+			name = "AlertRecipientMstBean"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/alertRecipientMstAddMod.jsp">
+			<forward name="ADD" path="/masters/alertRecipientMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>		 
+			 
+	 <action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+	 
+
+	</action-mappings>
+	
+	
+	
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	  
+	
+	
+</struts-config>          

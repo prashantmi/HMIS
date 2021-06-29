@@ -1,0 +1,227 @@
+package new_investigation.masters.controller.fb;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionMapping;
+
+public class UserwiseBookMarkMstFB extends ActionForm {
+
+	private String userId;
+	private String labCode;
+	private String bookmarkCode;
+	private String seqNo;
+	private String bookarkType;
+	private String isTestGroup;
+	private String deptUnitCode;
+	private String entryDate;
+	private String lstmodDate;
+	private String testCode;
+	private String bookmarkName;
+	private String groupCode;
+	private String chk[];
+	private String hmode;
+	private String userName;
+	private String labName;
+	private String deptUnitName;
+	private String groupName;
+	private String deptCode;
+	private String deptName;
+	private String testName;
+	private String requestedRow;
+	private String hiddenLabCode;
+	private String hiddenLabName;
+	private String hiddenTestCode;
+	private String hiddenTestName;
+	private String loginUserName;
+	private String hiddenGroupCode;
+	private String hiddenIsTestGroup;
+	
+	public String getHiddenIsTestGroup() {
+		return hiddenIsTestGroup;
+	}
+	public void setHiddenIsTestGroup(String hiddenIsTestGroup) {
+		this.hiddenIsTestGroup = hiddenIsTestGroup;
+	}
+	
+	
+	public String getHiddenGroupCode() {
+		return hiddenGroupCode;
+	}
+	public void setHiddenGroupCode(String hiddenGroupCode) {
+		this.hiddenGroupCode = hiddenGroupCode;
+	}
+	
+	public String getLoginUserName() {
+		return loginUserName;
+	}
+	public void setLoginUserName(String loginUserName) {
+		this.loginUserName = loginUserName;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getLabCode() {
+		return labCode;
+	}
+	public void setLabCode(String labCode) {
+		this.labCode = labCode;
+	}
+	public String getBookmarkCode() {
+		return bookmarkCode;
+	}
+	public void setBookmarkCode(String bookmarkCode) {
+		this.bookmarkCode = bookmarkCode;
+	}
+	public String getSeqNo() {
+		return seqNo;
+	}
+	public void setSeqNo(String seqNo) {
+		this.seqNo = seqNo;
+	}
+	public String getBookarkType() {
+		return bookarkType;
+	}
+	public void setBookarkType(String bookarkType) {
+		this.bookarkType = bookarkType;
+	}
+	public String getIsTestGroup() {
+		return isTestGroup;
+	}
+	public void setIsTestGroup(String isTestGroup) {
+		this.isTestGroup = isTestGroup;
+	}
+	public String getDeptUnitCode() {
+		return deptUnitCode;
+	}
+	public void setDeptUnitCode(String deptUnitCode) {
+		this.deptUnitCode = deptUnitCode;
+	}
+	public String getEntryDate() {
+		return entryDate;
+	}
+	public void setEntryDate(String entryDate) {
+		this.entryDate = entryDate;
+	}
+	public String getLstmodDate() {
+		return lstmodDate;
+	}
+	public void setLstmodDate(String lstmodDate) {
+		this.lstmodDate = lstmodDate;
+	}
+	public String getTestCode() {
+		return testCode;
+	}
+	public void setTestCode(String testCode) {
+		this.testCode = testCode;
+	}
+	public String getBookmarkName() {
+		return bookmarkName;
+	}
+	public void setBookmarkName(String bookmarkName) {
+		this.bookmarkName = bookmarkName;
+	}
+	public String getGroupCode() {
+		return groupCode;
+	}
+	public void setGroupCode(String groupCode) {
+		this.groupCode = groupCode;
+	}
+	public String getHmode() {
+		return hmode;
+	}
+	public void setHmode(String hmode) {
+		this.hmode = hmode;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getLabName() {
+		return labName;
+	}
+	public void setLabName(String labName) {
+		this.labName = labName;
+	}
+	public String getDeptUnitName() {
+		return deptUnitName;
+	}
+	public void setDeptUnitName(String deptUnitName) {
+		this.deptUnitName = deptUnitName;
+	}
+	public String getGroupName() {
+		return groupName;
+	}
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+	
+	public String getDeptCode() {
+		return deptCode;
+	}
+	public void setDeptCode(String deptCode) {
+		this.deptCode = deptCode;
+	}
+	public String getDeptName() {
+		return deptName;
+	}
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+	public String getRequestedRow() {
+		return requestedRow;
+	}
+	public void setRequestedRow(String requestedRow) {
+		this.requestedRow = requestedRow;
+	}
+	public String getTestName() {
+		return testName;
+	}
+	public void setTestName(String testName) {
+		this.testName = testName;
+	}
+	
+	public void resetOpinion(ActionMapping mapping,HttpServletRequest request)
+	{
+		this.setRequestedRow("");
+		this.setTestName("");
+	}
+	public String getHiddenLabCode() {
+		return hiddenLabCode;
+	}
+	public void setHiddenLabCode(String hiddenLabCode) {
+		this.hiddenLabCode = hiddenLabCode;
+	}
+	public String getHiddenLabName() {
+		return hiddenLabName;
+	}
+	public void setHiddenLabName(String hiddenLabName) {
+		this.hiddenLabName = hiddenLabName;
+	}
+	public String getHiddenTestCode() {
+		return hiddenTestCode;
+	}
+	public void setHiddenTestCode(String hiddenTestCode) {
+		this.hiddenTestCode = hiddenTestCode;
+	}
+	public String getHiddenTestName() {
+		return hiddenTestName;
+	}
+	public void setHiddenTestName(String hiddenTestName) {
+		this.hiddenTestName = hiddenTestName;
+	}
+	public String[] getChk() {
+		return chk;
+	}
+	public void setChk(String[] chk) {
+		this.chk = chk;
+	}
+	
+	
+	
+}

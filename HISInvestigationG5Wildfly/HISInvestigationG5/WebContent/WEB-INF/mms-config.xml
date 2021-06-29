@@ -1,0 +1,4038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts-config>
+
+	<form-beans>
+
+
+
+		<!-- Global Util FormBean Start-->
+		<form-bean name="mmsBean" type="mms.global.controller.MmsFB"></form-bean>
+
+		<!-- Global Util FormBean End-->
+
+
+
+		<!-- Master Beans Start-->
+		
+		
+		<!-- Drug WareHouse Administration Master (By Amit Kumar) Start  -->
+		
+		
+		<form-bean name="designationMst"
+			type="mms.masters.controller.fb.DesignationMstFB">
+		</form-bean>
+		
+		
+		<!-- Drug WareHouse Administration Master (By Amit Kumar) End  -->
+		
+
+		<!-- Master by Bala -->
+
+
+
+		<form-bean name="mmsConfigBean"
+			type="mms.masters.controller.fb.MmsConfigMstFB">
+		</form-bean>
+        <form-bean name="sampleSentTransBean"
+			type="mms.transactions.controller.fb.SampleSentTransFB">
+		</form-bean>
+
+
+		<form-bean name="impexpTemplateMstBean"
+			type="mms.masters.controller.fb.ImportExportTemplateMstFB">
+		</form-bean>
+		
+		<form-bean name="smsMobileSetupMstFB"
+			type="mms.masters.controller.fb.SmsMobileSetupMstFB">
+		</form-bean>
+		
+         
+
+<!--  HelpDesk Transaction by BrahmamVeluguri-->
+
+		<form-bean name="HelpDeskTransBean"
+			type="mms.transactions.controller.fb.HelpDeskFB">
+		</form-bean>
+
+
+<!--  HelpDesk Transaction by BrahmamVeluguri-->
+
+<!--  SolutionDesk Transaction by BrahmamVeluguri-->
+
+		<form-bean name="SolutionDeskTransBean"
+			type="mms.transactions.controller.fb.SolutionDeskFB">
+		</form-bean>
+		
+<!--  SolutionDesk Transaction by BrahmamVeluguri-->
+
+<!--  HelpDesk Report by BrahmamVeluguri-->
+		
+		<form-bean name="HelpDeskRptFB"
+			type="mms.reports.controller.fb.HelpDeskRptFB">
+		</form-bean>
+		
+		
+<!--  HelpDesk Report by BrahmamVeluguri-->
+
+		<!-- Master by Bala End-->
+
+				
+		<form-bean name="PODeskTransBean"
+			type="mms.transactions.controller.fb.PODeskTransFB">
+		</form-bean>
+
+
+        <form-bean name="transferDemandReqTrans"
+			type="mms.transactions.controller.fb.TransferDemandReqTransFB">
+		</form-bean>
+		
+		<form-bean name="transferReqTrans"
+			type="mms.transactions.controller.fb.TransferRequestTransFB">
+		</form-bean>
+		
+		
+		
+
+		<form-bean name="PODeskGenerateTransBean"
+			type="mms.transactions.controller.fb.PODeskGenerateTransFB">
+		</form-bean>
+
+		<form-bean name="PODeskScheduleTransBean"
+			type="mms.transactions.controller.fb.PODeskScheduleTransFB">
+		</form-bean>
+
+		<form-bean name="PODeskViewTransBean"
+			type="mms.transactions.controller.fb.PODeskViewTransFB">
+		</form-bean>
+
+		<form-bean name="PODeskCancelTransBean"
+			type="mms.transactions.controller.fb.PODeskCancelTransFB">
+		</form-bean>
+
+		<form-bean name="poPrintBean"
+			type="mms.transactions.controller.fb.PODeskPrintTransFB">
+		</form-bean>
+
+
+		<!--  Transactions by Amit-->
+
+		<form-bean name="indentTransBean"
+			type="mms.transactions.controller.fb.IndentTransFB">
+		</form-bean>
+
+		<form-bean name="indentTransADDBean"
+			type="mms.transactions.controller.fb.IndentTransADDFB">
+		</form-bean>
+
+
+		<form-bean name="requestForLpPatient"
+			type="mms.transactions.controller.fb.RequestForLPPatientFB">
+		</form-bean>
+
+
+		<form-bean name="requestForLpStaff"
+			type="mms.transactions.controller.fb.RequestForLPStaffFB">
+		</form-bean>
+
+		<form-bean name="requestForLpDept"
+			type="mms.transactions.controller.fb.RequestForLPDeptFB">
+		</form-bean>
+
+
+		<form-bean name="annualPurchaseIndent"
+			type="mms.transactions.controller.fb.AnnualPurchaseIndentFB">
+		</form-bean>
+
+
+		<form-bean name="requestForContigency"
+			type="mms.transactions.controller.fb.RequestForContigencyFB">
+		</form-bean>
+		
+		<form-bean name="requestForRoutinePurchase"
+			type="mms.transactions.controller.fb.RoutinePurchaseFB">
+		</form-bean>
+		
+
+
+		<form-bean name="returnRequest"
+			type="mms.transactions.controller.fb.ReturnRequestTransFB">
+		</form-bean>
+
+
+
+		<form-bean name="indentForImportItemsBean"
+			type="mms.transactions.controller.fb.IndentForImportItemsFB">
+		</form-bean>
+
+		<form-bean name="poApprovalDeskBean"
+			type="mms.transactions.controller.fb.POApprovalDeskFB">
+		</form-bean>
+		
+		<form-bean name="indentCondemnationTransADDBean"
+			type="mms.transactions.controller.fb.IndentDeskCondemnationReqTransFB">
+		</form-bean>
+
+
+		<form-bean name="requestCondemnationTransADDBean"
+			type="mms.transactions.controller.fb.CondemnationRequestForNonConsumTransFB">
+		</form-bean>
+		<form-bean name="indentViewBean"
+			type="mms.transactions.controller.fb.IndentViewTransFB">
+		</form-bean>
+
+		<form-bean name="indentPrintBean"
+			type="mms.transactions.controller.fb.IndentPrintTransFB">
+		</form-bean>
+
+		<form-bean name="budgetAllocationDetailProcessTransFB" type="mms.transactions.controller.fb.BudgetAllocationDetailProcessTransFB">
+		</form-bean>
+		
+		<form-bean name="supplierPerformanceDtlTransFB" type="mms.transactions.controller.fb.SupplierPerformanceDtlTransFB">
+		</form-bean>
+		
+		<form-bean name="challanPerformanceFB" type="mms.transactions.controller.fb.ChallanPerformanceFB">
+		</form-bean>
+		
+		<form-bean name="sampleReceiveDetailProcessTransFB" type="mms.transactions.controller.fb.SampleReceiveDetailProcessTransFB">
+		</form-bean>
+		
+		<form-bean name="challanModificationTransFB" type="mms.transactions.controller.fb.ChallanModificationTransFB">
+		</form-bean>
+
+		<form-bean name="issueDtlModificationTransFB" type="mms.transactions.controller.fb.IssueDtlModificationTransFB">
+		</form-bean>
+		
+		<form-bean name="thirdPartyIssueDtlModificationTransFB" type="mms.transactions.controller.fb.ThirdPartyIssueDtlModificationTransFB">
+		</form-bean>
+		
+		<form-bean name="issueSampleModificationTransFB" type="mms.transactions.controller.fb.IssueSampleModificationTransFB">
+		</form-bean>
+		
+		
+		<!-- Transactions Beans End By Amit-->
+
+
+
+		<!--  Masters by Anshul-->
+
+
+		<form-bean name="unitvalueBean" type="mms.masters.vo.VOUnitValueMst"></form-bean>
+		
+		<form-bean name="unitBean" type="mms.masters.vo.VOUnitMst"></form-bean>
+
+		<form-bean name="storetypeBean"
+			type="mms.masters.controller.fb.StoreTypeMstFB">
+		</form-bean>
+
+		<form-bean name="StoreGrpBean"
+			type="mms.masters.controller.fb.StoreGroupMstFB">
+		</form-bean>
+
+		<form-bean name="subgroupBean"
+			type="mms.masters.controller.fb.StoreSubGroupMstFB">
+		</form-bean>
+
+		<form-bean name="IndentTypeBean"
+			type="mms.masters.controller.fb.IndentTypeMstFB">
+		</form-bean>
+
+		<form-bean name="StoreBean"
+			type="mms.masters.controller.fb.StoreMstFB">
+		</form-bean>
+
+		<form-bean name="ItemTypeBean"
+			type="mms.masters.controller.fb.ItemTypeMstFB">
+		</form-bean>
+
+		<form-bean name="PurchaseTypeBean"
+			type="mms.masters.controller.fb.PurchaseTypeMstFB">
+		</form-bean>
+
+		<form-bean name="StoreItemBean"
+			type="mms.masters.controller.fb.StoreItemMstFB">
+		</form-bean>
+
+		<form-bean name="SupplierItemBean"
+			type="mms.masters.controller.fb.SupplierItemMstFB">
+		</form-bean>
+
+		<form-bean name="supplierBean"
+			type="mms.masters.controller.fb.SupplierMstFB">
+		</form-bean>
+
+		<form-bean name="StoreHierarchyBean"
+			type="mms.masters.controller.fb.StoreHierarchyMstFB">
+		</form-bean>
+
+		<form-bean name="genericdrugBean"
+			type="mms.masters.controller.fb.GenericDrugMstFB">
+		</form-bean>
+		<form-bean name="genericitemBean"
+			type="mms.masters.controller.fb.GenericItemMstFB">
+		</form-bean>
+		
+		<form-bean name="supplierPaymentDtlTransFB" type="mms.reports.controller.fb.SupplierPaymentDtailRptFB">
+		</form-bean>
+
+		
+
+		<!--  Masters by Anshul End-->
+
+		<!-- Master By Niharika Srivastava -->
+		<form-bean name="DrugContradictionBean"
+			type="mms.masters.controller.fb.DrugContradictionMstFB">
+		</form-bean>
+		
+		<!-- Master By Niharika Srivastava End-->
+
+		<form-bean name="drugBean"
+			type="mms.masters.controller.fb.DrugMstFB">
+		</form-bean>
+		<!--  Masters by Tanvi-->
+
+		<form-bean name="itemBean"
+			type="mms.masters.controller.fb.ItemMstFB">
+		</form-bean>
+
+		<form-bean name="SupplierGradeMstBean"
+			type="mms.masters.controller.fb.SupplierGradeMstFB">
+		</form-bean>
+		<form-bean name="CommitteeTypeMstBean"
+			type="mms.masters.controller.fb.CommitteeTypeMstFB">
+		</form-bean>
+		<form-bean name="LetterTypeMstBean"
+			type="mms.masters.controller.fb.LetterTypeMstFB">
+		</form-bean>
+		<form-bean name="ProcessLetterTypeMstBean"
+			type="mms.masters.controller.fb.ProcessLetterTypeMstFB">
+		</form-bean>
+		<form-bean name="ItemSetsMstBean"
+			type="mms.masters.controller.fb.ItemSetsMstFB">
+		</form-bean>
+		<form-bean name="authorizationBean"
+			type="mms.masters.controller.fb.AuthorizationMstFB">
+		</form-bean>
+		<form-bean name="itemParameterBean"
+			type="mms.masters.controller.fb.ItemParameterMstFB">
+		</form-bean>
+		<form-bean name="currencyMstBean"
+			type="mms.masters.controller.fb.CurrencyMstFB">
+		</form-bean>
+
+		<form-bean name="MaintenanceTypeMstBean"
+			type="mms.masters.controller.fb.MaintenanceTypeMstFB">
+		</form-bean>
+		<form-bean name="GatePassTypeMstBean"
+			type="mms.masters.controller.fb.GatePassTypeMstFB">
+		</form-bean>
+
+		<form-bean name="dispatchModeBean"
+			type="mms.masters.controller.fb.DispatchModeMstFB">
+		</form-bean>
+		
+		<form-bean name="suppliertypeBean"
+			type="mms.masters.controller.fb.SupplierTypeMstFB">
+		</form-bean>
+
+		<!--  Masters by Tanvi End-->
+
+		<!--  Masters by Amit-->
+		<form-bean name="drugSaftyAlertBean"
+			type="mms.masters.controller.fb.DrugSafetyAlertMstFB">
+		</form-bean>
+
+		<form-bean name="drugDosageIndicationBean"
+			type="mms.masters.controller.fb.DrugDosageIndicationMstFB">
+		</form-bean>
+
+		<form-bean name="committeeMemberDtlBean"
+			type="mms.masters.controller.fb.CommitteeMemberDetailMstFB">
+		</form-bean>
+
+		<form-bean name="sparepartBean"
+			type="mms.masters.controller.fb.SparePartsMstFB">
+		</form-bean>
+
+
+
+		<form-bean name="poDeskTransBean"
+			type="mms.transactions.controller.fb.PODeskTransFB">
+		</form-bean>
+
+		<form-bean name="poDeskTransADDBean"
+			type="mms.transactions.controller.fb.PODeskTransADDFB">
+		</form-bean>
+
+		<form-bean name="issueToPatTransBean"
+			type="mms.transactions.controller.fb.IssueToPatientTransFB">
+		</form-bean>
+
+
+		<form-bean name="issueToEmpTransBean"
+			type="mms.transactions.controller.fb.IssueToEmployeeTransFB">
+		</form-bean>
+
+		<form-bean name="issueDeskTransBean"
+			type="mms.transactions.controller.fb.IssueDeskTransFB">
+		</form-bean>
+
+
+		<form-bean name="lpIssueDeskTransBean"
+			type="mms.transactions.controller.fb.LPIssueDeskTransFB">
+		</form-bean>
+
+		<!-- Issue Desk Transaction Mapping End -->
+		<form-bean name="issueViewDetailsBean"
+			type="mms.transactions.controller.fb.IssueViewDetailsFB">
+		</form-bean>
+
+
+<!--  Import Records Transactions   -->
+	<form-bean name="importRecordTransBean"
+			type="mms.transactions.controller.fb.ImportRecordsTransFB">
+		</form-bean>
+
+
+<!--  Export Records Transactions   -->
+	<form-bean name="exportRecordTransBean"
+			type="mms.transactions.controller.fb.ExportRecordsTransFB">
+		</form-bean>
+
+
+
+		<!--  Transactions by Amit-->
+		
+		<form-bean name="offlineIssueIndentBean"
+			type="mms.transactions.controller.fb.OfflineIssueIndentTransFB">
+		</form-bean>
+		
+		<form-bean name="issueBackLogDtl"
+			type="mms.transactions.controller.fb.IssueDtlBackLogFB">
+		</form-bean>
+
+       <form-bean name="offlineReturnBean"
+			type="mms.transactions.controller.fb.OfflineReturnTransFB">
+		</form-bean>
+
+		<form-bean name="indentTransBean"
+			type="mms.transactions.controller.fb.IndentTransFB">
+		</form-bean>
+
+		<form-bean name="indentTransADDBean"
+			type="mms.transactions.controller.fb.IndentTransADDFB">
+		</form-bean>
+
+		<form-bean name="poDeskTransBean"
+			type="mms.transactions.controller.fb.PODeskTransFB">
+		</form-bean>
+
+		<form-bean name="poDeskTransADDBean"
+			type="mms.transactions.controller.fb.PODeskTransADDFB">
+		</form-bean>
+
+		<form-bean name="issueToPatTransBean"
+			type="mms.transactions.controller.fb.IssueToPatientTransFB">
+		</form-bean>
+
+
+		<form-bean name="issueToEmpTransBean"
+			type="mms.transactions.controller.fb.IssueToEmployeeTransFB">
+		</form-bean>
+
+		<form-bean name="issueDeskTransBean"
+			type="mms.transactions.controller.fb.IssueDeskTransFB">
+		</form-bean>
+
+
+		<!-- Issue Desk Transaction Mapping End -->
+		<form-bean name="issueViewDetailsBean"
+			type="mms.transactions.controller.fb.IssueViewDetailsFB">
+		</form-bean>
+
+		<!-- Issue Desk Condemnation Transaction Mapping End -->
+		<form-bean name="indentCondemnationTransADDBean"
+			type="mms.transactions.controller.fb.IndentDeskCondemnationReqTransFB">
+		</form-bean>
+
+
+
+
+		<!-- Masters by Manas -->
+		<form-bean name="componentBean"
+			type="mms.masters.controller.fb.ComponentMstFB">
+		</form-bean>
+
+
+		<form-bean name="deliveryModeBean"
+			type="mms.masters.controller.fb.DeliveryModeMstFB">
+		</form-bean>
+
+
+		<form-bean name="invoiceTypeBean"
+			type="mms.masters.controller.fb.InvoiceTypeMstFB">
+		</form-bean>
+
+
+		<!-- Masters by Manas End -->
+
+
+
+		<!-- Masters by Punkaj -->
+		<form-bean name="drugBean"
+			type="mms.masters.controller.fb.DrugMstFB">
+		</form-bean>
+		<form-bean name="itemBean"
+			type="mms.masters.controller.fb.ItemMstFB">
+		</form-bean>
+
+		<!-- Masters by Punkaj End-->
+
+		<!--  Transactions by Deepak-->
+
+		<form-bean name="supplierReturnDeskTransBean"
+			type="mms.transactions.controller.fb.SupplierReturnDeskFB">
+		</form-bean>
+
+		<form-bean name="supplierReturnReqBean"
+			type="mms.transactions.controller.fb.SupplierReturnReqTransFB">
+		</form-bean>
+
+		<form-bean name="supplierReturnSancBean"
+			type="mms.transactions.controller.fb.SupplierReturnSancTransFB">
+		</form-bean>
+
+		<form-bean name="supplierReturnModifyBean"
+			type="mms.transactions.controller.fb.SupplierReturnModifyTransFB">
+		</form-bean>
+
+		<form-bean name="indentApprovalTransBean"
+			type="mms.transactions.controller.fb.IndentApprovalDeskFB">
+		</form-bean>
+
+		<form-bean name="indentApprovalApproveTransBean"
+			type="mms.transactions.controller.fb.IndentApprovalApproveTransFB">
+		</form-bean>
+
+		<form-bean name="indentApprovalApproveRecTransBean"
+			type="mms.transactions.controller.fb.IndentApprovalApproveRecTransFB">
+		</form-bean>
+
+		<form-bean name="indentViewBean"
+			type="mms.transactions.controller.fb.IndentViewTransFB">
+		</form-bean>
+
+		<form-bean name="itemTransferTransBean"
+			type="mms.transactions.controller.fb.ItemTransferTransFB">
+		</form-bean>
+		
+		<form-bean name="costEstimationBean"
+			type="mms.transactions.controller.fb.CostEstimationFB">
+		</form-bean>	
+		
+
+		<form-bean name="authHierTransBean"
+			type="mms.masters.controller.fb.AuthorityHierDtlFB">
+		</form-bean>
+
+		<form-bean name="agendaViewBean"
+			type="mms.transactions.controller.fb.AgendaViewTransFB">
+		</form-bean>
+
+		<form-bean name="agendaDeskTransBean"
+			type="mms.transactions.controller.fb.AgendaDeskTransFB">
+		</form-bean>
+
+		<form-bean name="agendaDeskAddTransBean"
+			type="mms.transactions.controller.fb.AgendaDeskAddTransFB">
+		</form-bean>
+
+
+
+		<!-- Transactions by Deepak End-->
+
+
+		<!--  Masters by Baisakhi-->
+
+		<form-bean name="pocomponentBean"
+			type="mms.masters.controller.fb.POComponentMstFB">
+		</form-bean>
+
+
+		<form-bean name="indentAuthorizationBean"
+			type="mms.masters.controller.fb.IndentAuthorizationMstFB">
+		</form-bean>
+
+		<form-bean name="storeReqTypeBean"
+			type="mms.masters.controller.fb.StoreReqTypeMstFB">
+		</form-bean>
+
+		<form-bean name="storeCategoryBean"
+			type="mms.masters.controller.fb.StoreCategoryMstFB">
+		</form-bean>
+		<form-bean name="purposeBean"
+			type="mms.masters.controller.fb.PurposeMstFB">
+		</form-bean>
+
+
+		<!--  Masters by Baisakhi End-->
+		<!--  Masters by Promod-->
+
+		<form-bean name="approvingAuthorityMstBean"
+			type="mms.masters.controller.fb.ApprovingAuthorityMstFB">
+		</form-bean>
+		<form-bean name="groupItemAltMstBean"
+			type="mms.masters.controller.fb.GroupItemAltMstFB">
+		</form-bean>
+		
+		<!--  Masters by Promod END-->
+		
+			<!--  Masters by Vivek Aggarwal	START -->
+
+			<form-bean name="stateMstBean"	type="mms.masters.controller.fb.StateMstFB">
+			</form-bean>
+			
+			<form-bean name="employeeDetailMstBean"	type="mms.masters.controller.fb.EmployeeDetailMstFB">
+			</form-bean>
+			<!--  Masters by Vivek Aggarwal END -->
+			
+			<!--  Masters by Adil-->
+			
+			<form-bean name="schemeBean"
+				type="mms.masters.controller.fb.SchemeMstFB">
+			</form-bean>
+			
+			<form-bean name="sourceBean"
+				type="mms.masters.controller.fb.SourceMstFB">
+			</form-bean>
+			
+			<form-bean name="countryBean"
+				type="mms.masters.controller.fb.CountryMstFB">
+			</form-bean>
+			
+			<form-bean name="districtMstBean"	type="mms.masters.controller.fb.DistrictMstFB">
+			</form-bean>
+			
+			
+			<form-bean name="labMstBean"
+				type="mms.masters.controller.fb.LabMstFB">
+			</form-bean>
+			<!--  Masters by Adil End-->
+		
+		<!-- Master Beans End-->
+		
+
+		<!-- Transactions Beans Start-->
+
+		<!--  Transactions by Anshul-->
+
+		<form-bean name="rateContractDtlBean"
+			type="mms.transactions.controller.fb.RateContractDtlTransFB">
+		</form-bean>
+		<form-bean name="issueDeskTransBean"
+			type="mms.transactions.controller.fb.IssueDeskTransFB">
+		</form-bean>
+		<form-bean name="inspectionDeskBean"
+			type="mms.transactions.controller.fb.InspectionDeskTransFB">
+		</form-bean>
+		<form-bean name="inspectionIntimationBean"
+			type="mms.transactions.controller.fb.InspectionIntimationTransFB">
+		</form-bean>
+		<form-bean name="inspectionReportBean"
+			type="mms.transactions.controller.fb.InspectionReportTransFB">
+		</form-bean>
+		<form-bean name="inspectionReportBean"
+			type="mms.transactions.controller.fb.InspectionReportTransFB">
+		</form-bean>
+		<form-bean name="inspectionReportBean"
+			type="mms.transactions.controller.fb.InspectionReportTransFB">
+		</form-bean>
+		<form-bean name="indentForImportItemsBean"
+			type="mms.transactions.controller.fb.IndentForImportItemsFB">
+		</form-bean>
+
+		<!--  Transactions by Pankaj-->
+
+		<form-bean name="drugProfileBean"
+			type="mms.transactions.controller.fb.DrugProfileFB">
+		</form-bean>
+		<form-bean name="itemInventoryTransBean"
+			type="mms.transactions.controller.fb.ItemInventoryTransFB">
+		</form-bean>
+
+
+		<!--  Transactions by Tanvi-->
+
+		<form-bean name="itemLocationBean"
+			type="mms.transactions.controller.fb.ItemLocationTransFB">
+		</form-bean>
+		<form-bean name="returnFromTransBean"
+			type="mms.transactions.controller.fb.ReturnFromTransFB">
+		</form-bean>
+		<form-bean name="returnFromEmployeeBean"
+			type="mms.transactions.controller.fb.ReturnFromEmployeeTransFB">
+		</form-bean>
+		<form-bean name="inspectionDeskIssueBean"
+			type="mms.transactions.controller.fb.InspectionDeskIssueTransFB">
+		</form-bean>
+		<form-bean name="inspectionViewBean"
+			type="mms.transactions.controller.fb.InspectionViewTransFB">
+		</form-bean>
+		<form-bean name="billApprovalDeskTransBean"
+			type="mms.transactions.controller.fb.BillApprovalDeskTransFB">
+		</form-bean>
+		<form-bean name="billApprovalTransBean"
+			type="mms.transactions.controller.fb.BillApprovalTransFB">
+		</form-bean>
+		<form-bean name="billApprovalOtherTransBean"
+			type="mms.transactions.controller.fb.BillApprovalOtherTransFB">
+		</form-bean>
+		<form-bean name="billApprovalViewBean"
+			type="mms.transactions.controller.fb.BillApprovalViewTransFB">
+		</form-bean>
+		<form-bean name="financialEndYearTransBean"
+			type="mms.transactions.controller.fb.FinancialEndYearTransFB">
+		</form-bean>
+		<form-bean name="giftedItemDetailsTransBean"
+			type="mms.transactions.controller.fb.GiftedItemDetailsTransFB">
+		</form-bean>
+		<form-bean name="receiveFromThirdPartyTransBean"
+			type="mms.transactions.controller.fb.ReceiveFromThirdPartyTransFB">
+		</form-bean>
+		<form-bean name="miscellaneousConsumptionBean"
+			type="mms.transactions.controller.fb.MiscellaneousConsumptionTransFB">
+		</form-bean>
+		<form-bean name="qualityCheckControlBean"
+			type="mms.transactions.controller.fb.QualityCheckControlTransFB">
+		</form-bean>
+		<form-bean name="installationTransBean"
+			type="mms.transactions.controller.fb.InstallationTransFB">
+		</form-bean>
+
+
+		<!--  Transactions by Kapil-->
+
+		<form-bean name="EmdReceivingDtlBean"
+			type="mms.transactions.controller.fb.EMDReceivingDtlTransFB">
+		</form-bean>
+		<form-bean name="EmdRefundDtlBean"
+			type="mms.transactions.controller.fb.EMDRefundDtlTransFB">
+		</form-bean>
+		<form-bean name="thirdPartyIssueDeskBean"
+			type="mms.transactions.controller.fb.ThirdPartyIssueDeskFB">
+		</form-bean>
+		<form-bean name="thirdPartyIssueReqBean"
+			type="mms.transactions.controller.fb.ThirdPartyIssueReqTransFB">
+		</form-bean>
+		<form-bean name="thirdPartyIssueSancBean"
+			type="mms.transactions.controller.fb.ThirdPartyIssueSancTransFB">
+		</form-bean>
+		<form-bean name="indentViewBean"
+			type="mms.transactions.controller.fb.IndentViewTransFB">
+		</form-bean>
+		<form-bean name="acknowledgeTransBean"
+			type="mms.transactions.controller.fb.AcknowledgeTransFB">
+		</form-bean>
+		<form-bean name="billApprovalViewBean"
+			type="mms.transactions.controller.fb.BillApprovalViewTransFB">
+		</form-bean>
+		<form-bean name="issueViewDetailsBean"
+			type="mms.transactions.controller.fb.IssueViewDetailsFB">
+		</form-bean>
+		<form-bean name="advanceRequestBean"
+			type="mms.transactions.controller.fb.AdvanceRequestTransFB">
+		</form-bean>
+		<form-bean name="dispatchDetailsBean"
+			type="mms.transactions.controller.fb.DispatchDetailsTransFB">
+		</form-bean>
+		<form-bean name="condemnRegisterTransDeskBean"
+			type="mms.transactions.controller.fb.CondemnationRegisterTransDeskFB">
+		</form-bean>
+		<form-bean name="condemnRegisterTransBean"
+			type="mms.transactions.controller.fb.CondemnationRegisterTransFB">
+		</form-bean>
+		<form-bean name="condemnRegisterViewBean"
+			type="mms.transactions.controller.fb.CondemnationRegisterViewTransFB">
+		</form-bean>
+		<form-bean name="bkgItemDtlTransBean"
+			type="mms.transactions.controller.fb.BreakageItemDtlTransFB">
+		</form-bean>
+		<form-bean name="lotsDetailTransDeskBean"
+			type="mms.transactions.controller.fb.LotsDetailTransDeskFB">
+		</form-bean>
+		<form-bean name="lotsDetailTransBean"
+			type="mms.transactions.controller.fb.LotsDetailTransFB">
+		</form-bean>
+		<form-bean name="lotsDetailViewBean"
+			type="mms.transactions.controller.fb.LotsDetailViewTransFB">
+		</form-bean>
+		<form-bean name="physicalStockVerificationBean"
+			type="mms.transactions.controller.fb.PhyStockVerificationTransFB">
+		</form-bean>
+		<form-bean name="issueBean"
+			type="mms.transactions.controller.fb.IssueTransFB">
+		</form-bean>
+		<form-bean name="issueEmpBean"
+			type="mms.transactions.controller.fb.IssueEmployeeTransFB">
+		</form-bean>
+		<form-bean name="reminderDetailBean"
+			type="mms.transactions.controller.fb.ReminderDetailsTransFB">
+		</form-bean>
+		<form-bean name="reminderDetailBean"
+			type="mms.transactions.controller.fb.ReminderDetailsTransFB">
+		</form-bean>
+
+		<!--  Transactions by Anurudra-->
+
+
+		<form-bean name="sampleRegisterTransBean"
+			type="mms.transactions.controller.fb.SampleRegisterTransFB">
+		</form-bean>
+		
+		<form-bean name="sampleRegisterPurTransBean"
+			type="mms.transactions.controller.fb.SampleRegisterPurTransFB">
+		</form-bean>
+
+
+		<!--  Transactions by Manas-->
+
+		<form-bean name="drugInventoryTransBean"
+			type="mms.transactions.controller.fb.DrugInventoryTransFB">
+		</form-bean>
+		
+		<form-bean name="localPurchaseTransBean"
+			type="mms.transactions.controller.fb.LocalPurchaseTransFB">
+		</form-bean>
+		
+		
+			<form-bean name="drugInventoryTransViewBean"
+			type="mms.transactions.controller.fb.DrugInventoryViewTransFB">
+		</form-bean>
+		<!--  Transactions by Baisakhi-->
+
+		<!-- Gate Pass Details Transaction-->
+
+		<form-bean name="gatePassDetailsBean"
+			type="mms.transactions.controller.fb.GatePassDetailsTransFB">
+		</form-bean>
+		<!-- Warrenty Details Transaction-->
+		<form-bean name="warrentyDetailsBean"
+			type="mms.transactions.controller.fb.WarrentyDetailsTransFB">
+		</form-bean>
+
+		<!--  Transactions by Pramod-->
+
+		<!-- Set Sachet details Transaction Beans Start -->
+		<form-bean name="setSachetDetailsBean"
+			type="mms.transactions.controller.fb.SetSachetDetailsTransFB">
+		</form-bean>
+
+		<!--  Transactions by Amit-->
+		<form-bean name="indentTransBean"
+			type="mms.transactions.controller.fb.IndentTransFB">
+		</form-bean>
+
+		<form-bean name="indentTransADDBean"
+			type="mms.transactions.controller.fb.IndentTransADDFB">
+		</form-bean>
+
+
+		<form-bean name="requestForLpPatient"
+			type="mms.transactions.controller.fb.RequestForLPPatientFB">
+		</form-bean>
+
+
+		<form-bean name="requestForLpStaff"
+			type="mms.transactions.controller.fb.RequestForLPStaffFB">
+		</form-bean>
+
+		<form-bean name="requestForLpDept"
+			type="mms.transactions.controller.fb.RequestForLPDeptFB">
+		</form-bean>
+
+
+		<form-bean name="annualPurchaseIndent"
+			type="mms.transactions.controller.fb.AnnualPurchaseIndentFB">
+		</form-bean>
+
+
+		<form-bean name="requestForContigency"
+			type="mms.transactions.controller.fb.RequestForContigencyFB">
+		</form-bean>
+
+
+		<form-bean name="returnRequest"
+			type="mms.transactions.controller.fb.ReturnRequestTransFB">
+		</form-bean>
+
+
+
+
+		<form-bean name="indentForImportItemsBean"
+			type="mms.transactions.controller.fb.IndentForImportItemsFB">
+		</form-bean>
+
+
+		<form-bean name="indentCondemnationTransADDBean"
+			type="mms.transactions.controller.fb.IndentDeskCondemnationReqTransFB">
+		</form-bean>
+
+		<form-bean name="indentReturnBean"
+			type="mms.transactions.controller.fb.IndentReturnTransFB">
+		</form-bean>
+
+		<form-bean name="indentViewBean"
+			type="mms.transactions.controller.fb.IndentViewTransFB">
+		</form-bean>
+
+
+		<!-- Transactions Beans End-->
+
+
+		<form-bean name="issueDeskTransBean"
+			type="mms.transactions.controller.fb.IssueDeskTransFB">
+		</form-bean>
+
+
+		<!--  Transactions by Balasubramaniam-->
+
+
+
+		<form-bean name="challanProcessBean"
+			type="mms.transactions.controller.fb.ChallanProcessTransFB">
+		</form-bean>
+		
+		<!-- Serial No Generation Transaction By Niharika  -->
+		
+		<form-bean name="serialNoGenerationBean"
+			type="mms.transactions.controller.fb.SerialNoGenerationTransFB">
+		</form-bean>
+		
+		<!--  Serial No Generation Transaction By Niharika  END -->
+		
+		
+		<form-bean name="updateStockStatusTransFB"
+			type="mms.transactions.controller.fb.UpdateStockStatusTransFB">
+		</form-bean>
+		
+
+
+		<form-bean name="issueSampleForQcCheckTransFB"
+			type="mms.transactions.controller.fb.IssueSampleForQcCheckTransFB">
+		</form-bean>
+		
+		<form-bean name="qcDetailOnlineTransFB"
+			type="mms.transactions.controller.fb.QcDetailOnlineTransFB">
+		</form-bean>
+		
+		<form-bean name="onlineTransferDetailTransFB"
+			type="mms.transactions.controller.fb.OnlineTransferDetailTransFB">
+		</form-bean>
+		<!-- Transactions Beans End-->
+
+
+
+		<!-- report start -->
+		
+		<form-bean name="Fast_Moving_DrugRptFB"
+			type="mms.reports.controller.fb.Fast_Moving_DrugRptFB">
+		</form-bean>
+		
+		<form-bean name="drugQualityStatusRpt"
+			type="mms.reports.controller.fb.DrugQualityStatusRptFB">
+		</form-bean>
+		
+		<form-bean name="issueToPatientRptBean"
+			type="mms.reports.controller.fb.IssueToPatientDetailRptFB">
+		</form-bean>
+		
+		<form-bean name="sampleIssueDetailRptBean"
+			type="mms.reports.controller.fb.SampleIssueDetailRptFB">
+		</form-bean>
+		
+		<form-bean name="pendingSampleDetailRptFB"
+			type="mms.reports.controller.fb.PendingSampleDetailRptFB">
+		</form-bean>
+		
+		
+		<form-bean name="sampleIssueReceiveToQualityDeptRptBean"
+			type="mms.reports.controller.fb.SampleIssueReceiveToQualityDeptRptFB">
+		</form-bean>
+		
+		<form-bean name="listSupplierPerformanceRpt"
+			type="mms.reports.controller.fb.ListSuppPerformanceRptFB">
+		</form-bean>
+		<form-bean name="purchaseOrderDtlRpt"
+			type="mms.reports.controller.fb.PurchaseOrderDtlRptFB">
+		</form-bean>
+		<form-bean name="listblacklistedRpt"
+			type="mms.reports.controller.fb.ListBlackListedSupplierRptFB">
+		</form-bean>
+		<form-bean name="summlistindentpurchaseRpt"
+			type="mms.reports.controller.fb.SummaryListIndentPurchaseRptFB">
+		</form-bean>
+		<form-bean name="stockOnHandRpt"
+			type="mms.reports.controller.fb.StockOnHandRptFB">
+		</form-bean>
+		<form-bean name="stockOnHand_oldRpt"
+			type="mms.reports.controller.fb.StockOnHand_oldRptFB">
+		</form-bean>
+		<form-bean name="pendingIndentStatusRecordRpt"
+			type="mms.reports.controller.fb.PendingIndentStatusRecordRptFB">
+		</form-bean>
+		<form-bean name="consumptionValueSumRpt"
+			type="mms.reports.controller.fb.ConsumptionValueSummaryRptFB">
+		</form-bean>
+		<form-bean name="stockReceiptRegisterRpt"
+			type="mms.reports.controller.fb.StockReceiptRegisterRptFB">
+		</form-bean>
+		<form-bean name="stockLedgerRpt"
+			type="mms.reports.controller.fb.StockLedgerRptFB">
+		</form-bean>
+		<form-bean name="phyStockVerificationRpt"
+			type="mms.reports.controller.fb.PhyStockVerificationSheetRptFB">
+		</form-bean>
+		<form-bean name="invoiceDetailRpt"
+			type="mms.reports.controller.fb.InvoiceDetailRptFB">
+		</form-bean>
+		<form-bean name="financialEndYearRpt"
+			type="mms.reports.controller.fb.FinancialEndYearRptFB">
+		</form-bean>
+		<form-bean name="abcAnalysisRpt"
+			type="mms.reports.controller.fb.ABCAnalysisRptFB">
+		</form-bean>
+		<form-bean name="fsnxyzAnalysisRpt"
+			type="mms.reports.controller.fb.FSNXYZAnalysisRptFB">
+		</form-bean>
+		<form-bean name="listItemReceivedRpt"
+			type="mms.reports.controller.fb.ListReceivedAgainstPORptFB">
+		</form-bean>
+		<form-bean name="pendingListAgendaRpt"
+			type="mms.reports.controller.fb.PendingListAgendaRptFB">
+		</form-bean>
+		<form-bean name="samplesSummaryListRpt"
+			type="mms.reports.controller.fb.SamplesSummaryListRptFB">
+		</form-bean>
+		<form-bean name="condemnRptBean"
+			type="mms.reports.controller.fb.CondemnItemDetailRptFB">
+		</form-bean>
+		<form-bean name="issueRptBean"
+			type="mms.reports.controller.fb.IssueDetailRptFB">
+		</form-bean>
+		<form-bean name="listItemWiseSupplierRpt"
+			type="mms.reports.controller.fb.ListItemWiseSupplierRptFB">
+		</form-bean>
+		<form-bean name="listSupplierNotSendingRpt"
+			type="mms.reports.controller.fb.ListSupplierNotSendingRptFB">
+		</form-bean>
+		<form-bean name="returnRptBean"
+			type="mms.reports.controller.fb.ReturnDetailRptFB">
+		</form-bean>
+		<form-bean name="listItemAuctionedRpt"
+			type="mms.reports.controller.fb.ListItemAuctionedRptFB">
+		</form-bean>
+		<form-bean name="itemWiseConsumptionRpt"
+			type="mms.reports.controller.fb.ItemWiseConsumptionRptFB">
+		</form-bean>
+		<form-bean name="warrantyDtlRpt"
+			type="mms.reports.controller.fb.WarrantyDetailRptFB">
+		</form-bean>
+		<form-bean name="listItemsReorderLevelRpt"
+			type="mms.reports.controller.fb.ListItemsReorderLevelRptFB">
+		</form-bean>
+		<form-bean name="slowfastitemsRpt"
+			type="mms.reports.controller.fb.ListSlowFastMovingItemsRptFB">
+		</form-bean>
+		<form-bean name="consexpirydateRpt"
+			type="mms.reports.controller.fb.ListConsumablesExpiryDateRptFB">
+		</form-bean>
+		<form-bean name="conumptionRptBean"
+			type="mms.reports.controller.fb.ConsumptionDetailRptFB">
+		</form-bean>
+		<form-bean name="stockStatusRpt"
+			type="mms.reports.controller.fb.StockStatusRptFB">
+		</form-bean>
+		<form-bean name="listequipmentsupplierRpt"
+			type="mms.reports.controller.fb.ListEquipmentSupplierRptFB">
+		</form-bean>
+		<form-bean name="assetRegisterRpt"
+			type="mms.reports.controller.fb.AssetRegisterRptFB">
+		</form-bean>
+		
+		
+		
+		<form-bean name="consolidatedDistrictWiseBudgetDetailRptFB"
+			type="mms.reports.controller.fb.ConsolidatedDistrictWiseBudgetDetailRptFB">
+		</form-bean>
+		
+		 <!--  Transfer Order Generation  / TransferApprovalTrans  by Bala -->        
+ 
+ 
+     <form-bean name="TransferApprovalTransBean"
+            type="mms.transactions.controller.fb.TransferApprovalTransFB">
+        </form-bean>
+ 
+ <!--  Transfer Order Generation  / TransferApprovalTrans  by Bala -->   
+ 
+		<form-bean name="budgetComparisonDetailRptFB"
+			type="mms.reports.controller.fb.BudgetComparisonDetailRptFB">
+		</form-bean>
+		
+		
+		
+		<form-bean name="listOfInstitutionsRptFB"
+			type="mms.reports.controller.fb.ListOfInstitutionsRptFB">
+		</form-bean>
+		
+		
+		<form-bean name="budgetDetailRptFB"
+			type="mms.reports.controller.fb.BudgetDetailRptFB">
+		</form-bean>
+		
+		
+		<form-bean name="totalValueDrugsSupplyRptFB"
+			type="mms.reports.controller.fb.TotalValueDrugsSupplyRptFB">
+		</form-bean>
+		
+		<form-bean name="drugWarehouseWiseSupplierDeliveryDetailRptFB"
+			type="mms.reports.controller.fb.DrugWarehouseWiseSupplierDeliveryDetailRptFB">
+		</form-bean>
+		
+		
+		<form-bean name="breakageAndLostDrugDetailsRptFB"
+			type="mms.reports.controller.fb.BreakageAndLostDrugDetailsRptFB">
+		</form-bean>
+		
+		
+		<form-bean name="materialOutwardRegisterRptFB"
+			type="mms.reports.controller.fb.MaterialOutwardRegisterRptFB">
+		</form-bean>
+		
+		
+		
+		<form-bean name="materialInwardReisterRptFB"
+			type="mms.reports.controller.fb.MaterialInwardReisterRptFB">
+		</form-bean>
+		
+		
+		<form-bean name="debtorRegisterRptFB"
+			type="mms.reports.controller.fb.DebtorRegisterRptFB">
+		</form-bean>
+		
+		<form-bean name="dailyActivityRptFB"
+			type="mms.reports.controller.fb.DailyActivityRptFB">
+		</form-bean>
+		
+		<form-bean name="SupplierPerformanceDtailRptFB"
+			type="mms.reports.controller.fb.SupplierPerformanceDtailRptFB">
+		</form-bean>
+		
+		<form-bean name="listOfConsigneeRptFB"
+			type="mms.reports.controller.fb.ListOfConsigneeRptFB">
+		</form-bean>
+		
+		<form-bean name="issueToThirdPartyRptFB"
+			type="mms.reports.controller.fb.IssueToThirdPartyRptFB">
+		</form-bean>
+		
+		<form-bean name="drugTransferRptFB"
+			type="mms.reports.controller.fb.DrugTransferRptFB">
+		</form-bean>
+		
+		
+		<form-bean name="QcStatusforDDWWiseRptBean"
+			type="mms.reports.controller.fb.QcStatusforDDWFB">
+		</form-bean>
+		
+		<form-bean name="issuePatRptBean"
+			type="mms.reports.controller.fb.IssuePatDetailRptFB">
+		</form-bean>
+		
+		<form-bean name="applicationErrorLogDetailRptFB"
+			type="mms.reports.controller.fb.ApplicationErrorLogDetailRptFB">
+		</form-bean>
+		
+		<form-bean name="employeeDetailRptFB"
+			type="mms.reports.controller.fb.EmployeeDetailRptFB">
+		</form-bean>
+		
+		<form-bean name="Dwh_ZoneWiseBudgetRptFB" type="mms.reports.controller.fb.Dwh_ZoneWiseBudgetRptFB">
+		</form-bean>
+		
+		<form-bean name="drugTransferOnlineRptFB"
+			type="mms.reports.controller.fb.DrugTransferOnlineRptFB">
+		</form-bean>
+		
+		<form-bean name="DWH_WPR_Process_RptFB"
+			type="mms.reports.controller.fb.DWH_WPR_Process_RptFB">
+		</form-bean>
+		
+		
+		<!-- report end -->
+		
+		
+		
+		
+
+	</form-beans>
+
+
+
+
+	<action-mappings>
+	
+	
+	<!-- HelpDesk REport  Start -->
+		
+		<action path="/reports/HelpDeskRptCNT"
+			type="mms.reports.controller.action.HelpDeskRptCNT"
+			name="HelpDeskRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/HelpDeskRpt.jsp" />
+
+		</action>
+		
+		
+	<!-- HelpDesk Trans  Start -->
+		<action path="/transactions/HelpDeskCNT"
+			type="mms.transactions.controller.action.HelpDeskCNT"
+			name="HelpDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/helpdesk.jsp" />
+			<forward name="view"
+				path="/transactions/HelpDesk_view_trans.jsp" />
+				
+				</action>
+
+
+<!-- HelpDesk Trans  END -->
+
+<!-- SolutionDesk Trans  Start -->
+		<action path="/transactions/SolutionDeskCNT"
+			type="mms.transactions.controller.action.SolutionDeskCNT"
+			name="SolutionDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			
+			<forward name="SOLUTION"
+				path="/transactions/SolutionDesk_View.jsp" />
+                <forward name="SOLUTIONVIEW"
+				path="/transactions/SolutionDesk_View1.jsp" /> 
+		</action>
+
+		
+		
+<!-- SolutionDesk Trans  End -->
+		
+			
+<!-- HelpDesk REport  End -->
+
+
+		<!-- Report Mapping Start -->
+		
+		
+		<action path="/reports/Fast_Moving_DrugRptCNT"
+					type="mms.reports.controller.action.Fast_Moving_DrugRptCNT"
+					name="Fast_Moving_DrugRptFB" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="reportPage"
+						path="/reports/Fast_Moving_Drugs_Rpt.jsp" />
+		</action>
+		
+		
+		
+		
+		<action path="/reports/IssueToPatientDetailRptCNT"
+					type="mms.reports.controller.action.IssueToPatientDetailRptCNT"
+					name="issueToPatientRptBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="index"
+						path="/reports/issueToPatientDetail_mmsrpt.jsp" />
+		</action>
+
+		<action path="/reports/IssuePatDetailRptCNT"
+					type="mms.reports.controller.action.IssuePatDetailRptCNT"
+					name="issuePatRptBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="index"
+						path="/reports/issuePatDetail_mmsrpt.jsp" />
+
+		</action>
+		
+		
+		<action path="/reports/DrugQualityStatusRptCNT"
+					type="mms.reports.controller.action.DrugQualityStatusRptCNT"
+					name="drugQualityStatusRpt" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="reportPage"
+						path="/reports/drugQualityStatus_mms_rpt.jsp" />
+
+		</action>
+		
+		<action path="/reports/SampleIssueDetailRptCNT"
+					type="mms.reports.controller.action.SampleIssueDetailRptCNT"
+					name="sampleIssueDetailRptBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="reportPage"
+						path="/reports/dwh_sampleIssueDetail_mms_rpt.jsp" />
+
+		</action>
+		
+		
+		
+		<action path="/reports/PendingSampleDetailRptCNT"
+					type="mms.reports.controller.action.PendingSampleDetailRptCNT"
+					name="pendingSampleDetailRptFB" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="reportPage"
+						path="/reports/dwh_pendingSampleDetail_mms_rpt.jsp" />
+
+		</action>
+
+		<action path="/reports/SampleIssueReceiveToQualityDeptRptCNT"
+					type="mms.reports.controller.action.SampleIssueReceiveToQualityDeptRptCNT"
+					name="sampleIssueReceiveToQualityDeptRptBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="reportPage"
+						path="/reports/dwh_sampleIssueReceiveToQualityDept_mms_rpt.jsp" />
+
+		</action>
+		
+		<action path="/reports/ListSuppPerformanceRptCNT"
+			type="mms.reports.controller.action.ListSuppPerformanceRptCNT"
+			name="listSupplierPerformanceRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listSuppPerformance_mms_rpt.jsp" />
+
+		</action>
+
+		<action path="/reports/ListEquipmentSupplierRptCNT"
+			type="mms.reports.controller.action.ListEquipmentSupplierRptCNT"
+			name="listequipmentsupplierRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listequipmentsupplier_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/StockStatusRptCNT"
+			type="mms.reports.controller.action.StockStatusRptCNT"
+			name="stockStatusRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/stockStatus_mms_rpt.jsp" />
+
+		</action>
+
+		<action path="/reports/ConsumptionDetailRptCNT"
+			type="mms.reports.controller.action.ConsumptionDetailRptCNT"
+			name="conumptionRptBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/consumptionDetails_mmsrpt.jsp" />
+
+
+		</action>
+
+		<action path="/reports/ListConsumablesExpiryDateRptCNT"
+			type="mms.reports.controller.action.ListConsumablesExpiryDateRptCNT"
+			name="consexpirydateRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listconsexpirydate_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/ListSlowFastMovingItemsRptCNT"
+			type="mms.reports.controller.action.ListSlowFastMovingItemsRptCNT"
+			name="slowfastitemsRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listslowfastmovingitems_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/ListItemsReorderLevelRptCNT"
+			type="mms.reports.controller.action.ListItemsReorderLevelRptCNT"
+			name="listItemsReorderLevelRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listitemsreorderlevel_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/WarrantyDetailRptCNT"
+			type="mms.reports.controller.action.WarrantyDetailRptCNT"
+			name="warrantyDtlRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/warrantydetails_mmsrpt.jsp" />
+
+		</action>
+		
+		<!-- Sample Sent Transaction -->
+
+		<action path="/transactions/SampleSentTransCNT"
+			type="mms.transactions.controller.action.SampleSentTransCNT"
+			name="sampleSentTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="SampleSentTransJsp"
+				path="/transactions/add_SampleSentTransJsp_mms.jsp" />
+				<forward name="NewSampleSentTransJsp"
+				path="/transactions/add_SampleSentTrans_NewJsp_mms.jsp" />
+			<forward name="SampleSentTransViewJsp"
+				path="/transactions/view_SampleSentTransJsp_mms.jsp" />	
+		</action>
+
+		<action path="/reports/ListItemAuctionedRptCNT"
+			type="mms.reports.controller.action.ListItemAuctionedRptCNT"
+			name="listItemAuctionedRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listItemAuctioned_mms_rpt.jsp" />
+
+		</action>
+
+		<action path="/reports/ItemWiseConsumptionRptCNT"
+			type="mms.reports.controller.action.ItemWiseConsumptionRptCNT"
+			name="itemWiseConsumptionRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/itemWiseConsumption_mms_rpt.jsp" />
+
+		</action>
+
+		<action path="/reports/ReturnDetailsRptCNT"
+			type="mms.reports.controller.action.ReturnDetailsRptCNT"
+			name="returnRptBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/returnDetail_mmsrpt.jsp" />
+
+
+		</action>
+
+		<action path="/reports/ListSupplierNotSendingRptCNT"
+			type="mms.reports.controller.action.ListSupplierNotSendingRptCNT"
+			name="listSupplierNotSendingRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listSupplierNotSending_mms_rpt.jsp" />
+
+		</action>
+
+		<action path="/reports/ListItemWiseSupplierRptCNT"
+			type="mms.reports.controller.action.ListItemWiseSupplierRptCNT"
+			name="listItemWiseSupplierRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/listItemWiseSupplier_mms_rpt.jsp" />
+
+		</action>
+
+		<action path="/reports/IssueDetailRptCNT"
+			type="mms.reports.controller.action.IssueDetailRptCNT"
+			name="issueRptBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/issueDetail_mmsrpt.jsp" />
+
+
+		</action>
+
+		<action path="/reports/CondemnItemDetailRptCNT"
+			type="mms.reports.controller.action.CondemnItemDetailRptCNT"
+			name="condemnRptBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/condemnItemList_mmsrpt.jsp" />
+
+
+		</action>
+
+		<action path="/reports/PendingListAgendaRptCNT"
+			type="mms.reports.controller.action.PendingListAgendaRptCNT"
+			name="pendingListAgendaRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/pending_list_agenda_rpt.jsp" />
+
+
+		</action>
+
+		<action path="/reports/SamplesSummaryListRptCNT"
+			type="mms.reports.controller.action.SamplesSummaryListRptCNT"
+			name="samplesSummaryListRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/samples_summary_list_rpt.jsp" />
+
+
+		</action>
+
+		<action path="/reports/ListReceivedAgainstPORptCNT"
+			type="mms.reports.controller.action.ListReceivedAgainstPORptCNT"
+			name="listItemReceivedRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listreceivedagainstpo_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/FSNXYZAnalysisRptCNT"
+			type="mms.reports.controller.action.FSNXYZAnalysisRptCNT"
+			name="fsnxyzAnalysisRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/fsnxyzanalysis_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/ABCAnalysisRptCNT"
+			type="mms.reports.controller.action.ABCAnalysisRptCNT"
+			name="abcAnalysisRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/abcanalysis_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/FinancialEndYearRptCNT"
+			type="mms.reports.controller.action.FinancialEndYearRptCNT"
+			name="financialEndYearRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/financialendyear_mmsrpt.jsp" />
+
+		</action>
+		
+		<action path="/reports/SupplierPaymentDtailRptCNT"
+			type="mms.reports.controller.action.SupplierPaymentDtailRptCNT"
+			name="supplierPaymentDtlTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage" path="/reports/dwh_supplierPaymentDtail_rpt.jsp" />			
+		</action>
+
+		<action path="/reports/InvoiceDetailRptCNT"
+			type="mms.reports.controller.action.InvoiceDetailRptCNT"
+			name="invoiceDetailRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/invoicedetail_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/PhyStockVerificationSheetRptCNT"
+			type="mms.reports.controller.action.PhyStockVerificationSheetRptCNT"
+			name="phyStockVerificationRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/phystockverification_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/StockLedgerRptCNT"
+			type="mms.reports.controller.action.StockLedgerRptCNT"
+			name="stockLedgerRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/stockledger_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/StockReceiptRegisterRptCNT"
+			type="mms.reports.controller.action.StockReceiptRegisterRptCNT"
+			name="stockReceiptRegisterRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/stockreceiptregister_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/ConsumptionValueSummaryRptCNT"
+			type="mms.reports.controller.action.ConsumptionValueSummaryRptCNT"
+			name="consumptionValueSumRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/consumptionvaluesummary_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/PendingIndentStatusRecordRptCNT"
+			type="mms.reports.controller.action.PendingIndentStatusRecordRptCNT"
+			name="pendingIndentStatusRecordRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/pendingndentstatus_mmsrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/StockOnHandRptCNT"
+			type="mms.reports.controller.action.StockOnHandRptCNT"
+			name="stockOnHandRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/stockonhand_mmsrpt.jsp" />
+
+		</action>
+		
+		<action path="/reports/StockOnHand_oldRptCNT"
+			type="mms.reports.controller.action.StockOnHand_oldRptCNT"
+			name="stockOnHand_oldRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/stockonhand_old_mmsrpt.jsp" />
+
+		</action>
+		
+		<action path="/reports/SummaryListIndentPurchaseRptCNT"
+			type="mms.reports.controller.action.SummaryListIndentPurchaseRptCNT"
+			name="summlistindentpurchaseRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/summlistindentpurchase_mmsrpt.jsp" />
+
+		</action>
+		<action path="/reports/PurchaseOrderDtlRptCNT"
+			type="mms.reports.controller.action.PurchaseOrderDtlRptCNT"
+			name="purchaseOrderDtlRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="purchaseorder"
+				path="/reports/purchaseorderdtl_mmsrpt.jsp" />
+
+		</action>
+		<action path="/reports/ListBlackListedSupplierRptCNT"
+			type="mms.reports.controller.action.ListBlackListedSupplierRptCNT"
+			name="listblacklistedRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/reports/listblacklistedsupplier_mmsrpt.jsp" />
+
+		</action>
+		<action path="/reports/AssetRegisterRptCNT"
+			type="mms.reports.controller.action.AssetRegisterRptCNT"
+			name="assetRegisterRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/assetRegister_mmsrpt.jsp" />
+
+		</action>
+
+
+
+
+		<action path="/reports/ConsolidatedDistrictWiseBudgetDetailRptCNT"
+			type="mms.reports.controller.action.ConsolidatedDistrictWiseBudgetDetailRptCNT"
+			name="consolidatedDistrictWiseBudgetDetailRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_consolidatedDistrictWiseBudgetDetail_rpt.jsp" />
+
+		</action>
+
+		<action path="/reports/BudgetComparisonDetailRptCNT"
+			type="mms.reports.controller.action.BudgetComparisonDetailRptCNT"
+			name="budgetComparisonDetailRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_budgetComparisonDetail_rpt.jsp" />
+		
+		</action>
+
+
+
+		<action path="/reports/ListOfInstitutionsRptCNT"
+			type="mms.reports.controller.action.ListOfInstitutionsRptCNT"
+			name="listOfInstitutionsRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_listOfInstitutions_rpt.jsp" />
+		
+		</action>
+		
+		
+		<action path="/reports/BudgetDetailRptCNT"
+			type="mms.reports.controller.action.BudgetDetailRptCNT"
+			name="budgetDetailRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_budgetDetail_rpt.jsp" />
+		
+		</action>
+		
+		
+		
+		<action path="/reports/TotalValueDrugsSupplyRptCNT"
+			type="mms.reports.controller.action.TotalValueDrugsSupplyRptCNT"
+			name="totalValueDrugsSupplyRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_totalValueDrugsSupply_rpt.jsp" />
+		
+		</action>
+		
+		<action path="/reports/DrugWarehouseWiseSupplierDeliveryDetailRptCNT"
+			type="mms.reports.controller.action.DrugWarehouseWiseSupplierDeliveryDetailRptCNT"
+			name="drugWarehouseWiseSupplierDeliveryDetailRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_drugWarehouseWiseSupplierDeliveryDetail_rpt.jsp" />
+		
+		</action>
+		
+		
+		<action path="/reports/BreakageAndLostDrugDetailsRptCNT"
+			type="mms.reports.controller.action.BreakageAndLostDrugDetailsRptCNT"
+			name="breakageAndLostDrugDetailsRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_breakageAndLostDrugDetails_rpt.jsp" />
+		
+		</action>
+		
+		<action path="/reports/MaterialOutwardRegisterRptCNT"
+			type="mms.reports.controller.action.MaterialOutwardRegisterRptCNT"
+			name="materialOutwardRegisterRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_materialOutwardRegister_rpt.jsp" />
+		
+		</action>
+		
+		
+		<action path="/reports/MaterialInwardReisterRptCNT"
+			type="mms.reports.controller.action.MaterialInwardReisterRptCNT"
+			name="materialInwardReisterRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_materialInwardReister_rpt.jsp" />
+		
+		</action>
+		
+		
+		<action path="/reports/DebtorRegisterRptCNT"
+			type="mms.reports.controller.action.DebtorRegisterRptCNT"
+			name="debtorRegisterRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_debotorRegister_rpt.jsp" />
+		
+		</action>
+		
+		<action path="/reports/DailyActivityRptCNT"
+			type="mms.reports.controller.action.DailyActivityRptCNT"
+			name="dailyActivityRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_dailyActivity_rpt.jsp" />
+		
+		</action>
+		
+		<action path="/reports/SupplierPerformanceDtailRptCNT"
+			type="mms.reports.controller.action.SupplierPerformanceDtailRptCNT"
+			name="SupplierPerformanceDtailRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_SupplierPerformanceDtail_rpt.jsp" />
+		
+		</action>
+		
+		<action path="/reports/ListOfConsigneeRptCNT"
+			type="mms.reports.controller.action.ListOfConsigneeRptCNT"
+			name="listOfConsigneeRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage" path="/reports/dwh_listOfConsignee_rpt.jsp" />
+		
+		</action>
+		
+		<action path="/reports/IssueToThirdPartyRptCNT"
+			type="mms.reports.controller.action.IssueToThirdPartyRptCNT"
+			name="issueToThirdPartyRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index" path="/reports/dwh_issueToThirdParty_mmsrpt.jsp" />
+
+		</action>
+		
+		
+		<action path="/reports/DrugTransferRptCNT"
+			type="mms.reports.controller.action.DrugTransferRptCNT"
+			name="drugTransferRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index" path="/reports/dwh_drugTransferRpt_mmsrpt.jsp" />
+
+		</action>
+		
+		 <action path="/reports/QcStatusforDDWCNT"
+					type="mms.reports.controller.action.QcStatusforDDWCNT"
+					name="QcStatusforDDWWiseRptBean" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="reportPage"
+						path="/reports/QcStatusforDDWrpt.jsp" />
+		</action>
+		
+		
+		 <action path="/reports/ApplicationErrorLogDetailRptCNT"
+					type="mms.reports.controller.action.ApplicationErrorLogDetailRptCNT"
+					name="applicationErrorLogDetailRptFB" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="reportPage"
+						path="/reports/dwh_applicationErrorLogDtl_rpt.jsp" />
+		</action>
+		
+		<action path="/reports/EmployeeDetailRptCNT"
+					type="mms.reports.controller.action.EmployeeDetailRptCNT"
+					name="employeeDetailRptFB" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="reportPage"
+						path="/reports/dwh_employeeDtl_rpt.jsp" />
+		</action>
+		
+		<action path="/reports/Dwh_ZoneWiseBudgetRptCNT"
+			type="mms.reports.controller.action.Dwh_ZoneWiseBudgetRptCNT"
+			name="Dwh_ZoneWiseBudgetRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage" path="/reports/Dwh_ZoneWiseBudgetRpt.jsp" />			
+		</action>
+		
+		<action path="/reports/DrugTransferOnlineRptCNT"
+			type="mms.reports.controller.action.DrugTransferOnlineRptCNT"
+			name="drugTransferOnlineRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index" path="/reports/dwh_drugTransferOnline_Rpt.jsp" />			
+		</action>
+			
+		
+		<action path="/reports/DWH_WPR_Process_RptCNT"
+					type="mms.reports.controller.action.DWH_WPR_Process_RptCNT"
+					name="DWH_WPR_Process_RptFB" scope="request" validate="false"
+					parameter="hmode">
+					<forward name="reportPage"
+						path="/reports/DWH_WPR_ProcessRpt.jsp" />
+		</action>	
+		
+		
+		<!-- Report Mapping End -->
+
+		<!-- Transactions Action Mappings Start -->
+
+		<!-- Transactions Action Mappings Start -->
+
+		<!-- Indent for imported items Mapping Start (USED IN INDENT DESK)(ANSHUL Transaction Integrated with Indent Desk)-->
+
+		<action path="/transactions/IndentForImportItemsCNT"
+			type="mms.transactions.controller.action.IndentForImportItemsCNT"
+			name="indentForImportItemsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/indent_for_imported_items.jsp" />
+
+
+		</action>
+		
+		
+		<action path="/transactions/TransferDemandReqTransCNT"
+			type="mms.transactions.controller.action.TransferDemandReqTransCNT"
+			name="transferDemandReqTrans" scope="request" validate="false"
+			parameter="hmode">
+			
+			<forward name="generateDemand"	path="/transactions/dwh_transfer_req_generation.jsp" />
+			<forward name="modifyDemand"	path="/transactions/dwh_transfer_req_generation_modify.jsp" />
+			<forward name="viewDemand"	    path="/transactions/dwh_transfer_req_generation_view.jsp" />
+
+
+		</action>
+		
+		<action path="/transactions/TransferRequestTransCNT"
+			type="mms.transactions.controller.action.TransferRequestTransCNT"
+			name="transferReqTrans" scope="request" validate="false"
+			parameter="hmode">
+			
+			<forward name="generateRequest"	path="/transactions/dwh_transfer_req_dtl_generation.jsp" />
+			<forward name="modifyRequest"	path="/transactions/dwh_transfer_req_dtl_modify.jsp" />
+			<forward name="viewRequest"	    path="/transactions/dwh_transfer_req_dtl_view.jsp" />
+			<forward name="orderView"	    path="/transactions/dwh_transfer_Order_dtl_view.jsp" />
+			
+
+
+		</action>
+
+
+
+
+		<!-- Return Request(USED IN INDENT DESK) -->
+
+		<action path="/transactions/ReturnRequestTransCNT"
+			type="mms.transactions.controller.action.ReturnRequestTransCNT"
+			name="returnRequest" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ReturnRequestTransJsp"
+				path="/transactions/add_ReturnRequestTrans_mms.jsp" />
+		</action>
+
+		<!-- Indent Return Transaction Mapping -->
+		<action path="/transactions/IndentReturnTransCNT"
+			type="mms.transactions.controller.action.IndentReturnTransCNT"
+			name="indentReturnBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="returnFinalRequest"
+				path="/transactions/indentReturnRequestTrans_mms.jsp" />
+		</action>
+
+
+		<!-- VIEW(USED IN INDENT DESK) -->
+
+		<action path="/transactions/IndentViewTransCNT"
+			type="mms.transactions.controller.action.IndentViewTransCNT"
+			name="indentViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/indentViewTrans_mms.jsp" />
+		</action>
+
+
+		<!-- Request For Contigency Indent(USED IN INDENT DESK) -->
+
+		<action path="/transactions/RequestForContigencyCNT"
+			type="mms.transactions.controller.action.RequestForContigencyCNT"
+			name="requestForContigency" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="RequestForContigencyJsp"
+				path="/transactions/add_RequestForContigencyTrans_mms.jsp" />
+		</action>
+
+
+
+       <!-- Request For Routine Purchase(USED IN INDENT DESK) -->
+
+		<action path="/transactions/RoutinePurchaseCNT"
+			type="mms.transactions.controller.action.RoutinePurchaseCNT"
+			name="requestForRoutinePurchase" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="RequestForRoutinePurchaseJsp"  path="/transactions/add_RequestForRoutinePurchaseTrans_mms.jsp" />
+			<forward name="RequestForRoutinePurchaseJspWithItem"  path="/transactions/add_RequestForRoutinePurchaseTransWithItem_mms.jsp" />
+			<forward name="ViewRequestForRoutinePurchaseJspWithItem"  path="/transactions/add_RequestForRoutinePurchaseTransWithItem_modify.jsp" />
+		</action>
+
+
+
+		<!-- Request For Annual Purchase Indent(USED IN INDENT DESK) -->
+
+		<action path="/transactions/AnnualPurchaseIndentCNT"
+			type="mms.transactions.controller.action.AnnualPurchaseIndentCNT"
+			name="annualPurchaseIndent" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="AnnualPurchaseIndentJsp"
+				path="/transactions/add_AnnualPurchaseIndentTrans_mms.jsp" />
+		</action>
+
+
+
+
+		<!-- Request For LP Department(USED IN INDENT DESK) -->
+
+		<action path="/transactions/RequestForLPDeptCNT"
+			type="mms.transactions.controller.action.RequestForLPDeptCNT"
+			name="requestForLpDept" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="requestForLpDeptJsp"
+				path="/transactions/add_RequestForLPDeptTrans_mms.jsp" />
+		</action>
+
+
+
+		<!-- Request For LP Patient(USED IN INDENT DESK) -->
+
+		<action path="/transactions/RequestForLPPatientCNT"
+			type="mms.transactions.controller.action.RequestForLPPatientCNT"
+			name="requestForLpPatient" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="requestForLpPatientJsp"
+				path="/transactions/add_RequestForLPPatientTrans_mms.jsp" />
+		</action>
+
+		<!-- Request For LP Staff(USED IN INDENT DESK) -->
+
+		<action path="/transactions/RequestForLPStaffCNT"
+			type="mms.transactions.controller.action.RequestForLPStaffCNT"
+			name="requestForLpStaff" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="requestForLpStaffJsp"
+				path="/transactions/add_RequestForLPStaffTrans_mms.jsp" />
+		</action>
+
+
+
+		<!-- Indent DESK Condemnation Type Transaction Mapping -->
+		<action path="/transactions/IndentDeskCondemnationReqTransCNT"
+			type="mms.transactions.controller.action.IndentDeskCondemnationReqTransCNT"
+			name="indentCondemnationTransADDBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="condemnationRequest"
+				path="/transactions/add_IndentDeskComdemnationTrans_mms.jsp" />
+		</action>
+
+		<action path="/transactions/CondemnationRequestForNonConsumTransCNT"
+			type="mms.transactions.controller.action.CondemnationRequestForNonConsumTransCNT"
+			name="requestCondemnationTransADDBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="condemnationRequest"
+				path="/transactions/add_CondemnationNonConsumRequestTrans_mms.jsp" />
+		</action>
+
+		<!-- Import Records Transaction Mapping -->
+		<action path="/transactions/ImportRecordsTransCNT"
+			type="mms.transactions.controller.action.ImportRecordsTransCNT"
+			name="importRecordTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="importinit" path="/transactions/importRecordsTrans_mms.jsp" />
+		</action>
+		 
+		<!-- Import Records Transaction Mapping End -->
+
+
+		<!-- Import Records Transaction Mapping -->
+		<action path="/transactions/ExportRecordsTransCNT"
+			type="mms.transactions.controller.action.ExportRecordsTransCNT"
+			name="exportRecordTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="exportinit" path="/transactions/exportRecordsTrans_mms.jsp" />
+		</action>
+		 
+		<!-- Import Records Transaction Mapping End -->
+
+
+
+
+		<!-- Indent Type Transaction Mapping -->
+		<action path="/transactions/IndentTransCNT"
+			type="mms.transactions.controller.action.IndentTransCNT"
+			name="indentTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/transactions/" />
+		</action>
+		<!-- Indent ADD Type Transaction Mapping -->
+		<action path="/transactions/IndentTransADDCNT"
+			type="mms.transactions.controller.action.IndentTransADDCNT"
+			name="indentTransADDBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="indentTypeAdd"
+				path="/transactions/add_IndentADDTrans_mms.jsp" />
+		</action>
+		<!-- Inspection Intimation Mapping End -->
+
+		<!-- Inspection Report Mapping Start -->
+
+		<action path="/transactions/InspectionReportTransCNT"
+			type="mms.transactions.controller.action.InspectionReportTransCNT"
+			name="inspectionReportBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/inspection_report_trans.jsp" />
+
+
+		</action>
+
+		<!-- Inspection Report Mapping End -->
+
+		<!-- Indent for imported items Mapping Start (USED IN INDENT DESK)-->
+
+		<action path="/transactions/IndentForImportItemsCNT"
+			type="mms.transactions.controller.action.IndentForImportItemsCNT"
+			name="indentForImportItemsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/indent_for_imported_items.jsp" />
+
+
+		</action>
+
+		<!-- Inspection Report Mapping End -->
+
+
+		<!-- Issue Desk Transaction (VIEW )Mapping Start -->
+
+		<action path="/transactions/IssueViewDetailsCNT"
+			type="mms.transactions.controller.action.IssueViewDetailsCNT"
+			name="issueViewDetailsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/issue_view_details_trans.jsp" />
+
+		</action>
+
+
+		<!-- Rate Contract Details Start -->
+
+		<action path="/transactions/RateContractDtlTransCNT"
+			type="mms.transactions.controller.action.RateContractDtlTransCNT"
+			name="rateContractDtlBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/add_rate_contract_details_trans.jsp" />
+			<forward name="renew"
+				path="/transactions/renew_rate_contract_details_trans.jsp" />
+			<forward name="terminate"
+				path="/transactions/terminate_rate_contract_details_trans.jsp" />
+			<forward name="view"
+				path="/transactions/view_rate_contract_details_trans.jsp" />
+
+		</action>
+
+		<!-- Rate Contract Details  End -->
+
+		<!-- Drug Profile Trans  Start -->
+
+		<action path="/transactions/DrugProfileCNT"
+			type="mms.transactions.controller.action.DrugProfileCNT"
+			name="drugProfileBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="View"
+				path="/transactions/drugProfileViewTrans.jsp" />
+
+			<forward name="Popup"
+				path="/transactions/drugProfilePopupTrans.jsp" />
+
+		</action>
+
+		<!-- Drug Profile Trans  End -->
+
+		<!-- Item Inventory Trans  Start -->
+
+		<action path="/transactions/ItemInventoryTransCNT"
+			type="mms.transactions.controller.action.ItemInventoryTransCNT"
+			name="itemInventoryTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/itemInventory_add_mmstrans.jsp" />
+			<forward name="modify"
+				path="/transactions/itemInventory_modify_mmstrans.jsp" />
+		</action>
+
+		<!-- Item Inventory Trans  End -->
+		<!-- Drug Inventory Trans  Start -->
+		<action path="/transactions/DrugInventoryTransCNT"
+			type="mms.transactions.controller.action.DrugInventoryTransCNT"
+			name="drugInventoryTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/drugInventory_add_mmstrans.jsp" />
+			<forward name="dummyadd"
+				path="/transactions/drugInventory_dummy_add_mmstrans.jsp" />	
+			<forward name="modify"
+				path="/transactions/drugInventory_modify_mmstrans.jsp" />
+
+		</action>
+		
+		
+		<action path="/transactions/LocalPurchaseTransCNT"
+			type="mms.transactions.controller.action.LocalPurchaseTransCNT"
+			name="localPurchaseTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/localpurchase_add_mmstrans.jsp" />			
+			<forward name="modify"
+				path="/transactions/localpurchase_modify_mmstrans.jsp" />
+
+		</action>
+		
+		
+		<action path="/transactions/DrugInventoryTransViewCNT"
+			type="mms.transactions.controller.action.DrugInventoryTransViewCNT"
+			name="drugInventoryTransViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"	
+			path="/transactions/drugInventory_add_mmstrans.jsp" />
+		</action>
+		
+
+		<!-- Drug Inventory Trans  End -->
+		<!-- Financial End Year Transaction Start -->
+		<action path="/transactions/FinancialEndYearTransCNT"
+			type="mms.transactions.controller.action.FinancialEndYearTransCNT"
+			name="financialEndYearTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/financialEndYearTransBean_mmsTrans.jsp">
+			</forward>
+		</action>
+		<!-- End of Financial End Year Transaction -->
+
+
+		<!-- Inspection Desk Issue Transaction Mapping -->
+		<action path="/transactions/InspectionDeskIssueTransCNT"
+			type="mms.transactions.controller.action.InspectionDeskIssueTransCNT"
+			name="inspectionDeskIssueBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issue"
+				path="/transactions/inspectiondesk_issue_trans_mms.jsp" />
+		</action>
+		<!-- End of Inspection Desk Issue Transaction -->
+
+		<!-- Inspection View Transaction Mapping -->
+		<action path="/transactions/InspectionViewTransCNT"
+			type="mms.transactions.controller.action.InspectionViewTransCNT"
+			name="inspectionViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/inspection_view_trans_mms.jsp" />
+		</action>
+		<!-- End of Inspection View Transaction -->
+
+		<action path="/transactions/BillApprovalDeskTransCNT"
+			type="mms.transactions.controller.action.BillApprovalDeskTransCNT"
+			name="billApprovalDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/transactions/" />
+			<forward name="VIEW" path="/transactions/" />
+		</action>
+
+		<action path="/transactions/BillApprovalTransCNT"
+			type="mms.transactions.controller.action.BillApprovalTransCNT"
+			name="billApprovalTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="billVerify"
+				path="/transactions/bill_approval_trans.jsp" />
+			<forward name="list"
+				path="/transactions/popup_searchList_PONo_details_BillApprovalVerify.jsp" />
+		</action>
+
+		<action path="/transactions/BillApprovalOtherTransCNT"
+			type="mms.transactions.controller.action.BillApprovalOtherTransCNT"
+			name="billApprovalOtherTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/bill_approval_other_Trans.jsp" />
+		</action>
+
+		<action path="/transactions/BillApprovalViewTransCNT"
+			type="mms.transactions.controller.action.BillApprovalViewTransCNT"
+			name="billApprovalViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/bill_approval_view_trans.jsp" />
+		</action>
+
+
+		<!-- Return From Patient/Staff Transaction Mapping -->
+		<action path="/transactions/ReturnFromTransCNT"
+			type="mms.transactions.controller.action.ReturnFromTransCNT"
+			name="returnFromTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="patient" path="/transactions/return_from_mmstrans.jsp" />
+			<forward name="patientGo" path="/transactions/return_from_mmstrans_go.jsp" />
+			<forward name="patientWithoutCrNo" path="/transactions/return_from_mmstrans_WithoutCrNo.jsp" />
+			<forward name="patientGoWithoutCrNo" path="/transactions/return_from_mmstrans_go_WithoutCrNo.jsp" />
+
+		</action>
+		<!-- End of Return From Patient/Staff Transaction -->
+
+		<!-- Return From Employee Transaction Mapping -->
+		<action path="/transactions/ReturnFromEmployeeTransCNT"
+			type="mms.transactions.controller.action.ReturnFromEmployeeTransCNT"
+			name="returnFromEmployeeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="patient"
+				path="/transactions/return_fromEmployee_mmstrans.jsp" />
+			<forward name="patientGo"
+				path="/transactions/return_fromEmployee_mmstrans_go.jsp" />
+
+		</action>
+		<!-- End of Return From Employee Transaction -->
+
+		<!-- Item Location Transaction Mapping -->
+		<action path="/transactions/ItemLocationTransCNT"
+			type="mms.transactions.controller.action.ItemLocationTransCNT"
+			name="itemLocationBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="item"
+				path="/transactions/item_location_mmstrans.jsp" />
+		</action>
+		<!-- End of Item Location Transaction -->
+
+		<!-- Gifted Item Details Transaction Start -->
+		<action path="/transactions/GiftedItemDetailsTransCNT"
+			type="mms.transactions.controller.action.GiftedItemDetailsTransCNT"
+			name="giftedItemDetailsTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/giftedItemDetailsTrans_mms.jsp">
+			</forward>
+			<forward name="itemInventory"
+				path="/transactions/gifted_itemInventory_mmstrans.jsp">
+			</forward>
+			<forward name="druginventory"
+				path="/transactions/gifted_drugInventory_mmstrans.jsp">
+			</forward>
+		</action>
+		<!-- End of Gifted Item Details Transaction -->
+
+		<!-- Receive From Third Party Transaction Start -->
+		<action path="/transactions/ReceiveFromThirdPartyTransCNT"
+			type="mms.transactions.controller.action.ReceiveFromThirdPartyTransCNT"
+			name="receiveFromThirdPartyTransBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="add"
+				path="/transactions/receivedItemDetailsTrans_mms.jsp">
+			</forward>
+
+			<forward name="itemInventory"
+				path="/transactions/received_itemInventory_mmstrans.jsp">
+			</forward>
+			<forward name="druginventory"
+				path="/transactions/received_drugInventory_mmstrans.jsp">
+			</forward>
+
+		</action>
+		<!-- End of Receive From Third Party Transaction -->
+
+		<!-- EMD Receiving Dtl Trans  Start -->
+
+		<action path="/transactions/EMDReceivingDtlTransCNT"
+			type="mms.transactions.controller.action.EMDReceivingDtlTransCNT"
+			name="EmdReceivingDtlBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initPage"
+				path="/transactions/emdReceivingDtlTrans_mms.jsp" />
+		</action>
+
+		<!-- EMD Receiving Dtl Trans  End -->
+
+		<!-- EMD Refund Dtl Trans  Start -->
+		<action path="/transactions/EMDRefundDtlTransCNT"
+			type="mms.transactions.controller.action.EMDRefundDtlTransCNT"
+			name="EmdRefundDtlBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initPage"
+				path="/transactions/emdRefundDtlTrans_mms.jsp" />
+		</action>
+
+		<!-- EMD Refund Dtl Trans  End -->
+
+		<!-- Third Party Issue  Start -->
+
+		<action path="/transactions/ThirdPartyIssueDeskCNT"
+			type="mms.transactions.controller.action.ThirdPartyIssueDeskCNT"
+			name="thirdPartyIssueDeskBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/thirdPartyIssueDeskViewTrans.jsp" />
+		</action>
+
+		<action path="/transactions/ThirdPartyIssueReqTransCNT"
+			type="mms.transactions.controller.action.ThirdPartyIssueReqTransCNT"
+			name="thirdPartyIssueReqBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="requestPage"
+				path="/transactions/thirdPartyIssueReqTrans.jsp" />
+		</action>
+
+		<action path="/transactions/ThirdPartyIssueSancTransCNT"
+			type="mms.transactions.controller.action.ThirdPartyIssueSancTransCNT"
+			name="thirdPartyIssueSancBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issue"
+				path="/transactions/thirdPartyIssueSancTrans.jsp" />
+		</action>
+
+		<!-- Third Party Issue  End -->
+
+		<!-- Set/Sachet Details Start by Pramod -->
+
+		<action path="/transactions/SetSachetDetailsTransCNT"
+			type="mms.transactions.controller.action.SetSachetDetailsTransCNT"
+			name="setSachetDetailsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/set_sachet_details_trans.jsp" />
+			<forward name="cancel"
+				path="/transactions/set_sachet_details_trans.jsp" />
+
+		</action>
+
+		<!-- Set/Sachet Details  End -->
+
+		<!-- Gate Pass Details Transaction -->
+
+		<action path="/transactions/GatePassDetailsTransCNT"
+			type="mms.transactions.controller.action.GatePassDetailsTransCNT"
+			name="gatePassDetailsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/gate_pass_details_trans.jsp" />
+
+		</action>
+
+		<!-- Warrenty Details Transaction -->
+
+		<action path="/transactions/WarrentyDetailsTransCNT"
+			type="mms.transactions.controller.action.WarrentyDetailsTransCNT"
+			name="warrentyDetailsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/warrenty_details_trans.jsp" />
+
+		</action>
+
+
+		<!-- Sample Register Transaction -->
+
+		<action path="/transactions/SampleRegisterTransCNT"
+			type="mms.transactions.controller.action.SampleRegisterTransCNT"
+			name="sampleRegisterTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="recieve"
+				path="/transactions/sampleRegisterRecieve_add_mmstrans.jsp" />
+			<forward name="return"
+				path="/transactions/sampleRegisterReturn_add_mmstrans.jsp" />
+			<forward name="verify"
+				path="/transactions/sampleRegisterVerify_mmstrans.jsp" />
+			<forward name="condemn"
+				path="/transactions/sampleRegisterCondemn_mmstrans.jsp" />
+		</action>
+
+		<!-- Sample Register Mapping End -->
+		
+		<!-- Online Sample Register Transaction -->
+
+		<action path="/transactions/SampleRegisterPurTransCNT"
+			type="mms.transactions.controller.action.SampleRegisterPurTransCNT"
+			name="sampleRegisterPurTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="recieve"
+				path="/transactions/sampleRegisterPurRecieve_add_mmstrans.jsp" />
+			<forward name="return"
+				path="/transactions/sampleRegisterPurReturn_add_mmstrans.jsp" />
+			<forward name="verify"
+				path="/transactions/sampleRegisterPurVerify_mmstrans.jsp" />
+			<forward name="condemn"
+				path="/transactions/sampleRegisterPurCondemn_mmstrans.jsp" />
+		</action>
+
+		<!-- Online Sample Register Mapping End -->
+
+		<!-- Indent DESK Condemnation Type Transaction Mapping -->
+		<action path="/transactions/IndentDeskCondemnationReqTransCNT"
+			type="mms.transactions.controller.action.IndentDeskCondemnationReqTransCNT"
+			name="indentCondemnationTransADDBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="condemnationRequest"
+				path="/transactions/add_IndentDeskComdemnationTrans_mms.jsp" />
+		</action>
+
+
+
+		<!-- Issue Desk Transaction (VIEW )Mapping Start -->
+
+		<action path="/transactions/IssueViewDetailsCNT"
+			type="mms.transactions.controller.action.IssueViewDetailsCNT"
+			name="issueViewDetailsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/issue_view_details_trans.jsp" />
+
+		</action>
+
+		<!-- Issue Desk Transaction (VIEW )Mapping End -->
+
+
+		<!-- Lp Issue Desk Transaction Mapping Start -->
+
+		<action path="/transactions/LPIssueDeskTransCNT"
+			type="mms.transactions.controller.action.LPIssueDeskTransCNT"
+			name="lpIssueDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issue"
+				path="/transactions/add_LpIssueDtlTrans.jsp" />
+			<forward name="return"
+				path="/transactions/add_LpReturnDtlTrans.jsp" />
+			<forward name="viewIssue"
+				path="/transactions/view_LpIssueDtlTrans.jsp" />
+			<forward name="viewReturn"
+				path="/transactions/view_LpReturnDtlTrans.jsp" />
+
+
+		</action>
+
+		<!-- Lp Issue Desk Transaction Mapping End -->
+
+
+		<!-- Issue Desk Transaction Mapping Start -->
+
+		<action path="/transactions/IssueDeskTransCNT"
+			type="mms.transactions.controller.action.IssueDeskTransCNT"
+			name="issueDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issue"
+				path="/transactions/issue_issuedesk_mmstrans.jsp" />
+			<forward name="view1"
+				path="/transactions/view1_issuedesk_mmstrans.jsp" />
+			<forward name="view2"
+				path="/transactions/view2_issuedesk_mmstrans.jsp" />
+
+		</action>
+
+		<!-- Issue Desk Transaction Mapping End -->
+
+
+		<action path="/transactions/IssueToPatientTransCNT"
+			type="mms.transactions.controller.action.IssueToPatientTransCNT"
+			name="issueToPatTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issueToPatientDtl"
+				path="/transactions/issue_ToPatientDtlTrans_mms.jsp" />
+		</action>
+
+
+		<action path="/transactions/IssueToEmployeeTransCNT"
+			type="mms.transactions.controller.action.IssueToEmployeeTransCNT"
+			name="issueToEmpTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issueToEmpDtl"
+				path="/transactions/issue_ToEmployeeDtlTrans_mms.jsp" />
+		</action>
+
+
+		<action path="/transactions/PODeskTransCNT"
+			type="mms.transactions.controller.action.PODeskTransCNT"
+			name="poDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view" path="" />
+
+		</action>
+
+		<!-- PO Desk ADD Type Transaction Mapping -->
+		<action path="/transactions/PODeskTransADDCNT"
+			type="mms.transactions.controller.action.PODeskTransADDCNT"
+			name="poDeskTransADDBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="poDeskAdd"
+				path="/transactions/add_PODeskADDTrans_mms.jsp" />
+		</action>
+
+
+       <!-- Unit Value Master -->
+         <action path="/masters/CNTUnitValueMst" type="mms.masters.controller.action.CNTUnitValueMst" 
+                 name="unitvalueBean" 
+                 scope="request" 
+                 validate="false" 
+                 parameter="hmode">
+			<forward name="add" path="/masters/add_unitval_bill.jsp" />
+			<forward name="modify" path="/masters/modify_unitval_bill.jsp" />
+		</action>
+		<!-- Unit Master -->
+        <action path="/masters/CNTUnitMst" type="mms.masters.controller.action.CNTUnitMst" 
+                name="unitBean" 
+                scope="request" 
+                validate="false" 
+                parameter="hmode">
+			<forward name="add" path="/masters/add_unitmst_bill.jsp" />
+			<forward name="modify" path="/masters/modify_unitmst_bill.jsp" />
+		</action>
+
+
+
+		<!-- Purpose Master Mapping -->
+		<action path="/masters/PurposeMstCNT"
+			type="mms.masters.controller.action.PurposeMstCNT" name="purposeBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/add_purpose_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_purpose_mst.jsp" />
+
+		</action>
+
+
+
+		<!-- Indent Type Transaction Mapping -->
+		<action path="/transactions/IndentTransCNT"
+			type="mms.transactions.controller.action.IndentTransCNT"
+			name="indentTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/transactions/" />
+		</action>
+		<!-- Indent ADD Type Transaction Mapping -->
+		<action path="/transactions/IndentTransADDCNT"
+			type="mms.transactions.controller.action.IndentTransADDCNT"
+			name="indentTransADDBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="indentTypeAdd"
+				path="/transactions/add_IndentADDTrans_mms.jsp" />
+		</action>
+		<!-- Indent VIEW Type Transaction Mapping By Kapil-->
+
+		<action path="/transactions/IndentViewTransCNT"
+			type="mms.transactions.controller.action.IndentViewTransCNT"
+			name="indentViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/indentViewTrans_mms.jsp" />
+
+		</action>
+
+
+        <!-- Off-Line Indent Issue Transaction Mapping -->
+
+		<action path="/transactions/OfflineIssueIndentTransCNT"
+			type="mms.transactions.controller.action.OfflineIssueIndentTransCNT"
+			name="offlineIssueIndentBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="offLineIssueItemDtl"
+				path="/transactions/add_OfflineIssueIndentTrans_mms.jsp" />
+
+			<forward name="view"
+				path="/transactions/view_OfflineIssueIndent_mms.jsp" />         
+
+		</action>
+		
+		<action path="/transactions/IssueDtlBackLogCNT"
+			type="mms.transactions.controller.action.IssueDtlBackLogCNT"
+			name="issueBackLogDtl" scope="request" validate="false"
+			parameter="hmode">			
+			<forward name="main" path="/transactions/dwh_IssueDtl_BackLog.jsp" />  
+		</action>
+
+
+         <!-- Off-Line Return Transaction Mapping -->
+
+		 <action path="/transactions/OfflineReturnTransCNT"
+			type="mms.transactions.controller.action.OfflineReturnTransCNT"
+			name="offlineReturnBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="offLineReturnDtl"
+				path="/transactions/add_OfflineReturnTrans_mms.jsp" />
+
+			<forward name="view"
+				path="/transactions/view_OfflineReturn_mms.jsp" />
+           
+           
+
+		 </action>
+
+  
+<!-- Transfer Order Generation /  TransferApproval Trans  Start -->
+        <action path="/transactions/TransferApprovalTransCNT"
+            type="mms.transactions.controller.action.TransferApprovalTransCNT"
+			name="TransferApprovalTransBean" scope="request" validate="false"
+			parameter="hmode">
+		 
+		 <forward name="orderGenerate"
+				path="/transactions/dwh_transfer_order_dtl_generation.jsp" />
+		 
+		  <forward name="orderModify"
+				path="/transactions/dwh_transfer_order_dtl_modify.jsp" />
+		 	 
+			<forward name="view"
+				path="/transactions/HelpDesk_view_trans.jsp" />
+				
+				</action>
+
+
+<!-- Transfer Order Generation /  TransferApproval Trans  End -->
+		
+
+		<!-- Breakage Item Details Transaction Mapping -->
+
+		<action path="/transactions/BreakageItemDtlTransCNT"
+			type="mms.transactions.controller.action.BreakageItemDtlTransCNT"
+			name="bkgItemDtlTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="breakageItemDtl"
+				path="/transactions/add_BreakageItemDtlTrans_mms.jsp" />
+
+			<forward name="view"
+				path="/transactions/view_Breakage_Item_Dtl.jsp" />
+
+
+		</action>
+
+		<!-- Breakage Item Details Transaction Mapping End -->
+
+		<!-- Master Action Mappings Start -->
+
+
+		<!-- Global Util Action Mapping Start-->
+		<!-- Global Util Action Mapping Start for transactions-->
+
+		<action path="/transactions/MmsCNT"
+			type="mms.global.controller.MmsCNT" name="mmsBean" scope="request"
+			validate="false" parameter="hmode">
+
+			<forward name="mmslist"
+				path="/transactions/search_mms_dtls.jsp" />
+
+
+
+		</action>
+
+		<!-- Global Util Action Mapping Start for Masters-->
+
+		<action path="/masters/MmsCNT"
+			type="mms.global.controller.MmsCNT" name="mmsBean" scope="request"
+			validate="false" parameter="hmode">
+
+		</action>
+		<!-- Global Util Action Mapping End-->
+
+
+		<!-- Mms Configuration Master Mapping -->
+
+		<action path="/masters/MmsConfigMstCNT"
+			type="mms.masters.controller.action.MmsConfigMstCNT"
+			name="mmsConfigBean" scope="request" validate="false"
+			parameter="selectedTab">
+			<forward name="mmsgeneraldtls"
+				path="/masters/mmsconfig_mms.jsp" />
+			<forward name="mmsissuedtls"
+				path="/masters/mmsconfig_issuedtls_mms.jsp" />
+
+			<forward name="mmspenaltydtls"
+				path="/masters/mmsconfig_penaltydtls_mms.jsp" />
+
+			<forward name="mmsphysicalstockverifydtls"
+				path="/masters/mmsconfig_phyverify_mms.jsp" />
+
+			<forward name="mmsreportParamdtls"
+				path="/masters/mmsconfig_reportparamdtls_mms.jsp" />
+
+		</action>
+
+
+		<action path="/masters/ImportExportTemplateMstCNT"
+			type="mms.masters.controller.action.ImportExportTemplateMstCNT"
+			name="impexpTemplateMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="addtemplate"
+				path="/masters/add_ImportExportTemplateMst_mms.jsp" />
+
+			<forward name="parammapping"
+				path="/masters/mapping_ImportExportTemplateMst_mms.jsp" />
+
+			<forward name="savetemplate"
+				path="/masters/save_ImportExportTemplateMst_mms.jsp" />
+
+
+		</action>
+
+		<action path="/masters/SmsMobileSetupMstCNT"
+			type="mms.masters.controller.action.SmsMobileSetupMstCNT"
+			name="smsMobileSetupMstFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="mainPage" path="/administration/main_SmsMobileSetupMst_mms.jsp" />
+
+		</action>
+
+
+		<!-- Masters By Anshul -->
+
+		<action path="/masters/DrugMstCNT"
+			type="mms.masters.controller.action.DrugMstCNT" name="drugBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/add_Drug_mms.jsp" />
+			<forward name="modify" path="/masters/modify_Drug_mms.jsp" />
+			<forward name="view" path="/masters/view_Drug_mms.jsp" />
+		</action>
+
+		<!-- Store Type Master Start -->
+
+		<action path="/masters/StoreTypeMstCNT"
+			type="mms.masters.controller.action.StoreTypeMstCNT"
+			name="storetypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_StoreType_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_StoreType_mms.jsp" />
+
+		</action>
+
+		<!-- Store Group Master Start -->
+
+		<action path="/masters/StoreGroupMstCNT"
+			type="mms.masters.controller.action.StoreGroupMstCNT"
+			name="StoreGrpBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_StoreGroup_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_StoreGroup_mms.jsp" />
+
+		</action>
+
+		<!--Store Sub Group Type Master Start -->
+
+		<action path="/masters/StoreSubGroupMstCNT"
+			type="mms.masters.controller.action.StoreSubGroupMstCNT"
+			name="subgroupBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_SubGroupType_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_SubGroupType_mms.jsp" />
+
+		</action>
+
+		<!-- Indent type Master Start -->
+
+		<action path="/masters/IndentTypeMstCNT"
+			type="mms.masters.controller.action.IndentTypeMstCNT"
+			name="IndentTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_IndentType_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_IndentType_mms.jsp" />
+
+		</action>
+
+		<!-- Store Master Start -->
+
+		<action path="/masters/StoreMstCNT"
+			type="mms.masters.controller.action.StoreMstCNT" name="StoreBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/add_Store_mms.jsp" />
+			<forward name="modify" path="/masters/modify_Store_mms.jsp" />
+			<forward name="view" path="/masters/view_Store_mms.jsp" />
+
+		</action>
+
+		<!-- Item type Master Start -->
+		<action path="/masters/ItemTypeMstCNT"
+			type="mms.masters.controller.action.ItemTypeMstCNT"
+			name="ItemTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_ItemType_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_ItemType_mms.jsp" />
+
+		</action>
+
+
+
+		<!-- Purchase Type Master Start -->
+
+		<action path="/masters/PurchaseTypeMstCNT"
+			type="mms.masters.controller.action.PurchaseTypeMstCNT"
+			name="PurchaseTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_PurchaseType_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_PurchaseType_mms.jsp" />
+
+		</action>
+
+
+		<!-- Store Item Master Start -->
+
+		<action path="/masters/StoreItemMstCNT"
+			type="mms.masters.controller.action.StoreItemMstCNT"
+			name="StoreItemBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_StoreItem_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_StoreItem_mms.jsp" />
+			<forward name="batchUpdate"
+				path="/masters/batchUpdate_StoreItem_mms.jsp" />
+		</action>
+
+		<!-- Supplier Item Master Start -->
+
+		<action path="/masters/SupplierItemMstCNT"
+			type="mms.masters.controller.action.SupplierItemMstCNT"
+			name="SupplierItemBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_SupplierItem_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_SupplierItem_mms.jsp" />
+
+		</action>
+
+
+		<!--  Supplier Master Mapping -->
+
+		<action path="/masters/SupplierMstCNT"
+			type="mms.masters.controller.action.SupplierMstCNT"
+			name="supplierBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_Supplier_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_Supplier_mms.jsp" />
+			<forward name="view" path="/masters/view_Supplier_mms.jsp" />
+		</action>
+
+		<!-- End of Supplier Master Mapping -->
+
+
+		<!-- Store Hierarchy Master Mapping -->
+
+		<action path="/masters/StoreHierarchyMstCNT"
+			type="mms.masters.controller.action.StoreHierarchyMstCNT"
+			name="StoreHierarchyBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_StoreHierarchy_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_StoreHierarchy_mms.jsp" />
+
+		</action>
+
+		<!-- End of Store Hierarchy Master Mapping -->
+
+
+
+		<!--  Item Brand Master Mapping -->
+
+		<action path="/masters/ItemMstCNT"
+			type="mms.masters.controller.action.ItemMstCNT" name="itemBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/add_Item_mms.jsp" />
+			<forward name="modify" path="/masters/modify_Item_mms.jsp" />
+			<forward name="view" path="/masters/view_Item_mms.jsp" />
+		</action>
+
+
+		<!--  Supplier Grade Master Mapping -->
+		<action path="/masters/SupplierGradeMstCNT"
+			type="mms.masters.controller.action.SupplierGradeMstCNT"
+			name="SupplierGradeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_SupplierGradeMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_SupplierGradeMst_mms.jsp" />
+		</action>
+		<!--  End of Supplier Grade Master Mapping -->
+
+		<!--  Committee Type Master Mapping -->
+
+		<action path="/masters/CommitteeTypeMstCNT"
+			type="mms.masters.controller.action.CommitteeTypeMstCNT"
+			name="CommitteeTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_CommitteeTypeMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_CommitteeTypeMst_mms.jsp" />
+		</action>
+
+		<!--  Letter Type Master Mapping -->
+
+		<action path="/masters/LetterTypeMstCNT"
+			type="mms.masters.controller.action.LetterTypeMstCNT"
+			name="LetterTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_LetterTypeMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_LetterTypeMst_mms.jsp" />
+		</action>
+
+		<!-- Process Letter Type Master Mapping -->
+
+		<action path="/masters/ProcessLetterTypeMstCNT"
+			type="mms.masters.controller.action.ProcessLetterTypeMstCNT"
+			name="ProcessLetterTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_ProcessLetterTypeMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_ProcessLetterTypeMst_mms.jsp" />
+		</action>
+
+		<!--  Item Sets Master Mapping -->
+
+		<action path="/masters/ItemSetsMstCNT"
+			type="mms.masters.controller.action.ItemSetsMstCNT"
+			name="ItemSetsMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_ItemSetsMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_ItemSetsMst_mms.jsp" />
+		</action>
+
+		<!-- Authorization Master Mapping -->
+
+		<action path="/masters/AuthorizationMstCNT"
+			type="mms.masters.controller.action.AuthorizationMstCNT"
+			name="authorizationBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_AuthorizationMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_AuthorizationMst_mms.jsp" />
+		</action>
+
+		<!-- Item Parameter Master Mapping -->
+
+		<action path="/masters/ItemParameterMstCNT"
+			type="mms.masters.controller.action.ItemParameterMstCNT"
+			name="itemParameterBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_itemparameterMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_itemparameterMst_mms.jsp" />
+		</action>
+
+
+		<!-- Currency Master Mapping -->
+
+		<action path="/masters/CurrencyMstCNT"
+			type="mms.masters.controller.action.CurrencyMstCNT"
+			name="currencyMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_currencyMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_currencyMst_mms.jsp" />
+		</action>
+
+
+		<!-- Maintenance Type Master Start -->
+		<action path="/masters/MaintenanceTypeMstCNT"
+			type="mms.masters.controller.action.MaintenanceTypeMstCNT"
+			name="MaintenanceTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_MaintenanceTypeMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_MaintenanceTypeMst_mms.jsp" />
+		</action>
+		<!-- End of Maintenance Type Master -->
+
+
+		<!-- Gate Pass Type Master Start -->
+		<action path="/masters/GatePassTypeMstCNT"
+			type="mms.masters.controller.action.GatePassTypeMstCNT"
+			name="GatePassTypeMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_GatePassTypeMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_GatePassTypeMst_mms.jsp" />
+		</action>
+		<!-- End of Gate Pass Type Master -->
+
+
+
+		<!-- Dispatch Mode Master Start -->
+		<action path="/masters/DispatchModeMstCNT"
+			type="mms.masters.controller.action.DispatchModeMstCNT"
+			name="dispatchModeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_DispatchModeMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_DispatchModeMst_mms.jsp" />
+		</action>
+		<!-- End of Dispatch Mode Master -->
+
+
+	<!-- Supplier Type Master Start -->
+
+		<action path="/masters/SupplierTypeMstCNT"
+			type="mms.masters.controller.action.SupplierTypeMstCNT"
+			name="suppliertypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_SupplierType_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_SupplierType_mms.jsp" />
+
+		</action>
+	
+
+
+		<!-- Committee Member Details Master Mapping -->
+
+		<action path="/masters/CommitteeMemberDetailMstCNT"
+			type="mms.masters.controller.action.CommitteeMemberDetailMstCNT"
+			name="committeeMemberDtlBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_CommitteeMemberDetailMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_CommitteeMemberDetailMst_mms.jsp" />
+		</action>
+
+		<!-- Drug Safety Alert Master Mapping -->
+
+		<action path="/masters/DrugSafetyAlertMstCNT"
+			type="mms.masters.controller.action.DrugSafetyAlertMstCNT"
+			name="drugSaftyAlertBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_DrugSafteyAlertMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_DrugSafteyAlertMst_mms.jsp" />
+			<forward name="viewPage"
+				path="/masters/view_DrugSafteyAlertMst_mms.jsp" />
+		</action>
+
+		<!-- Drug Dosage Indication Master Mapping -->
+
+		<action path="/masters/DrugDosageIndicationMstCNT"
+			type="mms.masters.controller.action.DrugDosageIndicationMstCNT"
+			name="drugDosageIndicationBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_DrugDosageIndicationMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_DrugDosageIndicationMst_mms.jsp" />
+			<forward name="viewPage"
+				path="/masters/view_DrugDosageIndicationMst_mms.jsp" />
+
+
+		</action>
+
+		<!-- Spare Parts Master Mapping  -->
+
+		<action path="/masters/SparePartsMstCNT"
+			type="mms.masters.controller.action.SparePartsMstCNT"
+			name="sparepartBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_SparePartMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_SparePartMst_mms.jsp" />
+		</action>
+
+
+
+		<!-- Component Master Mapping -->
+
+		<action path="/masters/ComponentMstCNT"
+			type="mms.masters.controller.action.ComponentMstCNT"
+			name="componentBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_Component_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_Component_mms.jsp" />
+
+		</action>
+
+
+		<!-- Process Component Master Mapping -->
+
+
+
+
+		<!-- Drug Master Mapping -->
+		<action path="/masters/GenericDrugMstCNT"
+			type="mms.masters.controller.action.GenericDrugMstCNT"
+			name="genericdrugBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_GenericDrug_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_GenericDrug_mms.jsp" />
+			<forward name="view"
+				path="/masters/view_GenericDrug_mms.jsp" />
+		</action>
+
+
+		<!-- Item Master Mapping -->
+		<action path="/masters/GenericItemMstCNT"
+			type="mms.masters.controller.action.GenericItemMstCNT"
+			name="genericitemBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_GenericItem_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_GenericItem_mms.jsp" />
+			<forward name="view"
+				path="/masters/view_GenericItem_mms.jsp" />
+		</action>
+
+
+		<!-- Delivery Mode Master Mapping -->
+		<action path="/masters/DeliveryModeMstCNT"
+			type="mms.masters.controller.action.DeliveryModeMstCNT"
+			name="deliveryModeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_DeliveryModeMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_DeliveryModeMst_mms.jsp" />
+
+		</action>
+
+		<!-- Invoice Type Master Mapping -->
+		<action path="/masters/InvoiceTypeMstCNT"
+			type="mms.masters.controller.action.InvoiceTypeMstCNT"
+			name="invoiceTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_InvoiceTypeMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_InvoiceTypeMst_mms.jsp" />
+
+		</action>
+
+
+		<!-- Indent Authorization Master Mapping -->
+		<action path="/masters/IndentAuthorizationMstCNT"
+			type="mms.masters.controller.action.IndentAuthorizationMstCNT"
+			name="indentAuthorizationBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_indentauthorizationMst_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_indentauthorization_mst.jsp" />
+
+		</action>
+
+
+
+		<!-- Store Req Type Master Mapping -->
+		<action path="/masters/StoreReqTypeMstCNT"
+			type="mms.masters.controller.action.StoreReqTypeMstCNT"
+			name="storeReqTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_StoreReqType_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_StoreReqType_mms.jsp" />
+
+		</action>
+
+		<!-- Store Category Master Mapping -->
+		<action path="/masters/StoreCategoryMstCNT"
+			type="mms.masters.controller.action.StoreCategoryMstCNT"
+			name="storeCategoryBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_StoreCategory_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_StoreCategory_mms.jsp" />
+
+		</action>
+
+		<!-- PO Component Master Mapping -->
+
+		<action path="/masters/POComponentMstCNT"
+			type="mms.masters.controller.action.POComponentMstCNT"
+			name="pocomponentBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_PO_Component_mms.jsp" />
+			<forward name="modify"
+				path="/masters/modify_PO_Component_mms.jsp" />
+
+		</action>
+
+
+		<action path="/masters/ApprovingAuthorityMstCNT"
+			type="mms.masters.controller.action.ApprovingAuthorityMstCNT"
+			name="approvingAuthorityMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_approving_authority_mst.jsp" />
+			<forward name="modify"
+				path="/masters/modify_approving_authority_mst.jsp" />
+
+		</action>
+		
+		<!--  Drug Contradiction Master Mapping By Niharika-->
+		<action path="/masters/DrugContradictionMstCNT"
+			type="mms.masters.controller.action.DrugContradictionMstCNT"
+			name="DrugContradictionBean" scope="request" validate="false"
+			parameter="hmode">
+		<forward name="add" path="/masters/add_drug_contradiction_mms.jsp" />
+		<forward name="modify" path="/masters/modify_drug_contradiction_mms.jsp" />
+		<forward name="view" path="/masters/view_drug_contradiction_mms.jsp" />
+			</action>
+			
+			<action path="/masters/GroupItemAltMstCNT"
+			type="mms.masters.controller.action.GroupItemAltMstCNT"
+			name="groupItemAltMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_group_item_alt_mst.jsp" />
+		</action>
+			
+		
+		<!--  State Master Mapping By Vivek Aggarwal START-->
+			<action path="/masters/StateMstCNT"	type="mms.masters.controller.action.StateMstCNT"
+				name="stateMstBean" scope="request" validate="false" parameter="hmode">
+				<forward name="add" path="/administration/dwh_add_state_mst.jsp" />
+				<forward name="modify" path="/administration/dwh_modify_state_mst.jsp" />
+			</action>
+				
+	
+		<!--  State Master Mapping By Vivek Aggarwal END-->			
+
+<!--  Employee Detail Master Mapping By Vivek Aggarwal START-->
+			<action path="/masters/EmployeeDetailMstCNT"	type="mms.masters.controller.action.EmployeeDetailMstCNT"
+				name="employeeDetailMstBean" scope="request" validate="false" parameter="hmode">
+				<forward name="add" path="/administration/dwh_add_employeeDetail_mst.jsp" />
+				<forward name="modify" path="/administration/dwh_modify_employeeDetail_mst.jsp" />
+				<forward name="view" path="/administration/dwh_view_employeeDetail_mst.jsp" />
+			</action>
+				
+	
+		<!--  Employee Detail Master Mapping By Vivek Aggarwal END-->	
+				
+
+		<!-- Scheme Master Mapping by Adil Wasi -->
+
+		<action path="/masters/SchemeMstCNT"
+			type="mms.masters.controller.action.SchemeMstCNT"
+			name="schemeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/administration/dwh_add_scheme_mst.jsp" />
+			<forward name="modify"
+				path="/administration/dwh_modify_scheme_mst.jsp" />
+		</action>
+		
+		<!-- Scheme Master Mapping by Adil Wasi end-->
+		
+		
+		<!-- Source Master Mapping by Adil Wasi -->
+		
+		<action path="/masters/SourceMstCNT"
+			type="mms.masters.controller.action.SourceMstCNT"
+			name="sourceBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/administration/dwh_add_source_mst.jsp" />
+			<forward name="modify"
+				path="/administration/dwh_modify_source_mst.jsp" />
+		</action>
+		
+		<!-- Source Master Mapping by Adil Wasi end-->
+		
+		
+		
+		<!-- Lab Master Mapping by Adil Wasi -->
+		
+		<action path="/masters/LabMstCNT"
+			type="mms.masters.controller.action.LabMstCNT"
+			name="labMstBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/administration/dwh_add_lab_mst.jsp" />
+			<forward name="modify"
+				path="/administration/dwh_modify_lab_mst.jsp" />
+		</action>
+		
+		<!-- Lab Master Mapping by Adil Wasi end-->
+		
+		<!-- Country Master Mapping by Adil Wasi -->
+		
+		<action path="/masters/CountryMstCNT"
+			type="mms.masters.controller.action.CountryMstCNT"
+			name="countryBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/administration/dwh_add_country_mst.jsp" />
+			<forward name="modify"
+				path="/administration/dwh_modify_country_mst.jsp" />
+		</action>
+		
+		<!-- Country Master Mapping by Adil Wasi end-->
+		
+		<!-- District Master Mapping by Adil Wasi Start-->
+			<action path="/masters/DistrictMstCNT"	type="mms.masters.controller.action.DistrictMstCNT"
+				name="districtMstBean" scope="request" validate="false" parameter="hmode">
+				<forward name="add" path="/administration/dwh_add_district_mst.jsp" />
+				<forward name="modify" path="/administration/dwh_modify_district_mst.jsp" />
+			</action>
+					
+		<!--  District Master Mapping By Adil Wasi END-->
+		
+		
+		<!-- Master Action Mappings End -->
+
+
+		<action path="/transactions/IndentPrintTransCNT"
+			type="mms.transactions.controller.action.IndentPrintTransCNT"
+			name="indentPrintBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+
+		<!--Deepak  Start -->
+
+		<action path="/transactions/SupplierReturnDeskCNT"
+			type="mms.transactions.controller.action.SupplierReturnDeskCNT"
+			name="supplierReturnDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/supplier_return_view_trans.jsp" />
+		</action>
+
+		<action path="/transactions/SupplierReturnReqTransCNT"
+			type="mms.transactions.controller.action.SupplierReturnReqTransCNT"
+			name="supplierReturnReqBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/supplier_return_req_trans.jsp" />
+			<forward name="list"
+				path="/transactions/popup_searchList_PONo_details.jsp" />
+		</action>
+
+		<action path="/transactions/SupplierReturnSancTransCNT"
+			type="mms.transactions.controller.action.SupplierReturnSancTransCNT"
+			name="supplierReturnSancBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="return"
+				path="/transactions/supplier_return_sanc_trans.jsp" />
+		</action>
+
+		<action path="/transactions/SupplierReturnModifyTransCNT"
+			type="mms.transactions.controller.action.SupplierReturnModifyTransCNT"
+			name="supplierReturnModifyBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="modify"
+				path="/transactions/supplier_return_modify_trans.jsp" />
+		</action>
+
+		<!-- Indent Approval Desk Type Transaction Mapping -->
+		<action path="/transactions/IndentApprovalDeskCNT"
+			type="mms.transactions.controller.action.IndentApprovalDeskCNT"
+			name="indentApprovalTransBean" scope="request" validate="false"
+			parameter="hmode">
+				
+			<forward name="indentApprovalDesk"
+				path="/transactions/IndentApproval_DeskTrans_mms.jsp" />
+
+			<forward name="indentApprovalDeskPhysicalStockVerification"
+				path="/transactions/IndentApproval_PhysicalStockVerif_DeskTrans_mms.jsp" />
+
+
+			<forward name="viewPhysicalStockVerification"
+				path="/transactions/IndentApproval_PhysicalStockVerif_View_DeskTrans_mms.jsp" />
+
+			<forward name="view" path="/transactions/IndentApproval_View_Trans_mms.jsp" />
+		</action>
+
+
+		<action path="/transactions/IndentApprovalApproveTransCNT"
+			type="mms.transactions.controller.action.IndentApprovalApproveTransCNT"
+			name="indentApprovalApproveTransBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="indentApprove"
+				path="/transactions/indentApprovalApproveTrans.jsp" />
+		</action>
+
+		<action path="/transactions/IndentApprovalApproveRecTransCNT"
+			type="mms.transactions.controller.action.IndentApprovalApproveRecTransCNT"
+			name="indentApprovalApproveRecTransBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="indentApproveRec"
+				path="/transactions/indentApprovalApproveRecTrans.jsp" />
+		</action>
+
+		<action path="/transactions/IndentViewTransCNT"
+			type="mms.transactions.controller.action.IndentViewTransCNT"
+			name="indentViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/indentViewTrans_mms.jsp" />
+		</action>
+
+		<action path="/transactions/ItemTransferTransCNT"
+			type="mms.transactions.controller.action.ItemTransferTransCNT"
+			name="itemTransferTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="transfer"
+				path="/transactions/itemTransfer_mmstrans.jsp" />
+		</action>
+		
+		
+		<action path="/transactions/CostEstimationCNT"
+			type="mms.transactions.controller.action.CostEstimationCNT"
+			name="costEstimationBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="costestimation"
+				path="/transactions/cost_estimation_mmstrans.jsp" />
+		</action>
+
+
+		<action path="/masters/AuthorityHierDtlCNT"
+			type="mms.masters.controller.action.AuthorityHierDtlCNT"
+			name="authHierTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="hierDtls"
+				path="/masters/authorityHier_mms.jsp" />
+		</action>
+
+
+		<action path="/transactions/AgendaDeskTransCNT"
+			type="mms.transactions.controller.action.AgendaDeskTransCNT"
+			name="agendaDeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/add_AgendaDeskTrans_mms.jsp" />
+			<forward name="modify"
+				path="/transactions/modify_AgendaDeskTrans_mms.jsp" />
+		</action>
+
+		<action path="/transactions/AgendaDeskAddTransCNT"
+			type="mms.transactions.controller.action.AgendaDeskAddTransCNT"
+			name="agendaDeskAddTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/add_AgendaDeskTrans_mms.jsp" />
+			<forward name="modify"
+				path="/transactions/modify_AgendaDeskTrans_mms.jsp" />
+
+		</action>
+
+		<action path="/transactions/AgendaViewTransCNT"
+			type="mms.transactions.controller.action.AgendaViewTransCNT"
+			name="agendaViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/agenda_view_trans.jsp" />
+
+		</action>
+		<!--  End of Transactions by Deepak -->
+
+
+		<action path="/transactions/PhyStockVerificationTransCNT"
+			type="mms.transactions.controller.action.PhyStockVerificationTransCNT"
+			name="physicalStockVerificationBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="inventoryCount"
+				path="/transactions/phyStockVerification_inventoryCount_trans.jsp" />
+
+			<forward name="verify"
+				path="/transactions/phyStockVerification_verify_trans.jsp" />
+			<forward name="inventoryCount"
+				path="/transactions/phyStockVerification_inventoryCount_trans.jsp" />
+			<forward name="view"
+				path="/transactions/view_physicalStock_Dtl.jsp" />
+			<forward name="review"
+				path="/transactions/review_physicalstockTrans.jsp" />
+
+		</action>
+
+		<!-- Condemnation Register Transaction Mapping -->
+
+		<action path="/transactions/CondemnationRegisterTransDeskCNT"
+			type="mms.transactions.controller.action.CondemnationRegisterTransDeskCNT"
+			name="condemnRegisterTransDeskBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+
+		<action path="/transactions/CondemnationRegisterTransCNT"
+			type="mms.transactions.controller.action.CondemnationRegisterTransCNT"
+			name="condemnRegisterTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/add_CondemnTrans_mms.jsp" />
+		</action>
+
+
+		<action path="/transactions/CondemnationRegisterViewTransCNT"
+			type="mms.transactions.controller.action.CondemnationRegisterViewTransCNT"
+			name="condemnRegisterViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/condemnationRegisterTrans_mms.jsp" />
+			<forward name="view"
+				path="/transactions/lotsViewCondemTrans_mms.jsp" />
+		</action>
+
+		<!-- Condemnation Register Transaction Mapping End-->
+
+		<!-- Lots Detail Transaction Mapping -->
+
+		<action path="/transactions/LotsDetailTransDeskCNT"
+			type="mms.transactions.controller.action.LotsDetailTransDeskCNT"
+			name="lotsDetailTransDeskBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+
+		<action path="/transactions/LotsDetailTransCNT"
+			type="mms.transactions.controller.action.LotsDetailTransCNT"
+			name="lotsDetailTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/add_LotsDetailTrans_mms.jsp" />
+		</action>
+
+
+		<action path="/transactions/LotsDetailViewTransCNT"
+			type="mms.transactions.controller.action.LotsDetailViewTransCNT"
+			name="lotsDetailViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/lotsViewTrans_mms.jsp" />
+		</action>
+
+		<!-- Lots Detail Transaction Mapping End-->
+
+		<action path="/transactions/AdvanceRequestTransCNT"
+			type="mms.transactions.controller.action.AdvanceRequestTransCNT"
+			name="advanceRequestBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="newindex"
+				path="/transactions/advanceRequestTransnew_mms.jsp" />
+			<forward name="duplicateindex"
+				path="/transactions/advanceRequestTransduplicate_mms.jsp" />
+
+		</action>
+
+
+
+
+
+		<action path="/transactions/DispatchDetailsTransCNT"
+			type="mms.transactions.controller.action.DispatchDetailsTransCNT"
+			name="dispatchDetailsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="advance"
+				path="/transactions/dispatch_details_advance_trans.jsp" />
+			<forward name="bill"
+				path="/transactions/dispatch_details_bill_trans.jsp" />
+			<forward name="view"
+				path="/transactions/dispatch_details_view_trans.jsp" />
+		</action>
+		<action path="/transactions/BillApprovalViewTransCNT"
+			type="mms.transactions.controller.action.BillApprovalViewTransCNT"
+			name="billApprovalViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/bill_approval_view_trans.jsp" />
+
+		</action>
+
+
+		<action path="/transactions/AcknowledgeTransCNT"
+			type="mms.transactions.controller.action.AcknowledgeTransCNT"
+			name="acknowledgeTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="acknowledge"
+				path="/transactions/acknowledge_trans.jsp" />
+
+			<forward name="view"
+				path="/transactions/acknowledge_view_trans.jsp" />
+
+		</action>
+
+
+		<action path="/transactions/IndentViewTransCNT"
+			type="mms.transactions.controller.action.IndentViewTransCNT"
+			name="indentViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/indentViewTrans_mms.jsp" />
+
+		</action>
+
+
+		<action path="/transactions/MiscellaneousConsumptionTransCNT"
+			type="mms.transactions.controller.action.MiscellaneousConsumptionTransCNT"
+			name="miscellaneousConsumptionBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/miscellaneous_consumption_trans.jsp" />
+
+		</action>
+
+
+		<!-- Quality Check Control Transaction Start -->
+		<action path="/transactions/QualityCheckControlTransCNT"
+			type="mms.transactions.controller.action.QualityCheckControlTransCNT"
+			name="qualityCheckControlBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/qualityCheckControlTrans_mms.jsp">
+			</forward>
+			<forward name="view"
+				path="/transactions/qualityCheckControlTransView_mms.jsp">
+			</forward>
+		</action>
+		<!-- End of Quality Check Control Transaction -->
+
+		<action path="/transactions/InstallationTransCNT"
+			type="mms.transactions.controller.action.InstallationTransCNT"
+			name="installationTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/transactions/installationTrans_mms.jsp">
+			</forward>
+			<forward name="view"
+				path="/transactions/installationTransView_mms.jsp">
+			</forward>
+		</action>
+
+		<!-- Indent for imported items Mapping Start (USED IN INDENT DESK)(ANSHUL Transaction Integrated with Indent Desk)-->
+
+		<action path="/transactions/IndentForImportItemsCNT"
+			type="mms.transactions.controller.action.IndentForImportItemsCNT"
+			name="indentForImportItemsBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="index"
+				path="/transactions/indent_for_imported_items.jsp" />
+
+
+		</action>
+
+		<!-- Inspection Report Mapping End -->
+
+
+		<!-- Return Request(USED IN INDENT DESK) -->
+
+		<action path="/transactions/ReturnRequestTransCNT"
+			type="mms.transactions.controller.action.ReturnRequestTransCNT"
+			name="returnRequest" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ReturnRequestTransJsp"
+				path="/transactions/add_ReturnRequestTrans_mms.jsp" />
+		</action>
+
+		<!-- VIEW(USED IN INDENT DESK) -->
+
+		<action path="/transactions/IndentViewTransCNT"
+			type="mms.transactions.controller.action.IndentViewTransCNT"
+			name="indentViewBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view"
+				path="/transactions/indentViewTrans_mms.jsp" />
+		</action>
+
+
+
+		<!-- Request For Contigency Indent(USED IN INDENT DESK) -->
+
+		<action path="/transactions/RequestForContigencyCNT"
+			type="mms.transactions.controller.action.RequestForContigencyCNT"
+			name="requestForContigency" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="RequestForContigencyJsp"
+				path="/transactions/add_RequestForContigencyTrans_mms.jsp" />
+		</action>
+
+
+
+
+		<!-- Request For Annual Purchase Indent(USED IN INDENT DESK) -->
+
+		<action path="/transactions/AnnualPurchaseIndentCNT"
+			type="mms.transactions.controller.action.AnnualPurchaseIndentCNT"
+			name="annualPurchaseIndent" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="AnnualPurchaseIndentJsp"
+				path="/transactions/add_AnnualPurchaseIndentTrans_mms.jsp" />
+		</action>
+
+
+
+
+		<!-- Request For LP Department(USED IN INDENT DESK) -->
+
+		<action path="/transactions/RequestForLPDeptCNT"
+			type="mms.transactions.controller.action.RequestForLPDeptCNT"
+			name="requestForLpDept" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="requestForLpDeptJsp"
+				path="/transactions/add_RequestForLPDeptTrans_mms.jsp" />
+		</action>
+
+
+
+		<!-- Request For LP Patient(USED IN INDENT DESK) -->
+
+		<action path="/transactions/RequestForLPPatientCNT"
+			type="mms.transactions.controller.action.RequestForLPPatientCNT"
+			name="requestForLpPatient" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="requestForLpPatientJsp"
+				path="/transactions/add_RequestForLPPatientTrans_mms.jsp" />
+		</action>
+
+		<!-- Request For LP Staff(USED IN INDENT DESK) -->
+
+		<action path="/transactions/RequestForLPStaffCNT"
+			type="mms.transactions.controller.action.RequestForLPStaffCNT"
+			name="requestForLpStaff" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="requestForLpStaffJsp"
+				path="/transactions/add_RequestForLPStaffTrans_mms.jsp" />
+		</action>
+
+		<!-- Indent DESK Condemnation Type Transaction Mapping -->
+		<action path="/transactions/IndentDeskCondemnationReqTransCNT"
+			type="mms.transactions.controller.action.IndentDeskCondemnationReqTransCNT"
+			name="indentCondemnationTransADDBean" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="condemnationRequest"
+				path="/transactions/add_IndentDeskComdemnationTrans_mms.jsp" />
+		</action>
+
+
+		<!-- Indent Type Transaction Mapping -->
+		<action path="/transactions/IndentTransCNT"
+			type="mms.transactions.controller.action.IndentTransCNT"
+			name="indentTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/transactions/" />
+		</action>
+		<!-- Indent ADD Type Transaction Mapping -->
+		<action path="/transactions/IndentTransADDCNT"
+			type="mms.transactions.controller.action.IndentTransADDCNT"
+			name="indentTransADDBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="indentTypeAdd"
+				path="/transactions/add_IndentADDTrans_mms.jsp" />
+		</action>
+
+
+
+
+		<action path="/transactions/ChallanProcessTransCNT"
+			type="mms.transactions.controller.action.ChallanProcessTransCNT"
+			name="challanProcessBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="receivechallan"
+				path="/transactions/challanprocess_receive_mmstrans.jsp" />
+
+			<forward name="verifychallan"
+				path="/transactions/challanprocess_verify_mmstrans.jsp" />
+
+		</action>
+
+
+		<action path="/transactions/PODeskTransCNT"
+			type="mms.transactions.controller.action.PODeskTransCNT"
+			name="PODeskTransBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+
+
+		<action path="/transactions/PODeskGenerateTransCNT"
+			type="mms.transactions.controller.action.PODeskGenerateTransCNT"
+			name="PODeskGenerateTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="generate"
+				path="/transactions/generate_PODeskTrans_mms.jsp" />
+		    <forward name="generatewithItem"
+				path="/transactions/generate_POWithItemTrans_mms.jsp" />
+				<forward name="modifyWithItem"
+				path="/transactions/generate_modify_POWithItemTrans_mms.jsp" />
+				<forward name="viewWithItem" path="/transactions/view_POWithItemTrans_mms.jsp" />
+				<forward name="poApproval"
+				path="/transactions/generate_POApproval_mms.jsp" />
+				<forward name="viewWithApprovalItem" path="/transactions/view_POWithItemTransApproval_mms.jsp" />				
+		</action>
+
+		<action path="/transactions/PODeskScheduleTransCNT"
+			type="mms.transactions.controller.action.PODeskScheduleTransCNT"
+			name="PODeskScheduleTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="schedule"
+				path="/transactions/schedule_PODeskTrans_mms.jsp" />
+		</action>
+
+		<action path="/transactions/PODeskViewTransCNT"
+			type="mms.transactions.controller.action.PODeskViewTransCNT"
+			name="PODeskViewTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view" path="/transactions/view_PODeskTrans_mms.jsp" />
+			
+				
+				
+				
+		</action>
+
+		<action path="/transactions/PODeskCancelTransCNT"
+			type="mms.transactions.controller.action.PODeskCancelTransCNT"
+			name="PODeskCancelTransBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="cancel"
+				path="/transactions/cancel_PODeskTrans_mms.jsp" />
+		</action>
+
+		<action path="/transactions/PODeskPrintTransCNT"
+			type="mms.transactions.controller.action.PODeskPrintTransCNT"
+			name="poPrintBean" scope="request" validate="false"
+			parameter="hmode">
+		</action>
+		
+		
+		<action path="/transactions/IssueTransCNT"
+			type="mms.transactions.controller.action.IssueTransCNT"
+			name="issueBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issue" path="/transactions/issue_trans.jsp" />
+			<forward name="issueGo"
+				path="/transactions/issue_trans_go.jsp" />
+			<!-- Added by Neha Sharma 15th July 2013 -->
+			<forward name="view" path="/transactions/view_PatientIssue_trans.jsp" />	
+		</action>
+<!--  
+		<action path="/transactions/IssueTransCNT"
+			type="mms.transactions.controller.action.IssueTransCNT"
+			name="issueBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issue"      path="/transactions/issue_trans.jsp" />
+			<forward name="issueGo"    path="/transactions/issue_trans_go.jsp" />			
+			<forward name="issueGoWithoutCrNo" path="/transactions/issue_trans_go_withoutCrNo.jsp" />
+			<forward name="view"        path="/transactions/view_PatientIssue_trans.jsp" />	
+			<forward name="cancelIssue" path="/transactions/cancel_PatientIssue_trans.jsp" />
+			<forward name="cancelGo"    path="/transactions/issue_cancel_trans_go.jsp" />		
+		</action>
+-->
+		<action path="/transactions/IssueEmployeeTransCNT"
+			type="mms.transactions.controller.action.IssueEmployeeTransCNT"
+			name="issueEmpBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issueemp"
+				path="/transactions/issue_emp_trans.jsp" />
+			<forward name="issueempGo"
+				path="/transactions/issue_emp_go_trans.jsp" />
+		</action>
+
+		<action path="/transactions/ReminderDetailsTransCNT"
+			type="mms.transactions.controller.action.ReminderDetailsTransCNT"
+			name="reminderDetailBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="newindex"
+				path="/transactions/reminderdetails_trans.jsp" />
+		</action>
+
+	   <action path="/transactions/SerialNoGenerationTransCNT"
+			type="mms.transactions.controller.action.SerialNoGenerationTransCNT"
+			name="serialNoGenerationBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage"
+				path="/transactions/serial_no_gener_mms_trans.jsp" />
+				<forward name="rePrint"
+				path="/transactions/serial_no_gen_reprint_mms_trans.jsp" />
+		</action>
+
+		<!-- Change Request  RAOL_DWH_CR_2-->
+  		<action path="/transactions/BudgetAllocationDetailProcessTransCNT"
+			type="mms.transactions.controller.action.BudgetAllocationDetailProcessTransCNT"
+			name="budgetAllocationDetailProcessTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage" path="/transactions/dwh_main_budgetAllocationDetailProcess_trans.jsp" />
+			<forward name="view" path="/transactions/dwh_view_budgetAllocationDetailProcess_trans.jsp" />
+		</action>
+
+		
+		<action path="/transactions/SupplierPerformanceDtlTransCNT"
+			type="mms.transactions.controller.action.SupplierPerformanceDtlTransCNT"
+			name="supplierPerformanceDtlTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage" path="/transactions/dwh_main_supplierPerformanceDtl_trans.jsp" />
+			<forward name="view" path="/transactions/dwh_view_supplierPerformanceDtl_trans.jsp" />
+		</action>
+		
+		
+		<action path="/transactions/ChallanPerformanceCNT"
+			type="mms.transactions.controller.action.ChallanPerformanceCNT"
+			name="challanPerformanceFB" scope="request" validate="false"
+			parameter="hmode">			
+			<forward name="initialPage" path="/transactions/dwh_main_ChallanPerformanceDtl_trans.jsp" />
+			
+		</action>
+		
+		
+		<action path="/transactions/ChallanModificationTransCNT"
+			type="mms.transactions.controller.action.ChallanModificationTransCNT"
+			name="challanModificationTransFB" scope="request" validate="false"
+			parameter="hmode">			
+			<forward name="initialPage" path="/transactions/dwh_main_ChallanModification_trans.jsp" />
+			
+		</action>
+		
+		<action path="/transactions/IssueDtlModificationTransCNT"
+			type="mms.transactions.controller.action.IssueDtlModificationTransCNT"
+			name="issueDtlModificationTransFB" scope="request" validate="false"
+			parameter="hmode">			
+			<forward name="main" path="/transactions/dwh_main_IssueDtlModification_trans.jsp" />
+			
+		</action>
+		
+		<action path="/transactions/ThirdPartyIssueDtlModificationTransCNT"
+			type="mms.transactions.controller.action.ThirdPartyIssueDtlModificationTransCNT"
+			name="thirdPartyIssueDtlModificationTransFB" scope="request" validate="false"
+			parameter="hmode">			
+			<forward name="main" path="/transactions/dwh_main_ThirdPartyIssueDtl_trans.jsp" />
+			
+		</action>
+		
+		<action path="/transactions/IssueSampleModificationTransCNT"
+			type="mms.transactions.controller.action.IssueSampleModificationTransCNT"
+			name="issueSampleModificationTransFB" scope="request" validate="false"
+			parameter="hmode">			
+			<forward name="main" path="/transactions/dwh_main_IssueSampleModification_trans.jsp" />
+			
+		</action>
+		
+		
+		
+        <!-- Drug WareHouse Administration Masters (By Amit Kumar) Start  -->
+						
+		 <action path="/masters/DesignationMstCNT"
+			type="mms.masters.controller.action.DesignationMstCNT"
+			name="designationMst" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/administration/dwh_add_designation_mst.jsp" />
+			<forward name="modify"
+				path="/administration/dwh_modify_designation_mst.jsp" />
+		 </action>
+		
+		
+		<!-- Drug WareHouse Administration Masters (By Amit Kumar) End  -->
+
+        
+
+		 
+ 		<action path="/transactions/UpdateStockStatusTransCNT"
+			type="mms.transactions.controller.action.UpdateStockStatusTransCNT"
+			name="updateStockStatusTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage" path="/transactions/dwh_main_updateStockStatus_trans.jsp" />
+			<forward name="view" path="/transactions/dwh_view_updateStockStatus_trans.jsp" />
+		</action>
+		
+		
+		
+		<action path="/transactions/IssueSampleForQcCheckTransCNT"
+			type="mms.transactions.controller.action.IssueSampleForQcCheckTransCNT"
+			name="issueSampleForQcCheckTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage" path="/transactions/dwh_main_issueSampleForQcCheck_trans.jsp" />
+			<forward name="view" path="/transactions/dwh_view_issueSampleForQcCheck_trans.jsp" />
+		</action>
+		
+		<action path="/transactions/QcDetailOnlineTransCNT"
+			type="mms.transactions.controller.action.QcDetailOnlineTransCNT"
+			name="qcDetailOnlineTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage" path="/transactions/dwh_main_qcDetailOnline_trans.jsp" />
+			<forward name="view" path="/transactions/dwh_view_qcDetailOnline_trans.jsp" />
+		</action>
+		
+		<action path="/transactions/OnlineTransferDetailTransCNT"
+			type="mms.transactions.controller.action.OnlineTransferDetailTransCNT"
+			name="onlineTransferDetailTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage"
+				path="/transactions/dwh_main_onlineTransferDetail_trans.jsp" />
+			<forward name="GoPage"
+				path="/transactions/dwh_main_onlineTransferDetail_trans_GO.jsp" />
+			<forward name="view"
+				path="/transactions/dwh_view_onlineTransferDetail_trans.jsp" />
+		</action>
+
+		<!-- Change Request  DWH_RAOL_ DCD_29Dec11  [Sample Receive Detail (by Adil Wasi)]-->
+  		<action path="/transactions/SampleReceiveDetailProcessTransCNT"
+			type="mms.transactions.controller.action.SampleReceiveDetailProcessTransCNT"
+			name="sampleReceiveDetailProcessTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="initialPage" path="/transactions/dwh_main_sampleReceiveDetailProcess_trans.jsp" />
+			<forward name="view" path="/transactions/dwh_view_sampleReceiveDetailProcess_trans.jsp" />
+		</action>
+
+		 <action path="/transactions/POApprovalDeskCNT"
+			type="mms.transactions.controller.action.POApprovalDeskCNT"
+			name="poApprovalDeskBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="view" path="" />
+		</action>
+		
+
+	</action-mappings>
+	<!-- Transaction Action Mappings End -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+
+
+	
+</struts-config>

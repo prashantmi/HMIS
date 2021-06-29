@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Master'>
+		<common-values>
+			<master-name>ProcedureMaster</master-name>
+			<master-title>Procedure Master</master-title>
+		</common-values>	
+	
+	<list-page>
+				<tableHeading>Procedure Master</tableHeading> 
+				<list-table>HSRV_PROCEDURE_MST</list-table>
+				
+				<columns>
+					 <column>Procedure</column>				 
+  			   </columns>
+					<query-detail>
+					<fields>
+					    <field>INITCAP(A.HSRSTR_PROCEDURE_NAME)</field>					    					    
+					</fields>
+					<primaryKey>
+						<field>A.HSRNUM_PROCEDURE_CODE </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>						
+					</primaryKey>
+					<tables>
+						<table alias='A'>HSRV_PROCEDURE_MST</table>												
+					</tables>
+					<condition>			
+							<isvalid-field> A.GNUM_ISVALID</isvalid-field>
+                             <orderby> order by INITCAP(A.HSRSTR_PROCEDURE_NAME)</orderby>                             
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<static-page>/servicearea/masters/ProcedureMaster.cnt</static-page>	
+				
+		</add-page>
+		
+		<modify-page>
+		    <static-page>/servicearea/masters/ProcedureMaster.cnt</static-page>	
+		    
+		</modify-page>
+	</master>	
+</master-config>		

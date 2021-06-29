@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE struts-config PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+
+
+ <!-- ========== Form Bean Definitions =================================== -->
+<form-beans>       
+	 <form-bean name="BoardMasterFB" type="medicalboard.masters.controller.fb.BoardMasterFB"/>
+	 <form-bean name="CertificateTypeMstFB" type="medicalboard.masters.controller.fb.CertificateTypeMstFB"/>
+	 <form-bean name="OrganizationMstFB" type="medicalboard.masters.controller.fb.OrganizationMstFB"/>
+	 <form-bean name="CertificateBoardMstFB" type="medicalboard.masters.controller.fb.CertificateBoardMstFB"/>
+	 <form-bean name="checklistMasterFB" type="medicalboard.masters.controller.fb.ChecklistMasterFB"/>
+	 <form-bean name="certificateChecklistMasterFB" type="medicalboard.masters.controller.fb.CertificateChecklistMasterFB"/>
+	 <form-bean name="RoleMasterFB" type="medicalboard.masters.controller.fb.RoleMasterFB"/>
+	 <form-bean name="ReferMappingMstFB" type="medicalboard.masters.controller.fb.ReferMappingMstFB"/>
+	 <form-bean name="CertificateBoardMstFB" type="medicalboard.masters.controller.fb.CertificateBoardMstFB"/>
+	 <form-bean name="InvestigationMappingMstFB" type="medicalboard.masters.controller.fb.InvestigationMappingMstFB"/>
+</form-beans>       
+
+
+	<action-mappings>
+	
+	   <action path="/masters/RoleMasterACTION"
+				type="medicalboard.masters.controller.action.RoleMasterACT"
+				name="RoleMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/roleMasterAddMod.jsp">
+			<forward name="NEW" path="/masters/roleMasterAddMod.jsp"/>
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		 </action>
+	
+		<action path="/masters/BoardMasterACTION"
+			type="medicalboard.masters.controller.action.BoardMasterACT"
+			name="BoardMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/boardMstAddMod.jsp">
+			<forward name="NEW" path="/masters/boardMstAddMod.jsp"/> 
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		</action>
+		
+		
+		<action path="/master/CertificateTypeMasterACTION"
+				type="medicalboard.masters.controller.action.CertificateTypeMstACT"
+				name="CertificateTypeMstFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/mbCertificateTypeMstAddMod.jsp">
+			<forward name="NEW" path="/masters/mbCertificateTypeMstAddMod.jsp"/>
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		 </action>
+		 
+		 
+		 <action path="/masters/OrganizationMstACTION"
+				type="medicalboard.masters.controller.action.OrganizationMstACT"
+				name="OrganizationMstFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/masters/organizationMstAddMod.jsp">
+			<forward name="NEW" path="/masters/organizationMstAddMod.jsp"/>
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		 </action>
+		 
+
+	 	<action path="/master/checklistMaster"
+					type="medicalboard.masters.controller.action.CheckListMasterACTION"
+					name="checklistMasterFB"
+					validate="false"
+					scope="request"
+					parameter="hmode"
+					input="/masters/checklistMasterAddMod.jsp">
+			<forward name="NEW" path="/masters/checklistMasterAddMod.jsp"/>
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		 </action>
+		 
+	 	<action path="/certificateChecklistMaster"
+					type="medicalboard.masters.controller.action.CertificateCheckListMasterACTION"
+					name="certificateChecklistMasterFB"
+					validate="false"
+					scope="request"
+					parameter="hmode"
+					input="/masters/certificateChecklistMaster.jsp">
+			<forward name="NEW" path="/masters/certificateChecklistMaster.jsp"/>
+			<forward name="MODIFY" path="/masters/certificateChecklistMasterMod.jsp"/>
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		 </action>
+		 
+ 
+	  <action path="/certificateBoardMapping"
+			type="medicalboard.masters.controller.action.CertificateBoardMstACT"
+			name="CertificateBoardMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/certificateBoardMstAddMod.jsp">
+		<forward name="NEW" path="/masters/certificateBoardMstAddMod.jsp"/>
+		<forward name="CANCEL" path="/../startup/initPage.jsp" />	
+		</action>
+		
+		
+		  <action path="/masters/ReferMappingMstACTION"
+			type="medicalboard.masters.controller.action.ReferMappingMstACT"
+			name="ReferMappingMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/mbReferMappingMstAddModd.jsp">
+		<forward name="NEW" path="/masters/mbReferMappingMstAddModd.jsp"/>
+	    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		</action>
+		
+		<action path="/masters/InvetigationMappingMstACTION"
+			type="medicalboard.masters.controller.action.InvestigationMappingMstACT"
+			name="InvestigationMappingMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/investigationMappingMstAdd.jsp">
+		<forward name="NEW" path="/masters/investigationMappingMstAdd.jsp"/>
+		<forward name="MODIFY" path="/masters/investigationMappingMstMod.jsp"/>
+	    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		</action>
+		
+		
+		
+	
+	</action-mappings> 
+	  
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+	      	<set-property property="definitions-config" value="/WEB-INF/OpdDesk-tiles-def.xml"/>
+	    	<set-property property="definitions-validate-parser" value="true"/>
+	     	<set-property property="moduleAware" value="true"/>    
+	</plug-in> 
+
+	
+</struts-config>

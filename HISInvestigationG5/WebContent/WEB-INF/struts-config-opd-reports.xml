@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC 
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+	
+		<form-bean name="commonReportFB" type="hisglobal.presentation.ReportFB"/>
+		<form-bean name="opdPatReferralDtlFB" type="opd.reports.controller.fb.OpdPatientsReferralDtlFB"/>
+		<form-bean name="opdDeptWiseReferPatFromFB" type="opd.reports.controller.fb.OpdDeptWiseReferPatFromFB"/>
+		<form-bean name="opdDeptWiseReferPatToFB" type="opd.reports.controller.fb.OpdDeptWiseReferPatToFB"/>
+		<form-bean name="opdDeptUnitCatWiseFB" type="opd.reports.controller.fb.OpdDeptUnitCatWiseStatFB"/>
+		<form-bean name="opdDeptUnitUserWiseFB" type="opd.reports.controller.fb.OpdDeptUnitUserWiseStatFB"/>
+		<form-bean name="opdCountOldPatNextVisitFB" type="opd.reports.controller.fb.OpdCountOldPatNextVisitFB"/>
+		<form-bean name="opdDeptUnitDiagnosisStatFB" type="opd.reports.controller.fb.OpdDeptUnitDiagnosisStatFB"/>
+		<form-bean name="opdDeptUnitRegCatPatCatFB" type="opd.reports.controller.fb.OpdDeptUnitRegCatPatCatFB"/>
+		<form-bean name="opdReferredPatientListFB" type="opd.reports.controller.fb.OpdReferredPatientListFB"/>
+		<form-bean name="opdDeptWiseDiseaseCodeListFB" type="opd.reports.controller.fb.OpdDeptWiseDiseaseCodeListFB"/>
+		<form-bean name="opdDiscrepancyReportFB" type="opd.reports.controller.fb.OpdDiscrepancyReportFB"/>
+		<form-bean name="opdDeptUnitEpisodeStatusPatListFB" type="opd.reports.controller.fb.OpdDeptUnitEpisodeStatusPatListFB"/>
+		<form-bean name="opdRosterFB" type="opd.reports.controller.fb.OpdRosterFB"/>
+		<form-bean name="opdDeptUnitDoctorWiseFB" type="opd.reports.controller.fb.OpdDeptUnitDoctorWiseFB"/>
+		<form-bean name="opdCaseSheetFB" type="opd.reports.controller.fb.OpdCaseSheetFB"/>
+		<form-bean name="opdMedicalCertificateIssuedFB" type="opd.reports.controller.fb.OpdMedicalCertificateIssuedFB"/>
+		<form-bean name="opdDeptUnitWiseFB" type="opd.reports.controller.fb.OpdDeptUnitWiseStatFB"/>
+		<form-bean name="opdReportFB" type="opd.reports.controller.fb.OpdReportFB"/>
+		<form-bean name="MorbidityReportFB" type="opd.reports.controller.fb.MorbidityReportFB"/>
+		<form-bean name="ICDCodeReportFB" type="opd.reports.controller.fb.ICDCodeReportFB"/>
+		<form-bean name="diagnosisWiseOpdAndIpdReportFB" type="opd.reports.controller.fb.DiagnosisWiseOpdAndIpdReportFB"/>
+		<form-bean name="countNoOfPatientOfAnoRectangleDiseaseReportFB" type="opd.reports.controller.fb.CountNoOfPatientOfAnoRectangleDiseaseReportFB"/>
+		<form-bean name="opdDiseaseWisePatAttnddFB" type="opd.reports.controller.fb.OpdDiseaseWisePatAttnddFB"/>
+		<form-bean name="opdDiseaseWisePatAttnddInOutFB" type="opd.reports.controller.fb.OpdDiseaseWisePatAttnddInOutFB"/>
+		<form-bean name="OPDPatientAttendedReportFB" type="opd.reports.controller.fb.OPDPatientAttendedReportFB"/>
+		
+	</form-beans>
+	
+	<action-mappings>
+	
+		<action path="/report"
+				type="opd.reports.controller.action.OpdCommonReportACTION"
+				name="commonReportFB"
+				scope="request"
+				parameter="mode">
+			<forward name="CANCEL" path="/opdReportInitial"/>
+			<forward name="NEW" path="/opdReportInitial"/>
+			<forward name="OPDPATREFERRALDTLREPORT" path="/opdPatReferralDtlReportdefinition"/>
+			<forward name="OPDPATREFERRALDTLREPORTVIEW" path="/report/opdPatReferralDtlReport.cnt"/>	
+			<forward name="OPDDEPTWISEREFERPATFROMREPORT" path="/opdDeptWiseReferPatFromReportdefinition"/>
+			<forward name="OPDDEPTWISEREFERPATFROMREPORTVIEW" path="/report/opdDeptWiseReferPatFromReport.cnt"/>
+			<forward name="OPDDEPTWISEREFERPATTOREPORT" path="/opdDeptWiseReferPatToReportdefinition"/>
+			<forward name="OPDDEPTWISEREFERPATTOREPORTVIEW" path="/report/opdDeptWiseReferPatToReport.cnt"/>
+			<forward name="OPDDEPTUNITCATWISESTATREPORT" path="/opdDeptUnitCatWiseStatReportdefinition"/>
+			<forward name="OPDDEPTUNITCATWISESTATREPORTVIEW" path="/report/opdDeptUnitCatWiseStatReport.cnt"/>
+			<forward name="OPDDEPTUNITUSERWISESTATREPORT" path="/opdDeptUnitUserWiseStatReportdefinition"/>
+			<forward name="OPDDEPTUNITUSERWISESTATREPORTVIEW" path="/report/opdDeptUnitUserWiseStatReport.cnt"/>
+			<forward name="OPDDEPTUNITWISESTATREPORT" path="/opdDeptUnitWiseStatReportdefinition"/>
+			<forward name="OPDDEPTUNITWISESTATREPORTVIEW" path="/report/opdDeptUnitWiseStatReport.cnt"/>
+			<forward name="OPDCOUNTOLDPATNEXTVISITREPORT" path="/opdCountOldPatNextVisitReportdefinition"/>
+			<forward name="OPDCOUNTOLDPATNEXTVISITREPORTVIEW" path="/report/opdCountOldPatNextVisitReport.cnt"/>
+			<forward name="OPDDEPTUNITDIAGNOSISSTATREPORT" path="/opdDeptUnitDiagnosisStatReportdefinition"/>
+			<forward name="OPDDEPTUNITDIAGNOSISSTATREPORTVIEW" path="/report/opdDeptUnitDiagnosisStatReport.cnt"/>
+			<forward name="OPDDEPTUNITREGCATPATCATREPORT" path="/opdDeptUnitRegCatPatCatReportdefinition"/>
+			<forward name="OPDDEPTUNITREGCATPATCATREPORTVIEW" path="/report/opdDeptUnitRegCatPatCatReport.cnt"/>
+			<forward name="OPDREFERREDPATIENTLISTREPORT" path="/opdReferredPatientListReportdefinition"/>
+			<forward name="OPDREFERREDPATIENTLISTREPORTVIEW" path="/report/opdReferredPatientListReport.cnt"/>
+			<forward name="OPDDEPTWISEDISEASECODELISTREPORT" path="/opdDeptWiseDiseaseCodeListReportdefinition"/>
+			<forward name="OPDDEPTWISEDISEASECODELISTREPORTVIEW" path="/report/opdDeptWiseDiseaseCodeListReport.cnt"/>
+			<forward name="OPDDISCREPANCYREPORT" path="/opdDiscrepancyReportdefinition"/>
+			<forward name="OPDDISCREPANCYREPORTVIEW" path="/report/opdDiscrepancyReport.cnt"/>
+			<forward name="OPDDEPTUNITEPISODESTATUSPATLISTREPORT" path="/opdDeptUnitEpisodeStatusPatListReportdefinition"/>
+			<forward name="OPDDEPTUNITEPISODESTATUSPATLISTREPORTVIEW" path="/report/opdDeptUnitEpisodeStatusPatListReport.cnt"/>
+			<forward name="OPDROSTERREPORT" path="/opdRosterReportdefinition"/>
+			<forward name="OPDROSTERREPORTVIEW" path="/report/opdRosterReport.cnt"/>
+			<forward name="OPDDEPTUNITDOCTORWISEREPORT" path="/opdDeptUnitDoctorWiseReportdefinition"/>
+			<forward name="OPDDEPTUNITDOCTORWISEREPORTVIEW" path="/report/opdDeptUnitDoctorWiseReport.cnt"/>
+			<forward name="OPDCASESHEETREPORT" path="/opdCaseSheetReportdefinition"/>
+			<forward name="OPDCASESHEETREPORTVIEW" path="/report/opdCaseSheetReport.cnt"/>
+			<forward name="OPDMEDICALCERTIFICATEISSUEDREPORT" path="/opdMedicalCertificateIssuedReportdefinition"/>
+			<forward name="OPDMEDICALCERTIFICATEISSUEDREPORTVIEW" path="/report/opdMedicalCertificateIssuedReport.cnt"/>
+			<forward name="NUMBEROFPATIENTIMAGEUPLOADEDREPORT" path="/numberOfPatientImageUploadedReportdefinition"/>
+			<forward name="NUMBEROFPATIENTIMAGEUPLOADEDREPORTVIEW" path="/report/numberOfPatientImageUploadedReport.cnt"/>
+			<forward name="OPDLISTINGOFPATIENTREPORT" path="/opdPatientListingReportdefinition"/>
+			<forward name="OPDLISTINGOFPATIENTREPORTVIEW" path="/report/opdPatientListingReport.cnt"/>
+			<forward name="PATIENTLISTINGREPORTFOROPDVISIT" path="/patientListingReportForOpdVisitdefinition"/>
+			<forward name="PATIENTLISTINGREPORTFOROPDVISITVIEW" path="/report/patientListingReportForOpdVisit.cnt"/>
+			<forward name="AVERAGESTAYTIMEOFTHEPATIENT" path="/averageStayTimeOfThePatientdefinition"/>
+			<forward name="AVERAGESTAYTIMEOFTHEPATIENTVIEW" path="/report/averageStayTimeOfThePatient.cnt"/>
+			<forward name="EQUIPMENTISSUEREPORT" path="/equipmentIssueReportdefinition"/>
+			<forward name="EQUIPMENTISSUEREPORTVIEW" path="/report/equipmentIssueReport.cnt"/>
+			<forward name="MORBIDITYREPORT" path="/morbidityReportdefinition"/>
+			<forward name="MORBIDITYREPORTVIEW" path="/report/morbidityReport.cnt"/>
+			<forward name="ICDCODEREPORT" path="/icdCodeReportdefinition"/>
+			<forward name="ICDCODEREPORTVIEW" path="/report/icdCodeReport.cnt"/>
+			<forward name="DIAGNOSISWISEOPDANDIPDREPORT" path="/diagnosisWiseOpdAndIpdReportdefinition"/>
+			<forward name="DIAGNOSISWISEOPDANDIPDREPORTVIEW" path="/report/diagnosisWiseOpdAndIpdReport.cnt"/>
+			<forward name="COUNTNOOFPATIENTOFANORECTANGLEDISEASEREPORT" path="/countNoOfPatientOfAnoRectangleDiseaseReportdefinition"/>
+			<forward name="COUNTNOOFPATIENTOFANORECTANGLEDISEASEREPORTVIEW" path="/report/countNoOfPatientOfAnoRectangleDiseaseReport.cnt"/>
+			
+			
+			<forward name="OPDDISEASEWISENOOFPATATTENDALLREPORT" path="/opdDiseaseWiseNoOfPatAttendeddefinition"/>
+			<forward name="OPDDISEASEWISENOOFPATATTENDALLREPORTVIEW" path="/report/opdDiseaseWiseNoOfPatAttendedReport.cnt"/>
+			
+			<forward name="OPDDISEASEWISENOOFPATATTENDINOUTREPORT" path="/opdDiseaseWiseNoOfPatAttendedInOutdefinition"/>
+			<forward name="OPDDISEASEWISENOOFPATATTENDINOUTREPORTVIEW" path="/report/opdDiseaseWiseNoOfPatAttendedInOutReport.cnt"/>
+			
+			<forward name="OPDPATIENTATTENDED" path="/opdPatientAttendedReportDefinition"/>
+			<forward name="OPDPATIENTATTENDEDVIEW" path="/report/opdPatientAttendedReport.cnt"/> 
+		</action>		
+	
+		<action path="/report/opdPatReferralDtlReport"
+				type="opd.reports.controller.action.OpdPatientsReferralDtlACTION"
+				name="opdPatReferralDtlFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdPatientsReferralDtl.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/opdDeptWiseReferPatFromReport"
+				type="opd.reports.controller.action.OpdDeptWiseReferPatFromACTION"
+				name="opdDeptWiseReferPatFromFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdDeptWiseReferPatFrom.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/opdDeptWiseReferPatToReport"
+				type="opd.reports.controller.action.OpdDeptWiseReferPatToACTION"
+				name="opdDeptWiseReferPatToFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdDeptWiseReferPatTo.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/opdDeptUnitCatWiseStatReport"
+				type="opd.reports.controller.action.OpdDeptUnitCatWiseStatACTION"
+				name="opdDeptUnitCatWiseFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdDeptUnitCatWiseStat.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/opdDeptUnitUserWiseStatReport"
+				type="opd.reports.controller.action.OpdDeptUnitUserWiseStatACTION"
+				name="opdDeptUnitUserWiseFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdDeptUnitUserWiseStat.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/opdCountOldPatNextVisitReport"
+				type="opd.reports.controller.action.OpdCountOldPatNextVisitACTION"
+				name="opdCountOldPatNextVisitFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdCountOldPatNextVisit.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 	
+		</action>
+		<action path="/report/opdDeptUnitDiagnosisStatReport"
+				type="opd.reports.controller.action.OpdDeptUnitDiagnosisStatACTION"
+				name="opdDeptUnitDiagnosisStatFB"
+				scope="request"
+				parameter="reportMode">	
+			<forward name="NEW" path="/reports/jsp/opdDeptUnitDiagnosisStat.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		<action path="/report/opdDeptUnitRegCatPatCatReport"
+				type="opd.reports.controller.action.OpdDeptUnitRegCatPatCatACTION"
+				name="opdDeptUnitRegCatPatCatFB"
+				scope="request"
+				parameter="reportMode">	
+			<forward name="NEW" path="/reports/jsp/opdDeptUnitRegCatPatCat.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		<action path="/report/opdReferredPatientListReport"
+				type="opd.reports.controller.action.OpdReferredPatientListACTION"
+				name="opdReferredPatientListFB"
+				scope="request"
+				parameter="reportMode">	
+			<forward name="NEW" path="/reports/jsp/opdReferredPatientList.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		<action path="/report/opdDeptWiseDiseaseCodeListReport"
+				type="opd.reports.controller.action.OpdDeptWiseDiseaseCodeListACTION"
+				name="opdDeptWiseDiseaseCodeListFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdDeptWiseDiseaseCodeList.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		<action path="/report/opdDiscrepancyReport"
+				type="opd.reports.controller.action.OpdDiscrepancyReportACTION"
+				name="opdDiscrepancyReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdDiscrepancyReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		<action path="/report/opdDeptUnitEpisodeStatusPatListReport"
+				type="opd.reports.controller.action.OpdDeptUnitEpisodeStatusPatListACTION"
+				name="opdDeptUnitEpisodeStatusPatListFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdDeptUnitEpisodeStatusPatList.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>	
+		
+		
+		<action  path="/report/initialAction"
+		    type="opd.reports.controller.action.OpdCommonReportInitialACTION"
+		    name="commonReportFB"
+		    validate="false"
+		   	scope="request"
+		   	input="/transaction/opdReportDeskLeftMenu.jsp">    
+		    <forward name="NEW" path="/reports/jsp/opdCommonReportInitial.jsp" />  	
+		</action>
+		<action path="/report/opdRosterReport"
+				type="opd.reports.controller.action.OpdRosterACTION"
+				name="opdRosterFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdRoster.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		<action path="/report/opdDeptUnitDoctorWiseReport"
+				type="opd.reports.controller.action.OpdDeptUnitDoctorWiseACTION"
+				name="opdDeptUnitDoctorWiseFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdDeptUnitDoctorWise.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		<action path="/report/opdCaseSheetReport"
+				type="opd.reports.controller.action.OpdCaseSheetACTION"
+				name="opdCaseSheetFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdCaseSheet.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		<action path="/report/opdMedicalCertificateIssuedReport"
+				type="opd.reports.controller.action.OpdMedicalCertificateIssuedACTION"
+				name="opdMedicalCertificateIssuedFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdMedicalCertificateIssued.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>	
+		<action path="/report/opdDeptUnitWiseStatReport"
+				type="opd.reports.controller.action.OpdDeptUnitWiseStatACTION"
+				name="opdDeptUnitWiseFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdDeptUnitWiseStat.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/numberOfPatientImageUploadedReport"
+				type="opd.reports.controller.action.OpdReportACTION"
+				name="opdReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/numberOfPatientImageUploaded.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/opdPatientListingReport"
+				type="opd.reports.controller.action.OpdReportACTION"
+				name="opdReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdListingOfPatient.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/patientListingReportForOpdVisit"
+				type="opd.reports.controller.action.OpdReportACTION"
+				name="opdReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/patientListingReportForOPDVisit.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/averageStayTimeOfThePatient"
+				type="opd.reports.controller.action.OpdReportACTION"
+				name="opdReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/averageStayTimeOfThePatient.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/equipmentIssueReport"
+				type="opd.reports.controller.action.OpdReportACTION"
+				name="opdReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/equipmentIssueReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/morbidityReport"
+				type="opd.reports.controller.action.MorbidityReportACTION"
+				name="MorbidityReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/morbidityReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/icdCodeReport"
+				type="opd.reports.controller.action.IcdCodeReportACTION"
+				name="ICDCodeReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/icdCodeReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/diagnosisWiseOpdAndIpdReport"
+				type="opd.reports.controller.action.DiagnosisWiseOpdAndIpdReportACTION"
+				name="diagnosisWiseOpdAndIpdReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/diagnosisWiseOpdAndIpdReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/countNoOfPatientOfAnoRectangleDiseaseReport"
+				type="opd.reports.controller.action.CountNoOfPatientOfAnoRectangleDiseaseReportACTION"
+				name="countNoOfPatientOfAnoRectangleDiseaseReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/countNoOfPatientOfAnoRectangleDiseaseReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/opdDiseaseWiseNoOfPatAttendedReport"
+				type="opd.reports.controller.action.OpdDiseaseWisePatAttnddACTION"
+				name="opdDiseaseWisePatAttnddFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/OpdDiseaseWisePatAttAll.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/opdDiseaseWiseNoOfPatAttendedInOutReport"
+				type="opd.reports.controller.action.OpdDiseaseWisePatAttnddInOutACTION"
+				name="opdDiseaseWisePatAttnddInOutFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/OpdDiseaseWisePatAttInout.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/opdPatientAttendedReport"
+				type="opd.reports.controller.action.OPDPatientAttendedReportACTION"
+				name="OPDPatientAttendedReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/opdPatientAttendedReport.jsp"/>		
+			<forward name="ERROR" path="/reports/jsp/opdErrorPageReportDataNotFound.jsp"/>  
+		</action>
+		
+		<action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+		
+	</action-mappings>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+	 <plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/OpdDesk-tiles-def.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+	</plug-in>        
+
+</struts-config>          

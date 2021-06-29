@@ -1,0 +1,241 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Menu Template Master'>
+		<common-values>
+			<master-name>OPDMenuTemplateMaster</master-name>
+			<master-title>Menu Template Master</master-title>
+		</common-values>
+
+		<list-page>
+			<tableHeading>Menu Template Master</tableHeading>
+			<list-table>GBLT_MENU_TEMPLATE_MST</list-table>
+
+			<columns>
+				<column>Menu Name</column>
+				<column>Template Name</column>
+				<column>Is Default</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.GSTR_MENU_NAME)</field>
+					<field>INITCAP(B.HGSTR_TEMPLATE_NAME)</field>
+					<field>DECODE(C.HGNUM_ISDEFAULT,1,'Yes',0,'No',null)</field>
+				</fields>
+				<primaryKey>
+					<field>C.GNUM_MENU_ID</field>
+					<field>C.HGNUM_TEMPLATE_ID</field>
+					<field>C.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='C'>GBLT_MENU_TEMPLATE_MST</table>
+					<table alias='B'>HGBT_TEMPLATE_MST</table>
+					<table alias='A'>GBLT_MENU_MST</table>
+				</tables>
+				<condition>
+					<isvalid-field>
+						A.GNUM_MENU_ID=C.GNUM_MENU_ID AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND 
+						B.HGNUM_TEMPLATE_ID=C.HGNUM_TEMPLATE_ID AND B.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND 
+						TRUNC(SYSDATE) BETWEEN TRUNC(B.GDT_EFFECTIVE_FRM) AND TRUNC(NVL(B.GDT_EFFECTIVE_TO,SYSDATE)) AND
+						C.GNUM_ISVALID
+					</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby> ORDER BY INITCAP(A.GSTR_MENU_NAME),INITCAP(B.HGSTR_TEMPLATE_NAME) </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<dynamic-page>
+				<controls>
+					<control type="combo" index="0">
+						<label>Menu Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_MENU_NAME)</text-field>
+									<value-field>A.GNUM_MENU_ID</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_MENU_MST</table>
+								</tables>
+								<condition>
+									<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+									<general> AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.GSTR_MENU_NAME) </general>
+								</condition>
+							</dynamic>
+						</data>
+						<default>0</default>
+						<submitRequired>0</submitRequired>
+					</control>
+
+					<control type="combo" index="1">
+						<label>Template Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGSTR_TEMPLATE_NAME)</text-field>
+									<value-field>A.HGNUM_TEMPLATE_ID</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_TEMPLATE_MST</table>
+								</tables>
+								<condition>
+									<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+									<general>
+										AND TRUNC(SYSDATE) BETWEEN TRUNC(A.GDT_EFFECTIVE_FRM) AND TRUNC(NVL(A.GDT_EFFECTIVE_TO,SYSDATE)) 
+										AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HGSTR_TEMPLATE_NAME)
+									</general>
+								</condition>
+							</dynamic>
+						</data>
+						<default>0</default>
+						<submitRequired>0</submitRequired>
+					</control>
+
+					<control type="combo" index="2">
+						<label>Is Default</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Yes</option>
+								<option value='0'>No</option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+
+					<control type="combo" index="3">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active</option>
+								<option value='2'>In Active</option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+				</controls>
+
+				<insert-query>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='#0'>GNUM_MENU_ID</fields>
+					<fields valueMap='#1'>HGNUM_TEMPLATE_ID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap="#2">HGNUM_ISDEFAULT</fields>
+					<fields valueMap='#3'>GNUM_ISVALID</fields>
+
+					<table>GBLT_MENU_TEMPLATE_MST</table>
+				</insert-query>
+			</dynamic-page>
+		</add-page>
+
+		<modify-page>
+			<dynamic-page>
+				<controls>
+					<control type="text" index="0">
+						<label>Menu Name</label>
+						<constraints size='25' />
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+
+					<control type="combo" index="1">
+						<label>Template Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.HGSTR_TEMPLATE_NAME)</text-field>
+									<value-field>A.HGNUM_TEMPLATE_ID</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_TEMPLATE_MST</table>
+								</tables>
+								<condition>
+									<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+									<general>
+										AND TRUNC(SYSDATE) BETWEEN TRUNC(A.GDT_EFFECTIVE_FRM) AND TRUNC(NVL(A.GDT_EFFECTIVE_TO,SYSDATE)) 
+										AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HGSTR_TEMPLATE_NAME)
+									</general>
+								</condition>
+							</dynamic>
+						</data>
+						<default>#Q1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+
+					<control type="combo" index="2">
+						<label>Is Default</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Yes</option>
+								<option value='0'>No</option>
+							</static>
+						</data>
+						<default>#Q2</default>
+						<submitRequired>0</submitRequired>
+					</control>
+
+					<control type="combo" index="3">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active</option>
+								<option value='2'>In Active</option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+				</controls>
+
+				<initialise-query>
+					<fields>
+						<field>A.GSTR_MENU_NAME</field>
+						<field>C.HGNUM_TEMPLATE_ID</field>
+						<field>C.HGNUM_ISDEFAULT</field>
+					</fields>
+					<tables>
+						<table alias='A'>GBLT_MENU_MST</table>
+						<table alias='C'>GBLT_MENU_TEMPLATE_MST</table>
+					</tables>
+					<condition>
+						<hospital-code>C.GNUM_HOSPITAL_CODE</hospital-code>
+						<general>A.GNUM_MENU_ID=C.GNUM_MENU_ID AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE</general>
+						<dependent>
+							<clause>AND C.GNUM_MENU_ID = #C1</clause>
+							<clause>AND C.HGNUM_TEMPLATE_ID = #C2</clause>
+						</dependent>
+					</condition>
+				</initialise-query>
+				<update-query>
+					<fields valueMap='#1'>HGNUM_TEMPLATE_ID</fields>
+					<fields valueMap='#3'>HGNUM_ISDEFAULT</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+					<table>GBLT_MENU_TEMPLATE_MST</table>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+					<condition>
+						<dependent>
+							<clause> GNUM_MENU_ID = #C1 </clause>
+							<clause> HGNUM_TEMPLATE_ID = #C2 </clause>
+						</dependent>
+					</condition>
+				</update-query>
+			</dynamic-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<form-beans>
+
+	
+		<!-- Reports Form Beans Starts -->
+		
+		<!-- Added by PrashantMi 20-Aug-2019 -->
+		<form-bean name="NdhmConnectFB"
+			type="ndhm_connect.model.NdhmConnectFB">
+		</form-bean>
+		
+		<form-bean name="PatientNdhmLinkFB"
+			type="ndhm_connect.model.PatientNdhmLinkFB">
+		</form-bean>
+		
+		<!-- global CNT Beans Ends -->
+
+	</form-beans>
+
+
+	<action-mappings> 
+		<!--Reports Action Mappings Ends -->
+		
+		<action 
+		  path="/ndhmConnect"
+		  type="ndhm_connect.controller.NdhmConnectCNT"
+		  name="NdhmConnectFB" scope="request" validate="false"
+		  parameter="hmode">
+		 <forward name="NEW" path="/view/ndhmConnect.jsp" />
+		 <forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		 </action>
+
+	</action-mappings>
+
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="new_investigation.investigationResourceBundle" > </message-resources>
+
+	<!-- Tiles Definition Start -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="definitions-config" value="/WEB-INF/new_investigation-tiles-def.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	<!-- Tiles Definition Start -->
+
+</struts-config>

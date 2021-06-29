@@ -1,0 +1,55 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+<field name="shiftModel.strShiftDesc">
+    <field-validator type="requiredstring">
+       <message>Shift Name Is Required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">50</param>
+                    <param name="trim">true</param>
+                    <message>Department Length Cannot Be Greater Than 50 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z0-9]+[ a-zA-Z0-9]*</param>
+       	<message>Shift Name is Required. It Excepts Alphabets With Space Only</message>
+    </field-validator>
+</field>
+<field name="shiftModel.strShiftStartTime">
+    <field-validator type="requiredstring">
+       <message>Shift Start Time is required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">5</param>
+                    <param name="trim">true</param>
+                    <message>Shift Start Time Should Be In Time Format</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">([0-1][0-9]|[2][0-3]):([0-5][0-9])</param>
+       	<message>Shift Start Time is Required. It Excepts Time Format Only(hh:mm)</message>
+    </field-validator>
+</field>
+<field name="shiftModel.strShiftEndTime">
+    <field-validator type="requiredstring">
+       <message>Shift End Time is required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">5</param>
+                    <param name="trim">true</param>
+                    <message>Shift End Time Should Be In Time Format</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">([0-1][0-9]|[2][0-3]):([0-5][0-9])</param>
+       	<message>Shift End Time is Required. It Excepts Time Format Only(hh:mm)</message>
+    </field-validator>
+</field>
+<field name="shiftModel.strShiftType">
+    <field-validator type="regex">
+    <param name="expression">[0-9]</param>
+       <message>Shift Type Is Required.</message>
+    </field-validator>
+</field>
+</validators>

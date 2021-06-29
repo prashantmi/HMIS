@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+	<!-- ***** Start of Diet Kitchen Desk Tiles -->
+		<!-- Diet Kitchen Desk Welcome Page -->
+	<definition name="/deskWelcomeTile" path="/dietkitchen/transactions/jsp/dk_dietkitchen_desk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/dietkitchen/transactions/jsp/dk_desk_welcome_page.jsp" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+		<!-- Under Construction -->
+	<definition name="/underConstructionTile" path="/dietkitchen/transactions/jsp/dk_dietkitchen_desk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+
+		<!-- Cook Tally Form -->
+	<definition name="/cookTallyFormTile" path="/dietkitchen/transactions/jsp/dk_dietkitchen_desk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/dietkitchen/newCookTallyForm.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+
+		<!-- Diet Compilation -->
+	<definition name="/dietCompilationTile" path="/dietkitchen/transactions/jsp/dk_dietkitchen_desk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/dietkitchen/dietCompilation.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+
+		<!-- Ration Calculation -->
+	<definition name="/rationCalculationTile" path="/dietkitchen/transactions/jsp/dk_dietkitchen_desk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/dietkitchen/rationCalculation.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+
+		<!-- Quality Check UP -->
+	<definition name="/qualityCheckupTile" path="/dietkitchen/transactions/jsp/dk_dietkitchen_desk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/dietkitchen/qualityCheckUp.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+		<!-- Diet Dispatch -->
+	<definition name="/dietDispatchTile" path="/dietkitchen/transactions/jsp/dk_dietkitchen_desk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/dietkitchen/newDietDispatch.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	<!-- ***** End of Diet Kitchen Desk Tiles -->
+</tiles-definitions>

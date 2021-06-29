@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config
+  PUBLIC "-//Apache Software Foundation//DTD Struts
+  Configuration 1.1//EN"
+  "http://jakarta.apache.org/struts/dtds/struts-
+  config_1_1.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="AptBean" type="appointment.transactions.controller.fb.Apt_tansactionMainFB" />
+		<form-bean name="Apt_tansactionNewAppointmentFB" type="appointment.transactions.controller.fb.Apt_tansactionNewAppointmentFB" />		
+		<form-bean name="ExtendAppointmentFB" type="appointment.transactions.controller.fb.ExtendAppointmentFB" />
+		<form-bean name="Apt_pateintListandConfirmationFB" type="appointment.transactions.controller.fb.Apt_pateintListandConfirmationFB" />				
+		<form-bean name="patientDetailFB" type="registration.controller.fb.PatientDetailFB" />
+		<form-bean name="SearchByNameFB" type="registration.controller.fb.SearchByNameFB"/>
+				
+	</form-beans>	
+
+	<action-mappings> 
+	
+	
+			
+	   <action path="/appointment/transactions/controller/action/Apt_MainACTION" 
+				type="appointment.transactions.controller.action.Apt_MainACTION"
+				name="AptBean"				
+				parameter="hmainMode"				
+				validate ="false">				
+			<forward name="ShowMainPage" path="/appointment/transactions/Apt_displayResultPage.jsp" />
+		</action>
+		
+	 	<action path="/appointment/transactions/controller/action/Apt_SubACTION" 
+				type="appointment.transactions.controller.action.Apt_SubACTION"
+				name="AptBean"				
+				parameter="hsubMode"
+				validate ="false">						
+				<forward name="WELCOME" path="/appointment/transactions/Apt_WelcomePage.jsp" />
+				<forward name="newAppointment" path="/appointment/transactions/controller/action/Apt_NewAppointmentACTION.cnt" />			
+				<forward name="newAppointmentUnregistered" path="/appointment/transactions/controller/action/Apt_NewAppointmentUnregisteredACTION.cnt" />			
+				<forward name="pateintList" path="/appointment/transactions/controller/action/Apt_pateintListandConfirmationACTION.cnt" />							
+				<forward name="extendAppointment" path="/appointment/transactions/controller/action/Apt_extendAppointmentACTION.cnt" />				
+				
+		</action>
+		
+
+		<action path="/appointment/transactions/controller/action/Apt_NewAppointmentACTION" 
+				type="appointment.transactions.controller.action.Apt_NewAppointmentACTION"
+				name="Apt_tansactionNewAppointmentFB"				
+				parameter="hmode"				
+				validate="false">				
+				<forward name="showNewApointmenttPage" path="/appointment/transactions/Apt_newAppointment.jsp"/>				
+		</action>
+		
+		<action path="/appointment/transactions/controller/action/Apt_AllSlotDtlACTION" 
+				type="appointment.transactions.controller.action.Apt_AllSlotDtlACTION"
+				name="Apt_tansactionNewAppointmentFB"				
+				parameter="hmode"				
+				validate="false">				
+				<forward name="showslotdtlPage" path="/appointment/transactions/Apt_allSlotDtl.jsp"/>				
+		</action>							
+		
+		<action path="/appointment/transactions/controller/action/Apt_NewAppointmentUnregisteredACTION" 
+				type="appointment.transactions.controller.action.Apt_NewAppointmentUnregisteredACTION"
+				name="Apt_tansactionNewAppointmentFB"				
+				parameter="hmode"				
+				validate="false">				
+				<forward name="showNewApointmenttPage" path="/appointment/transactions/Apt_newAppointmentUnregistered.jsp"/>				
+		</action>							
+		
+		<action path="/appointment/transactions/controller/action/Apt_pateintListandConfirmationACTION" 
+				type="appointment.transactions.controller.action.Apt_pateintListandConfirmationACTION"
+				name="Apt_pateintListandConfirmationFB"				
+				parameter="hmode"				
+				validate="false">				
+				<forward name="showAppointmentListPage" path="/appointment/transactions/Apt_pateintListandConfirmation.jsp"/>				
+		</action>							
+
+
+		<action path="/appointment/transactions/controller/action/Apt_extendAppointmentACTION" 
+				type="appointment.transactions.controller.action.Apt_extendAppointmentACTION"
+				name="ExtendAppointmentFB"				
+				parameter="hmode"
+				validate ="false">							
+				<forward name="Extend" path="/appointment/transactions/Apt_ExtendAppointmentTILE.jsp" />
+		</action>
+		
+
+		<action  path="/patientDetail"
+		    type="registration.controller.action.PatientDetailACTION"
+		    name="patientDetailFB"
+		    validate="false"
+		    scope="request"
+		    input="/registration/transaction/patientDetailsTile.jsp">
+		 	<forward name="SAME" path="/registration/transaction/patientDetailsTile.jsp" />  	
+		</action> 
+		<action  path="/registration/searchByNamePopup"
+    		type="registration.controller.action.SearchByNameACTION"
+    		name="SearchByNameFB"
+    		validate="false"
+    		parameter="hmode"
+    		scope="request"
+    		input="/registration/transaction/searchByNameTile.jsp">    
+ 			<forward name="NEW" path="/registration/transaction/searchByNameTile.jsp"/> 
+ 			<forward name="SAME" path="/registration/transaction/searchByNameTile.jsp"/> 
+		</action>
+		
+			 <action name="*PatientSearch"  method="{1}" class="registration.transactions.controller.action.PatientSearchACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="excludeMethods">*</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/patientSearch.jsp</result>
+	 </action>
+		
+	</action-mappings>	
+
+
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/struts-Tiles-def-appointment.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+	</plug-in> 	
+		
+</struts-config>
+

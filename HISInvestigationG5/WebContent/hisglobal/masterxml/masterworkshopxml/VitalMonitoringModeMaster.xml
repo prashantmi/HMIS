@@ -1,0 +1,154 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='VitalMonitoringModeMaster'>
+		<common-values>
+			<master-name>VitalMonitoringModeMaster</master-name>
+			<master-title>Vital Monitoring Mode Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Vital Monitoring Mode Master</tableHeading> 
+				<list-table>HIPD_MONITORING_MODE_MST</list-table>
+				<columns>
+					 <column>Mode Name</column>
+					 <column>Day Frequency</column>
+					 <column>Interval</column>
+				</columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HIPSTR_MODE_NAME) </field>
+						<field>A.HIPNUM_DAY_FREQ </field>
+						<field>A.HIPNUM_INTERVAL_INMIN </field>
+					</fields>
+					<primaryKey>
+						<field>A.HIPNUM_MODE_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HIPD_MONITORING_MODE_MST</table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                            <orderby> order by INITCAP(A.HIPSTR_MODE_NAME)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>		
+					<control type="text" index="0" >
+						<label>Mode Name</label>
+						<constraints  maxlength ="50" size="20" inputType='alphabets' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="1" >
+						<label>Day Frequency</label>
+						<constraints  maxlength ="2" size="8" inputType='numeric' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="2" >
+						<label>Interval (in Mins)</label>
+						<constraints  maxlength ="4" size="8" inputType='numeric' mandatory ='true'/>
+						<readOnly>0</readOnly>
+					</control>
+					
+			</controls>
+		    
+		    <redundent-check>
+				SELECT COUNT (*) FROM HIPD_MONITORING_MODE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper(HIPSTR_MODE_NAME)  =  controlindex0
+			</redundent-check>	
+		    
+		    <insert-query>
+				<primary-key>
+					<field>HIPNUM_MODE_ID</field>
+					<value>SELECT NVL(MAX(HIPNUM_MODE_ID),10)+1 FROM HIPD_MONITORING_MODE_MST</value>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</primary-key>					
+				<fields valueMap='#I0'>HIPSTR_MODE_NAME</fields>
+				<fields valueMap='#1'>HIPNUM_DAY_FREQ</fields>
+				<fields valueMap='#2'>HIPNUM_INTERVAL_INMIN</fields>
+				<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+				<fields valueMap='@seatId'>	GNUM_SEAT_ID</fields>
+				<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+				<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+				<table>HIPD_MONITORING_MODE_MST</table>				
+			</insert-query>
+		</dynamic-page>			
+	</add-page>
+	
+	<modify-page>
+	  <dynamic-page>
+		   <controls>	
+			    <control type="text" index="0" >
+						<label>Mode Name</label>
+						<constraints  maxlength ="50" size="20" inputType='alphabets' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+						<data>
+							<static>#Q0</static>
+						</data>
+				</control>
+				<control type="text" index="1" >
+					<label>Day Frequency</label>
+					<constraints  maxlength ="2" size="8" inputType='numeric' mandatory ='true'/>						
+					<readOnly>0</readOnly>
+					<data>
+						<static>#Q1</static>
+					</data>
+				</control>
+				<control type="text" index="2" >
+					<label>Interval (in Mins)</label>
+					<constraints  maxlength ="4" size="8" inputType='numeric' mandatory ='true'/>
+					<readOnly>0</readOnly>
+					<data>
+						<static>#Q2</static>
+					</data>
+				</control>
+				<control type="combo" index="3">
+					<label>IsActive Status</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<static>
+							<option value='1'>Active </option>
+							<option value='2'>In Active </option>
+						</static>
+					</data>
+					<default>#S</default>
+					<submitRequired>0</submitRequired>
+				</control>                          			
+			</controls>
+			  <redundent-check>
+				SELECT COUNT (*) FROM HIPD_MONITORING_MODE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper(HIPSTR_MODE_NAME)  =  controlindex0
+			</redundent-check>	
+		    <initialise-query>
+			   	 <fields>
+					 <field>INITCAP(A.HIPSTR_MODE_NAME)</field>
+					 <field>A.HIPNUM_DAY_FREQ</field>
+					 <field>A.HIPNUM_INTERVAL_INMIN</field>
+				 </fields>					
+					<tables>
+						<table alias='A'>HIPD_MONITORING_MODE_MST</table>
+					</tables>
+					<condition>	
+						<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>						
+						<dependent>
+						    <clause>A.HIPNUM_MODE_ID= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>				
+					<fields valueMap='#I0'>HIPSTR_MODE_NAME</fields>
+					<fields valueMap='#1'>HIPNUM_DAY_FREQ</fields>
+					<fields valueMap='#2'>HIPNUM_INTERVAL_INMIN</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>					
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>	
+                    <fields valueMap='#3'>GNUM_ISVALID</fields>							
+					<table>HIPD_MONITORING_MODE_MST</table>
+					<condition>HIPNUM_MODE_ID = #1</condition>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

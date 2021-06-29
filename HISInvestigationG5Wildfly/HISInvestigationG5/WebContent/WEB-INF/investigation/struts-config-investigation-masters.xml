@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<!--
+		========== Form Bean Definitions ===================================
+	-->
+	<form-beans>
+		<form-bean name="ParameterControlFormBean"
+			type="investigation.masters.InvParameterControlMst_actionForm" />
+		<form-bean name="contraTestFormBean"
+			type="investigation.masters.InvContraTestMst_actionForm" />
+		<form-bean name="uomFormBean" type="investigation.masters.InvUOMMst_actionForm" />
+		<form-bean name="TestFormBean"
+			type="investigation.masters.InvTestMst_actionForm"></form-bean>
+		<form-bean name="OrganismFormBean"
+			type="investigation.masters.InvOrganismMst_actionForm" />
+		<form-bean name="ParamCntValueFormBean"
+			type="investigation.masters.InvParamCntValueMst_actionForm" />
+		<form-bean name="CriteriaFormBean"
+			type="investigation.masters.InvCriteriaMst_actionForm" />
+		<form-bean name="labTimingFormBean"
+			type="investigation.masters.InvLabTimingMst_actionForm" />
+		<form-bean name="template" type="investigation.masters.SampleMstFormBean" />
+		<form-bean name="template"
+			type="investigation.masters.InvMandatoryMst_actionForm" />
+		<form-bean name="mandatoryFormBean"
+			type="investigation.masters.InvMandatoryMst_actionForm" />
+		<form-bean name="mandatoryRefValueFormBean"
+			type="investigation.masters.InvMandatoryRefValueMst_actionForm" />
+		<form-bean name="priorityFormBean"
+			type="investigation.masters.InvPriorityMst_actionForm"></form-bean>
+		<form-bean name="sampleFormBean"
+			type="investigation.masters.InvSampleMst_actionForm" />
+		<form-bean name="LabFormBean"
+			type="investigation.masters.InvLaboratoryMst_actionForm" />
+		<form-bean name="ParameterControlFormBean"
+			type="investigation.masters.InvParameterControlMst_actionForm" />
+		<form-bean name="MacroFormBean"
+			type="investigation.masters.InvMacroMst_actionForm"></form-bean>
+		<form-bean name="StainFormBean"
+			type="investigation.masters.InvStainMst_actionForm"></form-bean>
+		<form-bean name="SnomedFormBean"
+			type="investigation.masters.InvSnomedMst_actionForm"></form-bean>
+		<form-bean name="SampleContainerFormBean"
+			type="investigation.masters.InvSampleContainerMst_actionForm"></form-bean>
+		<form-bean name="ParameterFormBean"
+			type="investigation.masters.InvParameterMst_actionForm" />
+		<form-bean name="ContainerFormBean"
+			type="investigation.masters.InvContainerMst_actionForm" />
+		<form-bean name="FilmFormBean"
+			type="investigation.masters.InvFilmMst_actionForm"></form-bean>
+		<form-bean name="OrganismSampleFormBean"
+			type="investigation.masters.InvOrganismSampleMst_actionForm" />
+		<form-bean name="TestMandRefValueFormBean"
+			type="investigation.masters.InvTestMandRefValMst_actionForm" />
+		<form-bean name="SampleUomFormBean"
+			type="investigation.masters.InvSampleUomMst_actionForm" />
+		<form-bean name="QualityContolFormBean"
+			type="investigation.masters.InvQualityContolMst_actionForm" />
+		<form-bean name="StatusFormBean"
+			type="investigation.masters.InvStatusMst_actionForm" />
+		<form-bean name="TestParameterFormBean"
+			type="investigation.masters.InvTestParameterMst_actionForm" />
+		<form-bean name="TestSampleCollectionAreaFormBean"
+			type="investigation.masters.InvSampleColAreaMst_actionForm" />
+		<form-bean name="CollectionAreaUserMappingFormBean"
+			type="investigation.masters.InvColAreaUserMapMst_actionForm" />
+		<form-bean name="hierarchyUserMappingMaster"
+			type="investigation.masters.InvHierarchyUserMapMst_actionForm" />
+		<form-bean name="TestItemFormBean"
+			type="investigation.masters.InvTestItemMst_actionForm" />
+		<form-bean name="CannedFormBean"
+			type="investigation.masters.InvCannedMst_actionForm" />
+		<form-bean name="GroupTestformBean"
+			type="investigation.masters.InvGroupTestMst_actionForm" />
+		<form-bean name="GroupTestInfoformBean"
+			type="investigation.masters.InvGroupTestInfoMst_actionForm" />
+		<form-bean name="HierarchyFormBean"
+			type="investigation.masters.InvestigationHierarchyMst_actionForm" />
+		<form-bean name="SampleGroupFormBean"
+			type="investigation.masters.InvSampleGroupMst_actionForm" />
+		<form-bean name="SampleGroupDetailFormBean"
+			type="investigation.masters.InvSampleGroupDetailMst_actionForm" />
+		<form-bean name="TestEquipmentFormBean"
+			type="investigation.masters.TestEquipmentMst_actionForm" />
+		<form-bean name="InvestigationViewTemplateActionForm"
+			type="investigation.masters.InvestigationViewTemplateActionForm" />
+		<form-bean name="TestMasterFormBean"
+			type="investigation.masters.InvTestMaster_actionForm" />
+		<form-bean name="TestLabMasterFormBean"
+			type="investigation.masters.InvTestLabMaster_actionForm" />
+		<form-bean name="LabTestMasterFormBean"
+			type="investigation.masters.InvLabTestMst_actionForm" />
+		<form-bean name="TestRequisitionParameterFormBean"
+			type="investigation.masters.InvTestRequisitionParameterActionForm" />
+		<form-bean name="InvDiagnosisMaster_actionForm" type="investigation.masters.InvDiagnosisMaster_actionForm" />
+			<form-bean name="InvSiteMaster_actionForm" type="investigation.masters.InvSiteMaster_actionForm" /> 
+			<form-bean name="TemplateQueryMasterFormBean" type="investigation.masters.InvTemplateQuery_actionForm" />
+			
+		<form-bean name="RejectionReasonMstFormBean" type="investigation.masters.InvRejectionReasonMst_actionForm" />
+		<form-bean name="LaboratoryCollectionAreaFormBean" type="investigation.masters.InvLabCollectionAreaMst_actionForm" />
+			<form-bean name="TestQuickCamProFB" type="JMF.TestQuickCamProFB"/>
+		<form-bean name="imageUtilityFB" type="hisglobal.tools.imageUtility.fb.ImageUtilityFB"/>    
+		<form-bean name="uploadForm" type="hisglobal.tools.imageupload.FileUploadFB"/> 
+		<form-bean name="imageServletFB" type="hisglobal.tools.imageUtility.fb.ImageServletFB"/>
+		<form-bean name="videoServletFB" type="hisglobal.tools.imageUtility.fb.VideoServletFB"/>
+		<form-bean name="commonServletFB" type="hisglobal.tools.imageUtility.fb.CommonServletFB"/>
+		
+		<form-bean name="LabTestSampleConsumablesMstFormBean" type="investigation.masters.InvLabTestSampleConsumablesMst_actionForm"/>
+		<form-bean name="LabTestConsumablesMstFormBean" type="investigation.masters.InvLabTestConsumablesMst_actionForm"/>
+		<form-bean name="LabTestAssociatedMstFormBean" type="investigation.masters.InvLabTestAssociatedMst_actionForm"/>
+		
+		<form-bean name="labTestHeaderFooterFormBean"
+			type="investigation.masters.InvLabTestHeaderFooterMst_actionForm" />
+				<form-bean name="PrintingTemplateMasterFB" type="investigation.masters.PrintingTemplateMaster_FB" />
+		<form-bean name="labNoConfigFormBean"
+				type="investigation.masters.LabNoConfigurationFB" />
+		<form-bean name="InvLabSampleCollectionDtlMstFB" type="investigation.masters.InvLabSampleCollectionDtlMstFB"/>
+		<form-bean name="sampleCollConfigFormBean" type="investigation.masters.InvSampleCollConfMst_ActionForm" /> 
+		<form-bean name="LaboratoryNoConfigurationFormBean" type="investigation.masters.LaboratoryNoConfiguration_actionForm" /> 
+	
+		<form-bean name="GlobalTestMstFormBean"
+				type="investigation.masters.InvGlobalTestMst_actionForm" />
+	
+		<form-bean name="globalSampleMstFormBean" type="investigation.masters.InvGlobalSampleMst_actionForm" />
+		
+		<form-bean name="globalContainerFormBean"	type="investigation.masters.InvGlobalContainerMst_actionForm" />
+		
+	
+	</form-beans>
+	<!--	========== Action Mapping Definitions ==============================-->
+	<action-mappings>
+		<action path="/investigations/masters/TestLabMaster" type="investigation.masters.InvTestLabMaster_action"
+			name="TestLabMasterFormBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD_MODIFY"
+				path="/investigation/masters/InvTestLabMaster_addModify.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/LabTestMst" type="investigation.masters.InvLabTestMst_action"
+			name="LabTestMasterFormBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvLabTestAdd.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/sampleGroupDetailMst"
+			type="investigation.masters.InvSampleGroupDetailMst_action" name="SampleGroupDetailFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvSampleGroupDetailMst_Tiles.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/sampleGroupMst" type="investigation.masters.InvSampleGroupMst_action"
+			name="SampleGroupFormBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvSampleGroupMst_Tiles.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/groupTestInfoMst" type="investigation.masters.InvGroupTestInfoMst_action"
+			name="GroupTestInfoformBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvGroupTestInfoMst_Tile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/groupTestMst" type="investigation.masters.InvGroupTestMst_action"
+			name="GroupTestformBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvGroupTestMst_Tile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/CannedMst" type="investigation.masters.InvCannedMst_action"
+			name="CannedFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvCannedMst_Tile.jsp" />
+			<forward name="VIEW" path="/investigation/masters/InvCannedMst_view.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/hierarchyMst"
+			type="investigation.masters.InvestigationHierarchyMst_action" name="HierarchyFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/investigationHierarchyMst.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/TestParameterMst" type="investigation.masters.InvTestParameterMst_action"
+			name="TestParameterFormBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvTestParameterMst_Tile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/ParameterControlMst"
+			type="investigation.masters.InvParameterControlMst_action" name="ParameterControlFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvParameterControlMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvParameterControlMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/invUOMMst" type="investigation.masters.InvUOMMst_action"
+			name="uomFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvUOMMstTile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/contraTestMst" type="investigation.masters.InvContraTestMst_action"
+			name="contraTestFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvContraTestMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/protestMst" type="investigation.masters.InvTestMst_action"
+			name="TestFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvTestMst_add.jsp" />
+			<!-- <forward name="ADD"	path="/masters/InvTesMst_add.jsp" /> -->
+			<forward name="MODIFY" path="/investigation/masters/InvTestMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/statusMst" type="investigation.masters.InvStatusMst_action"
+			name="StatusFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvStatusMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvSnomedMst" type="investigation.masters.InvSnomedMst_action"
+			name="SnomedFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvSnomedMst_add.jsp" />
+			<forward name="MODIFY" path="/investigation/masters/InvSnomedMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvStainMst" type="investigation.masters.InvStainMst_action"
+			name="StainFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvStainMst_add.jsp" />
+			<forward name="MODIFY" path="/investigation/masters/InvStainMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/priorityMst" type="investigation.masters.InvPriorityMst_action"
+			name="priorityFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvPriorityMst_add.jsp" />
+			<forward name="MODIFY" path="/investigation/masters/InvPriorityMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvMacroMst" type="investigation.masters.InvMacroMst_action"
+			name="MacroFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvMacroMst_add.jsp" />
+			<forward name="MODIFY" path="/investigation/masters/InvMacroMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/organismMst" type="investigation.masters.InvOrganismMst_action"
+			name="OrganismFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvOrganismMst_add.jsp" />
+			<forward name="MODIFY" path="/investigation/masters/InvOrganismMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvQualityContolMst"
+			type="investigation.masters.InvQualityContolMst_action" name="QualityContolFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvQualityContolMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvSampleUomMst" type="investigation.masters.InvSampleUomMst_action"
+			name="SampleUomFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvSampleUomMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/TestMandRefValueMst"
+			type="investigation.masters.InvTestMandRefValMst_action" name="TestMandRefValueFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvTestMandRefValMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/organismsampleMst"
+			type="investigation.masters.InvOrganismSampleMst_action" name="OrganismSampleFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvOrganismSampleMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/FilmMst" type="investigation.masters.InvFilmMst_action"
+			name="FilmFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvFilmMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/ParamCntValueMst" type="investigation.masters.InvParamCntValueMst_action"
+			name="ParamCntValueFormBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvParamCntValueMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/containerMst" type="investigation.masters.InvContainerMst_action"
+			name="ContainerFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvContainerMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvContainerMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/parameterMst" type="investigation.masters.InvParameterMst_action"
+			name="ParameterFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvParameterMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvParameterMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvSampleMst" type="investigation.masters.InvSampleMst_action"
+			name="sampleFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+			<forward name="ADD" path="/investigation/masters/InvSampleMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvSampleMst_modify.jsp" />
+		</action>
+		<action path="/investigations/masters/criteriaMst" type="investigation.masters.InvCriteriaMst_action"
+			name="CriteriaFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvCriteriaMst_add.jsp" />
+			<forward name="MODIFY" path="/investigation/masters/InvCriteriaMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvSampleContainerMst"
+			type="investigation.masters.InvSampleContainerMst_action" name="SampleContainerFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvSampleContainerMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/laboratoryMst" type="investigation.masters.InvLaboratoryMst_action"
+			name="LabFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"  path="/investigation/masters/InvLaboratoryMst_add.jsp" />
+			<forward name="MODIFY" path="/investigation/masters/InvLaboratoryMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvLabTimingMst" type="investigation.masters.InvLabTimingMst_action"
+			name="labTimingFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+			<forward name="ADD"
+				path="/investigation/masters/InvLabTimingMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvLabTimingMst_modify.jsp" />
+		</action>
+		<action path="/investigations/masters/mandatoryMst" type="investigation.masters.InvMandatoryMst_action"
+			name="mandatoryFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvMandatoryMst_Tiles.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvMandatoryMst_Tiles.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/mandatoryRefValue"
+			type="investigation.masters.InvMandatoryRefValueMst_action" name="mandatoryRefValueFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvMandatoryRefValue_Tiles.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/sampleColAreaMst" type="investigation.masters.InvSampleColAreaMst_action"
+			name="TestSampleCollectionAreaFormBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvSampleColAreaMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvSampleColAreaMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/CollectionAreaUserMappingMst"
+			type="investigation.masters.InvColAreaUserMapMst_action" name="CollectionAreaUserMappingFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvColAreaUserMappingMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/HierarchyUserMappingMaster"
+			type="investigation.masters.InvHierarchyUserMapMst_action" name="hierarchyUserMappingMaster"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvHierarchyUserMappingMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/TestItemMst" type="investigation.masters.InvTestItemMst_action"
+			name="TestItemFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvTestItemMst_addmodify.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvTestItemMst_addmodify.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/testEquipmentMst" type="investigation.masters.TestEquipmentMst_action"
+			name="TestEquipmentFormBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvTestEquipmentMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/procedureMst" type="investigation.masters.InvTestProcedure_action"
+			name="TestMasterFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD_MODIFY"
+				path="/investigation/masters/InvTestMaster_addModify.jsp" />
+			<!-- <forward name="ADD"	path="/masters/InvTesMst_add.jsp" /> -->
+			<forward name="MODIFY"
+				path="/investigation/masters/InvTestMaster_addModify.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/testTemplateMst"
+			type="investigation.masters.InvestigationViewTemplateAction" name="InvestigationViewTemplateActionForm"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/investigationViewTemplate.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/TestMaster" type="investigation.masters.InvTestMaster_action"
+			name="TestMasterFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD_MODIFY"
+				path="/investigation/masters/InvTestMaster_addModify.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/TestRequisitionParameterMst"
+			type="investigation.masters.InvTestRequisitionParameterAction" name="TestParameterFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvTestParameterMst_Tile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/TestSampleParameterMst"
+			type="investigation.masters.InvTestSampleParameterAction" name="TestParameterFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvTestParameterMst_Tile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/requisitionParameterControlMst"
+			type="investigation.masters.InvRequisitionParameterControlMst_action" name="ParamCntValueFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"	 path="/investigation/masters/InvParamCntValueMst_add.jsp" />			
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/sampleParameterControlMst"
+			type="investigation.masters.InvSampleParameterControlMst_action" name="ParamCntValueFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvParamCntValueMst_add.jsp" />
+			<forward name="MODIFY"
+				path="InvParamCntValueMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		 	 <action 
+				path="/investigations/masters/diagnosisDtlMst"
+				type="investigation.masters.InvDiagnosisDtlMst_action"
+				name="InvDiagnosisMaster_actionForm"
+				scope="request"
+				validate="false"
+				parameter="hmode" >
+				<forward name="ADD"	path="/investigation/masters/InvDiagnosisDtlMst_add.jsp"/>
+				<forward name="ERROR" path="/investigation/masters/errorPage.jsp"/>
+		</action>
+	 	<action 
+				path="/investigations/masters/siteMst"
+				type="investigation.masters.InvSiteMst_action"
+				name="InvSiteMaster_actionForm"
+				scope="request"
+				validate="false"
+				parameter="hmode" >
+				<forward name="ADD"	path="/investigation/masters/InvSiteMst_ADD.jsp"/>
+				<forward name="ERROR" path="/investigation/masters/errorPage.jsp"/>
+		</action>
+	
+		<action 
+				path="/investigations/masters/templateQueryMst"
+				type="investigation.masters.InvTemplateQueryMst_action"
+				name="TemplateQueryMasterFormBean"
+				scope="request"
+				validate="false"
+				parameter="hmode" >
+				<forward name="ADD"	path="/investigation/masters/InvTemplateQueryMst.jsp"/>
+				<forward name="ERROR" path="/investigation/masters/errorPage.jsp"/>
+		</action>
+	
+		<action 
+				path="/investigations/masters/InvLabCollectionAreaMst"
+				type="investigation.masters.InvLabCollectionAreaMst_action"
+				name="LaboratoryCollectionAreaFormBean"
+				scope="request"
+				validate="false"
+				parameter="hmode" >
+				<forward name="ADD"	path="/investigation/masters/InvLaboratoryCollectionArea_add.jsp"/>
+				<forward name="ERROR" path="/investigation/masters/errorPage.jsp"/>
+		</action>
+		<action 
+				path="/investigations/masters/InvRejectionReasonMst"
+				type="investigation.masters.InvRejectionReasonMst_action"
+				name="RejectionReasonMstFormBean"
+				scope="request"
+				validate="false"
+				parameter="hmode" >
+				<forward name="ADD"	path="/investigation/masters/InvRejectionReason_add.jsp"/>
+				<forward name="ERROR" path="/investigation/masters/errorPage.jsp"/>
+		</action>
+	
+		<!-- Image utility -->
+		<action
+			path="/hisglobal/imageUtility/LayoutACTION"
+			type="hisglobal.tools.imageUtility.action.LayoutACTION"
+			name="imageUtilityFB"
+			scope="request"
+			parameter="mode"
+			input="/hisglobal/utility/videocameraandimageeditor/ImageLayout.jsp">
+			<forward name="layout" path="/hisglobal/utility/videocameraandimageeditor/ImageLayout.jsp"/>							
+		</action>
+	
+	
+		<action
+			path="/hisglobal/imageUtility/ImageServletACTION"
+			type="hisglobal.tools.imageUtility.action.ImageServletACTION"
+			name="imageServletFB"
+			scope="request"
+			parameter="mode"
+			input="/hisglobal/utility/videocameraandimageeditor/ImageServletLayout.jsp">		
+			<forward name="IMAGELIST" path="/hisglobal/utility/videocameraandimageeditor/ImageServletLayout.jsp"/>	
+								
+		</action>
+		<action
+			path="/hisglobal/imageUtility/VideoServletACTION"
+			type="hisglobal.tools.imageUtility.action.VideoServletACTION"
+			name="videoServletFB"
+			scope="request"
+			parameter="mode"
+			input="/hisglobal/utility/videocameraandimageeditor/VideoServletLayout.jsp">
+			<forward name="VIDEOLIST" path="/hisglobal/utility/videocameraandimageeditor/VideoServletLayout.jsp"/>	
+								
+		</action>
+		<action
+			path="/hisglobal/imageUtility/CommonServletACTION"
+			type="hisglobal.tools.imageUtility.action.CommonServletACTION"
+			name="commonServletFB"
+			scope="request"
+			parameter="mode"
+			input="/hisglobal/utility/videocameraandimageeditor/CommonServletLayout.jsp">
+			<forward name="COMMONLIST" path="/hisglobal/utility/videocameraandimageeditor/CommonServletLayout.jsp"/>
+								
+		</action>
+
+	  	<action  path="/hisglobal/TestQuickCamProACTION"
+		    type="JMF.TestQuickCamProACTION"
+		    name="TestQuickCamProFB"
+		    validate="false"
+		    scope="request"
+		    parameter="hmode"
+		    input="/start.jsp">
+		    <forward name="NEW" path="/start.jsp"/>
+		    <forward name="SAME" path="/start.jsp"/>
+		    <forward name="OPEN" path="/FileList.jsp"/>
+	 	</action>
+	 	<action path="/hisglobal/imageUtility/fileuploadAction"
+			type="hisglobal.tools.imageupload.File_Upload_Action" 
+			name="uploadForm"
+			scope="request" 
+			validate="false" 
+			parameter="hmode">
+			<forward name="UPLOAD" path="/investigation/transaction/investigation_UploadFile.jsp" />
+			<forward name="UPLOADVIDEO" path="/investigation/transaction/investigation_UploadVideoFile.jsp" />
+	 	</action>
+		<action path="/investigations/masters/InvLabRequisitionParameterControlMst"
+			type="investigation.masters.InvLaboratoryRequisitionControl_action" name="ParamCntValueFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvParamCntValueMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvParamCntValueMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvLabRequisitionParameterMst"
+			type="investigation.masters.InvLaboratoryRequisitionParameterAction" name="TestParameterFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvTestParameterMst_Tile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		
+		<action 
+			path="/investigations/masters/LabTestSampleConsumablesMst"
+			type="investigation.masters.InvLabTestSampleConsumablesMst_action"
+			name="LabTestSampleConsumablesMstFormBean"
+			scope="request"
+			validate="false"
+			parameter="hmode" >
+			<forward name="ADD"	path="/investigation/masters/InvLabTestSampleConsumablesMst_AddMod.jsp"/>
+			<forward name="MODIFY"	path="/investigation/masters/InvLabTestSampleConsumablesMst_Mod.jsp"/>
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp"/>
+		</action>
+		<action 
+			path="/investigations/masters/LabTestConsumablesMst"
+			type="investigation.masters.InvLabTestConsumablesMst_action"
+			name="LabTestConsumablesMstFormBean"
+			scope="request"
+			validate="false"
+			parameter="hmode" >
+			<forward name="ADD"	path="/investigation/masters/InvLabTestConsumablesMst_Add.jsp"/>
+			<forward name="MODIFY"	path="/investigation/masters/InvLabTestConsumablesMst_Mod.jsp"/>
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp"/>
+		</action>
+	
+		<action path="/investigations/masters/TestGroupParameterMst"
+			type="investigation.masters.InvTestGroupParameterAction" name="TestParameterFormBean"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvTestParameterMst_Tile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action 
+			path="/investigations/masters/LabTestAssociatedMst"
+			type="investigation.masters.InvLabTestAssociatedMst_action"
+			name="LabTestAssociatedMstFormBean"
+			scope="request"
+			validate="false"
+			parameter="hmode" >
+			<forward name="ADD"	path="/investigation/masters/InvLabTestAssociatedMst_Add.jsp"/>
+			<forward name="MODIFY"	path="/investigation/masters/InvLabTestConsumablesMst_Mod.jsp"/>
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp"/>
+		</action>
+		<action path="/investigations/masters/InvLabTestHeaderFooterMst" type="investigation.masters.InvLabTestHeaderFooterMst_action"
+			name="labTestHeaderFooterFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+			<forward name="ADD"
+				path="/investigation/masters/InvLabTestHeaderFooterMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvLabTestHeaderFooterMst_modify.jsp" />
+		</action>
+		
+		<action path="/investigations/masters/InvTestGroupParamCntValueMst" type="investigation.masters.InvTestGroupParamCntValueMst_action"
+			name="ParamCntValueFormBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvParamCntValueMst_add.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/LabNoConfiguration" 
+			type="investigation.masters.LabNoConfigurationAction"
+			name="labNoConfigFormBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="LABNOCONFIGURATION" path="/investigation/masters/LabNoConfigurationTile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		<action path="/investigations/masters/InvLabSampleCollectionDtlMst" type="investigation.masters.InvLabSampleCollectionDtlMstAction"
+			name="InvLabSampleCollectionDtlMstFB" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD" path="/investigation/masters/InvLabSampleCollectionDtl.jsp" />
+			<forward name="MODIFY" path="/investigation/masters/InvLabSampleCollectionDtl.jsp" />
+	        <forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+	
+		<action path="/investigations/masters/InvSampleCollConfMst" type="investigation.masters.InvSampleCollConfMst_Action" 
+			 name="sampleCollConfigFormBean" scope="request" validate="false" parameter="hmode">
+ 			 <forward name="ADD" path="/investigation/masters/InvSampleCollConfMst_Tile.jsp" /> 
+  			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" /> 
+	  	</action>
+  	
+  		<action path="/investigations/masters/labNoConfigurationMst" type="investigation.masters.LaboratoryNoConfiguration_action" 
+			 name="LaboratoryNoConfigurationFormBean" scope="request" validate="false" parameter="hmode">
+ 			 <forward name="ADD" path="/investigation/masters/LaboratoryNoConfigurationTile.jsp" /> 
+  			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" /> 
+  		</action>
+  	
+  	
+  		/*************  Global Test Master Start by Adil [06/09/2011]  *******************/
+  	
+	  	<action path="/investigations/masters/InvGlobalTestMst" type="investigation.masters.InvGlobalTestMst_action"
+			name="GlobalTestMstFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvGlobalTestMst_Tile.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>
+		/*************  Global Test Master End by Adil [07/09/2011]  *******************/	
+	
+	
+		
+		/*************  Global Sample Master Start by Adil [08/09/2011]  *******************/
+	
+		<action path="/investigations/masters/InvGlobalSampleMst" type="investigation.masters.InvGlobalSampleMst_action"
+			name="globalSampleMstFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+			<forward name="ADD" path="/investigation/masters/InvGlobalSampleMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvGlobalSampleMst_modify.jsp" />
+		</action>
+		/*************  Global Sample Master End by Adil [08/09/2011]  *******************/		
+			
+			
+	
+		/*************  Global Container Master Start by Adil [08/09/2011]  *******************/
+		
+		<action path="/investigations/masters/InvGlobalContainerMst" type="investigation.masters.InvGlobalContainerMst_action"
+			name="globalContainerFormBean" scope="request" validate="false" parameter="hmode">
+			<forward name="ADD"
+				path="/investigation/masters/InvGlobalContainerMst_add.jsp" />
+			<forward name="MODIFY"
+				path="/investigation/masters/InvGlobalContainerMst_mod.jsp" />
+			<forward name="ERROR" path="/investigation/masters/errorPage.jsp" />
+		</action>		
+		/*************  Global Container Master End by Adil [08/09/2011]  *******************/		
+		
+	
+	
+	</action-mappings>
+		
+	<message-resources parameter="investigation.investigationResourceBundle"></message-resources>
+</struts-config>

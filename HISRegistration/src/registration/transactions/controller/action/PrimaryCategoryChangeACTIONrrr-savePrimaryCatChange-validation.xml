@@ -1,0 +1,31 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+<field name="patPrimaryCatCode">
+    <field-validator type="regex">
+    	<param name="expression">[0-9]</param>
+        <message>Patient Category is required.</message>
+ 	</field-validator>
+</field>
+<field name="cardNo">
+    <field-validator type="requiredstring">
+       <message>Card No. is required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">30</param>
+                    <param name="trim">true</param>
+                    <message>Card No. Length Cannot Be Greater Than 30 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[0-9]+</param>
+       	<message>Card No. is Required. It Accepts Numeric Only</message>
+    </field-validator>
+</field>
+<field name="verificationDocument">
+    <field-validator type="regex">
+    	<param name="expression">[0-9]</param>
+        <message>Verification Document is required.</message>
+ 	</field-validator>
+</field>
+</validators>

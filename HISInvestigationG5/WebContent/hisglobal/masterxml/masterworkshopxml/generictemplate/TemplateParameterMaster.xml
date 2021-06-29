@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Template Parameter Master'>
+		<common-values>
+			<master-name>TemplateParameterMaster</master-name>
+			<master-title>Template Parameter Master</master-title>
+		</common-values>
+
+		<list-page>
+			<tableHeading>Template Parameter Master</tableHeading> 
+			<list-table>HGBT_TEMPLATE_MST</list-table>
+				<controls>
+					<control type="combo" index="0"> 
+						<label>Template Category</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(Z.HGNUM_TEMPLATE_CATEGORY_TYPE)</text-field>
+									<value-field>Z.HGNUM_TEMPLATE_CATEGORY</value-field>
+								</options>
+								<tables>
+									<table alias="Z">HGBT_TEMPLATE_CATEGORY_MST</table>
+								</tables>
+								<condition>
+									<general> Z.GNUM_HOSPITAL_CODE=100 AND Z.GNUM_ISVALID = 1 ORDER BY INITCAP(Z.HGNUM_TEMPLATE_CATEGORY_TYPE)</general>
+								</condition>
+								
+							</dynamic>
+							</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>	
+					</control>	
+				</controls>
+			<columns>
+				<column>Template Name</column>
+				<column>Template Category</column>
+				<column>Effective From Date</column> 
+				<column>Effective To Date</column>				  
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HGSTR_TEMPLATE_NAME)</field>
+					<field>(SELECT INITCAP(B.HGNUM_TEMPLATE_CATEGORY_TYPE) FROM HGBT_TEMPLATE_CATEGORY_MST B WHERE B.HGNUM_TEMPLATE_CATEGORY=A.HGNUM_TEMPLATE_CATEGORY AND B.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE ) </field>
+					<field>TO_CHAR(A.GDT_EFFECTIVE_FRM,'dd-Mon-yyyy')</field>
+					<field>nvl(TO_CHAR(A.GDT_EFFECTIVE_TO,'dd-Mon-yyyy'),' ')</field>
+				</fields>
+				<primaryKey>
+					<field>A.HGNUM_TEMPLATE_ID</field>
+					<field>A.HGNUM_TEMPLATE_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HGBT_TEMPLATE_MST</table>
+				</tables>
+				<condition>	
+										         
+					<isvalid-field> A.GNUM_HOSPITAL_CODE=100 and A.GNUM_ISVALID</isvalid-field>
+					<orderby> AND TRUNC(NVL(A.GDT_EFFECTIVE_TO,SYSDATE)) >= TRUNC(SYSDATE) ORDER BY INITCAP(A.HGSTR_TEMPLATE_NAME)</orderby>
+					<dependent>
+                    	<clause> A.HGNUM_TEMPLATE_CATEGORY = #0 </clause>
+                     </dependent>
+				</condition>                   
+			</query-detail>				
+		</list-page>
+
+		<add-page>			
+			<static-page>/hisglobal/utility/generictemplate/master/TemplateParameterMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/hisglobal/utility/generictemplate/master/TemplateParameterMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

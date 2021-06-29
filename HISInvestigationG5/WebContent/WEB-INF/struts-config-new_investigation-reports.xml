@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<form-beans>
+
+	
+		<!-- Reports Form Beans Starts -->
+
+		<form-bean name="RequistionlistingReportFB"
+			type="new_investigation.reports.controller.fb.RequistionlistingReportFB">
+		</form-bean>
+		<form-bean name="InvestigationListingReportFB"
+			type="new_investigation.reports.controller.fb.InvestigationListingReportFB">
+		</form-bean>
+		<!-- Added by PrashantMi 16-May-2019 -->
+		<form-bean name="InvestigationListingReportFB"
+			type="new_investigation.reports.controller.fb.InvestigationListingReportFB">
+		</form-bean>
+		<form-bean name="SampleCollectionListingReportFB"
+			type="new_investigation.reports.controller.fb.SampleCollectionListingReportFB">
+		</form-bean>
+		<form-bean name="PatientAcceptanceReportFB"
+			type="new_investigation.reports.controller.fb.PatientAcceptanceReportFB">
+		</form-bean>
+		<form-bean name="LabWiseStatisticalReportFB"
+			type="new_investigation.reports.controller.fb.LabWiseStatisticalReportFB">
+		</form-bean>
+				<form-bean name="InvestigationStatisticalReportFB"
+			type="new_investigation.reports.controller.fb.InvestigationStatisticalReportFB">
+		</form-bean>
+		
+		<!-- Added by Chetan Sharma 07-Dec-2018 -->
+			<form-bean name="AgewiseDistributionReportFB"
+			type="new_investigation.reports.controller.fb.AgewiseDistributionReportFB">
+		</form-bean>
+		<!-- Added by Harshita Khare 24-Dec-2018 -->
+			<form-bean name="SampleRejectionListingReportFB"
+			type="new_investigation.reports.controller.fb.SampleRejectionListingReportFB">
+		</form-bean>
+		<!-- Added by Harshita Khare 03-Jan-2019 -->
+			<form-bean name="RepeatTestReportFB"
+			type="new_investigation.reports.controller.fb.RepeatTestReportFB">
+		</form-bean>
+		<!-- Added by Harshita Khare 12-Jan-2019 -->
+			<form-bean name="MachineTestReportFB"
+			type="new_investigation.reports.controller.fb.MachineTestReportFB">
+		</form-bean>
+		
+		<!-- Added by PrashantMi 13-Sep-2019 -->
+		<form-bean name="MachineTestReportNewFB"
+			type="new_investigation.reports.controller.fb.MachineTestReportNewFB">
+		</form-bean>
+		
+		<!-- Added by PrashantMi 20-Aug-2019 -->
+		<form-bean name="InvTrackingReportFB"
+			type="new_investigation.reports.controller.fb.InvTrackingReportFB">
+		</form-bean>
+	
+		
+		<!-- global CNT Beans Ends -->
+
+	</form-beans>
+
+
+	<action-mappings>
+		<action path="/reports/RequistionListingReportAction"
+			type="new_investigation.reports.controller.action.RequistionListingReportAction"
+			name="RequistionlistingReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/RequistionListingReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+
+		</action>	
+		<action path="/reports/InvestigationListingReportAction"
+			type="new_investigation.reports.controller.action.InvestigationListingReportAction"
+			name="InvestigationListingReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/InvestigationListingReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>		
+
+			<!-- Added by PrashantMi 15-May-2019 -->
+		<action path="/reports/InvestigationListingReportActionRd"
+			type="new_investigation.reports.controller.action.InvestigationListingReportActionRd"
+			name="InvestigationListingReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/InvestigationListingReportRd.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		<action path="/reports/SampleCollectionListingReportAction"
+			type="new_investigation.reports.controller.action.SampleCollectionListingReportAction"
+			name="SampleCollectionListingReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/SampleCollectionListingReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		<action path="/reports/PatientAcceptanceReportAction"
+			type="new_investigation.reports.controller.action.PatientAcceptanceReportAction"
+			name="PatientAcceptanceReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/PatientAcceptanceReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		<action path="/reports/LabWiseStatisticalReportAction"
+			type="new_investigation.reports.controller.action.LabWiseStatisticalReportAction"
+			name="LabWiseStatisticalReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/LabWiseStatisticalReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+
+         <action path="/reports/InvestigationStatisticalReportAction"
+			type="new_investigation.reports.controller.action.InvestigationStatisticalReportAction"
+			name="InvestigationStatisticalReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/InvestigationStatisticalReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		<!-- Added by Chetan Sharma 07-Dec-2018 -->	
+		<action path="/reports/AgewiseDistributionReportAction"
+			type="new_investigation.reports.controller.action.AgewiseDistributionReportAction"
+			name="AgewiseDistributionReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/AgewiseDistributionReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		
+		<!-- Added by Harshita khare 24-Dec-2018 -->	
+		<action path="/reports/SampleRejectionListingReportAction"
+			type="new_investigation.reports.controller.action.SampleRejectionListingReportAction"
+			name="SampleRejectionListingReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/SampleRejectionListingReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		<!-- Added by Harshita khare 03-Jan-2019 -->	
+		<action path="/reports/RepeatTestReportAction"
+			type="new_investigation.reports.controller.action.RepeatTestReportAction"
+			name="RepeatTestReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/RepeatTestReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		<!-- Added by Harshita khare 03-Jan-2019 -->	
+		<action path="/reports/MachineTestReportAction"
+			type="new_investigation.reports.controller.action.MachineTestReportAction"
+			name="MachineTestReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/MachineTestReport.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		<!-- Added by PrashantMi 13-Sept-2019 -->
+		<action path="/MachineTestReport"
+			type="new_investigation.reports.controller.action.MachineTestReportNewAction"
+			name="MachineTestReportNewFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"
+				path="/reports/MachineTestReportNew.jsp" />
+<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>	
+		
+		<!-- Added by PrashantMi 20-Aug-2019 -->
+		 <action 
+		  path="/InvestigationTrackingReport"
+		  type="new_investigation.reports.controller.action.InvTrackingReportAction"
+		  name="InvTrackingReportFB" scope="request" validate="false"
+		  parameter="hmode">
+		 <forward name="NEW" path="/reports/invTrackingReport.jsp" />
+		 <forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		 </action>
+		 
+		 <!-- Added by PrashantMi 23-Jul-2020 -->
+		 <action 
+		  path="/InvReportGenerator"
+		  type="new_investigation.reportGenerator.controler.action.InvReportGeneratorAction"
+		  name="InvTrackingReportFB" scope="request" validate="false"
+		  parameter="hmode">
+		 <forward name="NEW" path="/reports/invTrackingReport.jsp" />
+		 <forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		 </action>
+		 
+		<!--Reports Action Mappings Ends -->
+	</action-mappings>
+
+<controller>
+		<set-property property="processorClass"
+			value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources
+		parameter="new_investigation.investigationResourceBundle" >
+	</message-resources>
+
+	<!-- Tiles Definition Start -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+			<set-property property="definitions-config"
+			value="/WEB-INF/new_investigation-tiles-def.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	<!-- Tiles Definition Start -->
+
+</struts-config>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='ImageUploadMaster'>
+		<common-values>
+			<master-name>ImageUploadMaster</master-name>
+			<master-title>Image Upload Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Image Upload Master</tableHeading> 
+				<list-table>HOPT_IMAGE_MST</list-table>
+				<columns>
+					 <column>Image Name</column>
+					 <column>Is Default</column>
+				</columns>
+				<query-detail>
+					<fields>
+						<field>INITCAP(A.HOPSTR_IMAGE_NAME)</field>
+						<field>DECODE(A.HOPNUM_IS_DEFAULT,0,'No',1,'Yes')</field>
+						
+					</fields>
+					<primaryKey>
+						<field>A.HOPNUM_IMAGE_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HOPNUM_SLNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HOPT_IMAGE_MST </table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <orderby> order by INITCAP(A.HOPSTR_IMAGE_NAME)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<static-page>/opd/master/addImageUploadMaster.cnt</static-page>			
+		</add-page>
+		
+		<modify-page>	
+   		    <static-page>/opd/master/addImageUploadMaster.cnt</static-page>		
+		</modify-page>
+	</master>	
+</master-config>

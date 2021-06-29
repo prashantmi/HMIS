@@ -1,0 +1,49 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+<field name="deptUnitRoomModel.strRoomName">
+    <field-validator type="requiredstring">
+       <message>Room Name Is Required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">20</param>
+                    <param name="trim">true</param>
+                    <message>Room Name Length Cannot Be Greater Than 20 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[0-9a-zA-Z]+[ 0-9a-zA-Z]*</param>
+       	<message>Room Name Is Required. It Excepts Alphabets And Numbers With Space Only</message>
+    </field-validator>
+</field>
+<field name="deptUnitRoomModel.strRoomSequence">
+    <field-validator type="requiredstring">
+       <message>Room Sequence Is Required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">2</param>
+                    <param name="trim">true</param>
+                    <message>Room Sequence Length Cannot Be Greater Than 2 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[1-9][0-9]{0,1}</param>
+       	<message>Room Sequence Is Required. It Excepts Numbers Only</message>
+    </field-validator>    
+</field>  
+<field name="deptUnitRoomModel.strCapacity">
+    <field-validator type="requiredstring">
+       <message>Room Capacity Is Required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">2</param>
+                    <param name="trim">true</param>
+                    <message>Room Capacity Length Cannot Be Greater Than 2 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[1-9][0-9]{0,1}</param>
+       	<message>Room Capacity Is Required. It Excepts Numbers Only</message>
+    </field-validator>    
+</field>  
+</validators>

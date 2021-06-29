@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='DeliveryPlaceMaster'>
+        <common-values>
+           <master-name>DeliveryPlaceMaster</master-name>
+           <master-title>Delivery Place Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Delivery Place Master</tableHeading>
+           <list-table>HANCT_DELIVERY_PLACE_MST</list-table>
+           
+           <columns>
+              <column>Delivery Place</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HANCSTR_DELIVERY_PLACE)</field>
+	    		 
+			  </fields>
+				<primaryKey>
+					<field>A.HANCNUM_DELIVERY_PLACE_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HANCNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HANCT_DELIVERY_PLACE_MST</table>
+				</tables>
+				<condition>					 
+					<isvalid-field>A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID</isvalid-field>        			
+					<orderby> ORDER BY(A.HANCSTR_DELIVERY_PLACE) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/inpatient/master/DeliveryPlaceMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/inpatient/master/DeliveryPlaceMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

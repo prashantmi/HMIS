@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ 	<form-beans>		
+ 		<form-bean name="initialTransactionFB" type="operationTheatre.transactions.controller.fb.InitialActionFB"/>
+ 		<form-bean name="OTPACRequsitionFB" type="operationTheatre.transactions.controller.fb.OTPACRequsitionFB"/>
+ 		<form-bean name="MinorOTRequisitionFB" type="operationTheatre.transactions.controller.fb.MinorOTRequisitionFB"/>
+ 		<form-bean name="MinorOTResultEntryFB" type="operationTheatre.transactions.controller.fb.MinorOTResultEntryFB"/>
+ 		<form-bean name="OTListRequisitionFB" type="operationTheatre.transactions.controller.fb.OTListRequisitionFB"/>
+ 		<form-bean name="OTpatientSearchingFB" type="operationTheatre.transactions.controller.fb.OTpatientSearchingFB"/>
+ 		<form-bean name="OTDossierFB" type="operationTheatre.transactions.controller.fb.OTDossierFB"/>
+ 		<form-bean name="OTPACResultEntryFB" type="operationTheatre.transactions.controller.fb.OTPACResultEntryFB"/>
+ 		<form-bean name="OTAnesthesiaResultEntryFB" type="operationTheatre.transactions.controller.fb.OTAnesthesiaResultEntryFB"/>
+ 		<form-bean name="OTOperationResultEntryFB" type="operationTheatre.transactions.controller.fb.OTOperationResultEntryFB"/>
+ 		<form-bean name="OTPostOperativeCareUnitFB" type="operationTheatre.transactions.controller.fb.OTPostOperativeCareUnitFB"/>
+ 		<form-bean name="AddNewOperationFB" type="operationTheatre.transactions.controller.fb.AddNewOperationFB"/>
+ 		<form-bean name="AddOperationRecordEntryFB" type="operationTheatre.transactions.controller.fb.AddOperationRecordEntryFB"/>
+ 		<form-bean name="OTTemplateTransactionFB" type="operationTheatre.transactions.controller.fb.OTTemplateTransactionFB"/>
+ 		<form-bean name="OTTemplateTransactionMenuFB" type="operationTheatre.transactions.controller.fb.OTTemplateTransactionMenuFB"/>
+ 		<form-bean name="OTTemplateTransactionListFB" type="operationTheatre.transactions.controller.fb.OTTemplateTransactionListFB"/>
+ 		<form-bean name="PatientAcceptanceFB" type="operationTheatre.transactions.controller.fb.PatientAcceptanceFB"/>
+ 		<form-bean name="OTDossierFB" type="operationTheatre.transactions.controller.fb.OTDossierFB"/>
+ 		<form-bean name="OTCancellationReschedulingFB" type="operationTheatre.transactions.controller.fb.OTCancellationReschedulingFB"/>
+ 		<form-bean name="cannedDetailFB" type="operationTheatre.transactions.controller.fb.OTCannedDtlFB"/>
+		<form-bean name="SendPatientFB" type="operationTheatre.transactions.controller.fb.SendPatientFB"/>
+ 		<form-bean name="OperationTheatreListValidationFB" type="operationTheatre.transactions.controller.fb.OTListValidationFB"/>
+ 		<form-bean name="AddPostOpMonitoringFB" type="operationTheatre.transactions.controller.fb.PostOpMonitoringFB"/>
+ 		<form-bean name="VitalMonitoringFB" type="operationTheatre.transactions.controller.fb.VitalMonitoringFB"/>
+ 		
+ 		
+ 	</form-beans>
+ 	
+<action-mappings> 
+
+	<action
+		path="/initialAction"
+		type="operationTheatre.transactions.controller.action.InitialACTION"
+		name="initialTransactionFB"
+		scope="request"
+		parameter="mode"
+		input="../startup/initPage.jsp">		  
+		<forward name="OPENEPISODELISTING" path="/OpenEpisodeList" redirect="true"/>
+		<forward name="OPENPACREQLIST" path="/OpenPACReqList" redirect="true"/>
+		<forward name="MINOROTREQUISITION" path="/MinorOTRequisition" redirect="true"/>
+		<forward name="MINOR_OT" path="/MinorOTResultEntry" redirect="true"/>
+		<forward name="OTLISTRAISING" path="/otListRaising" redirect="true"/>
+		<forward name="OTPATIENTSEARCHING" path="/otPatientSearching" redirect="true"/>
+		<forward name="MODIFYOTDOSSIER" path="/OTDossier" redirect="true"/>
+		<forward name="PACRESULTENTRY" path="/OTPACResultEntry" redirect="true"/>
+		<forward name="ANESTHESIARESULTENTRY" path="/OTAnesthesiaResultEntry" redirect="true"/>
+		<forward name="OPERATIONRESULTENTRY" path="/OTOperationResultEntry" redirect="true"/>
+		<forward name="POSTOPERATIVECAREUNIT" path="/OTPostOperativeCareUnit" redirect="true"/>
+
+		<forward name="ADDOPERATIONRECORDENTRY" path="/AddOperationRecordEntry" redirect="true"/>
+		<forward name="TEMPLATETRANSACTIONDATASAVE" path="/TemplateTransactionDataSave" redirect="true"/>
+
+		<forward name="PATIENTACCEPTANCEPAGE" path="/PatientAcceptancePage" redirect="true"/>
+		<forward name="POSTUPORDERSPAGE" path="/PostUpOrdersPage" redirect="true"/>
+		<forward name="OTCANCELLATIONRESCHEDULING" path="/OtCancellationRescheduling" redirect="true"/>
+		<forward name="SENDPATIENTPAGE" path="/SendPatientPage" redirect="true"/>
+		<forward name="OPERATIONTHEATRELISTVALIDATION" path="/OperationTheatreListValidationListingPage" redirect="true"/>
+		<forward name="CANCEL" path="../startup/initPage.jsp"	redirect="true" />	
+		<forward name="PACUDETAILS" path="/VitalMonitoring" redirect="true"/>
+		
+		<forward name="POSTOPMONITORING" path="/PostOperativeMonitoring" redirect="true"/>
+		<forward name="VITALMONITORING" path="/VitalMonitoring" redirect="true"/>
+		<forward name="INTRAOPMONITORING" path="/VitalMonitoring" redirect="true"/>
+		
+	</action>
+	
+	<action
+		path="/transactions/openEpisodeList"
+		type="operationTheatre.transactions.controller.action.OTOpenEpisodeACTION"
+		name="OTPACRequsitionFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/jsp/ot_openEpisodeListingTile.jsp">		  
+		<forward name="NEWPAC" path="/transactions/jsp/ot_openEpisodeListingTile.jsp" />
+		<forward name="PACREQRAISING" path="/transactions/jsp/ot_pacRequisition_trans.jsp" />
+		<forward name="OPENLIST" path="/transactions/jsp/PACRequisitionListPage.jsp"/>
+		<forward name="REVIEWPAC" path="/transactions/jsp/ot_reviewPAC_trans.jsp"/>
+	</action>
+	<action
+		path="/transactions/MinorOTRequisition"
+		type="operationTheatre.transactions.controller.action.MinorOTRequisitionACTION"
+		name="MinorOTRequisitionFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/jsp/ot_MinorOTRequisition_trans.jsp">
+		<forward name="INIT" path="/transactions/jsp/ot_MinorOTRequisition_trans.jsp" />
+		<forward name="NEWMINOROTREQ" path="/transactions/jsp/ot_MinorOTRequisition_trans.jsp" />				
+	</action>	
+	<action 
+		path ="/transactions/MinorOTResultEntry"
+		type ="operationTheatre.transactions.controller.action.MinorOTResultEntryACTION"
+		name ="MinorOTResultEntryFB"
+		scope ="request"
+		parameter ="hmode"	
+		input="/transactions/jsp/MinorOTListPage.jsp">
+		<forward name="MINOROTLISTPAGE" path="/transactions/jsp/MinorOTListPage.jsp"/>
+		<forward name="MINOROTRESULTENTRYPAGE" path="/transactions/jsp/MinorOTResultEntryPage.jsp"/>
+	</action> 
+
+	<action
+		path="/transactions/otListRaising"
+		type="operationTheatre.transactions.controller.action.OTListRequisitionACTION"
+		name="OTListRequisitionFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/jsp/ot_openOtlistRaisingList.jsp">		  
+		<forward name="OTLISTRAISINGLIST" path="/transactions/jsp/ot_otListRequisition_list.jsp" />
+		<forward name="OTRAISING" path="/transactions/jsp/ot_otListRequisition_trans.jsp" />
+		<forward name="OPERATIONTHEATRELISTVALIDATION" path="/AHIMS/operationTheatre/initialAction.cnt?mode=OPERATIONTHEATRELISTVALIDATION" />
+	</action>
+	
+	<action
+		path="/transactions/otPatientSearching"
+		type="operationTheatre.transactions.controller.action.OTPatientSearchingACTION"
+		name="OTpatientSearchingFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/jsp/ot_PatientSearching.jsp">		  
+		<forward name="PATIENTSEARCH" path="/transactions/jsp/ot_PatientSearching.jsp" />
+	</action>
+	
+	 <action path="/transactions/OTDossier"
+				type="operationTheatre.transactions.controller.action.OTDossierACTION"
+				name="OTDossierFB"
+				validate="false"
+				scope="request"
+				parameter ="hmode"	
+				input="/transactions/jsp/OTDossierAddPage.jsp">
+				<forward name="ADD_DOSSIER" path="/transactions/jsp/OTDossierAddPage.jsp" />
+				<forward name="OTDOSSIER_LISTPAGE" path="/transactions/jsp/OTDossierListPage.jsp" />
+				<forward name="MODIFY_DOSSIER" path="/transactions/jsp/OTDossierModifyPage.jsp" />	
+				<forward name="INIT_PRINT_DOSSIER" path="/transactions/jsp/OTDossierAddPrintPage.jsp" />
+				<forward name="OTDOSSIERACCEPTANCE" path="/transactions/jsp/OTDossierAcceptancePage.jsp" />
+				<forward name="INIT_PRINT_ARTICLE_DOSSIER" path="/transactions/jsp/OTDossierModifyPrintPage.jsp" />
+		</action>		
+				
+	 <action path="/transactions/PACResultEntry"
+				type="operationTheatre.transactions.controller.action.OTPACResultEntryACTION"
+				name="OTPACResultEntryFB"
+				validate="false"
+				scope="request"
+				parameter ="hmode"	
+				input="/transactions/jsp/PACResultEntry.jsp">
+				<forward name="PACRESULTENTRYADD" path="/transactions/jsp/PACResultEntry.jsp" />
+				
+		</action>	
+		 <action path="/transactions/OperationResultEntry"
+				type="operationTheatre.transactions.controller.action.OTOperationResultEntryACTION"
+				name="OTOperationResultEntryFB"
+				validate="false"
+				scope="request"
+				parameter ="hmode"	
+				input="/transactions/jsp/OperationResultEntry.jsp">
+				<forward name="OPERATIONRESULTENTRYADD" path="/transactions/jsp/OperationResultEntry.jsp" />
+				
+		</action>	
+		 <action path="/transactions/AnesthesiaResultEntry"
+				type="operationTheatre.transactions.controller.action.OTAnesthesiaResultEntryACTION"
+				name="OTAnesthesiaResultEntryFB"
+				validate="false"
+				scope="request"
+				parameter ="hmode"	
+				input="/transactions/jsp/AnesthesiaResultEntry.jsp">
+				<forward name="ANESTHESIARESULTENTRYADD" path="/transactions/jsp/AnesthesiaResultEntry.jsp" />
+				
+		</action>	
+		 <action path="/transactions/PostOperativeCareUnit"
+				type="operationTheatre.transactions.controller.action.OTPostOperativeCareUnitACTION"
+				name="OTPostOperativeCareUnitFB"
+				validate="false"
+				scope="request"
+				parameter ="hmode"	
+				input="/transactions/jsp/PostOperativeCareUnit.jsp">
+				<forward name="POSTOPERATIVECAREUNITADD" path="/transactions/jsp/PostOperativeCareUnit.jsp" />
+				
+		</action>	
+		<action 
+		    path="/transactions/OTTemplateTransactionList"
+			type="operationTheatre.transactions.controller.action.OTTemplateTransactionListACTION"
+			name="OTTemplateTransactionListFB"
+			scope="request"
+			parameter="hmode"
+			input="/transactions/jsp/OTTemplateTransactionListPage.jsp">			
+			<forward name="SHOWLIST" path="/transactions/jsp/OTTemplateTransactionListPage.jsp"/>
+			<forward name="SHOWTEMPLATE" path="/transactions/jsp/OTTemplateTransactionDataSavePage.jsp"/>
+			<forward name="SHOWPREVIOUSPACTEMPLATE" path="/transactions/jsp/OTTemplateTransactionDataReportPage.jsp"/>								
+	</action>	
+		
+
+		<action
+		path="/transactions/AddOperationRecordEntry"
+		type="operationTheatre.transactions.controller.action.AddOperationRecordEntryACTION"
+		name="AddOperationRecordEntryFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/jsp/OperationAddRecordEntryPage.jsp">
+		<forward name="ADDRECORDENTRY" path="/transactions/jsp/OperationAddRecordEntryPage.jsp"/>
+		<forward name="OT_REPORT" path="/transactions/jsp/OperationAddRecordReportPage.jsp"/>	
+		<forward name="TEAMTILE" path="/transactions/jsp/OperationTheatreTeamDetailsTile.jsp"/>
+							
+	</action>
+
+		<action	path="/transactions/PatientAcceptancePage"
+		type="operationTheatre.transactions.controller.action.PatientAcceptanceACTION"
+		name="PatientAcceptanceFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/PatientAcceptancePage.jsp">
+		<forward name="LISTPAGE" path="/transactions/jsp/PatientAcceptancePage.jsp"/>
+		<forward name="CHECKLISTPAGE" path="/transactions/jsp/PatientCheckListFrame.jsp"/>
+		<forward name="PREOPERATIVEPAGE" path="/transactions/jsp/PatientCheckListPreOpOrder.jsp"/>
+		<forward name="CONSUNTCHECKPAGE" path="/transactions/jsp/PatientCheckListConsentStatus.jsp"/>
+		<forward name="RIGHTFRAMELIST" path="/transactions/jsp/PatientAcceptanceCheckListMenu.jsp"/>
+		<forward name="HOMEFRAMELIST" path="/transactions/jsp/PatientCheckListHome.jsp"/>
+		
+		
+	</action>		
+	
+	<action 
+		    path="/transactions/OTTemplateTransactionList"
+			type="operationTheatre.transactions.controller.action.OTTemplateTransactionListACTION"
+			name="OTTemplateTransactionListFB"
+			scope="request"
+			parameter="hmode"
+			input="/transactions/OTTemplateTransactionListPage.jsp">			
+			<forward name="SHOWLIST" path="/transactions/jsp/OTTemplateTransactionListPage.jsp"/>
+			<forward name="SHOWTEMPLATE" path="/transactions/jsp/OTTemplateTransactionDataSavePage.jsp"/>
+			<forward name="SHOWPREVIOUSPACTEMPLATE" 
+
+			path="/transactions/jsp/OTTemplateTransactionDataReportPage.jsp"/>								
+	</action>		
+	
+	
+	<action	path="/transactions/OtCancellationRescheduling"
+		type="operationTheatre.transactions.controller.action.OTCancellationReschedulingACTION"
+		name="OTCancellationReschedulingFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/OTCancellationRescheduling.jsp">
+		<forward name="LISTPAGE" path="/transactions/jsp/OTCancellationRescheduling.jsp"/>				
+
+		
+	</action>
+	
+	<action 
+		path ="/transactions/cannedDtl"
+		type ="operationTheatre.transactions.controller.action.OTCannedDtlACTION"
+		name ="cannedDetailFB"
+		scope =                                                                                                                                                    "request"
+		parameter ="hmode"	
+		input="/transactions/canned_dtl.jsp">
+		<forward name="CannedCode" path="/transactions/jsp/canned_dtl.jsp"/>
+	</action> 
+	
+		<action	path="/transactions/SendPatientPage"
+		type="operationTheatre.transactions.controller.action.SendPatientACTION"
+		name="SendPatientFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/SendPatient.jsp">
+		<forward name="LISTPAGE" path="/transactions/jsp/SendPatient.jsp"/>		
+	</action>
+	<action 
+		   	path="/transactions/OperationTheatreListValidationListingPage"
+			type="operationTheatre.transactions.controller.action.OTListValidationACTION"
+			name="OperationTheatreListValidationFB"
+			scope="request"
+			parameter="hmode"
+			input="/transactions/OperationTheatreListValidationListingPage.jsp">
+			<forward name="OTLISTVALIDATIONLISTINGPAGE" path="/transactions/jsp/OperationTheatreListValidationListingPage.jsp"/>
+			<forward name="OTLISTVALIDATIONSAVEPAGE" path="/transactions/jsp/OperationTheatreListValidationSavePage.jsp"/>
+	</action>
+	<action
+		path="/transactions/VitalMonitoring"
+		type="operationTheatre.transactions.controller.action.VitalMonitoringACTION"
+		name="VitalMonitoringFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/VitalMonitoringPage.jsp">
+		<forward name="ADDRECORDENTRY" path="/transactions/jsp/VitalMonitoringPage.jsp"/>						
+	</action>
+
+	<action
+		path="/transactions/AddPostOpMonitoringEntry"
+		type="operationTheatre.transactions.controller.action.PostOpMonitoringACTION"
+		name="AddPostOpMonitoringFB"
+		scope="request"
+		parameter="hmode"
+		input="/transactions/PostOperativeMonitoringAdd.jsp">
+		<forward name="ADDRECORDENTRY" path="/transactions/jsp/PostOperativeMonitoringAdd.jsp"/>
+		<forward name="ANESTHESIA_REPORT" path="/transactions/jsp/PostOperativeMonitoringReport.jsp"/>
+	</action>
+	
+</action-mappings>
+	
+<controller>
+	<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+</controller>
+
+<message-resources  parameter="operationTheatre.OT_ResourceBundle"></message-resources>
+
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/operationTheatre/operationTheatre-tiles-defs.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>  
+ </struts-config>	

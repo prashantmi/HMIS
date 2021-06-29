@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts-config>
+
+	<form-beans>
+
+	<!-- Global Bean Declaration Start -->
+		<form-bean name="billingBean" type="billing.BillingFB"></form-bean>
+	<!-- Global Bean Declaration End -->
+ 
+ 
+	<!-- Billing Master Bean Start-->
+		<form-bean name="chargeBean" type="billing.masters.controller.fb.ChargeMstFB" /> 
+        <form-bean name="tariffBean" type="billing.masters.controller.fb.GlobalTariffMstFB" /> 
+		<form-bean name="counterBean" type="billing.masters.controller.fb.CounterMstFB"></form-bean>
+		<form-bean name="localTariffBean" type="billing.masters.controller.fb.LocalTariffMstFB"></form-bean>		
+        <form-bean name="groupBean" type="billing.masters.controller.fb.GlobalGroupMstFB" /> 
+		<form-bean name="grpBean" type="billing.masters.controller.fb.GroupMstFB" /> 
+        <form-bean name="unitvalueBean" type="billing.masters.controller.fb.UnitValueMstFB" /> 
+		<form-bean name="hsgroupBean" type="billing.masters.controller.fb.VOHospServiceGroupMst"></form-bean>
+		<form-bean name="packservBean" type="billing.masters.controller.fb.PackageServiceMstFB" /> 
+		<form-bean name="advanceBean" type="billing.masters.controller.fb.VOAdvanceMst"></form-bean>
+		<form-bean name="billsetupbean" type="billing.masters.controller.fb.BillSetupMstFB"></form-bean>
+		<form-bean name="remarkBean" type="billing.masters.controller.fb.GlobalRemarksMstFB"></form-bean>
+		<form-bean name="unitBean" type="billing.masters.controller.fb.UnitMstFB"></form-bean>
+		<form-bean name="clientBean" type="billing.masters.controller.fb.ClientMstFB"></form-bean>
+		<form-bean name="chargeRuleBean" type="billing.masters.controller.fb.ChargeRuleMstFB"></form-bean>
+		<form-bean name="ccRuleBean" type="billing.masters.controller.fb.ConsumableChargeDiscountRuleMstFB"></form-bean>
+	<!-- Billing Master Bean End-->
+		   
+		   
+	<!-- Billing Transaction Bean  Start-->
+		<form-bean name="cashCollectionTransBean" type="billing.transactions.CashCollectionTransFB"></form-bean>
+		
+			<form-bean name="cashCollectionWithoutCrTransBean" type="billing.transactions.CashCollectionWithoutCrTransFB"></form-bean>
+		
+		<form-bean name="cashCollectionOnlineTransBean" type="billing.transactions.CashCollectionOnlineTransFB"></form-bean>
+		
+		<form-bean name="cashCollectionOfflineTransBean" type="billing.transactions.CashCollectionOfflineTransFB"></form-bean>
+		
+		<form-bean name="onLineRefundApprovalTransBean" type="billing.transactions.OnLineRefundApprovalFB"></form-bean>
+		<form-bean name="dayEndTransBean" type="billing.transactions.DayEndTransFB"></form-bean>
+		<form-bean name="clientverificTransBean" type="billing.transactions.ClientVerificTransFB"></form-bean>
+		<form-bean name="clientApprovalDetailTransBean" type="billing.transactions.ClientApprovalDetailsTransFB"></form-bean>
+		<form-bean name="discountApprovalTransBean" type="billing.transactions.DiscountApprovalTransFB"></form-bean>
+		<form-bean name="discountRecommendationApprovalTransBean" type="billing.transactions.DiscountRecommendationApprovalTransFB"></form-bean>
+		<form-bean name="discountRecommendationTransBean" type="billing.transactions.DiscountRecommendationTransFB"></form-bean>
+		<form-bean name="billPrintTransBean" type="billing.transactions.BillPrintTransFB"></form-bean>
+		<form-bean name="ipdBillManagementTransBean" type="billing.transactions.IpdBillManagementTransFB"></form-bean>
+		<form-bean name="OnlineRequestCancellationTransBean" type="billing.transactions.OnlineRequestCancellationTransFB"></form-bean>
+		<form-bean name="BillingCancellationTransBean" type="billing.transactions.BillingCancellationTransFB"></form-bean>
+		<form-bean name="BillRePrintTransBean" type="billing.transactions.BillRePrintTransFB"></form-bean>
+	 	<form-bean name="refundApprovalTransBean" type="billing.transactions.RefundApprovalTransFB"></form-bean>
+		<form-bean name="billReconcileTransBean" type="billing.transactions.BillReconcileTransFB"></form-bean>
+		<form-bean name="BillDupPrintTransBean" type="billing.transactions.BillDupPrintTransFB"></form-bean>
+		<form-bean name="AddServicesIPDTransBean" type="billing.transactions.AddServicesIPDTransFB"></form-bean>
+		<form-bean name="IpdBillReOpenTransBean" type="billing.transactions.IpdBillReOpenTransFB"></form-bean>
+	<!-- Billing Transaction Bean  End-->
+
+
+
+	<!-- Billing Report Bean Start -->
+		<form-bean name="counterFeeDtlRpt" type="billing.reports.FeeCollectionDetailsRptFB"></form-bean>
+		<form-bean name="discountDtlRpt" type="billing.reports.DiscountDetailsRptFB"></form-bean>
+		<form-bean name="dueDtlRpt" type="billing.reports.DueDetailsRptFB"></form-bean>
+		<form-bean name="incomeCorpStatRpt" type="billing.reports.IncomeCorpStatementRptFB"></form-bean>
+		<form-bean name="listAbscondedPatRpt" type="billing.reports.ListAbscondedPatRptFB"></form-bean>
+		<form-bean name="patListSecurityAmtRpt" type="billing.reports.PatListSecurityAmtRptFB"></form-bean>
+		<form-bean name="paymentDtlRpt" type="billing.reports.PaymentDtlRptFB"></form-bean>
+		<form-bean name="totalFeeCollRpt" type="billing.reports.ConsolidatedFeeCollRptFB"></form-bean>
+		<form-bean name="userFeeCollRpt" type="billing.reports.UserFeeCollectionRptFB"></form-bean>
+		<form-bean name="totalRefundRpt" type="billing.reports.ConsolidatedRefundRptFB"></form-bean>
+		<form-bean name="consolidatedDisDtlRpt" type="billing.reports.ConsolidatedDiscountDtlRptFB"></form-bean>
+		<form-bean name="consolidatedExpDtlRpt" type="billing.reports.ConsolidatedExpDtlRptFB"></form-bean>
+		<form-bean name="dayEndDuplicateRpt" type="billing.reports.DayEndDuplicateRptFB"></form-bean>
+		<form-bean name="chargeDtlRpt" 	type="billing.reports.ChargeDetailRptFB"></form-bean>
+		<form-bean name="billCancelLogDtlRpt" 	type="billing.reports.BillCancellationLogDetailRptFB"></form-bean>
+		<form-bean name="duplicatePrintLogDtlRpt" 	type="billing.reports.DuplicatePrintLogDetailRptFB"></form-bean>
+	<!-- Billing Report Bean End -->
+ 
+	</form-beans>
+
+
+	<action-mappings>
+		 
+		 
+	<!-- Global Action Declaration Start -->
+	
+	<action path="/transactions/BillingCNT" type="billing.BillingCNT" name="billingBean" scope="request" validate="false" parameter="hmode">
+		<forward name="display" path="/transactions/tariffSearch.jsp" />
+		<forward name="patlist" path="/transactions/searchpatientdtls.jsp" />
+		<forward name="receiptList" path="/transactions/SearchReceiptDetails.jsp" />
+		<forward name="displaytariffCode" path="/transactions/tariffCodeSearch.jsp" />
+		<forward name="cashCollectionPopup" path="/transactions/cashCollectionDetail_popup.jsp" />
+	</action>
+	 
+ 	<!-- Global Action Declaration Start -->
+ 
+ 
+ 
+ 	<!-- Billing Master Action Start-->
+ 
+ 		<action path="/masters/CNTChargeMst" type="billing.masters.controller.action.ChargeMstACTION" name="chargeBean" scope="request" validate="false" parameter="hmode">
+           <forward name="add" path="/masters/billing_add_Charge_mst.jsp" /> 
+           <forward name="modify" path="/masters/billing_modify_Charge_mst.jsp" /> 
+           <forward name="batch" path="/masters/billing_batchUpdate_Charge_mst_bill.jsp" /> 
+        </action>
+
+		
+		<action path="/masters/CNTcounterMst" type="billing.masters.controller.action.CounterMstACTION" name="counterBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/billing_add_counter_mst.jsp" />
+			<forward name="modify" path="/masters/billing_modify_counter_mst.jsp" />
+		</action>
+		
+		
+		<action path="/masters/CNTTariffMst" type="billing.masters.controller.action.GlobalTariffMstACTION" name="tariffBean" scope="request" validate="false" parameter="hmode">
+           <forward name="add" path="/masters/billing_add_GlobalTariff_mst.jsp" /> 
+           <forward name="modify" path="/masters/billing_modify_GlobalTariff_mst.jsp" /> 
+         </action>
+
+		<action path="/masters/CNTTrfMst" type="billing.masters.controller.action.LocalTariffMstACTION" name="localTariffBean" scope="request" validate="false" parameter="hmode">
+           <forward name="add" path="/masters/add_tariffMst_bill.jsp" /> 
+           <forward name="modify" path="/masters/modify_tariffMst_bill.jsp" /> 
+           <forward name="viewPage" path="/masters/view_tariff_mst.jsp" />
+         </action>
+		
+		<action path="/masters/CNTGroupMst" type="billing.masters.controller.action.GlobalGroupMstACTION" name="groupBean" scope="request" validate="false" parameter="hmode">
+          <forward name="add" path="/masters/billing_add_GlobalGroup_mst.jsp" /> 
+          <forward name="modify" path="/masters/billing_modify_GlobalGroup_mst.jsp" /> 
+        </action>
+
+
+     <action path="/masters/CNTGrpMst" type="billing.masters.controller.action.GroupMstACTION" name="grpBean" scope="request" validate="false" parameter="hmode">
+         <forward name="add" path="/masters/billing_add_Group_mst.jsp" /> 
+         <forward name="modify" path="/masters/billing_modify_Group_mst.jsp" /> 
+     </action>
+
+		
+		<action path="/masters/CNTUnitValueMst" type="billing.masters.controller.action.UnitValueMstACTION" name="unitvalueBean" scope="request" validate="false" parameter="hmode">
+            <forward name="add" path="/masters/billing_add_UnitValue_mst.jsp" /> 
+            <forward name="modify" path="/masters/billing_modify_UnitValue_mst.jsp" /> 
+       </action>
+
+		
+		<action path="/masters/CNTHospServiceGroupMst" type="billing.masters.controller.action.CNTHospServiceGroupMst" name="hsgroupBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/add_hsgroup_bill.jsp" />
+			<forward name="modify" path="/masters/modify_hsgroup_bill.jsp" />
+		</action>
+		
+		
+		<action path="/masters/CNTpackservMst" type="billing.masters.controller.action.PackageServiceMstACTION" name="packservBean" scope="request" validate="false" parameter="hmode">
+            <forward name="add" path="/masters/billing_add_PackageService_mst.jsp" /> 
+            <forward name="modify" path="/masters/billing_modify_PackageService_mst.jsp" /> 
+         </action>
+
+
+		<action path="/masters/CNTAdvanceMst" type="billing.masters.controller.action.CNTAdvanceMst" name="advanceBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/add_advancemst_bill.jsp" />
+			<forward name="modify" path="/masters/modify_advancemst_bill.jsp" />
+		</action>
+
+		<!-- <action path="/masters/CNTBillSetup" type="billing.masters.CNTBillSetup" name="billsetupbean" scope="request" validate="false" parameter="selectedTab">
+			<forward name="general" path="/masters/billing_general_BillSetup_mst.jsp" />
+			<forward name="emergency" path="/masters/billing_emergency_BillSetup_mst.jsp" />
+			<forward name="opd" path="/masters/billing_opd_BillSetup_mst.jsp" />
+			<forward name="billformat" 	path="/masters/billing_billFormat_BillSetup_mst.jsp" />
+			<forward name="jobs" path="/masters/billing_jobs_BillSetup_mst.jsp" />
+			<forward name="ipd" path="/masters/billing_ipdgeneral_BillSetup_mst.jsp" />
+			<forward name="compulsoryCharge" path="/masters/billing_ipdcompulsorycharges_BillSetup_mst.jsp" />
+			<forward name="bedCalculationRule" path="/masters/billing_ipdbedcalculationrule_BillSetup_mst.jsp" />
+			<forward name="generalIpd" path="/masters/billing_ipdgeneral_BillSetup_mst.jsp" />
+			<forward name="billFormat" 	path="/masters/billing_billFormat_BillSetup_mst.jsp" />
+		</action> -->
+
+		<action path="/masters/CNTBillSetup" type="billing.masters.controller.action.BillSetupMstACTION" name="billsetupbean" scope="request" validate="false" parameter="selectedTab">
+			<forward name="general" path="/masters/billing_general_BillSetup_mst.jsp" />
+			<forward name="emergency" path="/masters/billing_emergency_BillSetup_mst.jsp" />
+			<forward name="opd" path="/masters/billing_opd_BillSetup_mst.jsp" />
+			<!-- <forward name="billformat" 	path="/masters/billing_billformat_BillSetup_mst.jsp" /> -->
+			<forward name="jobs" path="/masters/billing_jobs_BillSetup_mst.jsp" />
+			<forward name="ipd" path="/masters/billing_ipdcompulsorycharges_BillSetup_mst.jsp" />
+			<forward name="compulsoryCharge" path="/masters/billing_ipdcompulsorycharges_BillSetup_mst.jsp" />
+			<forward name="bedCalculationRule" path="/masters/billing_ipdbedcalculationrule_BillSetup_mst.jsp" />
+			<forward name="generalIpd" path="/masters/billing_ipdgeneral_BillSetup_mst.jsp" />
+			<forward name="billFormat" 	path="/masters/billing_billformat_BillSetup_mst.jsp" />
+			<forward name="initPage" path="/../startup/initPage.jsp" redirect="true" />
+		</action> 
+		
+		<action path="/masters/CNTRemarksMst" type="billing.masters.controller.action.GlobalRemarksMstACTION" name="remarkBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/billing_add_remarks_mst.jsp" />
+			<forward name="modify" path="/masters/billing_modify_remarks_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTUnitMst" type="billing.masters.controller.action.UnitMstACTION" name="unitBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/billing_add_unit_mst.jsp" />
+			<forward name="modify" path="/masters/billing_modify_unit_mst.jsp" />
+		</action>
+
+		<action path="/masters/CNTClientMst" type="billing.masters.controller.action.ClientMstACTION" name="clientBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/billing_add_client_mst.jsp" />
+			<forward name="modify" 	path="/masters/billing_modify_client_mst.jsp" />
+		</action>
+		
+		<action path="/masters/CNTChargeRuleMst" type="billing.masters.controller.action.ChargeRuleMstACTION" name="chargeRuleBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/add_chargeRuleMst_bill.jsp" />
+			<forward name="modify" path="/masters/modify_chargeRuleMst_bill.jsp" />
+		</action>
+		
+		<action path="/masters/CNTCCRuleMst" type="billing.masters.controller.action.ConsumableChargeDiscountRuleMstACTION" name="ccRuleBean" scope="request" validate="false" parameter="hmode">
+			 <forward name="add" path="/masters/billing_add_ccRule_mst.jsp" />
+		 	<forward name="modify" path="/masters/billing_modify_ccRule_mst.jsp" /> 
+		</action>
+		
+ 	<!-- Billing Master Action End-->		
+ 
+ 
+ 
+ 		<!-- Billing Services Action Start-->	
+ 
+ 		<action path="/transactions/CashCollectionTransCNT" type="billing.transactions.CashCollectionTransCNT" name="cashCollectionTransBean" scope="request" validate="false" parameter="hmode"> 
+			<forward name="cashcollection" path="/transactions/cashcollection_billtrans.jsp" />
+			<forward name="cashcollectionwithoutcrno" path="/transactions/cashcollection_without_crno_billtrans.jsp" />
+			<forward name="billlist" path="/transactions/searchbilldtls.jsp" />
+		</action>
+ 		
+ 		
+ 		<action path="/transactions/CashCollectionOnlineTransCNT" type="billing.transactions.CashCollectionOnlineTransCNT" name="cashCollectionOnlineTransBean" scope="request" validate="false" parameter="hmode"> 
+			<forward name="cashcollection" path="/transactions/cashcollection_online_billtrans.jsp" />
+		</action>
+ 		
+ 		<action path="/transactions/CashCollectionOfflineTransCNT" type="billing.transactions.CashCollectionOfflineTransCNT" name="cashCollectionOfflineTransBean" scope="request" validate="false" parameter="hmode"> 
+			<forward name="cashcollection" path="/transactions/cashcollection_offline_billtrans.jsp" />
+			<forward name="printPopUp" path="/transactions/billing_receipt_printing_popup.jsp" />
+		</action>
+ 		
+ 		
+ 		
+ 		
+ 		<action path="/transactions/CashCollectionWithoutCrTransCNT" type="billing.transactions.CashCollectionWithoutCrTransCNT" name="cashCollectionWithoutCrTransBean" scope="request" validate="false" parameter="hmode"> 
+			<forward name="cashcollectionwithoutcrno" path="/transactions/cashcollection_without_crno_billtrans_new.jsp" />
+			<forward name="billlist" path="/transactions/searchbilldtls_withoutcrno.jsp" />
+			
+		</action>
+ 		
+ 		 
+ 		<action path="/transactions/OnLineRefundApprovalCNT" type="billing.transactions.OnLineRefundApprovalCNT" name="onLineRefundApprovalTransBean" scope="request" validate="false" parameter="hmode"> 
+			     <forward name="index" path="/transactions/RefundApprovalTrans_Billing.jsp" />
+		</action>
+ 		
+ 		<action path="/transactions/DayEndTransCNT" type="billing.transactions.DayEndTransCNT" name="dayEndTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="enter" path="/transactions/dayend_billtrans.jsp" />
+			<forward name="dayend" path="/reports/dayendreport.jsp" />
+		</action>
+ 		
+  <!-- 	
+ 		<action path="/transactions/ClientVerificTransCNT" type="billing.transactions.ClientVerificTransCNT" name="clientverificTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/transactions/ClientVerificTrans_add_billtrans.jsp" />
+			<forward name="modify" path="/transactions/ClientVerificTrans_modify_billtrans.jsp" />
+		</action>
+	-->	
+ 		<action path="/transactions/ClientVerificTransCNT" type="billing.transactions.ClientVerificTransCNT" name="clientverificTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="clientverification" path="/transactions/AnantMedicos.jsp" />
+			<forward name="report" path="/transactions/AnantMedicos2.jsp" />
+			<forward name="PostPaidReport" path="/reports/PostPaidReport.jsp" />
+			<forward name="PrePaidReport" path="/reports/PrePaidReport.jsp" />
+			<forward name="deposit" path="/transactions/DepositTrans_billtrans.jsp" />
+			<forward name="renew-extend" path="/transactions/RenewExtendTrans_billtrans.jsp" />
+		</action>
+ 
+ 
+ 		<action path="/transactions/ClientApprovalDetailsTransCNT" 	type="billing.transactions.ClientApprovalDetailsTransCNT" name="clientApprovalDetailTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="approval" path="/transactions/clientapprovaldetails_approval_billtrans.jsp" />
+			<forward name="reapproval" path="/transactions/clientapprovaldetails_reapproval_billtrans.jsp" />
+			<forward name="close" path="/transactions/clientapprovaldetails_close_billtrans.jsp" />
+			<forward name="view" path="/transactions/clientapprovaldetails_view_billtrans.jsp" />
+			<forward name="refund" path="/transactions/clientapprovaldetails_refund_billtrans.jsp" />
+		</action>
+ 
+ 		<action path="/transactions/DiscountApprovalTransCNT" type="billing.transactions.DiscountApprovalTransCNT" name="discountApprovalTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="approval" path="/transactions/DiscountApprovalTrans_approved_billtrans.jsp" />
+			<forward name="cancelled" path="/transactions/DiscountApprovalTrans_cancelled_billtrans.jsp" />
+			<forward name="bsid" path="/transactions/DiscountApprovalTrans_approved_billtrans.jsp" />
+			<forward name="popup" path="/transactions/DiscountApprovalTrans_approved_billtrans.jsp" />
+			<forward name="reEnter" path="/transactions/DiscountApprovalTrans_approved_billtrans.jsp" />
+		</action>
+ 		
+ 		
+ 		<action path="/transactions/DiscountRecommendationApprovalTransCNT" type="billing.transactions.DiscountRecommendationApprovalTransCNT" name="discountRecommendationApprovalTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="approval" path="/transactions/DiscountRecommendationApprovalTrans_approved_billtrans.jsp" />
+		</action>
+ 		
+ 		<action path="/transactions/DiscountRecommendationTransCNT" type="billing.transactions.DiscountRecommendationTransCNT" name="discountRecommendationTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="approval" path="/transactions/DiscountRecommendationTrans_approved_billtrans.jsp" />
+		</action>
+ 		
+ 		<action path="/transactions/BillPrintTransCNT" type="billing.transactions.BillPrintTransCNT" name="billPrintTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="approval" path="/transactions/BillPrintTrans_approved_billtrans.jsp" />
+		</action>
+ 		
+ 		<action path="/transactions/IpdBillManagementTransCNT" type="billing.transactions.IpdBillManagementTransCNT" name="ipdBillManagementTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="updateaccount" path="/transactions/IpdBillManagment_UpdateAcctStatus_billtrans.jsp" />
+			<forward name="viewcharge" path="/transactions/IpdBillManagment_ViewCharge_billtrans.jsp" />
+			<forward name="viewbill" path="/transactions/IpdBillManagment_ViewBill_billtrans.jsp" />
+			<forward name="addservice" path="/transactions/IpdBillManagment_AddService_billtrans.jsp" />
+			<forward name="partpaymentrequest" path="/transactions/IpdBillManagement_PartPaymentStatus_billtrans.jsp" />
+			<forward name="addcltapproval" path="/transactions/IpdBillManagement_AddClientApproval_billtrans.jsp" />
+			<forward name="addserviceinsert" path="/transactions/IpdBillManagement_AddServiceInsert_billtrans.jsp" />
+			<forward name="billapproval" path="/transactions/IpdBillManagment_BllApproval_billtrans.jsp" />
+		</action>
+ 
+ 		<action path="/transactions/OnlineRequestCancellationTransCNT" type="billing.transactions.OnlineRequestCancellationTransCNT" name="OnlineRequestCancellationTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="index" path="/transactions/OnlineRequestCancellation_billtrans.jsp" />
+			<forward name="initPage" path="/startup/initPage.jsp" />
+		</action>
+ 
+ 
+ 	   <action path="/transactions/BillingCancellationTransCNT" type="billing.transactions.BillingCancellationTransCNT" name="BillingCancellationTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="index" path="/transactions/BillingCancellation_billtrans.jsp" /> 
+			<forward name="index2" path="/transactions/BillingCancellation_billtrans2.jsp" />
+			<forward name="initPage" path="/startup/initPage.jsp" />
+	  </action>
+ 
+ 	<action path="/transactions/BillRePrintTransCNT" type="billing.transactions.BillRePrintTransCNT" name="BillRePrintTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="index" path="/transactions/BillRePrint_BillTrans.jsp" />
+			<forward name="popup" path="/transactions/searchRePrintBillDtls1.jsp" />
+			<forward name="popup2" path="/transactions/searchRePrintBillDtls2.jsp" />
+	</action>
+ 
+ 	<action path="/transactions/RefundApprovalTransCNT" type="billing.transactions.RefundApprovalTransCNT" name="refundApprovalTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="refund" 	path="/transactions/RefundApprovalTrans_approved_billtrans.jsp" />
+			<forward name="cancel" path="/transactions/RefundApprovalTrans_approved_billtrans.jsp" />
+			<forward name="bsid" path="/transactions/RefundApprovalTrans_approved_billtrans.jsp" />
+	</action>
+ 
+ 	<action path="/transactions/BillReconcileTransCNT" type="billing.transactions.BillReconcileTransCNT" name="billReconcileTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="reconcile" path="/transactions/BillReconcileTrans_reconcile.jsp" /> 
+			<forward name="cancel" path="/transactions/BillReconcileTrans_reconcile.jsp" /> 
+			<forward name="bsid" path="/transactions/BillReconcileTrans_reconcile.jsp" />
+	</action>
+  
+ 	<action path="/transactions/BillDupPrintTransCNT" type="billing.transactions.BillDupPrintTransCNT" name="BillDupPrintTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="index" path="/transactions/BillDupPrint_BillTrans.jsp" />
+			<forward name="receiptPrint" path="/transactions/BillReceiptPrint_BillTrans.jsp" />
+			<forward name="popup" path="/transactions/searchBillDtls1.jsp" />
+			<forward name="popup2" path="/transactions/searchBillDtls2.jsp" />
+    		<forward name="popup3" path="/transactions/searchBillReceiptPrintDtls1.jsp" />
+			<forward name="popup4" path="/transactions/searchBillReceiptPrintDtls2.jsp" />
+   </action>
+ 
+ 
+ 		<action path="/transactions/AddServicesIPDTransCNT" type="billing.transactions.AddServicesIPDTransCNT" name="AddServicesIPDTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="addservices" path="/transactions/addservicesipd_trans.jsp" /> 
+	</action>
+ 
+   <action path="/transactions/IpdBillReOpenCNT" type="billing.transactions.IpdBillReOpenTransCNT" name="IpdBillReOpenTransBean" scope="request" validate="false" parameter="hmode">
+			<forward name="billreopen" 	path="/transactions/IpdBillReOpenTrans.jsp" />
+			<forward name="cancel" path="/transactions/IpdBillReOpenTrans.jsp" />
+			<forward name="bsid" path="/transactions/IpdBillReOpenTrans.jsp" />
+	</action>
+ 
+ 	<!-- Billing Services Action End-->	
+ 
+	<!-- Report mapping start -->
+
+		<action path="/reports/FeeCollectionDetailsRptCNT" type="billing.reports.FeeCollectionDetailsRptCNT" name="counterFeeDtlRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/feeCollectionDtl_billrpt.jsp" />
+		</action>
+		
+		<action path="/reports/DiscountDetailsRptCNT" type="billing.reports.DiscountDetailsRptCNT" name="discountDtlRpt" scope="request" validate="false" parameter="hmode"> 
+			<forward name="reportPage" path="/reports/discountDtl_billrpt.jsp" />
+		</action>
+		
+		<action path="/reports/DueDetailsRptCNT" type="billing.reports.DueDetailsRptCNT" name="dueDtlRpt" scope="request" validate="false" parameter="hmode"> 
+			<forward name="reportPage" path="/reports/dueDtl_billrpt.jsp" />
+		</action>
+		
+		<action path="/reports/IncomeCorpStatementRptCNT" type="billing.reports.IncomeCorpStatementRptCNT" name="incomeCorpStatRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/incomeCorpStatement_billrpt.jsp" />
+		</action>
+		
+		<action path="/reports/ListAbscondedPatRptCNT" type="billing.reports.ListAbscondedPatRptCNT" name="listAbscondedPatRpt" scope="request" validate="false" parameter="hmode">
+				<forward name="reportPage" path="/reports/listAbscondedPat_billrpt.jsp" />
+		</action>
+				
+		<action path="/reports/PatListSecurityAmtRptCNT" type="billing.reports.PatListSecurityAmtRptCNT" name="patListSecurityAmtRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/patListSecurityAmt_billrpt.jsp" />
+		</action>
+		
+		<action path="/reports/PaymentDtlRptCNT" type="billing.reports.PaymentDtlRptCNT" name="paymentDtlRpt" scope="request" validate="false" parameter="hmode"> 
+			<forward name="reportPage" path="/reports/paymentDtl_billrpt.jsp" />
+		</action>		
+				
+		<action path="/reports/ConsolidatedFeeCollRptCNT" type="billing.reports.ConsolidatedFeeCollRptCNT" name="totalFeeCollRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/consolidatedFeeCollection_billrpt.jsp" />
+		</action>		
+				
+		<action path="/reports/UserFeeCollectionRptCNT" type="billing.reports.UserFeeCollectionRptCNT" name="userFeeCollRpt" scope="request" validate="false" parameter="hmode"> 
+			<forward name="reportPage" path="/reports/userFeeCollection_billrpt.jsp" />
+		</action>
+		
+		<action path="/reports/ConsolidatedRefundRptCNT" type="billing.reports.ConsolidatedRefundRptCNT" name="totalRefundRpt" 	scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/consolidatedRefundRpt_billrpt.jsp" />
+		</action>
+		 
+		<action path="/reports/ConsolidatedDiscountDtlRptCNT" type="billing.reports.ConsolidatedDiscountDtlRptCNT" name="consolidatedDisDtlRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/consolidatedDiscountDtl_billrpt.jsp" />
+		</action>
+
+		<action path="/reports/ConsolidatedExpDtlRptCNT" type="billing.reports.ConsolidatedExpDtlRptCNT" name="consolidatedExpDtlRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/consolidatedExpenditureDtl_billrpt.jsp" />
+		</action>
+
+		<action path="/reports/DayEndDuplicateRptCNT" type="billing.reports.DayEndDuplicateRptCNT" name="dayEndDuplicateRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/dayEndDuplicate_billrpt.jsp" />
+		</action>
+
+		<action path="/reports/ChargeDetailRptCNT" type="billing.reports.ChargeDetailRptCNT" name="chargeDtlRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/chargeDetail_billrpt.jsp" />
+		</action>
+		
+		<action path="/reports/BillCancellationLogDetailRptCNT" type="billing.reports.BillCancellationLogDetailRptCNT" name="billCancelLogDtlRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/billCancelLogDetail_billrpt.jsp" />
+		</action>
+		
+		<action path="/reports/DuplicatePrintLogDetailRptCNT" type="billing.reports.DuplicatePrintLogDetailRptCNT" name="duplicatePrintLogDtlRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/duplicatePrintLogDetail_billrpt.jsp" />
+		</action>
+  
+		<!-- Report mapping end -->
+ 
+	</action-mappings>
+
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

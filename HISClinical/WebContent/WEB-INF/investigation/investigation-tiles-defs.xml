@@ -1,0 +1,749 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+<definition name="/slideRequest" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="SlideRequest" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/slideRequest.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+
+<definition name="/slideIssueReturn" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="SlideIssueReturn" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/slideIssueReturn.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/slideBasedTest" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="SlideBasedTest" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/slideBasedTest.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/slideBasedTestUpdated" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="SlideBasedTest" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/slideBasedTestUpdated.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+
+
+
+<definition name="/slideDiscard" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="SlideDiscard" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/slideDiscard.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/resultValidation" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Result Validation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultValidation.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/resultEntry" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Result  Entry" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultEntry.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+ 
+<definition name="/sampleAcceptance" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Acceptance" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleAcceptance.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+ 
+<definition name="/sampleAcceptanceForEquipment" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Acceptance For Equipment" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleAcceptanceForEquipment.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+
+
+<definition name="/packingNoListing" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Packing No Listing" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/packingNoListing.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/packingListGeneration" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Packing List Generation " type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/packingListGeneration.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/packingListGenerationReport" path="/investigation/transaction/commonInvestigationTransactionPrintLayout.jsp">      
+	  <put name="title"  value="Packing List Generation " type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/packingListGeneration.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/sampleCollection" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Collection" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleCollection.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/requisitionListing" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Requistion Listing" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/requisitionListing.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/outsidesamplerequisitionRaising" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Out-side Sample Requistion Raising" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/outsidesamplerequisitionRaising.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/outpatientrequisitionRaising" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Out-side Patient Requistion Raising" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/outpatientrequisitionRaising.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/requisitionRaising" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Requistion Raising" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/requisitionRaising.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/OpenEpisodeList" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Requistion Raising" type="string"/>
+  	  <put name="action"  value="/commonaction.cnt" type="string"/>
+  	  <put name="header"  value="/investigation/header.jsp"/>	  
+  	  <put name="body"  value="/investigation/transaction/openEpisodeList.cnt"/>	  
+     <put name="footer" value="" />  
+</definition>
+<definition name="/requisitionStatus" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Requisition Status" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/requisitionStatus.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/patientAcceptance" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Patient Acceptance" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/patientAcceptance.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/patAcceptanceOverriding" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Patient Acceptance Overriding" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/patAcceptanceOverriding.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/patAcceptMandatoryInfo" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Mandatory associated" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/patAcceptMandatoryInfo.cnt"/>	  
+      <put name="footer" value="" />  
+</definition> 
+<definition name="/resultReValidation" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Result Re-validation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultReValidation.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/resultModification" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Result Modification" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultModification.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/resultPrinting" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Result Printing" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultPrinting.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/resultPrintingReport" path="/investigation/transaction/commonInvestigationTransactionPrintLayout.jsp">      
+	  <put name="title"  value="Result Printing" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultPrinting.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+
+<definition name="/filmUsed" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Film used" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/filmUsed.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/filmIssue" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Film Issue" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/filmIssue.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/filmReturn" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Film Return" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/filmReturn.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/requisitionValidation" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Overidding" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/requisitionValidation.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/duplicatSampleLabel" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Overidding" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/duplicatSampleLabel.cnt"/>	  
+      <put name="footer" value="" /> 
+      </definition> 
+<definition name="/resultViewing" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Previous Results" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultViewing.cnt"/>	  
+      <put name="footer" value="" />
+</definition>
+<definition name="/resultViewingReport" path="/investigation/transaction/commonInvestigationTransactionPrintLayout.jsp">      
+	  <put name="title"  value="Result Viewing" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultViewing.cnt"/>	  
+      <put name="footer" value="" />
+</definition>
+
+<definition name="/resultDuplicatePrinting" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Result Duplicate Printing" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultDuplicatePrinting.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/resultDuplicatePrintingReport" path="/investigation/transaction/commonInvestigationTransactionPrintLayout.jsp">      
+	  <put name="title"  value="Result Duplicate Printing" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultDuplicatePrinting.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+
+
+
+<!-- /////Investigation report tiles definition by naveen//// -->
+<definition name="/sampleCollectionList" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/SampleCollectionListACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+<definition name="/listOfSampleAccepted" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/ListOfSampleAcceptedACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+
+
+<definition name="/WorkorderListForIpdOpdSampleTestWise" path="/investigation/reports/jsp/commonReportLayout.jsp"> 
+	  <put name="title" value="Investigation Reports" type="string"/>
+	  <put name="action" value="/report.cnt" type="string"/>
+	  <put name="header" value="/investigation/header.jsp"/> 
+	  <put name="body" value="/investigation/reports/WorkorderListForIpdOpdSampleTestWiseACTION.cnt"/> 
+	  <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" /> 
+</definition>
+<definition name="/testCancellation" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Test Cancellation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/testCancellation.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/getAppointment" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Test Cancellation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/getAppointment.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/barcodeReading" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Barcode Reading" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/barcodeReading.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/sampleoverriding" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Overidding" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleoverriding.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/labRegisterInv" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Lab Register Report" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/labRegisterInv.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/sampleTransfer" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Patient Transfer" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleTransfer.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/patientFile" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Patient File" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/patientFile.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+
+<!-- /////Investigation report tiles definition //// -->
+
+
+<definition name="/ListOfInvestigationsRaised" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/ListOfInvestigationsRaisedACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+      <definition name="/TestStatusReport" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Test Status Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/TestStatusReportACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+
+	  <definition name="/TestStatusSummary" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Test Status Summary" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/TestStatusSummaryACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+      <definition name="/WorkloadLabTecnicianWise" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="WorkLoad Report Lab and Technician wise" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/WorkLoadReportLabAndTechnicianWiseACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      <definition name="/WorkloadLabTestWise" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="WorkLoad Report Lab Test wise" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/WorkLoadReportLabTestWiseACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      <definition name="/WorkloadDeptWise" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="WorkLoad Report Department wise" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/WorkLoadReportDeptWiseACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      <definition name="/TotalInvDoneLabWise" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Total Investigation Done Lab Wise" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/TotalInvestigationDoneLabWiseACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+       <definition name="/LabWisePerformanceSummary" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Lab Wise Investigation performance summary" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/LabWiseInvPerformanceSummaryACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+       <definition name="/RadiologyMLCRegister" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Radiology MLC Register" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/RadiologyMLCRegisterACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+
+
+
+
+
+<definition name="/testCancellation" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Test Cancellation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/testCancellation.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/getAppointment" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Test Cancellation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/getAppointment.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/barcodeReading" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Barcode Reading" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/barcodeReading.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/sampleoverriding" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Overidding" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleoverriding.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+
+<definition name="/patientTransfer" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Patient Transfer" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/patientTransfer.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+
+  <definition name="/sampleCollectionReport" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Sample Collection Report" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/samplecollectionreportACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+
+ <definition name="/departmentLaboratoryMonthlyReport" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Sample Collection Report" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/departmentLaboratoryMonthlyReport.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+
+<definition name="/WorkorderListForIpdOpdSampleTestWise" path="/investigation/reports/jsp/commonReportLayout.jsp"> 
+	  <put name="title" value="Investigation Reports" type="string"/>
+	  <put name="action" value="/report.cnt" type="string"/>
+	  <put name="header" value="/investigation/header.jsp"/> 
+	  <put name="body" value="/investigation/reports/WorkorderListForIpdOpdSampleTestWiseACTION.cnt"/> 
+	  <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" /> 
+</definition>
+<definition name="/labRegisterReport" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/LabRegisterReportACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+<definition name="/LabRegisterReportINV" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/LabRegisterReportACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+     
+<definition name="/listOfSlidesSupplied" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/ListOfSlidesSuppliedACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+ 
+ <definition name="/listOfRequisitionForTest" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/ListOfRequisitionForVariousTestACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+            
+ <definition name="/statusOfTestLabWise" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/StatusOfTestLabWiseACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+        
+ <definition name="/requisitionSampleNotCollected" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/RequisitionSampleNotCollectedACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+ 
+ <definition name="/countingOfSampleCollection" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/CountingOfSampleCollectionACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+
+      
+       <definition name="/sampleCollectionListPGI" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/SampleCollectionListPGIACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+      
+      
+       <definition name="/labWiseCountOfInvestigationReport" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/labWiseCountOfInvestigationReport.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+      <definition name="/LABWISEGENDERWISECOUNTOFINVESTIGATION" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/LabWiseGenderWiseCountOfInvestigationACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+      
+        <definition name="/InvestigationCarriedsOutIpdOpdReport" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/InvestigationCarriedsOutIpdOpdReport.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+ 
+   <definition name="/listOfTestPerformedLabWise" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/ListOfTestPerformedLabWiseACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+      <definition name="/sampleReqAssocition" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample associated" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleReqAssocition.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition> 
+	<definition name="/TestFilmUsedList" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/TestFilmUsedACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      <definition name="/resultEntryValidation" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Result Entry Validation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultEntryValidation.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+	<definition name="/sampleCollectionAndAcceptance" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Collection and acceptance process" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleCollectionAndAcceptance.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+	<definition name="/sampleCollectionAndAcceptanceSaveMode" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Collection and acceptance process Save Mode" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleCollectionAndAcceptanceSaveMode.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+	<definition name="/redesignTemplate" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Redesign the Template" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/redesignExistingTemplate.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+
+<definition name="/resultEntryRequisitionRaising" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Requisition Raising" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/resultEntryRequisitionRaising.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+	
+	<definition name="/labTestParameterReport" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/LabTestParameterACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+      <definition name="/sampleCancelledValidation" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Cancelled Validation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleCancelledValidation.cnt"/>	  
+      <put name="footer" value="" />  
+	 </definition>
+	 
+	  <definition name="/rejectedPatientValidation" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Rejected Patient Validation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/rejectedPatientValidation.cnt"/>	  
+      <put name="footer" value="" />  
+	  </definition>
+	    <definition name="/organismAntibiotics" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="anti microbial susceptibility test" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/invOrganismAntibioticsMapping.cnt"/>	  
+      <put name="footer" value="" />  
+	  </definition>
+	  
+	
+	
+      <definition name="/pdfPrinting" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Pdf Result Printing" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/pdfPrinting.cnt"/>	  
+      <put name="footer" value="" />
+      </definition>
+            <definition name="/patientDataInterpretation" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Patient Data Interpretation" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/patientDataInterpretation.cnt"/>	  
+      <put name="footer" value="" />  
+	  </definition>
+	  <definition name="/allLabTestRegister" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Patient File" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/allLabTestRegister.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+	<definition name="/registerPrintingReport" path="/investigation/transaction/commonInvestigationTransactionPrintLayout.jsp">      
+	  <put name="title"  value="Result Printing" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/allLabTestRegister.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/cancelRegisterPrinting" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Patient File" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/allLabTestRegister.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+	<definition name="/testConsume" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Acceptance" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/testItemConsume.cnt"/>	  
+      <put name="footer" value="" /> </definition>
+  
+     <definition name="/requisitionRaisingWithRequisitionForm" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Requisition Raising With Requisition Form" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/requisitionRaisingWithRF.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+      <definition name="/redesignPrintingTemplate" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Re - Design the Printing Template " type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/redesignPrintingTemplate.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+	<definition name="/investigationConfiguratorTemplate" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Investigation Configurator Re - Loader " type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/investigationConfigurationReLoader.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+<definition name="/OpenEpisodeListRF" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Requistion Raising" type="string"/>
+  	  <put name="action"  value="/commonaction.cnt" type="string"/>
+  	  <put name="header"  value="/investigation/header.jsp"/>	  
+  	  <put name="body"  value="/investigation/transaction/openEpisodeList.cnt"/>	  
+     <put name="footer" value="" />  
+     </definition>
+     
+                
+<definition name="/directSampleAcceptance" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Direct Sample Acceptance" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/directSampleAcceptance.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/createNewTemplateForTestGroup" path="/investigation/transaction/commonInvestigationTransactionPrintLayout.jsp">      
+	  <put name="title"  value="Create New Template for the Test Group" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/createNewTemplateForTestGroup.cnt"/>	  
+      <put name="footer" value="" />  
+	</definition>
+<definition name="/sampleRelatedProcess" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="New Sample Related Process" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/newSampleAcceptanceProcess.cnt"/>	  
+      <put name="footer" value="" />  
+</definition>
+<definition name="/sampleAcceptanceOffline" path="/investigation/transaction/commonInvestigationTransactionLayout.jsp">      
+	  <put name="title"  value="Sample Acceptance Offline" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/sampleAcceptanceOffline.cnt"/>	  
+      <put name="footer" value="" />  
+      
+</definition>
+
+<definition name="/listOfRequisitionForWard" path="/investigation/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Investigation Reports" type="string"/>
+  	  <put name="header"  value=""/> 	  
+  	  <put name="body"   value="/investigation/reports/ListOfRequisitionForVariousWardACTION.cnt"/>	  
+      <put name="footer" value="/investigation/reports/jsp/reportFooter.jsp" />  
+      </definition>
+      
+      <definition name="/biochemistryLabRegister" path="/investigation/transaction/commonInvestigationTransactionPrintLayout.jsp">      
+	  <put name="title"  value="Biochemistry Lab Register" type="string"/>
+  	  <put name="action" value="/commonaction.cnt" type="string"/>
+  	  <put name="header" value="/investigation/header.jsp"/>	  
+  	  <put name="body"   value="/investigation/transaction/biochemistryLabRegisterRegister.cnt"/>	  
+      <put name="footer" value="" />  
+      
+</definition>
+
+
+</tiles-definitions>

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Parameter Master'>
+		<common-values>
+			<master-name>ServiceParameterMaster</master-name>
+			<master-title>Service Parameter Master</master-title>
+		</common-values>
+	<list-page>
+			<tableHeading>Service Parameter Master</tableHeading>
+			<list-table>HSRV_SERVICE_PARAMETER_MST</list-table>
+			<columns>
+				<column>Service Area</column>
+				<column>Procedure</column>
+				<column>Parameter</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>(select (INITCAP (s.hsrstr_service_area_name)|| '('|| NVL((SELECT INITCAP (gstr_dept_name) FROM gblt_department_mst dept WHERE dept.gnum_dept_code = s.gnum_dept_code AND dept.gnum_hospital_code = s.gnum_hospital_code and gnum_isvalid=1), 'GLOBAL SERVICE' ) || ')' ) from hsrv_service_area_mst s where s.hsrnum_service_area_code=a.hsrnum_service_area_code and s.gnum_hospital_code=a.gnum_hospital_code and s.gnum_isvalid=1)</field>
+					<field>NVL((SELECT INITCAP( NVL((d.hsrstr_procedure_name),'-')) FROM hsrv_procedure_mst d,hsrv_service_area_mst c WHERE d.hsrnum_procedure_code = a.hsrnum_procedure_code AND d.gnum_hospital_code = a.gnum_hospital_code and c.hsrnum_service_area_code = a.hsrnum_service_area_code and c.gnum_hospital_code = a.gnum_hospital_code),'-')</field>
+					<field>INITCAP(A.HSRSTR_PARAMETER_NAME)</field>
+				</fields>
+				<primaryKey>
+					<field>A.HSRNUM_PARAMETER_ID </field>
+					<field>A.HSRNUM_SERVICE_AREA_CODE</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					
+				</primaryKey>
+				<tables>
+					<table alias='A'>HSRV_SERVICE_PARAMETER_MST</table>
+				</tables>
+				<condition>					
+                    <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                    <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>                   
+                    <orderby> order by UPPER((A.HSRSTR_PARAMETER_NAME))</orderby>
+                </condition>
+			</query-detail>
+		</list-page>
+		<add-page>	
+			<static-page>/servicearea/masters/serviceParameterMaster.cnt</static-page>		
+		</add-page>
+
+		<modify-page>
+			<static-page>/servicearea/masters/serviceParameterMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

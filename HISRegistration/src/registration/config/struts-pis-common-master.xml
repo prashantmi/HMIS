@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+<constant name="struts.devMode" value="false" />
+ 	 	
+	
+	<package name="pis.masters" namespace="/pis/masters" extends="struts-default">
+	 	
+	 	<action name="*EmployeeRegistration" method="{1}"  class="hr.pis.empReg.transactions.controller.action.EmpRegistrationACTION">
+				<result name="NEW">/hr/pis/empReg/transactions/jsp/empRegistration.jsp</result>
+			 	<result name="popup">/hr/pis/empReg/transactions/jsp/empRegistrationPopup.jsp</result>
+			 	<result name="unValidatedList">/hr/pis/empReg/transactions/jsp/empRegistrationValidate.jsp</result>	
+			 	<result name="CHANGELOCALE">/hr/pis/empReg/transactions/jsp/empRegistration.jsp</result>
+			 	<result name="openEmployeeDetailsPopup">/hr/pis/empReg/transactions/jsp/empRegistrationValidation.jsp</result>
+			 	<result name="tamperErrorPage">/hissso/jsp/error/sso_error_login_illegalactivity.jsp</result>
+		 	</action>
+		 		  
+		 <action name="*EmployeeRegistrationValidation" method="{1}"  class="hr.pis.empReg.transactions.controller.action.EmpRegistrationValidationACTION">
+		 <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			<result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			<result name="input">/hr/pis/empReg/transactions/jsp/empRegistrationValidation.jsp</result>
+			<result name="error">/hisglobal/jsp/error.jsp</result>
+	 	</action>
+	 	
+		
+	 
+	 	
+	 	
+	 </package>
+	 
+</struts>

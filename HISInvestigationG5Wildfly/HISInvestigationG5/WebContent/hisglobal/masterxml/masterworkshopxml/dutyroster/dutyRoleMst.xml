@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Duty Role Master'>
+		<common-values>
+			<master-name>dutyRoleMst</master-name>
+			<master-title>Duty Role Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Duty Role Master</tableHeading>
+			
+			<list-table>HDRT_DUTY_ROLE_MST</list-table>
+
+			<columns>
+				<column>Role Name</column>
+				<column>Role Short Name</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HDTSTR_DUTY_ROLE_DESC)</field> 
+					<field>A.HDRSTR_SHORT_NAME</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HDRNUM_DUTY_ROLE_ID</field>
+					<field>A.HDRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDRT_DUTY_ROLE_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby>ORDER BY(A.HDTSTR_DUTY_ROLE_DESC)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/dutyroster/masters/dutyRoleMstAddModACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/dutyroster/masters/dutyRoleMstAddModACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

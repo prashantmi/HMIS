@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Check List Master'>
+		<common-values>
+			<master-name>CheckListMaster</master-name>
+			<master-title>Check List Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Check List Master</tableHeading>
+			
+			<list-table>HPMRT_CHECKLIST_MST</list-table>
+			
+			<columns>
+				<column>Check List</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>A.HPMRSTR_CHECKLIST</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HPMRNUM_CHECKLIST_ID</field>
+					<field>A.HPMRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HPMRT_CHECKLIST_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field> A.GNUM_ISVALID </isvalid-field>
+					<general> A.GNUM_HOSPITAL_CODE=100 AND</general>
+					<general-inactive> A.GNUM_HOSPITAL_CODE=100 AND</general-inactive>
+					<orderby> ORDER BY A.HPMRSTR_CHECKLIST </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/mrd/master/mrdCheckListMater.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mrd/master/mrdCheckListMater.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

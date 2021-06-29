@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+ 
+ <constant name="struts.devMode" value="false" />
+	<package name="registration" namespace="/registration" extends="struts-default">
+		  <action name="*Occupation" method="{1}" class="registration.masters.controller.action.OccupationMstACTION">
+		 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 <result name="input">/registration/masters/jsp/addModifyOccupation.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+			
+		</action>
+		 
+		 <action name="*Country" method="{1}" class="registration.masters.controller.action.CountryMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			
+		</action>
+		 
+		 <action name="*State" method="{1}" class="registration.masters.controller.action.StateMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 
+		</action>
+		
+		<action name="*District" method="{1}" class="registration.masters.controller.action.DistrictMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			
+		</action>
+		 
+		 <action name="*Religion" method="{1}" class="registration.masters.controller.action.ReligionMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			
+		</action>
+		 
+		 <action name="*Language" method="{1}" class="registration.masters.controller.action.LanguageMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			
+		</action>
+		 
+		  <action name="*MaritalStatus" method="{1}" class="registration.masters.controller.action.MaritalMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 
+		</action>
+		 
+		 <action name="*Gender" method="{1}" class="registration.masters.controller.action.GenderMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 
+		</action>
+		 
+		 <action name="*Relation" method="{1}" class="registration.masters.controller.action.RelationMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 
+		</action>
+		 
+		 <action name="*Caste" method="{1}" class="registration.masters.controller.action.CasteMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			
+		</action>
+		 
+		 <action name="*Designation" method="{1}" class="registration.masters.controller.action.DesignationMstACTION">
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			
+		</action>
+		 
+		 <action name="*VerificationDoc" method="{1}" class="registration.masters.controller.action.VerificationDocMstACTION">
+		 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+		 
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 <result name="input">/registration/masters/jsp/addModifyVerificationDoc.jsp</result>
+				 <result name="error">/registration/masters/jsp/error.jsp</result>
+		</action>
+		 
+
+		 
+		  <action name="*RenewalConfig" method="{1}" class="registration.masters.controller.action.RenewalConfigMstACTION">
+		   <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+		     <result name="success">/registration/masters/jsp/addModifyRenewalConfig.jsp</result>
+			 <result name="add" type="redirectAction">
+			 <param name="actionName">unspecifiedRenewalConfig</param>
+			 </result>
+			 <result name = "result" type="redirectAction">
+			 <param name="actionName">unspecifiedRenewalConfig</param>
+			 </result>
+			 <result name="input">/registration/masters/jsp/addModifyRenewalConfig.jsp</result>
+			 	 <result name="error">/registration/masters/jsp/error.jsp</result>
+		</action>
+		 
+		 <!-- <action name="*RegistrationConfig" method="{1}" class="registration.masters.controller.action.RegistrationConfigMstACTION">
+		   <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token">/registration/masters/jsp/error.jsp</result>
+		   <result name="success">/registration/masters/jsp/addModifyRegistrationConfig.jsp</result>
+			 <result name="add" type="redirect-action">
+			  <param name="actionName">unspecifiedRegistrationConfig</param>
+			 </result>
+			 <result name = "result" type="redirect-action">
+			 <param name="actionName">unspecifiedRegistrationConfig</param>
+			 </result>
+			 <result name="input">/registration/masters/jsp/addModifyRegistrationConfig.jsp</result>
+			 	 <result name="error">/registration/masters/jsp/error.jsp</result>
+		</action>
+		 -->
+		 <action name="*GlobalDepartment" method="{1}" class="registration.masters.controller.action.DepartmentGlobalMstACTION">
+		 
+		 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyGlobalDepartment.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+			
+		 </action>
+		 
+			
+	 	 
+	 	
+	 	
+		 <action name="*LocalDepartment" method="{1}" class="registration.masters.controller.action.DepartmentMstACTION">
+		 
+		  <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyLocalDepartment.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		
+		 </action>
+		 
+		 
+	 	 
+	 	 <action name="*Location" method="{1}" class="registration.masters.controller.action.LocationMstACTION">
+	 	 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			<result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyLocation.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+			
+		 </action>
+		 
+		  <action name="*Loinc" method="{1}" class="loinc.masters.controller.action.LoincMstACTION">
+	 	 <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result>
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/loinc/masters/jsp/addModifyLoinc.jsp</result>
+			 <result name="error">/loinc/masters/jsp/error.jsp</result>
+			
+		 </action>
+	 	
+	 	<action name="*Room" method="{1}" class="registration.masters.controller.action.RoomMstACTION">
+	 	 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyRoom.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		 			 
+		 </action>
+		 <!-- By Monika on 05.02.19 for Appointment Type Master-->
+		 <action name="*AppointmentType" method="{1}" class="registration.masters.controller.action.ApptTypeMstACTION">
+	 	 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyApptType.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		 			 
+		 </action>
+		 <!--End On 05.02.19-->
+		 
+	 	
+	 	<action name="*Unit" method="{1}" class="registration.masters.controller.action.UnitMstACTION">
+	 	<!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyUnit.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+					 
+		 </action>
+		 
+	 	
+	 	<action name="*GlobalPatCategory" method="{1}" class="registration.masters.controller.action.PatCategoryGlobalMstACTION">
+	 	<!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyGlobalPatCategory.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+			
+		</action>
+	 	 
+	 	 <action name="*LocalPatCategory" method="{1}" class="registration.masters.controller.action.PatCategoryMstACTION">
+	 	 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyLocalPatCategory.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+			
+		</action>
+		 
+	 	 
+	 	 <action name="*DeptUnitRoomMst" method="{1}" class="registration.masters.controller.action.DeptUnitRoomMstACTION">
+	 	 
+	 	  <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyDeptUnitRoom.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+			 
+		</action>
+		 
+	 	 
+	 	 <action name="*UnitConsultantMst" method="{1}" class="registration.masters.controller.action.UnitConsultantMstACTION">
+	 	 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		  <interceptor-ref name="defaultStack"/>
+		   <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 <result name="input">/registration/masters/jsp/addModifyUnitConsultant.jsp</result>			 
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		</action>	 	 
+	 	
+	 	<action name="*ShiftMst" method="{1}" class="registration.masters.controller.action.ShiftMstACTION">
+	 		 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyShift.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		
+		</action>
+	 	 
+	 	 <action name="*ExtInstituteMst" method="{1}" class="registration.masters.controller.action.ExtInstituteMstACTION">
+	 	 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+		 	 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 <result name="input">/registration/masters/jsp/addModifyExtInstitute.jsp</result>			 
+			  <result name="error">/registration/masters/jsp/error.jsp</result>
+		</action>
+	 	 
+	 	 <action name="*DeptUnitRosterMst" method="{1}" class="registration.masters.controller.action.DeptUnitRosterMstACTION">
+	 	 <!--  <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+		 	 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+	 	 	 <result name="add">/registration/masters/jsp/addModifyDeptUnitRoster.jsp</result>
+			  <result name="error">/registration/masters/jsp/error.jsp</result>
+		</action>
+	 	 
+	 	 <action name="*CatDocMapMst" method="{1}" class="registration.masters.controller.action.PatCatDocMapMstACTION">
+	 	  <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+		  <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="input">/registration/masters/jsp/addModifyPatCatVerificationDocMap.jsp</result>			 
+		 <result name="error">/registration/masters/jsp/error.jsp</result>
+			
+		</action>	 	 
+	 
+	 	 <action name="*DefaultDisclaimerMst" method="{1}" class="registration.masters.controller.action.DefaultDisclaimerMstACTION">
+	 	 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+		  <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/registration/masters/jsp/listDisclaimer.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 <result name="input">/registration/masters/jsp/addModifyDefaultDisclaimer.jsp</result>
+			 <result name="default" type="redirect">DefaultDisclaimerMst.action</result>
+ 	 	 	 <result name="unit" type="redirect">UnitWiseDisclaimerMst.action</result>
+ 	 	     <result name="dept" type="redirect">DeptWiseDisclaimerMst.action</result>	
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		</action>	 	 
+	 	 	 	 
+	 	 <action name="*UnitWiseDisclaimerMst" method="{1}" class="registration.masters.controller.action.UnitWiseDisclaimerMstACTION">
+	 	 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+		  <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/registration/masters/jsp/listDisclaimer.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 <result name="input">/registration/masters/jsp/addModifyDisclaimer.jsp</result>	
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		</action> 	 
+	 	 	 	 	 
+	 	 <action name="*DeptWiseDisclaimerMst" method="{1}" class="registration.masters.controller.action.DeptWiseDisclaimerMstACTION">
+	 	  <!-- <interceptor-ref name="tokenSession" >
+	 	  <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+		  <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/registration/masters/jsp/listDisclaimer.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 <result name="input">/registration/masters/jsp/addModifyDisclaimer.jsp</result>	
+			  <result name="error">/registration/masters/jsp/error.jsp</result>
+		</action>
+	 	 
+	 	 <action name="*CounterMst" method="{1}" class="registration.masters.controller.action.CounterMstACTION">
+	 	  <!-- <interceptor-ref name="tokenSession" >
+	 	  <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+		  <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+	 	 	 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 <result name="input">/registration/masters/jsp/addModifyCounter.jsp</result>	
+			<result name="error">/registration/masters/jsp/error.jsp</result>
+		</action>
+	 	 
+	 	 <action name="*UOMMst" method="{1}" class="registration.masters.controller.action.UOMMstACTION">
+	 	  <!-- <interceptor-ref name="tokenSession" >
+	 	  <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+		  <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+	 	 	 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			 <result name="input">/registration/masters/jsp/addModifyUOM.jsp</result>	
+			<result name="error">/registration/masters/jsp/error.jsp</result>
+		</action> 
+		
+		<action name="*EmgPatStatusMst" method="{1}" class="registration.masters.controller.action.EmgPatStatusMstACTION">
+	 		 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyEmgPatStatus.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		
+		</action>
+
+		<action name="*EmgMlcCaseTypeMst" method="{1}" class="registration.masters.controller.action.EmgMlcCaseTypeMstACTION">
+	 		 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyEmgMlcCaseType.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		
+		</action>	
+		
+		<action name="*EmgDeathMst" method="{1}" class="registration.masters.controller.action.EmgDeathMstACTION">
+	 	 	<!-- <interceptor-ref name="basicStack" />
+	 	 	<interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save,update</param>
+	    	</interceptor-ref>
+			
+		 
+			 <result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			 </result>
+			 <result name="invalid.token">/application/jsp/app_error_xss.jsp</result>
+			  <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyDeathManner.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+
+		</action>	 
+		
+		<action name="*PoliceStationMst" method="{1}" class="registration.masters.controller.action.PoliceStationMstACTION">
+	 		 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyPoliceStation.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+		
+		</action>	
+		<!-- start:yogender --> 
+ 	<action name="*EmgCaseMst" method="{1}" class="registration.masters.controller.action.EmgCaseMstACTION">
+	 		 <!-- <interceptor-ref name="tokenSession" >
+		 <param name="includeMethods">save,update</param>
+		 </interceptor-ref>
+		 <interceptor-ref name="defaultStack"/>
+			 <result name="invalid.token" type="redirectAction">/registration/masters/jsp/error.jsp</result> -->
+			 <result name="success">/hisglobal/masterutil/master/lst_mstTemp_gbl.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>
+			  <result name="input">/registration/masters/jsp/addModifyEmgCase.jsp</result>
+			 <result name="error">/registration/masters/jsp/error.jsp</result>
+			 <result name="cancel">../registration/masters/jsp/init.jsp</result>
+		
+		</action>	
+		<!-- end:yogender -->
+ 	</package> 
+	 
+</struts>

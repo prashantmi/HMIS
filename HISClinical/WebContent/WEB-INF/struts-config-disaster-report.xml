@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	 
+	 <!-- ========== Form Bean Definitions =================================== -->
+	 
+	<form-beans>
+			<form-bean name="commonReportFB" type="hisglobal.presentation.ReportFB"/>	   	
+   			<form-bean name="disasterWisePatDtlReportFB" type="disaster.reports.controller.fb.DisasterWisePatientDetailReportFB"/>
+   			<form-bean name="DisasterGenderAgeRangeWiseReportFB" type="disaster.reports.controller.fb.DisasterGenderAgeRangeWiseReportFB"/>
+   			<form-bean name="DisasterStaticReportFB" type="disaster.reports.controller.fb.DisasterStaticReportFB"/>
+   	</form-beans>
+	
+	<action-mappings>
+		
+ <action path="/report"        
+            type="disaster.reports.controller.action.DisasterCommonReportACTION"
+            name="commonReportFB"            
+            scope="request" 
+            parameter="mode"
+            input="/reports/jsp/commonReportLayout.jsp">
+            
+            
+            <forward name="DISASTERDATERANGEWISEREPORT" path="/disasterDateRangeWiseTileDefReport"/>
+            <forward name="DISASTERDATERANGEWISEREPORTVIEW" path="/disasterDateRangeWiseReport.cnt"/>
+            
+            <forward name="DISASTERWISEPATIENTDETAILREPORT" path="/disasterWisePatientDetailTileDefReport"/>
+            <forward name="DISASTERWISEPATIENTDETAILREPORTVIEW" path="/disasterWisePatientDetailReport.cnt"/>
+            
+            <forward name="DISASTERYEARWISEREPORT" path="/disasterYearWiseTileDefReport"/>
+            <forward name="DISASTERYEARWISEREPORTVIEW" path="/disasterYearWiseReport.cnt"/>
+            
+            <forward name="DISASTERGENDERAGERANGEWISEREPORT" path="/disasterGenderAgeRangeWiseTileDefReport"/>
+            <forward name="DISASTERGENDERAGERANGEWISEREPORTVIEW" path="/disasterGenderAgeRangeWiseReport.cnt"/>
+            
+            <forward name="DISASTERSTATICREPORT" path="/disasterStaticDefReport"/>
+            <forward name="DISASTERSTATICREPORTVIEW" path="/disasterStaticReport.cnt"/>
+               
+            <forward name="CANCEL" path="/../startup/initPage.jsp"/>     
+       </action> 
+		
+		
+		
+<action path="/disasterDateRangeWiseReport"
+		name="commonReportFB"
+		parameter="reportMode"
+		validate="false"
+		scope="request"
+		type="disaster.reports.controller.action.DisasterDateRangeWiseReportACTION"
+		input="/reports/jsp/disasterDateRangeWiseReport.jsp" >
+		<forward name="NEW" path="/reports/jsp/disasterDateRangeWiseReport.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+</action> 
+		
+		
+<action path="/disasterWisePatientDetailReport"
+		name="disasterWisePatDtlReportFB"
+		parameter="reportMode"
+		validate="false"
+		scope="request"
+		type="disaster.reports.controller.action.DisasterWisePatientDetailReportACTION"
+		input="/reports/jsp/disasterWisePatientDetailReport.jsp" >
+		<forward name="NEW" path="/reports/jsp/disasterWisePatientDetailReport.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+</action> 
+
+
+<action path="/disasterYearWiseReport"
+		name="commonReportFB"
+		parameter="reportMode"
+		validate="false"
+		scope="request"
+		type="disaster.reports.controller.action.DisasterYearWiseReportACTION"
+		input="/reports/jsp/disasterYearWiseReport.jsp" >
+		<forward name="NEW" path="/reports/jsp/disasterYearWiseReport.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+</action> 
+
+
+<action path="/disasterGenderAgeRangeWiseReport"
+		name="DisasterGenderAgeRangeWiseReportFB"
+		parameter="reportMode"
+		validate="false"
+		scope="request"
+		type="disaster.reports.controller.action.DisasterGenderAgeRangeWiseReportACTION"
+		input="/reports/jsp/disasterGenderAgeRangeWiseReport.jsp" >
+		<forward name="NEW" path="/reports/jsp/disasterGenderAgeRangeWiseReport.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+</action> 
+		
+<action path="/disasterStaticReport"
+		name="DisasterStaticReportFB"
+		parameter="reportMode"
+		validate="false"
+		scope="request"
+		type="disaster.reports.controller.action.DisasterStaticReportACTION"
+		input="/reports/jsp/disasterStaticReport.jsp" >
+		<forward name="NEW" path="/reports/jsp/disasterStaticReport.jsp" /> 
+		 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+</action> 
+		
+		
+		<action path="/switchModule" 	type="org.apache.struts.actions.SwitchAction" />
+			 
+
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	  
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Disaster-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+</struts-config>          

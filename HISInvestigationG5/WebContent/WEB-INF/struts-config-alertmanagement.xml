@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	 <!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="commonAlertFB" type="alertmanagement.transactions.fb.CommonAlertFB"/>	
+
+		<form-bean name="automaticAlertFB" type="alertmanagement.transactions.controller.fb.AutomaticAlertFB"/>
+		<form-bean name="alertDeskFB" type="alertmanagement.transactions.controller.fb.AlertDeskFB"/>
+		
+		<form-bean name="alertDeskTasksFB" type="alertmanagement.transactions.controller.fb.AlertDeskTasksFB"/>
+		<form-bean name="alertDeskNotificationFB" type="alertmanagement.transactions.controller.fb.AlertDeskNotificationFB"/>
+		<form-bean name="forwardAlertFB" type="alertmanagement.transactions.controller.fb.ForwardAlertFB"/>
+		<form-bean name="manualAlertGenerationFB" type="alertmanagement.transactions.controller.fb.ManualAlertGenerationFB"/>
+		
+	</form-beans>
+	
+	<action-mappings>
+	
+	<action path="/manualAlertGeneration"
+			type="alertmanagement.transactions.controller.action.ManualAlertGenerationACT"
+			name="manualAlertGenerationFB"
+			scope="request"
+			parameter="hmode"
+			input="/transactions/manualAlertGeneration.jsp">
+		<forward name="NEW" path="/transactions/manualAlertGeneration.jsp"/>
+	</action>		
+	
+	<action path="/alertDesk"
+			type="alertmanagement.transactions.controller.action.AlertDeskACT"
+			name="alertDeskFB"
+			validate="false"
+			scope="request"
+			parameter="deskmode"
+			input="/alertDeskAll">
+		<forward name="ALLALERT" path="/alertDeskAll"/>
+		<forward name="TASKS" path="/alertDeskTask"/>
+		<forward name="NOTIFICATION" path="/alertDeskNotification"/>
+		<forward name="TRACKING" path="/alertDeskTracking"/>	
+	</action>		
+	
+	<action path="/forwardAlert"
+			type="alertmanagement.transactions.controller.action.ForwardAlertACT"
+			name="forwardAlertFB"
+			validate="false"
+			scope="request"
+			parameter="transactionMode"
+			input="/transactions/forwardAlert.jsp">
+		<forward name="NEW" path="/transactions/forwardAlert.jsp"/>	
+	</action>		
+	
+	<action path="/alertDeskNotifiable"
+			type="alertmanagement.transactions.controller.action.AlertDeskNotificationACT"
+			name="alertDeskNotificationFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/transactions/alertDeskNotification.jsp">
+		<forward name="NEW" path="/transactions/alertDeskNotification.jsp"/>
+	</action>		
+	
+	<action path="/alertDeskTasks"
+			type="alertmanagement.transactions.controller.action.AlertDeskTasksACT"
+			name="alertDeskTasksFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/transactions/alertDeskTasks.jsp">
+		<forward name="NEW" path="/transactions/alertDeskTasks.jsp"/>
+	</action>		
+		
+	<action path="/automaticAlert"
+			type="alertmanagement.transactions.controller.action.AutomaticAlertACT"
+			name="automaticAlertFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/transactions/automaticAlert.jsp">
+		<forward name="NEW" path="/transactions/automaticAlert.jsp"/>
+		<forward name="POPUP" path="/transactions/alertPopupQueryDataView.jsp"/>	
+	</action>		
+		
+	<action path="/commonalert"  
+	 name="commonAlertFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="alertmanagement.transactions.action.CommonAlertACT" 
+	  input="/commonAlertLayout.jsp">
+	 <forward name="NEW" path="/transactions/commonAlertLayout.jsp"/>
+	 <forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+	 </action>
+
+	 
+	 	 
+	 <action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+	 
+
+	</action-mappings>
+	
+	
+	
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/AlertDesk-tiles-defs.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	  
+	
+	
+</struts-config>          

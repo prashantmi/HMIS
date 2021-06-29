@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+          
+<struts-config>
+	<form-beans>
+
+			<form-bean name="MbNewRegistrationFB" type="medicalboard.transactions.controller.fb.MbNewRegistrationFB" />
+			<form-bean name="medicalBoardRequisitionFB" type="medicalboard.transactions.controller.fb.MedicalBoardRequisitionFB" />
+			<form-bean name="medicalBoardRequisitionChangeFB" type="medicalboard.transactions.controller.fb.MedicalBoardRequisitionChangeFB" />
+			<form-bean name="mbCandidateAcceptanceFB" type="medicalboard.transactions.controller.fb.MbCandidateAcceptanceFB" />
+			<form-bean name="medicalExamInitiationFB" type="medicalboard.transactions.controller.fb.MedicalExamInitiationFB" />
+			<form-bean name="MedicalBoardInitializationFB" type="medicalboard.transactions.controller.fb.MedicalBoardInitializationFB" />
+			<form-bean name="medicalExamInitiationFB" type="medicalboard.transactions.controller.fb.MedicalExamInitiationFB" />
+			<form-bean name="postMedicalEntryFB" type="medicalboard.transactions.controller.fb.PostMedicalEntryFB" />
+			<form-bean name="CertificateHandoverFB" type="medicalboard.transactions.controller.fb.CertificateHandoverFB" />
+			<form-bean name="CertificateVerificationFB" type="medicalboard.transactions.controller.fb.CertificateVerificationFB" />
+	
+	</form-beans>
+	
+	<action-mappings>
+	
+	
+	   <action path="/medicalBoardRegistration"
+				type="medicalboard.transactions.controller.action.MbNewRegistrationACT"
+				name="MbNewRegistrationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/medicalBoardNewRegistrationDesk.jsp">
+			<forward name="NEW" path="/transaction/medicalBoardNewRegistrationDesk.jsp" />	
+		</action>
+
+		<action path="/mbSearchRegistration"
+				type="medicalboard.transactions.controller.action.MbRegistrationSearchACTION"
+				name="MbNewRegistrationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/mbRegistrationSearch.jsp">
+			<forward name="NEW" path="/transaction/mbRegistrationSearch.jsp" />
+			
+		</action>
+
+		<action path="/medicalBoardRequisition"
+				type="medicalboard.transactions.controller.action.MedicalBoardRequisitionACT"
+				name="medicalBoardRequisitionFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/medicalBoardRequisition.jsp">
+			<forward name="NEW" path="/transaction/medicalBoardRequisition.jsp" />
+			<forward name="POPUP" path="/transaction/viewSchedule.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+			
+		</action>
+		
+		<action path="/medicalBoardRequisitionChange"
+				type="medicalboard.transactions.controller.action.MedicalBoardRequisitionChangeACT"
+				name="medicalBoardRequisitionChangeFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/medicalBoardRequisitionChange.jsp">
+			<forward name="NEW" path="/transaction/medicalBoardRequisitionChange.jsp" />
+			<forward name="POPUP" path="/transaction/viewSchedule.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+
+	
+		<action path="/mbCandidateAcceptance"
+				type="medicalboard.transactions.controller.action.MbCandidateAcceptanceACT"
+				name="mbCandidateAcceptanceFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/mbCandidateAcceptance.jsp">
+			<forward name="NEW" path="/transaction/mbCandidateAcceptance.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+
+	
+		<action path="/medicalExamInitiation"
+				type="medicalboard.transactions.controller.action.MedicalExamInitiationACT"
+				name="medicalExamInitiationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/medicalExamInitiation.jsp">
+			<forward name="NEW" path="/transaction/medicalExamInitiation.jsp" />
+			<forward name="POPUP" path="/transaction/mbViewReferMapping.jsp" />
+			<forward name="INVMAPPING" path="/transaction/mbInvestigationMappingViewPopup.jsp" />
+			<forward name="REFERDETAIL" path="/transaction/mbCandidateReferDetail.jsp" />
+			<forward name="INVDETAIL" path="/transaction/mbCandidateInvReqDetail.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+			<forward name="EXTREFER" path="/transaction/medicalExaminationInitiationExternalRefer.jsp" />
+			<forward name="EXTREFERDETAIL" path="/transaction/medicalExaminationInitiationExtReferDetails.jsp" />
+		</action>
+		
+		<action path="/postMedicalEntry"
+				type="medicalboard.transactions.controller.action.PostMedicalEntryACT"
+				name="postMedicalEntryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/postMedicalEntry.jsp">
+			<forward name="NEW" path="/transaction/postMedicalEntry.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+		
+		<action path="/medicalBoardInitialization"
+				type="medicalboard.transactions.controller.action.MedicalBoardInitializationACT"
+				name="MedicalBoardInitializationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/medicalBoardInitialization.jsp">
+			<forward name="NEW" path="/transaction/medicalBoardInitialization.jsp" />
+			<!-- <forward name="POPUP" path="/transaction/viewSchedule.jsp" /> -->
+			<forward name="POPUP" path="/transaction/viewScheduleDate.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+		
+		<action path="/certificateHandover"
+				type="medicalboard.transactions.controller.action.CertificateHandoverACT"
+				name="CertificateHandoverFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/certificateHandover.jsp">
+			<forward name="NEW" path="/transaction/certificateHandover.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+			<forward name="POPUP" path="/transaction/CeritificateTemplatePopup.jsp" />
+		</action>
+		
+		<action path="/certificateVerification"
+				type="medicalboard.transactions.controller.action.CertificateVerificationACT"
+				name="CertificateVerificationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/CertificateVerification.jsp">
+			<forward name="NEW" path="/transaction/CertificateVerification.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" />
+		</action>
+	 
+	   <!-- Webcam Image Capture at Medical Board Requisition -->
+		<action path="/webCamImageCapture"
+			type="medicalboard.transactions.controller.action.WebCamImageCaptureACT"
+			name="WebImageCaptureFB" validate="false" scope="request"
+			parameter="hmode" >
+			<forward name="NEW" path="/transaction/webCamCapture.jsp" />
+			<forward name="CLOSE" path="/transaction/webCamCapture.jsp" />
+		</action>
+	
+	
+
+    </action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Inpatient-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>	
+
+
+</struts-config>          
+
+
+  

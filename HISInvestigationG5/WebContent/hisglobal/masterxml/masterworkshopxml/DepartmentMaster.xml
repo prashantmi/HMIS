@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='DepartmentMaster'>
+		<common-values>
+			<master-name>DepartmentMaster</master-name>
+			<master-title>Department Master</master-title>
+		</common-values>
+		<list-page>
+			<tableHeading>Department Master</tableHeading> 
+			<list-table>GBLT_DEPARTMENT_MST</list-table>
+			
+			<columns>
+				<column>Department Name</column> 				  
+				<column>Department Type</column> 
+			</columns>
+			
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.GSTR_DEPT_NAME) </field>
+					<field>INITCAP(B.GSTR_DEPT_TYPE_NAME) </field>
+				</fields>
+				<primaryKey>
+					<field>A.GNUM_DEPT_CODE </field>
+					<field>A.GNUM_DEPT_SLNO </field>
+					<field>A.GNUM_HOSPITAL_CODE</field>						
+				</primaryKey>
+					
+				<tables>
+					<table alias='A'>GBLT_DEPARTMENT_MST </table>
+					<table alias='B'>GBLT_DEPARTMENT_TYPE </table>
+				</tables>
+					
+				<condition>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<general>
+						A.GNUM_DEPT_TYPE=B.GNUM_DEPT_TYPE AND B.GNUM_HOSPITAL_CODE=100	AND B.GNUM_ISVALID=1 and (A.GNUM_ISVALID =1)
+					</general>
+					<general-inactive>
+						A.GNUM_DEPT_TYPE=B.GNUM_DEPT_TYPE AND B.GNUM_HOSPITAL_CODE=100	AND B.GNUM_ISVALID=1  and (A.GNUM_ISVALID =2)
+					</general-inactive>
+					<isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY INITCAP(A.GSTR_DEPT_NAME)</orderby>	
+				</condition>                   
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<static-page>/registration/master/addDepartmentMaster.cnt</static-page>			
+		</add-page>
+
+		<modify-page>	
+   		    <static-page>/registration/master/modifyDepartmentMaster.cnt</static-page>		
+		</modify-page>
+	</master>	
+</master-config>

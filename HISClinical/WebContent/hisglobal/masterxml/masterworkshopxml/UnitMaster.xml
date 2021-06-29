@@ -1,0 +1,300 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='UnitMaster'>
+		<common-values>
+			<master-name>UnitMaster</master-name>
+			<master-title>Unit Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Unit Master</tableHeading> 
+				<list-table>HGBT_UNIT_MST</list-table>
+				
+				<columns>
+					 <column>Unit Name</column>
+				  </columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_UNITNAME)</field>
+						</fields>
+					<primaryKey>
+						<field>A.HGNUM_DEPTUNITCODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_UNIT_MST</table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>				
+                        <control type="combo" index="0">
+						<label>Department Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>initcap(A.GSTR_DEPT_NAME) </text-field>
+									<value-field>A.GNUM_DEPT_CODE </value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_DEPARTMENT_MST</table>									
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1 </general>									
+								</condition>
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					    <submitRequired>0</submitRequired>
+					</control>					
+						<control type="text" index="1" >
+						<label>Unit Name</label>
+						<constraints maxlength='10' size='11' inputType='alphanumeric'  mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					              
+				  
+				   <control type="combo" index="2">
+						<label>Hod Code</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>initcap(A.PSRSTR_EMP_NO) </text-field>
+									<value-field>INITCAP(A.PSRSTR_FNAME) </value-field>
+								</options>
+								<tables>
+									<table alias='A'>PSRT_EMPLOYEE_MST</table>									
+								   
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1 </general>									
+								</condition>
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					    <submitRequired>0</submitRequired>
+					</control>	
+					
+					<control type="text" index="3" >
+						<label>Effective Date</label>
+						<constraints datepicker = "true"  mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					 <control type="combo" index="4">
+						<label>IsGeneral</label>
+						<data>
+							<static>
+								<option value='1'>Yes</option>
+								<option value='0'>No </option>
+							</static>
+						</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>
+					</control>		
+					
+						<control type="text" index="5" >
+						<label>Inactive From</label>
+						<constraints datepicker = "true"  mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="text" index="6" >
+						<label>Inactive Till</label>
+						<constraints datepicker = "true"  mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="7">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+					 <control type="combo" index="8">
+						<label>Hospital Code</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>initcap(A.GSTR_HOSPITAL_NAME) </text-field>
+									<value-field>A.GNUM_HOSPITAL_CODE </value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_HOSPITAL_MST</table>									
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1 </general>									
+								</condition>
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					    <submitRequired>0</submitRequired>
+					</control>			
+				
+				
+				
+				</controls>
+				<insert-query>
+					<primary-key>
+						<field>HGNUM_DEPTUNITCODE</field>
+						<field>HGNUM_UNIT_CODE</field>
+					<value>(SELECT   NVL (MAX (hgnum_deptunitcode),
+                            '#7': || '#0': || '10')+ 1 FROM hgbt_unit_mst WHERE SUBSTR(hgnum_deptunitcode, 4, 3) = '#0')</value>
+			   	<value>(SELECT nvl(SUBSTR(max(hgnum_deptunitcode), 7, 2),'10')+1
+                FROM hgbt_unit_mst 
+               WHERE SUBSTR (hgnum_deptunitcode, 4, 3) = '#0')</value>
+					</primary-key>				
+						<fields valueMap='#0'>HGNUM_DEPT_CODE</fields>
+						<fields valueMap='#1'>HGSTR_UNITNAME</fields>
+						<fields valueMap='#2'>PSRSTR_EMP_NO</fields>
+						<fields valueMap='#3'>HGDT_EFFECT_DATE</fields>
+						<fields valueMap='@seatId'>HGNUM_SEAT_ID</fields>
+						<fields valueMap='@entryDate'>HGDT_ENTRY_DATE</fields>
+						<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+						<fields valueMap='#4'>HGNUM_ISGENERAL</fields>
+						<fields valueMap='#5'>GDT_INACTIVE_FROM_DATE</fields>
+						<fields valueMap='#6'>GDT_INACTIVE_TILL_DATE</fields>
+						<fields valueMap='#7'>GNUM_ISVALID</fields>					
+						<table>HGBT_UNIT_MST</table>
+				</insert-query>
+			 </dynamic-page>		
+		</add-page>
+		<modify-page>
+		  <dynamic-page>
+		   <controls>
+		<control type="text" index="0">
+						<label>Department Name</label>
+						<constraints maxlength = "10" size="11"  inputType = 'alphanumeric'/>						
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>1</readOnly>						
+		</control>
+		<control type="text" index="1">
+						<label>Unit Name </label>
+						<constraints maxlength = "10" size="11"  inputType = 'alphanumeric'/>
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+		</control>					 
+	 <control type="combo" index="2">
+						<label>Hod Code</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>initcap(A.PSRSTR_EMP_NO) </text-field>
+									<value-field>INITCAP(A.PSRSTR_FNAME) </value-field>
+								</options>
+								<tables>
+									<table alias='A'>PSRT_EMPLOYEE_MST</table>									
+								   
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1 AND A.GNUM_DESIG_CODE=104</general>									
+								</condition>
+							</dynamic>							
+						</data>
+						<default>#Q2</default>
+					    <submitRequired>0</submitRequired>
+					</control>			
+		  <control type="text" index="3">					   
+						<label>Effective Date</label>
+						<constraints datepicker = "true"/>
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>0</readOnly>
+		</control>				
+					<control type="combo" index="4">
+						<label>IsGeneral</label>
+						<selection-mandatory>false</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Yes </option>
+								<option value='0'>No </option>
+							</static>
+						</data>
+						<default>#Q4</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+					  <control type="text" index="5">
+						<label>Inactive From</label>
+						<constraints datepicker = "true"/>
+						<data>
+							<static>#Q5</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>				
+					 <control type="text" index="6">
+						<label>Inactive Till</label>
+						<constraints datepicker = "true"/>
+						<data>
+							<static>#Q6</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>	
+					<control type="combo" index="7">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+			    				
+				</controls>
+		       <initialise-query>			   	 
+				<fields>	 
+					 <field>B.GSTR_DEPT_NAME</field>
+					 <field>A.HGSTR_UNITNAME</field>								
+                     <field>A.PSRSTR_EMP_NO</field>			               						
+				     <field>to_char(A.HGDT_EFFECT_DATE,'dd-mon-yyyy')</field>	
+					 <field>A.HGNUM_ISGENERAL</field>			
+				<!--   <field>to_char(A.GDT_INACTIVE_FROM_DATE,'dd-mon-yyyy')</field>	
+				     <field>to_char(A.GDT_INACTIVE_TILL_DATE,'dd-mon-yyyy')</field>		 -->   		 
+				 </fields>					
+					<tables>
+						<table alias='A'>HGBT_UNIT_MST</table>
+						<table alias='B'>GBLT_DEPARTMENT_MST</table>											    
+					</tables>
+					<condition>	
+					<general>A.HGNUM_DEPT_CODE=B.GNUM_DEPT_CODE</general>
+						<dependent>
+						    <clause>AND A.HGNUM_DEPTUNITCODE = #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>										
+					<fields valueMap='#1'>HGSTR_UNITNAME</fields>
+					<fields valueMap='#2'>PSRSTR_EMP_NO</fields>
+					<fields valueMap='#3'>HGDT_EFFECT_DATE</fields>
+					<fields valueMap='@seatId'>HGNUM_SEAT_ID</fields>					
+					<fields valueMap='@entryDate'>HGDT_ENTRY_DATE</fields>		
+					<fields valueMap='#4'>HGNUM_ISGENERAL</fields>	
+					<fields valueMap='#5'>GDT_INACTIVE_FROM_DATE</fields>		
+                    <fields valueMap='#5'>GDT_INACTIVE_TILL_DATE</fields>
+					<fields valueMap='#6'>GNUM_ISVALID</fields>			                   	
+                  				
+					<table>HGBT_UNIT_MST</table>
+					<condition>hgnum_deptunitcode = #1</condition>
+				</update-query>
+         </dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

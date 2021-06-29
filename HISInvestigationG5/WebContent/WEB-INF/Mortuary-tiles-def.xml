@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<!-- Postmortem Desk -->
+	<definition name="/postmortemDesk" path="/mortuary/transaction/postmortemDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/mortuary/postmortemEntryList.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Postmortem General Appearance -->
+	<definition name="/generalAppearance" path="/mortuary/transaction/postmortemDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/mortuary/generalAppearanceEntry.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Mortuary Under Construction -->
+	<definition name="/mortuaryUnderConstructionDesk" path="/mortuary/transaction/postmortemDesk.jsp">
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Deceased Item Detail -->
+	<definition name="/deceasedItemDetail" path="/mortuary/transaction/postmortemDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/mortuary/deceasedItemDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Body Identification Detail -->
+	<definition name="/bodyIdentification" path="/mortuary/transaction/postmortemDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/mortuary/bodyIdentification.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Photo Upload -->
+	<definition name="/photoUpload" path="/mortuary/transaction/postmortemDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/mortuary/photoUpload.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Deceased Injury -->
+	<definition name="/deceasedInjuries" path="/mortuary/transaction/postmortemDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/mortuary/deceasedInjuries.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Postmortem Team Detail -->
+	<definition name="/postmortemTeamDetail" path="/mortuary/transaction/postmortemDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/mortuary/postmortemTeamDetail.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	<!-- Sample Send To External Lab -->
+	<definition name="/sampleSendToExtLab" path="/mortuary/transaction/postmortemDesk.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="body" value="/mortuary/sampleSendToExtLab.cnt" />
+		<put name="footer" value="/registration/blank.jsp" />
+	</definition>
+	
+	  <definition name="/listOfDeceasedReportdefinition" path="/mortuary/reports/MortuaryCommonReportLayout.jsp">
+		<put name="title" value="List of Deceased" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mortuary/report/listOfDeceasedReport.cnt" />
+		<put name="footer" value="/mortuary/reports/MortuaryReportFooter.jsp" />
+	</definition>
+	
+	 <definition name="/doctorWisePostMortemReportdefinition" path="/mortuary/reports/MortuaryCommonReportLayout.jsp">
+		<put name="title" value="Doctor Wise PostMortem Listing" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mortuary/report/doctorWisePostMortemReport.cnt" />
+		<put name="footer" value="/mortuary/reports/MortuaryReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/doctorWisePostMortemCountReportdefinition" path="/mortuary/reports/MortuaryCommonReportLayout.jsp">
+		<put name="title" value="Doctor Wise PostMortem Count" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mortuary/report/doctorWisePostMortemCountReport.cnt" />
+		<put name="footer" value="/mortuary/reports/MortuaryReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/deathMannerWisePostMortemCountReportdefinition" path="/mortuary/reports/MortuaryCommonReportLayout.jsp">
+		<put name="title" value="Death Manner Wise PostMortem Count" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mortuary/report/deathMannerWisePostMortemCountReport.cnt" />
+		<put name="footer" value="/mortuary/reports/MortuaryReportFooter.jsp" />
+	</definition>
+	
+	 <definition name="/labAndTestWisePostMortemReportdefinition" path="/mortuary/reports/MortuaryCommonReportLayout.jsp">
+		<put name="title" value="Lab and Test Wise Postmortem Details" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mortuary/report/labAndTestWisePostMortemReport.cnt" />
+		<put name="footer" value="/mortuary/reports/MortuaryReportFooter.jsp" />
+	</definition>
+	
+	<definition name="/testWisePostMortemReportdefinition" path="/mortuary/reports/MortuaryCommonReportLayout.jsp">
+		<put name="title" value="Test Wise Postmortem Details" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mortuary/report/testWisePostMortemReport.cnt" />
+		<put name="footer" value="/mortuary/reports/MortuaryReportFooter.jsp" />
+	</definition>
+	
+	 <definition name="/ioNameAndPSWisePostMortemReportdefinition" path="/mortuary/reports/MortuaryCommonReportLayout.jsp">
+		<put name="title" value="Inquest Officer/Police Station Wise Postmortem Details" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mortuary/report/ioNameAndPSWisePostMortemReport.cnt" />
+		<put name="footer" value="/mortuary/reports/MortuaryReportFooter.jsp" />
+	</definition>
+	
+	 <definition name="/broughtDeadCasesReportdefinition" path="/mortuary/reports/MortuaryCommonReportLayout.jsp">
+		<put name="title" value="Brought Dead Cases" type="string" />
+		<put name="header" value="/registration/blank.jsp" />
+		<put name="body" value="/mortuary/report/broughtDeadCasesReport.cnt" />
+		<put name="footer" value="/mortuary/reports/MortuaryReportFooter.jsp" />
+	</definition>
+	
+</tiles-definitions>

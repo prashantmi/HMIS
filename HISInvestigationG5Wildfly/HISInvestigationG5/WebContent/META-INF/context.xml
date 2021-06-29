@@ -1,0 +1,47 @@
+ <context>
+		<!--<Resource 
+        name="AHIS"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName = "oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@10.0.2.103:1521:ahis"
+		username = "raol"
+		password = "raol"
+		maxActive = "4"
+		maxIdle = "2"
+		maxWait = "5000"/>
+		<Resource 
+        name="AHIS_RAO"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName = "oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@localhost:1521:PGIMER"
+		username = "ahis"
+		password = "ahis"
+		maxActive = "4"
+		maxIdle = "2"
+		maxWait = "5000"/>
+		--><Resource 
+        name="AHIS"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.0.2.103:5444/nimsnew"
+	 	username="nimsnew"
+		  password="nimsnew"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		<!--<Resource 
+        name="AHIS"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.0.2.69:5444/ayush"
+		username="ayush"
+		password="ayush"  
+		maxActive="4"    
+		maxIdle="2"
+		maxWait="5000"/>-->
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+</context>

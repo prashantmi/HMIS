@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<constant name="struts.devMode" value="false" />
+	
+		<package name="mrd.reports" namespace="/mrd/reports" extends="struts-default">
+		
+	<!-- ADDED By Shweta Rajputon 28-03-2019 for Diagnostic Statistics Report -->
+	<action name="*mRDDiagnosticStatisticsReport" method="{1}" class="mrd.reports.controller.action.MRDDiagnosticStatisticsReportACTION">
+			 <result name="NEW">/mrd/reports/jsp/mRDDiagnosticStatisticsReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		 </action>  
+		 
+		 <action name="*morbidityDiagnosticReportWithPtDetail" method="{1}" class="mrd.reports.controller.action.MorbidityDiagnosticReportWithPtDetailACTION">
+			 <result name="NEW">/mrd/reports/jsp/morbidityDiagnosticReportWithPtDetail.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		 </action>  
+		 
+		 
+		 <action name="*mortalityDiagnosticReportWithPtDetail" method="{1}" class="mrd.reports.controller.action.MortalityDiagnosticReportWithPtDetailACTION">
+			 <result name="NEW">/mrd/reports/jsp/mortalityDiagnosticReportWithPtDetail.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		 </action>  
+		 
+		 <action name="*notifiableDiseaseStaticReport" method="{1}" class="mrd.reports.controller.action.NotifiableDiseaseStaticReportACTION">
+			 <result name="NEW">/mrd/reports/jsp/notifiableDiseaseStaticReport.jsp</result>
+			 <result name="report">/hisglobal/masterutil/master/rpt_mstTemp_gbl.jsp</result>			
+		 </action> 
+		 
+		 </package>
+</struts>

@@ -1,0 +1,185 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='GlobalDepartmentMaster'>
+		<common-values>
+			<master-name>GlobalDepartmentMaster</master-name>
+			<master-title>Global Department Master</master-title>
+		</common-values>
+		<list-page>
+			<tableHeading>Department Master</tableHeading> 
+			<list-table>GBLT_DEPARTMENT_MST</list-table>
+			
+			<columns>
+				<column>Department Name</column> 				  
+				
+			</columns>
+			
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.GSTR_DEPT_NAME) </field>
+				
+				</fields>
+				<primaryKey>
+					<field>A.GNUM_DEPT_CODE </field>
+					<field>A.GNUM_DEPT_SLNO </field>
+					<field>A.GNUM_HOSPITAL_CODE</field>						
+				</primaryKey>
+					
+				<tables>
+					<table alias='A'>GBLT_DEPARTMENT_MST </table>
+				</tables>
+					
+				<condition>
+					
+					<general>
+						 A.GNUM_ISVALID =1 AND A.GNUM_HOSPITAL_CODE=100
+					</general>
+					<general-inactive>
+						 A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+					</general-inactive>
+					<isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY INITCAP(A.GSTR_DEPT_NAME)</orderby>	
+				</condition>                   
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+
+				<controls>				
+					<control type="text" index="0" >
+						<label>Department Name</label>
+						<constraints maxlength='50' size='51' inputType='alphabet'  mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					
+              	 <control type="text" index="1" >
+						<label>Department Short Name</label>
+						<constraints maxlength='3' size='4' inputType='alphabet' mandatory="true" />						
+						<readOnly>0</readOnly>
+					</control>
+			
+					<control type="combo" index="2">
+						<label>Is Valid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				 <control type="text" index="3" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet'  styleString="style='display:none'"/>			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+						
+					</control>
+								
+				</controls>
+				
+				<redundent-check>
+				SELECT COUNT (*) FROM gblt_department_mst WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2)  and gnum_hospital_code = 100
+				and upper (GSTR_DEPT_NAME) = controlindex0
+				</redundent-check>
+				<insert-query>
+					<primary-key>
+						<field>GNUM_DEPT_CODE</field>
+						<value>SELECT NVL(MAX(GNUM_DEPT_CODE),100)+1 FROM GBLT_DEPARTMENT_MST where GNUM_HOSPITAL_CODE=100</value>
+						
+					</primary-key>
+					<fields valueMap='#I0'>GSTR_DEPT_NAME</fields>
+					<fields valueMap='#U1'>GSTR_DEPT_SHORT</fields>
+					<fields valueMap='#2'>GNUM_ISVALID </fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#3'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='@entryDate'>GDT_EFFECTIVE_FRM</fields>
+					
+					<table>GBLT_DEPARTMENT_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+
+
+
+		<modify-page>
+		  <dynamic-page>
+		 
+		<controls>				
+					<control type="text" index="0" >
+						<label>Department Name</label>
+						<constraints maxlength='50' size='51' inputType='alphabet'  mandatory="true"/>		
+						<data>
+							<static>#Q0</static>
+						</data>				
+						<readOnly>0</readOnly>
+					</control>
+					
+              	 <control type="text" index="1" >
+						<label>Department Short Name</label>
+						<constraints maxlength='3' size='4' inputType='alphabet' mandatory="true" />		
+						<data>
+							<static>#Q1</static>
+						</data>				
+						<readOnly>0</readOnly>
+					</control>
+					
+					
+					<control type="combo" index="2">
+						<label>Is Valid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>	                      
+						   
+				
+						   
+			 </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>INITCAP(A.GSTR_DEPT_NAME)</field>
+					 <field>UPPER(A.GSTR_DEPT_SHORT)</field>
+					 </fields>					
+					<tables>
+						<table alias='A'>GBLT_DEPARTMENT_MST</table>
+						
+					</tables>
+					<condition>		
+									
+						<dependent>
+						    <clause>A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_DEPT_CODE = #1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>	
+				
+				<redundent-check>
+				SELECT COUNT (*) FROM gblt_department_mst WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2)  and gnum_hospital_code = 100
+				and upper (GSTR_DEPT_NAME) = controlindex0
+				</redundent-check>	 
+				<update-query>					
+					<fields valueMap='#I0'>GSTR_DEPT_NAME</fields>
+					<fields valueMap='#U1'>GSTR_DEPT_SHORT</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>					
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>
+					<fields valueMap='@entryDate'>GDT_LSTMOD_DATE</fields>					
+					
+					
+					<table>GBLT_DEPARTMENT_MST</table>
+					<condition> GNUM_HOSPITAL_CODE=100 AND GNUM_DEPT_CODE = #1</condition>
+					
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

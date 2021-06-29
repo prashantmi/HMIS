@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Blood Donation Component Master'>
+		<common-values>
+			<master-name>BloodDonationComponentMaster</master-name>
+			<master-title>Blood Donation Component Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Blood Donation Component Master</tableHeading>
+			
+			<list-table>HBBT_DONATION_COMPONENT_MST</list-table>
+
+			<columns>
+				<column>Donation Type</column>
+				<column>Component Name</column>
+				<column>Block Days</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(C.HBSTR_DONATION_DESC)</field>
+					<field>INITCAP(B.HBSTR_COMPONENT_NAME)</field>
+					<field>NVL(A.HBNUM_MINBLOCK_DAYS ,0)</field>
+				</fields>
+				
+				<primaryKey>
+					<field>A.HBNUM_DONATION_TYPE_CODE</field>
+					<field>A.GNUM_BLD_COMPONENT_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HBNUM_DONATION_COMPONENT_SLNO</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HBBT_DONATION_COMPONENT_MST</table>
+					<table alias='B'>HBBT_BLD_COMPONENT_MST</table>
+					<table alias='C'>HBBT_DONATION_TYPE_MST</table>
+				</tables>
+				
+				<condition>
+					<general>
+						A.HBNUM_DONATION_TYPE_CODE=C.HBNUM_DONATION_TYPE_CODE 
+						AND A.GNUM_BLD_COMPONENT_ID=B.HBNUM_BLD_COMPONENT_ID
+						AND B.GNUM_ISVALID=C.GNUM_ISVALID AND
+					</general>
+					
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/bloodbank/masters/BldDonCompMstACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/bloodbank/masters/BldDonCompMstACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

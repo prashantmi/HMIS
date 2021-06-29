@@ -1,0 +1,177 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='RelationMaster'>
+		<common-values>
+			<master-name>RelationMaster</master-name>
+			<master-title>Relation Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Relation Master</tableHeading> 
+				<list-table>GBLT_RELATION_MST</list-table>
+				
+				<columns>
+					 <column>Relation Name </column>
+				    
+				  
+				  </columns>
+
+					<query-detail>
+					<fields>
+						
+						<field>INITCAP(A.GSTR_RELATION_NAME)</field>
+					   
+					</fields>
+					<primaryKey>
+						<field>A.GNUM_RELATION_CODE </field>
+						<!-- <field>A.GNUM_HOSPITAL_CODE</field> -->
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_RELATION_MST</table>
+					</tables>
+					<condition>					 
+                            <general>
+								A.GNUM_ISVALID =1  
+							</general>
+							<general-inactive>
+								A.GNUM_ISVALID =2 
+							</general-inactive>
+                           <isvalid-field>false</isvalid-field>
+                            <orderby> order by INITCAP(A.GSTR_RELATION_NAME)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>				
+					<control type="text" index="0" >
+						<label>Relation Name</label>
+						<constraints  size='21' maxlength = "50"  mandatory="true" inputType="alphabets"/>						
+						<readOnly>0</readOnly>
+					</control>
+					              
+							
+					<control type="combo" index="1">
+						<label>Is Active Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				 
+				 	<control type="text" index="2" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet'  styleString="style='display:none'"/>			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+						
+					</control>		
+							
+				</controls>
+				<redundent-check>
+				SELECT COUNT (*) FROM GBLT_RELATION_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2)  
+				and upper (GSTR_RELATION_NAME)  =  controlindex0
+				</redundent-check>	
+				<insert-query>
+					<primary-key>
+						<field>GNUM_RELATION_CODE</field>
+						
+						<value>SELECT NVL(MAX(GNUM_RELATION_CODE)+1,10) FROM GBLT_RELATION_MST </value>
+						 
+					</primary-key>
+					
+					<fields valueMap='#I0'>GSTR_RELATION_NAME</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#1'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<!-- <fields valueMap='#2'>GNUM_HOSPITAL_CODE</fields> -->
+					
+					
+					<table>GBLT_RELATION_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+
+		<modify-page>
+		  <dynamic-page>
+		   <controls>
+		            <control type="text" index="0">
+						<label>Relation  Name</label>
+						<constraints  size='21' maxlength = "50" mandatory="true" inputType="alphabets"/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+								
+				    
+				    <control type="textarea" index="1">
+						<label>Remarks</label>
+						<constraints  styleString="style='width:130px; height:30px'" mandatory='true' methodstring="onkeypress='return CheckMaxLength(event,this,50,3);'"/>
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>    
+					
+										
+					<control type="combo" index="2">
+						<label>Is Active Status</label>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+                          
+				  
+					
+						   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>A.GSTR_RELATION_NAME</field>
+					 <field>A.GSTR_REMARKS</field>
+				    				 
+				 </fields>					
+					<tables>
+						<table alias='A'>GBLT_RELATION_MST</table>
+						
+					</tables>
+					<condition>		
+						 
+						<dependent>
+						    <clause>A.GNUM_HOSPITAL_CODE= 100 AND A.GNUM_RELATION_CODE = #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>	
+				<redundent-check>
+				SELECT COUNT (*) FROM GBLT_RELATION_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper (GSTR_RELATION_NAME)  =  controlindex0
+				</redundent-check>		 
+				<update-query>
+					
+					
+					<fields valueMap='#I0'>GSTR_RELATION_NAME</fields>
+					<fields valueMap='#1'>GSTR_REMARKS</fields>		
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+					<fields valueMap='@entryDate'>GDT_LSTMOD_DATE</fields>
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>					
+							
+					<table>GBLT_RELATION_MST</table>
+					<condition> GNUM_RELATION_CODE = #1</condition>
+					 
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

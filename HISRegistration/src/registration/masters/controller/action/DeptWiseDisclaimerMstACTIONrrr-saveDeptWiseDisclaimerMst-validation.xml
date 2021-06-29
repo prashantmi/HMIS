@@ -1,0 +1,22 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="disclaimerModel.strDeptUnitCode">
+    	<field-validator type="regex">
+   		 <param name="expression">[1-9][0-9][0-9][0-9][1-9]</param>
+       		<message>Unit is required.</message>
+		 </field-validator>
+ 	</field>
+ 	<field name="disclaimerModel.strAlignment">
+    	<field-validator type="regex">
+   		 <param name="expression">[1-9]</param>
+       		<message>Alignment is required.</message>
+		 </field-validator>
+ 	</field>
+ 	<field name="disclaimerModel.strUsabilityFlag">
+    	<field-validator type="regex">
+   		 <param name="expression">[1-9][0-9]{0,9}</param>
+       		<message>Usability is required.</message>
+		 </field-validator>
+ 	</field>
+</validators>

@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts-config>
+
+	<form-beans>
+
+		<!-- Master Form Beans Start -->
+
+		<form-bean name="tripTypeBean"
+			type="transport.masters.controller.fb.TripTypeMstFB">
+		</form-bean>
+		<form-bean name="vehicleClassBean"
+			type="transport.masters.controller.fb.VehicleClassMstFB">
+		</form-bean>
+
+		<form-bean name="tripReasonBean"
+			type="transport.masters.controller.fb.TripReasonMstFB">
+		</form-bean>
+		<form-bean name="companyDtlBean"
+			type="transport.masters.controller.fb.CompanyDetailsMstFB">
+		</form-bean>
+
+		<form-bean name="insuranceTypeBean"
+			type="transport.masters.controller.fb.InsuranceTypeMstFB">
+		</form-bean>
+
+		<form-bean name="vehiclePartsDtlBean"
+			type="transport.masters.controller.fb.VehiclePartsDtlMstFB">
+		</form-bean>
+
+		<form-bean name="drivingLicenseTypeBean"
+			type="transport.masters.controller.fb.DrivingLicenseTypeMstFB">
+		</form-bean>
+
+		<form-bean name="driverMasterBean"
+			type="transport.masters.controller.fb.DriverMstFB">
+		</form-bean>
+
+		<form-bean name="fuelTypeBean"
+			type="transport.masters.controller.fb.FuelTypeMstFB">
+		</form-bean>
+
+		<form-bean name="workOrderBean"
+			type="transport.masters.controller.fb.WorkOrderMstFB">
+		</form-bean>
+
+		<form-bean name="vehicleCategoryBean"
+			type="transport.masters.controller.fb.VehicleCategoryMstFB">
+		</form-bean>
+
+		<form-bean name="vehicleBean"
+			type="transport.masters.controller.fb.VehicleMstFB">
+		</form-bean>
+
+		<form-bean name="transportConfigBean"
+			type="transport.masters.controller.fb.TransportConfigMstFB">
+		</form-bean>
+
+
+		<!-- Master Form Beans Ends -->
+
+		<form-bean name="vehicleSetup"
+			type="transport.transactions.controller.fb.VehicleSetupTransFB">
+		</form-bean>
+
+
+
+
+		<!-- Transaction Form Beans Starts -->
+
+		<form-bean name="vehicleRegistrationBean"
+			type="transport.transactions.controller.fb.VehicleRegistrationTransFB">
+		</form-bean>
+
+
+
+		<form-bean name="vehicleInsuranceBean"
+			type="transport.transactions.controller.fb.VehicleInsuranceTransFB">
+		</form-bean>
+
+		<form-bean name="vehicleRoadTaxBean"
+			type="transport.transactions.controller.fb.VehicleRoadTaxTransFB">
+		</form-bean>
+
+		<form-bean name="vehiclePollutionCheckBean"
+			type="transport.transactions.controller.fb.VehiclePollutionCheckTransFB">
+		</form-bean>
+
+		<form-bean name="vehicleRTOPassingBean"
+			type="transport.transactions.controller.fb.VehicleRTOPassingTransFB">
+		</form-bean>
+
+		<form-bean name="vehicleFuelSlipBean"
+			type="transport.transactions.controller.fb.VehicleFuelSlipTransFB">
+		</form-bean>
+
+		<form-bean name="vehicleTripRequestBean"
+			type="transport.transactions.controller.fb.VehicleTripRequestTransFB">
+		</form-bean>
+
+
+		<form-bean name="vehicleTripRequestApprovalBean"
+			type="transport.transactions.controller.fb.VehicleTripRequestApprovalTransFB">
+		</form-bean>
+
+
+
+		<form-bean name="vehicleOrderGenerationBean"
+			type="transport.transactions.controller.fb.VehicleTripOrderGenerationTransFB">
+		</form-bean>
+
+
+		<form-bean name="vehicleFuelLogBean"
+			type="transport.transactions.controller.fb.VehicleFuelLogTransFB">
+		</form-bean>
+
+	<form-bean name="vehicleTripLogBean"
+			type="transport.transactions.controller.fb.VehicleTripLogTransFB">
+		</form-bean>
+
+
+		<form-bean name="transportLogs"
+			type="transport.transactions.controller.fb.TransportLogsTransFB">
+		</form-bean>
+		<form-bean name="fuelBillVerify"
+			type="transport.transactions.controller.fb.FuelBillVerifyTransFB">
+		</form-bean>
+		<form-bean name="lostVehicleDtl"
+			type="transport.transactions.controller.fb.LostVehicleDtlsTransFB">
+		</form-bean>
+
+		<form-bean name="maintenanceRequestFB"
+			type="transport.transactions.controller.fb.VehicleMaintenanceRequestTransFB">
+		</form-bean>
+
+		<form-bean name="vehicleMaitenanceVerify"
+			type="transport.transactions.controller.fb.VehicleMaintenanceRequestVerifyTransFB">
+		</form-bean>
+
+		<form-bean name="vehicleMaitenanceApproval"
+			type="transport.transactions.controller.fb.VehicleMaintenanceRequestApprovalTransFB">
+		</form-bean>
+
+
+		<form-bean name="workOrderGeneration"
+			type="transport.transactions.controller.fb.VehicleWorkOrderGenerationTransFB">
+		</form-bean>
+		
+		
+		 <form-bean name="transportLogCancellation"
+			type="transport.transactions.controller.fb.TransportLogsCancellationFB">
+		 </form-bean>
+		
+
+
+		 <form-bean name="vehicleMiscellaneousLogBean"
+			type="transport.transactions.controller.fb.VehicleMiscellaneousLogTransFB">
+		 </form-bean>
+
+
+<form-bean name="vehicleWorkorderLogBean"
+			type="transport.transactions.controller.fb.VehicleWorkorderLogTransFB">
+		</form-bean>
+
+
+<form-bean name="vehicleTripVerificationBean"
+			type="transport.transactions.controller.fb.VehicleTripVerificationTransFB">
+		</form-bean>
+
+
+		<!-- Transaction Form Beans Ends -->
+
+
+		<!-- Reports Form Beans Starts -->
+
+		<form-bean name="vehicleReferenceRpt"
+			type="transport.reports.controller.fb.VehicleReferenceRptFB">
+		</form-bean>
+		<form-bean name="monthlyReferenceRpt"
+			type="transport.reports.controller.fb.MonthlyReferenceVehicleRptFB">
+		</form-bean>
+		<form-bean name="expenseReportVehicleRpt"
+			type="transport.reports.controller.fb.ExpenseReportVehicleRptFB">
+		</form-bean>
+		<form-bean name="inventoryVehicleRpt"
+			type="transport.reports.controller.fb.InventoryVehicleRptFB">
+		</form-bean>
+		<form-bean name="insuranceReportVehicleRpt"
+			type="transport.reports.controller.fb.InsuranceReportVehicleRptFB">
+		</form-bean>
+		<form-bean name="damageRpt"
+			type="transport.reports.controller.fb.DamageReportRptFB">
+		</form-bean>
+		<form-bean name="oilReportRpt"
+			type="transport.reports.controller.fb.OilReportRptFB">
+		</form-bean>
+		<form-bean name="batteryRpt"
+			type="transport.reports.controller.fb.BatteryReportRptFB">
+		</form-bean>
+		<form-bean name="tyresRpt"
+			type="transport.reports.controller.fb.TyresReportRptFB">
+		</form-bean>
+		<form-bean name="requestRpt"
+			type="transport.reports.controller.fb.RequestReportRptFB">
+		</form-bean>
+		<form-bean name="attachedVehicleDtlRpt"
+			type="transport.reports.controller.fb.AttachedVehicleDetailRptFB">
+		</form-bean>
+		<form-bean name="tripLogBookRpt"
+			type="transport.reports.controller.fb.TripLogBookRptFB">
+		</form-bean>
+		<form-bean name="fuelExpenditureDtlRpt"
+			type="transport.reports.controller.fb.FuelExpenditureDetailRptFB">
+		</form-bean>
+		<form-bean name="vehiclePollutionExpenditureRpt"
+			type="transport.reports.controller.fb.VehiclePollutionExpenditureRptFB">
+		</form-bean>
+		<form-bean name="vehicleMaintenanceExpenditureRpt"
+			type="transport.reports.controller.fb.VehicleMaintenanceExpenditureRptFB">
+		</form-bean>
+		<form-bean name="fuelDetailRpt"
+			type="transport.reports.controller.fb.FuelDetailRptFB">
+		</form-bean>
+		<form-bean name="vehicleMaintenenceRpt"
+			type="transport.reports.controller.fb.VehicleMaintenanceRptFB">
+		</form-bean>
+		<form-bean name="assessmentPerformanceVehicleRpt"
+			type="transport.reports.controller.fb.AssessmentPerformanceVehicleRptFB">
+		</form-bean>
+		<form-bean name="maintenanceRepairDtlRpt"
+			type="transport.reports.controller.fb.MaintenanceRepairDetailRptFB">
+		</form-bean>
+		<form-bean name="nearingExpiryRpt"
+			type="transport.reports.controller.fb.NearingExpiryRptFB">
+		</form-bean>
+		<form-bean name="vehiclePerformanceRpt"
+			type="transport.reports.controller.fb.VehiclePerformanceRptFB">
+		</form-bean>
+		
+		<form-bean name="vehicleOtherExpenditureRptFB"
+			type="transport.reports.controller.fb.VehicleOtherExpenditureRptFB">
+		</form-bean>
+		
+		<form-bean name="VehicleRequisitionRptFB"
+			type="transport.reports.controller.fb.VehicleRequisitionRptFB">
+		</form-bean>
+
+
+		<!-- Reports Form Beans Ends -->
+		
+		
+		
+		<!-- global CNT Beans START (by Anshul)-->
+		
+		<form-bean name="globalTransportBean"
+			type="transport.global.controller.TransportFB">
+		</form-bean>
+		<!-- global CNT Beans Ends -->
+
+
+	</form-beans>
+
+
+	<action-mappings>
+	
+	<action path="/transactions/TransportCNT"
+			type="transport.global.controller.TransportCNT"
+			name="globalTransportBean" scope="request" validate="false"
+			parameter="hmode">
+		
+		</action>
+		
+
+		<!-- Action Mappings Start -->
+
+		<action path="/masters/VehicleMstCNT"
+			type="transport.masters.controller.action.VehicleMstCNT"
+			name="vehicleBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_vehicle.jsp" />
+			<forward name="modify" path="/masters/modify_vehicle.jsp" />
+			<forward name="view" path="/masters/view_vehicle.jsp" />
+
+		</action>
+
+		<action path="/masters/TripTypeMstCNT"
+			type="transport.masters.controller.action.TripTypeMstCNT"
+			name="tripTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_triptype.jsp" />
+			<forward name="modify" path="/masters/modify_triptype.jsp" />
+
+		</action>
+		<action path="/masters/VehicleClassMstCNT"
+			type="transport.masters.controller.action.VehicleClassMstCNT"
+			name="vehicleClassBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_vehicleclass.jsp" />
+			<forward name="modify"
+				path="/masters/modify_vehicleclass.jsp" />
+
+		</action>
+
+		<action path="/masters/TripReasonMstCNT"
+			type="transport.masters.controller.action.TripReasonMstCNT"
+			name="tripReasonBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_tripreason_transport.jsp" />
+			<forward name="modify"
+				path="/masters/modify_tripreason_transport.jsp" />
+		</action>
+		<action path="/masters/CompanyDetailsMstCNT"
+			type="transport.masters.controller.action.CompanyDetailsMstCNT"
+			name="companyDtlBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_companyDtl.jsp" />
+			<forward name="modify"
+				path="/masters/modify_companyDtl.jsp" />
+
+		</action>
+
+		<action path="/masters/InsuranceTypeMstCNT"
+			type="transport.masters.controller.action.InsuranceTypeMstCNT"
+			name="insuranceTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_insurancetype_transport.jsp" />
+			<forward name="modify"
+				path="/masters/modify_insurancetype_transport.jsp" />
+		</action>
+
+		<action path="/masters/VehiclePartsDtlMstCNT"
+			type="transport.masters.controller.action.VehiclePartsDtlMstCNT"
+			name="vehiclePartsDtlBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_vehicleparts_transport.jsp" />
+			<forward name="modify"
+				path="/masters/modify_vehicleparts_transport.jsp" />
+		</action>
+
+		<action path="/masters/DrivingLicenseTypeMstCNT"
+			type="transport.masters.controller.action.DrivingLicenseTypeMstCNT"
+			name="drivingLicenseTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_drivinglicensetype_transport.jsp" />
+			<forward name="modify"
+				path="/masters/modify_drivinglicensetype_transport.jsp" />
+			<forward name="view"
+				path="/masters/view_drivinglicensetype_transport.jsp" />
+		</action>
+
+
+		<action path="/masters/DriverMstCNT"
+			type="transport.masters.controller.action.DriverMstCNT"
+			name="driverMasterBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/masters/add_driverMst.jsp" />
+			<forward name="modify" path="/masters/modify_driverMst.jsp" />
+			<forward name="viewPage" path="/masters/view_driverMst.jsp" />
+
+		</action>
+
+
+
+		<action path="/masters/FuelTypeMstCNT"
+			type="transport.masters.controller.action.FuelTypeMstCNT"
+			name="fuelTypeBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_fueltype_transport.jsp" />
+			<forward name="modify"
+				path="/masters/modify_fueltype_transport.jsp" />
+		</action>
+
+		<action path="/masters/WorkOrderMstCNT"
+			type="transport.masters.controller.action.WorkOrderMstCNT"
+			name="workOrderBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add"
+				path="/masters/add_workorder_transport.jsp" />
+			<forward name="modify"
+				path="/masters/modify_workorder_transport.jsp" />
+		</action>
+
+
+		<!-- Transport Configuration Master Mapping -->
+
+		<action path="/masters/TransportConfigMstCNT"
+			type="transport.masters.controller.action.TransportConfigMstCNT"
+			name="transportConfigBean" scope="request" validate="false"
+			parameter="selectedTab">
+			<forward name="transportgeneraldtls"
+				path="/masters/transportconfig_transport.jsp" />
+			<forward name="vehiclesetupdtls"
+				path="/masters/transportconfig_vehiclesetupdtls_transport.jsp" />
+
+
+
+		</action>
+
+		<action path="/masters/VehicleCategoryMstCNT"
+			type="transport.masters.controller.action.VehicleCategoryMstCNT"
+			name="vehicleCategoryBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="addondemand"
+				path="/masters/add_vehiclecategory_ondemand_transport.jsp" />
+			<forward name="addfixed"
+				path="/masters/add_vehiclecategory_fixed_transport.jsp" />
+			<forward name="addattached"
+				path="/masters/add_vehiclecategory_attached_transport.jsp" />
+			<forward name="modifyondemand"
+				path="/masters/modify_vehiclecategory_ondemand_transport.jsp" />
+			<forward name="modifyfixed"
+				path="/masters/modify_vehiclecategory_fixed_transport.jsp" />
+			<forward name="modifyattached"
+				path="/masters/modify_vehiclecategory_attached_transport.jsp" />
+			<forward name="viewFixed"
+				path="/masters/view_vehiclecategory_fixed_transport.jsp" />
+		</action>
+		<!-- Action Mappings End -->
+
+
+
+		<!-- Transaction Action Mappings Starts -->
+
+
+        <action path="/transactions/TransportLogsCancellationCNT"
+			type="transport.transactions.controller.action.TransportLogsCancellationCNT"
+			name="transportLogCancellation" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="transportLogCancellationOne"
+				path="/transactions/LogCancellation_trans_transport.jsp" />
+							
+		</action>
+
+
+
+
+		<action path="/transactions/VehicleSetupTransCNT"
+			type="transport.transactions.controller.action.VehicleSetupTransCNT"
+			name="vehicleSetup" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="setupMainPage"
+				path="/transactions/vehiclesetup_trans_transport.jsp" />
+
+		</action>
+
+		<action path="/transactions/VehicleRegistrationTransCNT"
+			type="transport.transactions.controller.action.VehicleRegistrationTransCNT"
+			name="vehicleRegistrationBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="vehRegistrationAdd"
+				path="/transactions/veh_registration_trans_transport.jsp" />
+			<forward name="vehRegistrationView"
+				path="/transactions/view_veh_reg_trans_transport.jsp" />
+
+		</action>
+
+		<action path="/transactions/VehicleInsuranceTransCNT"
+			type="transport.transactions.controller.action.VehicleInsuranceTransCNT"
+			name="vehicleInsuranceBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="vehInsuranceAdd"
+				path="/transactions/vehicleinsurance_trans_transport.jsp" />
+			<forward name="view"
+				path="/transactions/vehicleinsuranceview_trans_transport.jsp" />
+
+		</action>
+
+		<action path="/transactions/VehicleRoadTaxTransCNT"
+			type="transport.transactions.controller.action.VehicleRoadTaxTransCNT"
+			name="vehicleRoadTaxBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="vehicleroadtaxAdd"
+				path="/transactions/vehicleroadtax_trans_transport.jsp" />
+			<forward name="vehicleroadtaxView"
+				path="/transactions/view_vehicleroadtax_trans_transport.jsp" />
+
+		</action>
+		<action path="/transactions/VehiclePollutionCheckTransCNT"
+			type="transport.transactions.controller.action.VehiclePollutionCheckTransCNT"
+			name="vehiclePollutionCheckBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="vehPollutionChkAdd"
+				path="/transactions/vehiclepollutioncheck_trans_transport.jsp" />
+			<forward name="vehPollutionChkView"
+				path="/transactions/view_vehiclepollutioncheck_trans_transport.jsp" />
+
+		</action>
+
+
+		<action path="/transactions/VehicleRTOPassingTransCNT"
+			type="transport.transactions.controller.action.VehicleRTOPassingTransCNT"
+			name="vehicleRTOPassingBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="vehicleRTOPassingAdd"
+				path="/transactions/vehicle_rto_passing_trans_transport.jsp" />
+			<forward name="vehicleRTOPassingView"
+				path="/transactions/view_vehicle_rto_passing_trans_transport.jsp" />
+
+		</action>
+
+		<action path="/transactions/VehicleFuelSlipTransCNT"
+			type="transport.transactions.controller.action.VehicleFuelSlipTransCNT"
+			name="vehicleFuelSlipBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="issue"
+				path="/transactions/vehiclefuelslip_issue_trans_transport.jsp" />
+			<forward name="return"
+				path="/transactions/vehiclefuelslip_return_trans_transport.jsp" />
+			<forward name="cancel"
+				path="/transactions/vehiclefuelslip_cancel_trans_transport.jsp" />
+			<forward name="view"
+				path="/transactions/vehiclefuelslip_returnview_trans_transport.jsp" />
+		</action>
+
+		<action path="/transactions/VehicleTripRequestTransCNT"
+			type="transport.transactions.controller.action.VehicleTripRequestTransCNT"
+			name="vehicleTripRequestBean" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="employeePage"
+				path="/transactions/vehicletriprequest_employee_trans_transport.jsp" />
+			<forward name="patientPage"
+				path="/transactions/vehicletriprequest_patient_trans_transport.jsp" />
+			<forward name="viewemployee"
+				path="/transactions/vehicletriprequest_employee_view_trans_transport.jsp" />
+			<forward name="viewpatient"
+				path="/transactions/vehicletriprequest_patient_view_trans_transport.jsp" />
+
+		</action>
+
+
+		<action path="/transactions/VehicleTripRequestApprovalTransCNT"
+			type="transport.transactions.controller.action.VehicleTripRequestApprovalTransCNT"
+			name="vehicleTripRequestApprovalBean" scope="request"
+			validate="false" parameter="hmode">
+
+			<forward name="employeePage"
+				path="/transactions/vehicletriprequest_approval_employee_trans_transport.jsp" />
+			<forward name="patientPage"
+				path="/transactions/vehicletriprequest_approval_patient_trans_transport.jsp" />
+			<forward name="employeeApprove"
+				path="/transactions/vehicletriprequest_employee_approve_trans_transport.jsp" />
+			<forward name="patientApprove"
+				path="/transactions/vehicletriprequest_patient_approve_trans_transport.jsp" />
+			<forward name="viewemployee"
+				path="/transactions/vehicletriprequest_employee_approval_view_trans_transport.jsp" />
+			<forward name="viewpatient"
+				path="/transactions/vehicletriprequest_patient_approval_view_trans_transport.jsp" />
+				
+			<forward name="rejectemployee"
+				path="/transactions/vehicletriprequest_employee_approval_reject_trans_transport.jsp" />
+			<forward name="rejectpatient"
+				path="/transactions/vehicletriprequest_patient_approval_reject_trans_transport.jsp" />
+
+			<forward name="maintenanceView"
+				path="/transactions/maintenance_view_trans_transport.jsp" />
+
+
+		</action>
+
+
+		<action path="/transactions/VehicleTripOrderGenerationTransCNT"
+			type="transport.transactions.controller.action.VehicleTripOrderGenerationTransCNT"
+			name="vehicleOrderGenerationBean" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="OrderPage"
+				path="/transactions/vehicleordergeneration_employee_trans_transport.jsp" />
+			<forward name="OrderView"
+				path="/transactions/vehicleordergeneration_employee_view_trans_transport.jsp" />
+
+		</action>
+
+
+
+
+		<action path="/transactions/VehicleFuelLogTransCNT"
+			type="transport.transactions.controller.action.VehicleFuelLogTransCNT"
+			name="vehicleFuelLogBean" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="fuellog"
+				path="/transactions/vehicle_fuellog_trans_transport.jsp" />
+
+		</action>
+		
+		
+		<action path="/transactions/VehicleTripLogTransCNT"
+			type="transport.transactions.controller.action.VehicleTripLogTransCNT"
+			name="vehicleTripLogBean" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="triplog"
+				path="/transactions/vehicle_triplog_trans_transport.jsp" />
+
+		</action>
+
+
+
+<action path="/transactions/VehicleWorkorderLogTransCNT"
+			type="transport.transactions.controller.action.VehicleWorkorderLogTransCNT"
+			name="vehicleWorkorderLogBean" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="workorderlog"
+				path="/transactions/vehicle_workorderlog_trans_transport.jsp" />
+
+		</action>
+
+		<action path="/transactions/TransportLogsTransCNT"
+			type="transport.transactions.controller.action.TransportLogsTransCNT"
+			name="transportLogs" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="logsMainPage"
+				path="/transactions/transportlogs_trans_transport.jsp" />
+
+		</action>
+
+
+		<action path="/transactions/FuelBillVerifyTransCNT"
+			type="transport.transactions.controller.action.FuelBillVerifyTransCNT"
+			name="fuelBillVerify" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="billVerifyPage"
+				path="/transactions/fuelBillVerify_trans_transport.jsp" />
+			<forward name="billViewPage"
+				path="/transactions/view_fuelBillVerifyTrans.jsp" />
+
+		</action>
+
+
+		<action path="/transactions/LostVehicleDtlsTransCNT"
+			type="transport.transactions.controller.action.LostVehicleDtlsTransCNT"
+			name="lostVehicleDtl" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="lostDtl"
+				path="/transactions/Lostvehicledtl_trans_transport.jsp" />
+
+			<forward name="trcebilityReport"
+				path="/transactions/trcebilityReport_Lostvehicledtl_trans_transport.jsp" />
+
+			<forward name="recovery"
+				path="/transactions/recovery_Lostvehicledtl_trans_transport.jsp" />
+
+			<forward name="claimDtl"
+				path="/transactions/claimDtl_Lostvehicledtl_trans_transport.jsp" />
+
+			<forward name="cancel"
+				path="/transactions/cancel_Lostvehicledtl_trans_transport.jsp" />
+
+			<forward name="view"
+				path="/transactions/view_Lostvehicledtl_trans_transport.jsp" />
+
+		</action>
+
+
+		<action path="/transactions/VehicleMaintenanceRequestTransCNT"
+			type="transport.transactions.controller.action.VehicleMaintenanceRequestTransCNT"
+			name="maintenanceRequestFB" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="mrequest"
+				path="/transactions/vehicle_maintenance_request_trans_transport.jsp" />
+
+		</action>
+
+		<action
+			path="/transactions/VehicleMaintenanceRequestVerifyTransCNT"
+			type="transport.transactions.controller.action.VehicleMaintenanceRequestVerifyTransCNT"
+			name="vehicleMaitenanceVerify" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="maintenanceRepair"
+				path="/transactions/vehicleMaintenanceVerify_Repair_trans_transport.jsp" />
+
+			<forward name="maintenanceDamage"
+				path="/transactions/vehicleMaintenanceVerify_Damage_trans_transport.jsp" />
+			<forward name="maintenanceServices"
+				path="/transactions/vehicleMaintenanceVerify_Service_trans_transport.jsp" />
+
+
+			<forward name="maintenanceView"
+				path="/transactions/vehicleMaintenanceVerify_view_trans_transport.jsp" />
+
+		</action>
+
+
+		<action
+			path="/transactions/VehicleMaintenanceRequestApprovalTransCNT"
+			type="transport.transactions.controller.action.VehicleMaintenanceRequestApprovalTransCNT"
+			name="vehicleMaitenanceApproval" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="maintenanceApprove"
+				path="/transactions/vehicleMaintenanceApproval_trans_transport.jsp" />
+
+			<forward name="maintenanceApproveView"
+				path="/transactions/vehicleMaintenanceApproval_view_trans_transport.jsp" />
+
+			
+		
+
+		</action>
+
+
+
+		<action path="/transactions/VehicleWorkOrderGenerationTransCNT"
+			type="transport.transactions.controller.action.VehicleWorkOrderGenerationTransCNT"
+			name="workOrderGeneration" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="workOrder"
+				path="/transactions/workordergeneration_trans_transport.jsp" />
+			<forward name="workOrderView"
+				path="/transactions/workordergeneration_view_trans_transport.jsp" />
+					<forward name="workOrderServices"
+				path="/transactions/workordergeneration_freepaidservices_trans_transport.jsp" />
+
+
+		</action>
+
+
+<action path="/transactions/VehicleMiscellaneousLogTransCNT"
+			type="transport.transactions.controller.action.VehicleMiscellaneousLogTransCNT"
+			name="vehicleMiscellaneousLogBean" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="miscellaneouslog"
+				path="/transactions/vehicle_miscellaneouslog_trans_transport.jsp" />
+
+		</action>
+
+
+<action path="/transactions/VehicleTripVerificationTransCNT"
+			type="transport.transactions.controller.action.VehicleTripVerificationTransCNT"
+			name="vehicleTripVerificationBean" scope="request" validate="false"
+			parameter="hmode">
+
+			<forward name="tripVerify"
+				path="/transactions/vehicleTripVerification_trans_transport.jsp" />
+
+		<forward name="tripVerifyView"
+				path="/transactions/vehicleTripVerification_view_trans_transport.jsp" />
+
+
+		</action>
+
+
+
+
+
+		<!-- Transaction Action Mappings End -->
+
+		<!-- Reports Action Mappings Starts -->
+
+		<action path="/reports/VehicleReferenceRptCNT"
+			type="transport.reports.controller.action.VehicleReferenceRptCNT"
+			name="vehicleReferenceRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/vehicleReference_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/MonthlyReferenceVehicleRptCNT"
+			type="transport.reports.controller.action.MonthlyReferenceVehicleRptCNT"
+			name="monthlyReferenceRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/monthlyReference_transaportrpt.jsp" />
+
+		</action>
+		<action path="/reports/ExpenseReportVehicleRptCNT"
+			type="transport.reports.controller.action.ExpenseReportVehicleRptCNT"
+			name="expenseReportVehicleRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/expenseReportVehicle_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/InventoryVehicleRptCNT"
+			type="transport.reports.controller.action.InventoryVehicleRptCNT"
+			name="inventoryVehicleRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/inventoryVehicle_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/InsuranceReportVehicleRptCNT"
+			type="transport.reports.controller.action.InsuranceReportVehicleRptCNT"
+			name="insuranceReportVehicleRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/insuranceReportVehicle_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/DamageReportRptCNT"
+			type="transport.reports.controller.action.DamageReportRptCNT"
+			name="damageRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/damagereport_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/OilReportRptCNT"
+			type="transport.reports.controller.action.OilReportRptCNT"
+			name="oilReportRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/oilReport_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/BatteryReportRptCNT"
+			type="transport.reports.controller.action.BatteryReportRptCNT"
+			name="batteryRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/batteryReport_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/TyresReportRptCNT"
+			type="transport.reports.controller.action.TyresReportRptCNT"
+			name="tyresRpt" scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/tyresReport_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/RequestReportRptCNT"
+			type="transport.reports.controller.action.RequestReportRptCNT"
+			name="requestRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/requestReport_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/AttachedVehicleDetailRptCNT"
+			type="transport.reports.controller.action.AttachedVehicleDetailRptCNT"
+			name="attachedVehicleDtlRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/attachedVehicleDtl_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/TripLogBookRptCNT"
+			type="transport.reports.controller.action.TripLogBookRptCNT"
+			name="tripLogBookRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/tripLogBook_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/FuelExpenditureDetailRptCNT"
+			type="transport.reports.controller.action.FuelExpenditureDetailRptCNT"
+			name="fuelExpenditureDtlRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/fuelExpenditureDtl_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/VehiclePollutionExpenditureRptCNT"
+			type="transport.reports.controller.action.VehiclePollutionExpenditureRptCNT"
+			name="vehiclePollutionExpenditureRpt" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/vehiclePollutionExpenditure_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/VehicleMaintenanceExpenditureRptCNT"
+			type="transport.reports.controller.action.VehicleMaintenanceExpenditureRptCNT"
+			name="vehicleMaintenanceExpenditureRpt" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/vehicleMaintenanceExpenditure_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/FuelDetailRptCNT"
+			type="transport.reports.controller.action.FuelDetailRptCNT"
+			name="fuelDetailRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/fuelDetail_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/VehicleMaintenanceRptCNT"
+			type="transport.reports.controller.action.VehicleMaintenanceRptCNT"
+			name="vehicleMaintenenceRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/vehicleMaintenance_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/AssessmentPerformanceVehicleRptCNT"
+			type="transport.reports.controller.action.AssessmentPerformanceVehicleRptCNT"
+			name="assessmentPerformanceVehicleRpt" scope="request"
+			validate="false" parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/assessmentPerformanceVehicle_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/MaintenanceRepairDetailRptCNT"
+			type="transport.reports.controller.action.MaintenanceRepairDetailRptCNT"
+			name="maintenanceRepairDtlRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/maintenanceRepairDtl_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/NearingExpiryRptCNT"
+			type="transport.reports.controller.action.NearingExpiryRptCNT"
+			name="nearingExpiryRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/nearingExpiry_transportrpt.jsp" />
+
+		</action>
+		<action path="/reports/VehiclePerformanceRptCNT"
+			type="transport.reports.controller.action.VehiclePerformanceRptCNT"
+			name="vehiclePerformanceRpt" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/vehiclePerformance_transportrpt.jsp" />
+
+		</action>
+
+		<action path="/reports/VehicleOtherExpenditureRptCNT"
+			type="transport.reports.controller.action.VehicleOtherExpenditureRptCNT"
+			name="vehicleOtherExpenditureRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/transport_vehicleOtherExpenditure_rpt.jsp" />
+
+		</action>
+		
+		<action path="/reports/VehicleRequisitionRptCNT"
+			type="transport.reports.controller.action.VehicleRequisitionRptCNT"
+			name="VehicleRequisitionRptFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="reportPage"
+				path="/reports/vehicleRequisitionRpt.jsp" />
+				
+		</action>		
+				
+		
+		<!--Reports Action Mappings Ends -->
+
+	</action-mappings>
+
+   <message-resources parameter="transport.transportResourceBundle"></message-resources>
+
+	<!-- Tiles Definition Start -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	<!-- Tiles Definition Start -->
+
+</struts-config>

@@ -1,0 +1,52 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+<field name="unitModel.strUnitName">
+    <field-validator type="requiredstring">
+       <message>Unit Name Is Required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">50</param>
+                    <param name="trim">true</param>
+                    <message>Unit Name Length Cannot Be Greater Than 50 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z0-9]+[ a-zA-Z0-9]*</param>
+       	<message>Unit Name Is Required. It Excepts Alphabets And Numeric With Space Only</message>
+    </field-validator>
+</field>
+<field name="unitModel.strIsGeneral">
+    <field-validator type="regex">
+    	<param name="expression">[0-9]</param>
+        <message>Unit Type Is Required.</message>
+ 	</field-validator>
+</field>
+<field name="unitModel.strDiagnosisType">
+    <field-validator type="regex">
+    	<param name="expression">[0-9]</param>
+        <message>Diagnosis Code Set Is Required.</message>
+ 	</field-validator>
+</field>
+<field name="unitModel.strUnitLocCode">
+    <field-validator type="regex">
+    	<param name="expression">[1-9][0-9][0-9][0-9]</param>
+        <message>Location Set Is Required.</message>
+ 	</field-validator>
+</field>
+<field name="unitModel.strEpiDefCloseDays">
+    <field-validator type="requiredstring">
+       <message>Episode Close Days Is Required.</message>
+    </field-validator>
+    <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">3</param>
+                    <param name="trim">true</param>
+                    <message>Episode Close Days Length Cannot Be Greater Than 3 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[0-9][0-9]{0,2}</param>
+       	<message>Episode Close Days Is Required</message>
+    </field-validator>
+</field>
+</validators>

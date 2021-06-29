@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Master Verification Master'>
+		<common-values>
+			<master-name>masterVerificationMst</master-name>
+			<master-title>Master Verification Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Master Verification Master</tableHeading>
+			
+			<list-table>GBLT_MASTER_VERIFICATION_MST</list-table>
+			
+			<columns>
+				<column>Master Name</column>
+				<column>Module</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>A.GSTR_MAIN_HEADER</field> 
+					<field>B.GSTR_MODULE_NAME</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.GNUM_MODULE_ID</field>
+					<field>A.GNUM_VERIFICATION_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>GBLT_MASTER_VERIFICATION_MST</table>
+					<table alias='B'>GBLT_METATABLE_TYPE_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field> A.GNUM_ISVALID </isvalid-field>
+					<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+					<orderby> and a.GNUM_MODULE_ID=b.GNUM_MODULE_ID and a.GNUM_ISVALID=b.GBL_ISVALID and  
+						a.GNUM_HOSPITAL_CODE=b.GNUM_HOSPITAL_CODE ORDER BY A.GSTR_MAIN_HEADER </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/utility/masterVerificationMst.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/utility/masterVerificationMst.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="ServiceAreaMstFB" type="servicearea.masters.controller.hlp.ServiceAreaMstFB"></form-bean>
+		<form-bean name="ProcedureConsumablesMstFB" type="servicearea.masters.controller.hlp.ProcedureConsumablesMstFB"></form-bean>
+		<form-bean name="ProcedureEquipmentMstFB" type="servicearea.masters.controller.hlp.ProcedureEquipmentMstFB"></form-bean>
+		<form-bean name="ProcedureScheduleMasterFB" type="servicearea.masters.controller.hlp.ProcedureScheduleMasterFB"></form-bean>
+		<form-bean name="ServiceParameterMstFB" type="servicearea.masters.controller.hlp.ServiceParameterMstFB"></form-bean>
+		<form-bean name="ServiceAreaScheduleMasterFB" type="servicearea.masters.controller.hlp.ServiceAreaScheduleMasterFB"></form-bean>
+		<form-bean name="ServiceTemplateMstFB" type="servicearea.masters.controller.hlp.ServiceTemplateMstFB"></form-bean>
+		<form-bean name="ServiceAreaCannedMstFB" type="servicearea.masters.controller.hlp.ServiceAreaCannedMstFB"></form-bean>
+		<form-bean name="ServiceAreaProcedureMstFB" type="servicearea.masters.controller.hlp.ServiceAreaProcedureMstFB"></form-bean>
+		<form-bean name="ProcedureItemMappingMstFB" type="servicearea.masters.controller.hlp.ProcedureItemMappingMstFB"></form-bean>
+		<form-bean name="ProcedureMasterFB" type="servicearea.masters.controller.hlp.ProcedureMasterFB"></form-bean>
+		<form-bean name="ProcServcMappingMstFB" type="servicearea.masters.controller.hlp.ProcServiceMappingMstFB"></form-bean>
+		
+	</form-beans>
+	
+	
+	
+	<action-mappings>
+	
+		<action path = "/masters/serviceAreaMst"
+			type = "servicearea.masters.controller.action.ServiceAreaMstACTION"
+			name = "ServiceAreaMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/serviceAreaMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/serviceAreaMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+			
+		</action>
+		
+		<action path = "/masters/procedureConsumablesMst"
+			type = "servicearea.masters.controller.action.ProcedureConsumablesMstACTION"
+			name = "ProcedureConsumablesMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/procedureConsumablesMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/procedureConsumablesMstAddMod.jsp" />
+			<forward name="LIST" path="/masterworkshopxml/servicearea/ProcedureConsumablesMst.mst" />
+		</action>
+		<action path="/masters/procedureEquipmentMst"
+		name="ProcedureEquipmentMstFB"
+		type="servicearea.masters.controller.action.ProcedureEquipmentMstACT"
+		scope="request"
+		parameter="hmode"
+		input="/masters/procedureEquipmentMstAddMod.jsp" >
+		<forward name="ADD" path="/masters/procedureEquipmentMstAddMod.jsp" />
+		<forward name="LIST" path="/masterworkshopxml/servicearea/ProcedureEquipmentMst.mst" />
+		</action>
+		<action path="/masters/ProcedureScheduleMaster"
+		name="ProcedureScheduleMasterFB"
+		type="servicearea.masters.controller.action.ProcedureScheduleMasterACT"
+		scope="request"
+		parameter="hmode"
+		input="/masters/ProcedureScheduleMasterAddMod.jsp" >
+		<forward name="ADD" path="/masters/ProcedureScheduleMasterAddMod.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />		
+		</action>
+		<action path="/masters/ProcedureMaster"
+		name="ProcedureMasterFB"
+		type="servicearea.masters.controller.action.ProcedureMasterACT"
+		scope="request"
+		parameter="hmode"
+		input="/masters/ProcedureMasterAddMod.jsp" >
+		<forward name="ADD" path="/masters/ProcedureMasterAddMod.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />		
+		</action>
+		
+		<action path="/masters/serviceParameterMaster"
+		name="ServiceParameterMstFB"
+		type="servicearea.masters.controller.action.ServiceParameterMstACT"
+		scope="request"
+		parameter="hmode"
+		input="/masters/serviceParameterMstAddMod.jsp" >
+		<forward name="ADD" path="/masters/serviceParameterMstAddMod.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		<action path="/masters/ServiceAreaScheduleMaster"
+		name="ServiceAreaScheduleMasterFB"
+		type="servicearea.masters.controller.action.ServiceAreaScheduleMasterACT"
+		scope="request"
+		parameter="hmode"
+		input="/masters/ServiceAreaScheduleMasterAddMod.jsp" >
+		<forward name="ADD" path="/masters/ServiceAreaScheduleMasterAddMod.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />		
+		</action>
+		
+		<action path = "/masters/ServiceTemplateMst"
+			type = "servicearea.masters.controller.action.ServiceTemplateMstACTION"
+			name = "ServiceTemplateMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/ServiceTemplateMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/ServiceTemplateMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		<action path = "/masters/ServiceAreaProcedureMst"
+			type = "servicearea.masters.controller.action.ServiceAreaProcedureMstACTION"
+			name = "ServiceAreaProcedureMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/ServiceAreaProcedureMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/ServiceAreaProcedureMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		<action path = "/masters/ServiceAreaCannedMst"
+			type = "servicearea.masters.controller.action.ServiceAreaCannedMstACT"
+			name = "ServiceAreaCannedMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/ServiceAreaCannedMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/ServiceAreaCannedMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		</action>
+		
+		<action path="/masters/ProcedureItemMappingMaster"
+				name="ProcedureItemMappingMstFB"
+				type="servicearea.masters.controller.action.ProcedureItemMappingMstACT"
+				scope="request"
+				parameter="hmode"
+				input="/masters/ProcedureItemMappingMstAddMod.jsp" >
+			<forward name="ADD" path="/masters/ProcedureItemMappingMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/ProcedureItemMappingMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />		
+		</action>
+		
+		<action path="/masters/ProcedureServiceMappingMaster"
+		name="ProcServcMappingMstFB"
+		type="servicearea.masters.controller.action.ProcServiceMappingMstACT"
+		scope="request"
+		parameter="hmode"
+		input="/masters/ProcServiceMappingMstAddMod.jsp" >
+		<forward name="ADD" path="/masters/ProcServiceMappingMstAddMod.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />		
+		</action>
+		
+	</action-mappings>
+
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+</struts-config>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='ComplicationMaster'>
+        <common-values>
+           <master-name>ComplicationMaster</master-name>
+           <master-title>Complication Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Complication Master</tableHeading>
+           <list-table>HANCT_COMPLICATION_MST</list-table>
+           <controls>
+				<control type="combo" index="0">
+					<label>Complication Type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<static>
+							<option value='1'>ANC</option>
+							<option value='2'> Delivery</option>
+							<option value='3'> Abortion</option>
+							<option value='4'> Post ANC</option>
+							<option value='5'> Trauma Cause</option>
+							
+						</static>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+
+           <columns>
+              <column>Complication</column>
+            
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HANCSTR_COMPLICATION)</field>
+	    		
+			  </fields>
+				<primaryKey>
+					<field>A.HANCNUM_COMPLICATION_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HANCNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HANCT_COMPLICATION_MST</table>
+				</tables>
+				<condition>	
+									 
+					<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+        			<dependent>
+						<clause> A.HANCNUM_COMPLICATION_TYPE = #0 </clause>
+					</dependent>
+					<orderby> ORDER BY(A.HANCSTR_COMPLICATION) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+																
+		<add-page>			
+			<static-page>/inpatient/master/ComplicationMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/inpatient/master/ComplicationMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+		
+	</master>
+</master-config>
+		

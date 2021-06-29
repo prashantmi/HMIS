@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ 	<form-beans>    
+       <form-bean name="commonReportFB" type="hisglobal.presentation.ReportFB"/>
+       <form-bean name="sampleCollectionListFB" type="investigation.controller.reports.fb.SampleCollectionListFB"/>
+       <form-bean name="listOfSampleAcceptedFB" type="investigation.controller.reports.fb.ListOfSampleAcceptedFB"/>
+       <form-bean name="countingOfSampleCollectionFB" type="investigation.controller.reports.fb.CountingOfSampleCollectionFB"/>
+       <form-bean name="InvestigationsRaisedListFB" type="investigation.controller.reports.fb.ListOfInvestigationsRaisedFB"/>
+       <form-bean name="TestStatusReportFB" type="investigation.controller.reports.fb.TestStatusReportFB"/>
+       <form-bean name="TestStatusSummaryFB" type="investigation.controller.reports.fb.TestStatusSummaryFB"/>
+       <form-bean name="WorkloadLabTechFB" type="investigation.controller.reports.fb.WorkLoadReportLabAndTechnicianWiseFB"/>     
+       <form-bean name="WorkloadLabTestFB" type="investigation.controller.reports.fb.WorkLoadReportLabTestWiseFB"/>
+       <form-bean name="WorkloadDeptFB" type="investigation.controller.reports.fb.WorkLoadReportDeptWiseFB"/>
+       <form-bean name="TotalInvLabWiseFB" type="investigation.controller.reports.fb.TotalInvestigationDoneLabWiseFB"/>
+       <form-bean name="LabWisePerformanceSummaryFB" type="investigation.controller.reports.fb.LabWiseInvPerformanceSummaryFB"/>
+       <form-bean name="RadiologyMLCRegisterFB" type="investigation.controller.reports.fb.RadiologyMLCRegisterFB"/>
+       <form-bean name="WorkOrderListForIpdOpdSampleTestFB" type="investigation.controller.reports.fb.WorkOrderListForIpdOpdSampleTestFB"/>
+       <form-bean name="labRegisterReportFB" type="investigation.controller.reports.fb.LabRegisterReportFB"/>
+       <form-bean name="listOfSlidesSuppliedFB" type="investigation.controller.reports.fb.ListOfSlidesSuppliedFB"/>
+  	   <form-bean name="listOfRequisitionForVariousTestFB" type="investigation.controller.reports.fb.ListOfRequisitionForVariousTestFB"/>
+  	   <form-bean name="statusOfTestLabWiseFB" type="investigation.controller.reports.fb.StatusOfTestLabWiseFB"/>
+  	   <form-bean name="requisitionSampleNotCollectedFB" type="investigation.controller.reports.fb.RequisitionSampleNotCollectedFB"/>
+  	   <form-bean name="sampleCollectionListPGIFB" type="investigation.controller.reports.fb.SampleCollectionListPGIFB"/>
+  	   <form-bean name="listOfTestPerformedLabWiseFB" type="investigation.controller.reports.fb.ListOfTestPerformedLabWiseFB"/>
+       <form-bean name="TestFilmUsedFB" type="investigation.controller.reports.fb.TestFilmUsedFB"/>
+       <form-bean name="LabTestParameterFB" type="investigation.controller.reports.fb.LabTestParameterFB"></form-bean>
+       <form-bean name="SubmitCommonFB" type="investigation.controller.reports.fb.SubmitCommonFB"></form-bean>
+       <form-bean name="listOfRequisitionForVariousWardFB" type="investigation.controller.reports.fb.ListOfRequisitionForVariousWardFB"/>
+        
+         <form-bean name="SampleCollectionReportFB" type="investigation.controller.reports.fb.SampleCollectionReportFB"></form-bean>
+         <form-bean name="DepartmentLaboratoryMonthlyReportFB" type="investigation.controller.reports.fb.DepartmentLaboratoryMonthlyReportFB"></form-bean>
+          <form-bean name="LabWiseCountOfInvestigationFB" type="investigation.controller.reports.fb.LabWiseCountOfInvestigationFB"></form-bean>
+              <form-bean name="InvestigationsCarriedOutOPDIPDFB" type="investigation.controller.reports.fb.InvestigationsCarriedOutOPDIPDFB"></form-bean>
+                 <form-bean name="LabWiseGenderWiseCountOfInvestigationFB" type="investigation.controller.reports.fb.LabWiseGenderWiseCountOfInvestigationFB"></form-bean>
+  </form-beans>          
+
+ <action-mappings> 
+ 
+    <action path="/report"        
+            type="investigation.controller.reports.action.InvestigationCommonReportACTION"
+            name="commonReportFB"            
+            scope="request" 
+            parameter="mode"
+            validate="false">
+            
+            
+              <forward name="TESTFILMUSED"  path="/TestFilmUsedList"/>
+            <forward name="TESTFILMUSEDVIEW"  path="/reports/TestFilmUsedACTION.cnt"/>
+           
+   			<forward name="SAMPLECOLLECTIONLIST" path="/sampleCollectionList"/>
+   			<forward name="SAMPLECOLLECTIONLISTVIEW" path="/reports/SampleCollectionListACTION.cnt"/>
+   			<forward name="LISTOFSAMPLEACCEPTED" path="/listOfSampleAccepted"/>
+   			<forward name="LISTOFSAMPLEACCEPTEDVIEW" path="/reports/ListOfSampleAcceptedACTION.cnt"/>
+   			<forward name="COUNTINGOFSAMPLECOLLECTION" path="/countingOfSampleCollection"/>
+   			<forward name="COUNTINGOFSAMPLECOLLECTIONVIEW" path="/reports/CountingOfSampleCollectionACTION.cnt"/>
+  			<forward name="INVLABREGISTERREPORT" path="/reports/LabRegisterReportINV.cnt"/>
+  			<forward name="LISTOFINVESTIGATIONSRAISED" path="/ListOfInvestigationsRaised"/>
+  			<forward name="LISTOFINVESTIGATIONSRAISEDVIEW" path="/reports/ListOfInvestigationsRaisedACTION.cnt"/>
+  			<forward name="TESTSTATUSREPORT" path="/TestStatusReport"/>
+  			<forward name="TESTSTATUSREPORTVIEW" path="/reports/TestStatusReportACTION.cnt"/>
+  			<forward name="TESTSTATUSSUMMARY" path="/TestStatusSummary"/>
+  			<forward name="TESTSTATUSSUMMARYVIEW" path="/reports/TestStatusSummaryACTION.cnt"/>
+  			<forward name="WORKLOADLABTECH" path="/WorkloadLabTecnicianWise"/>
+  			<forward name="WORKLOADLABTECHVIEW" path="/reports/WorkLoadReportLabAndTechnicianWiseACTION.cnt"/>
+  			<forward name="WORKLOADLABTEST" path="/WorkloadLabTestWise"/>
+  			<forward name="WORKLOADLABTESTVIEW" path="/reports/WorkLoadReportLabTestWiseACTION.cnt"/>
+  			<forward name="WORKLOADDEPT" path="/WorkloadDeptWise"/>
+  			<forward name="WORKLOADDEPTVIEW" path="/reports/WorkLoadReportDeptWiseACTION.cnt"/>
+  			<forward name="TOTALINVLABWISE" path="/TotalInvDoneLabWise"/>
+  			<forward name="TOTALINVLABWISEVIEW" path="/reports/TotalInvestigationDoneLabWiseACTION.cnt"/>
+   			<forward name="LABWISEPERFORMANCESUMMARY" path="/LabWisePerformanceSummary"/>
+  			<forward name="LABWISEPERFORMANCESUMMARYVIEW" path="/reports/LabWiseInvPerformanceSummaryACTION.cnt"/>
+  			<forward name="RADIOLOGYMLCREGISTER" path="/RadiologyMLCRegister"/>
+  			<forward name="RADIOLOGYMLCREGISTERVIEW" path="/reports/RadiologyMLCRegisterACTION.cnt"/>
+  			<forward name="WORKORDERLISTFORIPDOPDSAMPLETESTWISE" path="/WorkorderListForIpdOpdSampleTestWise"/>
+  			<forward name="WORKORDERLISTFORIPDOPDSAMPLETESTWISEVIEW" path="/reports/WorkorderListForIpdOpdSampleTestWiseACTION.cnt"/>
+  			<forward name="LABREGISTERREPORT" path="/labRegisterReport"/>
+   			<forward name="LABREGISTERREPORTVIEW" path="/reports/LabRegisterReportACTION.cnt"/>
+   			<forward name="LISTOFSLIDESSUPPLIED" path="/listOfSlidesSupplied"/>
+   			<forward name="LISTOFSLIDESSUPPLIEDVIEW" path="/reports/ListOfSlidesSuppliedACTION.cnt"/>
+   			<forward name="LISTOFREQUISITIONFORVARIOUSTEST" path="/listOfRequisitionForTest"/>
+   			<forward name="LISTOFREQUISITIONFORVARIOUSTESTVIEW" path="/reports/ListOfRequisitionForVariousTestACTION.cnt"/>
+   			<forward name="STATUSOFTESTLABWISE" path="/statusOfTestLabWise"/>
+   			<forward name="STATUSOFTESTLABWISEVIEW" path="/reports/StatusOfTestLabWiseACTION.cnt"/>
+			<forward name="REQUISITIONSAMPLENOTCOLLECTED" path="/requisitionSampleNotCollected"/>
+   			<forward name="REQUISITIONSAMPLENOTCOLLECTEDVIEW" path="/reports/RequisitionSampleNotCollectedACTION.cnt"/>
+			<forward name="SAMPLECOLLECTIONLISTPGI" path="/sampleCollectionListPGI"/>
+   			<forward name="SAMPLECOLLECTIONLISTPGIVIEW" path="/reports/SampleCollectionListPGIACTION.cnt"/>
+			<forward name="LISTOFTESTPERFORMEDLABWISE" path="/listOfTestPerformedLabWise"/>
+   			<forward name="LISTOFTESTPERFORMEDLABWISEVIEW" path="/reports/ListOfTestPerformedLabWiseACTION.cnt"/>			 
+  			<forward name="LABTESTPARAMETERREPORT" path="/labTestParameterReport"/>
+   			<forward name="LABTESTPARAMETERREPORTVIEW" path="/reports/LabTestParameterACTION.cnt"/>
+   			
+   			  			
+   			<forward name="LISTOFREQUISITIONFORVARIOUSWARD" path="/listOfRequisitionForWard"/>
+   			<forward name="LISTOFREQUISITIONFORVARIOUSWARDVIEW" path="/reports/ListOfRequisitionForVariousWardACTION.cnt"/>
+   			
+   			
+   			<forward name="SAMPLECOLECTIONREPORT" path="/sampleCollectionReport"/>
+   			<forward name="SAMPLECOLECTIONREPORTVIEW" path="/reports/samplecollectionreportACTION.cnt"/>
+   			  			
+   			<forward name="DEPARTMENTLABORATORYMONTHLYREPORT" path="/departmentLaboratoryMonthlyReport"/>
+   			<forward name="DEPARTMENTLABORATORYMONTHLYREPORTVIEW" path="/reports/departmentLaboratoryMonthlyReport.cnt"/>
+   			
+   			
+   			<forward name="LABWISECOUNTOFINVESTIGATIONREPORT" path="/labWiseCountOfInvestigationReport"/>
+   			<forward name="LABWISECOUNTOFINVESTIGATIONREPORTVIEW" path="/reports/labWiseCountOfInvestigationReport.cnt"/>
+   			
+   			<forward name="INVESTIGATIONSCARRIEDOUTIPDOPDREPORT" path="/InvestigationCarriedsOutIpdOpdReport"/>
+   			<forward name="INVESTIGATIONSCARRIEDOUTIPDOPDREPORTVIEW" path="/reports/InvestigationCarriedsOutIpdOpdReport.cnt"/>
+   			
+   			<forward name="LABWISEGENDERWISECOUNTOFINVESTIGATION" path="/LABWISEGENDERWISECOUNTOFINVESTIGATION"/>
+   			<forward name="LABWISEGENDERWISECOUNTOFINVESTIGATIONVIEW" path="/reports/LabWiseGenderWiseCountOfInvestigationACTION.cnt"/>
+   			
+  			<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+	       
+   </action>
+   
+
+   <action path="/reports/SubmitCommonACTION"
+ 	 type="investigation.controller.reports.action.SubmitCommonACTION"
+ 	 name="SubmitCommonFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="CANCELPAGE" path="/reports/jsp/SubmitCommonReport.jsp"/>
+ 	 </action>
+ 	 
+  <action path="/reports/SampleCollectionListACTION"
+ 	 type="investigation.controller.reports.action.SampleCollectionListACTION"
+ 	 name="sampleCollectionListFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/SampleCollectionListReport.jsp"/>
+ 	 </action>
+  	 
+  
+  <action path="/reports/TestFilmUsedACTION"
+ 	 type="investigation.controller.reports.action.TestFilmUsedACTION"
+ 	 name="TestFilmUsedFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/TestFilmUsed.jsp"/>
+ 	 </action>
+  
+  	 
+  	<action path="/reports/ListOfSampleAcceptedACTION"
+ 	 type="investigation.controller.reports.action.ListOfSampleAcceptedACTION"
+ 	 name="listOfSampleAcceptedFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/ListOfSampleAcceptedReport.jsp"/>
+ 	 </action>
+ 	 
+ 	<action path="/reports/CountingOfSampleCollectionACTION"
+ 	 type="investigation.controller.reports.action.CountingOfSampleCollectionACTION"
+ 	 name="countingOfSampleCollectionFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/CountingOfSampleCollectionReport.jsp"/>
+    <forward name="CANCELPAGE" path="/reports/SubmitCommonACTION.cnt"/>
+ 	 </action>
+
+     <action path="/reports/ListOfInvestigationsRaisedACTION"
+ 	 type="investigation.controller.reports.action.ListOfInvestigationsRaisedACTION"
+ 	 name="InvestigationsRaisedListFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/ListOfInvestigationRaised.jsp"/>
+ 	 </action>
+ 
+	 <action path="/reports/TestStatusReportACTION"
+ 	 type="investigation.controller.reports.action.TestStatusReportACTION"
+ 	 name="TestStatusReportFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/TestStatusReport.jsp"/>
+ 	 </action>
+ 	 
+ 	 <action path="/reports/TestStatusSummaryACTION"
+ 	 type="investigation.controller.reports.action.TestStatusSummaryACTION"
+ 	 name="TestStatusSummaryFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/TestStatusSummary.jsp"/>
+ 	 </action>
+ 	 
+ 	 <action path="/reports/WorkLoadReportLabAndTechnicianWiseACTION"
+ 	 type="investigation.controller.reports.action.WorkLoadReportLabAndTechnicianWiseACTION"
+ 	 name="WorkloadLabTechFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/WorkLoadLabTecnicianWise.jsp"/>
+ 	 </action>
+ 	  <action path="/reports/WorkLoadReportLabTestWiseACTION"
+ 	 type="investigation.controller.reports.action.WorkLoadReportLabTestWiseACTION"
+ 	 name="WorkloadLabTestFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/WorkLoadReportLabTestWise.jsp"/>
+ 	 </action>
+ 	  <action path="/reports/WorkLoadReportDeptWiseACTION"
+ 	 type="investigation.controller.reports.action.WorkLoadReportDeptWiseACTION"
+ 	 name="WorkloadDeptFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/WorkLoadReportDeptWise.jsp"/>
+ 	<forward name="CANCELPAGE" path="/reports/SubmitCommonACTION.cnt"/>
+ 	 </action>
+ 	 <action path="/reports/TotalInvestigationDoneLabWiseACTION"
+ 	 type="investigation.controller.reports.action.TotalInvestigationDoneLabWiseACTION"
+ 	 name="TotalInvLabWiseFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/TotalInvestigationDoneLabWise.jsp"/>
+ 	 </action>
+ 	  <action path="/reports/TotalInvestigationDoneLabWiseACTION"
+ 	 type="investigation.controller.reports.action.TotalInvestigationDoneLabWiseACTION"
+ 	 name="TotalInvLabWiseFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/TotalInvestigationDoneLabWise.jsp"/>
+ 	 </action>
+ 	  <action path="/reports/LabWiseInvPerformanceSummaryACTION"
+ 	 type="investigation.controller.reports.action.LabWiseInvPerformanceSummaryACTION"
+ 	 name="LabWisePerformanceSummaryFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/LabWiseInvPerformanceSummary.jsp"/>
+ 	 </action>
+ 
+ 	  <action path="/reports/RadiologyMLCRegisterACTION"
+ 	 type="investigation.controller.reports.action.RadiologyMLCRegisterACTION"
+ 	 name="RadiologyMLCRegisterFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/RadiologyMLCRegister.jsp"/>
+ 	 </action>
+ 	 <action path="/reports/WorkorderListForIpdOpdSampleTestWiseACTION"
+ 	 type="investigation.controller.reports.action.WorkorderListForIpdOpdSampleTestWiseACTION"
+ 	 name="WorkOrderListForIpdOpdSampleTestFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/WorkOrderListIpdOpdSampleTest.jsp"/>
+ 	</action>
+ 	
+ 	<action path="/reports/LabRegisterReportACTION"
+ 	 type="investigation.controller.reports.action.LabRegisterReportACTION"
+ 	 name="labRegisterReportFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/LabRegisterReport.jsp"/>
+ 	 </action>
+ 	  
+ 	 <action path="/reports/ListOfSlidesSuppliedACTION"
+ 	 type="investigation.controller.reports.action.ListOfSlidesSuppliedACTION"
+ 	 name="listOfSlidesSuppliedFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/ListOfSlidesSuppliedReport.jsp"/>
+ 	 </action>
+
+ 	 
+ 	 <action path="/reports/ListOfRequisitionForVariousTestACTION"
+ 	 type="investigation.controller.reports.action.ListOfRequisitionForVariousTestACTION"
+ 	 name="listOfRequisitionForVariousTestFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/ListOfRequisitionForVariousTest.jsp"/>
+ 	 </action>
+ 	 
+ 	 	 
+ 	 <action path="/reports/StatusOfTestLabWiseACTION"
+ 	 type="investigation.controller.reports.action.StatusOfTestLabWiseACTION"
+ 	 name="statusOfTestLabWiseFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/StatusOfTestLabWise.jsp"/>
+ 	 </action>
+ 	  	 
+ 	 <action path="/reports/RequisitionSampleNotCollectedACTION"
+ 	 type="investigation.controller.reports.action.RequisitionSampleNotCollectedACTION"
+ 	 name="requisitionSampleNotCollectedFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/RequisitionSampleNotCollectedReport.jsp"/>
+ 	 </action>
+ 	 
+ 	  <action path="/reports/SampleCollectionListPGIACTION"
+ 	 type="investigation.controller.reports.action.SampleCollectionListPGIACTION"
+ 	 name="sampleCollectionListPGIFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/SampleCollectionListReportPGI.jsp"/>
+ 	 </action>
+ 	 
+ 	<action path="/reports/ListOfTestPerformedLabWiseACTION"
+ 	 type="investigation.controller.reports.action.ListOfTestPerformedLabWiseACTION"
+ 	 name="listOfTestPerformedLabWiseFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/ListOfTestPerformedLabWiseReport.jsp"/>
+ 	 </action>
+ 	 <action path="/reports/LabTestParameterACTION"
+ 	 type="investigation.controller.reports.action.LabTestParameterACTION"
+ 	 name="LabTestParameterFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	 <forward name="NEW" path="/reports/jsp/LabTestParameterReport.jsp"/>
+ 	 </action>
+
+		
+ 	 <action path="/reports/ListOfRequisitionForVariousWardACTION"
+ 	 type="investigation.controller.reports.action.ListOfRequisitionForVariousWardACTION"
+ 	 name="listOfRequisitionForVariousWardFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	<forward name="NEW" path="/reports/jsp/ListOfRequisitionForVariousWard.jsp"/>
+ 	 </action>
+
+<action path="/reports/samplecollectionreportACTION"
+ 	 type="investigation.controller.reports.action.SampleCollectionReportACTION"
+ 	 name="SampleCollectionReportFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	 <forward name="NEW" path="/reports/jsp/SampleCollectionReport.jsp"/>
+ 	 </action>
+ 	 
+ 	 <action path="/reports/departmentLaboratoryMonthlyReport"
+ 	 type="investigation.controller.reports.action.DepartmentLaboratoryMonthlyReportACTION"
+ 	 name="DepartmentLaboratoryMonthlyReportFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	 <forward name="NEW" path="/reports/jsp/departmentLaboratoryMonthlyReport.jsp"/>
+ 	 </action>
+ 	 
+ 	 
+ 	 
+ 	 <action path="/reports/labWiseCountOfInvestigationReport"
+ 	 type="investigation.controller.reports.action.LabWiseCountOfInvestigationACTION"
+ 	 name="LabWiseCountOfInvestigationFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	 <forward name="NEW" path="/reports/jsp/LabWiseCountOfInv.jsp"/>
+ 	 </action>
+ 	 
+ 	 
+ 	 
+ 	  <action path="/reports/InvestigationCarriedsOutIpdOpdReport"
+ 	 type="investigation.controller.reports.action.InvestigationsCarriedOutOPDIPDACTION"
+ 	 name="InvestigationsCarriedOutOPDIPDFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	 <forward name="NEW" path="/reports/jsp/InvestigationsCarriedOutInOPDIPD.jsp"/>
+ 	 </action>
+ 	 
+ 	 
+ 	  <action path="/reports/LabWiseGenderWiseCountOfInvestigationACTION"
+ 	 type="investigation.controller.reports.action.LabWiseGenderWiseCountOfInvestigationACTION"
+ 	 name="LabWiseGenderWiseCountOfInvestigationFB"
+ 	 scope="request"
+ 	 parameter="reportMode">
+ 	 <forward name="NEW" path="/reports/jsp/LabWiseGenderWiseCountOfInvestigation.jsp"/>
+ 	 </action>
+ 	
+</action-mappings>
+
+
+
+<global-forwards>
+  <forward name="CANCELPAGE" path="/reports/SubmitCommonACTION.cnt"/>
+</global-forwards>
+
+<controller>
+	<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+</controller>
+
+<global-exceptions>
+ <exception key="HisReportDataNotFound"
+   path="/reports/jsp/errorPageReportDataNotFound.jsp"
+   scope="request"
+   type="hisglobal.exceptions.HisReportDataNotFoundException" />
+</global-exceptions>
+
+
+  
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/investigation/investigation-tiles-defs.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>
+   
+</struts-config>

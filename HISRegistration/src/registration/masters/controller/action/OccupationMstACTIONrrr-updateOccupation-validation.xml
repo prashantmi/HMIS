@@ -1,0 +1,20 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+<field name="VOOccupation.strOccupationName">
+	<field-validator type="requiredstring" >  
+    	    	<message>Occupation Name Is Required.</message>
+    </field-validator>
+     <field-validator type="stringlength">
+                    <param name="min">1</param>
+                    <param name="maxLength">100</param>
+                    <param name="trim">true</param>
+                    <message>Occupation Name Cannot Be Greater Than 100 Characters</message>
+      </field-validator>
+	 <field-validator type="regex" >  
+    	<param name="expression">[a-zA-Z]+[ a-zA-Z,]*</param>
+       	<message>Occupation Name is Required. It Excepts Alphabets With Space And Comma Only</message>
+    </field-validator>
+</field>
+
+</validators>

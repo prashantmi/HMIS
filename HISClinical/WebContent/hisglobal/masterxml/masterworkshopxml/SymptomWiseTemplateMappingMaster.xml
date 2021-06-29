@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='SymptomWiseTemplateMappingMaster'>
+		<common-values>
+			<master-name>SymptomWiseTemplateMappingMaster</master-name>
+			<master-title>Symptom Wise Template Mapping Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Symptom Wise Template Mapping Master</tableHeading> 
+				<list-table>hgbt_symptom_template_mst</list-table>
+				<columns>
+					 <column>SnomedCT</column>
+					 <column>Template</column>   				  
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.sctstr_pterm_symptom)</field>
+						
+						<field>INITCAP(B.hgstr_template_name)</field>					
+					</fields>
+					
+					<primaryKey>
+						<field>A.sctstr_id_symptom</field>
+						<field>A.hgnum_template_id</field>
+						<field>A.hgnum_s_no</field>
+					</primaryKey>
+					
+					<tables>
+						<table alias='A'>hgbt_symptom_template_mst</table>
+						<table alias='B'>hgbt_template_mst</table>
+			
+					</tables>
+					
+					<condition>	
+					
+							<isvalid-field> A.hgnum_template_id=B.hgnum_template_id AND
+                            A.gnum_hospital_code=B.gnum_hospital_code AND A.hgnum_s_no=B.hgnum_template_slno AND
+                            A.GNUM_ISVALID</isvalid-field>
+                            
+                            <orderby> order by INITCAP(B.hgstr_template_name)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<static-page>/opd/master/AddSymptomWiseTemplateMatser.cnt</static-page>			
+		</add-page>
+		
+		<modify-page>
+   		    <static-page>/opd//master/ModifyViewSymptomWiseTemplateMappingMaster.cnt</static-page>		
+		</modify-page>
+	</master>	
+</master-config>

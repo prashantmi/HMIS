@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Sample Master'>
+		<common-values>
+			<master-name>SampleMaster</master-name>
+			<master-title>Sample Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Sample Master</tableHeading>
+			
+			<list-table>HIVT_SAMPLE_MST</list-table>
+
+			<columns>
+				<column>Sample Name</column>
+				<column>Sample Short</column>
+				<column>Loinc System</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.gstr_sample_name)</field>
+					<field>INITCAP(A.gstr_sample_short_name)</field>
+					<field>INITCAP(A.gst_loinc_system)</field>
+					 
+				</fields>
+				
+				<primaryKey>
+					<field>A.GNUM_ISVALID</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HIVT_SAMPLE_MST</table>
+				</tables>
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					 
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/new_investigation/masters/SampleMstACTION.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/new_investigation/masters/SampleMstACTION.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

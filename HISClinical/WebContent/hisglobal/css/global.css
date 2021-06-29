@@ -1,0 +1,93 @@
+/* Added by Ashwini Mishra on 24-06-2015 */ 
+/* Code for wrapping the Column Header in JqGrid*/
+.ui-jqgrid tr.jqgrow td {
+	white-space: normal !important;
+	height:auto;
+	vertical-align:text-top;
+	padding-top:1px;
+	padding-bottom:1px;
+	padding-left:8px;
+	}
+			
+/*Code for wrapping the Column Header in JqGrid*/			
+.ui-jqgrid .ui-jqgrid-htable th div {
+	height:auto;
+	overflow:hidden;
+	padding-right:4px;
+	padding-top:5px;
+	padding-bottom:5px;
+	position:relative;
+	vertical-align:text-top;
+	white-space:normal !important;
+	font-size: 12px;
+	}
+	
+/* Added By Ashwini Mishra on 08-07-2015 for correcting location of multiselect cancel button*/
+.ui-button-icon-only .ui-icon, .ui-button-text-icon-primary .ui-icon, .ui-button-text-icon-secondary .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon {
+	position: absolute;
+	top: 0%;
+	margin-top: -8px;
+}
+			
+.ui-button-icon-only .ui-icon {
+    left: 0%;
+    margin-left: -8px;
+}
+	
+	
+.border .div-table-col{
+	border: 1px solid black;
+}
+
+html{
+	margin-top: 0px;
+}
+
+#nonprintableDiv {
+    background-color: #FFF;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 25px 5px #999;
+    color: #111;
+    display: ;
+    padding: 25px;
+    vertical-align: middle;
+    
+}
+
+#nonprintableDiv {
+    color: #2B91AF;
+    font: bold 325% 'Petrona',sans;
+}
+
+#divConfigId2 {
+    background-color: #FFF;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 25px 5px #999;
+    color: #111;
+    display: none;
+    min-width: 100px;
+    min-height: 100px;
+    padding: 25px;
+    vertical-align: middle;
+    
+}
+
+#divConfigId2 {
+    color: #2B91AF;
+    font: bold 325% 'Petrona',sans;
+}
+
+
+#all{
+	vertical-align: middle;
+	padding: 20px;
+}
+
+
+.icon-image{
+	height:80px;
+	width:80px;
+	margin-bottom: 5px;
+	vertical-align: middle;
+}
+

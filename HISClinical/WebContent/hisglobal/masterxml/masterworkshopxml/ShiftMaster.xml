@@ -1,0 +1,237 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='ShiftMaster'>
+		<common-values>
+			<master-name>ShiftMaster</master-name>
+			<master-title>Shift Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Shift Master</tableHeading> 
+				<list-table>GBLT_SHIFT_MST</list-table>
+				
+				<columns>
+					 <column>Shift Name</column>
+					 <column>Shift Type</column>
+					 <column>Start time</column>
+					 <column>End  time</column>
+					 
+			
+				  </columns>
+					<query-detail>
+					<fields>
+							<field>INITCAP(A.HRGSTR_SHIFT_DESC) </field>
+							<field>decode(A.GBLT_SHIFT_TYPE,1,'OPD',2,'Registration') </field>
+							<field>HOPSTR_START_TIME</field>
+							<field>HOPSTR_END_TIME</field>							     
+						</fields>
+					<primaryKey>
+						<field>A.HGNUM_SHIFT_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_SHIFT_MST</table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                            <orderby> order by INITCAP(A.HRGSTR_SHIFT_DESC)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<dynamic-page>	
+				<controls>								             
+				 <control type="text" index="0" >
+						<label>Shift Name</label>
+						<constraints inputType='alphabets' mandatory="true"  maxlength ='50' size ='15'/>			
+						
+						<readOnly>0</readOnly>
+					</control>
+					
+					<control type="text" index="1" >
+						<label>Start Time</label> 
+						<constraints  mandatory="true"  maxlength ='5' size ='7' methodstring="onkeypress='return checkTime(event,this);'"/>		
+						<readOnly>0</readOnly>
+						<label-suffix>
+						  <data>
+						     <static>(HH:MM 24Hr)</static> 
+						  </data>
+						</label-suffix>
+					</control>
+
+					<control type="text" index="2" >
+						<label>End Time</label>
+						<constraints  mandatory="true"  maxlength ='5' size ='7' methodstring="onkeypress='return checkTime(event,this);'"/>						
+						
+						<readOnly>0</readOnly>
+						<label-suffix>
+						  <data>
+						     <static>(HH:MM 24Hr)</static> 
+						  </data>
+						</label-suffix>
+					</control>
+
+						<control type="combo" index="3">
+						<label>Shift Type</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>OPD </option>
+								<option value='2'>Registration </option>
+							</static>
+						</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+					
+					
+					<control type="combo" index="4">
+						<label>Is Active Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+				
+				
+				
+				</controls>
+				<redundent-check>
+				SELECT COUNT (*) FROM GBLT_SHIFT_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper (HRGSTR_SHIFT_DESC)  =  controlindex0
+				</redundent-check>
+				<insert-query>
+					<primary-key>
+						<field>HGNUM_SHIFT_CODE</field>
+						<value>SELECT NVL(MAX(HGNUM_SHIFT_CODE),10)+1 FROM GBLT_SHIFT_MST</value>
+						<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+					</primary-key>					
+				
+					<fields valueMap='#I0'>HRGSTR_SHIFT_DESC</fields>
+					<fields valueMap='#1'>HOPSTR_START_TIME</fields>
+					<fields valueMap='#2'>HOPSTR_END_TIME</fields>
+					<fields valueMap='#3'>GBLT_SHIFT_TYPE</fields>
+					<fields valueMap='#4'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					
+					<table>GBLT_SHIFT_MST</table>				
+				</insert-query>
+			
+			</dynamic-page>			
+		 </add-page>
+		
+		<modify-page>
+		  <dynamic-page>
+		   <controls>		
+					<control type="text" index="0">
+						<label>Shift Name </label>
+						<constraints maxlength="50" size ="15" mandatory ="true" inputType="alphabets"/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+						
+					</control>
+
+					<control type="text" index="1">
+						<label>Start Time</label>
+						<constraints maxlength="5" size ="7" mandatory ="true" methodstring="onkeypress='return checkTime(event,this);'"/>
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>1</readOnly>
+						<label-suffix>
+						  <data>
+						     <static>(HH:MM 24Hr)</static> 
+						  </data>
+						</label-suffix>
+					</control>
+
+					<control type="text" index="2">
+						<label>End Time </label>
+						<constraints maxlength="5" size ="7" mandatory ="true" methodstring="onkeypress='return checkTime(event,this);'"/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>1</readOnly>
+						<label-suffix>
+						  <data>
+						     <static>(HH:MM 24Hr)</static> 
+						  </data>
+						</label-suffix>
+					</control>
+					
+					
+					<control type="text" index="3">
+						<label>Shift Type</label>
+						<constraints maxlength="50" size ="15" mandatory ="true" inputType="alphabets"/>
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+					
+				<control type="combo" index="4">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+				
+				
+				</controls>
+				 <initialise-query>
+			   	 <fields>
+					 <field>A.HRGSTR_SHIFT_DESC</field>
+					 <field>A.HOPSTR_START_TIME</field>											
+					 <field>A.HOPSTR_END_TIME</field>		
+				     <field>DECODE(A.GBLT_SHIFT_TYPE,'1','OPD','2','Registration','-')</field>
+				 </fields>					
+					<tables>
+						<table alias='A'>GBLT_SHIFT_MST</table>
+						
+					</tables>
+					<condition>	
+						<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>						
+						<dependent>
+						    <clause>A.HGNUM_SHIFT_CODE= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>	
+				<redundent-check>
+				SELECT COUNT (*) FROM GBLT_SHIFT_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper (HRGSTR_SHIFT_DESC)  =  controlindex0
+				</redundent-check>	 
+				<update-query>				
+	
+					<fields valueMap='#I0'>HRGSTR_SHIFT_DESC</fields>
+					<fields valueMap='#1'>HOPSTR_START_TIME</fields>
+					<fields valueMap='#2'>HOPSTR_END_TIME</fields>
+						
+					<fields valueMap='#4'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>					
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>	
+										
+					<table>GBLT_SHIFT_MST</table>
+					<condition>HGNUM_SHIFT_CODE = #1</condition>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</update-query>
+			 
+			</dynamic-page>
+		 </modify-page>
+	</master>	
+</master-config>

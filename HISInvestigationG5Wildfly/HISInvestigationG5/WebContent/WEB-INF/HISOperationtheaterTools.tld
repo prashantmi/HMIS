@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+        "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<!--His Global TLD-->
+<taglib>
+<tlibversion>1.0</tlibversion>
+<jspversion>2.0</jspversion>
+<shortname>HisGlobalTags</shortname>
+<info>His Global TLD</info>
+
+<tag>
+	<name>date</name>
+	<tagclass>hisglobal.tools.tag.OTDatePicker</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Date 
+	</info>
+	<attribute>
+		<name>beanName</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>property</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>onClick</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>onChange</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>dateFormate</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>id</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>idIconPicDate</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>readOnly</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>size</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+
+<!-- <tag>
+	<name>OTTemplateTag</name>
+	<tagclass>hisglobal.tools.tag.OTTemplateTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates and Show Template in entry mode
+	</info>
+	<attribute>
+		<name>templateId</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>mode</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+</tag>
+
+
+<tag>
+	<name>AppointmentTag</name>
+	<tagclass>hisglobal.tools.tag.AppointmentTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates and Show Template in entry mode
+	</info>
+	<attribute>
+		<name>tagId</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>crno</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>cssClassName</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>aptId</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paraId1</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paraId2</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paraId3</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paraId4</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>paraId5</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>paraId6</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>	
+	<attribute>
+		<name>paraId7</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag>
+	<name>patient</name>
+	<tagclass>hisglobal.tools.tag.OTPatientTagClass</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Patient Details
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>property</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>episode</name>
+	<tagclass>hisglobal.tools.tag.OTEpisodeTagClass</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<info>
+		Creates Patient Details
+	</info>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>property</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag> -->
+
+
+
+</taglib>

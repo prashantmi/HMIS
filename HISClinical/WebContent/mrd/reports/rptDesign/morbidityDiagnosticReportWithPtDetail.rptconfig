@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__jndi_ds_conn_22_0</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Header_23_1</property>
+            <property name="value">dfew</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Footer_24_2</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Name_26_3</property>
+            <property name="value">dfcsdef</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_191_4</property>
+            <property name="value">report_user_Remarks_191</property>
+        </structure>
+        <structure>
+            <property name="name">report_user_Remarks_191_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Address_249_5</property>
+            <property name="value">defs</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Contact_255_6</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__hospCode_466_7</property>
+            <property name="value">101</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__fromDate_468_8</property>
+            <property name="value">01-feb-2014</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__toDate_469_9</property>
+            <property name="value">05-Mar-2014</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__mode_518_10</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_mode_959_11</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__fromMonth_960_12</property>
+            <property name="value">Jan</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__toMonth_1439_13</property>
+            <property name="value">Dec</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__fromYear_1440_14</property>
+            <property name="value">2010</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__toYear_1441_15</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__period_Choice_1442_16</property>
+            <property name="value">D</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__service_Area_1807_17</property>
+            <property name="value">df</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_department_code_1809_18</property>
+            <property name="value">0.0</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_service_type_1810_19</property>
+            <property name="value">e</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_choice_filter_1811_20</property>
+            <property name="value">f</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_choice_filter_value_1812_21</property>
+            <property name="value">de</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_choice_interval_1813_22</property>
+            <property name="value">e</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_report_type_1814_23</property>
+            <property name="value">f</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_procedure_code_2546_24</property>
+            <property name="value">1.0</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_patcatcode_2571_25</property>
+            <property name="value">fe</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_visittype_2572_26</property>
+            <property name="value">fde</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__p_orderby_2573_27</property>
+            <property name="value">df</property>
+        </structure>
+        <structure>
+            <property name="name">toMonth_1439_28</property>
+            <property name="value">Dec</property>
+        </structure>
+        <structure>
+            <property name="name">toMonth_1439_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_29</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_75_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">toYear_1441_30</property>
+            <property name="value">2020</property>
+        </structure>
+        <structure>
+            <property name="name">toYear_1441_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">mode_518_31</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">mode_518_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_32</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_procedure_code_2546_33</property>
+            <property name="value">1.0</property>
+        </structure>
+        <structure>
+            <property name="name">p_procedure_code_2546_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_service_type_1810_34</property>
+            <property name="value">e</property>
+        </structure>
+        <structure>
+            <property name="name">p_service_type_1810_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_mode_959_35</property>
+            <property name="value">1</property>
+        </structure>
+        <structure>
+            <property name="name">report_mode_959_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">fromYear_1440_36</property>
+            <property name="value">2010</property>
+        </structure>
+        <structure>
+            <property name="name">fromYear_1440_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_37</property>
+            <property name="value">dfew</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_23_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_38</property>
+            <property name="value">defs</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_249_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_choice_interval_1813_39</property>
+            <property name="value">e</property>
+        </structure>
+        <structure>
+            <property name="name">p_choice_interval_1813_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_department_code_1809_40</property>
+            <property name="value">0.0</property>
+        </structure>
+        <structure>
+            <property name="name">p_department_code_1809_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_469_41</property>
+            <property name="value">05-Mar-2014</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_469_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">fromMonth_960_42</property>
+            <property name="value">Jan</property>
+        </structure>
+        <structure>
+            <property name="name">fromMonth_960_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_choice_filter_value_1812_43</property>
+            <property name="value">de</property>
+        </structure>
+        <structure>
+            <property name="name">p_choice_filter_value_1812_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">period_Choice_1442_44</property>
+            <property name="value">D</property>
+        </structure>
+        <structure>
+            <property name="name">period_Choice_1442_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">service_Area_1807_45</property>
+            <property name="value">df</property>
+        </structure>
+        <structure>
+            <property name="name">service_Area_1807_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_46</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_255_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_report_type_1814_47</property>
+            <property name="value">f</property>
+        </structure>
+        <structure>
+            <property name="name">p_report_type_1814_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_468_48</property>
+            <property name="value">01-feb-2014</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_468_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_patcatcode_2571_49</property>
+            <property name="value">fe</property>
+        </structure>
+        <structure>
+            <property name="name">p_patcatcode_2571_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">hospCode_466_50</property>
+            <property name="value">101</property>
+        </structure>
+        <structure>
+            <property name="name">hospCode_466_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_51</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_24_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_visittype_2572_52</property>
+            <property name="value">fde</property>
+        </structure>
+        <structure>
+            <property name="name">p_visittype_2572_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">rpt_format_464_53</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">rpt_format_464_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">p_orderby_2573_54</property>
+            <property name="value">df</property>
+        </structure>
+        <structure>
+            <property name="name">p_orderby_2573_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_55</property>
+            <property name="value">dfcsdef</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_26_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">p_choice_filter_1811_56</property>
+            <property name="value">f</property>
+        </structure>
+        <structure>
+            <property name="name">p_choice_filter_1811_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+	
+	
+		<form-bean name="shiftBean" type="laundry.masters.controller.fb.ShiftMstFB">
+		</form-bean>
+		<form-bean name="processBean" type="laundry.masters.controller.fb.ProcessMstFB">
+		</form-bean>
+		<form-bean name="locationBean" type="laundry.masters.controller.fb.LocationMstFB">
+		</form-bean>
+		<form-bean name="partyBean" type="laundry.masters.controller.fb.PartyMstFB">
+		</form-bean>
+		<form-bean name="groupBean" type="laundry.masters.controller.fb.GroupMstFB">
+		</form-bean>
+		<form-bean name="laundryServiceRateBean" type="laundry.masters.controller.fb.LaundryServiceRateMstFB">
+		</form-bean>
+		
+		
+		
+	</form-beans>
+
+	<action-mappings>
+
+
+		<action path="/switchModule" type="org.apache.struts.actions.SwitchAction" />
+
+	<action path="/masters/ShiftMstACTION" type="laundry.masters.controller.action.ShiftMstACTION"
+			name="shiftBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/laundry_add_shift_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/laundry_modify_shift_mst.jsp" />
+
+	</action>
+
+	<action path="/masters/ProcessMstACTION" type="laundry.masters.controller.action.ProcessMstACTION"
+			name="processBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/laundry_add_process_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/laundry_modify_process_mst.jsp" />
+
+	</action>
+
+	<action path="/masters/LocationMstACTION" type="laundry.masters.controller.action.LocationMstACTION"
+			name="locationBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/laundry_add_location_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/laundry_modify_location_mst.jsp" />
+
+	</action>
+
+
+	<action path="/masters/PartyMstACTION" type="laundry.masters.controller.action.PartyMstACTION"
+			name="partyBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/laundry_add_party_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/laundry_modify_party_mst.jsp" />
+
+	</action>
+	
+	<action path="/masters/GroupMstACTION" type="laundry.masters.controller.action.GroupMstACTION"
+			name="groupBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/laundry_add_group_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/laundry_modify_group_mst.jsp" />
+
+	</action>
+	
+	
+	<action path="/masters/LaundryServiceRateMstACTION" type="laundry.masters.controller.action.LaundryServiceRateMstACTION"
+			name="laundryServiceRateBean" scope="request" validate="false" parameter="hmode">
+			<forward name="add" path="/masters/jsp/laundry_add_laundry_service_rate_mst.jsp" />
+			<forward name="modify" path="/masters/jsp/laundry_modify_laundry_service_rate_mst.jsp" />
+
+	</action>
+	
+	
+	
+
+	</action-mappings>
+
+
+
+
+	<controller>
+		<set-property property="processorClass"
+			value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="laundry.laundryResourceBundle">
+	</message-resources>
+
+
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='IncisionTypeMaster'>
+        <common-values>
+           <master-name>IncisionTypeMaster</master-name>
+           <master-title>Incision Type Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Incision Type Master</tableHeading>
+           <list-table>HMRT_INCISION_TYPE_MST</list-table>
+           
+           <columns>
+              <column>Incision Type</column>
+              <column>Description</column>
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HMRSTR_INCISION_TYPE)</field>
+	    		 <field>NVL(HMRSTR_INCISION_DESC,'-')</field>
+			  </fields>
+				<primaryKey>
+					<field>A.HMRNUM_INCISION_TYPE_CODE</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HMRNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HMRT_INCISION_TYPE_MST</table>
+				</tables>
+				<condition>					 
+					<general> A.GNUM_HOSPITAL_CODE=100 and </general>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<orderby> ORDER BY(A.HMRSTR_INCISION_TYPE) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/mortuary/master/IncisionTypeMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mortuary/master/IncisionTypeMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

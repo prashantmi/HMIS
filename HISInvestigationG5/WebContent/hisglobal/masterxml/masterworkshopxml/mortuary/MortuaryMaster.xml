@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='MortuaryMaster'>
+        <common-values>
+           <master-name>MortuaryMaster</master-name>
+           <master-title>Mortuary Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Mortuary Master</tableHeading>
+           <list-table>HMRT_MORTUARY_MST</list-table>
+           
+           <columns>
+              <column>Mortuary Name</column>
+              <column>Mortuary Short Name</column>
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HMRSTR_MORTURY_NAME)</field>
+	    		 <field>UPPER(A.HMRSTR_SHORT_NAME)</field>
+			  </fields>
+				<primaryKey>
+					<field>A.HMRNUM_MORTURY_CODE</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HMRNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HMRT_MORTUARY_MST</table>
+				</tables>
+				<condition>					 
+					<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+					<general>(TO_DATE(NVL(A.GDT_EFFECTIVE_TO,SYSDATE),'DD-MM-YY')>=TO_DATE(SYSDATE,'DD-MM-YY')) and (A.GNUM_ISVALID =1 )</general>
+        			<general-inactive>(TO_DATE(NVL(A.GDT_EFFECTIVE_TO,SYSDATE),'DD-MM-YY') &lt;= TO_DATE(SYSDATE,'DD-MM-YY')) and (A.GNUM_ISVALID =2)</general-inactive>
+					<isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY(A.HMRSTR_MORTURY_NAME) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/mortuary/master/MortuaryMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mortuary/master/MortuaryMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html><head>
+<link href="/HIS/hisglobal/css/buttons.css" rel="stylesheet" type="text/css">
+<link href="/HIS/hisglobal/css/layout.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Div Template with title image</title>
+</head>
+<body>
+<form>
+<div class="wrapper rounded">
+<div class="div-table">
+			<div class="div-table-row ">
+				<div class="div-table-col title width100 ">
+						New Patient Registration 
+				</div>
+			</div>
+			<div class="div-table-row ">
+				<div class="div-table-col width50 label">
+						<font color="red">*</font>Visiting Department 
+				</div>
+				<div class="div-table-col width50 control">
+						 <select name="strStoreName">
+                        <option selected="selected">1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select> 
+				</div>
+			</div>
+</div>
+
+<div class="div-table">
+			<div class="div-table-row title">
+				<div class="div-table-col">
+						Patient Detail 
+				</div>
+			</div>
+
+			<div class="div-table-row ">
+				<div class="div-table-col width50 label">
+						Patient Category 
+				</div>
+				<div class="div-table-col width40 control">
+						 <select name="strStoreName">
+                        <option selected="selected">1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select> 
+				</div>
+			</div>
+				<div class="div-table-row">
+					<div class="div-table-col label" style="width: 16%;">Father's Name
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<input name="" maxlength="50" type="text">
+					</div>
+					<div class="div-table-col label" style="width: 16%;">Spouse's Name
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<input name="" maxlength="50" type="text">
+					</div>
+					<div class="div-table-col label" style="width: 16%;">MOther's Name
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+					<input name="" maxlength="50" type="text">
+					</div>
+					
+				</div>
+				<div class="div-table-row">
+					<div class="div-table-col label" style="width: 16%;">Nationality
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<select name="strStoreName" onchange="getItemCategoryCombo();">
+                        <option selected="selected">1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select>
+					</div>
+					<div class="div-table-col label" style="width: 16%;">Religion
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<select name="strStoreName" onchange="getItemCategoryCombo();">
+                        <option selected="selected">1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select>
+					</div>
+					<div class="div-table-col label" style="width: 16%;">Monthly Income
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+					<input name="" maxlength="50" type="text">
+					</div>
+					
+				</div>
+				<div class="div-table-row">
+					<div class="div-table-col label" style="width: 16%;">Patient Occupation
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<input name="" maxlength="50" type="text">
+					</div>
+					<div class="div-table-col label" style="width: 16%;">Father Occupation 
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<input name="" maxlength="50" type="text">
+					</div>
+					<div class="div-table-col label" style="width: 16%;">Spouse Occupation 
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+					
+					<input class="txtFldMax" readonly="readonly" name="" value="10" onkeypress="" maxlength="50" type="text">
+					</div>
+				</div>
+				<div class="div-table-row">
+					<div class="div-table-col label" style="width: 16%;">National ID
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<select name="strStoreName" onchange="getItemCategoryCombo();">
+                        <option selected="selected">1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select>
+					</div>
+					<div class="div-table-col label" style="width: 16%;"> Card No.
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<select name="strStoreName" onchange="getItemCategoryCombo();">
+                        <option selected="selected">1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select>
+					</div>
+					<div class="div-table-col label" style="width: 16%;">Registration Fee 
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+					<select name="strStoreName" onchange="getItemCategoryCombo();">
+                        <option selected="selected">1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select>
+					</div>
+					
+				</div>
+</div>
+	
+<div class="div-table">
+			<div class="div-table-row title">
+				<div class="div-table-col" style="width:20%;">
+						Address Detail 
+				</div>
+				<div class="div-table-col" style="width: 16%;"> Country
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<select name="strStoreName" onchange="getItemCategoryCombo();">
+                        <option selected="selected">India</option>
+                        <option>Aus</option>
+                        <option>Pak</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select>
+					</div>
+					<div class="div-table-col" style="width: 16%;">State 
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+					<select name="strStoreName" onchange="getItemCategoryCombo();">
+                        <option selected="selected">Delhi</option>
+                        <option>Rajasthan</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select>
+					</div>
+			</div>
+
+				<div class="div-table-row">
+					<div class="div-table-col label" style="width: 16%;">H No
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<input name="" maxlength="50" type="text">
+					</div>
+					<div class="div-table-col label" style="width: 16%;">Street
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<input name="" maxlength="50" type="text">
+					</div>
+					<div class="div-table-col label" style="width: 16%;">Location
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+					<input name="" maxlength="50" type="text">
+					</div>
+					
+				</div>
+				<div class="div-table-row">
+					<div class="div-table-col label" style="width: 16%;">District
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<input name="" maxlength="50" type="text">
+					</div>
+					<div class="div-table-col label" style="width: 16%;"> 	City/Village
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<input name="" maxlength="50" type="text">
+					</div>
+					<div class="div-table-col label" style="width: 16%;"> 	Pin Code 
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+					<input name="" maxlength="50" type="text">
+					</div>
+					
+				</div>
+				<div class="div-table-row">
+					<div class="div-table-col label" style="width: 16%;">Contact No 
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<input name="" maxlength="50" type="text">
+					</div>
+					<div class="div-table-col label" style="width: 16%;"> 	Area Category  
+					</div>
+					<div class="div-table-col control" style="width: 16%;">
+						<select name="strStoreName" onchange="getItemCategoryCombo();">
+                        <option selected="selected">1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                 </select>
+					</div>
+				</div>
+</div>
+		
+<div class="div-table-button">
+			<div class="div-table-row">
+			<div class="div-table-col  width30 ">
+				</div>
+			<div class="div-table-col  width10 ">
+				<a href="#" class="button" onclick="return validateNewDemand();"><span class="save">Save</span></a>
+				</div>
+				<div class="div-table-col  width10 ">
+				<a href="#" class="button" onclick="initPage();"><span class="clear">Clear</span></a>
+				</div>
+				<div class="div-table-col  width10 ">
+				<a href="#" class="button" onclick="initPage();"><span class="cancel">Cancel</span></a>
+				</div>
+			</div>
+</div>
+	</div>
+</form>
+
+</body></html>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+
+<struts-config>
+	 <!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="patientEnquiryFB" type="enquiry.transaction.controller.fb.PatientEnquiryFB"/>	
+		<form-bean name="inPatientEnquiryFB" type="enquiry.transaction.controller.fb.InPatientEnquiryFB"/>	
+		<form-bean name="opdEnquiryFB" type="enquiry.transaction.controller.fb.OpdEnquiryFB"/>
+		<form-bean name="DepartmentLocationEnquiryFB" type="enquiry.transaction.controller.fb.DepartmentLocationEnquiryFB"/>
+		<form-bean name="ConsultantDetailEnquiryFB" type="enquiry.transaction.controller.fb.ConsultantDetailEnquiryFB"/>
+		<form-bean name="BloodStockEnquiryFB" type="enquiry.transaction.controller.fb.BloodStockEnquiryFB"/>
+        <form-bean name="BloodDonorFB" type="enquiry.transaction.controller.fb.BloodDonorFB"/> 
+        <form-bean name="staffEnquiryFB" type="enquiry.transaction.controller.fb.StaffEnquiryFB"/> 
+        <form-bean name="freePatientListEnquiryFB" type="enquiry.transaction.controller.fb.FreePatientListEnquiryFB"/> 
+        <form-bean name="HelpDeskLoginFB" type="enquiry.transaction.controller.fb.HelpDeskLoginFB"/> 
+        <form-bean name="HelpDeskFB" type="enquiry.transaction.controller.fb.HelpDeskFB"/>
+        <form-bean name="HospitalDepartmentEnquiryFB" type="enquiry.transaction.controller.fb.HospitalDepartmentEnquiryFB"/> 
+        <form-bean name="hospitalConsultantEnquiryFB" type="enquiry.transaction.controller.fb.HospitalConsultantEnquiryFB"/> 
+	    <form-bean name="hospitalWardEnquiryFB" type="enquiry.transaction.controller.fb.HospitalWardEnquiryFB"/>
+        <form-bean name="hospitalEnquiryFB" type="enquiry.transaction.controller.fb.HospitalEnquiryFB"/>
+        <form-bean name="opdScheduleEnquiryFB" type="enquiry.transaction.controller.fb.OpdScheduleEnquiryFB"/> 
+        <form-bean name="hospitalTelephoneEnquiryFB" type="enquiry.transaction.controller.fb.HospitalTelephoneEnquiryFB"/> 
+        <form-bean name="operationTheaterEnquiryFB" type="enquiry.transaction.controller.fb.OperationTheaterEnquiryFB"/> 
+        <form-bean name="hospitalFacilityMasterFB" type="enquiry.setup.controller.fb.HospitalFacilityMasterFB"/> 
+        <form-bean name="hospitalFacilityEnquiryFB" type="enquiry.transaction.controller.fb.HospitalFacilityEnquiryFB"/> 
+        <form-bean name="hospitalChargeEnquiryFB" type="enquiry.transaction.controller.fb.HospitalChargeEnquiryFB"/> 
+        <form-bean name="hospitalLabEnquiryFB" type="enquiry.transaction.controller.fb.HospitalLabEnquiryFB"/> 
+        <form-bean name="otConsultantEnquiryFB" type="enquiry.transaction.controller.fb.OTConsultantEnquiryFB"/> 
+        <form-bean name="holidayEnquiryFB" type="enquiry.transaction.controller.fb.HolidayEnquiryFB"/> 
+        <form-bean name="guestHouseEnquiryFB" type="enquiry.transaction.controller.fb.GuestHouseEnquiryFB"/>
+        <form-bean name="GuidlinesEnquiryFB" type="enquiry.transaction.controller.fb.GuidlinesEnquiryFB"/> 
+        <form-bean name="DeceasedEnquiryFB" type="enquiry.transaction.controller.fb.DeceasedEnquiryFB"/>
+        <form-bean name="SearchDeceasedEnquiryFB" type="enquiry.transaction.controller.fb.SearchDeceasedEnquiryFB"/>
+
+	</form-beans>
+	
+	<action-mappings>
+	
+	
+	<action path="/searchDeceasedEnquiry"  
+			type="enquiry.transaction.controller.action.SearchDeceasedEnquiryACT"
+			name="SearchDeceasedEnquiryFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"    
+	 		input="/searchDeceasedEnquiry.jsp">
+		<forward name="NEW" path="/searchDeceasedEnquiry.jsp"/>
+		<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+	</action>
+	
+	<action path="/deceasedEnquiry"  
+			type="enquiry.transaction.controller.action.DeceasedEnquiryACT"
+			name="DeceasedEnquiryFB"
+			parameter="hmode"
+			validate="false"
+			scope="request"    
+	 		input="/deceasedEnquiry.jsp">
+		<forward name="NEW" path="/deceasedEnquiry.jsp"/>
+		<forward name="CANCEL" path="/../startup/initPage.jsp"/>
+	</action>
+		
+	<action path="/patientEnquiry"  
+	 name="patientEnquiryFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="enquiry.transaction.controller.action.PatientEnquiryACTION" 
+	  input="/patientEnquiry.jsp">
+	 <forward name="NEW" path="/patientEnquiry.jsp"/>
+	 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+	 </action>
+	 
+	 <action path="/inPatientEnquiry"  
+	 name="inPatientEnquiryFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="enquiry.transaction.controller.action.InPatientEnquiryACTION" 
+	  input="/inPatientEnquiry.jsp">
+	 <forward name="NEW" path="/inPatientEnquiry.jsp"/>
+	 <forward name="POPUP" path="/inPatientEnquiryDetail.jsp"/>
+	 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+	 </action>
+	 
+	 <action path="/staffEnquiry"  
+	 name="staffEnquiryFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="enquiry.transaction.controller.action.StaffEnquiryACTION" 
+	  input="/staffEnquiry.jsp">
+	 <forward name="NEW" path="/staffEnquiry.jsp"/>
+	 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+	 </action>
+
+	 <action path="/opdEnquiry"  
+	 name="opdEnquiryFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="enquiry.transaction.controller.action.OpdEnquiryACTION" 
+	  input="/opdEnquiry.jsp">
+	 <forward name="NEW" path="/opdEnquiry.jsp"/>
+	 <forward name="POPUP" path="/opdEnquiryPopUp.jsp"/>
+	 <forward name="CANCEL" path="/../startup/initPage.jsp" />
+	 </action>
+	 
+	 <action path="/freePatCatEnquiry"  
+	 name="freePatientListEnquiryFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="enquiry.transaction.controller.action.FreePatCatACT" 
+	  input="/opdEnquiry.jsp">
+	 <forward name="NEW" path="/freePatientListEnquiry.jsp"/>
+	 <forward name="CANCEL" path="/../startup/initPage.jsp"/>
+	 </action>
+	 
+	  <action path="/consultantDetailEnquiry"  
+	 name="ConsultantDetailEnquiryFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="enquiry.transaction.controller.action.ConsultantDetailACTION" 
+	  input="/consultantDetailEnquiry.jsp">
+	 <forward name="NEW" path="/consultantDetailEnquiry.jsp"/>
+	 <forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+	 </action>
+	 
+		 
+	 <action path="/departmentLocationEnquiry"  
+	 name="DepartmentLocationEnquiryFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="enquiry.transaction.controller.action.DepartmentLocationEnquiryACTION" 
+	  input="/departmentLocationEnquiry.jsp">
+	 <forward name="NEW" path="/departmentLocationEnquiry.jsp"/>
+	 <forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+	 </action>
+	 
+	 <action path="/bloodStockEnquiry"  
+	 name="BloodStockEnquiryFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="enquiry.transaction.controller.action.BloodStockEnquiryAction" 
+	  input="/bloodStockEnquiry.jsp">
+	 <forward name="NEW" path="/bloodStockEnquiry.jsp"/>
+	 <forward name="CANCEL" path="../alertmanagement/alertDesk.cnt" redirect="true"/>    
+	 </action>
+	 
+	 <action path="/bloodDonor"  
+	 name="BloodDonorFB"
+	 parameter="hmode"
+	 validate="false"
+	 scope="request"    
+	  type="enquiry.transaction.controller.action.BloodDonorACTION" 
+	  input="/bloodDonor.jsp">
+	 <forward name="NEW" path="/bloodDonor.jsp"/>
+	 <forward name="CANCEL" path="../startup/initPage.jsp" redirect="true"/>    
+	 </action>
+	 
+	<action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+			
+	   <action path="/helpDeskLogin"
+				type="enquiry.transaction.controller.action.HelpDeskLoginACT"
+				name="HelpDeskLoginFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+			<forward name="DESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt"/>	
+		</action>
+			
+		<action path="/gotoHelpDeskHeaderPage"
+				parameter="/enquiry/helpDeskHeader.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+			
+	   <action path="/hisHelpDesk"
+				type="enquiry.transaction.controller.action.HelpDeskACT"
+				name="HelpDeskFB"
+				validate="false"
+				scope="request"
+				parameter="mode"
+				input="/helpDeskWelcomePage.jsp">
+			<forward name="WELCOME" path="/hospitalFacility"/>	
+			<forward name="PATIENTENQUIRY" path="/patientEnquiry"/>	
+			<forward name="INPATIENTENQUIRY" path="/inPatientEnquiry"/>	
+			<forward name="BULLETINBOARD" path="/bulletinBoardEnquiry" />	
+			<forward name="STAFFENQUIRY" path="/staffEnquiry"/>	
+			<forward name="DEPARTMENTENQUIRY" path="/hospitalDepartmentEnquiry"/>	
+			<forward name="CONSULTANTENQUIRY" path="/hospitalConsultantEnquiry"/>	
+			<forward name="BLOODSTOCKENQUIRY" path="/bloodStockEnquiry"/>	
+			<forward name="OPDENQUIRY" path="/opdEnquiry"/>	
+			<forward name="CHARGEENQUIRY" path="/hospitalChargeEnquiry"/>	
+			<forward name="WARDENQUIRY" path="/wardEnquiry"/>	
+			<forward name="LABENQUIRY" path="/labEnquiry"/>	
+			<forward name="HOSPITALENQUIRY" path="/hospitalEnquiry"/>	
+			<forward name="HOLIDAY" path="/holidayEnquiry"/>	
+			<forward name="TELEPHONEENQUIRY" path="/telephoneEnquiryTilesDef"/>	
+			<forward name="DEFAULT" path="/helpDeskUnderConstruction"/>
+			<forward name="CANCEL" path="/helpDesk"/>
+		</action>	 
+
+	 <action path="/hospitalDepartmentEnquiry"
+				type="enquiry.transaction.controller.action.HospitalDepartmentEnquiryACTION"
+				name="HospitalDepartmentEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalDepartmentEnquiryTile.jsp">
+		 	<forward name="NEW" path="/hospitalDepartmentEnquiryTile.jsp"/>
+		 	<forward name="BEDSTATUS" path="/bedStatusEnquiryPopUp.jsp"/>
+	 		<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/hospitalConsultantEnquiry"
+				type="enquiry.transaction.controller.action.HospitalConsultantEnquiryACTION"
+				name="hospitalConsultantEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalConsultantEnquiry.jsp">
+		 	<forward name="NEW" path="/hospitalConsultantEnquiry.jsp"/>
+	 		<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/hospitalWardEnquiry"
+				type="enquiry.transaction.controller.action.HospitalWardEnquiryACTION"
+				name="hospitalWardEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalWardEnquiry.jsp">
+		 	<forward name="NEW" path="/hospitalWardEnquiry.jsp"/>
+		 	<forward name="POPUP" path="/hospitalWardEnquiryPopup.jsp"/>
+		 	<forward name="BEDSTATUS" path="/wardbedStatusEnquiry.jsp"/>
+	 		<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/opdScheduleEnquiry"
+				type="enquiry.transaction.controller.action.OpdScheduleEnquiryACTION"
+				name="opdScheduleEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/opdScheduleEnquiry.jsp">
+		 	<forward name="NEW" path="/opdScheduleEnquiry.jsp"/>
+		 	 <forward name="POPUP" path="/opdScheduleEnquiryPopUp.jsp"/>
+		 	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/hospitalTelephoneEnquiry"
+				type="enquiry.transaction.controller.action.HospitalTelephoneEnquiryACTION"
+				name="hospitalTelephoneEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalTelephoneEnquiry.jsp">
+		 	<forward name="NEW" path="/hospitalTelephoneEnquiry.jsp"/>
+		  	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/operationTheaterEnquiry"
+				type="enquiry.transaction.controller.action.OperationTheaterEnquiryACTION"
+				name="operationTheaterEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/operationTheaterEnquiry.jsp">
+		 	<forward name="NEW" path="/operationTheaterEnquiry.jsp"/>
+		  	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/hospitalFacilityMaster"
+				type="enquiry.setup.controller.action.HospitalFacilityMasterACTION"
+				name="hospitalFacilityMasterFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalFacilityMasterListPage.jsp">
+		 	<forward name="NEW" path="/hospitalFacilityMasterListPage.jsp"/>
+		 	<forward name="ADD" path="/hospitalFacilityMasterAddPage.jsp"/>
+		 	<forward name="CHANGEORDER" path="/hospitalFacilityMstChangeOrder.jsp"/>
+		  	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/hospitalFacilityEnquiry"
+				type="enquiry.transaction.controller.action.HospitalFacilityEnquiryACTION"
+				name="hospitalFacilityEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalFacilityList.jsp">
+		 	<forward name="NEW" path="/hospitalFacilityList.jsp"/>
+		 	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/hospitalChargeEnquiry"
+				type="enquiry.transaction.controller.action.HospitalChargeEnquiryACTION"
+				name="hospitalChargeEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalChargeEnquiry.jsp">
+		 	<forward name="NEW" path="/hospitalChargeEnquiry.jsp"/>
+		 	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/hospitalLabEnquiry"
+				type="enquiry.transaction.controller.action.HospitalLabEnquiryACTION"
+				name="hospitalLabEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalLabTestEnquiry.jsp">
+		 	<forward name="NEW" path="/hospitalLabTestEnquiry.jsp"/>
+		 	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/otConsultantEnquiry"
+				type="enquiry.transaction.controller.action.OTConsultantEnquiryACTION"
+				name="otConsultantEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/otConsultantEnquiry.jsp">
+		 	<forward name="NEW" path="/otConsultantEnquiry.jsp"/>
+		 	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/holidayEnquiry"
+				type="enquiry.transaction.controller.action.HolidayEnquiryACTION"
+				name="holidayEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/holidayList.jsp">
+		 	<forward name="NEW" path="/holidayList.jsp"/>
+		 	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+	 	<action path="/guestHouseEnquiry"
+				type="enquiry.transaction.controller.action.GuestHouseEnquiryACTION"
+				name="guestHouseEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/guestHouseEnquiry.jsp">
+		 	<forward name="NEW" path="/guestHouseEnquiry.jsp"/>
+		 	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+		<action path="/gotoHelpDeskFooterPage"
+				parameter="/enquiry/helpDeskFooter.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+		
+	 <action path="/hospitalEnquiry"
+				type="enquiry.transaction.controller.action.HospitalEnquiryACTION"
+				name="hospitalEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalEnquiry.jsp">
+		 	<forward name="NEW" path="/hospitalEnquiry.jsp"/>
+		 	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+		
+		
+	<action path="/guidlinesEnquiry"
+				type="enquiry.transaction.controller.action.GuidlinesEnquiryACTION"
+				name="GuidlinesEnquiryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+			input="/hospitalEnquiry.jsp">
+		 	<forward name="NEW" path="/guidlinesEnquiry.jsp"/>
+		 	<forward name="CANCEL" path="/../startup/initPage.jsp"/>    
+		</action>	
+	 
+
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	  
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Enquiry-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+</struts-config>          

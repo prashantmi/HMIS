@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions> 
+  
+  
+  <definition name="/specialClinicNewRegWithAppointment" path="/registration/transactions/jsp/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Special Clinic Registration With Appointment" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/specialClinicNewRegWithAppointment.cnt"/>	  
+  </definition>
+
+ <definition name="/newSpecialClinickVisitwithAptmnt" path="/registration/transactions/jsp/commonTransactionLayout.jsp">      
+	  <put name="title"  value="Special Clinic Visit With Appointment" type="string"/>
+  	  <put name="action"  value="/commonaction" type="string"/>
+  	  <put name="header"  value="/registration/blank.jsp"/>	  
+  	  <put name="body"  value="/registration/newSpecialClinickVisitwithAptmnt.cnt"/>	  
+  </definition>
+  
+
+ </tiles-definitions>

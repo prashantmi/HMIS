@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='MRD Master'>
+		<common-values>
+			<master-name>MRDMaster</master-name>
+			<master-title>MRD Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>MRD Master</tableHeading>
+			
+			<list-table>HPMRT_MRD_MST</list-table>
+
+			<columns>
+				<column>MRD Name</column>
+				<column>MRD Type</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>A.HPMRSTR_MRD_NAME</field> 
+					<field>DECODE(A.HPMRNUM_MRD_TYPE,1,'Main MRD',2,'Sub MRD')</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HPMRNUM_MRD_CODE</field>
+					<field>A.HMRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HPMRT_MRD_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field> A.GNUM_ISVALID </isvalid-field>
+					<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+					
+					
+					
+					<orderby> ORDER BY A.HPMRNUM_MRD_TYPE,A.HPMRSTR_MRD_NAME </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/mrd/master/mrdMater.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mrd/master/mrdMater.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+		<form-bean name="MortuaryMasterFB" type="mortuary.masters.controller.hlp.MortuaryMasterFB"/>
+		<form-bean name="OpinionMasterFB" type="mortuary.masters.controller.hlp.OpinionMasterFB"/>
+		<form-bean name="RoleMasterFB" type="mortuary.masters.controller.hlp.RoleMasterFB"/>
+		<form-bean name="DeceasedItemMasterFB" type="mortuary.masters.controller.hlp.DeceasedItemMasterFB"/>
+		<form-bean name="MortuaryAreaMasterFB" type="mortuary.masters.controller.hlp.MortuaryAreaMasterFB"/>
+		<form-bean name="ChamberMasterFB" type="mortuary.masters.controller.hlp.ChamberMasterFB"/>
+		<form-bean name="IncisionTypeMasterFB" type="mortuary.masters.controller.hlp.IncisionTypeMasterFB"/>
+		<form-bean name="ChamberRackMstFB" type="mortuary.masters.controller.hlp.ChamberRackMasterFB"/>
+		<form-bean name="ExtLabTestMstFB" type="mortuary.masters.controller.hlp.ExternalLabTestMasterFB"/>
+		<form-bean name="ExtLabMstFB" type="mortuary.masters.controller.hlp.ExternalLabMasterFB"/>
+		<form-bean name="PreservativeMstFB" type="mortuary.masters.controller.hlp.PreservativeMasterFB"/>
+	</form-beans>
+	
+	<action-mappings>
+	
+		<action path="/master/MortuaryMaster"
+			type="mortuary.masters.controller.action.MortuaryMasterACT"
+			name="MortuaryMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/mortuaryMaster.jsp">
+		<forward name="NEW" path="/masters/mortuaryMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<action path="/master/OpinionMaster"
+			type="mortuary.masters.controller.action.OpinionMasterACT"
+			name="OpinionMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/opinionMaster.jsp">
+		<forward name="NEW" path="/masters/opinionMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<action path="/master/MorturyRoleMasterMaster"
+			type="mortuary.masters.controller.action.RoleMasterACT"
+			name="RoleMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/roleMaster.jsp">
+		<forward name="NEW" path="/masters/roleMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<action path="/master/DeceasedItemMaster"
+			type="mortuary.masters.controller.action.DeceasedItemMasterACT"
+			name="DeceasedItemMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/deceasedItemMaster.jsp">
+		<forward name="NEW" path="/masters/deceasedItemMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<action path="/master/MortuaryAreaMaster"
+			type="mortuary.masters.controller.action.MortuaryAreaMasterACT"
+			name="MortuaryAreaMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/mortuaryAreaMaster.jsp">
+		<forward name="NEW" path="/masters/mortuaryAreaMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<action path="/master/ChamberMaster"
+			type="mortuary.masters.controller.action.ChamberMasterACT"
+			name="ChamberMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/chamberMaster.jsp">
+		<forward name="NEW" path="/masters/chamberMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+		<action path="/master/IncisionTypeMaster"
+			type="mortuary.masters.controller.action.IncisionTypeMasterACT"
+			name="IncisionTypeMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/incisionTypeMaster.jsp">
+		<forward name="NEW" path="/masters/incisionTypeMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	
+	
+	<action path="/master/ChamberRackMaster"
+			type="mortuary.masters.controller.action.ChamberRackMasterACT"
+			name="ChamberRackMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/chamberRackMaster.jsp">
+		<forward name="NEW" path="/masters/chamberRackMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt?hmode=LIST"/>	
+	</action>
+	
+	
+	<action path="/master/ExternalLabTestMaster"
+			type="mortuary.masters.controller.action.ExternalLabTestMasterACT"
+			name="ExtLabTestMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/externalLabTestMaster.jsp">
+		<forward name="NEW" path="/masters/externalLabTestMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	
+	<action path="/master/ExternalLabMaster"
+			type="mortuary.masters.controller.action.ExternalLabMasterACT"
+			name="ExtLabMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/externalLabMaster.jsp">
+		<forward name="NEW" path="/masters/externalLabMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	
+	
+	<action path="/master/PreservativeMaster"
+			type="mortuary.masters.controller.action.PreservativeMasterACT"
+			name="PreservativeMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/masters/preservativeMaster.jsp">
+		<forward name="NEW" path="/masters/preservativeMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Mortuary-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+</struts-config>	

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Drug Route Master'>
+		<common-values>
+			<master-name>DrugRouteMaster</master-name>
+			<master-title>Drug Route Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Drug Route Master</tableHeading>
+			
+			<list-table>HGBT_DRUG_ROUTE_MST</list-table>
+
+            <controls>
+				<control type="combo" index="0">
+					<label>Item type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>A.HSTSTR_ITEMTYPE_NAME</text-field>
+								<value-field>A.HSTNUM_ITEMTYPE_ID</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HSTT_ITEMTYPE_MST</table>
+							</tables>
+							<condition>
+								<general> A.GNUM_HOSPITAL_CODE=100 and A.GNUM_ISVALID = 1 and SSTNUM_ITEM_CAT_NO=10 order by A.HSTSTR_ITEMTYPE_NAME </general>	
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+
+			<columns>
+				<column>Route Name</column>
+				<column>Route Classification</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(B.HGSTR_DRUG_ROUTE_NAME)</field>
+					<field>DECODE(B.HGNUM_ROUTE_CLASSIFICATION,1,'Tropical',2,'Enteral',3,'Parental',4,'Other',null ,' ')</field>
+				</fields>
+				
+				<primaryKey>
+					<field>B.HGNUM_DRUG_ROUTE_ID</field>
+					<field>B.HGNUM_SLNO</field>
+					<field>B.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='B'>HGBT_DRUG_ROUTE_MST</table>
+										
+				</tables>
+				
+				<condition>
+					<isvalid-field> B.GNUM_HOSPITAL_CODE=100 and B.GNUM_ISVALID</isvalid-field>
+					<dependent>
+					<clause> B.HSTNUM_ITEMTYPE_ID = #0 </clause>
+				    </dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+		<add-page>
+			<static-page>/opd/master/drugRouteMstAdd.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/drugRouteMstAdd.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

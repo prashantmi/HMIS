@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ 
+<!DOCTYPE struts-config PUBLIC
+ "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ <!-- ========== Form Bean Definitions =================================== -->
+<form-beans>       
+	    
+	    <form-bean name="IcdMasterFB" type="opd.master.controller.fb.IcdMasterFB"/>  
+	    <form-bean name="DeptIcdMasterFB" type="opd.master.controller.fb.DepartmentIcdMasterFB"/> 
+	 	<form-bean name="DeptHosDisMasterFB" type="opd.master.controller.fb.DepartmentHosDisMasterFB"/>
+	    <form-bean name="IcdMasterFB" type="opd.master.controller.fb.IcdMasterFB"/>     	    
+	    <form-bean name="UserDeskMenuMasterFB" type="opd.master.controller.fb.UserDeskMenuMasterFB"/>     	    
+	    <form-bean name="DeskMasterFB" type="opd.master.controller.fb.DeskMasterFB"/>     	    
+		<form-bean name="AddAllergyTypeFB" type="opd.master.controller.fb.AllergyTypeFB"/>
+		<form-bean name="ModifyAllergyTypeFB" type="opd.master.controller.fb.ModAllergyTypeFB"/>
+	    <form-bean name="TemplateParameterMasterFB" type="opd.master.controller.fb.TemplateParameterMasterFB"/>     	    
+	    <form-bean name="UserDeskMenuTemplateMasterFB" type="opd.master.controller.fb.UserDeskMenuTemplateMasterFB"/>     	    
+		<form-bean name="DeskMenuMacroMstListFB" type="opd.master.controller.fb.DeskMenuMacroMstListFB"/>
+		<form-bean name="DeskMenuMacroMstAddFB" type="opd.master.controller.fb.DeskMenuMacroMstAddFB"/>
+		<form-bean name="AddImageUploadMasterFB" type="opd.master.controller.fb.AddImageUploadMasterFB"/>
+		<form-bean name="ImagePointerMasterFB" type="opd.master.controller.fb.ImagePointerMasterFB"/>
+		<form-bean name="ImageUploadFB" type="opd.master.controller.fb.ImageUploadFB"/>
+		<form-bean name="UnitImageDescMasterFB" type="opd.master.controller.fb.AddUnitImageDescMasterFB"/>
+		<form-bean name="AddImageDescriptionFB" type="opd.master.controller.fb.AddImageDescriptionFB"/>
+		<form-bean name="AudioVideoMasterFB" type="opd.master.controller.fb.AudioVideoMasterFB"/>
+		<form-bean name="AddAudioVideoPopupFB" type="opd.master.controller.fb.AddAudioVideoPopupFB"/>
+		<form-bean name="OPDUnitImageMasterFB" type="opd.master.controller.fb.OPDUnitImageMasterFB"/>
+		<form-bean name="UnitAudioVideoMasterFB" type="opd.master.controller.fb.UnitAudioVideoMasterFB"/>
+		<form-bean name="IcdHospitalMasterFB" type="opd.master.controller.fb.IcdHospitalMasterFB"/>
+
+		<form-bean name="HospitalDiseaseMasterFB" type="opd.master.controller.fb.HospitalDiseaseMasterFB"/>
+		<form-bean name="UserDeskUnitWardMappingMasterFB" type="opd.master.controller.fb.UserDeskUnitWardMappingMasterFB"/>
+		<form-bean name="AllergyWiseSymptomMasterFB" type="opd.master.controller.fb.AllergyWiseSymptomMasterFB"/>
+		
+		 <form-bean name="HospitalDiseaseMasterFB" type="opd.master.controller.fb.HospitalDiseaseMasterFB"/>
+		 <form-bean name="UserDeskUnitWardMappingMasterFB" type="opd.master.controller.fb.UserDeskUnitWardMappingMasterFB"/>
+		 
+		 <form-bean name="consentMappingMasterFB" type="opd.master.controller.fb.ConsentMappingMasterFB"/>
+		<form-bean name="ParameterMstBean" type="opd.master.controller.fb.ParameterMstBean" />
+		<form-bean name="UserDeskMenuTempMapFB" type="opd.master.controller.fb.UserDeskMenuTemplateMappingFB" />
+		<form-bean name="deskMenuMasterFB" type="opd.master.controller.fb.DeskMenuMasterFB" />
+		<form-bean name="drugDoseMasterFB" type="opd.master.controller.fb.DrugDoseMasterFB" />
+		<form-bean name="templateMappingMstFB" type="opd.master.controller.fb.TemplateMappingMstFB" />
+		<form-bean name="DeskTypeMenuMappingMasterFB" type="opd.master.controller.fb.DeskTypeMenuMappingMasterFB" />
+		<form-bean name="macroMstFB" type="opd.master.controller.fb.MacroMstFB" />
+		<form-bean name="drugRouteMstFB" type="opd.master.controller.fb.DrugRouteMstFB" />
+		<form-bean name="DeskWiseDefaultProfileMstFB" type="opd.master.controller.fb.DeskWiseDefaultProfileMstFB" />
+		<form-bean name="ParaRangeMstFB" type="opd.master.controller.fb.ParaRangeMstFB" />
+		<form-bean name="ProfileRestrictedCategoryMasterFB" type="opd.master.controller.fb.ProfileRestrictedCategoryMasterFB" />
+		<form-bean name="ProfileGroupMasterFB" type="opd.master.controller.fb.ProfileGroupMasterFB" />
+		<form-bean name="ProfileGroupDetailFB" type="opd.master.controller.fb.ProfileGroupDetailFB" />
+		<form-bean name="ProfileAccessPolicyFB" type="opd.master.controller.fb.ProfileAccessPolicyFB" />
+		<form-bean name="UnitExtTreatMasterFB" type="opd.master.controller.fb.UnitExtTreatMasterFB" />
+		<form-bean name="UnitMacroMasterFB" type="opd.master.controller.fb.UnitMacroMasterFB" />
+		<form-bean name="profileTypeTabMappingFB" type="opd.master.controller.fb.ProfileTypeTabMappingFB" />
+		<form-bean name="profileTypeMasterFB" type="opd.master.controller.fb.ProfileTypeMasterFB" />
+		<form-bean name="KeywordMasterFB" type="opd.master.controller.fb.KeywordMasterFB" />
+		<form-bean name="DrugListMasterFB" type="opd.master.controller.fb.DrugListMasterFB" />
+		<form-bean name="DrugListItemMasterFB" type="opd.master.controller.fb.DrugListItemMasterFB" />
+		<form-bean name="UnitDrugListMasterFB" type="opd.master.controller.fb.UnitDrugListMasterFB" />
+		<form-bean name="AttendantReasonFB" type="opd.master.controller.fb.AttendantReasonFB" />
+		<form-bean name="UnitEpisodeKeywordFB" type="opd.master.controller.fb.UnitEpisodeKeywordFB" />
+		<form-bean name="ICDIncludeExcludeFB" type="opd.master.controller.fb.ICDIncludeExcludeFB" />
+		<form-bean name="PatientAlertMasterFB" type="opd.master.controller.fb.PatientAlertMasterFB" />
+		<form-bean name="chartParameterMappingFB" type="opd.master.controller.fb.ChartParameterMappingFB" />
+		<form-bean name="DiseaseSiteFB" type="opd.master.controller.fb.DiseaseSiteFB" />	
+		<form-bean name="chartMasterFB" type="opd.master.controller.fb.ChartMasterFB" />	
+		<form-bean name="ChartUnitMappingMstFB" type="opd.master.controller.fb.ChartUnitMappingMstFB" />
+		<form-bean name="DeptUnitIcdMappingFB" type="opd.master.controller.fb.DeptUnitIcdMappingFB" />	
+		<form-bean name="DeptUnitHospitalDiseaseFB" type="opd.master.controller.fb.DeptUnitHospitalDiseaseFB" />
+		<form-bean name="OpdIcdMappingMasterFB" type="opd.master.controller.fb.OpdIcdMappingMasterFB" />
+		<form-bean name="IcdIndexLevelMasterFB" type="opd.master.controller.fb.IcdIndexLevelMasterFB"	/>
+		<form-bean name="IcdIndexMasterFB" type="opd.master.controller.fb.IcdIndexMasterFB"/> 
+		<form-bean name="IcdCrossRefMasterFB" type="opd.master.controller.fb.IcdCrossRefMasterFB"/> 
+		<form-bean name="UnitDrugMasterFB" type="opd.master.controller.fb.UnitDrugMasterFB" />		
+</form-beans>
+
+<action-mappings> 
+
+	<action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+
+	<!-- Actual Template Mapping to Desk Unit Ward User(X-Seat) -->
+	<action path="/master/UserDeskMenuTempMapping"
+			type="opd.master.controller.action.UserDeskMenuTemplateMappingACTION"
+			name="UserDeskMenuTempMapFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/userDeskMenuTemplateMapping.jsp">
+		<forward name="NEW" path="/master/userDeskMenuTemplateMapping.jsp"/>
+		<forward name="UNITWISE" path="/master/userDeskMenuTemplateMappingUnitWiseMode.jsp"/>
+		<forward name="UNITSEATWISE" path="/master/userDeskMenuTemplateMappingUnitSeatWiseMode.jsp"/>
+		<forward name="UNITWARDWISE" path="/master/userDeskMenuTemplateMappingWardWiseMode.jsp"/>		
+		<forward name="UNITWARDSEATWISE" path="/master/userDeskMenuTemplateMappingUnitSeatWardWiseMode.jsp"/>
+   		<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>   
+
+		
+		<forward name="ADD" path="/master/userDeskMenuTemplateMappingUnitWise.jsp"/>
+		
+		<forward name="ADDUNITSEAT" path="/master/userDeskMenuTemplateMappingUnitSeatWise.jsp"/>
+
+		<forward name="ADDWARD" path="/master/userDeskMenuTemplateMappingWardWise.jsp"/>
+
+		<forward name="ADDUNITSEATWARD" path="/master/userDeskMenuTemplateMappingUnitSeatWardWise.jsp"/>
+		
+	</action>
+	
+	<!-- Unit Wise Audio Video File Mapping  -->
+	<action path="/master/UnitAudioVideoMaster"
+			type="opd.master.controller.action.UnitAudioVideoMasterACTION"
+			name="UnitAudioVideoMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/unitAudioVideoMaster.jsp">
+		<forward name="NEW" path="/master/unitAudioVideoMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+
+	<!-- Audio Video File Master Popup -->
+	<action path="/master/addAudioVideoPopup"
+			type="opd.master.controller.action.AddAudioVideoPopupACTION"
+			name="AddAudioVideoPopupFB"
+			validate="false"
+			scope="request"
+			parameter="transactionMode"
+			input="/master/addAudioVideoPopup.jsp">
+		<forward name="NEW" path="/master/addAudioVideoPopup.jsp"/>	
+		<forward name="CLOSE" path="/master/addAudioVideoPopup.jsp"/>
+	</action>
+	
+	<!-- Audio Video File Master -->
+	<action path="/master/audioVideoMaster"
+			type="opd.master.controller.action.AudioVideoMasterACTION"
+			name="AudioVideoMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/audioVideoMaster.jsp">
+		<forward name="NEW" path="/master/audioVideoMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+	</action>		
+
+	<!-- Unit Wise Image Description Master Add Image Desc Popup -->
+	<action path="/master/addImageDescription"
+			type="opd.master.controller.action.AddImageDescriptionACTION"
+			name="AddImageDescriptionFB"
+			validate="false"
+			scope="request"
+			parameter="transactionMode"
+			input="/master/addImageDescription.jsp">
+		<forward name="NEW" path="/master/addImageDescription.jsp"/>	
+		<forward name="CLOSE" path="/master/addImageDescription.jsp"/>
+	</action>
+	
+	<!-- Unit Wise Image Description Mapping -->
+	<action path="/master/addUnitImageDescMaster"
+			type="opd.master.controller.action.AddUnitImageDescMasterACTION"
+			name="UnitImageDescMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/addUnitImageDescMaster.jsp">
+		<forward name="NEW" path="/master/addUnitImageDescMaster.jsp"/>	
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+	</action>
+
+	<!-- Image Master Popup -->
+	<action path="/master/imageUpload"
+			type="opd.master.controller.action.ImageUploadACTION"
+			name="ImageUploadFB"
+			validate="false"
+			scope="request"
+			parameter="transactionMode"
+			input="/master/imageUpload.jsp">
+		<forward name="NEW" path="/master/imageUpload.jsp"/>	
+		<forward name="CLOSE" path="/master/imageUpload.jsp"/>	
+	</action>		
+
+	<!-- Image Master -->
+	<action path="/master/addImageUploadMaster"
+			type="opd.master.controller.action.AddImageUploadMasterACTION"
+			name="AddImageUploadMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/addImageUploadMaster.jsp">
+		<forward name="NEW" path="/master/addImageUploadMaster.jsp"/>	
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+	</action>
+	
+	<action path="/master/imagePointerMaster"
+			type="opd.master.controller.action.ImagePointerMasterACTION"
+			name="ImagePointerMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/imagePointerMaster.jsp">
+		<forward name="NEW" path="/master/imagePointerMaster.jsp"/>	
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+	</action>
+	
+	<!-- Desk Menu Macro Master -->
+	<action path="/master/deskMenuMacroMstAdd"
+			type="opd.master.controller.action.DeskMenuMacroMstAddACTION"
+			name="DeskMenuMacroMstAddFB"
+			validate="false"
+			scope="request"
+			parameter="mode"
+			input="/master/deskMenuMacroMstAdd.jsp">
+		<forward name="NEW" path="/master/deskMenuMacroMstAdd.jsp"/>	
+		<forward name="SAME" path="/master/deskMenuMacroMstAdd.jsp"/>	
+		<forward name="VIEW" path="/master/deskMenuMacroMstList.cnt"/>	
+	</action>		
+
+	<!-- Desk Menu Macro Master List -->
+	<action path="/master/deskMenuMacroMstList"
+			type="opd.master.controller.action.DeskMenuMacroMstListACTION"
+			name="DeskMenuMacroMstListFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/deskMenuMacroMstList.jsp">
+		<forward name="NEW" path="/master/deskMenuMacroMstList.jsp"/>	
+		<forward name="SAME" path="/master/deskMenuMacroMstList.jsp"/>
+		<forward name="ADD" path="/master/deskMenuMacroMstAdd.cnt"/>
+		<forward name="MODIFY" path="/master/deskMenuMacroMstAdd.cnt"/>
+	</action>		
+
+	<!-- Allergy Type Master Modify -->
+	<action path="/master/allergyTypeModify"
+			type="opd.master.controller.action.ModAllergyTypeACTION"
+			name="ModifyAllergyTypeFB"
+			validate="false"
+			scope="request"
+			parameter="transactionMode"
+			input="/master/allergyTypeModify.jsp">
+			<forward name="NEW" path="/master/allergyTypeModify.jsp"/>
+			<forward name="SAME" path="/master/allergyTypeModify.jsp"/>
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+	</action>		
+	
+	<!-- Allergy Type Master Add -->
+	<action path="/master/allergyTypeAdd"
+			type="opd.master.controller.action.AllergyTypeACTION"
+			name="AddAllergyTypeFB"
+			validate="false"
+			scope="request"
+			parameter="transactionMode"
+			input="/master/allergyTypeAdd.jsp">
+			<forward name="NEW" path="/master/allergyTypeAdd.jsp"/>
+			<forward name="SAME" path="/master/allergyTypeAdd.jsp"/>
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+			
+	</action>	
+
+ 	<!-- ICD Masters Common Layout -->
+ 	<action  path="/master/icdMaster"
+	    type="opd.master.controller.action.IcdMasterACTION"
+	    name="IcdMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="deskmode"
+	    input = "/icdTile">
+		<forward name ="GROUP" path="/icdTile"/>
+   		<forward name ="SUBGROUP" path="/icdTile"/>
+   		<forward name ="DISEASE" path="/icdTile"/>
+   		<forward name ="SUBDISEASE" path="/icdTile"/>
+   		<forward name ="ADDSAVETILE" path="/addSaveTile"/>
+   		<forward name ="MODIFYSAVETILE" path="/modifySaveTile"/>
+   		<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true"/>   
+	    
+    </action>   
+      
+    <!-- Dept/Unit Wise ICD Disease Master -->
+    <action  path="/master/DeptIcdMaster"
+	    type="opd.master.controller.action.DepartmentIcdMasterACTION"
+	    name="DeptIcdMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input = "/master/departmentIcdMaster.jsp">
+		<forward name ="NEW" path="/master/departmentIcdMaster.jsp"/>
+		<forward name ="ADD" path="/master/departmentIcdMasterADDTile.jsp"/>
+		<forward name ="DELETE" path="/master/departmentIcdMasterDeleteTile.jsp"/>
+		<forward name ="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>
+   		
+    </action>  
+    
+    <!-- Dept/Unit Wise Hospital Disease Master -->
+    <action  path="/master/DeptHosDisMaster"
+	    type="opd.master.controller.action.DepartmentHosDisMasterACTION"
+	    name="DeptHosDisMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="hmode"
+	    input = "/master/departmentHosDisMaster.jsp">
+		<forward name ="NEW" path="/master/departmentHosDisMaster.jsp"/>
+		<forward name ="ADD" path="/master/departmentHosDisMasterADDTile.jsp"/>
+		<forward name ="DELETE" path="/master/departmenthosDisMasterDeleteTile.jsp"/>
+		<forward name ="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>
+   		
+    </action> 
+    
+    <!-- User Desk Unit User(X-Seat) Mapping Add -->
+	<action  path="/master/AddUserDeskMenuMaster"
+		type="opd.master.controller.action.AddUserDeskMenuACTION"
+		name="UserDeskMenuMasterFB"
+		validate="false"
+		scope="request"
+		parameter="hmode"
+		input="/master/addUserDeskMenuTile.jsp">
+		<forward name="NEW" path="/master/addUserDeskMenuTile.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+
+	<!-- User Desk Unit User(X-Seat) Mapping Modify -->
+	<action  path="/master/ModifyViewUserDeskMenuACTION"
+		type="opd.master.controller.action.ModifyViewUserDeskMenuACTION"
+		name="UserDeskMenuMasterFB"
+		validate="false"
+		scope="request"
+		parameter="hmode"
+		input="/masterWorkshop/UserDeskMenuMaster.mst">
+		<forward name="NEW" path="/master/modifyViewUserDeskMenuTile.jsp" />
+		<forward name="SAME" path="/master/modifyViewUserDeskMenuTile.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+
+	<!-- Desk Master -->
+	<action  path="/master/AddModifyMenuToDeskACTION"
+		type="opd.master.controller.action.AddModifyMenuToDeskACTION"
+		name="DeskMasterFB"
+		validate="false"
+		scope="request"
+		parameter="hmode"
+		input="/masterWorkshop/OPDDeskMaster.mst">
+		<forward name="NEW" path="/master/addModifyMenuToDeskTile.jsp" />
+		<forward name="SAME" path="/master/addModifyMenuToDeskTile.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+
+	<!-- Waste -->
+	<action  path="/master/AddTemplateParameterACTION"
+		type="opd.master.controller.action.AddTemplateParameterACTION"
+		name="TemplateParameterMasterFB"
+		validate="false"
+		scope="request"
+		parameter="hmode"
+		input="/masterWorkshop/OPDTemplateParameterMaster.mst">
+		<forward name="NEW" path="/master/addTemplateParameterTile.jsp" />
+		<forward name="SAME" path="/master/addTemplateParameterTile.jsp" />
+		<forward name="MODIFY" path="/master/modifyTemplateTile.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+
+	<!-- Waste -->
+	<action  path="/master/AddUserDeskMenuTemplateMaster"
+		type="opd.master.controller.action.AddUserDeskMenuTemplateACTION"
+		name="UserDeskMenuTemplateMasterFB"
+		validate="false"
+		scope="request"
+		parameter="hmode"
+		input="/master/addUserDeskMenuTemplateTile.jsp">
+		<forward name="NEW" path="/master/addUserDeskMenuTemplateTile.jsp" />
+		<forward name="SAME" path="/master/addUserDeskMenuTemplateTile.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+
+	<!-- Waste -->
+	<action  path="/master/ModifyViewUserDeskMenuTemplateMaster"
+		type="opd.master.controller.action.AddUserDeskMenuTemplateACTION"
+		name="UserDeskMenuTemplateMasterFB"
+		validate="false"
+		scope="request"
+		parameter="hmode"
+		input="/master/modifyUserDeskMenuTemplateTile.jsp">
+		<forward name="NEW" path="/master/modifyUserDeskMenuTemplateTile.jsp" />
+		<forward name="SAME" path="/master/modifyUserDeskMenuTemplateTile.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+
+	<!-- ICD & Hospital Disease Mapping -->
+	<action  path="/master/IcdHospitalMaster"
+		type="opd.master.controller.action.IcdHospitalMasterACTION"
+		name="IcdHospitalMasterFB"
+		validate="false"
+		scope="request"
+		parameter="hmode"
+		input="/master/icdHospitalMaster.jsp">
+		<forward name="NEW" path="/master/icdHospitalMaster.jsp" />
+	</action>
+
+	<!-- Unit Wise Image Mapping -->
+	<action path="/master/AddOPDUnitImageMaster"
+			type="opd.master.controller.action.AddUnitImageMasterACTION"
+			name="OPDUnitImageMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/AddUnitImageMaster.jsp" >
+		<forward name="NEW" path="/master/AddUnitImageMaster.jsp"/>	
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+		<forward name="SAME" path="/master/AddUnitImageMaster.jsp"/>
+		<forward name="MODIFY" path="/master/ModifyImageUnitMaster.jsp" />	
+	</action>	
+	
+	<!-- Hospital Disease Master Common Layout-->
+	<action  path="/master/hospitalDiseaseMaster"
+	    type="opd.master.controller.action.HospitalDiseaseMasterACTION"
+	    name="HospitalDiseaseMasterFB"
+	    validate="false"
+	    scope="request"
+	    parameter="deskmode"
+	    input = "/hospitalDiseaseTile">
+		<forward name ="DISEASE" path="/hospitalDiseaseTile"/>
+   		<forward name ="SUBDISEASE" path="/hospitalDiseaseTile"/>
+   		<forward name ="ADDSAVETILE" path="/addSaveDiseaseTile"/>
+   		<forward name ="MODIFYSAVETILE" path="/modifySaveDiseaseTile"/>
+   		<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true"/>   
+	</action>    
+	
+	<!-- User Desk Unit Ward User(X-Seat) Mapping Add -->
+    <action  path="/master/AddUserDeskUnitWardMappingMaster"
+    	type="opd.master.controller.action.AddUserDeskUnitWardMappingACTION"
+    	name="UserDeskUnitWardMappingMasterFB"
+    	validate="false"
+    	scope="request"
+    	parameter="hmode"
+    	input="/master/addUserDeskUnitWardMappingMasterTile.jsp">
+    <forward name="NEW" path="/master/addUserDeskUnitWardMappingMasterTile.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+
+	<!-- User Desk Unit Ward User(X-Seat) Mapping Modify -->
+   <action  path="/master/ModifyViewUserDeskUnitWardMappingMaster"
+    type="opd.master.controller.action.ModifyViewUserDeskUnitWardMappingMasterACTION"
+    name="UserDeskUnitWardMappingMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/masterWorkshop/UserDeskUnitWardMappingMaster.mst">
+    <forward name="NEW" path="/master/modifyViewUserDeskUnitWardTile.jsp" />
+    <forward name="SAME" path="/master/modifyViewUserDeskUnitWardTile.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+  </action>
+
+  
+	<!--  Allergy Wise Symptom Master -->
+  <action  path="/master/AddAllergyWiseSymptomMaster"
+    type="opd.master.controller.action.AddAllergyWiseSymptomMasterACTION"
+    name="AllergyWiseSymptomMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/addAllergyWiseSymptomMaster.jsp">
+    <forward name="NEW" path="/master/addAllergyWiseSymptomMaster.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+  </action>
+
+	<!-- Allergy Wise Symptom Master -->
+	<action path="/master/ModifyViewAllergyWiseSymptomMaster"
+  	type="opd.master.controller.action.ModifyViewAllergyWiseSymptomMasterACTION"
+  	name="AllergyWiseSymptomMasterFB" validate="false" scope="request"
+  	parameter="hmode"
+  	input="/master/addAllergyWiseSymptomMaster.jsp">
+  	<forward name="NEW" path="/master/addAllergyWiseSymptomMaster.jsp" />
+  	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+  </action>
+
+	<!-- Service Wise Consent / Guidelines  Mapping -->
+  <action  path="/master/AddConsentMappingMaster"
+    type="opd.master.controller.action.ConsentMappingMasterACTION"
+    name="consentMappingMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/addConsentMappingMaster.jsp">
+    <forward name="NEW" path="/master/addConsentMappingMaster.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+  </action>
+  
+	<!-- Desk Menu Master -->
+	<action  path="/master/DeskMenuMaster"
+    type="opd.master.controller.action.DeskMenuMasterACTION"
+    name="deskMenuMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/deskMenuMaster.jsp">
+    <forward name="NEW" path="/master/deskMenuMaster.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+    
+  </action>
+  
+  <!-- Drug Dose Master (IPD) -->
+  <action  path="/master/DrugDoseMaster"
+    type="opd.master.controller.action.DrugDoseMasterACTION"
+    name="drugDoseMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/drugDoseMaster.jsp">
+    <forward name="NEW" path="/master/drugDoseMaster.jsp" />
+     <forward name="MODIFY" path="/master/modDrugDoseMaster.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+    
+  </action>
+  
+	<!-- Waste -->
+	<action  path="/master/templateMappingMstAdd"
+    type="opd.master.controller.action.TemplateMappingMstACT"
+    name="templateMappingMstFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/TemplateMappingMstAdd.jsp">
+    <forward name="NEW" path="/master/TemplateMappingMstAdd.jsp" />
+    <forward name="MODIFY" path="/master/TemplateMappingMstMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+    
+  </action>
+  
+	<!-- Desk Type Wise Menu Mapping -->
+  <action  path="/master/DeskTypeMenuMappingMaster"
+    type="opd.master.controller.action.DeskTypeMenuMappingMasterACT"
+    name="DeskTypeMenuMappingMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/deskTypeMenuMappingMaster.jsp">
+    <forward name="NEW" path="/master/deskTypeMenuMappingMaster.jsp" />
+     <forward name="MODIFY" path="/master/modDeskTypeMenuMappingMst.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+    
+  </action>
+
+	<!-- Where ???? -->
+  <action  path="/master/macroMstAdd"
+    type="opd.master.controller.action.MacroMstACT"
+    name="macroMstFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/MacroMstAddMod.jsp">
+    <forward name="NEW" path="/master/MacroMstAddMod.jsp" />
+    <forward name="MODIFY" path="/master/MacroMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+    
+  </action>
+  
+	<!-- Drug Route Master (IPD) -->
+	<action  path="/master/drugRouteMstAdd"
+    type="opd.master.controller.action.DrugRouteMstACT"
+    name="drugRouteMstFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/DrugRouteMstAddMod.jsp">
+    <forward name="NEW" path="/master/DrugRouteMstAddMod.jsp" />
+    <forward name="MODIFY" path="/master/DrugRouteMstAddMod.jsp" />
+    <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+  </action>  
+
+
+	<action path="/master/DeskWiseDefaultProfile"
+			type="opd.master.controller.action.DeskWiseDefaultProfileMstACTION"
+			name="DeskWiseDefaultProfileMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/deskWiseDefaultProfileMst.jsp">
+		<forward name="NEW" path="/master/deskWiseDefaultProfileMst.jsp"/>
+		<forward name ="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>
+	</action>
+	
+	<action path="/master/ParaRangeMaster"
+			type="opd.master.controller.action.ParaRangeMstACTION"
+			name="ParaRangeMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/paraRangeMst.jsp">
+		<forward name="NEW" path="/master/paraRangeMst.jsp"/>
+		<forward name ="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>
+		 <forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+
+	<action  path="/master/restrictedCategoryMaster"
+    type="opd.master.controller.action.ProfileRestrictedCategoryMasterACTION"
+    name="ProfileRestrictedCategoryMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/profileRestrictedCategoryMaster.jsp">
+    <forward name="NEW" path="/master/profileRestrictedCategoryMaster.jsp" />
+    <forward name="MODIFY" path="/master/profileRestrictedCategoryMaster.jsp" />
+	<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+    <forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>
+  	</action>  
+  	
+  	<action  path="/master/profileGroupMaster"
+    type="opd.master.controller.action.ProfileGroupMasterACTION"
+    name="ProfileGroupMasterFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/profileGroupMasterAddMod.jsp">
+    <forward name="NEW" path="/master/profileGroupMasterAddMod.jsp" />
+    <forward name="MODIFY" path="/master/profileGroupMasterAddMod.jsp" />
+    <forward name="CANCEL" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+  	</action>
+  	
+  	<action  path="/master/profileGroupDetail"
+    type="opd.master.controller.action.ProfileGroupDetailACTION"
+    name="ProfileGroupDetailFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/profileGroupMasterAddMod.jsp">
+    <forward name="NEW" path="/master/profileGroupDetailAddMod.jsp" />
+    <forward name="MODIFY" path="/master/profileGroupDetailAddMod.jsp" />
+    <forward name="CANCEL" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+  	</action>  
+  	
+  	<action  path="/master/profileAccessPolicy"
+    type="opd.master.controller.action.ProfileAccessPolicyACTION"
+    name="ProfileAccessPolicyFB"
+    validate="false"
+    scope="request"
+    parameter="hmode"
+    input="/master/profileAccessPolicyAddMod.jsp">
+    <forward name="NEW" path="/master/profileAccessPolicyAddMod.jsp" />
+    <forward name="MODIFY" path="/master/profileAccessPolicyAddMod.jsp" />
+    <forward name="CANCEL" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+  	</action>
+  	
+  	<!-- Unit Wise External Treatment Mapping  -->
+	<action path="/master/UnitExtTreatMaster"
+			type="opd.master.controller.action.UnitExtTreatMasterACTION"
+			name="UnitExtTreatMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/unitExtTreatMaster.jsp">
+		<forward name="NEW" path="/master/unitExtTreatMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<!-- Unit Wise Drug Mapping  -->
+	<action path="/master/UnitDrugMaster"
+			type="opd.master.controller.action.UnitDrugMasterACTION"
+			name="UnitDrugMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/unitDrugMaster.jsp">
+		<forward name="NEW" path="/master/unitDrugMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<!-- Unit Wise Macro Mapping  -->
+	<action path="/master/UnitMacroMaster"
+			type="opd.master.controller.action.UnitMacroMasterACTION"
+			name="UnitMacroMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/unitMacroMaster.jsp">
+		<forward name="NEW" path="/master/unitMacroMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<action path="/profileTypeTabMapping"
+			type="opd.master.controller.action.ProfileTypeTabMappingACT"
+			name="profileTypeTabMappingFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/profileTypeTabMapping.jsp">
+		<forward name="NEW" path="/master/profileTypeTabMapping.jsp"/>
+		<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true"/>
+	</action>
+	
+	<action path="/master/profileTypeMaster"
+			type="opd.master.controller.action.ProfileTypeMasterACTION"
+			name="profileTypeMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/profileTypeMaster.jsp">
+		<forward name="NEW" path="/master/profileTypeMaster.jsp"/>
+		<forward name="MODIFY" path="/master/profileTypeMaster.jsp" />
+   		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+  	  
+  	<!-- key word master  -->
+	<action path="/master/KeywordMaster"
+			type="opd.master.controller.action.KeywordMstAction"
+			name="KeywordMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/keywordMaster.jsp">
+		<forward name="NEW" path="/master/keywordMaster.jsp"/>
+		<forward name="MODIFY" path="/master/keywordModMaster.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<!-- Drug List Master  -->
+	<action path="/master/drugListMaster"
+			type="opd.master.controller.action.DrugListMasterACTION"
+			name="DrugListMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/drugListMaster.jsp">
+		<forward name="NEW" path="/master/drugListMaster.jsp"/>
+		<forward name="MODIFY" path="/master/drugListMasterMod.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<!-- Drug List Item Master  -->
+	<action path="/master/drugListItemMaster"
+			type="opd.master.controller.action.DrugListItemMasterACTION"
+			name="DrugListItemMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/drugListItemMaster.jsp">
+		<forward name="NEW" path="/master/drugListItemMaster.jsp"/>
+		<forward name="MODIFY" path="/master/drugListItemMasterMod.jsp" />
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+		<!-- Unit Wise Drug List Mapping  -->
+	<action path="/master/unitDrugListMaster"
+			type="opd.master.controller.action.UnitDrugListMasterACTION"
+			name="UnitDrugListMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/unitDrugListMaster.jsp">
+		<forward name="NEW" path="/master/unitDrugListMaster.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	  
+  	<!-- Attendant Reason Master -->
+  	<action path="/master/attendantReasonMaster"
+			type="opd.master.controller.action.AttendantReasonACTION"
+			name="AttendantReasonFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/attendantReason.jsp">
+		<forward name="NEW" path="/master/attendantReason.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+	</action>
+	
+	
+	<!-- Unit Wise Episode Keyword Mapping -->
+	<action path="/master/AddOPDUnitKeywordMaster"
+			type="opd.master.controller.action.UnitEpisodeKeywordACTION"
+			name="UnitEpisodeKeywordFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/UnitEpisodeKeyword.jsp" >
+		<forward name="NEW" path="/master/UnitEpisodeKeyword.jsp"/>	
+		<forward name="MODIFY" path="/master/modifyUnitKeyword.jsp" />	
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>	
+
+  	<!-- ICD Include Exclude Master -->
+  	<action path="/master/icdIncludeExcludeMst"
+			type="opd.master.controller.action.ICDIncludeExcludeACTION"
+			name="ICDIncludeExcludeFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/attendantReason.jsp">
+		<forward name="NEW" path="/master/icdIncludeExcludeAdd.jsp"/>
+		<forward name="MODIFY" path="/master/icdIncludeExcludeModify.jsp"/>
+		<forward name="VIEW" path="/master/icdIncludeExcludeView.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>		
+	</action>
+
+	<!-- Patient Alert Master -->
+	<action path="/master/patientAlertMaster"
+			type="opd.master.controller.action.PatientAlertMasterACTION"
+			name="PatientAlertMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/patient_alert_master.jsp">
+		<forward name="NEW" path="/master/patient_alert_master.jsp"/>
+		<forward name="MODIFY" path="/master/patient_alert_master.jsp"/>
+		<forward name="VIEW" path="/master/patient_alert_master.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>		
+	</action>
+	<!-- Chart Parameter Mapping Master -->
+	
+	<action path="/master/chartParameterMappingACTION"
+			type="opd.master.controller.action.ChartParameterMappingACTION"
+			name="chartParameterMappingFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/chart_parameter_mapping_mst.jsp">
+		<forward name="NEW" path="/master/chart_parameter_mapping_mst.jsp"/>
+		<forward name="MODIFY" path="/master/chart_parameter_mapping_mst.jsp"/>
+		<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+	</action>
+	
+	
+	<!-- Disease Site Master -->
+	<action path="/master/diseaseSiteMaster"
+			type="opd.master.controller.action.DiseaseSiteACTION"
+			name="DiseaseSiteFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/allergyTypeAdd.jsp">
+			<forward name="NEW" path="/master/diseaseSiteMaster.jsp"/>
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+	</action>
+	
+	<!-- Chart Master -->
+	
+	<action path="/master/chartMasterACTION"
+			type="opd.master.controller.action.ChartMasterACTION"
+			name="chartMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/chart_master.jsp">
+		<forward name="NEW" path="/master/chart_master.jsp"/>
+		<forward name="MODIFY" path="/master/chart_master.jsp"/>
+   		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+	</action>
+	
+	<action path="/master/chartUnitMappingMst"
+			type="opd.master.controller.action.ChartUnitMappingMstACTION"
+			name="ChartUnitMappingMstFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/chart_unit_mapping_mst.jsp">
+		<forward name="NEW" path="/master/chart_unit_mapping_mst.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+	</action>
+	
+	<action path="/master/DeptUnitIcdMapping"
+			type="opd.master.controller.action.DeptUnitIcdMappingACTION"
+			name="DeptUnitIcdMappingFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/dept_unit_wise_icd_mapping.jsp">
+		<forward name="NEW" path="/master/dept_unit_wise_icd_mapping.jsp"/>
+		<forward name="NEXT" path="/master/unit_group_wise_disease_mapping.jsp"/>
+		<forward name="MODIFY" path="/master/unit_disease_mappin_modify.jsp"/>
+		<forward name="VIEW" path="/master/unit_disease_mappin_modify.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+		<forward name="MAPPEDDISEASE" path="/master/opd_unit_mapped_disease_popup.jsp"/>	
+	</action>
+	
+	<action path="/master/DeptUnitHospitalDisease"
+			type="opd.master.controller.action.DeptUnitHospitalDiseaseACTION"
+			name="DeptUnitHospitalDiseaseFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/dept_unit_hosdisease_mapping_mst.jsp">
+		<forward name="NEW" path="/master/dept_unit_hosdisease_mapping_mst.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>	
+		
+		
+	</action>
+	
+	<action path="/master/opdIcdMappingMaster"
+			type="opd.master.controller.action.OpdIcdMappingMasterACTION"
+			name="OpdIcdMappingMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/opd_icd_mapping_master.jsp">
+		<forward name="NEW" path="/master/opd_icd_mapping_master.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		<forward name="MODIFY" path="/master/opd_icd_mapping_modify.jsp"/>
+		<forward name="VIEW" path="/master/opd_icd_mapping_modify.jsp"/>
+		<forward name="MAPPEDDISEASE" path="/master/opd_mapped_icd_disease_popup.jsp"/>	
+		
+	</action>
+	
+	
+	<!-- Icd Index Level Master by Vivek Aggarwal [31-Jan-2011]  -->
+	
+	<action path="/master/IcdIndexLevelMaster"
+			type="opd.master.controller.action.IcdIndexLevelMasterACTION"
+			name="IcdIndexLevelMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/icd_index_level_master.jsp">
+		<forward name="NEW" path="/master/icd_index_level_master_add.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		<forward name="MODIFY" path="/master/icd_index_level_master_modify.jsp"/>
+		<forward name="VIEW" path="/master/icd_index_level_master_view.jsp"/>
+		
+	</action>
+	
+	
+	
+	<action path="/master/IcdIndexMaster" 
+			type="opd.master.controller.action.IcdIndexMasterACTION"
+			name="IcdIndexMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/icd_index_master.jsp">
+		<forward name="NEW" path="/master/icd_index_master.jsp"/>
+		<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt"/>
+		<forward name="MODIFY" path="/master/icd_index_master_modify.jsp"/>
+		<forward name="VIEW" path="/master/icd_index_master_modify.jsp"/>
+			
+	</action>
+	
+	<action path="/master/IcdCrossRefMaster"
+			type="opd.master.controller.action.IcdCrossRefMasterACTION"
+			name="IcdCrossRefMasterFB"
+			validate="false"
+			scope="request"
+			parameter="hmode"
+			input="/master/icd_cross_reference_master.jsp">
+		<forward name="NEW" path="/master/icd_cross_reference_master.jsp"/>
+		<forward name="ADD" path="/master/icd_cross_reference_master_add.jsp"/>
+		<forward name="MODIFY" path="/master/icd_cross_reference_master_modify.jsp"/>
+		<forward name="CANCEL" path="/master/icd_cross_reference_master.jsp" />   
+		
+	</action>
+	
+	
+	
+</action-mappings>
+  
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/OpdDesk-tiles-def.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>
+
+</struts-config>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+		<form-bean name="DeceasedAcceptanceFB" type="mortuary.transaction.controller.fb.DeceasedAcceptanceFB"/>
+		<form-bean name="DeceasedStorageFB" type="mortuary.transaction.controller.fb.DeceasedStorageFB"/>
+		<form-bean name="DeceasedHandoverFB" type="mortuary.transaction.controller.fb.DeceasedHandoverFB"/>
+		<form-bean name="OfflineDeceasedAcceptanceFB" type="mortuary.transaction.controller.fb.OfflineDeceasedAcceptanceFB"/>
+		<form-bean name="PostmortemRequestFB" type="mortuary.transaction.controller.fb.PostmortemRequestFB"/>
+		<form-bean name="PostmortemLoginFB" type="mortuary.transaction.controller.fb.PostmortemLoginFB"/>
+		<form-bean name="UnknownBodyIdentificationFB" type="mortuary.transaction.controller.fb.UnknownBodyIdentificationFB"/>
+		<form-bean name="OpinionApprovalFB" type="mortuary.transaction.controller.fb.OpinionApprovalFB"/>
+		<form-bean name="PostmortemRequestAcceptanceFB" type="mortuary.transaction.controller.fb.PostmortemRequestAcceptanceFB"/>
+		<form-bean name="ExternalDeceasedAcceptanceFB" type="mortuary.transaction.controller.fb.ExternalDeceasedAcceptanceFB"/>
+		
+		<!-- For Postmortem Desk Start-->
+		<form-bean name="PostmortemDeskFB" type="mortuary.transaction.controller.fb.PostmortemDeskFB"/>
+		
+		<form-bean name="GeneralAppearanceEntryFB" type="mortuary.transaction.controller.fb.GeneralAppearanceEntryFB"/>
+		<form-bean name="PostmortemEntryListFB" type="mortuary.transaction.controller.fb.PostmortemEntryListFB"/>	
+		<form-bean name="DeceasedTileFB" type="mortuary.transaction.controller.fb.DeceasedTileFB"/>
+		<form-bean name="DeceasedItemFB" type="mortuary.transaction.controller.fb.DeceasedItemDetailFB"/>
+		<form-bean name="BodyIdentificationDetailFB" type="mortuary.transaction.controller.fb.BodyIdentificationDetailFB"/>
+		<form-bean name="PhotoUploadFB" type="mortuary.transaction.controller.fb.PhotoUploadFB"/>
+		<form-bean name="DeceasedInjuriesFB" type="mortuary.transaction.controller.fb.DeceasedInjuriesFB"/>
+		<form-bean name="PostmortemTeamDetailFB" type="mortuary.transaction.controller.fb.PostmortemTeamDetailFB"/>
+		<form-bean name="SampleSendToExtLabFB" type="mortuary.transaction.controller.fb.SampleSendToExtLabFB"/>
+		
+		<!-- For Postmortem Desk End-->
+		
+		<form-bean name="PostmortemWaveoffDetailFB" type="mortuary.transaction.controller.fb.PostmortemWaveoffDetailFB"/>
+		<form-bean name="mortuaryImageUploadFB" type="mortuary.transaction.controller.fb.MortuaryImageUploadFB"/>
+		<form-bean name="SampleResultEntryFB" type="mortuary.transaction.controller.fb.SampleResultEntryFB"/>
+		<form-bean name="PostmortemHandoverDetailFB" type="mortuary.transaction.controller.fb.PostmortemHandoverDetailFB"/>
+		<form-bean name="DeceasedGeneralAppearanceFB" type="mortuary.transaction.controller.fb.DeceasedGeneralAppearanceFB"/>
+	
+	</form-beans>
+	
+	<action-mappings>
+	
+		<!-- Deceased Tile -->
+		<action path="/deceasedTile"
+				type="mortuary.transaction.controller.action.DeceasedTileACT"
+				name="DeceasedTileFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/deceasedTile.jsp">
+			<forward name="NEW" path="/transaction/deceasedTile.jsp"/>
+		</action>
+		
+		<!-- Postmortem Desk Login    -->
+		<action path="/postmortemLogin"
+				type="mortuary.transaction.controller.action.PostmortemLoginACT"
+				name="PostmortemLoginFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+			<forward name="DYNAMICDESK" path="/../hisglobal/utility/dynamicdesk/enter.cnt" />
+		</action>
+		
+		<!-- Postmortem Desk Header -->
+		<action path="/gotoPostmortemDeskHeaderPage"
+				parameter="/mortuary/transaction/postmortemDeskSubHeader.jsp"
+				type="org.apache.struts.actions.ForwardAction" />
+				
+		<!-- Postmortem Desk Center -->
+		<action path="/postmortemDesk"
+				type="mortuary.transaction.controller.action.PostmortemDeskACT"
+				name="PostmortemDeskFB"
+				validate="false"
+				parameter="mode"
+				scope="request"
+				input="/transaction/postmortemDesk.jsp">		
+			<forward name="NEW" path="/postmortemDesk"/>	
+			<forward name="DEFAULT" path="/mortuaryUnderConstructionDesk"/>
+			<forward name="GENERALAPPEARANCE" path="/generalAppearance"/>
+			<forward name="DECEASEDITEM" path="/deceasedItemDetail"/>
+			<forward name="BODYIDENTIFICATION" path="/bodyIdentification"/>
+			<forward name="PHOTOUPLOAD" path="/photoUpload"/>
+			<forward name="INJURIES" path="/deceasedInjuries"/>
+			<forward name="TEAMDETAIL" path="/postmortemTeamDetail"/>
+			<forward name="DECEASEDSAMPLESEND" path="/sampleSendToExtLab"/>
+		</action>
+		
+		
+		<!-- Postmortem Desk Entry List -->
+		<action path="/postmortemEntryList"
+				type="mortuary.transaction.controller.action.PostmortemEntryListACT"
+				name="PostmortemEntryListFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/postmortemEntryList.jsp">
+			<forward name="NEW" path="/transaction/postmortemEntryList.jsp" />
+		</action>
+		
+		<!-- General Appearance Entry -->
+		<action path="/generalAppearanceEntry"
+				type="mortuary.transaction.controller.action.GeneralAppearanceEntryACT"
+				name="GeneralAppearanceEntryFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/generalAppearanceEntry.jsp">
+			<forward name="NEW" path="/transaction/generalAppearanceEntry.jsp" />
+		</action>
+		
+		<!-- Deceased Item Detail -->
+		<action path="/deceasedItemDetail"
+				type="mortuary.transaction.controller.action.DeceasedItemDetailACT"
+				name="DeceasedItemFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/deceasedItemDetail.jsp">
+			<forward name="NEW" path="/transaction/deceasedItemDetail.jsp" />
+		</action>
+		
+		<!-- Body Identification Detail -->
+		<action path="/bodyIdentification"
+				type="mortuary.transaction.controller.action.BodyIdentificationDetailACT"
+				name="BodyIdentificationDetailFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/bodyIdentificationDetail.jsp">
+			<forward name="NEW" path="/transaction/bodyIdentificationDetail.jsp" />
+		</action>
+		
+		<!-- Photo Upload -->
+		<action path="/photoUpload"
+				type="mortuary.transaction.controller.action.PhotoUploadACT"
+				name="PhotoUploadFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/photoUpload.jsp">
+			<forward name="NEW" path="/transaction/photoUpload.jsp" />
+		</action>
+		
+		<!-- Deceased Injuries -->
+		<action path="/deceasedInjuries"
+				type="mortuary.transaction.controller.action.DeceasedInjuriesACT"
+				name="DeceasedInjuriesFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/deceasedInjuries.jsp">
+			<forward name="NEW" path="/transaction/deceasedInjuries.jsp" />
+		</action>
+		
+		<!-- Postmortem Team Detail -->
+		<action path="/postmortemTeamDetail"
+				type="mortuary.transaction.controller.action.PostmortemTeamDetailACT"
+				name="PostmortemTeamDetailFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/postmortemTeamDetail.jsp">
+			<forward name="NEW" path="/transaction/postmortemTeamDetail.jsp" />
+		</action>
+		
+		<!--Sample Send To External Detail -->
+		<action path="/sampleSendToExtLab"
+				type="mortuary.transaction.controller.action.SampleSendToExtLabACT"
+				name="SampleSendToExtLabFB"
+				parameter="hmode"
+				validate="false"
+				scope="request"
+				input="/transaction/sampleSendToExtLab.jsp">
+			<forward name="NEW" path="/transaction/sampleSendToExtLab.jsp" />
+		</action>
+		
+		<!-- End of Postmortem Desk -->
+		
+		
+		<action path="/deceasedGeneralAppearance"
+				type="mortuary.transaction.controller.action.DeceasedGeneralAppearanceACT"
+				name="DeceasedGeneralAppearanceFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/deceasedGeneralAppearance.jsp">
+			<forward name="NEW" path="/transaction/deceasedGeneralAppearance.jsp"/>
+			<forward name="SEARCH" path="/transaction/searchDeceasedPopup.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/postmortemHandoverDetail"
+				type="mortuary.transaction.controller.action.PostmortemHandoverDetailACT"
+				name="PostmortemHandoverDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/postmortemHandoverDetail.jsp">
+			<forward name="NEW" path="/transaction/postmortemHandoverDetail.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/sampleResultEntry"
+				type="mortuary.transaction.controller.action.SampleResultEntryACT"
+				name="SampleResultEntryFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/sampleResultEntry.jsp">
+			<forward name="NEW" path="/transaction/sampleResultEntry.jsp"/>
+			<forward name="SEARCH" path="/transaction/searchPostmortemPopup.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/externalDeceasedAcceptance"
+				type="mortuary.transaction.controller.action.ExternalDeceasedAcceptanceACT"
+				name="ExternalDeceasedAcceptanceFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/externalDeceasedAcceptance.jsp">
+			<forward name="NEW" path="/transaction/externalDeceasedAcceptance.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/postmortemReqAcceptance"
+				type="mortuary.transaction.controller.action.PostmortemRequestAcceptanceACT"
+				name="PostmortemRequestAcceptanceFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/postmortemRequestAcceptance.jsp">
+			<forward name="NEW" path="/transaction/postmortemRequestAcceptance.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/opinionApproval"
+				type="mortuary.transaction.controller.action.OpinionApprovalACT"
+				name="OpinionApprovalFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/opinionApproval.jsp">
+			<forward name="NEW" path="/transaction/opinionApproval.jsp"/>
+			<forward name="SAMPLE" path="/transaction/viewRequestedSampleResult.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/unknownBodyIdenttification"
+				type="mortuary.transaction.controller.action.UnknownBodyIdentificationACT"
+				name="UnknownBodyIdentificationFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/unknownBodyIdentification.jsp">
+			<forward name="NEW" path="/transaction/unknownBodyIdentification.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/postmortemRequest"
+				type="mortuary.transaction.controller.action.PostmortemRequestACT"
+				name="PostmortemRequestFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/postmortemRequest.jsp">
+			<forward name="NEW" path="/transaction/postmortemRequest.jsp"/>
+			<forward name="VIEWCONSENT" path="/transaction/viewClinicalAutopsyConsent.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/offlineDeceasedAcceptance"
+				type="mortuary.transaction.controller.action.OfflineDeceasedAcceptanceACT"
+				name="OfflineDeceasedAcceptanceFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/offlineDeceasedAcceptance.jsp">
+			<forward name="NEW" path="/transaction/offlineDeceasedAcceptance.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/deceasedHandover"
+				type="mortuary.transaction.controller.action.DeceasedHandoverACT"
+				name="DeceasedHandoverFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/deceasedHandover.jsp">
+			<forward name="NEW" path="/transaction/deceasedHandover.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/deceasedStorage"
+				type="mortuary.transaction.controller.action.DeceasedStorageACT"
+				name="DeceasedStorageFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/deceasedStorage.jsp">
+			<forward name="NEW" path="/transaction/deceasedStorage.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/deceasedAcceptance"
+				type="mortuary.transaction.controller.action.DeceasedAcceptanceACT"
+				name="DeceasedAcceptanceFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/deceasedAcceptance.jsp">
+			<forward name="NEW" path="/transaction/deceasedAcceptance.jsp"/>
+			<forward name="POLICE" path="/transaction/policeVerPopup.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/postmortemWaveoff"
+				type="mortuary.transaction.controller.action.PostmortemWaveoffDetailACT"
+				name="PostmortemWaveoffDetailFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/postmortemWaveoff.jsp">
+			<forward name="NEW" path="/transaction/postmortemWaveoff.jsp"/>
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/mortuaryImageUpload"
+				type="mortuary.transaction.controller.action.MortuaryImageUploadACT"
+				name="mortuaryImageUploadFB"
+				validate="false"
+				scope="request"
+				parameter="hmode"
+				input="/transaction/mortuaryImageUpload.jsp">
+			<forward name="NEW" path="/transaction/mortuaryImageUpload.jsp"/>
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor" />
+	</controller>
+
+	<message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/Mortuary-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+</struts-config>	

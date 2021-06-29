@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+
+		<form-bean name="RosterCatgMstFB" type="dutyroster.masters.controller.fb.RosterCategoryMstFB"></form-bean>
+		<form-bean name="ShiftMstFB" type="dutyroster.masters.controller.fb.ShiftTypeMstFB" ></form-bean>
+		<form-bean name="dutyRoleMstFB" type="dutyroster.masters.controller.fb.DutyRoleMstFB" ></form-bean>
+		<form-bean name="rosterTypeMstFB" type="dutyroster.masters.controller.fb.RosterTypeMstFB" ></form-bean>
+		<form-bean name="rosterShiftMstFB" type="dutyroster.masters.controller.fb.RosterShiftMstFB" ></form-bean>
+		<form-bean name="DutyAreaEmpMstFB" type="dutyroster.masters.controller.fb.DutyAreaEmployeeMstFB" ></form-bean>
+		<form-bean name="RosterAreaCapMstFB" type="dutyroster.masters.controller.fb.RosterAreaCapacityMstFB" ></form-bean>
+		<form-bean name="rosterRoleMstFB" type="dutyroster.masters.controller.fb.RosterRoleMstFB" ></form-bean>
+		<form-bean name="rosterDesignationMstFB" type="dutyroster.masters.controller.fb.RosterDesignationMstFB" ></form-bean>
+		<form-bean name="dutyBlockMstFB" type="dutyroster.masters.controller.fb.DutyBlockMstFB" ></form-bean>
+		<form-bean name="blockAreaMstFB" type="dutyroster.masters.controller.fb.BlockAreaMstFB" ></form-bean>
+		<form-bean name="OtherAreaMstFB" type="dutyroster.masters.controller.fb.OtherAreaMstFB"></form-bean>
+		<form-bean name="RosterPrintMstFB" type="dutyroster.masters.controller.fb.RosterPrintMstFB" ></form-bean>
+		
+	</form-beans>
+	
+	
+	<action-mappings>
+	
+		<action path = "/masters/RosterCategoryMstAddModACT"
+			type = "dutyroster.masters.controller.action.RosterCategoryMstACT"
+			name = "RosterCatgMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/rosterCategoryMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/rosterCategoryMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		<action path = "/masters/dutyRoleMstAddModACT"
+			type = "dutyroster.masters.controller.action.DutyRoleMstACT"
+			name = "dutyRoleMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/dutyRoleMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/dutyRoleMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/dutyRoleMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		<action path = "/masters/dutyBlockMstAddModACT"
+			type = "dutyroster.masters.controller.action.DutyBlockMstACT"
+			name = "dutyBlockMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/dutyBlockMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/dutyBlockMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/dutyBlockMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		<action path = "/masters/rosterTypeMstAddModACT"
+			type = "dutyroster.masters.controller.action.RosterTypeMstACT"
+			name = "rosterTypeMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/rosterTypeMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/rosterTypeMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/rosterTypeMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		<action path = "/masters/rosterShiftMstAddModACT"
+			type = "dutyroster.masters.controller.action.RosterShiftMstACT"
+			name = "rosterShiftMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/rosterShiftMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/rosterShiftMstAddMod.jsp" />
+			<forward name="MODIFY" path="/masters/rosterShiftMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		<action path = "/masters/rosterRoleMstAddModACT"
+			type = "dutyroster.masters.controller.action.RosterRoleMstACT"
+			name = "rosterRoleMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/rosterRoleMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/rosterRoleMstAddMod.jsp" />
+			<forward name="GETDUTYROLE" path="/masters/rosterRoleMstAddMod.jsp" />
+			<forward name="LIST" path="/../startup/initPage.jsp" redirect="true"/>
+		</action>
+		
+		<action path = "/masters/rosterDesignationMstAddModACT"
+			type = "dutyroster.masters.controller.action.RosterDesignationMstACT"
+			name = "rosterDesignationMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/rosterDesignationMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/rosterDesignationMstAddMod.jsp" />
+			<forward name="LIST" path="/../startup/initPage.jsp" redirect="true"/>
+		</action>
+		
+		
+		<action path = "/masters/ShiftTypeMstAddModACT"
+			type = "dutyroster.masters.controller.action.ShiftTypeMstACT"
+			name = "ShiftMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/shiftTypeMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/shiftTypeMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		
+		<action path = "/masters/DutyAreaEmpMstAddModACT"
+			type = "dutyroster.masters.controller.action.DutyAreaEmployeeMstACT"
+			name = "DutyAreaEmpMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/dutyAreaEmployeeMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/dutyAreaEmployeeMstAddMod.jsp" />
+			<forward name="INITIAL" path="/../startup/initPage.jsp" redirect="true"/> 
+		</action> 
+		
+		<action path = "/masters/blockAreaMstAddModACT"
+			type = "dutyroster.masters.controller.action.BlockAreaMstACT"
+			name = "blockAreaMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/blockAreaMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/blockAreaMstAddMod.jsp" />
+			<forward name="VIEW" path="/masters/blockAreaMstView.jsp" />
+			<forward name="CHANGESEQUENCE" path="/masters/blockAreaMstChangeSeq.jsp" />
+			<forward name="INITIAL" path="/../startup/initPage.jsp" redirect="true"/> 
+		</action> 
+		
+		
+		<action path = "/masters/RosterAreaCapacityMstAddModACT"
+			type = "dutyroster.masters.controller.action.RosterAreaCapacityMstAct"
+			name = "RosterAreaCapMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/rosterAreaCapacityMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/rosterAreaCapacityMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+
+	<action path = "/masters/OtherAreaMstAddModACT"
+			type = "dutyroster.masters.controller.action.OtherAreaMstACT"
+			name = "OtherAreaMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/otherAreaMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/otherAreaMstAddMod.jsp" />
+			<forward name="LIST" path="/../masterWorkshop/mstHandlerListAction.cnt" />
+		</action>
+		
+		
+		
+		<action path = "/masters/RosterPrintMstAddModACT"
+			type = "dutyroster.masters.controller.action.RosterPrintMstACT"
+			name = "RosterPrintMstFB"
+			scope = "request"
+			validate ="false"
+			parameter = "hmode"
+			input = "/masters/rosterPrintMstAddMod.jsp"	>
+			<forward name="ADD" path="/masters/rosterPrintMstAddMod.jsp" />
+			<forward name="CHANGE_ORDER" path="/masters/rosterPrintMstChangeOrder.jsp" />
+			<forward name="INITIAL" path="/../startup/initPage.jsp" redirect="true"/> 
+		</action> 
+		
+		
+	<action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+	 
+	 
+	</action-mappings>
+
+	<controller>
+		<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+	</controller>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/dutyroster-tiles-def.xml"/>
+		<set-property property="definitions-validate-parser" value="true"/>
+		<set-property property="moduleAware" value="true"/>
+	</plug-in>
+</struts-config>

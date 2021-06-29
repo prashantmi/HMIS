@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<!-- Waste -->
+	<definition name="/dynamicDeskCommonDesk" path="/opd/transaction/opdCommonnDeskLayout.jsp">
+		<put name="header" value="/registration/header.jsp" />
+		<put name="subHeader" value="/opd/transaction/deskSubHeader.jsp" />
+		<put name="leftMenu" value="/opd/leftMenuOpdDesk.cnt" />
+		<put name="rightMenu" value="/opd/righttMenuOpdDesk.cnt" />
+		<put name="body" value="/opd/opdDesk.cnt" />
+		<put name="footer" value="/opd/transaction/opdDeskFooter.jsp" />
+	</definition>
+
+</tiles-definitions>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC 
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+	
+		<form-bean name="commonReportFB" type="hisglobal.presentation.ReportFB"/>
+		<form-bean name="ListOfDeceasedFB" type="mortuary.reports.controller.fb.ListOfDeceasedFB"/>
+		<form-bean name="DoctorWisePostMortemFB" type="mortuary.reports.controller.fb.DoctorWisePostMortemFB"/>
+		<form-bean name="DoctorWisePostMortemCountFB" type="mortuary.reports.controller.fb.DoctorWisePostMortemCountFB"/>
+		<form-bean name="DeathMannerWisePostMortemCountFB" type="mortuary.reports.controller.fb.DeathMannerWisePostMortemCountFB"/>
+		<form-bean name="LabAndTestWisePostMortemFB" type="mortuary.reports.controller.fb.LabAndTestWisePostMortemFB"/>
+		<form-bean name="TestWisePostMortemFB" type="mortuary.reports.controller.fb.TestWisePostMortemFB"/>
+		<form-bean name="IoNameAndPSWisePostMortemFB" type="mortuary.reports.controller.fb.IoNameAndPSWisePostMortemFB"/>
+		<form-bean name="BroughtDeadCasesFB" type="mortuary.reports.controller.fb.BroughtDeadCasesFB"/>
+		
+	</form-beans>
+	
+	<action-mappings>
+	
+		<action path="/report"
+				type="mortuary.reports.controller.action.MortuaryCommonReportACTION"
+				name="commonReportFB"
+				scope="request"
+				parameter="mode">
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+			<forward name="LISTOFDECEASED" path="/listOfDeceasedReportdefinition"/>
+			<forward name="LISTOFDECEASEDVIEW" path="/report/listOfDeceasedReport.cnt"/>
+			<forward name="DOCTORWISEPOSTMORTEM" path="/doctorWisePostMortemReportdefinition"/>
+			<forward name="DOCTORWISEPOSTMORTEMVIEW" path="/report/doctorWisePostMortemReport.cnt"/>
+			<forward name="DOCTORWISEPOSTMORTEMCOUNT" path="/doctorWisePostMortemCountReportdefinition"/>
+			<forward name="DOCTORWISEPOSTMORTEMCOUNTVIEW" path="/report/doctorWisePostMortemCountReport.cnt"/>
+			<forward name="DEATHMANNERWISEPOSTMORTEMCOUNT" path="/deathMannerWisePostMortemCountReportdefinition"/>
+			<forward name="DEATHMANNERWISEPOSTMORTEMCOUNTVIEW" path="/report/deathMannerWisePostMortemCountReport.cnt"/>
+			<forward name="LABANDTESTWISEPOSTMORTEM" path="/labAndTestWisePostMortemReportdefinition"/>
+			<forward name="LABANDTESTWISEPOSTMORTEMVIEW" path="/report/labAndTestWisePostMortemReport.cnt"/>
+			<forward name="TESTWISEPOSTMORTEM" path="/testWisePostMortemReportdefinition"/>
+			<forward name="TESTWISEPOSTMORTEMVIEW" path="/report/testWisePostMortemReport.cnt"/>
+			<forward name="IONAMEANDPSWISEPOSTMORTEM" path="/ioNameAndPSWisePostMortemReportdefinition"/>
+			<forward name="IONAMEANDPSWISEPOSTMORTEMVIEW" path="/report/ioNameAndPSWisePostMortemReport.cnt"/>
+			<forward name="BROUGHTDEADCASES" path="/broughtDeadCasesReportdefinition"/>
+			<forward name="BROUGHTDEADCASESVIEW" path="/report/broughtDeadCasesReport.cnt"/>
+			
+		</action>	
+		
+		<action path="/report/listOfDeceasedReport"
+				type="mortuary.reports.controller.action.ListOfDeceasedACTION"
+				name="ListOfDeceasedFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/listOfDeceased.jsp"/>
+			<forward name="ERROR" path="/reports/MortuaryErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/doctorWisePostMortemReport"
+				type="mortuary.reports.controller.action.DoctorWisePostMortemACTION"
+				name="DoctorWisePostMortemFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/doctorWisePostMortem.jsp"/>
+			<forward name="ERROR" path="/reports/MortuaryErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/doctorWisePostMortemCountReport"
+				type="mortuary.reports.controller.action.DoctorWisePostMortemCountACTION"
+				name="DoctorWisePostMortemCountFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/doctorWisePostMortemCount.jsp"/>
+			<forward name="ERROR" path="/reports/MortuaryErrorPageReportDataNotFound.jsp"/> 
+		</action>	
+		
+		<action path="/report/deathMannerWisePostMortemCountReport"
+				type="mortuary.reports.controller.action.DeathMannerWisePostMortemCountACTION"
+				name="DeathMannerWisePostMortemCountFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/deathMannerWisePostMortemCount.jsp"/>
+			<forward name="ERROR" path="/reports/MortuaryErrorPageReportDataNotFound.jsp"/> 
+		</action>	
+		
+		<action path="/report/labAndTestWisePostMortemReport"
+				type="mortuary.reports.controller.action.LabAndTestWisePostMortemACTION"
+				name="LabAndTestWisePostMortemFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/labAndTestWisePostMortem.jsp"/>
+			<forward name="ERROR" path="/reports/MortuaryErrorPageReportDataNotFound.jsp"/> 
+		</action>	
+		
+		<action path="/report/testWisePostMortemReport"
+				type="mortuary.reports.controller.action.TestWisePostMortemACTION"
+				name="TestWisePostMortemFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/testWisePostMortem.jsp"/>
+			<forward name="ERROR" path="/reports/MortuaryErrorPageReportDataNotFound.jsp"/> 
+		</action>	
+		
+		<action path="/report/ioNameAndPSWisePostMortemReport"
+				type="mortuary.reports.controller.action.IoNameAndPSWisePostMortemACTION"
+				name="IoNameAndPSWisePostMortemFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/ioNameAndPSWisePostMortem.jsp"/>
+			<forward name="ERROR" path="/reports/MortuaryErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/broughtDeadCasesReport"
+				type="mortuary.reports.controller.action.BroughtDeadCasesACTION"
+				name="BroughtDeadCasesFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/broughtDeadCases.jsp"/>
+			<forward name="ERROR" path="/reports/MortuaryErrorPageReportDataNotFound.jsp"/> 
+		</action>	
+				
+		<action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+		
+	</action-mappings>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+	 <plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/Mortuary-tiles-def.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+	</plug-in>        
+
+</struts-config>          

@@ -1,0 +1,172 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Area Master'>
+		<common-values>
+			<master-name>ServiceAreaMst</master-name>
+			<master-title>Service Area Master</master-title>
+		</common-values>
+
+
+		<list-page>
+			<tableHeading>Service Area Master</tableHeading>
+			<list-table>HOPT_SERVICE_AREA_MST</list-table>
+
+			<columns>
+				<column>Service Area Name</column>
+				<column>Department</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HOPSTR_SERVICE_AREA_NAME)</field>
+					<field>INITCAP(B.GSTR_DEPT_NAME)</field>
+				</fields>
+
+				<primaryKey>
+					<field>A.HOPNUM_SERVICE_AREA_ID </field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+
+				<tables>
+					<table alias='A'>HOPT_SERVICE_AREA_MST </table>
+					<table alias="B">GBLT_DEPARTMENT_MST</table>
+				</tables>
+
+				<condition>
+                    <isvalid-field> A.GNUM_DEPT_CODE=B.GNUM_DEPT_CODE AND A.GNUM_ISVALID</isvalid-field>
+                    <orderby> order by UPPER(A.HOPSTR_SERVICE_AREA_NAME)</orderby>
+                </condition>
+			</query-detail>
+		</list-page>
+
+
+		<add-page>
+			<dynamic-page>
+				<controls>
+					<control type="combo" index="0" >
+						<label>Department Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_DEPT_NAME)</text-field>
+									<value-field>A.GNUM_DEPT_CODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_DEPARTMENT_MST</table>
+								</tables>
+								<condition>
+									<general> A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.GSTR_DEPT_NAME)</general>
+								</condition>
+							</dynamic>
+						</data>
+						<default>0</default>
+						<submitRequired>0</submitRequired>
+					</control>
+
+					<control type="text" index="1" >
+						<label>Service Area Name</label>
+						<constraints maxlength='30' size='30' mandatory ='true' inputType="alphabets" />
+						<readOnly>0</readOnly>
+					</control>
+
+                    <control type="combo" index="2">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+				</controls>
+
+				<insert-query>
+					<primary-key>
+						<field>HOPNUM_SERVICE_AREA_ID</field>
+						<value>(SELECT NVL (MAX (hopnum_service_area_id), '#0': ||'00') + 1
+                				FROM hopt_service_area_mst
+               					WHERE hopt_service_area_mst.gnum_dept_code = '#0' )</value>
+					</primary-key>
+
+					<fields valueMap='#0'>GNUM_DEPT_CODE</fields>
+					<fields valueMap="#I1">HOPSTR_SERVICE_AREA_NAME</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>HOPTDT_ENTRY_DATE</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+
+					<table>HOPT_SERVICE_AREA_MST</table>
+				</insert-query>
+			</dynamic-page>
+		</add-page>
+
+
+		<modify-page>
+		    <dynamic-page>
+		    	<controls>
+		            <control type="text" index="0">
+						<label>Department Name </label>
+						<constraints  size='30' maxlength = "50" inputType='alphabets' mandatory = 'true'/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+
+					<control type="text" index="1">
+						<label>Service Area Name</label>
+						<constraints  size='30' maxlength = "30" inputType='alphabets' mandatory = 'true'/>
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+
+					<control type="combo" index="2">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+            	</controls>
+
+		        <initialise-query>
+			   		<fields>
+						<field>(A.GSTR_DEPT_NAME)</field>
+						<field>B.HOPSTR_SERVICE_AREA_NAME</field>
+				 	</fields>
+					<tables>
+						<table alias='A'>GBLT_DEPARTMENT_MST</table>
+						<table alias="B">HOPT_SERVICE_AREA_MST</table>
+					</tables>
+					<condition>
+						<dependent>
+						    <clause>A.GNUM_DEPT_CODE=B.GNUM_DEPT_CODE AND B.HOPNUM_SERVICE_AREA_ID = #C1 </clause>
+						</dependent>
+					</condition>
+				</initialise-query>
+
+				<update-query>
+					<fields valueMap='#1'>HOPSTR_SERVICE_AREA_NAME</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>HOPDT_LSMOD_DATE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+
+					<table>HOPT_SERVICE_AREA_MST</table>
+					<condition>HOPNUM_SERVICE_AREA_ID = #1 </condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Area Procedure Service Master'>
+		<common-values>
+			<master-name>ServiceAreaProcServiceMst</master-name>
+			<master-title>Service Area Procedure Service Master</master-title>
+		</common-values>	
+	<list-page>
+				<tableHeading>Service Area Procedure Service  Master</tableHeading> 
+				<list-table>HSRV_PROCEDURE_SERVICE_MST</list-table>
+				
+				<columns>					 
+					 <column>Service</column>
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>upper(HSRNUM_SERVICE_NAME)</field>
+					</fields>
+					<primaryKey>
+						<field>A.HSRNUM_SERVICE_CODE</field>
+					    <field>A.GNUM_HOSPITAL_CODE</field>						
+					</primaryKey>
+					<tables>
+						<table alias='A'>HSRV_PROCEDURE_SERVICE_MST</table>
+					</tables>
+					<condition>			
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>							              				 
+                            <isvalid-field> A.GNUM_ISVALID</isvalid-field>
+                             <orderby> order by upper(A.HSRNUM_SERVICE_NAME)</orderby>                             
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+	<add-page>			
+			<dynamic-page>	
+				<controls>
+					<control type="text" index="0" >
+						<label>Service</label>
+						<constraints  inputType ='alphanumeric'  methodstring="onkeypress='return CheckMaxLength(event,this,500);'"/>
+						<readOnly>0</readOnly>
+					</control>	
+					<control type="combo" index="1">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>										
+				</controls>
+				<insert-query>
+				<primary-key>
+						<field>HSRNUM_SERVICE_CODE</field>						
+						<value>(SELECT NVL (MAX (HSRNUM_SERVICE_CODE),'100') + 1  FROM HSRV_PROCEDURE_SERVICE_MST)</value>		
+				</primary-key>				
+					<fields valueMap='#0'>HSRNUM_SERVICE_NAME</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>HSRDT_ENTRY_DATE</fields>
+					<fields valueMap='#1'>GNUM_ISVALID</fields>					
+					<table>HSRV_PROCEDURE_SERVICE_MST</table>
+				</insert-query>			
+				
+			</dynamic-page>			
+		</add-page>
+		<modify-page>
+		    <dynamic-page>
+		    	<controls> 
+					<control type="text" index="0" >
+						<label>Service</label>
+						<constraints  styleString="style='width:230px; height:40px'" inputType ='alphanumeric'  methodstring="onkeypress='return CheckMaxLength(event,this,100);'"/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="1">
+						<label>IsValid Status </label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>			
+            	</controls>
+		        <initialise-query>
+			   	 <fields>
+					 <field>A.HSRNUM_SERVICE_NAME</field>					 
+				 </fields>					
+					<tables>						
+						<table alias="A"> HSRV_PROCEDURE_SERVICE_MST</table>
+					</tables>
+					<condition>						
+						<dependent>
+						    <clause>A.HSRNUM_SERVICE_CODE = #C1 </clause>
+						     <clause> AND A.GNUM_HOSPITAL_CODE = #C2 </clause>
+						</dependent>
+					</condition>						
+				</initialise-query>		
+	            <update-query>
+					<fields valueMap='#0'>HSRNUM_SERVICE_NAME</fields>
+					<fields valueMap='#1'>GNUM_ISVALID</fields>
+					<fields valueMap='@entryDate'>HSRDT_LSTMOD_DATE</fields>	
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>
+					<table>HSRV_PROCEDURE_SERVICE_MST</table>
+					<condition>HSRNUM_SERVICE_CODE = #0</condition>
+					<condition>GNUM_HOSPITAL_CODE=#1</condition>
+			  </update-query>
+        	</dynamic-page>
+		</modify-page>
+		
+</master>			   
+</master-config>		

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Blood Donation Type Master'>
+		<common-values>
+			<master-name>BloodDonationTypeMaster</master-name>
+			<master-title>Blood Donation Type Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Blood Donation Type Master</tableHeading>
+			
+			<list-table>HBBT_DONATION_TYPE_MST</list-table>
+
+			<columns>
+				<column>Donation Description</column>
+				<column>Minimum Duration</column>
+				<column>Maximum Duration</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HBSTR_DONATION_DESC)</field>
+					<field>NVL(A.HBNUM_MIN_DURATION ,0)</field>
+					<field>NVL(A.HBNUM_MAX_DURATION ,0)</field>
+				</fields>
+				
+				<primaryKey>
+					<field>A.HBNUM_DONATION_TYPE_CODE</field>
+					<field>A.HBNUM_DONATION_TYPE_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HBBT_DONATION_TYPE_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby>ORDER BY(A.HBSTR_DONATION_DESC)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/bloodbank/masters/BldDntionTypeMstACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/bloodbank/masters/BldDntionTypeMstACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

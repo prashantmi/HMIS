@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC 
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+		<form-bean name="commonReportFB" type="servicearea.reports.controller.fb.ReportFB"/>
+		<form-bean name="RequisitionStatusReportFB" type="servicearea.reports.controller.fb.RequisitionStatusReportFB"/>
+		<form-bean name="AcceptedPatientReportFB" type="servicearea.reports.controller.fb.AcceptedPatientReportFB"/>
+		<form-bean name="UnAcceptedPatientReportFB" type="servicearea.reports.controller.fb.UnAcceptedPatientReportFB"/>
+		<form-bean name="RejectedPatientReportFB" type="servicearea.reports.controller.fb.RejectedPatientReportFB"/>
+		<form-bean name="ServiceProvidedPatientReportFB" type="servicearea.reports.controller.fb.ServiceProvidedPatientReportFB"/>
+		<form-bean name="ServiceInProcessPatientReportFB" type="servicearea.reports.controller.fb.ServiceInProcessPatientReportFB"/>
+		<form-bean name="ServiceRescheduledPatientReportFB" type="servicearea.reports.controller.fb.ServiceRescheduledPatientReportFB"/>
+		<form-bean name="ServiceAreaWiseTotPatientStatisticsReportFB" type="servicearea.reports.controller.fb.ServiceAreaWiseTotPatientStatisticsReportFB"/>
+		<form-bean name="ServiceAreaWisePatientListReportFB" type="servicearea.reports.controller.fb.ServiceAreaWisePatientListReportFB"/>
+	    <form-bean name="WeeklyDaibetesAndHypertensionFB" type="servicearea.reports.controller.fb.WeeklyDaibetesAndHypertensionFB"/>
+	    <form-bean name="ServiceAreaWiseReqAnalysisReportFB" type="servicearea.reports.controller.fb.ServiceAreaWiseReqAnalysisReportFB"/>
+		<form-bean name="ImmunizationAnalysisReportFB" type="servicearea.reports.controller.fb.ImmunizationAnalysisReportFB"/>
+		<form-bean name="ServiceAreaWiseConsumablesReportFB" type="servicearea.reports.controller.fb.ServiceAreaWiseConsumablesReportFB"/>
+		<form-bean name="CNSYClinicReportFB" type="servicearea.reports.controller.fb.CNSYClinicReportFB"></form-bean>
+		<form-bean name="ServiceAreaAppointmentRptFB" type="servicearea.reports.controller.fb.ServiceAreaAppointmentRptFB"/>
+		<form-bean name="ResultEntryReport" type="servicearea.reports.controller.fb.ResultEntryReportFB"/>
+		<form-bean name="ImmunizationServiceCountReportFB" type="servicearea.reports.controller.fb.ImmunizationServiceCountRptFB"/>
+		
+	</form-beans>
+	
+	<action-mappings>
+		<action path="/report"
+				type="servicearea.reports.controller.action.CommonReportACTION"
+				name="commonReportFB"
+				scope="request"
+				parameter="mode">
+			<forward name="REQUISITIONSTATUSREPORT" path="/requisitionStatusReport1"/>
+			<forward name="REQUISITIONSTATUSREPORTVIEW" path="/report/requisitionStatusReport.cnt"/>
+			<forward name="ACCEPTEDPATIENTREPORT" path="/acceptedPatientReport"/>
+			<forward name="ACCEPTEDPATIENTREPORTVIEW" path="/report/acceptedPatientReport.cnt"/>
+			<forward name="UNACCEPTEDPATIENTREPORT" path="/unAcceptedPatientReport"/>
+			<forward name="UNACCEPTEDPATIENTREPORTVIEW" path="/report/unAcceptedPatientReport.cnt"/>
+			<forward name="SERVICEPROVIDEDPATIENTREPORT" path="/serviceProvidedPatientReport"/>
+			<forward name="SERVICEPROVIDEDPATIENTREPORTVIEW" path="/report/serviceProvidedPatientReport.cnt"/>
+			<forward name="SERVICEINPROCESSPATIENTREPORT" path="/serviceProvidedPatientReport"/>
+			<forward name="SERVICEINPROCESSPATIENTREPORTVIEW" path="/report/serviceProvidedPatientReport.cnt"/>
+			<forward name="SERVICERESCHEDULEDPATIENTREPORT" path="/serviceProvidedPatientReport"/>
+			<forward name="SERVICERESCHEDULEDPATIENTREPORTVIEW" path="/report/serviceProvidedPatientReport.cnt"/>
+			<forward name="REJECTEDPATIENTREPORT" path="/rejectedPatientReport"/>
+			<forward name="REJECTEDPATIENTREPORTVIEW" path="/report/rejectedPatientReport.cnt"/>
+			<forward name="COUNTOFJACHHABACHHARAKSHACARDPRINTED" path="/jachhaBachhaRakshaCardCountReport"/>
+			<forward name="COUNTOFJACHHABACHHARAKSHACARDPRINTEDVIEW" path="/report/jachhaBachhaRakshaCardCountReport.cnt"/>
+			<forward name="SERVICEAREAWISECONSUMABLESCONSUMED" path="/serviceAreaWiseConsumablesReport"/>
+			<forward name="SERVICEAREAWISECONSUMABLESCONSUMEDVIEW" path="/report/serviceAreaWiseConsumablesReport.cnt"/>
+			<forward name="RESULTENTREDREPORT" path="/resultEntryReport"/>
+			<forward name="RESULTENTREDREPORTVIEW" path="/report/resultEntryReport.cnt"/>
+			<forward name="RESULTPENDINGREPORT" path="/resultPendingReport"/>
+			<forward name="RESULTPENDINGREPORTVIEW" path="/report/resultPendingReport.cnt"/>
+			<forward name="SCHEDULENOTVISITEDREPORT" path="/scheduleNotVisitedReport"/>
+			<forward name="SCHEDULENOTVISITEDREPORTVIEW" path="/report/scheduleNotVisitedReport.cnt"/>
+			<forward name="SERVICEAREAWISETOTALPATIENTSTATISTICSREPORT" path="/serviceAreaWiseTotalPatientStatisticsReport"/>
+			<forward name="SERVICEAREAWISETOTALPATIENTSTATISTICSREPORTVIEW" path="/report/serviceAreaWiseTotalPatientStatisticsReport.cnt"/>
+			<forward name="SERVICEAREAWISEPATIENTLISTREPORT" path="/serviceAreaWisePatientListReport"/>
+			<forward name="SERVICEAREAWISEPATIENTLISTREPORTVIEW" path="/report/serviceAreaWisePatientListReport.cnt"/>
+			<forward name="SERVICEAREAWISEREQANALYSISREPORT" path="/serviceAreaWiseReqAnalysisReport"/>
+			<forward name="SERVICEAREAWISEREQANALYSISREPORTVIEW" path="/report/serviceAreaWiseReqAnalysisReport.cnt"/>
+			<forward name="IMMUNIZATIONANALYSISREPORT" path="/immunizationAnalysisReport"/>
+			<forward name="IMMUNIZATIONANALYSISREPORTVIEW" path="/report/immunizationAnalysisReport.cnt"/>
+			<forward name="SERVICEAREAWISECONSUMABLESREPORT" path="/serviceAreaWiseConsumablesReport"/>
+			<forward name="SERVICEAREAWISECONSUMABLESREPORTVIEW" path="/report/serviceAreaWiseConsumablesReport.cnt"/>
+			<forward name="CNSYCLINICREPORT" path="/cnsyClinicReport"/>
+			<forward name="CNSYCLINICREPORTVIEW" path="/report/cnsyClinicReport.cnt"/>
+			<forward name="SERVICEAREAAPPOINTMENTRPT" path="/ServiceAreaAppointmentRpt"/>
+			<forward name="SERVICEAREAAPPOINTMENTRPTVIEW" path="/report/ServiceAreaAppointmentRpt.cnt"/>
+		</action>		
+	
+		
+	
+		<action path="/report/requisitionStatusReport"
+				type="servicearea.reports.controller.action.RequisitionStatusReportACTION"
+				name="RequisitionStatusReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/requisitionStatusReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/rejectedPatientReport"
+				type="servicearea.reports.controller.action.RejectedPatientReportACTION"
+				name="RejectedPatientReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/rejectedPatientReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/acceptedPatientReport"
+				type="servicearea.reports.controller.action.AcceptedPatientReportACTION"
+				name="AcceptedPatientReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/acceptedPatientReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/unAcceptedPatientReport"
+				type="servicearea.reports.controller.action.UnAcceptedPatientReportACTION"
+				name="UnAcceptedPatientReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/unAcceptedPatientReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/serviceProvidedPatientReport"
+				type="servicearea.reports.controller.action.ServiceProvidedPatientReportACTION"
+				name="ServiceProvidedPatientReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/serviceProvidedPatientReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/serviceInProcessPatientReport"
+				type="servicearea.reports.controller.action.ServiceInProcessPatientReportACTION"
+				name="ServiceInProcessPatientReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/serviceInProcessPatientReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/serviceRescheduledPatientReport"
+				type="servicearea.reports.controller.action.ServiceRescheduledPatientReportACTION"
+				name="ServiceRescheduledPatientReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/serviceRescheduledPatientReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/serviceAreaWiseTotalPatientStatisticsReport"
+				type="servicearea.reports.controller.action.ServiceAreaWiseTotPatientStatisticsReportACTION"
+				name="ServiceAreaWiseTotPatientStatisticsReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/serviceAreaWiseTotPatStatisticsReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/serviceAreaWisePatientListReport"
+				type="servicearea.reports.controller.action.ServiceAreaWisePatientListReportACTION"
+				name="ServiceAreaWisePatientListReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/serviceAreaWiseTotalPatientListReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+			<action path="/report/WeeklyDaibeteaAndHypertensionAction"
+				type="servicearea.reports.controller.action.WeeklyDaibeteaAndHypertensionAction"
+				name="WeeklyDaibetesAndHypertensionFB"
+				scope="request"
+				parameter="hmode">
+			<forward name="NEW" path="/reports/jsp/WeeklyDiabetesAndHypertension.jsp"/>
+			<forward name="VIEWREPORT" path="/reports/jsp/WeeklyDiabetesAndHypertensionDetail.jsp"/>
+			<forward name="VIEWREPORTMONTHLY" path="/reports/jsp/MonthlyDiabetesAndHypertensionDetail.jsp"/>
+			<forward name="CANCEL" path="/reports/jsp/blank.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/DiabetesAndHypertensionDetailAction"
+				type="servicearea.reports.controller.action.DiabetesAndHypertensionDetailAction"
+				name="DiabetesAndHypertensionDetailFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/DiabetesAndHypertensionDetail.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/serviceAreaWiseReqAnalysisReport"
+				type="servicearea.reports.controller.action.ServiceAreaWiseReqAnalysisReportACTION"
+				name="ServiceAreaWiseReqAnalysisReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/serviceAreaWiseReqAnalysisReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/immunizationAnalysisReport"
+				type="servicearea.reports.controller.action.ImmunizationAnalysisReportACTION"
+				name="ImmunizationAnalysisReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/ImmunizationAnalysisReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		<action path="/report/serviceAreaWiseConsumablesReport"
+				type="servicearea.reports.controller.action.ServiceAreaWiseConsumablesReportACTION"
+				name="ServiceAreaWiseConsumablesReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/serviceAreaWiseConsumablesReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/ResultEntryReportCNT"
+			type="servicearea.reports.controller.action.ResultEntryReportCNT" name="ResultEntryReport"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/jsp/ResultEntryRpt.jsp" />
+		</action>
+		
+		<action path="/report/ImmunizationServiceCountRptCNT"
+			type="servicearea.reports.controller.action.ImmunizationServiceCountRptCNT" name="ImmunizationServiceCountReportFB"
+			scope="request" validate="false" parameter="hmode">
+			<forward name="reportPage" path="/reports/jsp/ImmunizationServiceCountRpt.jsp" />
+		</action>
+		
+		<action path="/report/cnsyClinicReport"
+			type="servicearea.reports.controller.action.CNSYClinicReportACTION" name="CNSYClinicReportFB"
+			scope="request" validate="false" parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/CNSYClinicReport.jsp" />
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/>
+		</action>
+		<action path="/report/ServiceAreaAppointmentRpt"
+				type="servicearea.reports.controller.action.ServiceAreaAppointmentRptACT"
+				name="ServiceAreaAppointmentRptFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/jsp/ServiceAreaAppointmentReport.jsp"/>
+			<forward name="ERROR" path="/reports/jsp/errorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+	</action-mappings>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/ServiceAreaDesk-tiles-defs.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>  
+	
+	
+</struts-config>          

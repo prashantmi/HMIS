@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='disasterAreaMaster'>
+		<common-values>
+			<master-name>DisasterAreaMaster</master-name>
+			<master-title>Disaster Area Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Disaster Area</tableHeading> 
+				<list-table>HDST_DISASTER_AREA_MST</list-table>
+				<controls>			     
+				   <control type="combo" index="0">
+			       <label>Area Type</label>
+			         <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(B.HDSSTR_AREA_TYPE_NAME)</text-field>
+									<value-field>B.HDSNUM_AREA_TYPE_CODE </value-field>
+								</options>
+								<tables>
+									<table alias='B'>HDST_AREA_TYPE_MST</table>	
+								</tables>
+								<condition>
+									<hospital-code> B.GNUM_HOSPITAL_CODE</hospital-code>
+									<general> AND B.GNUM_ISVALID = 1 ORDER BY INITCAP(B.HDSSTR_AREA_TYPE_NAME)</general>
+								</condition>
+							</dynamic>					
+						</data>
+						<default>-1</default>
+					</control>
+				</controls>
+				<columns>
+					 <column>Area Name</column>
+					
+				</columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HDSSTR_AREA_NAME)</field>
+						
+					</fields>
+					<primaryKey>
+						<field>A.HDSNUM_DISASTER_AREA_ID </field>
+						<field>A.HDSNUM_SLNO </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HDST_DISASTER_AREA_MST </table>
+						
+					</tables>
+					<condition>		
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+							<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+							<orderby> order by INITCAP(A.HDSSTR_AREA_NAME)</orderby>
+							<dependent>
+							<clause> A.HDSNUM_AREA_TYPE_CODE = #0 </clause>
+							</dependent>
+					</condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<static-page>/disaster/disasterAreaMaster.cnt</static-page>	
+		</add-page>
+		<modify-page>
+		 	 <static-page>/disaster/disasterAreaMaster.cnt</static-page>	
+		 </modify-page>
+	</master>	
+</master-config>

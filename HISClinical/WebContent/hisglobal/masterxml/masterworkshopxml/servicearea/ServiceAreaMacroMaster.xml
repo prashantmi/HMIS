@@ -1,0 +1,265 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Area Macro Master'>
+		<common-values>
+			<master-name>ServiceAreaMacroMaster</master-name>
+			<master-title>Service Area Macro Master</master-title>
+		</common-values>
+	<list-page>
+				<tableHeading>Service Area Macro Master</tableHeading> 
+				<list-table>HSRV_MACRO_MST</list-table>				
+				<columns>
+					 <column>Service Area</column>
+					 <column>Procedure</column>
+					 <column>Macro Text</column>
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>NVL((SELECT NVL(INITCAP (HSRSTR_SERVICE_AREA_NAME),'X') || '('|| NVL ((SELECT INITCAP 
+						(GSTR_DEPT_NAME) FROM GBLT_DEPARTMENT_MST DEPT WHERE DEPT.GNUM_DEPT_CODE = C.GNUM_DEPT_CODE 
+						AND DEPT.GNUM_HOSPITAL_CODE = C.GNUM_HOSPITAL_CODE AND GNUM_ISVALID=1),'GLOBAL SERVICE' ) || ')' 
+						FROM HSRV_SERVICE_AREA_MST C WHERE HSRNUM_SERVICE_AREA_CODE = A.HSRNUM_SERVICE_AREA_CODE 
+						AND GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE AND GNUM_ISVALID=1),'X')</field>
+					    <field>NVL((SELECT INITCAP (NVL(HSRSTR_PROCEDURE_NAME,'X')) FROM HSRV_PROCEDURE_MST  
+					    WHERE HSRNUM_PROCEDURE_CODE = A.HSRNUM_PROCEDURE_CODE AND GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE 
+					    AND GNUM_ISVALID=1),'X')</field>
+					    <field>HSRSTR_MACRO_TEXT</field>
+					</fields>
+					<primaryKey>
+						<field>A.HGNUM_MACRO_CODE</field>
+						<field>A.HSRNUM_SERVICE_AREA_CODE</field>
+						<field>A.HSRNUM_PROCEDURE_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HSRV_MACRO_MST</table>
+					</tables>
+					<condition>
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                            <isvalid-field> A.GNUM_ISVALID</isvalid-field>
+                             <orderby> order by INITCAP(A.HSRNUM_SERVICE_AREA_CODE)</orderby>
+                    </condition>
+				</query-detail>
+		</list-page>
+		
+	<add-page>
+			<dynamic-page>	
+				<controls>
+					<control type="combo" index="0" >
+						<label>Service Area</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+								<dynamic>
+									<options>
+										<text-field>INITCAP (A.HSRSTR_SERVICE_AREA_NAME) 
+										|| '('|| NVL ((SELECT INITCAP (GSTR_DEPT_NAME)   FROM 
+										GBLT_DEPARTMENT_MST DEPT WHERE DEPT.GNUM_DEPT_CODE = A.GNUM_DEPT_CODE  
+										AND DEPT.GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE AND GNUM_ISVALID=1),'Global Service' ) || ')' </text-field>
+										<value-field>HSRNUM_SERVICE_AREA_CODE</value-field>
+									</options>
+									<tables>
+										<table alias='A'>HSRV_SERVICE_AREA_MST</table>
+									</tables>
+									<condition>
+										<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+										<general> AND A.GNUM_ISVALID = 1 </general>
+									</condition>
+								</dynamic>
+							</data>
+						<default>0</default>
+						<submitRequired>1</submitRequired>
+					</control>
+					<control type="combo" index="1" >
+						<label>Procedure</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+								<dynamic>
+									<options>
+										<text-field>B.HSRSTR_PROCEDURE_NAME</text-field>
+										<value-field>A.HSRNUM_PROCEDURE_CODE</value-field>
+									</options>
+									<tables>
+										<table alias='A'>HSRV_SERVICEAREA_PROCEDURE_MST</table>
+										<table alias='B'>HSRV_PROCEDURE_MST</table>
+									</tables>
+									<condition>
+										<general> A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE 
+										AND A.GNUM_ISVALID=B.GNUM_ISVALID AND A.GNUM_ISVALID=1 
+										AND A.HSRNUM_PROCEDURE_CODE=B.HSRNUM_PROCEDURE_CODE </general>
+										<dependent>
+											<clause>AND A.HSRNUM_SERVICE_AREA_CODE=#0</clause>
+										</dependent>
+										
+									</condition>
+								</dynamic>
+							</data>
+						<default>0</default>
+						<submitRequired>0</submitRequired>
+					</control>
+					<control type="textarea" index="2" >
+						<label>Macro Text</label>
+						<constraints  styleString="style='width:230px; height:40px'" inputType ='alphanumeric'  methodstring="onkeypress='return CheckMaxLength(event,this,100);'" mandatory ='true'/>
+						<readOnly>0</readOnly>
+					</control>	
+					<control type="textarea" index="3" >
+						<label>Remarks</label>
+						<constraints  styleString="style='width:130px; height:30px'" inputType ='alphanumeric'  methodstring="onkeypress='return CheckMaxLength(event,this,100);'"/>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="4">
+						<label>Is Active Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+				</controls>
+				<insert-query>
+				<primary-key>
+						<field>HGNUM_MACRO_CODE</field>
+						<value>(SELECT NVL (MAX (HGNUM_MACRO_CODE),'100') + 1  FROM HSRV_MACRO_MST)</value>
+				</primary-key>
+					<fields valueMap='#0'>HSRNUM_SERVICE_AREA_CODE</fields>
+					<fields valueMap='#1'>HSRNUM_PROCEDURE_CODE</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>HSRDT_ENTRY_DATE</fields>
+					<fields valueMap='#4'>GNUM_ISVALID</fields>
+					<fields valueMap='#2'>HSRSTR_MACRO_TEXT</fields>
+					<fields valueMap='@entryDate'>HSRDT_LSTMOD_DATE</fields>
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>
+					<fields valueMap='#3'>HSRSTR_REMARKS</fields>
+					<table>HSRV_MACRO_MST</table>
+				</insert-query>				
+			</dynamic-page>
+		</add-page>
+		<modify-page>
+		    <dynamic-page>
+		    	<controls> 
+		    		<control type="combo" index="0" >
+						<label>Service Area</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+								<dynamic>
+									<options>
+										<text-field>INITCAP (A.HSRSTR_SERVICE_AREA_NAME) 
+										|| '('|| NVL ((SELECT INITCAP (GSTR_DEPT_NAME)   FROM 
+										GBLT_DEPARTMENT_MST DEPT WHERE DEPT.GNUM_DEPT_CODE = A.GNUM_DEPT_CODE  
+										AND DEPT.GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE AND GNUM_ISVALID=1),
+										'Global Service' ) || ')' </text-field>
+										<value-field>HSRNUM_SERVICE_AREA_CODE</value-field>
+									</options>
+									<tables>
+										<table alias='A'>HSRV_SERVICE_AREA_MST</table>
+									</tables>
+									<condition>
+										<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+										<general> AND A.GNUM_ISVALID = 1 </general>
+									</condition>
+								</dynamic>
+							</data>
+							<readOnly>1</readOnly>
+						<default>#Q0</default>
+						<submitRequired>1</submitRequired>
+					</control>
+					<control type="combo" index="1" >
+						<label>Procedure</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+								<dynamic>
+									<options>
+										<text-field>B.HSRSTR_PROCEDURE_NAME</text-field>
+										<value-field>A.HSRNUM_PROCEDURE_CODE</value-field>
+									</options>
+									<tables>
+										<table alias='A'>HSRV_SERVICEAREA_PROCEDURE_MST</table>
+										<table alias='B'>HSRV_PROCEDURE_MST</table>
+									</tables>
+									<condition>
+										<general> AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND 
+										A.GNUM_ISVALID=B.GNUM_ISVALID AND 
+										A.GNUM_ISVALID=1 AND A.HSRNUM_PROCEDURE_CODE=B.HSRNUM_PROCEDURE_CODE </general>
+										<dependent>
+											<clause>AND A.HSRNUM_SERVICE_AREA_CODE=#0</clause>
+										</dependent>
+										<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+									</condition>
+								</dynamic>
+							</data>
+							<readOnly>1</readOnly>
+						<default>#Q1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+					<control type="textarea" index="2" >
+						<label>Macro Text</label>
+						<constraints  styleString="style='width:230px; height:40px'" inputType ='alphanumeric'  methodstring="onkeypress='return CheckMaxLength(event,this,100);'"/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="textarea" index="3" >
+						<label>Remarks</label>
+						<constraints  styleString="style='width:130px; height:30px'" inputType ='alphanumeric'  methodstring="onkeypress='return CheckMaxLength(event,this,100);'"/>
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="4">
+						<label>Is Active Status </label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+            	</controls>
+		        <initialise-query>
+			   	 <fields>
+					 <field>A.HSRNUM_SERVICE_AREA_CODE</field>
+					 <field>A.HSRNUM_PROCEDURE_CODE</field>
+					 <field>A.HSRSTR_MACRO_TEXT</field>
+					 <field>A.HSRSTR_REMARKS</field>
+				 </fields>					
+					<tables>
+						<table alias="A"> HSRV_MACRO_MST</table>
+					</tables>
+					<condition>
+						<dependent>
+						    <clause>A.HGNUM_MACRO_CODE = #C1 </clause>
+						    <clause>AND A.HSRNUM_SERVICE_AREA_CODE = #C2 </clause>
+						    <clause>AND A.HSRNUM_PROCEDURE_CODE = #C3 </clause>
+						    <clause>AND A.GNUM_HOSPITAL_CODE = #C4 </clause>
+						</dependent>
+					</condition>
+				</initialise-query>
+	            <update-query>
+					<fields valueMap='#0'>HSRNUM_SERVICE_AREA_CODE</fields>
+					<fields valueMap='#1'>HSRNUM_PROCEDURE_CODE</fields>
+					<fields valueMap='#4'>GNUM_ISVALID</fields>
+					<fields valueMap='#2'>HSRSTR_MACRO_TEXT</fields>
+					<fields valueMap='@entryDate'>HSRDT_LSTMOD_DATE</fields>
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>
+					<fields valueMap='#3'>HSRSTR_REMARKS</fields>
+							
+					<table>HSRV_MACRO_MST</table>
+					<condition>HGNUM_MACRO_CODE = #0</condition>
+					<condition>HSRNUM_SERVICE_AREA_CODE = #1</condition>
+					<condition>HSRNUM_PROCEDURE_CODE = #2</condition>
+					<condition>GNUM_HOSPITAL_CODE = #3</condition>
+			  </update-query>
+        	</dynamic-page>
+		</modify-page>		
+</master>
+</master-config>

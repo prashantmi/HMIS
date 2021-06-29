@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <constant name="struts.devMode" value="false" />
+  <!-- <constant name="struts.action.extension" value=","/> -->
+	<package name="registration.transactions" namespace="/registration/transactions" extends="struts-default">
+	 
+	 <action name="*RegistrationDesk" method="{1}"  class="registration.transactions.controller.action.RegistrationDeskAction">
+		 <result name="success">/registration/transactions/jsp/RegistrtaionDeskLayout.jsp</result>
+	 </action>
+	 
+	 <action name="*EmgRegistrationDeskAction" method="{1}"  class="registration.transactions.controller.action.EmgRegistrationDeskAction">
+		 <result name="DESK">/registration/transactions/jsp/EmgRegistrtaionDeskLayout.jsp</result>
+	 </action>
+	 
+	 <action name="*SpclRegistrationDeskAction" method="{1}"  class="registration.transactions.controller.action.SpclRegistrationDeskACTION">
+		 <result name="DESK">/registration/transactions/jsp/spclRegistrtaionDeskLayout.jsp</result>
+	 </action>  
+	 
+	 <action name="*NewRegistration" method="{1}"  class="registration.transactions.controller.action.NewRegistrationAction">
+	 <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result type="" name="NEW">/registration/transactions/jsp/opdNewPatientRegistration2.jsp</result>
+		 <result name="popup">/registration/transactions/jsp/patientCatPopup.jsp</result>
+		  <result name="EmployeePopup">/registration/transactions/jsp/patientCatPopup.jsp</result>
+		  <result name="cashCollectionPopup">/registration/transactions/jsp/cashCollectionDetail_popup.jsp</result>
+		   <result name="alreadyRegPopup">/registration/transactions/jsp/alreadyRegPatientCatPopup.jsp</result>
+		    <result name="mobilePopup">/registration/transactions/jsp/mobileSearchPatPopup.jsp</result>
+		    <result name="WhiteCardSearchPopup">/registration/transactions/jsp/WhiteCardSearchPopup.jsp</result>
+		  
+		 
+	 </action>
+	 <!-- ## 		Modification Log							
+	 		##		Modify Date				:30thJan'15 
+	 		##		Reason	(CR/PRS)		:External Patient Registration
+	 		##		Modify By				:Sheeldarshi  -->
+	  <action name="*ExternalPatientRegistration" method="{1}"  class="registration.transactions.controller.action.ExternalPatientRegistrationAction">
+	   <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result type="" name="NEW">/registration/transactions/jsp/ExternalPatientRegistration.jsp</result>
+		 <result name="popup">/registration/transactions/jsp/patientCatPopup.jsp</result>
+		 
+	 </action>
+	<!-- End:Sheeldarshi -->
+	 <action name="*PatientDetailMod"  method="{1}" class="registration.transactions.controller.action.PatientDetailModificationAction">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/PatientDetailModification.jsp</result>
+	 </action>
+	
+	 <action name="*PatientDetailModDesk"  method="{1}" class="registration.transactions.controller.action.DskPatientDetailModificationAction">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/DeskPatientDetailModification.jsp</result>
+	 </action>
+	 <action name="*DuplicateCardGeneration"  method="{1}" class="registration.transactions.controller.action.DuplicateCardGenerationAction">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/DuplicateCardGeneration.jsp</result>
+	 </action>
+	 <action name="*verificationDoc"  method="{1}" class="registration.transactions.controller.action.verificationDocumentACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/verificationDocumentPopUpTile.jsp</result>
+	 </action>
+	 
+	 <action name="*patientDetail"  method="{1}" class="registration.transactions.controller.action.PatientDetailACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/patientDetailsTile.jsp</result>
+	 </action>
+	 
+	 <!--  Emergency patient visit Mapping start [Note : Keep this mapping before "PatientVisit" action always] -->
+	 <action name="*EmgPatientVisit"  method="{1}" class="registration.transactions.controller.action.EmgPatientVisitACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="SAMENEWPATIENT">/registration/transactions/jsp/emgPatientVisitTile.jsp</result>
+		 <result name="NEWPATIENT">/registration/transactions/jsp/emgPatientVisitTile.jsp</result>
+		 <result name="GETPATDTL">/registration/transactions/jsp/emgPatientVisitTile.jsp</result>
+		 <result name="SAME">/registration/transactions/jsp/emgPatientVisitTile.jsp</result>
+		 <result name="NEW">/registration/transactions/jsp/emgPatientVisitTile.jsp</result>
+		  <result name="cashCollectionPopup">/registration/transactions/jsp/cashCollectionDetail_popup.jsp</result>
+	 </action>
+	 
+	 <!--  Special patient visit Mapping start [Note : Keep this mapping before "PatientVisit" action always] -->
+	 <action name="*SpclPatientVisit"  method="{1}" class="registration.transactions.controller.action.SpclPatientVisitACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="SAMENEWPATIENT">/registration/transactions/jsp/spclPatientVisitTile.jsp</result>
+		 <result name="NEWPATIENT">/registration/transactions/jsp/spclPatientVisitTile.jsp</result>
+		 <result name="GETPATDTL">/registration/transactions/jsp/spclPatientVisitTile.jsp</result>
+		 <result name="SAME">/registration/transactions/jsp/spclPatientVisitTile.jsp</result>
+		 <result name="NEW">/registration/transactions/jsp/spclPatientVisitTile.jsp</result>
+	 </action>
+	 
+	 <!--  patient visit Mapping start  -->
+	 <action name="*PatientVisit"  method="{1}" class="registration.transactions.controller.action.PatientVisitACT">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="SAMENEWPATIENT">/registration/transactions/jsp/opdPatientVisitTile.jsp</result>
+		 <result name="NEWPATIENT">/registration/transactions/jsp/opdPatientVisitTile.jsp</result>
+		 <result name="GETPATDTL">/registration/transactions/jsp/opdPatientVisitTile.jsp</result>
+		 <result name="SAME">/registration/transactions/jsp/opdPatientVisitTile.jsp</result>
+		 <result name="NEW">/registration/transactions/jsp/opdPatientVisitTile.jsp</result>
+		  <result name="cashCollectionPopup">/registration/transactions/jsp/cashCollectionDetail_popup.jsp</result>
+	 </action>
+	 
+	 
+
+	 <action name="*PatientReferral"  method="{1}" class="registration.transactions.controller.action.PatientReferralACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="drdeskprocess" >/registration/transactions/jsp/patientReferralTile_new.jsp</result>	
+		 <result name="NEW">/registration/transactions/jsp/patientReferralTile.jsp</result>
+	 </action>
+	 
+	 <action name="*ChangeTreatmentCategory"  method="{1}" class="registration.transactions.controller.action.ChangeTreatmentCategoryACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/ChangeTreatmentCategoryTile.jsp</result>
+		 <result name="ADD">//registration/transactions/jsp/ChangeTreatmentCategoryForSelectedEpisodes.jsp</result>
+	 </action>
+	 
+	  <action name="*SplRegistration" method="{1}"  class="registration.transactions.controller.action.SplRegistrationAction">
+	  <!--  <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/splPatientRegistration.jsp</result>
+		 <result name="popup">/registration/transactions/jsp/patientSplCatPopup.jsp</result>
+	 </action>
+	 
+	 <action name="*EmgRegistration" method="{1}"  class="registration.transactions.controller.action.EmgRegistrationAction">
+	  <!-- <interceptor-ref name="tokenSession" >
+	  <param name="includeMethods">save,saveAsNewPatient</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result>  -->
+		 <result name="NEW">/registration/transactions/jsp/emgPatientRegistration.jsp</result>
+		 <result name="popup">/registration/transactions/jsp/patientEmgCatPopup.jsp</result>
+		   <result name="cashCollectionPopup">/registration/transactions/jsp/cashCollectionDetail_popup.jsp</result>
+		   <result name="WhiteCardSearchPopup">/registration/transactions/jsp/EmgWhiteCardSearchPopup.jsp</result>
+	 </action>
+	 
+	 <action name="*PatientSearch"  method="{1}" class="registration.transactions.controller.action.PatientSearchACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="excludeMethods">*</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/patientSearch.jsp</result>
+	 </action>
+	 
+	 <action name="*EmgPatDetailMod"  method="{1}" class="registration.transactions.controller.action.EmgPatDetailModificationAction">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/emgPatDetailModification.jsp</result>
+	 </action>
+	 
+	 <action name="*UnknownToKnown"  method="{1}" class="registration.transactions.controller.action.UnknownToKnownAction">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/UnknownToKnown.jsp</result>
+	 </action>
+	 
+	 <action name="*PrimaryCatChange"  method="{1}" class="registration.transactions.controller.action.PrimaryCategoryChangeACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+	 	 <result name="NEW">/registration/transactions/jsp/primaryCategoryChangeTile.jsp</result>
+	 	 <result name="popup">/registration/transactions/jsp/patientCatChangePopup.jsp</result>	
+	 	 <result name="logpopup">/registration/transactions/jsp/patientCatChangeLogPopup.jsp</result>
+	     <result name="auditlogpopup">/registration/transactions/jsp/auditLog.jsp</result>	 	 
+	 	 	 	 
+	 </action>
+	 
+	  
+	<action name="*UploadFile"  method="{1}" class="hisglobal.utility.filetransfer.action.UploadFileACT">
+			<interceptor-ref name="exception"/>
+            <interceptor-ref name="i18n"/>
+		     <interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+			</interceptor-ref> 
+			<interceptor-ref name="basicStack"></interceptor-ref>
+
+            <result name="file">../../hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>
+			<result name="audiovideo">../../hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>
+			<result name="image">../../hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>
+			<result name="success">../../hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>
+			<result name="input">../../hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>			
+	 </action>
+	 
+	 <action name="*EnlargedImage"  method="{1}" class="hisglobal.utility.filetransfer.action.DisplayUploadedFileACT">
+            <result name="file">../../hisglobal/utility/filetransfer/hg_uploadFileTile.jsp</result>
+	 </action>
+	 
+	 <!-- MLC to Non MLC Detail -->
+	 <action name="*MlcToNonMlc"  method="{1}" class="registration.transactions.controller.action.MlcToNonMlcNewACTION"> 
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+ 		 <result name="NEW">/registration/transactions/jsp/mlcToNonMlcTile.jsp</result> 
+		 <result name="SAME">/registration/transactions/jsp/mlcToNonMlcTile.jsp</result> 
+		
+	 </action> 
+
+	 
+	 <!-- MLC Detail -->
+	 <action name="*EmgMlcDtl"  method="{1}" class="registration.transactions.controller.action.EmgMlcDtlACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/emgMlcDtlTile.jsp</result>
+		 <result name="ADDPATCONDITION">/registration/transactions/jsp/addPatConditionPopup.jsp</result>
+		<!-- start : Surabhi : for printing the MLC Certificate -->
+		<result name="PRINT">/registration/transactions/jsp/MlcCertificate.jsp</result>
+		<!-- End : Surabhi -->
+	 </action>
+	 
+	 <!-- MLC Detail Modification-->
+	 <action name="*EmgMlcModificationDtl"  method="{1}" class="registration.transactions.controller.action.EmgMlcModificationDtlACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/emgMlcModificationDtlTile.jsp</result>
+		 <result name="SAME">/registration/transactions/jsp/emgMlcModificationDtlTile.jsp</result>
+	 </action>
+	 
+	 <!-- Patient Death Detail-->
+	 <action name="*PatientDeathDetail"  method="{1}" class="registration.transactions.controller.action.PatientDeathDetailACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/patientDeathDetail.jsp</result>
+		 <!-- <result name="NEW">/registration/transactions/jsp/plzDeletePatientDeathDetail.jsp</result> -->
+		 <result name="PRINT">/registration/transactions/jsp/patientDeathCertificate.jsp</result>
+		 
+	 </action>
+	 
+	  <!-- Start:Sheeldarshi:Registration Cancellation Changes -->
+	 <action name="*RegistrationCancellation"  method="{1}" class="registration.transactions.controller.action.RegistrationCancellationAction">
+	 <!--  <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/RegistrationCancellation.jsp</result>
+	 </action>
+	 <!-- End:Sheeldarshi:Registration Cancellation Changes -->
+	 
+	 <!-- Offline Merging of CRNO. Added by Singaravelan on 10-Dec-2014-->
+	 <action name="*OfflineMergeCRNO" method="{1}"  class="registration.transactions.controller.action.OfflineMergeCRNOAction">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		<param name="includeMethods">save</param>
+	    	</interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result type="" name="NEW">/registration/transactions/jsp/opdOfflineMergeCRNO.jsp</result>
+	 </action>
+	 
+	 <action name="*AadhaarFeed" method="{1}"  class="com.ecentric.service.AadhaarFeedAction">
+		<result name="adhaarPopup">/com/ecentric/jsp/aadhaarSearchPopup.jsp</result>		 	 
+	 </action>
+	 
+	  <action name="*WhiteCardService" method="{1}"  class="com.ecentric.service.WhiteCardServiceAction">
+		<result name="WhiteCardSearchPopup">/com/ecentric/jsp/WhiteCardSearchPopup.jsp</result>		 	 
+	 </action>
+	 
+	 
+	  <!--  patient visit Mapping start  -->
+	 <action name="*PatientCreditVisit"  method="{1}" class="registration.transactions.controller.action.PatientCreditVisitACT">
+		 <result name="SAMENEWPATIENT">/registration/transactions/jsp/opdCreditPatientVisitTile.jsp</result>
+		 <result name="NEWPATIENT">/registration/transactions/jsp/opdCreditPatientVisitTile.jsp</result>
+		 <result name="GETPATDTL">/registration/transactions/jsp/opdCreditPatientVisitTile.jsp</result>
+		 <result name="SAME">/registration/transactions/jsp/opdCreditPatientVisitTile.jsp</result>
+		 <result name="NEW">/registration/transactions/jsp/opdCreditPatientVisitTile.jsp</result>
+		  <result name="cashCollectionPopup">/registration/transactions/jsp/cashCollectionDetail_popup.jsp</result>
+	 </action>
+	 
+	 <action name="*NewUnitWiseRegistration" method="{1}"  class="registration.transactions.controller.action.NewUnitWiseRegistrationAction">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		 <param name="includeMethods">save</param>
+	   </interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result type="" name="NEW">/registration/transactions/jsp/opdNewUnitWisePatientRegistration.jsp</result>
+		 <result name="popup">/registration/transactions/jsp/patientCatPopup.jsp</result>
+		 <result name="EmployeePopup">/registration/transactions/jsp/patientCatPopup.jsp</result>
+		 <result name="cashCollectionPopup">/registration/transactions/jsp/cashCollectionDetail_popup.jsp</result>
+		 <result name="alreadyRegPopup">/registration/transactions/jsp/alreadyRegPatientCatPopup.jsp</result>
+		 <result name="mobilePopup">/registration/transactions/jsp/mobileSearchPatPopup.jsp</result>		 
+	 </action>
+	 
+	  <!--  Start: warish: Unit Wise Patient Visit on 3.07.2016  -->
+	 <action name="*PatientUnitWiseVisit"  method="{1}" class="registration.transactions.controller.action.PatientUnitWiseVisitACTION">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		 <param name="includeMethods">save</param>
+	   </interceptor-ref>
+			<interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="SAMENEWPATIENT">/registration/transactions/jsp/opdUnitWisePatientVisitTile.jsp</result>
+		 <result name="NEWPATIENT">/registration/transactions/jsp/opdUnitWisePatientVisitTile.jsp</result>
+		 <result name="GETPATDTL">/registration/transactions/jsp/opdUnitWisePatientVisitTile.jsp</result>
+		 <result name="SAME">/registration/transactions/jsp/opdUnitWisePatientVisitTile.jsp</result>
+		 <result name="NEW">/registration/transactions/jsp/opdUnitWisePatientVisitTile.jsp</result>
+	 </action>
+	<!-- End: warish -->
+	
+	 <!--By Mukund on 20.09.2017-->
+	 <action name="*BarcodeGeneration"  method="{1}" class="registration.transactions.controller.action.BarcodeGenerationAction">
+	  <!-- <interceptor-ref name="tokenSession" >
+	    		 <param name="includeMethods">save</param>
+	   </interceptor-ref>
+	   <interceptor-ref name="basicStack" />
+			<result name="invalid.token" type="redirectAction">
+    			<param name="actionName">/application/jsp/app_error_xss.jsp</param>
+			</result> -->
+		 <result name="NEW">/registration/transactions/jsp/BarcodeGeneration.jsp</result>
+		 <result name="PRINTBARCODE">/registration/transactions/jsp/BarcodeSlip.jsp</result>
+	 </action>
+	 <!--End on 20.09.2017  -->
+	 
+	 	 </package> 
+	 
+	 
+	 
+</struts>

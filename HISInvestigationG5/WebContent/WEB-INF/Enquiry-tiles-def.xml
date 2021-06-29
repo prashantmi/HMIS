@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+	<!-- ***** Start of HELP DESK Tiles -->
+		<!-- Help Desk -->
+	<definition name="/helpDesk" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/helpDeskWelcomePage.jsp" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+		<!-- Under Construction -->
+	<definition name="/helpDeskUnderConstruction" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/hisglobal/utility/dynamicdesk/underConstructionDesk.jsp" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<!-- WELCOME PAGE -->
+	<definition name="/hospitalFacility" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalFacilityEnquiry.cnt?hmode=NEW" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/inPatientEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/inPatientEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/patientEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/patientEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/staffEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/staffEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	<definition name="/bulletinBoardEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/inpatient/inpatientBulletinDetail.cnt?transactionMode=BULLETINBOARD" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/hospitalConsultantEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalConsultantEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/hospitalDepartmentEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalDepartmentEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/bloodStockEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/bloodStockEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/opdEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/opdEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/opdScheduleEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/opdScheduleEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/hospitalChargeEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalChargeEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/wardEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalWardEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/labEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalLabEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/hospitalEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/holidayEnquiry" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/holidayEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	<definition name="/telephoneEnquiryTilesDef" path="/enquiry/helpDesk.jsp">
+		<put name="header" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+		<put name="body" value="/enquiry/hospitalTelephoneEnquiry.cnt" />
+		<put name="footer" value="/hisglobal/utility/dynamicdesk/empty.jsp" />
+	</definition>
+	
+	<!-- ***** End of HELP DESK Tiles -->
+</tiles-definitions>

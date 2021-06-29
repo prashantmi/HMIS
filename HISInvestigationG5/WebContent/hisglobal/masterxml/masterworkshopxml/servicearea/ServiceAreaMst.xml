@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Area Master'>
+		<common-values>
+			<master-name>ServiceAreaMst</master-name>
+			<master-title>Service Area Master</master-title>
+		</common-values>
+	<list-page>
+			<tableHeading>Service Area Master</tableHeading>
+			<list-table>HSRV_SERVICE_AREA_MST</list-table>
+			<columns>
+				<column>Service Area</column>
+				<column>Department</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HSRSTR_SERVICE_AREA_NAME)</field>
+					<field>NVL((SELECT INITCAP (NVL (b.gstr_dept_name, 'Global Service'))
+          FROM gblt_department_mst b
+         WHERE a.gnum_dept_code = b.gnum_dept_code  AND b.gnum_hospital_code = a.gnum_hospital_code and gnum_isvalid=1),'Global Service')</field>
+				</fields>
+				<primaryKey>
+					<field>A.HSRNUM_SERVICE_AREA_CODE </field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HSRV_SERVICE_AREA_MST</table>
+				</tables>
+				<condition>					
+					<general></general>
+                    <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                    <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>                   
+                    <orderby> order by UPPER(A.HSRSTR_SERVICE_AREA_NAME)</orderby>
+                </condition>
+			</query-detail>
+		</list-page>
+		<add-page>
+			<static-page>/servicearea/masters/serviceAreaMst.cnt</static-page>
+		</add-page>
+		<modify-page>
+			<static-page>/servicearea/masters/serviceAreaMst.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,212 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='EpisodeActionMaster'>
+		<common-values>
+			 <master-name>EpisodeActionMaster</master-name> 
+			<master-title>Episode Action Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>EpisodeActionMaster</tableHeading> 
+				<list-table>GBLT_EPISODE_ACTION_MST</list-table>
+				
+				<columns>
+					<column>Episode Action Name </column>
+					
+				</columns>
+				<query-detail>
+					<fields>
+						<field>INITCAP(A.GSTR_EPISODE_ACTION_NAME)</field>
+						
+					</fields>
+					<primaryKey>
+						<field>A.GNUM_EPISODE_ACTION_CODE </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_EPISODE_ACTION_MST </table>
+						
+					</tables>
+				   <condition>
+						<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+						<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+						 <orderby> order by INITCAP(A.GSTR_EPISODE_ACTION_NAME)</orderby>
+					</condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>
+				
+			<dynamic-page>	
+				<controls>
+						<control type="textarea" index="0" >
+						<label>Episode Action Name</label>
+						<constraints  inputType='alphabets' styleString="style='width:300px; height:30px'" mandatory ='true' methodstring="onkeypress='return CheckMaxLength(event,this,60);'"/>			
+						<readOnly>0</readOnly>
+					</control>		
+							
+						<control type="text" index="1">
+						<label>Episode Action Type </label>
+						<constraints  maxlength = '2' inputType='numeric' size ='4' mandatory="true"/>
+						<readOnly>0</readOnly>
+						
+					</control>
+					<control type="combo" index="2">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>	
+					
+					<control type="combo" index="3">
+						<label>Visit Type</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='0'>IPD </option>
+								<option value='1'>OPD </option>
+								<option value='2'>Emergency </option>
+							</static>
+						</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>
+					</control>							
+               
+					 <control type="text" index="4" >
+						<label>HL7</label>
+						<constraints maxlength='10' size='12' inputType='numeric'  />						
+						<readOnly>0</readOnly>
+					</control>
+				
+								
+				</controls> 
+				
+				<insert-query>
+					<primary-key>
+						<field>GNUM_EPISODE_ACTION_CODE</field>
+						<value>SELECT NVL(MAX(GNUM_EPISODE_ACTION_CODE),0)+1 FROM GBLT_EPISODE_ACTION_MST</value>
+						<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+					</primary-key>
+					
+					<fields valueMap='#I0'>GSTR_EPISODE_ACTION_NAME</fields>
+					<fields valueMap='#1'>GNUM_EPISODE_ACTION_TYPE</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+					<fields valueMap='#3'>HRGNUM_VISIT_TYPE</fields>
+					<fields valueMap='#4'>GNUM_HL7_CODE</fields>
+				<table>GBLT_EPISODE_ACTION_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+	<modify-page>
+		  <dynamic-page>
+		   <controls>
+		         <control type="textarea" index="0">
+						<label>Episode Action Name</label>
+						<constraints  inputType='alphabets' styleString="style='width:300px; height:30px'" mandatory ='true' methodstring="onkeypress='return CheckMaxLength(event,this,60);'"/>	
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+		           </control>
+				  								
+				   <control type="text" index="1">
+						<label>Episode Action Type </label>
+						<constraints  maxlength = '2'  inputType='numeric' size ='4' mandatory="true"/>
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>			
+                          
+					<control type="combo" index="2">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control> 
+					
+					 <control type="combo" index="3">
+						<label>Visit Type</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='0'>IPD </option>
+								<option value='1'>OPD </option>
+								<option value='2'>Emergency </option>
+							</static>
+						</data>
+						<default>#Q2</default>
+						<submitRequired>0</submitRequired>
+					</control>	                     
+						   
+					<control type="text" index="4">
+						<label>HL7 </label>
+						<constraints  size='12' maxlength = "10" inputType='numeric'/>
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>	   				   
+						  
+					<control type="textarea" index="5">
+						<label>Remarks </label>
+						<constraints  styleString="style='width:130px; height:30px'" mandatory='true' methodstring="onkeypress='return CheckMaxLength(event,this,50,3);'"/>
+						<data>
+							<static>#Q4</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>	 
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>InitCap(A.GSTR_EPISODE_ACTION_NAME)</field>
+					 <field>A.GNUM_EPISODE_ACTION_TYPE</field>
+					 <field>A.HRGNUM_VISIT_TYPE</field>
+					 <field>A.GNUM_HL7_CODE</field>	
+					 <field>A.GSTR_REMARKS</field>		
+				    
+				 </fields>					
+					<tables>
+						<table alias='A'>GBLT_EPISODE_ACTION_MST</table>
+						
+					</tables>
+					<condition>	
+						<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>						
+						<dependent>
+						    <clause>A.GNUM_EPISODE_ACTION_CODE= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>
+					
+					<fields valueMap='#I0'>GSTR_EPISODE_ACTION_NAME</fields>
+					<fields valueMap='#1'>GNUM_EPISODE_ACTION_TYPE</fields>
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>
+					<fields valueMap='@entryDate'>GDT_LSTMOD_DATE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>	
+					<fields valueMap='#3'>HRGNUM_VISIT_TYPE</fields>					
+					<fields valueMap='#4'>GNUM_HL7_CODE</fields>
+					<fields valueMap='#5'>GSTR_REMARKS</fields>			
+					
+					<table>GBLT_EPISODE_ACTION_MST</table>
+					<condition>GNUM_EPISODE_ACTION_CODE = #1</condition>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

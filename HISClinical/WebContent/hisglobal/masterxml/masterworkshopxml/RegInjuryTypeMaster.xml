@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='Injury Type Master'>
+        <common-values>
+           <master-name>InjuryTypeMaster</master-name>
+           <master-title>Injury Type Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Injury Type Master</tableHeading>
+           <list-table>HRGT_INJURY_TYPE_MST</list-table>
+           
+           <columns>
+              <column>Injury Type</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(NVL(A.HRGSTR_INJURY_TYPE,''))</field>
+				 
+			  </fields>
+				<primaryKey>
+					<field>A.HRGNUM_INJURY_TYPE_CODE</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HRGNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HRGT_INJURY_TYPE_MST</table>
+				</tables>
+				<condition>					 
+					<general>
+								A.GNUM_ISVALID =1 AND A.GNUM_HOSPITAL_CODE=100  
+							</general>
+							<general-inactive>
+								A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+							</general-inactive>
+							<isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY(A.HRGSTR_INJURY_TYPE) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/registration/masters/InjuryTypeMasterACTION.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/registration/masters/InjuryTypeMasterACTION.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+	<!--========== Form Bean Definitions ===================================-->
+	<form-beans>
+		<form-bean name="DietCycleMenuReportFB" type="dietkitchen.reports.controller.fb.DietCycleMenuReportFB" />
+		<form-bean name="DepartmentWardDietReqReportFB" type="dietkitchen.reports.controller.fb.DepartmentWardDietReqReportFB" />
+		<form-bean name="WardPatDietDtlReportFB" type="dietkitchen.reports.controller.fb.WardPatDietDtlReportFB" />
+		<form-bean name="ReqTypeCompDietDtlReportFB" type="dietkitchen.reports.controller.fb.ReqTypeCompDietDtlReportFB" />
+		<form-bean name="BulkDietReportFB" type="dietkitchen.reports.controller.fb.BulkDietReportFB" />
+		<form-bean name="GuestDietReportFB" type="dietkitchen.reports.controller.fb.GuestDietReportFB" />
+		<form-bean name="PatientExtraItemsReportFB" type="dietkitchen.reports.controller.fb.PatientExtraItemsReportFB" />
+		<form-bean name="WardWiseDietCountReportFB" type="dietkitchen.reports.controller.fb.WardWiseDietCountReportFB" />
+		<form-bean name="DietFeedBackReportFB" type="dietkitchen.reports.controller.fb.DietFeedBackReportFB" />
+		<form-bean name="QualityCheckupDateWiseReportFB" type="dietkitchen.reports.controller.fb.QualityCheckupDateWiseReportFB" />	
+		<form-bean name="dk_Bill_ReportFB" type="dietkitchen.reports.controller.fb.dk_Bill_ReportFB" />
+		<form-bean name="WardWiseMealTypeReportFB" type="dietkitchen.reports.controller.fb.WardWiseMealTypeReportFB" />	
+	</form-beans>
+
+	<!--========== Action Mapping Definitions ==============================-->
+	<action-mappings>
+		
+		<!-- Diet Cycle Menu Report -->
+		<action path="/dietCycleMenuReport"
+			type="dietkitchen.reports.controller.action.DietCycleMenuReportACTION"
+			name="DietCycleMenuReportFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_diet_cycle_menu_rpt.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_diet_cycle_menu_rpt_page.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		
+		<!-- Department Ward Wise Diet Request Report -->
+		<action path="/departmentWardWiseDietReqReport"
+			type="dietkitchen.reports.controller.action.DepartmentWardDietReqReportACTION"
+			name="DepartmentWardDietReqReportFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_dept_ward_diet_req.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_dept_ward_diet_req_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Ward Wise Patient Diet Detail Report -->
+		<action path="/wardWisePatDietDtlReport"
+			type="dietkitchen.reports.controller.action.WardPatDietDtlReportACTION"
+			name="WardPatDietDtlReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_ward_pat_diet_dtl.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_ward_pat_diet_dtl_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Request Type Wise Compiled Diet Detail Report -->
+		<action path="/reqTypeCompDietDtlReport"
+			type="dietkitchen.reports.controller.action.ReqTypeCompDietDtlReportACTION"
+			name="ReqTypeCompDietDtlReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_req_type_comp_diet_dtl.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_req_type_comp_diet_dtl_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Bulk Diet Report -->
+		<action path="/bulkDietReport"
+			type="dietkitchen.reports.controller.action.BulkDietReportACTION"
+			name="BulkDietReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_bulk_diet_dtl.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_bulk_diet_dtl_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Guest Diet Report -->
+		<action path="/guestDietReport"
+			type="dietkitchen.reports.controller.action.GuestDietReportACTION"
+			name="GuestDietReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_geust_diet_rpt.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_guest_diet_rpt_page.jsp" />
+			<forward name="PDF" path="/../hisglobal/utility/generictemplate/printingTile.cnt?errorMode=OK" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+
+		<!-- Patient Extra Items Report -->
+		<action path="/patientExtraItemsReport"
+			type="dietkitchen.reports.controller.action.PatientExtraItemsReportACTION"
+			name="PatientExtraItemsReportFB"
+			scope="request"
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_patient_extra_items_rpt.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_patient_extra_items_rpt_page.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Ward Wise Diet Count Report -->
+		<action path="/wardWiseDietCountReport"
+			type="dietkitchen.reports.controller.action.WardWiseDietCountReportACTION"
+			name="WardWiseDietCountReportFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_ward_wise_diet_count_rpt.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_ward_wise_diet_count_rpt_page.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Diet Feed Back Report -->
+		<action path="/dietFeedBackReport"
+			type="dietkitchen.reports.controller.action.DietFeedBackReportACTION"
+			name="DietFeedBackReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_diet_feedback.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_diet_feedback_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Quality Checkup Date Wise Report -->
+		<action path="/qualityCheckupDateWiseReport"
+			type="dietkitchen.reports.controller.action.QualityCheckupDateWiseReportACTION"
+			name="QualityCheckupDateWiseReportFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_quality_checkup_date_wise.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_quality_checkup_date_wise_rpt.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Diet Kitchen Bill Report -->
+	<action path="/dk_Bill_Report"
+			type="dietkitchen.reports.controller.action.dk_Bill_ReportCNT"
+			name="dk_Bill_ReportFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_Bill_Report.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_Bill_Report_page.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!-- Ward Wise Meal Type Report -->
+		<action path="/wardWiseMealTypeReport"
+			type="dietkitchen.reports.controller.action.WardWiseMealTypeReportACTION"
+			name="WardWiseMealTypeReportFB" 
+			scope="request" 
+			validate="false"
+			parameter="hmode">
+			<forward name="NEW"	path="/reports/jsp/dk_ward_wise_meal_type_rpt.jsp" />
+			<forward name="REPORT" path="/reports/jsp/dk_ward_wise_meal_type_rpt_page.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+	</action-mappings>
+
+	<message-resources parameter="dietkitchen.dietKitchenResourceBundle"></message-resources>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/dietkitchen/DietKitchen-tiles-def.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+</struts-config>

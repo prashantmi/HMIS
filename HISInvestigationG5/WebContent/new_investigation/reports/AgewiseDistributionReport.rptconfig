@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__jndi_ds_conn_22_0</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__hospCode_466_1</property>
+            <property name="value">10911</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__fromDate_468_2</property>
+            <property name="value">10-DEC-2019</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__toDate_469_3</property>
+            <property name="value">10-DEC-2019</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__mode_518_4</property>
+            <property name="value">10-DEC-2019</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_mode_1894_5</property>
+            <property name="value">10-DEC-2019</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Header_1939_6</property>
+            <property name="value">dfgdf</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Footer_1940_7</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Name_1941_8</property>
+            <property name="value">dfgdfg</property>
+        </structure>
+        <structure>
+            <property name="name">__isnull_1943_9</property>
+            <property name="value">report_user_Remarks_1943</property>
+        </structure>
+        <structure>
+            <property name="name">report_user_Remarks_1943_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Address_1944_10</property>
+            <property name="value">gfgsdf</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__report_Contact_1945_11</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_1939_12</property>
+            <property name="value">dfgdf</property>
+        </structure>
+        <structure>
+            <property name="name">report_Header_1939_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_1942_13</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_Visible_1942_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_1944_14</property>
+            <property name="value">gfgsdf</property>
+        </structure>
+        <structure>
+            <property name="name">report_Address_1944_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_469_15</property>
+            <property name="value">10-DEC-2019</property>
+        </structure>
+        <structure>
+            <property name="name">toDate_469_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">mode_518_16</property>
+            <property name="value">10-DEC-2019</property>
+        </structure>
+        <structure>
+            <property name="name">mode_518_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_1945_17</property>
+            <property name="value"></property>
+        </structure>
+        <structure>
+            <property name="name">report_Contact_1945_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_18</property>
+            <property name="value">java:comp/env/AHIS</property>
+        </structure>
+        <structure>
+            <property name="name">jndi_ds_conn_22_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_468_19</property>
+            <property name="value">10-DEC-2019</property>
+        </structure>
+        <structure>
+            <property name="name">fromDate_468_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">hospCode_466_20</property>
+            <property name="value">10911</property>
+        </structure>
+        <structure>
+            <property name="name">hospCode_466_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_mode_1894_21</property>
+            <property name="value">10-DEC-2019</property>
+        </structure>
+        <structure>
+            <property name="name">report_mode_1894_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_1940_22</property>
+            <property name="value">Computer Generated Report</property>
+        </structure>
+        <structure>
+            <property name="name">report_Footer_1940_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">rpt_format_1946_23</property>
+            <property name="value">true</property>
+        </structure>
+        <structure>
+            <property name="name">rpt_format_1946_type_</property>
+            <property name="value">boolean</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_1941_24</property>
+            <property name="value">dfgdfg</property>
+        </structure>
+        <structure>
+            <property name="name">report_Name_1941_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

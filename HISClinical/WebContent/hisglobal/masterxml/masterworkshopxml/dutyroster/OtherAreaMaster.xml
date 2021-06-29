@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Other Area Master'>
+		<common-values>
+			<master-name>OtherAreaMaster</master-name>
+			<master-title>Other Area Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Other Area Master</tableHeading>
+			
+			<list-table>HDRT_OTHER_AREA_MST</list-table>
+
+			<columns>
+				<column>Other Area Name</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HDTSTR_DUTY_AREA_NAME)</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HDRNUM_DUTY_AREA_CODE</field>
+					<field>A.HDRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDRT_OTHER_AREA_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby>ORDER BY(A.HDTSTR_DUTY_AREA_NAME)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/dutyroster/masters/OtherAreaMstAddModACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/dutyroster/masters/OtherAreaMstAddModACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='disasterTypeMaster'>
+		<common-values>
+			<master-name>DisasterMaster</master-name>
+			<master-title>Disaster Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Disaster Master</tableHeading> 
+				<list-table>HDST_DISASTER_TYPE_MST</list-table>
+				<columns>
+					 <column>Disaster Type Name </column>
+					 <column>Disaster Type</column>
+				</columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HDSSTR_DISASTER_TYPE_NAME) </field>
+						<field>DECODE(A.HDSNUM_DISASTER_TYPE,0,'Natural',1,'Man Made')</field>
+					</fields>
+					<primaryKey>
+						<field>A.HDSNUM_DISASTER_TYPE_CODE </field>
+						<field>A.HDSNUM_SLNO </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HDST_DISASTER_TYPE_MST </table>
+					</tables>
+					<condition>		
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+							<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+							<orderby> order by INITCAP(A.HDSSTR_DISASTER_TYPE_NAME)</orderby>
+					</condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<static-page>/disaster/disasterTypeMaster.cnt</static-page>	
+		</add-page>
+		<modify-page>
+		 	 <static-page>/disaster/disasterTypeMaster.cnt</static-page>	
+		 </modify-page>
+	</master>	
+</master-config>

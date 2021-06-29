@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+
+	<definition name="/alertDeskAll" path="/alertmanagement/transactions/alertDeskLayout.jsp">
+  	    <put name="action"  value="/alertmanagement/automaticAlert.cnt"/>	  
+		<put name="title"  value="Alert Desk" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="body"  value="/alertmanagement/transactions/alertTabViewLayout.jsp"/>	  
+  	    <put name="footer" value="/registration/header.jsp" /> 
+	</definition>
+	
+	<definition name="/alertDeskTask" path="/alertmanagement/transactions/alertDeskLayout.jsp">
+		<put name="title"  value="Alert Desk" type="string"/>
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	    <put name="action"  value="/alertmanagement/alertDeskTasks.cnt"/>	  
+  	    <put name="body"  value="/alertmanagement/transactions/alertTabViewLayout.jsp"/>	  
+  	    <put name="footer" value="/registration/header.jsp" /> 
+	</definition>
+	
+	<definition name="/alertDeskNotification" path="/alertmanagement/transactions/alertDeskLayout.jsp">
+		<put name="title"  value="Alert Notifications" type="string"/>
+		 <put name="action"  value="/alertmanagement/alertDeskNotifiable.cnt"/>	
+  	    <put name="header"  value="/registration/header.jsp"/>	  
+  	      <put name="body"  value="/alertmanagement/transactions/alertTabViewLayout.jsp"/>	  
+  	    <put name="footer" value="/registration/header.jsp" /> 
+	</definition>
+	
+</tiles-definitions>

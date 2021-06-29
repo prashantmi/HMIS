@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='DrugfrequencyMaster'>
+		<common-values>
+			<master-name>DrugFrequencyMaster</master-name>
+			<master-title>Drug Frequency Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Drug Frequency Master</tableHeading> 
+				<list-table>HGBT_DRUG_FREQUENCY_MST</list-table>
+				<columns>
+					 <column>Frequency Name </column>
+				   	 <column>Frequency Description </column>
+				  </columns>
+
+					<query-detail>
+					<fields>
+						<field>UPPER(A.HGSTR_FREQUENCY_NAME) </field>
+						<field>INITCAP(A.HGSTR_FREQ_DESC) </field>
+						</fields>
+					<primaryKey>
+						<field>A.HGNUM_FREQUENCY_ID </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HGNUM_SLNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_DRUG_FREQUENCY_MST </table>
+					</tables>
+					<condition>		
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+							<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+							<orderby> order by UPPER(A.HGSTR_FREQUENCY_NAME)</orderby>
+					</condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>				
+					<control type="text" index="0" >
+						<label>Frequency Name</label>
+						<constraints inputType='alphabets' size='22'  maxlength ='3' mandatory ='true'/>						
+						<readOnly>0</readOnly>
+					</control>						
+					<control type="text" index="1" >
+						<label>Frequency description</label>
+						<constraints  maxlength = "100" size="50" inputType='alphabets' mandatory ='true' />						
+						<readOnly>0</readOnly>
+					</control>
+									
+					
+				</controls>
+				<redundent-check>
+				SELECT COUNT (*) FROM HGBT_DRUG_FREQUENCY_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper (HGSTR_FREQUENCY_NAME)  =  controlindex0
+				</redundent-check>	 
+				<insert-query>
+					<primary-key>
+						<field>HGNUM_FREQUENCY_ID</field>
+						<value>SELECT NVL(MAX(HGNUM_FREQUENCY_ID),10)+1 FROM HGBT_DRUG_FREQUENCY_MST</value>
+						<field>HGNUM_SLNO</field>
+						<value>SELECT NVL(MAX(HGNUM_SLNO),0)+1 FROM HGBT_DRUG_FREQUENCY_MST</value>
+						<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+					</primary-key>
+					<fields valueMap='#U0'>HGSTR_FREQUENCY_NAME</fields>
+					<fields valueMap='#I1'>HGSTR_FREQ_DESC</fields>
+					<fields valueMap='@seatId'>	GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+					<table>HGBT_DRUG_FREQUENCY_MST</table>				  
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+		<modify-page>
+		  <dynamic-page>
+		   <controls>							
+					<control type="text" index="0">
+						<label>Frequency Name </label>
+						<constraints inputType='alphabets' size='22'  maxlength ='3' mandatory ='true'/>	
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+				   <control type="text" index="1">
+						<label>Frequency Description </label>
+						<constraints inputType='alphabets' size="50" maxlength = "100" mandatory ='true' />
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>		
+				<control type="combo" index="2">
+				<selection-mandatory>true</selection-mandatory>
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+                  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>A.HGSTR_FREQUENCY_NAME</field>
+					 <field>A.HGSTR_FREQ_DESC</field>								
+                 </fields>					
+					<tables>
+						<table alias='A'>HGBT_DRUG_FREQUENCY_MST</table>
+						
+					</tables>
+					<condition>	
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>	
+					<dependent>
+					    <clause>A.HGNUM_FREQUENCY_ID= #C1</clause>
+					    
+					</dependent>		
+					</condition>						
+				</initialise-query>	
+				<redundent-check>
+				SELECT COUNT (*) FROM HGBT_DRUG_FREQUENCY_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+				and upper (HGSTR_FREQUENCY_NAME)  =  controlindex0
+				</redundent-check>		 
+				<update-query>					
+					<fields valueMap='#U0'>HGSTR_FREQUENCY_NAME</fields>
+					<fields valueMap='#I1'>HGSTR_FREQ_DESC</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>					
+										
+					<table>HGBT_DRUG_FREQUENCY_MST</table>
+					<condition>HGNUM_FREQUENCY_ID = #1</condition>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='AnomalyTypeMaster'>
+        <common-values>
+           <master-name>AnomalyTypeMaster</master-name>
+           <master-title>Anomaly Type Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Anomaly Type Master</tableHeading>
+           <list-table>HANCT_ANOMALY_TYPE_MST</list-table>
+           
+           <columns>
+              <column>Anomaly Type</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HANCSTR_ANOMALY_TYPE)</field>
+	    		 
+			  </fields>
+				<primaryKey>
+					<field>A.HANCNUM_ANOMALY_TYPE_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HANCNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HANCT_ANOMALY_TYPE_MST</table>
+				</tables>
+				<condition>					 
+					<isvalid-field>A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID</isvalid-field>
+					<orderby> ORDER BY(A.HANCSTR_ANOMALY_TYPE) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/inpatient/master/AnomalyTypeMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/inpatient/master/AnomalyTypeMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='AllergyWiseSymptomMaster'>
+		<common-values>
+			<master-name>AllergyWiseSymptomMaster</master-name>
+			<master-title>Allergy Wise Symptom Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Allergy Wise Symptom Master</tableHeading> 
+				<list-table>HGBT_ALLERGYWISE_SYMPTOM_MST</list-table>
+				<columns>
+					 <column>Allergy Type</column>
+					 <column>Symptom</column>   				  
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(B.HGSTR_ALLERGY_TYPE)</field>
+						
+						<field>INITCAP(C.HGNUM_SYMPTOM_DESC)</field>					
+					</fields>
+					
+					<primaryKey>
+						<field>A.HGNUM_ALLERGY_TYPE_CODE</field>
+						<field>A.HGNUM_SYMPTOM_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					
+					<tables>
+						<table alias='A'>HGBT_ALLERGYWISE_SYMPTOM_MST </table>
+						<table alias='B'>HGBT_ALLERGY_TYPE_MST </table>
+						<table alias='C'>HGBT_ALLERGY_SYMPTOM_MST </table>
+					</tables>
+					
+					<condition>	
+					
+							<isvalid-field>A.GNUM_HOSPITAL_CODE=100 and A.HGNUM_ALLERGY_TYPE_CODE=B.HGNUM_ALLERGY_TYPE_CODE AND
+                            A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND A.HGNUM_SYMPTOM_CODE=C.HGNUM_SYMPTOM_CODE
+                            AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND
+                            A.GNUM_ISVALID</isvalid-field>
+                            
+                            <orderby> order by INITCAP(B.HGSTR_ALLERGY_TYPE)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<static-page>/opd/master/AddAllergyWiseSymptomMaster.cnt</static-page>			
+		</add-page>
+		
+		<modify-page>	
+   		    <static-page>/opd/master/ModifyViewAllergyWiseSymptomMaster.cnt</static-page>		
+		</modify-page>
+	</master>	
+</master-config>

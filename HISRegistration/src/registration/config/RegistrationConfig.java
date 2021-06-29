@@ -1,0 +1,840 @@
+package registration.config;
+
+                                     
+/**
+ * RegistrationConfig is an interface that defines hard-coded values that are
+ * used for development of BO and DAO.
+ * @author AHIS 
+ */
+public interface RegistrationConfig {
+	
+	String SUPER_USER_HOSPITAL_CODE="100";
+	
+	// //Module ID
+	String MODULE_ID_REGISTRATION = "11";
+	String MODULE_ID_EMERGENCY = "12";
+	
+	// ////Refer Patient Acceptence Days
+	String REFER_PATIENT_ACCEPTENCE_WITHIN_DAYS = "1";
+
+	// **** Validation Flags
+	String IS_VALID_INACTIVE = "2";
+	String IS_VALID_ACTIVE = "1";
+	String IS_VALID_DELETED = "0";
+	
+	//New registration 
+	//Session Management 
+	 String SESSION_FLAG_NEW_REGISTRATION_DUPLICATE="sessionFlagNewRegistrationDuplicate";
+	 String SESSION_FLAG_YES="1";
+	 String SESSION_FLAG_NO="0";
+	 
+	 //New Registration List Box
+	 String ESSENTIAL_BO_OPTION_DEPARTMENT = "optionDepartmentList";
+	 String ESSENTIALBO_OPTION_PRIMARY_CATEGORY= "optionPrimaryCategory";
+	 String ESSENTIALBO_OPTION_MARITAL_STATUS= "optionMaritalStatus";
+	 String ESSENTIALBO_OPTION_GENDER= "optionGender";
+	 String ESSENTIALBO_OPTION_CASTE= "optionCaste";
+	 String ESSENTIALBO_OPTION_RELIGION= "optionReligion";
+	 String ESSENTIALBO_OPTION_COUNTRY= "optionCountry";
+	 String ESSENTIALBO_OPTION_STATE= "optionState";
+	 String ESSENTIALBO_OPTION_AGE_TYPE= "optionAgeType";   
+	 String ESSENTIALBO_OPTION_NATIONALITY="optionNationality";
+	 String ESSENTIALBO_OPTION_REF_HOSPITAL= "optionRefHospital";
+	 String ESSENTIALBO_OPTION_REFERAL_DEPARTMENT_DTL="optionReferDepartmentList";
+	 String ESSENTIALBO_OPTION_CONSULTANT_DTL="optionReferConsultantList";    //added by warish to get consultant list
+	 String ESSENTIAL_BO_OPTION_DISTRICT_LIST_STATEWISE="stateWiseDistrictList";
+	 String ESSENTIALBO_OPTION_RELATION_DTL="optionRelationDetail";
+	 String ESSENTIALBO_OPTION_OCCUPATION_DTL="optionOccupationDetail";
+	 String ESSENTIALBO_OPTION_VERIFICATION_DOCUMENTS="optionVerificationDoc";
+	 String REGISTRATIONDESK_OPTION_DEPARTMENT = "optionDepartmentToSelect";
+	 String ESSENTIALBO_OPTION_AREA_CATEGORY= "optionAreaCategory";
+	 String ESSENTIALBO_VO_RENEWEL_CONFIG="voRenewelConfig";
+	 String ESSENTIALBO_VO_REGISTRATION_CONFIG="voRegistrationConfig";
+	 String ESSENTIALBO_LIST_OF_RENEWEL_CONFIG_VO="lstRenewelConfigVO";
+	 String ESSENTIALBO_MAP_OF_RENEWEL_CONFIG_VO="mapRenewelConfigVO";
+	 String EMGREGISTRATIONDESK_OPTION_DEPARTMENT = "optionEmgDepartmentToSelect";
+	 String ESSENTIALBO_OPTION_HOSPITAL_LIST="optionHospitalList";
+	 String ESSENTIAL_BO_AGE_RANGE_OPTION_LIST="ageRangeOptionList";
+	 String ESSENTIALBO_CLIENT_OPTION_LIST="clientOptionList";
+	 String ESSENTIALBO_OPTION_SELETED_VERIFICATION_DOCUMENTS="optionSelectedVerificationDoc";
+	 
+	 //Added for Enquiry Module Integartion By Garima on 29th Dec 2014--Start--
+	 String ESSENTIAL_BO_OPTION_UNIT_BASED_ON_DEPT="unitBasedOnDept";
+	 String ESSENTIALBO_WARD_CODE="wardcode";
+	 String ESSENTIAL_BO_OPTION_ALLDEPT="alldept";
+	 String ESSENTIALBO_OPTION_GLOBAL_DEPARTMENT="listOfGlobalDepartment";
+	 
+	//Added for Enquiry Module Integartion By Garimaon 29th Dec 2014--End --
+
+
+	 String SPLREGISTRATIONDESK_OPTION_DEPARTMENT = "optionSplDepartmentToSelect";
+	 
+	 //Maps
+	 String REGISTRATION_ESSENTIAL_MAP="registrationEssentialMap";
+	
+	// Tariffs
+	String NEW_REGISTRATION_TARIFF_ID="1010001";
+    String DUPLICATE_RENEW_CARD_TARIFF_ID="1010002";
+    String EMERGENCY_REGISTRATION_TARIFF_ID="1010004";
+    String SPECIAL_CLINIC_REGISTRATION_TARIFF_ID="1010003";
+    
+    String OLD_DEPT_VISIT_TARIFF_ID="1010005";	// "1010005";
+    String NEW_DEPT_VISIT_TARIFF_ID="1010006";	//"1010006";
+    String TARIFF_ID="tariffId";
+    //String REFER_DEPT_VISIT_TARIFF_ID="3";
+    String RENEWAL_TARIFF_ID="1010007";
+	String EMERGENCY_NEW_DEPT_VISIT_TARIFF_ID="1010008";	//"1010008";
+	String SPECIAL_NEW_DEPT_VISIT_TARIFF_ID="1010009";	//"1010008";
+	
+	String EMERGENCY_RENEWAL_TARIFF_ID="1010010";
+	String SPECIAL_RENEWAL_TARIFF_ID="1010011";
+	
+	String OPD_CROSS_CONSULTATION_TARIFF_ID="1010012";
+	String SPL_CROSS_CONSULTATION_TARIFF_ID="1010013";
+
+	//Defualt Parameters for New Registration
+	String REGISTRATIONDESK_DEFAULT_COUNTRY_CODE = "IND";
+	
+	String REGISTRATIONDESK_DEFAULT_STATE_CODE = "28";
+	String REGISTRATIONDESK_DEFAULT_DISTRICT_CODE ="536";
+	String REGISTRATIONDESK_DEFAULT_AREA_CATEGORY_CODE = "0";
+	String PATIENT_REG_CATEGORY_NORMAL="11";
+    String PATIENT_REG_CATEGORY_SPECIAL="12";
+    String PATIENT_REG_CATEGORY_EMERGENCY="13";
+    
+    String PATIENT_REG_CATEGORY_GROUP_BENEFICIARY="3";
+    String PATIENT_REG_CATEGORY_GROUP_BENEFICIARY_WITHOUT_REFERENCE="4";
+    String PATIENT_REG_CATEGORY_GROUP_PAID="0";
+    String PATIENT_REG_CATEGORY_GROUP_STAFF="1";
+    String PATIENT_REG_CATEGORY_GROUP_FREE="2";
+    
+    
+    String PATIENT_REG_CATEGORY_GROUP_BENEFICIARY_NAME="BENEFICIARY";
+    String PATIENT_REG_CATEGORY_GROUP_BENEFICIARY_WITHOUT_REFERENCE_NAME="BENEFICIARY";
+    String PATIENT_REG_CATEGORY_GROUP_PAID_NAME="PAID";
+    String PATIENT_REG_CATEGORY_GROUP_STAFF_NAME="STAFF";
+    String PATIENT_REG_CATEGORY_GROUP_FREE_NAME="FREE";
+    
+	String REGISTRATIONDESK_RENEWEL_CONFIG_OPD="1";
+	String REGISTRATION_TYPE_GENERAL_OPD="generalOpd";
+	String REGISTRATION_TYPE_SPL_OPD="splOpd";
+	String REGISTRATION_TYPE_SPECIAL_CLINIC="specialClinic";
+	String REGISTRATION_TYPE_EMERGENCY_CLINIC="emergencyClinic";
+	String REGISTRATIONDESK_RENEWEL_CONFIG_SPL="2";
+	String REGISTRATIONDESK_RENEWEL_CONFIG_EMG="3";
+
+	//Unit Types
+	String UNIT_TYPE_GENERAL="1";
+	String UNIT_TYPE_SPECIALITY="2";
+	String UNIT_TYPE_CASUALITY="3";
+	
+	//Unit---> Is Unit
+	String IS_UNIT_DEPARTMENT_UNIT="0";
+	String IS_UNIT_DOCTOR_UNIT="1";
+	
+	//Shift Types
+	String SHIFT_TYPE_OPD="1";
+	String SHIFT_TYPE_REGISTRATION="2";
+	
+	//Dept Types
+	String DEPT_TYPE_CLINICAL_VALUE="1";
+	
+	//Patient Category
+    String PATIENT_CAT_TYPE_PRIMARY   = "0";
+	
+	//Patient Detail ?Modification
+	String REGDESK_ADDRESSVO_ARR="arrAddressVO";
+	String RELATION_MASTER_VALUE_FOR_SELF="1";
+	String PATIENT_VO="patientVO";
+	String APT_PATIENT_VO="aptpatientVO";
+
+	String PATIENT_VO_MOD="patVOMod";
+	String EMG_BROUGHTBY_DETAILS="PatBroughtVO";
+	String EMG_LISTOF_BROUGHTBY_DETAILS="lstPatBroughtVO";
+
+	String MLC_NO="mlcno";
+	
+	
+    
+    String PATIENT_ADDRESS_ADD="add";
+    String PATIENT_ADDRESS_MODIFY="modify";
+    String ESSENTIALBO_OPTION_ADDRESS_TYPE="optionAddressTypeColl";
+    String ESSENTIALBO_OPTION_EDIT_ADDRESS_TYPE_FOR_VALIDATION="optionEditAddressTypeForValidation"; 
+    String PATIENT_ADDRESS_STATUS="addressStatus";
+    String SYSADATEOBJECT="SYSDATEOBJECT";
+    String ESSENTIALBO_OPTION_LOCATION= "optionLocation";
+    String ESSENTIALBO_OPTION_DISTRICT_ON_DEFAULT_STATE= "lstDistrictOnTheBasisOfState";
+    String QUERY_FILE_FOR_MASTERSDAO  ="registration.mastersQuery";
+    String REGISTRATION_DESK_TYPE="registrationDeskType";
+	String REGISTRATION_DESK_TYPE_SPECIAL="special";
+	String REGISTRATION_DESK_TYPE_OPD="opd";
+
+	
+	
+    String PATIENT_VO_LIST="patVoList";
+
+	//Unit Master
+	String IS_DEPT_UNIT="0";
+	String IS_DOC_UNIT="1";	
+	String IS_RENEWAL_TYPE="4";
+	
+	//Department Unit Room Master
+	String ALL_ROOMS_LIST="optionRoomsList";
+	String NEW_ROOMS_LIST="optionNewRooms";
+	String UNIT_ROOM_WISE_CAPACITY_MODE="1";
+	String UNIT_ROOM_DAY_WISE_CAPACITY_MODE="2";
+	
+	//Department Unit Roster Master
+	String DEPT_UNIT_ROSTER_VO="DeptUnitRosterVO";
+	String ESSENTIALBO_OPTION_SHIFT="optionShift";
+
+	String ROSTERTYPE_OPD="1";
+	String ROSTERTYPE_SPECIAL="2";
+	String ROSTERTYPE_EMG="3";
+	/*Added By Aadil -Start */
+	
+	String IS_CARD_PRINT_FALSE="0";
+	String IS_CARD_PRINT_NEW_DEPARTMENT="1";
+	String IS_CARD_PRINT_OLD_PATIENT="2";
+	
+	String IS_REFERRED_TRUE		="1";
+	String IS_REFERRED_FALSE	="0";
+	    
+	String IS_REFERRED_IN_OUT_REFER_EXTERNAL	="0";//>>PATIENT REFERRED TO SOME OTHER HOSPITAL
+    String IS_REFERRED_IN_OUT_REFER_INTERNAL	="1";//>>PATIENT REFERRED TO SOME DEPARTMENT IN SAME HOSPITAL
+    String IS_REFERRED_IN_OUT_ACCEPT_EXTERNAL	="2";//>>PATIENT ACCEPTED FROM SOME OTHER HOSPITAL
+    String IS_REFERRED_IN_OUT_ACCEPT_INTERNAL	="3";//>>PATIENT ACCEPTED FROM SOME DEPARTMENT IN SAME HOSPITAL
+    String IS_REFERRED_IN_OUT_REFER_EXTERNAL_INSTITUTE	="4";//>>PATIENT REFERRED TO SOME EXTERNAL INSTITUTE IN SAME HOSPITAL
+    												 //in this case HRGNUM_REFF_DEPT_CODE in HRGT_EPISODE_REFFER_DTL specifies department from which patient is reffered
+    
+	String EPISODE_ISOPEN_TRUE		  = "1";
+	String EPISODE_ISOPEN_FALSE		  = "0";
+	
+	String EPISODE_ISCONFIRMED_REGISTERED	  = "0";// used in case of OPD Bay
+    String EPISODE_ISCONFIRMED_VISIT_STAMPED  = "1";///we will be using this
+    String EPISODE_ISCONFIRMED_VISIT_CONFIRMED  = "2";
+    
+    String EPISODE_TYPE_CODE_IPD      ="0";
+    String EPISODE_TYPE_CODE_OPD_GENERAL ="1";
+   
+    String EPISODE_TYPE_CODE_EMG  ="2";
+    /*String EPISODE_TYPE_CODE_EMG_MLC  ="2";
+    String EPISODE_TYPE_CODE_EMG_NO_MLC	="3";*/
+    
+    String EPISODE_VISIT_TYPE_IPD      ="0";
+    String EPISODE_VISIT_TYPE_OPD      ="1";
+    String EPISODE_VISIT_TYPE_EMG_MLC  ="2";//Now The visit type is casuality=2 for mlc and non mlc
+    String EPISODE_VISIT_TYPE_EMG_NON_MLC="3";//Earlier the visit type was MLC=3 anf NoN Mlc=2
+    String EPISODE_VISIT_TYPE_SPECIAL  ="4";
+    
+    String EPISODE_REFERRAL_ACCEPTANCE_NONE      ="0";
+    String EPISODE_REFERRAL_ACCEPTANCE_INTERNAL  ="1";
+    String EPISODE_REFERRAL_ACCEPTANCE_EXTERNAL  ="2";
+    
+	String IS_ADDRESS_MODIFIED="0";
+	String IS_ADDRESS_ADDED="1";
+	///vERIFICATION dOCUMENT ADDED OR NOT 
+	String VERIFICATION_DOCUMENT_ADDED="1";
+	String VERIFICATION_DOCUMENT_NOT_ADDED="0";
+	String ESSENTIALBO_OPTION_EDIT_ADDRESS_TYPE="optionEditAddressType";
+
+    String IS_ADDRESS_DELHI_TRUE="1";
+    String IS_ADDRESS_DELHI_FALSE="0";
+
+    String IS_ACTUAL_DOB_TRUE	="1";
+    String IS_ACTUAL_DOB_FALSE	="0";
+
+    String IS_ADDRESS_CURRENT_TRUE="1";
+	String IS_ADDRESS_CURRENT_FALSE="0";
+    
+    String IS_OLD_TRUE		="1";
+    String IS_OLD_FALSE		="0";
+    String IS_HOU_TRUE="1";
+    String IS_HOU_FALSE="0";
+    String IS_HOU_DOCTOR="2";
+    
+    String PATIENT_ADD_TYPE_CURRENT="1";
+    
+    String PATIENT_ISUNKNOWN_TRUE  = "1"; 
+    String PATIENT_ISUNKNOWN_FALSE  = "0";
+    
+
+	String PATIENT_IS_DEAD="1";
+	String PATIENT_IS_NOT_DEAD="0";
+    
+    String ALL_PATIENT_VO_LIST="allPatientVOList";
+	String REGISTRATIONDESK_PATIENT_VO="registrationPatientVo";
+	
+	String IMAGE_UPLOADED_TRUE = "1";
+	String IMAGE_UPLOADED_FALSE = "0";
+	
+	String REGISTRATION_SERVICE_ID="1";
+	
+	/************Diclaimer Master flag ************/
+	String DEFAULT_DISCLAIMER_USABILITY_FLAG_NORMAL="1";
+	String DEFAULT_DISCLAIMER_USABILITY_FLAG_SPECIAL="2";
+	String DEFAULT_DISCLAIMER_USABILITY_FLAG_CASUALTIY="3";
+	String DISCLAIMER_IS_HEADER_YES="1";
+	String DISCLAIMER_IS_HEADER_NO="0";
+	String DISCLAIMER_ALIGN_CENTER="1";
+	String DISCLAIMER_ALIGN_RIGHT="2";
+	String DISCLAIMER_ALIGN_LEFT="3";
+	
+	String RENEWAL_CONFIG_GROUP_OPD="1";
+	String RENEWAL_CONFIG_GROUP_SPEACIAL="2";
+	String RENEWAL_CONFIG_GROUP_CASUAL="3";
+	String PROCESS_TYPE_PATIENT_DTL="1";	
+	String PATIENT_STATUS_CODE_EMERGENCY="1";
+	String PATIENT_STATUS_CODE_INPATIENT="2";
+	String PATIENT_STATUS_CODE_OUTPATIENT="3";
+	
+	String COUNTRY_CODE_INDIA="IND";
+	
+	
+	/////////value for duplicate card printing//////////
+		
+	String DUPLICATE_CARD="1";
+	String REPRINT_REGISTRATION="2";
+	String REPRINT_OLD_VISIT_SLIP="3";
+	String REPRINT_RENEWAL="4";
+	String PRINT_BACK_PAGE = "5";
+	String PRINT_CARD = "6";
+	
+	String REG_MST_OPTION_PRIMARY_CATEGORY= "regMstOptionPrimaryCategory";
+	String REG_MST_LIST_OF_GEN_RENEWAL_CONFIG_VO="lstGenRenewalConfigVO";
+	String REG_MST_LIST_OF_EMG_RENEWAL_CONFIG_VO="lstEmgRenewalConfigVO";
+	String REG_MST_LIST_OF_SPL_RENEWAL_CONFIG_VO="lstSplRenewalConfigVO";
+	String REG_MST_LIST_OF_HOPWISE_COMMON_RENEWAL_CONFIG_VO="lstHospWiseCommonRenewalConfigVO";
+	////////////////////////////////////////
+	
+	//OPD Card Print Settings
+    
+    String OPD_CARD_PAID="PAID (AFS)";
+    
+//    String OPD_CARD_HEADER_LINE_1="Ayurveda Central Research Institute";
+//    String OPD_CARD_HEADER_LINE_2="Central Council for Research in Ayurvedic Sciences, Deptt. Of AYUSH";
+//    String OPD_CARD_HEADER_LINE_3="Ministry of Health & Family Welfare Govt. of India";
+//    String OPD_CARD_HEADER_LINE_4="Road No 66, Punjabi Bagh(W),New Delhi-110026";
+    String OPD_CARD_HEADER_LINE_4_PHONE_LABEL="Phone: ";
+//    String OPD_CARD_HEADER_LINE_4_PHONE_VALUE="011-25229128, 25221059";
+    String OPD_CARD_HEADER_LINE_4_FAX_LABEL="Fax :";
+//    String OPD_CARD_HEADER_LINE_4_FAX_VALUE="25225546";
+   String OPD_CARD_HEADER_LINE_4_EMAIL_LABEL="Email :";
+//    String OPD_CARD_HEADER_LINE_4_EMAIL_VALUE="acri.delhi@gmail.com";
+//    
+    
+   String OPD_CARD_CRNO_HINDI_LABEL= "&#2325;&#2375;&#2344;&#2381;&#2342;&#2381;&#2352;&#2368;&#2351; &#2346;&#2306;&#2332;&#2368;&#2325;&#2352;&#2339; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366;";
+   String OPD_CARD_DATETIME_HINDI_LABEL="&#2342;&#2367;&#2344;&#2366;&#2306;&#2325; &#2324;&#2352; &#2360;&#2350;&#2351;";
+   String OPD_CARD_PATIENT_NAME_HINDI_LABEL="&#2352;&#2379;&#2327;&#2368; &#2325;&#2366; &#2344;&#2366;&#2350;";
+   String OPD_CARD_AGE_HINDI_LABEL="&#2313;&#2350;&#2381;&#2352;";
+   String OPD_CARD_SEX_HINDI_LABEL="&#2354;&#2367;&#2306;&#2327;";
+   String OPD_CARD_ADDRESS_HINDI_LABEL="&#2346;&#2340;&#2366;";
+   String OPD_CARD_CONTACTNO_HINDI_LABEL="&#2347;&#2379;&#2344; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366;";
+   String OPD_CARD_DEPT_HINDI_LABEL="&#2357;&#2367;&#2349;&#2366;&#2327;&#47;&#2325;&#2350;&#2352;&#2366;&#2360;&#2306;";
+   String OPD_CARD_CONSULTANT_HINDI_LABEL="&#2330;&#2367;&#2325;&#2367;&#2340;&#2381;&#2360;&#2325;";
+   String OPD_CARD_DIAGNOSIS_HINDI_LABEL="&#2344;&#2367;&#2342;&#2366;&#2344;";
+   String OPD_CARD_OCCUPATION_HINDI_LABEL="&#2357;&#2381;&#2351;&#2357;&#2360;&#2366;&#2351;";
+   String OPD_CARD_AYURVEDA_HINDI_LABEL="&#2310;&#2351;&#2369;&#2352;&#2381;&#2357;&#2375;&#2342;";
+   String OPD_CARD_KENDRIYA_HINDI_LABEL="&#2325;&#2375;&#2344;&#2381;&#2342;&#2381;&#2352;&#2368;&#2351;";
+   String OPD_CARD_ANUSANDHAN_HINDI_LABEL="&#2309;&#2344;&#2369;&#2360;&#2306;&#2343;&#2366;&#2344;";
+   String OPD_CARD_SANSTHAN_HINDI_LABEL="&#2360;&#2306;&#2360;&#2381;&#2341;&#2366;&#2344;";
+   String OPD_CARD_AYURVEDIC_HINDI_LABEL="&#2310;&#2351;&#2369;&#2352;&#2381;&#2357;&#2375;&#2342;&#2367;&#2325;";
+   String OPD_CARD_AYURVEDEEYA_HINDI_LABEL="&#2310;&#2351;&#2369;&#2352;&#2381;&#2357;&#2375;&#2342;&#2368;&#2351;";
+   String OPD_CARD_PARISHAD_HINDI_LABEL="&#2346;&#2352;&#2367;&#2359;&#2342;";
+   String OPD_CARD_AYUSH_HINDI_LABEL="&#2310;&#2351;&#2369;&#2359;";
+   String OPD_CARD_SWASTHYA_HINDI_LABEL="&#2360;&#2381;&#2357;&#2366;&#2360;&#2381;&#2341;&#2351;";
+   String OPD_CARD_AND_HINDI_LABEL="&#2324;&#2352;";
+   String OPD_CARD_EVM_HINDI_LABEL="&#2319;&#2357;&#2306;";
+   String OPD_CARD_PARIVAR_HINDI_LABEL="&#2346;&#2352;&#2367;&#2357;&#2366;&#2352;";
+   String OPD_CARD_KALYAN_HINDI_LABEL="&#2325;&#2354;&#2381;&#2351;&#2366;&#2339;";
+   String OPD_CARD_MANTRALAYA_HINDI_LABEL="&#2350;&#2306;&#2340;&#2381;&#2352;&#2366;&#2354;&#2351;";
+   String OPD_CARD_VIGYAN_HINDI_LABEL="&#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344;";
+   String OPD_CARD_GOVTOFINDIA_HINDI_LABEL="&#2349;&#2366;&#2352;&#2340; &#2360;&#2352;&#2325;&#2366;&#2352;";
+   String OPD_CARD_ROADNO_HINDI_LABEL="&#2350;&#2366;&#2352;&#2381;&#2327; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366;";
+   String OPD_CARD_PUNJABI_BAG_HINDI_ADDRESS="&#2350;&#2366;&#2352;&#2381;&#2327; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366; &#54;&#54; &#44; &#2346;&#2306;&#2332;&#2366;&#2348;&#2368; &#2348;&#2366;&#2327; &#40;&#2346;&#41; &#44;&#2344;&#2312; &#2342;&#2367;&#2354;&#2381;&#2354;&#2368; &#49;&#49;&#48;&#44;&#48;&#50;&#54;";
+   
+   String OPD_CARD_NAME_MARATHI_LABEL="&#2344;&#2366;&#2357;";
+   String OPD_CARD_CASTE_MARATHI_LABEL="&#2332;&#2366;&#2340;";
+   String OPD_CARD_CATEGORY_MARATHI_LABEL="&#2357;&#2352;&#2381;&#2327";
+   String OPD_CARD_AGE_MARATHI_LABEL="&#2357;&#2351;&#40; &#2357;&#2352;&#2381;&#2359;&#2375; &#2325;&#2367;&#2306;&#2357;&#2366; &#2350;&#2361;&#2367;&#2344;&#2375; &#41;";
+   String OPD_CARD_HOWLONGILL_MARATHI_LABEL="&#2325;&#2367;&#2340;&#2368; &#2325;&#2366;&#2355; &#2310;&#2332;&#2366;&#2352;&#2368; &#2310;&#2361;&#2375; &#40; &#2350;&#2361;&#2367;&#2344;&#2375; &#2325;&#2367;&#2306;&#2357;&#2366; &#2357;&#2352;&#2381;&#2359;&#2375;&#41;";
+   String OPD_CARD_OCCUPATION_MARATHI_LABEL="&#2357;&#2381;&#2351;&#2357;&#2360;&#2366;&#2351;";
+   String OPD_CARD_RESIDENCE_MARATHI_LABEL="&#2328;&#2352;&#2330;&#2366; &#2346;&#2340;&#2366;";
+   String OPD_CARD_MONTHLYINC_MARATHI_LABEL="&#2350;&#2366;&#2360;&#2367;&#2325; &#2313;&#2340;&#2381;&#2346;&#2334;";
+   String OPD_CARD_DISEASE_MARATHI_LABEL="&#2352;&#2379;&#2327;&#2366;&#2330;&#2375; &#2344;&#2366;&#2357;";
+   String OPD_CARD_RESULT_MARATHI_LABEL="&#2344;&#2367;&#2359;&#2381;&#2325;&#2359;&#2375;";
+   String OPD_CARD_DATE_MARATHI_LABEL="&#2342;&#2367;&#2344;&#2366;&#2306;&#2325;";
+   String OPD_CARD_PRESCRIPTIONS_MARATHI_LABEL="&#2324;&#2359;&#2343; &#2351;&#2379;&#2330;&#2344;&#2366;";
+   String OPD_CARD_HOWMANYDAYSILL_MARATHI_LABEL="&#2325;&#2367;&#2340;&#2368; &#2342;&#2367;&#2357;&#2360;&#2366;&#2306;&#2360;&#2366;&#2336;&#2368;";
+   String OPD_CARD_AADHAAR_MARATHI_LABEL="&#2310;&#2343;&#2366;&#2352;";
+   String OPD_CARD_ROOM_MARATHI_LABEL="&#2357;&#2367;&#2349;&#2366;&#2327;&#47;&#2326;&#2379;&#2354;&#2368";
+   String OPD_CARD_SYMPTOMSPROGRESS_MARATHI_LABEL="&#2352;&#2379;&#2327;&#2354;&#2325;&#2381;&#2359;&#2339;&#2375; &#2357; &#2352;&#2369;&#2327;&#2381;&#2339;&#2366;&#2330;&#2368; &#2346;&#2381;&#2352;&#2327;&#2340;&#2368";
+   String OPD_CARD_NO_MARATHI_LABEL="&#2325;&#2381;&#2352;&#46";
+   String OPD_CARD_FEE_MARATHI_LABEL="&#2358;&#2369;&#2354;&#2381;&#2325";
+   
+   
+   String BILL_AMOUNT="billAmount";
+   String REGISTRATIONDESK_EPISODEVO_ARR_DUPLICATE= "arrEpisodeVODuplicate";
+   String REGISTRATIONDESK_EPISODEVO_ARR_REPRINT_REGISTRATION="arrayEpisodeVOReprintRegistration";
+   String REGISTRATIONDESK_EPISODEVO_ARR_MLCTO_NONMLC= "arrEpisodeVOMLC";
+   String REGISTRATIONDESK_EPISODEVO_ARR_PRINT_CARD= "arrEpisodeVOPrintCard";
+   
+   String REGISTRATIONDESK_EPISODEVO_REG_CANCELLATION= "arrEpisodeVORegCancellation";
+ 
+   String REGISTRATIONDESK_EPISODEVO_ARR_PAT_CAT_CHANGE_LOG= "arrEpisodeVOpatCatChangeLog";
+  
+   
+   /*--------------------------------------
+    Field Added at new Department Visit
+   -------------------------------------- */
+   
+   /***** Registration Timine Bound *****/
+
+	String TIME_BOUND_REGISTRATION_REQUIRED_YES = "1";
+	String TIME_BOUND_REGISTRATION_REQUIRED_NO = "0";
+	String TIME_BOUND_REGISTRATION_REQUIRED = TIME_BOUND_REGISTRATION_REQUIRED_NO;
+	
+	// **** REGISTRATION ONLINE_OFFLIINE FLAG
+	String REGISTRATION_OFFLINE = "0";
+	String REGISTRATION_ONLINE = "1";
+	String REGISTRATION_ONLINE_OFFLINE_BOTH = "2";
+	String REGISTRATION_ONLINE_OFFLINE_TYPE = REGISTRATION_ONLINE;
+	
+	String MLC_PROCESS_ONLINE = "1";
+	String MLC_PROCESS_OFFLINE = "2";
+	String MLC_PROCESS_ONLINE_OFFLINE_TYPE = MLC_PROCESS_ONLINE;
+	
+	String ESSENTIALBO_OPTION_NEW_DEPT_VISIT_DEPARTMENT= "optionNewDeptVisitDepartment";
+    String ESSENTIALBO_OPTION_MLC_DTL="optionsmlcdtl";
+    String ARRAY_MLC_VO_POLICE_VERIFICATION="arrayMlcVoPoliceVerification"; 
+    String ESSENTIALBO_OPTION_OLD_DEPT_VISIT_DEPARTMENT= "optionOldDeptVisitDepartment";  
+    String ESSENTIALBO_OPTION_EMG_NEW_DEPT_VISIT_DEPARTMENT= "optionEmgNewDeptVisitDepartment";
+    String ESSENTIALBO_OPTION_EMG_OLD_DEPT_VISIT_DEPARTMENT= "optionEmgOldDeptVisitDepartment";
+    String ESSENTIALBO_OPTION_SPL_NEW_DEPT_VISIT_DEPARTMENT= "optionSplNewDeptVisitDepartment";
+    String ESSENTIALBO_OPTION_SPL_OLD_DEPT_VISIT_DEPARTMENT= "optionSplOldDeptVisitDepartment";
+
+    // **** Registration Mandatory
+ 	String REGISTRATION_MANDATORY_DEPT_LIST = "registrationMandatoryDeptList";
+ 	String PROPERTIES_FILE_FOR_MANDATORY_FIELD = "registration.MandatoryFields";
+ 	String PROPERTIES_FILE_FOR_REFER_DEPARTMENTS = "registration.ReferDepartments";
+ 	
+ 	
+ 	String EPISODE_REFER_VO="episoderefervo";
+    String ARR_OPD_OPEN_EPISODE_VO="arrOpenOPDEpisodeVO";
+    String ARR_OPEN_EPISODE_VO="arrOpenEpisodeVO";
+    String COLL_OPEN_EPISODE_VO="collOpenEpisodeVO";
+    String COLL_EPISODE="collEpisode"; 
+    String ARR_EPISODE_REFER_PAT_VO="arrEpisodeRefDtlVO";
+    String ARR_EPISODE_REFER_EXT_PAT_VO="arrEpisodeRefExtDtlVO";
+    String ARR_SC_EPISODE_REFER_PAT_VO="arrSCEpisodeRefDtlVO";
+    String ARR_OPEN_TODAY_MLC_EPISODE_VO="arrOpenTodayMlcEpisodeVO";
+    String ARR_OPEN_PROVISIONAL_MLC_EPISODE_VO ="arrProvisionalMlcEpisodeVO";
+    
+    String ARR_EPISODE_REFER_SPECIAL_PAT_VO="arrEpisodeRefDtlForSplPatVO";
+    String ARR_OPEN_EPISODE_VO_FOR_PAT_DEATH_DTL ="arrPatDeathEpisodeVO";
+    String ARR_EPISODE_REFER_OPD_PAT_VO="arrEpisodeRefDtlForOpdPatVO";
+    
+    // -- Registration Renewal Configuration
+ 	String RENEWAL_TYPE = "2";
+ 	// RENEWAL=0 : NO NEED OF RENEWAL
+ 	// RENEWAL=1 : HOSPITAL RENEWAL : MONTH BASIS : EXPIRY WILL SAVE IN
+ 	// HRGT_PATIENT_DTL
+ 	// RENEWAL=2 : HOSPITAL RENEWAL : DAYS BASIS : EXPIRY WILL SAVE IN
+ 	// HRGT_PATIENT_DTL
+ 	// RENEWAL=3 : UNIT WISE RENEWAL: CONSTANT MONTH BASIS SAME AS 1 BUT EXPIRY
+ 	// WILL SAVE IN HRGT_EPISODE_DTL
+ 	// RENEWAL=4 : UNIT WISE RENEWAL: CONSTANT DAYS BASIS SAME AS 1 BUT EXPIRY
+ 	// WILL SAVE IN HRGT_EPISODE_DTL
+ 	// RENEWAL=5 : UNIT WISE RENEWAL MONTH/DAYS BASIS FROM DATABASE, AND EXPIRY
+ 	// WILL SAVE IN HRGT_EPISOE_DTL
+ 	String HOSPITAL_RENEWAL_EXPIRY_MONTH = "31-Dec"; // Format must be like
+ 														// dd-mon
+ 	String HOSPITAL_RENEWAL_EXPIRY_DAY = "15";
+
+ 	// This ExpiryDate Is For Bi YearLy registration Used For PGI Only  //
+ 	// It works For Case 3 only  ///
+ 	// ////If in any hospital case 3 is required but Bi yearly Registration is
+ 	// not required
+ 	// /than set both expirt dates same////
+
+ 	String HOSPITAL_RENEWAL_EXPIRY_MONTH_FIRST = "30-Jun";
+ 	String HOSPITAL_RENEWAL_EXPIRY_MONTH_SECOND = "31-Dec";
+ 	
+	////////PATIENT REFER LIST FLAG//////////////////
+	String IS_PAT_REFER_BY_LIST_TRUE="1"; 
+	String IS_PAT_REFER_BY_LIST_FALSE="2";
+	
+	String RENEWAL_REQUIRED_TRUE="1";
+    String RENEWAL_REQUIRED_FALSE="0";
+    String RENEWAL_REQUIRED_FOURTEEN_DAYS="3";
+    
+    ////for specific printing for radiotherapy department
+	String RADIOTHERAPY_DEPT_CODE="128";
+	String EXTERNAL_INSTITUTE_PGI="102";
+	String SESSION_DEPARTMENT_CODE="sessionDepartmentCode";
+	String REFER_BY="referredBy";
+
+	String DEPT_FOR_FREE_REG="158";
+	String REGISTRATIONDESK_EPISODEVO_ARR = "arrEpisodeVO";
+	String ESSENTIALBO_OPTION_SECONDARY_CATEGORY= "optionSecondaryCategory";
+	String SPLREGISTRATIONDESK_EPISODEVO_ARR = "arrSplPatEpisodeVO";
+	String EMGREGISTRATIONDESK_MLC_EPISODEVO_ARR = "arrMlcEpisodeVO";
+	String EMGREGISTRATIONDESK_MLCVO_LIST = "lstMlcVO";
+	String EMGREGISTRATIONDESK_MLCVO = "mlcVo";
+	
+	String LIST_DEPT_WISE_FILE_NO="lstDeptWiseFileNo";
+    String MAP_DEPT_WISE_FILE_NO="mapDeptWiseFileNo";
+    
+    String DEPT_UNIT_IS_CLOSED_FALSE		="0";
+    String DEPT_UNIT_IS_CLOSED_TRUE			="1";
+    String DEPT_UNIT_IS_CLOSED_NOT_EXIST	="2";
+    String DEPT_UNIT_IS_CLOSED_EMG_REG		="3";
+    
+    String DEPT_UNIT_IS_ON_DUTY_TRUE="1";
+    String DEPT_UNIT_IS_ON_DUTY_FALSE="0";
+    
+    String DEPT_UNIT_VISITED_TODAY_TRUE="1";
+    String DEPT_UNIT_VISITED_TODAY_FALSE="0";
+    
+    String ROOM_USABILITY_FORCEFUL="0";	// "4";
+    String ROOM_USABILITY_NO_BOUND="0";
+    
+    String NO_DEPT_UNIT_WORKING_TRUE= "0";
+    
+    String LOCAL_LANGUAGE="localLanguage";
+    
+    String ESSENTIAL_INJURY_TYPE_LIST="essentialInjuryTypeList";
+    String ESSENTIAL_INJURY_NATURE_LIST="essentialInjuryNatureList";
+    String PATIENT_STATUS_LIST = "PatientStatusList";
+    String ESSENTIAL_DISEASE_SIDE_LIST="essentialDiseaseSideList";
+    
+    String PATIENT_BROUGHT_DEAD_TRUE="1";	
+	String PATIENT_BROUGHT_DEAD_FALSE="0";
+
+	String DUTY_OFFICER_IS_IO="0";
+	String DUTY_OFFICER_IS_OTHER="1";
+	String HANDOVER_TO_IO="0";
+	String HANDOVER_TO_DUTY_OFFICER="1";
+	String HANDOVER_TO_OTHER="2";
+	String MLC_VO_POLICE_VERIFICATION="mlcVOPoliceVerification";
+	String MLC_NO_IS_DUPLICATE_YES="0";
+	String MLC_NO_IS_DUPLICATE_NO="1";
+
+	//////// MLC Detail Process- Police Verification Detail Required///////////
+	String MLC_DETAIL_POLICE_VERIFICATION_REQUIRED_YES = "1";
+	String MLC_DETAIL_POLICE_VERIFICATION_REQUIRED_NO = "0";
+	String MLC_DETAIL_POLICE_VERIFICATION_REQUIRED = MLC_DETAIL_POLICE_VERIFICATION_REQUIRED_NO;
+    
+	String ESSENTIAL_DEATH_MANNER_LIST="essentialDeathMannerList";
+	String ESSENTIAL_DEATH_ON_SET_DATE_N_RECENT_VISIT_DATE="essentialDeathOnSetDateNRecentVisitDate";
+	String IS_PREGNATNT_YES="1";
+	String IS_PREGNATNT_NO="0";
+	String IS_DELIVERY_YES="1";
+	String IS_DELIVERY_NO="0";
+	//String IS_HANDOVER_TRUE="1";
+	//String IS_HANDOVER_FALSE="0";
+	
+	//Body handover TO
+	String 	DEAD_BODY_HANDOVER_TO_MORTUARY="1";
+	String 	DEAD_BODY_HANDOVER_TO_POLICE="2";
+	String 	DEAD_BODY_HANDOVER_TO_RELATIVES="3";
+	
+	String BODY_HANDOVER_MORTUARY_YES = "1";
+	String BODY_HANDOVER_MORTUARY_NO = "0";
+	String BODY_HANDOVER_MORTUARY = BODY_HANDOVER_MORTUARY_NO;
+	
+	// ////////// Normal Death Body Handover ////////////
+	String NORMAL_BODY_HANDOVER_MORTUARY = "1";
+	String NORMAL_BODY_HANDOVER_PATIENT = "0";
+	String NORMAL_BODY_HANDOVER = NORMAL_BODY_HANDOVER_MORTUARY;
+		
+	
+	//Death Certificate No of Copies////
+	String NO_OF_DEATH_CERTIFICATE_COPIES_NORMAL="4";
+	String NO_OF_DEATH_CERTIFICATE_COPIES_MLC="5";
+	
+	String PRINT_DEATH_CERTIFICATE_YES="1";
+	String PRINT_DEATH_CERTIFICATE_NO="0";
+	
+	String CERTIFICATE_TYPE_DEATH_CERTIFICATE="15";
+	String RECORD_TYPE_DEATH_CERTIFICATE="15";
+	
+	String IS_DUPLICATE_CERTIFICATE_YES="1";
+	String IS_DUPLICATE_CERTIFICATE_NO="0";
+
+	String PRINT_FLAG_YES="1";
+	String PRINT_FLAG_NO="0";
+	
+	
+	////////////Certificate issued Record Status HPMRT_CERTIFICATE_ISSUE_DTL ////////////////
+	String CERTIFICATE_RECORD_STATUS_NOT_REQUIRED="0";
+	String CERTIFICATE_RECORD_STATUS_IN_DEPT_UNIT="1";
+	String CERTIFICATE_RECORD_STATUS_RECEIVED_BY_MRD_CLERK="2";
+	String CERTIFICATE_RECORD_STATUS_LOST="3";
+	
+	// Deadbody Handover 
+	
+	String DEADBODY_HANDOVER_DETAIL="DeadbodyHandoverDetail";
+	String LIST_OF_DEAD_PATIENT="ListOfDeadPatient";
+	
+	String DIRECT_CHARGE_DTL_RECEIPT_TYPE_REGISTRATION="1";
+	String DIRECT_CHARGE_DTL_RECEIPT_TYPE_REGISTRATION_CANCELLATION="2";
+	String DIRECT_CHARGE_DTL_RECEIPT_TYPE_PATIENT_VISIT="3";
+	String DIRECT_CHARGE_DTL_RECEIPT_TYPE_CHANGE_CATEGORY="4";
+	String DIRECT_CHARGE_DTL_RECEIPT_TYPE_DUPLICATE="7";
+	
+	//Added by Garima for Unit Wise Visit
+	String DIRECT_CHARGE_TYPE_OPD="1";
+	String DIRECT_CHARGE_TYPE_EMG="3";
+	String DIRECT_CHARGE_TYPE_SPL="4";
+    
+	String PATIENT_REFERRAL_EPISODEVO_ARR_REGISTRATION="arrEpisodeVOReferral";
+    String PATIENT_REFERRAL_OPTION_SPLUNITS= "optionRefSplUnits";
+    String PATIENT_REFERRAL_OPTION_INTERNALDEPT= "optionRefInternalDept";
+    String IS_ASSOCIATED_TRUE = "1";//IT is an associated hospital
+    String IS_ASSOCIATED_FALSE ="0";//Not an associated hospital
+    
+    String REGISTRATION_SLIP_OBJECT="registrationSlipObject";
+    
+
+  //To Check the Renewal Fee And Amt Collection
+  	String PAT_CAT_PAID_FEE="5.00";
+  	String PAT_CAT_FREE_FEE="0";
+  	String PAT_CAT_FREE_FEES="0.00";
+  	
+    
+    String CARD_NEW_REGISTRATION="NewRegistrationCard";
+    String CARD_NEW_DEPT_VISIT="NewDepartmentVisit";
+    String CARD_EMG_NEW_DEPT_VISIT="EmgNewDepartmentVisit";
+    String CARD_OLD_DEPT_VISIT="OldDepartmentVisit";
+    String CARD_EMG_OLD_DEPT_VISIT="EmgOldDepartmentVisit";
+    String CARD_DUPLICATE_CARD="DuplicateCardPrinting";
+    String CARD_SPECIAL_CLINIC="SpecialClinicRegistration";
+    String CARD_OFFLINE_NEW_REGISTRATION="offlineRegistrationCard";
+    String CARD_NEW_EMERGENCY_REGISTRATION="NewEmergencyRegistration";
+    
+    String RENEWAL_REQUIRED_EPISODE_ARRAY="arrRenewalRequiredEpisode";
+	
+    String ARR_EPISODE_OLD_PAT_REFER_VO="arrEpisodeOldPatReferVO";
+    String ARRAY_EPISODES_TO_BE_STAMPED="arrayEpisodeToBeStamped";
+	String ARRAY_EPISODE_REFER_VO_RENEWAL="arrayEpisodeReferVOInRenewal";
+	
+	String ARR_EPISODE_OLD_SPECIAL_PAT_REFER_VO="arrEpisodeOldSpecialPatReferVO";
+
+	// -- File No Generation
+	String FILE_NO_GENRATION_FALSE = "0";
+	String FILE_NO_GENRATION_MANNUAL_TRUE = "1";
+	String FILE_NO_GENRATION_AUTO_TRUE = "2";
+	String FILE_NO_GENERATION_FLAG = FILE_NO_GENRATION_AUTO_TRUE;
+	
+	String SEARCH_BY_CRNO="1";
+	String SEARCH_BY_AADHAR="2";
+	String SEARCH_BY_ALTERNATEID="3";
+	String SEARCH_BY_EMPLOYEEID="4";
+	String SEARCH_BY_MOBILENO="5";
+	String SEARCH_BY_EMAILID="6";
+
+	
+	String DOCTYPE_CODE_AADHAR="98";
+	String DOCTYPE_CODE_EMPLOYEE="99";
+	
+	String MLC_FLAG_NOMLC	="0";
+	String MLC_FLAG_PROVISIONAL	="1";
+	String MLC_FLAG_CONFIRMED	="2";
+	String MLC_FLAG_REFFERED	="3";
+
+    String IS_MLC_TRUE		="1";
+    String IS_MLC_FALSE		="0";
+    String IS_MLC_CONFIRMED	="2";
+    String REGISTRATIONDESK_UNKNOWN_PRIMARY_CATEGORY = "11";//>>>SYNOMYNOUS TO GENERAL CATEGORY
+	String MLC_PATIENT_BROUGHT_BY_POLICE="1";
+
+	String IS_BROUGHT_BY_FALSE="0";
+	String IS_BROUGHT_BY_TRUE="1";
+	String IS_RELATIVE_FALSE="0";
+	String IS_RELATIVE_TRUE="1";
+	// -- Emergency Brought By Detail For Registration And 10 Minimum
+	
+	// Modification
+	String EMG_BROUGHT_BY_DETAIL_FLAG_VALUE_TRUE = "1";
+	String EMG_BROUGHT_BY_DETAIL_FLAG_VALUE_FALSE = "0";
+	String EMG_BROUGHT_BY_DETAIL_FLAG_VALUE = EMG_BROUGHT_BY_DETAIL_FLAG_VALUE_TRUE;
+		
+	
+    //Category Wise Document Mapping Master
+    String VERIFICATION_DOCUMENT_MAPPED_IN_PRIMARY_CATEGORY="DocMappedInPrimaryCategory";
+	String VERIFICATION_DOCUMENT_NOT_MAPPED_IN_PRIMARY_CATEGORY="DocNotMappedInPrimaryCategory";	
+	String PATIENT_CATEGORY_VERIFICATION_MST_IS_REQ="0";
+	
+	//Disclaimer Master
+	String ESSENTIAL_DISCLAIMER_MASTER_VO="essentialDisclaimerMasterVO";
+	String DISCLAIMER_DEFAULT_YES="1";
+	String DISCLAIMER_DEFAULT_NO="0";
+	
+	String IS_UPLOAD_FALSE="0";
+	String IS_UPLOAD_TRUE="1";
+			
+	String DAILYPATIENT_REG_NEW = "1";
+	String DAILYPATIENT_REG_NEWVISIT = "2";
+	String DAILYPATIENT_REG_OLD = "3";
+	
+	//Primary Category Change
+	String ESSENTIALBO_OPTION_PRIMARY_CATEGORY_WITH_EXPIRY_DAYS="optionPrimaryCategoryWithExpiryDays";
+	String ESSENTIALBO_PRIMARY_CATEGORY_WITH_DETAILS="primaryCategoryWithDetails";
+	String ESSENTIALBO_PRIMARY_CATEGORY_WITH_ID_DETAILS="primaryCategoryWithIDDetails";
+	String ARRAY_PRIMARY_CATEGORY_CHANGE_VOS="arrayPrimaryCategoryChangeVO";
+    String ESSENTIALBO_OPTION_PRIMARY_CATEGORY_LIST_EXCEPT_PATIENT_CATEGORY="listPatCatExceptPatientcat";
+	String PATIENT_CATEGORY_PROCESS_ID="10003";
+	String PAT_CAT_ID_REQUIRED_YES="1";
+	String PAT_CAT_ID_REQUIRED_NO="0";
+	String PAT_CAT_ID_REQUIRED_EMP="2";
+	
+	/////////////////////////////////////For Default Image////////////////////
+	String IS_IMAGE_DEFAULT_FALSE="0";
+	String IS_IMAGE_DEFAULT_TRUE="1";
+	/////////////////////////////////////////////////////////////////////////
+	
+	//AUDIT LOG PROCESS IDS's
+	String AUDIT_LOG_SHIFT_MASTER="5";
+	String AUDIT_LOG_COUNTER_MASTER="6";
+	String AUDIT_LOG_DISCLAIMER_MASTER="7";
+	String AUDIT_LOG_LOCAL_DEPARTMENT_MASTER="8";
+	String AUDIT_LOG_LOCAL_PATIENT_CATEGORY_MASTER="9";
+	String AUDIT_LOG_UNIT_MASTER="10";
+	String AUDIT_LOG_RENEWAL_CONFIG_MASTER="11";
+	String AUDIT_LOG_EXT_INSTITUTE_MASTER="12";
+	String AUDIT_LOG_CATEGORY_WISE_VERIFICATION_DOC_MASTER="13";
+	String AUDIT_LOG_DEPT_UNIT_ROOM_MASTER="14";
+	String AUDIT_LOG_UNIT_CONSULTANT_MASTER="15";
+	String AUDIT_LOG_OCCUPATION_MASTER="1";
+	String AUDIT_LOG_UNIT_OF_MEASUREMENT="17";
+	String AUDIT_LOG_LOCATION_MASTER="20";
+	String AUDIT_LOG_ROOM_MASTER="21";
+	String AUDIT_LOG_GLOBAL_PATIENT_CATEGORY_MASTER="23";
+	String AUDIT_LOG_EMG_PATIENT_STATUS_MASTER="24";
+	String AUDIT_LOG_EMG_MLC_CASE_TYPE_MASTER="25";
+	String AUDIT_LOG_EMG_DEATH_MASTER="26";
+	String AUDIT_LOG_EMG_POLICE_STATION_MASTER="27";
+	String AUDIT_LOG_ROSTER_MASTER="28";
+	String AUDIT_LOG_CHANGE_PATIENT_CATEGORY="31";
+	String SESSION_FLAG_NEW_REGISTRATION="sessionFlagNewRegistration";
+	String REDIRECT_TO_OLD_PATIENT_PROCESS="redirectToOldPatientProcess";
+	
+	String REG_DESK_UNIT_WITH_SPECIALITY="specialUnits";
+	
+	String PAT_APT_OPD_ID="1";
+	String PAT_APT_OPD_STATUS_WAITING="1";
+	String PAT_APT_OPD_STATUS_CONFIRMED="3";
+	
+	String IS_PAT_APPOINTMENT_BY_LIST_TRUE="3";
+	
+	String REGISTRATIONDESK_DEFAULT_ADDRESS_TYPE_CODE = RegistrationConfig.PATIENT_ADD_TYPE_CURRENT;
+	
+	String EMPLOYEE_MASTER_VO_ARRAY="empMasterVOArray";
+	String EMPLOYEE_MASTER_VO="empMasterVO";
+	String ARR_APPOINTMENT_OLD_PAT_REGD_VO="arrAptmntOldPatRegdVO";
+	String ARR_APPOINTMENT_NEW_PAT_REGD_VO="arrAptmntNewPatRegdVO";
+
+	
+	//To initialize the credit tariff avail dtl
+	String BILL_QTY_UNIT_ID="1701";
+	String BILL_RATE_UNIT_CODE="1701";
+	String BILL_GROUP_ID="101";
+
+	String ESSENTIALBO_MAP_OF_CREDIT_BENEFICIARY_VO = "creditBeneficiaryPatVO";
+	
+	String VERIFICATION_DOCUMENT_AFFIDAVIT="99";
+	
+	/*Offline Merging of CR Number*/
+	String ARR_TO_BE_MERGED_CR_NUMBER_VO="arrToBeMergedCrNumberVO";
+	String ARR_SEARCH_PATIENT="arrSearchPatient";
+	String ARR_MERGED_PATIENT="arrMergedPatient";
+	
+	String CR_NUMBER_IS_MERGED_REVOKED="0";
+	String CR_NUMBER_IS_MERGED_YES="1";
+	String CR_NUMBER_IS_MERGED_MAINCRNO="1";
+	String CR_NUMBER_IS_MERGED_SUBCRNO="2";
+	
+	//Telugu Label Unicodes
+	String OPD_CARD_CRNO_TELUGU_LABEL="&#3112;&#3074;&#3116;&#3120;&#3137;";
+	String OPD_CARD_DATE_TIME_TELUGU_LABEL="&#3108;&#3143;&#3110;&#3136; &#3118;&#3120;&#3135;&#3119;&#3137; &#3128;&#3118;&#3119;&#3074;";
+	String OPD_CARD_NAME_TELUGU_LABEL="&#3114;&#3143;&#3120;&#3137";
+	String OPD_CARD_AGE_TELUGU_LABEL="&#3125;&#3119;&#3128;&#3137";
+	String OPD_CARD_SEX_TELUGU_LABEL="&#3128;&#3142;&#3093;&#3149;&#3128;&#3149;";
+	String OPD_CARD_CASTE_TELUGU_LABEL="&#3093;&#3137;&#3122;&#3118;&#3149;";
+	String OPD_CARD_CATEGORY_TELUGU_LABEL="&#3125;&#3120;&#3149;&#3095;&#3074;";
+	String OPD_CARD_AADHAR_NO_TELUGU_LABEL="&#3078;&#3111;&#3134;&#3120;&#3149; &#3112;&#3074;&#3116;&#3120;&#3137;";
+	String OPD_CARD_RESIDENCE_TELUGU_LABEL="&#3112;&#3135;&#3125;&#3134;&#3128;&#3074;";
+	String OPD_CARD_DEPARTMENT_ROOM_NO_TELUGU_LABEL="&#3105;&#3135;&#3114;&#3134;&#3120;&#3149;&#3103;&#3149; &#3118;&#3142;&#3112;&#3149;&#3103;&#3149;/&#3095;&#3110;&#3135; &#3128;&#3074;&#3094;&#3149;&#3119;";
+	String OPD_CARD_DATE_TELUGU_LABEL ="&#3108;&#3143;&#3110;&#3136;";
+	String OPD_CARD_SYMPTOMS_AND_PROGRESS_TELUGU_LABEL="&#3122;&#3093;&#3149;&#3127;&#3107;&#3134;&#3122;&#3137; &#3118;&#3120;&#3135;&#3119;&#3137; &#3114;&#3149;&#3120;&#3146;&#3095;&#3149;&#3120;&#3142;&#3128;&#3149;";
+	String OPD_CARD_PRESCRIPTIONS_TELUGU_LABEL="&#3114;&#3149;&#3120;&#3135;&#3128;&#3149;&#3093;&#3149;&#3120;&#3135;&#3114;&#3149;&#3126;&#3112;&#3149;";
+	String OPD_CARD_HOW_MANY_DAYS_TELUGU_LABEL="&#3115;&#3120;&#3149; &#3129;&#3090; &#3118;&#3112;&#3135; &#3105;&#3142;&#3128;&#3149;";
+	 
+	String OPD_CARD_HOWLONGILL_TELUGU_LABEL="&#3086;&#3074;&#3108; &#3077;&#3112;&#3134;&#3120;&#3147;&#3095;&#3149;&#3119;&#3074;&#3108;&#3147;";
+	String OPD_CARD_OCCUPATION_TELUGU_LABEL="&#3125;&#3139;&#3108;&#3149;&#3108;&#3135;";
+    
+	String PATIENT_CAT_TYPE_SECONDARY = "1";
+	String ESSENTIALBO_OPTION_SECONDARY_CATEGORY_WITH_EXPIRY_DAYS= "optionSecondaryCategoryWithExpiryDays";
+	String YES="1";
+	String NO="0";
+	String PATIENT_STATUS_CODE_ADMITTED_IPD="2";
+	String ADMITTED_PATIENT_VO="admittedPatientVO";
+	String IPD_FLAG="ipdFlag";
+	String ESSENTIALBO_OPTION_RMO_EMP="optionRMOEmployees";
+	String PROCESS_TYPE_FOR_RMO="12";	
+		
+	String	No_Cross_Consultation="0";
+	String	Cross_Consultation_For_OPD_Only="1";
+	String	Cross_Consultation_For_Special_Only="2";
+	String	Cross_Consultation_For_OPD_and_Special_Both="3";
+	String PRIMARY_CATEGORY_SENIOR_CITIZEN = "85";
+	
+	String Client_Code_Aarogya_Cat="1000";
+	String Client_Name_Aarogya_Cat="Arogyashri Trusts";
+	String ESSENTIALBO_AGS_DISTRICT="listagsdistrict";
+	String ESSENTIALBO_RELATION_LIST="listrelation";
+	String ESSENTIALBO_COMPANY_LIST="listcompany";
+	
+	String ESSENTIALBO_LETTER_TYPE_OPTION_LIST="letterTypeOptionList";
+	String ARR_BENEFICIARY_PAT_VO="arrBeneficiaryPatVO";
+	
+	String IS_HEADER_PRINTABLE_ON = "1";
+	String IS_HEADER_PRINTABLE_OFF = "0";
+	String IS_HEADER_PRINTABLE = IS_HEADER_PRINTABLE_ON;
+	
+	String ESSENTIALBO_OPTION_SECONDARY_CATEGORY_APPLICABLE_SERVICES= "optionSecondaryCategoryApplicableServices"; //Added by Vasu on 16.April.2018
+	String ESSENTIALBO_OPTION_APPLICABLE_SERVICES = "optionApplicableServices";
+	String PREVIOUS_TREATMENT_CATEGORIES = "previousTreatmentCategories";
+	String GET_SELECTED_TREATMENT_CATEGORIES_FOR_PARTICULAR_EPISODE ="getSelectedTreatmentCategoriesForParticularEpisode";
+	
+	String Registration_Configuration_Bean="keyForRegConfigVO2";
+	String Registration_Configuration_Bean_Special="keyForRegConfigBeanSpecial";
+
+	String ISQRCodePrintFlag_True = "1";
+	String ISQRCodePrintFlag_False = "0";
+	
+	//By Vasu on 28.05.2018
+	String ARR_EPISODE_Appoint_PAT_VO="arrEpisodeAppointDtlVO";
+	/*added by Vasu on 28 May,2018
+	Purpose:patient through appointment in unite wise registration*/
+	String IS_PAT_REFER_BY_APMNT_TRUE="1"; 
+	String IS_PAT_REFER_BY_APMNT_FALSE="2";
+	//end by Vasu
+	
+	//HINDI TEXT
+	String smokingIsInjuriousToHealth_Hindi = "&#2309;&#2360;&#2381;&#2346;&#2340;&#2366;&#2354; &#2325;&#2375; &#2309;&#2344;&#2381;&#2342;&#2352; &#2343;&#2369;&#2350;&#2381;&#2352;&#2346;&#2366;&#2344; &#2350;&#2344;&#2366; &#2361;&#2376;&#2404;";
+	//depicts asptal ke andar dhumrapan mna hai
+	String medicinalSideEffects_Hindi = "&#2324;&#2359;&#2343;&#2367; &#2338;&#2369;&#2359;&#2381;&#2346;&#2381;&#2352;&#2349;&#2366;&#2357; &#2361;&#2379;&#2344;&#2375; &#2346;&#2352; &#2325;&#2371;&#2346;&#2351;&#2366;  &#2360;&#2370;&#2330;&#2367;&#2340; &#2325;&#2352;&#2375;&#2306; &#2398;&#2379;&#2344; &#2344;&#46;";
+	//depicts aushadi dusprabhav
+	
+	
+	String EPISODE_FOR_BARCODE = "episodeVoArrForBarcodePrintingByMukund";
+	String PATVO_FOR_BARCODE = "patientVoInSessionForBarcodePrintingByMukund";
+	String BROUGHT_BY_DEATH_DECLARED_BY = "broughtDeadDeclaredByConsultant";
+	String PAYMENT_MODE_OPTION_LIST = "paymentModeList";//By Mukund
+	String PAYMENT_MODE_OPTION_LIST_PROCESSED ="paymentModeListProcessed";
+	String SNOMED_SERVICE_ON = "1";
+	String SNOMED_SERVICE_OFF = "0";
+	String SNOMED_SERVICE_STATUS = "";
+}//end

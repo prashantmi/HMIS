@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Desk Type Master'>
+		<common-values>
+			<master-name>OPDDeskTypeMaster</master-name>
+			<master-title>Desk Type Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Desk Type Master</tableHeading>
+			<list-table>GBLT_DESK_TYPE_MST</list-table>
+
+			<columns>
+				<column>Desk Type Description</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.GSTR_DESK_TYPE_DESC)</field>
+				</fields>
+				<primaryKey>
+					<field>A.GNUM_DESK_TYPE</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>GBLT_DESK_TYPE_MST </table>
+				</tables>
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby> ORDER BY INITCAP(A.GSTR_DESK_TYPE_DESC) </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+		
+		<add-page>
+			<dynamic-page>
+				<controls>
+					<control type="text" index="0">
+						<label>Desk Type Description</label>
+						<constraints maxlength='50' size='25' inputType='alphabets'  mandatory="true"/>
+						<readOnly>0</readOnly>
+					</control>
+				</controls>
+			   <redundent-check>
+					SELECT COUNT (*) FROM GBLT_DESK_TYPE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+					and upper(GSTR_DESK_TYPE_DESC)=controlindex0
+			   </redundent-check>	
+				<insert-query>
+					<primary-key>
+						<field>GNUM_DESK_TYPE</field>
+						<value>SELECT NVL(MAX(GNUM_DESK_TYPE),0)+1 FROM GBLT_DESK_TYPE_MST</value>
+						<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+					</primary-key>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='#I0'>GSTR_DESK_TYPE_DESC</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+					<table>GBLT_DESK_TYPE_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+		
+		<modify-page>
+		    <dynamic-page>
+		    	<controls>
+		            <control type="text" index="0">
+						<label>Desk Type Description </label>
+						<constraints  size='25' maxlength = "50" inputType='alphabets' mandatory = 'true'/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					
+					<control type="combo" index="1">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+            	</controls>
+               <redundent-check>
+					SELECT COUNT (*) FROM GBLT_DESK_TYPE_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) 
+					and upper(GSTR_DESK_TYPE_DESC)=controlindex0
+			   </redundent-check>
+		        <initialise-query>
+			   	 <fields>
+					 <field>INITCAP(A.GSTR_DESK_TYPE_DESC)</field>
+				 </fields>					
+					<tables>
+						<table alias='A'>GBLT_DESK_TYPE_MST</table>
+					</tables>
+					<condition>						
+						<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+						<dependent>
+						    <clause>A.GNUM_DESK_TYPE = #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>
+					<fields valueMap='#U0'>GSTR_DESK_TYPE_DESC</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#1'>GNUM_ISVALID</fields>					
+ 					<table>GBLT_DESK_TYPE_MST</table>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+					<condition>
+						<dependent>
+							<clause> GNUM_DESK_TYPE = #C1 </clause>
+						</dependent>
+					</condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>		

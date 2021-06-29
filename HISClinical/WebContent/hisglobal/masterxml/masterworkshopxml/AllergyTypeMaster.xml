@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='AllergyTypeMaster'>
+		<common-values>
+			<master-name>AllergyTypeMaster</master-name>
+			<master-title>Allergy Type Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Allergy Type Master</tableHeading> 
+				<list-table>HGBT_ALLERGY_TYPE_MST</list-table>
+				<columns>
+					 <column>Allergy Type</column>
+					 <column>Allergy Description</column>   				  
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_ALLERGY_TYPE)</field>
+						<field>INITCAP(A.HGSTR_ALLERGY_DESC)</field>					
+					</fields>
+					<primaryKey>
+						<field>A.HGNUM_ALLERGY_TYPE_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_ALLERGY_TYPE_MST </table>
+					</tables>
+					<condition>	
+							<isvalid-field>A.GNUM_HOSPITAL_CODE=100 and A.GNUM_ISVALID</isvalid-field>
+                            <orderby> order by INITCAP(A.HGSTR_ALLERGY_TYPE)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<static-page>/opd/master/allergyTypeAdd.cnt</static-page>			
+		</add-page>
+		
+		<modify-page>	
+   		    <static-page>/opd/master/allergyTypeModify.cnt</static-page>		
+		</modify-page>
+	</master>	
+</master-config>

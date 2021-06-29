@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    <form-beans>
+        <form-bean name="commonReportOTFB" type="operationTheatre.reports.Controller.fb.ReportFB"/>
+    	<form-bean name="countPacReqFB" type="operationTheatre.reports.Controller.fb.countPacReqFB"/>
+    	<form-bean name="CountOfCancelledOperationFB" type="operationTheatre.reports.Controller.fb.CountOfCancelledOperationFB"/>
+    	<form-bean name="ListPacReqFB" type="operationTheatre.reports.Controller.fb.ListPacReqFB"/>
+    	<form-bean name="deptPacReqFB" type="operationTheatre.reports.Controller.fb.deptWisePacReqFB"/>
+    	<form-bean name="DtlOfOpRaisedFB" type="operationTheatre.reports.Controller.fb.DtlOfOpRaisedFB"/>
+		<form-bean name="AgeWisePreOperativeDiagnosisReportFB" type="operationTheatre.reports.Controller.fb.AgeWisePreOperativeDiagnosisReportFB"/>    	
+    	<form-bean name="SurgeryWiseBookingDtlFB" type="operationTheatre.reports.Controller.fb.SurgeryWiseBookingDtlFB"/>
+    	<form-bean name="DiagnosisWiseGenderWiseStatsFB" type="operationTheatre.reports.Controller.fb.DiagnosisWiseGenderWiseStatsFB"/>
+    	<form-bean name="OtNotesReportFB" type="operationTheatre.reports.Controller.fb.OtNotesReportFB"/>
+    	
+    	
+    	<form-bean name="otDeptWiseStatFB" type="operationTheatre.reports.Controller.fb.deptWisePacStatFB"/>
+    	<form-bean name="otIpdOpdWiseReqFB" type="operationTheatre.reports.Controller.fb.ipdOpdWiseTotalPacReqFB"/>
+    	<form-bean name="otDeptWisePatientAccFB" type="operationTheatre.reports.Controller.fb.deptWiseAcceptedPatientFB"/>
+    	<form-bean name="otDateWiseSendPatientFB" type="operationTheatre.reports.Controller.fb.dateWiseSendPatientFB"/>
+    	 <form-bean name="StatisticalReportOfOperationPerformedFB" type="operationTheatre.reports.Controller.fb.StatisticalReportOfOperationPerformedFB"/>
+    	<form-bean name="OperationCancelledReportFB" type="operationTheatre.reports.Controller.fb.OperationCancelledReportFB"/>
+    	<form-bean name="GenderWisePreOperativeDiagnosisReportFB" type="operationTheatre.reports.Controller.fb.GenderWisePreOperativeDiagnosisReportFB"/>
+    	<form-bean name="otListingReportFB" type="operationTheatre.reports.Controller.fb.otListingReportFB"/>
+    	<form-bean name="OperationRecordPatientWiseReportFB" type="operationTheatre.reports.Controller.fb.OperationRecordPatientWiseReportFB"/>	
+    		
+    	<form-bean name="FinalSummeryReportFB" type="operationTheatre.reports.Controller.fb.FinalSummeryReportFB"/>
+    </form-beans>    
+	<action-mappings>    
+        <action path="/report"        
+            type="operationTheatre.reports.Controller.action.CommonReportACTION"
+            name="commonReportOTFB"            
+            scope="request"
+            parameter="mode">
+         	 <!-- for pac req and pac performed count -->
+         	 <forward name="COUNTPACREQ" path="/countPacreqdefinition"/>            
+            <forward name="COUNTPACREQVIEW" path="/reports/countPacReqReport.cnt"/>
+             <!--endsss for pac req and pac performed count -->
+              <forward name="COUNTPACPERFORMED" path="/countPacPerformedDefinition"/>
+            <forward name="COUNTPACPERFORMEDVIEW" path="/reports/countPacReqReport.cnt"/>
+            
+         	<forward name="COUNTOFCANCELLEDOPERATION" path="/CountOfCancelledOperationdefinition"/>
+            <forward name="COUNTOFCANCELLEDOPERATIONREPORTVIEW" path="/reports/CountOfCancelledOperation.cnt"/>
+            
+             <forward name="LISTPACPERFORMED" path="/ListPacPerformedDefinition"/>            
+            <forward name="LISTPACREQVIEWREPORT" path="/reports/ListPacReqReport.cnt"/>
+            
+               <forward name="DEPARTMENTWISEPACREQREPORT" path="/deptWisePacReqReportdefinition"/>
+            <forward name="DEPARTMENTWISEPACREQREPORTVIEW" path="/reports/deptWisePacReqReport.cnt"/>
+            
+           <forward name="DTLOFOPRAISED"   path="/DtlOfOpRaisedDefinition"/>            
+            <forward name="DTLOFOPRAISEDVIEWREPORT" path="/reports/DtlOfOpRaisedReport.cnt"/>
+       
+         
+            <forward name="AGEWISEPREOPERATIVEDIAGNOSISREPORT" path="/AgeWisePreOperativeDiagnosisReportdefinition"/>
+            <forward name="AGEWISEPREOPERATIVEDIAGNOSISREPORTVIEW" path="/reports/AgeWisePreOperativeDiagnosisReport.cnt"/>
+            
+            <forward name="SURGERYWISEBOOKINGDTLREPORT" path="/SurgeryWiseBookingDtlReport"/>
+            <forward name="SURGERYWISEBOOKINGDTLREPORTVIEW" path="/reports/SurgeryWiseBookingDtlReport.cnt"/>
+            
+            <forward name="DIAGNOSISWISEGENDERWISEREPORT" path="/DiagnosisWiseGenderWiseStats"/>
+            <forward name="DIAGNOSISWISEGENDERWISEREPORTVIEW" path="/reports/DiagnosisWiseGenderWiseStats.cnt"/>
+           
+            <forward name="OTNOTESREPORT" path="/OtNotesReportdefinition"/>
+            <forward name="OTNOTESREPORTVIEW" path="/reports/OtNotesReport.cnt"/>
+           
+           
+           
+           
+            
+             <forward name="GENDERWISEPREOPERATIVEDIAGNOSISREPORT" path="/GenderWisePreOperativeDiagnosisReportdefinition"/>
+            <forward name="GENDERWISEPREOPERATIVEDIAGNOSISREPORTVIEW" path="/reports/GenderWisePreOperativeDiagnosisReport.cnt"/>
+            
+             <forward name="FINALSUMMERYREPORT" path="/FinalSummeryReportdefinition"/>
+            <forward name="FINALSUMMERYREPORTVIEW" path="/reports/FinalSummeryReport.cnt"/>
+                    
+             <forward name="OPERATIONCANCELLEDREPORT" path="/OperationCancelledReportdefinition"/>
+             <forward name="OPERATIONCANCELLEDREPORTVIEW" path="/reports/OperationCancelledReport.cnt"/>
+            
+               <forward name="STATISTICALREPORTOFOPERATIONPERFORMED" path="/StatisticalReportOfOperationPerformeddefinition"/>       
+              <forward name="STATISTICALREPORTOFOPERATIONPERFORMEDREPORTVIEW" path="/reports/StatisticalReportOfOperationPerformed.cnt"/>      
+              <forward name="OTLISTING"  path="/otListingDefinition"/>            
+            <forward name="OTLISTINGVIEWREPORT" path="/reports/otListingReport.cnt"/>
+            <forward name="OPERATIONRECORDPATIENTWISE"   path="/operationRecordPatientWiseDefinition"/>            
+            <forward name="OPERATIONRECORDPATIENTWISEREPORT" path="/reports/operationRecordPatientWiseReport.cnt"/>
+            <forward name="CANCEL" path="../startup/initPage.jsp"	redirect="true" /> 
+       </action>
+       <action path="/reports/countPacReqReport"
+       	 		 type="operationTheatre.reports.Controller.action.CountPacReqACTION"
+       	 		 name="countPacReqFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/CountPacReq.jsp"/>	 	 
+      </action>	
+      <action path="/reports/CountOfCancelledOperation"
+       	 		 type="operationTheatre.reports.Controller.action.CountOfCancelledOperationACTION"
+       	 		 name="CountOfCancelledOperationFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/CountOfCancelledOperation.jsp"/>	 	 
+       </action>
+       
+       	   <action path="/reports/ListPacReqReport"
+       	 		 type="operationTheatre.reports.Controller.action.ListPacReqACTION"
+       	 		 name="ListPacReqFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/ListPacReq.jsp"/>	 	 
+       	  </action>	
+       	  
+        <action path="/reports/deptWisePacReqReport"
+       	 		 type="operationTheatre.reports.Controller.action.DeptWisePacReqACTION"
+       	 		 name="deptPacReqFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/deptWisePacReq.jsp"/>	 	 
+       	 </action>	
+       	
+       	 <action path="/reports/DtlOfOpRaisedReport"
+       	 		 type="operationTheatre.reports.Controller.action.DtlOfOpRaisedACTION"
+       	 		 name="DtlOfOpRaisedFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/DtlOfOpRaised.jsp"/>	 	 
+       	 </action>	
+       	 
+       	      <action path="/reports/AgeWisePreOperativeDiagnosisReport"
+       	 		 type="operationTheatre.reports.Controller.action.AgeWisePreOperativeDiagnosisReportACTION"
+       	 		 name="AgeWisePreOperativeDiagnosisReportFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/AgeWisePreOperativeDiagnosisReport.jsp"/>	 	 
+       	 </action>
+  		 <action path="/reports/SurgeryWiseBookingDtlReport"
+       	 		 type="operationTheatre.reports.Controller.action.SurgeryWiseBookingDtlACTION"
+       	 		 name="SurgeryWiseBookingDtlFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/SurgeryWiseBookingDtl.jsp"/>	 	 
+       	 </action>
+       	  <action path="/reports/DiagnosisWiseGenderWiseStats"
+       	 		 type="operationTheatre.reports.Controller.action.DiagnosisWiseGenderWiseStatsACTION"
+       	 		 name="DiagnosisWiseGenderWiseStatsFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/DiagnosisWiseGenderWiseStats.jsp"/>	 	 
+       	 </action>
+       	 
+       	 
+       <action path="/reports/OtNotesReport"
+       	 		 type="operationTheatre.reports.Controller.action.OtNotesReportACTION"
+       	 		 name="OtNotesReportFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/OtNotesReport.jsp"/>	 	 
+       	 </action>	
+         
+       
+  	
+         
+         
+           <action path="/reports/GenderWisePreOperativeDiagnosisReport"
+       	 		 type="operationTheatre.reports.Controller.action.GenderWisePreOperativeDiagnosisReportACTION"
+       	 		 name="GenderWisePreOperativeDiagnosisReportFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/GenderWisePreOperativeDiagnosisReport.jsp"/>	 	 
+       	 </action>	
+         
+       
+       
+       
+       
+       <action path="/reports/FinalSummeryReport"
+       	 		 type="operationTheatre.reports.Controller.action.FinalSummeryReportACTION"
+       	 		 name="FinalSummeryReportFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/FinalSummeryReport.jsp"/>	 	 
+       	 </action>	
+         
+      
+       	
+       	 
+       	 
+       	
+       	
+       
+       	 
+       	 
+       	  <action path="/reports/OperationCancelledReport"
+       	 		 type="operationTheatre.reports.Controller.action.OperationCancelledReportACTION"
+       	 		 name="OperationCancelledReportFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/OperationCancelledReport.jsp"/>	 	 
+       	 </action>	
+       	 
+       	 
+       	 
+       	 <action path="/reports/StatisticalReportOfOperationPerformed"
+       	 		 type="operationTheatre.reports.Controller.action.StatisticalReportOfOperationPerformedACTION"
+       	 		 name="StatisticalReportOfOperationPerformedFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/StatisticalReportOfOperationPerformed.jsp"/>	 	 
+       	 </action>	
+
+       	  
+       
+       	  
+       	   <action path="/reports/otListingReport"
+       	 		 type="operationTheatre.reports.Controller.action.otListingReportACTION"
+       	 		 name="otListingReportFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/otListingReport.jsp"/>	 	 
+       	 </action>	
+         
+       	  
+       	   <action path="/reports/operationRecordPatientWiseReport"
+       	 		 type="operationTheatre.reports.Controller.action.operationRecordPatientWiseReportACTION"
+       	 		 name="OperationRecordPatientWiseReportFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/operationRecordPatientWiseReport.jsp"/>	 	 
+       	 </action>	
+       	  
+       	  <!-- 
+        <action path="/reports/deptWisePacStatReport"
+       	 		 type="operationTheatre.reports.Controller.action.DeptWisePacStatACTION"
+       	 		 name="otDeptWiseStatFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/countOfPacReqDateWise.jsp"/>	 	 
+       	 </action>	
+       	  <action path="/reports/ipdOpdWisePacReqReport"
+       	 		 type="operationTheatre.reports.Controller.action.IpdOpdWiseEpisodeTypeWisePacACTION"
+       	 		 name="otIpdOpdWiseReqFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/ipdOpdWiseTotalPacReqDateWise.jsp"/>	 	 
+       	 </action>	
+          <action path="/reports/deptWiseAcceptedPatientReport"
+       	 		 type="operationTheatre.reports.Controller.action.DeptWiseAccPatientACTION"
+       	 		 name="otDeptWisePatientAccFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/deptWiseAccetedPatient.jsp"/>	 	 
+       	 </action>	
+       	  <action path="/reports/dateWiseSendPatientReport"
+       	 		 type="operationTheatre.reports.Controller.action.DateWiseSendPatientACTION"
+       	 		 name="otDateWiseSendPatientFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/dateWiseSendPatientReport.jsp"/>	 	 
+       	 </action>	
+       	 
+       	 <action path="/reports/cannedReport"
+       	 		 type="operationTheatre.reports.Controller.action.DeptWiseCannedACTION"
+       	 		 name="otCannedFB"
+       	 		 scope="request"
+       	 		 parameter="reportMode">
+       	 	<forward name="NEW" path="/reports/jsp/cannedReport.jsp"/>	 	 
+       	 </action>	  -->
+    </action-mappings>    
+    
+<controller>
+	<set-property property="processorClass" value="hisglobal.presentation.HisRequestProcessor"/>
+</controller>
+
+<global-exceptions>
+ <exception key="HisReportDataNotFound"
+   path="/reports/jsp/errorPageReportDataNotFound.jsp"
+   scope="request"
+   type="hisglobal.exceptions.HisReportDataNotFoundException" />
+</global-exceptions>
+
+
+<message-resources  parameter="operationTheatre.OT_ResourceBundle"></message-resources>
+
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/operationTheater/operationTheatre-tiles-defs.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+</plug-in>  
+</struts-config>
+          

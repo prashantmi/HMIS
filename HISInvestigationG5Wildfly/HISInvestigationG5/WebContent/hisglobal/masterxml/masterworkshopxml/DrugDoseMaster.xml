@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='PatCategoryMappingMaster'>
+		<common-values>
+			 <master-name>DrugDoseMaster</master-name> 
+			<master-title>Drug Dose Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Drug Dose Master</tableHeading> 
+				<list-table>HGBT_DRUG_DOSE_MST</list-table>
+				
+				<controls>
+				<control type="combo" index="0">
+					<label>Item Type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>INITCAP(B.HSTSTR_ITEMTYPE_NAME)</text-field>
+								<value-field>B.HSTNUM_ITEMTYPE_ID</value-field>
+							</options>
+							<tables>
+								<table alias='B'>HSTT_ITEMTYPE_MST</table>
+								
+							</tables>
+							<condition>
+								<general> B.GNUM_HOSPITAL_CODE=100 and B.GNUM_ISVALID = 1 and B.SSTNUM_ITEM_CAT_NO=10 ORDER BY INITCAP(B.HSTSTR_ITEMTYPE_NAME) </general>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>			
+				<columns>
+					<column>Dose Name</column>
+					<column>Item Type</column>
+				  
+				</columns>
+				<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_DOSE_NAME)</field>
+						<field>INITCAP(B.HSTSTR_ITEMTYPE_NAME)</field>					   
+					</fields>
+					<primaryKey>
+						<field>A.HGNUM_DOSE_ID </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>		
+						<field>A.HGNUM_SLNO</field>					
+					</primaryKey>
+					<tables>						
+						<table alias='A'>HGBT_DRUG_DOSE_MST </table>
+						<table alias='B'>HSTT_ITEMTYPE_MST</table>
+					</tables>
+				<condition>					
+						<isvalid-field> A.GNUM_HOSPITAL_CODE=100 and A.HSTNUM_ITEMTYPE_ID=B.HSTNUM_ITEMTYPE_ID AND A.GNUM_HOSPITAL_CODE = B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1 AND A.GNUM_ISVALID </isvalid-field>
+						<dependent>
+							<clause> A.HSTNUM_ITEMTYPE_ID = #0 </clause>
+						</dependent>
+					</condition>
+				</query-detail>	
+				
+				
+		</list-page>		
+		<add-page>	
+			<static-page>/opd/master/DrugDoseMaster.cnt</static-page>		
+		</add-page>
+		<modify-page>
+		  <static-page>/opd/master/DrugDoseMaster.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

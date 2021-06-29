@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+	
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	
+	<form-beans>
+	
+		 <form-bean name="commonTransactionFB" type="registration.transactions.controller.fb.commonTransactionFB" />
+		 <form-bean name="patientDetailFB" type="registration.transactions.controller.fb.PatientDetailFB" />
+		 <form-bean name="newSplRegFB" type="registration.transactions.controller.fb.newSplRegFB" />
+		 <form-bean name="SplPatientVisitFB" type="registration.transactions.controller.fb.SplPatientVisitFB" />
+		 
+	</form-beans>
+	
+	<action-mappings>	
+	
+	<action path="/commonaction"
+			type="registration.transactions.controller.action.commonACTION"
+			name="commonTransactionFB" validate="false" scope="request"
+			parameter="mode" input="/transaction/noMOde.jsp">
+						
+			<forward name="SPLCLINICNEWREGWITHAPPOINTMENT" path="/specialClinicNewRegWithAppointment"
+				redirect="true" />
+			<forward name="NEWSPECIALCLINICVISITWITHAPPPOINTMENT"
+				path="/newSpecialClinickVisitwithAptmnt" redirect="true" />	
+					
+	</action>
+
+	<action path="/specialClinicNewRegWithAppointment" 
+				type="registration.transactions.controller.action.NewSplRegwithAptmntACTION"
+				name="newSplRegFB" validate="false" parameter="hmode"
+				scope="request" input="/transactions/jsp/opdNewSplPatRegistrationWithApnmntTile.jsp">
+			<forward name="NEW" path="/transactions/jsp/opdNewSplPatRegistrationWithApnmntTile.jsp" />
+			<forward name="SAME" path="/transactions/jsp/opdNewSplPatRegistrationWithApnmntTile.jsp" />
+			<forward name="POPUP" path="/transactions/jsp/opdNewRegDuplicatePopup.jsp" />
+	</action>
+	
+	<action path="/newSpecialClinickVisitwithAptmnt"
+			type="registration.transactions.controller.action.SplPatientVisitwithAptmntACTION"
+			name="SplPatientVisitFB" validate="false" scope="request"
+			parameter="hmode"
+			input="/transactions/jsp/splPatientVisitwithAptmntTile.jsp">
+			<forward name="SAMENEWPATIENT"
+				path="/transactions/jsp/splPatientVisitwithAptmntTile.jsp" />
+			<forward name="NEWPATIENT"
+				path="/transactions/jsp/splPatientVisitwithAptmntTile.jsp" />
+			<forward name="GETPATDTL"
+				path="/transactions/jsp/splPatientVisitwithAptmntTile.jsp" />
+			<forward name="SAME"
+				path="/transactions/jsp/splPatientVisitwithAptmntTile.jsp" />
+			<forward name="NEW"
+				path="/transactions/jsp/splPatientVisitwithAptmntTile.jsp" />
+			<forward name="MENU" path="../registration/masters/jsp/init.jsp" redirect="true"/>	
+	</action>
+	
+	<action path="/patientDetail"
+				type="registration.transactions.controller.action.PatDetailACTION"
+				name="patientDetailFB"
+				validate="false"
+				scope="request"
+				input="/transactions/jsp/patDetailsTile.jsp">
+			<forward name="SAME" path="/transactions/jsp/patDetailsTile.jsp" />
+	</action>
+
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass" value="org.apache.struts.action.RequestProcessor" />
+	</controller>
+	
+	<!-- <message-resources parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	 -->
+	<message-resources parameter="registration.config.ResourceBundle"></message-resources>
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/RegistrationDesk-tiles-defs.xml" />
+		<set-property property="definitions-validate-parser" value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+	
+</struts-config>

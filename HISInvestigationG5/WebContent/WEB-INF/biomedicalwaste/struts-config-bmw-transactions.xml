@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+
+	<!--  ========== Form Bean Definitions ===================================  -->
+
+	<form-beans>
+		
+		<form-bean name="WasteAcceptanceTransFB" type="biomedicalwaste.transactions.controller.fb.WasteAcceptanceTransFB" />
+		<form-bean name="OfflineWstCollectionAcceptTransFB" type="biomedicalwaste.transactions.controller.fb.OfflineWstCollectionAcceptTransFB" />
+        <form-bean name="InspectionSchedulingTransFB" type="biomedicalwaste.transactions.controller.fb.InspectionSchedulingTransFB" />
+         <!-- Anshul Part -->
+	    	<form-bean name="WasteGenerationRegisterTransFB" type="biomedicalwaste.transactions.controller.fb.WasteGenerationRegisterTransFB" />
+	    	<form-bean name="WasteHandOverDetailTransFB" type="biomedicalwaste.transactions.controller.fb.WasteHandOverDetailTransFB" />
+	    	<form-bean name="HandOverToThirdPartyTransFB" type="biomedicalwaste.transactions.controller.fb.HandOverToThirdPartyTransFB" />
+			<form-bean name="PaymentRecievedDtlTransFB" type="biomedicalwaste.transactions.controller.fb.PaymentRecievedDtlTransFB" />
+			<form-bean name="GatePassGenerationDtlTransFB" type="biomedicalwaste.transactions.controller.fb.GatePassGenerationDtlTransFB" />
+			<form-bean name="CleaningDtlsTransFB" type="biomedicalwaste.transactions.controller.fb.CleaningDtlsTransFB" />
+	    <!-- Anshul Part ends here -->
+	    
+		
+		<!--  Adil Formbean Mapping Start   -->
+		
+		<form-bean name="trolleyMovementScheduleDtlFB" type="biomedicalwaste.transactions.controller.fb.TrolleyMovementScheduleDtlTransFB" />
+		<form-bean name="trolleyManagementDtlFB" type="biomedicalwaste.transactions.controller.fb.TrolleyManagementDtlTransFB" />
+		<form-bean name="wasteTreatmentDtlFB" type="biomedicalwaste.transactions.controller.fb.WasteTreatmentDtlTransFB" />
+		<form-bean name="preventionInjuryDtlFB" type="biomedicalwaste.transactions.controller.fb.PreventionInjuryDtlTransFB" />
+		
+		<!--  Adil Formbean Mapping End   -->
+        <!-- By nikita -->
+        <form-bean name="FuelFillDtlFB" type="biomedicalwaste.transactions.controller.fb.FuelFillDtlFB" />
+	     <form-bean name="CleaningScheduleFB" type="biomedicalwaste.transactions.controller.fb.CleaningScheduleFB" /> 
+	    <form-bean name="InspectionDetailFB" type="biomedicalwaste.transactions.controller.fb.InspectionDetailFB" />
+	</form-beans>
+	<!-- ========== Action Mapping Definitions ==============================  -->
+	<action-mappings>
+
+		
+		<action path="/transactions/WasteAcceptanceTransACTION"
+			type="biomedicalwaste.transactions.controller.action.WasteAcceptanceTransACTION"
+			name="WasteAcceptanceTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="init" path="/transactions/jsp/bmw_wasteacceptance_trans.jsp" />
+		</action>
+		
+		<action path="/transactions/OfflineWstCollectionAcceptTransACTION"
+			type="biomedicalwaste.transactions.controller.action.OfflineWstCollectionAcceptTransACTION"
+			name="OfflineWstCollectionAcceptTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="init" path="/transactions/jsp/bmw_offlineWstCollectionAccept_trans.jsp" />
+		</action>
+		
+		<action path="/transactions/InspectionSchedulingTransACTION"
+			type="biomedicalwaste.transactions.controller.action.InspectionSchedulingTransACTION"
+			name="InspectionSchedulingTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="add" path="/transactions/jsp/bmw_addinspectionschedule_trans.jsp" />
+			<forward name="SHOWPOPUP" path="/transactions/jsp/bmw_inspectionschedule_addteam_trans.jsp" />
+		</action>
+		
+
+		<!--  Anshul Action Mapping Start   -->
+		
+		<action path="/transactions/WasteGenerationRegisterTransACTION"
+			type="biomedicalwaste.transactions.controller.action.WasteGenerationRegisterTransACTION"
+			name="WasteGenerationRegisterTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="schedule" path="/transactions/jsp/bmw_wastegeneration_trolleySchedule_trans.jsp" />
+			<forward name="add" path="/transactions/jsp/bmw_wasteGenerationRegister_trans.jsp" />
+			<forward name="PrintLabel" path="/transactions/jsp/bmw_wasteGenerationRegister_printLabel.jsp" />
+			<forward name="handover" path="/transactions/WasteHandOverDetailTransACTION.cnt?hmode=INITGETLIST"/>
+		</action>
+		
+		<action path="/transactions/WasteHandOverDetailTransACTION"
+			type="biomedicalwaste.transactions.controller.action.WasteHandOverDetailTransACTION"
+			name="WasteHandOverDetailTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="init" path="/transactions/jsp/bmw_wasteHandOverDtl_trans.jsp" />
+			<forward name="handover" path="/transactions/WasteGenerationRegisterTransACTION.cnt?hmode=CANCELPAGE"/>
+		</action>
+		
+		
+		<action path="/transactions/HandoverToThirdPartylTransACTION"
+			type="biomedicalwaste.transactions.controller.action.HandoverToThirdPartylTransACTION"
+			name="HandOverToThirdPartyTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="init" path="/transactions/jsp/bmw_handOverToThirdPartyDtl_trans.jsp" />
+			<forward name="SHOWPOPUP" path="/transactions/jsp/bmw_handOverToThirdPartyAgrrementDtl_trans.jsp" />
+			<forward name="PRINTSLIP" path="/transactions/jsp/bmw_handOverToThirdPartySlip_trans.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/transactions/PaymentRecievedDtllTransACTION"
+			type="biomedicalwaste.transactions.controller.action.PaymentRecievedDtllTransACTION"
+			name="PaymentRecievedDtlTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/bmw_PaymwntRecievedDtl_trans.jsp" />
+			<forward name="SHOWPOPUP" path="/transactions/jsp/bmw_bmwPaymentReceivedDtl_trans_popUp.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/transactions/GatePassGenerationTransACTION"
+			type="biomedicalwaste.transactions.controller.action.GatePassGenerationTransACTION"
+			name="GatePassGenerationDtlTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/bmw_GatePassGenDtl_trans.jsp" />
+			<forward name="GATEPASS" path="/transactions/jsp/bmw_gatepass_trans.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+			<forward name="FINALCANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		
+		<action path="/transactions/CleaningDtlsTransACTION"
+			type="biomedicalwaste.transactions.controller.action.CleaningDtlsTransACTION"
+			name="CleaningDtlsTransFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="init" path="/transactions/jsp/bmw_cleaningDtl_trans.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!--  Anshul Action Mapping Ends   -->
+		
+
+		<!--  Adil Action Mapping Start   -->
+		
+		<action path="/transactions/trolleyMovementScheduleDtl"
+			type="biomedicalwaste.transactions.controller.action.TrolleyMovementScheduleDtlTransACTION"
+			name="trolleyMovementScheduleDtlFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/bmw_trolleyMovementScheduleDtl_trans.jsp" />
+			<forward name="SHOWPOPUP" path="/transactions/jsp/bmw_trolleyMovementScheduleDtl_trans_popUp.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/transactions/trolleyManagementDtl"
+			type="biomedicalwaste.transactions.controller.action.TrolleyManagementDtlTransACTION"
+			name="trolleyManagementDtlFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/bmw_trolleyManagementDtl_trans.jsp" />
+			<forward name="SHOWPOPUP" path="/transactions/jsp/bmw_trolleyManagementDtl_trans_popUp.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/transactions/wasteTreatmentDtl"
+			type="biomedicalwaste.transactions.controller.action.WasteTreatmentDtlTransACTION"
+			name="wasteTreatmentDtlFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/bmw_wasteTreatmentDtl_trans.jsp" />
+			<forward name="SHOWPOPUP" path="/transactions/jsp/bmw_wasteTreatmentDtl_trans_popUp.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/transactions/preventionInjuryDtl"
+			type="biomedicalwaste.transactions.controller.action.PreventionInjuryDtlTransACTION"
+			name="preventionInjuryDtlFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="INJURY" path="/transactions/jsp/bmw_preventionInjuryDtl_inj_trans.jsp" />
+			<forward name="PREVENTION" path="/transactions/jsp/bmw_preventionInjuryDtl_prev_trans.jsp" />
+			<forward name="SHOWPOPUP" path="/transactions/jsp/bmw_preventionInjuryDtl_trans_popUp.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<!--  Adil Action Mapping End   -->
+		
+      		
+	<!-- Nikita Action Mapping Start -->
+		
+		<action path="/transactions/FuelFillDtlACTION"
+			type="biomedicalwaste.transactions.controller.action.FuelFillDtlACTION"
+			name="FuelFillDtlFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="schedule" path="/transactions/jsp/bmw_FuelFillDtl.jsp" />
+			<forward name="mod" path="/transactions/jsp/bmw_mod_FuelFillDtl.jsp" />
+			
+		</action>
+		
+		<action path="/transactions/CleaningScheduleACTION"
+			type="biomedicalwaste.transactions.controller.action.CleaningScheduleACTION"
+			name="CleaningScheduleFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/bmw_cleaning_schedule_trans.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		
+		
+		<action path="/transactions/InspectionDetailACTION"
+			type="biomedicalwaste.transactions.controller.action.InspectionDetailACTION"
+			name="InspectionDetailFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="NEW" path="/transactions/jsp/bmw_Inspection_Detail.jsp" />
+			<forward name="MODIFY" path="/transactions/jsp/bmw_Inspection_Detail_modify.jsp" />
+			<forward name="SHOWPOPUP" path="/transactions/jsp/bmw_inspection_dtl_popup.jsp" />
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+      
+		
+		<!-- Nikita Action Mapping End -->
+		
+	</action-mappings>
+	
+		<message-resources parameter="biomedicalwaste.BMWResourceBundle"></message-resources>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+		
+	
+</struts-config>			

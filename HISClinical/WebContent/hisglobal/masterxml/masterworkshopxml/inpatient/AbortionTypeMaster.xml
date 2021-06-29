@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='AbortionTypeMaster'>
+        <common-values>
+           <master-name>AbortionTypeMaster</master-name>
+           <master-title>Abortion Type Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Abortion Type Master</tableHeading>
+           <list-table>HANCT_ABORTION_TYPE_MST</list-table>
+           
+           <columns>
+              <column>Abortion Type</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.HANCSTR_ABORTION_TYPE)</field>
+	    		 
+			  </fields>
+				<primaryKey>
+					<field>A.HANCNUM_ABORTION_TYPE_ID</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HANCNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HANCT_ABORTION_TYPE_MST</table>
+				</tables>
+				<condition>		
+				  <general>
+									A.GNUM_HOSPITAL_CODE=100 AND  A.GNUM_ISVALID =1 
+							</general>
+							<general-inactive>
+									A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+							</general-inactive>
+							 
+				
+					<orderby> ORDER BY(A.HANCSTR_ABORTION_TYPE) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/inpatient/master/AbortionTypeMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/inpatient/master/AbortionTypeMaster.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

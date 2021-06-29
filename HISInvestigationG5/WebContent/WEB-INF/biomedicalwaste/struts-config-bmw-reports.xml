@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+
+	<!--  ========== Form Bean Definitions ===================================  -->
+
+	<form-beans>
+		<form-bean name="RptAnnualStatmntBmwFB" type="biomedicalwaste.reports.controller.fb.RptAnnualStatmntBmwFB" />	
+		<form-bean name="RptBMWMonthlyFB" type="biomedicalwaste.reports.controller.fb.RptBMWMonthlyFB" />
+		<form-bean name="RptInfecCtrlFB" type="biomedicalwaste.reports.controller.fb.RptInfecCtrlFB" />
+		<form-bean name="RptCatWiseWasteGenFB" type="biomedicalwaste.reports.controller.fb.RptCatWiseWasteGenFB" />
+		<form-bean name="RptWstTransLogFB" type="biomedicalwaste.reports.controller.fb.RptWstTransLogFB" />
+		<form-bean name="RptDayMnthWiseTreatFB" type="biomedicalwaste.reports.controller.fb.RptDayMnthWiseTreatFB" />
+	<form-bean name="RptGatePassPrintFB" type="biomedicalwaste.reports.controller.fb.RptGatePassPrintFB" />
+	<form-bean name="inspectionMstFB" type="biomedicalwaste.reports.controller.fb.InspectionMstFB" /> 
+  <form-bean name="AmountCollectedWasteWiseRptFB" type="biomedicalwaste.reports.controller.fb.AmountCollectedWasteWiseRptFB" /> 
+  <form-bean name="WasteWiseExpenditureRptFB" type="biomedicalwaste.reports.controller.fb.WasteWiseExpenditureRptFB" /> 
+	  <form-bean name="FuelFillingRptFB" type="biomedicalwaste.reports.controller.fb.FuelFillingRptFB" /> 
+	
+	</form-beans>
+	<!-- ========== Action Mapping Definitions ==============================  -->
+	
+
+	<action-mappings>
+
+		<action path="/reports/RptAnnualStatmntBmwACTION"
+			type="biomedicalwaste.reports.controller.action.RptAnnualStatmntBmwACTION"
+			name="RptAnnualStatmntBmwFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main" path="/reports/jsp/RptAnnualStatmntBmw.jsp" />
+		</action>
+		
+		
+		<!-- FOR Bio Medical Waste Monthly Report-->
+		
+		<action path="/reports/RptBMWMonthlyACTION"
+			type="biomedicalwaste.reports.controller.action.RptBMWMonthlyACTION"
+			name="RptBMWMonthlyFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main" path="/reports/jsp/RptBMWMonthly.jsp" />
+		</action>
+		
+		<!-- FOR Infection Control Report-->
+		
+		<action path="/reports/RptInfecCtrlACTION"
+			type="biomedicalwaste.reports.controller.action.RptInfecCtrlACTION"
+			name="RptInfecCtrlFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main" path="/reports/jsp/RptInfecCtrl.jsp" />
+		</action>
+		
+	<!-- Category Wise Waste Generation Report -->
+	<action path="/reports/RptCatWiseWasteGenACTION"
+			type="biomedicalwaste.reports.controller.action.RptCatWiseWasteGenACTION"
+			name="RptCatWiseWasteGenFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main" path="/reports/jsp/RptCatWiseWasteGen.jsp" />
+		</action>
+		
+		<!-- Waste Transportation Log Report -->
+	<action path="/reports/RptWstTransLogACTION"
+			type="biomedicalwaste.reports.controller.action.RptWstTransLogACTION"
+			name="RptWstTransLogFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main" path="/reports/jsp/RptWstTransLog.jsp" />
+		</action>
+		
+		<!-- Day Wise/Month Wise Treatment Report  -->
+	<action path="/reports/RptDayMnthWiseTreatACTION"
+			type="biomedicalwaste.reports.controller.action.RptDayMnthWiseTreatACTION"
+			name="RptDayMnthWiseTreatFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main" path="/reports/jsp/RptDayMnthWiseTreat.jsp" />
+		</action>
+		
+		
+		<!-- Gate Pass Printing Report -->
+	<action path="/reports/RptGatePassPrintACTION"
+			type="biomedicalwaste.reports.controller.action.RptGatePassPrintACTION"
+			name="RptGatePassPrintFB" scope="request" validate="false"
+			parameter="hmode">
+			<forward name="main" path="/reports/jsp/RptGatePassPrint.jsp" />
+		</action>
+		
+		
+		<!-- arvind code -->
+		
+		<action path="/reports/InspectionRptACTION" 
+		type="biomedicalwaste.reports.controller.action.InspectionMstACTION" 
+		name="inspectionMstFB" scope="request" validate="false" 
+		parameter="hmode">
+       <forward name="main" path="/reports/jsp/InspectionReport.jsp" /> 
+        </action>
+        
+        
+        <action path="/reports/AmountCollectedWasteWiseRptACTION" 
+        type="biomedicalwaste.reports.controller.action.AmountCollectedWasteWiseRptACTION" 
+        name="AmountCollectedWasteWiseRptFB" scope="request" validate="false" 
+        parameter="hmode">
+        <forward name="main" path="/reports/jsp/Amount_Collect_Waste_Wise_Rpt.jsp" /> 
+          </action>
+          
+          <action path="/reports/WasteWiseExpenditureRptAction" 
+          type="biomedicalwaste.reports.controller.action.WasteWiseExpenditureRptAction" 
+          name="WasteWiseExpenditureRptFB" scope="request" validate="false" 
+          parameter="hmode">
+           <forward name="main" path="/reports/jsp/Waste_Wise_Expenditure_Rpt.jsp" /> 
+            </action>
+          
+        
+        <!-- By deepali -->
+         <action path="/reports/FuelFillingRptAction" type="biomedicalwaste.reports.controller.action.FuelFillingRptAction" name="FuelFillingRptFB" scope="request" validate="false" parameter="hmode">
+  <forward name="main" path="/reports/jsp/FuelFillingRpt.jsp" /> 
+  </action>
+        
+		
+		</action-mappings>	
+			
+		<message-resources parameter="biomedicalwaste.BMWResourceBundle"></message-resources>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/struts-transtemplate_tiles_def.xml" />
+		<set-property property="definitions-validate-parser"
+			value="true" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+		
+		
+	
+</struts-config>			

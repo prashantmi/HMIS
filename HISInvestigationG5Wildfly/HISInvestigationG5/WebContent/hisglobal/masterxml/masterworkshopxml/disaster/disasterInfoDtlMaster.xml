@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='disasterInfoDtlMaster'>
+		<common-values>
+			<master-name>DisasterInfoDtlMaster</master-name>
+			<master-title>Disaster Information Detail Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Disaster Information Detail Master</tableHeading> 
+				<list-table>HDST_DISASTER_INFODTL_MST</list-table>
+				<columns>
+					 <column>Organisation Name</column>
+					 <column>Disaster Information Head </column>
+				</columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HDSSTR_ORG_NAME) </field>
+						<field>B.HDSSTR_HEADER</field>
+					</fields>
+					<primaryKey>
+						<field>A.HDSNUM_INFORMATION_ID </field>
+						<field>A.HDSNUM_SLNO </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HDST_DISASTER_INFODTL_MST </table>
+						<table alias='B'>HDST_DISASTER_INFOHEAD_MST </table>
+					</tables>
+					<condition>		
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+							<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+							<orderby> and a.HDSNUM_DISASTER_INFORMATION_ID=b.HDSNUM_DISASTER_INFORMATION_ID 
+							 and A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE
+							 order by INITCAP(B.HDSSTR_HEADER)</orderby>
+					</condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<static-page>/disaster/disasterInfoDtlMaster.cnt</static-page>	
+		</add-page>
+		<modify-page>
+		 	 <static-page>/disaster/disasterInfoDtlMaster.cnt</static-page>	
+		 </modify-page>
+	</master>	
+</master-config>

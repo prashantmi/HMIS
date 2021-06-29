@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='Alert Management Master'>
+        <common-values>
+           <master-name>AlertManagementMaster</master-name>
+           <master-title>Alert Category Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Alert Management Master</tableHeading>
+           <list-table>GBLT_ALERT_CATEGORY_MST</list-table>
+           
+           <columns>
+              <column>Alert Category</column>
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(A.GSTR_ALERT_CATEGORY)</field>
+			  </fields>
+				<primaryKey>
+					<field>A.GNUM_ALERT_CATEGORY_CODE</field>
+				    <field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.GNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>GBLT_ALERT_CATEGORY_MST</table>
+				</tables>
+				<condition>	
+				<general>
+							A.GNUM_HOSPITAL_CODE=100 AND  A.GNUM_ISVALID =1 
+							</general>
+							<general-inactive>
+								A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+							</general-inactive>				 
+					<isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY(A.GSTR_ALERT_CATEGORY) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/alertmanagement/masters/AlertCategoryMstACTION.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/alertmanagement/masters/AlertCategoryMstACTION.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

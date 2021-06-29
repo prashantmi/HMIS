@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<setup xmlns="http://www.cdacnoida.in/his/setup_bill">
+    <general>
+        <cancellationTime>20</cancellationTime>
+        <duplicatePrintCharge>1000</duplicatePrintCharge>
+        <recordsDisplayMaster>999</recordsDisplayMaster>
+        <levelModifyMaster>1</levelModifyMaster>
+        <levelDeleteMaster>2</levelDeleteMaster>
+        <receiptType>1</receiptType>
+        <duplicatePrint>1</duplicatePrint>
+        <isWithoutCrNoRequired>1</isWithoutCrNoRequired>
+        <onlineRefundRequestAllowed>0</onlineRefundRequestAllowed>
+        <isReferringPhysicianRequired>0</isReferringPhysicianRequired>
+        <isPreviousCrNoRequired>0</isPreviousCrNoRequired>
+        <ccConfermationType>0</ccConfermationType>
+        <isPrevCrNoSearchingReq>0</isPrevCrNoSearchingReq>
+        <dayEndBillingProcessType>0</dayEndBillingProcessType>
+        <dayEndBillingDateType>0</dayEndBillingDateType>
+        <dayEndNonBillingProcessType>0</dayEndNonBillingProcessType>
+        <dayEndNonBillingDateType>0</dayEndNonBillingDateType>
+        <opdReceiptType>0</opdReceiptType>
+        <ipdReceiptType>0</ipdReceiptType>
+        <ccRefundRequired>0</ccRefundRequired>
+        <printMessageLimit>0</printMessageLimit>
+        <refundReceiptType>1</refundReceiptType>
+    </general>
+    <opd>
+        <thirdParyBilling>0</thirdParyBilling>
+        <discount>1</discount>
+        <discountClerk>0</discountClerk>
+        <refundPenalty>100</refundPenalty>
+        <roundOff>1</roundOff>
+        <opdServiceTax>0</opdServiceTax>
+    </opd>
+    <billformat>
+        <header1></header1>
+        <header2></header2>
+        <header3></header3>
+        <header4></header4>
+        <footer>Refund can be done after one Week</footer>
+        <disclaimerWithoutCrNo>This request is entertained as an outside patient on request of other hospital/doctor. Results/Reports are to be interpreted by the referring hospital/doctor</disclaimerWithoutCrNo>
+        <disclaimerServices></disclaimerServices>
+        <disclaimerRefund></disclaimerRefund>
+        <disclaimerAdvance></disclaimerAdvance>
+        <disclaimerFinalBill></disclaimerFinalBill>
+        <duplicatePrintReq>0</duplicatePrintReq> 
+        
+    </billformat>
+    <ipd>
+        <thirdParyBilling>1</thirdParyBilling>
+        <discount>1</discount>
+        <discountClerk>0</discountClerk>
+        <refundPenalty>50</refundPenalty>
+        <creditBilling>1</creditBilling>
+        <partPaymentDuration>2</partPaymentDuration>
+        <roundOff>0</roundOff>
+        <serviceTaxOnTotalBill>90</serviceTaxOnTotalBill>
+        <excessCreditLimit>10000</excessCreditLimit>
+        <ipdGenAdtProcessType>1</ipdGenAdtProcessType>
+        <ipdServiceTax>0</ipdServiceTax>
+    </ipd>
+    <emergency>
+        <thirdPartyBilling>0</thirdPartyBilling>
+        <discount>1</discount>
+        <discountClerk>0</discountClerk>
+        <refundPenalty>50</refundPenalty>
+        <roundOff>0</roundOff>
+        <emgServiceTax>0</emgServiceTax>
+    </emergency>
+</setup>
+

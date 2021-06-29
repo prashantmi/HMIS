@@ -1,0 +1,1332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="comments">Copyright (c) 2007 &lt;&lt;Your Company Name here>></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.3.1.v201309091055 Build &lt;4.3.1.v20130918-1142></property>
+    <html-property name="description">His Report Template with Datasource and predefined parameters</html-property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">63</property>
+            <expression name="value">params["jndi_ds_conn"]</expression>
+        </structure>
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">713</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">713</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">713</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <text-property name="displayName">His Report Template</text-property>
+    <property name="layoutPreference">auto layout</property>
+    <parameters>
+        <scalar-parameter name="jndi_ds_conn" id="22">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">java:comp/env/AHIS</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Header" id="23">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer" id="24">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">Computer Generated Report</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Name" id="26">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Footer_Visible" id="75">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">true</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="report_user_Remarks" id="191">
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Address" id="249">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="report_Contact" id="255">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="hosp_Code" id="392">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">101</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="rpt_format" id="496">
+            <property name="valueType">static</property>
+            <property name="dataType">boolean</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">true</value>
+            </simple-property-list>
+            <property name="paramType">simple</property>
+            <property name="controlType">check-box</property>
+            <structure name="format"/>
+        </scalar-parameter>
+        <scalar-parameter name="walAccNo" id="600">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">7160000123</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="63">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.edb.Driver</property>
+            <property name="odaURL">jdbc:edb://10.226.1.238:5444/nimsnew</property>
+            <property name="odaUser">nimsnew</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">bmltc25ldw==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="713">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">hrgnum_puk</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">hrgnum_puk</text-property>
+                    <text-property name="heading">hrgnum_puk</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">patname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">patname</text-property>
+                    <text-property name="heading">patname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hblnum_pataccount_no</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">hblnum_pataccount_no</text-property>
+                    <text-property name="heading">hblnum_pataccount_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hblnum_req_no</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">hblnum_req_no</text-property>
+                    <text-property name="heading">hblnum_req_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">to_char</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">to_char</text-property>
+                    <text-property name="heading">to_char</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">groupname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">groupname</text-property>
+                    <text-property name="heading">groupname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">trfname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">trfname</text-property>
+                    <text-property name="heading">trfname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rate</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">rate</text-property>
+                    <text-property name="heading">rate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">qty</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">qty</text-property>
+                    <text-property name="heading">qty</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">deposits</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">deposits</text-property>
+                    <text-property name="heading">deposits</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">withdrawals</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">withdrawals</text-property>
+                    <text-property name="heading">withdrawals</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">curr_bal</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">curr_bal</text-property>
+                    <text-property name="heading">curr_bal</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">hrgnum_puk</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">patname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">hblnum_pataccount_no</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">hblnum_req_no</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">to_char</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">groupname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">trfname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">rate</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">qty</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">deposits</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">withdrawals</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">curr_bal</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[this.queryText="SELECT A.HRGNUM_PUK,AHIS_FUNCTION.FUN_PAT_NAME(A.HRGNUM_PUK) AS PATNAME,A.HBLNUM_PATACCOUNT_NO, A.HBLNUM_REQ_NO,TO_CHAR(A.HBLDT_REQ_DATE,'DD-MM-YYYY'),BILL_MST.GETGROUPNAME(A.HBLNUM_GROUP_ID,A.GNUM_HOSPITAL_CODE) AS GROUPNAME,DECODE(A.SBLNUM_BSERVICE_ID,(SELECT A.SBLNUM_BSERVICE_ID FROM DUAL WHERE A.SBLNUM_BSERVICE_ID IN (10,11,12,13)),BILL_MST.GETTARIFFNAME(A.HBLNUM_TARIFF_ID,0,A.GNUM_HOSPITAL_CODE),30,'Wallet Advance',31,'Wallet Recharge',19,'Wallet Advance',20,'Wallet Recharge',21,'Wallet Settlement',32,'Wallet Settlement') AS TRFNAME, A.HBLNUM_TARIFF_RATE AS rate,A.HBLNUM_BILL_QTY AS qty, DECODE(A.SBLNUM_BSERVICE_ID,(SELECT A.SBLNUM_BSERVICE_ID FROM DUAL WHERE A.SBLNUM_BSERVICE_ID IN (30,31,19,20)),ROUND(NVL(A.HBLNUM_NET_AMOUNT,0)),'0') AS DEPOSITS,DECODE(A.SBLNUM_BSERVICE_ID,(SELECT A.SBLNUM_BSERVICE_ID FROM DUAL WHERE A.SBLNUM_BSERVICE_ID NOT IN (30,31,19,20)),ROUND(NVL(A.HBLNUM_NET_AMOUNT,0)),'0') AS WITHDRAWALS,ROUND(NVL(B.HBLNUM_PATIENT_RECD_AMT,0))-ROUND(NVL(B.HBLNUM_TARIFF_NET_AMT,0))+ROUND(NVL(B.HBLNUM_PATIENT_REFUND_AMT,0)) AS CURR_BAL FROM HBLT_PATACCOUNT_SERVICE_DTL A,HBLT_PATACCOUNT_DTL B WHERE A.GNUM_ISVALID=1";
+this.queryText=this.queryText+ "  AND A.GNUM_HOSPITAL_CODE = "+"'"+ params["hosp_Code"]+"'";
+this.queryText=this.queryText+ " AND A.HBLNUM_PATACCOUNT_NO = "+"'"+ params["walAccNo"]+"'";
+this.queryText=this.queryText+ " AND A.HBLNUM_PATACCOUNT_NO = B.HBLNUM_PATACCOUNT_NO";
+this.queryText=this.queryText+ " ORDER BY TRUNC(HBLDT_REQ_DATE) ASC";]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">hrgnum_puk</property>
+                    <property name="nativeName">hrgnum_puk</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">patname</property>
+                    <property name="nativeName">patname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">hblnum_pataccount_no</property>
+                    <property name="nativeName">hblnum_pataccount_no</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">hblnum_req_no</property>
+                    <property name="nativeName">hblnum_req_no</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">to_char</property>
+                    <property name="nativeName">to_char</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">groupname</property>
+                    <property name="nativeName">groupname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">trfname</property>
+                    <property name="nativeName">trfname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">rate</property>
+                    <property name="nativeName">rate</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">qty</property>
+                    <property name="nativeName">qty</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">deposits</property>
+                    <property name="nativeName">deposits</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">withdrawals</property>
+                    <property name="nativeName">withdrawals</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">curr_bal</property>
+                    <property name="nativeName">curr_bal</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT A.HRGNUM_PUK,AHIS_FUNCTION.FUN_PAT_NAME(A.HRGNUM_PUK) AS PATNAME,
+A.HBLNUM_PATACCOUNT_NO, A.HBLNUM_REQ_NO,TO_CHAR(A.HBLDT_REQ_DATE,'DD-MM-YYYY'),
+				BILL_MST.GETGROUPNAME(A.HBLNUM_GROUP_ID,A.GNUM_HOSPITAL_CODE) AS GROUPNAME,
+				DECODE(A.SBLNUM_BSERVICE_ID,(SELECT A.SBLNUM_BSERVICE_ID FROM DUAL WHERE A.SBLNUM_BSERVICE_ID IN (10,11,12,13)),BILL_MST.GETTARIFFNAME(A.HBLNUM_TARIFF_ID,0,A.GNUM_HOSPITAL_CODE),30,'Open Wallet',31,'Recharge Wallet',32,'Consume Service',33,'Settled',19,'Advance',20,'Part Payment',21,'Final Adjustment',22,'Advance(Tariff)',23,'Bill Settlement',25,'Estimation Certificate',26,'LF Advance',27,'LF Part Payment',28,'LF Settlement') AS TRFNAME, 
+				A.HBLNUM_TARIFF_RATE AS rate,A.HBLNUM_BILL_QTY AS qty, 
+				DECODE(A.SBLNUM_BSERVICE_ID,(SELECT A.SBLNUM_BSERVICE_ID FROM DUAL WHERE A.SBLNUM_BSERVICE_ID IN (30,31)),ROUND(NVL(A.HBLNUM_NET_AMOUNT,0)),'') AS DEPOSITS,
+				DECODE(A.SBLNUM_BSERVICE_ID,(SELECT A.SBLNUM_BSERVICE_ID FROM DUAL WHERE A.SBLNUM_BSERVICE_ID NOT IN (30,31)),ROUND(NVL(A.HBLNUM_NET_AMOUNT,0)),'') AS WITHDRAWALS,
+				ROUND(NVL(B.HBLNUM_PATIENT_RECD_AMT,0))-ROUND(NVL(B.HBLNUM_TARIFF_NET_AMT,0)) AS CURR_BAL
+				FROM HBLT_PATACCOUNT_SERVICE_DTL A,HBLT_PATACCOUNT_DTL B
+				WHERE A.GNUM_ISVALID=1 
+				and A.HBLNUM_PATACCOUNT_NO = B.HBLNUM_PATACCOUNT_NO   
+				ORDER BY TRUNC(HBLDT_REQ_DATE) ASC;
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hrgnum_puk</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>18</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>hrgnum_puk</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hrgnum_puk</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>patname</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>patname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>patname</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hblnum_pataccount_no</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>hblnum_pataccount_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hblnum_pataccount_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>16</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hblnum_req_no</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>hblnum_req_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hblnum_req_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>16</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>to_char</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>to_char</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>to_char</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>groupname</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>groupname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>groupname</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>trfname</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>trfname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>trfname</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rate</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>9</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rate</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>qty</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>qty</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>qty</design:label>
+            <design:formattingHints>
+              <design:displaySize>4</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>deposits</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>deposits</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>deposits</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>withdrawals</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>withdrawals</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>withdrawals</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>curr_bal</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>curr_bal</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>curr_bal</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="crosstab" id="4">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="topMargin">0.75in</property>
+            <property name="leftMargin">0.75in</property>
+            <property name="bottomMargin">0.5in</property>
+            <property name="rightMargin">1in</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0.2in</property>
+            <page-footer>
+                <grid id="368">
+                    <property name="width">100%</property>
+                    <column id="369">
+                        <property name="width">48%</property>
+                    </column>
+                    <column id="370">
+                        <property name="width">50%</property>
+                    </column>
+                    <row id="371">
+                        <cell id="372">
+                            <property name="verticalAlign">middle</property>
+                            <label id="374">
+                                <property name="fontFamily">"Arial"</property>
+                                <property name="fontSize">8pt</property>
+                                <property name="fontWeight">normal</property>
+                                <property name="textAlign">right</property>
+                                <text-property name="text">Page</text-property>
+                            </label>
+                        </cell>
+                        <cell id="373">
+                            <grid id="293">
+                                <property name="textAlign">left</property>
+                                <property name="width">10%</property>
+                                <column id="294">
+                                    <property name="width">3%</property>
+                                </column>
+                                <column id="295">
+                                    <property name="width">5%</property>
+                                </column>
+                                <column id="296">
+                                    <property name="width">3%</property>
+                                </column>
+                                <row id="297">
+                                    <property name="verticalAlign">middle</property>
+                                    <cell id="298">
+                                        <auto-text id="299">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">8pt</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                    </cell>
+                                    <cell id="300">
+                                        <text id="301">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">8pt</property>
+                                            <property name="contentType">plain</property>
+                                            <text-property name="content"><![CDATA[of]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="302">
+                                        <auto-text id="303">
+                                            <property name="fontFamily">"Arial"</property>
+                                            <property name="fontSize">8pt</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="type">total-page</property>
+                                        </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                </grid>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="226">
+            <property name="width">100%</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <text-property name="displayName">RDate&amp;Time</text-property>
+                    <expression name="expression" type="javascript">new Date()</expression>
+                    <property name="dataType">date-time</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="227"/>
+            <column id="228"/>
+            <column id="229"/>
+            <row id="497">
+                <property name="textAlign">right</property>
+                <list-property name="visibility">
+                    <structure>
+                        <property name="format">all</property>
+                        <expression name="valueExpr">params["rpt_format"]</expression>
+                    </structure>
+                </list-property>
+                <cell id="498">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text id="501">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<script language="javascript">
+
+function printContent(){
+
+newwin=window.open('','printwin','left=100,top=100,width=700,height=700,scrollbars=yes');
+newwin.document.write('<HTML><HEAD>');
+newwin.document.write((document.getElementsByTagName("head")[0]).innerHTML);
+newwin.document.write('<style type="text/css"> .hidecontrol { display: none; } </style>\n')
+newwin.document.write('<script>\n');
+newwin.document.write('function chkstate(){ \n');
+//newwin.document.write('if(document.readystate=="complete" || document.readystate=="undefined"){\n');
+newwin.document.write('window.close();\n');
+//newwin.document.write('}\n');
+//newwin.document.write('else{\n');
+//newwin.document.write('setTimeout("chkstate()",2000)\n');
+//newwin.document.write('}\n');
+newwin.document.write('}\n');
+newwin.document.write('function print_win(){\n');
+newwin.document.write('window.print();\n');
+newwin.document.write('chkstate();\n');
+newwin.document.write('}\n');
+
+newwin.document.write('<\/script>\n');
+newwin.document.write('</HEAD>\n');
+newwin.document.write('<BODY onload="print_win()">\n');
+newwin.document.write((document.getElementsByTagName("body" )[0]).innerHTML);
+newwin.document.write('</BODY>\n');
+newwin.document.write('</HTML>\n');
+newwin.document.close();
+
+}
+function goBack()
+{
+	//alert("id::"+window.frameElement.src);
+	window.frameElement.src=window.frameElement.src;
+}
+
+</script>
+
+<div id='printAreaDivId' class='hidecontrol'>
+<img  src='../../hisglobal/images/btn-pnt.png' style="cursor: hand;cursor: pointer" onclick='printContent();'>
+<img src='../../hisglobal/images/btn-ccl.png' style="cursor: hand;cursor: pointer" onclick='goBack();'>
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+
+</div>
+]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="230">
+                <cell id="231">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <grid id="344">
+                        <property name="width">100%</property>
+                        <column id="345">
+                            <property name="width">60%</property>
+                        </column>
+                        <column id="346">
+                            <property name="textAlign">right</property>
+                            <property name="width">40%</property>
+                        </column>
+                        <row id="384">
+                            <property name="verticalAlign">middle</property>
+                            <cell id="385">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">right</property>
+                                <grid id="54">
+                                    <property name="textAlign">right</property>
+                                    <property name="width">100%</property>
+                                    <column id="55">
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="width">80%</property>
+                                    </column>
+                                    <column id="56">
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="width">24%</property>
+                                    </column>
+                                    <row id="57">
+                                        <property name="verticalAlign">middle</property>
+                                        <cell id="58">
+                                            <label id="60">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="textAlign">right</property>
+                                                <text-property name="text">Report Date &amp; Time :</text-property>
+                                            </label>
+                                        </cell>
+                                        <cell id="59">
+                                            <property name="verticalAlign">middle</property>
+                                            <data id="738">
+                                                <property name="fontFamily">"Arial"</property>
+                                                <property name="textAlign">left</property>
+                                                <property name="resultSetColumn">Column Binding</property>
+                                            </data>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="347">
+                            <property name="textAlign">center</property>
+                            <property name="verticalAlign">middle</property>
+                            <cell id="348">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="textAlign">center</property>
+                                <text-data id="243">
+                                    <property name="fontFamily">"Verdana"</property>
+                                    <property name="fontSize">12px</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <expression name="valueExpr">params["report_Header"]</expression>
+                                    <property name="contentType">html</property>
+                                </text-data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="234">
+                <property name="textAlign">center</property>
+                <cell id="235">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="250">
+                <property name="textAlign">center</property>
+                <cell id="251">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="238">
+                <property name="textAlign">center</property>
+                <cell id="239">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="268">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">12px</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_Name"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="260">
+                <cell id="261">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="479">
+                <property name="textAlign">center</property>
+                <cell id="480">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+            <row id="256">
+                <property name="textAlign">center</property>
+                <cell id="257">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <table id="602">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">hblnum_req_no</property>
+                                <text-property name="displayName">hblnum_req_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["hblnum_req_no"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">to_char</property>
+                                <text-property name="displayName">to_char</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["to_char"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">groupname</property>
+                                <text-property name="displayName">groupname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["groupname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">trfname</property>
+                                <text-property name="displayName">trfname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["trfname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">rate</property>
+                                <text-property name="displayName">rate</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["rate"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">deposits</property>
+                                <text-property name="displayName">deposits</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["deposits"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">withdrawals</property>
+                                <text-property name="displayName">withdrawals</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["withdrawals"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">wallNo</property>
+                                <text-property name="displayName">wallNo</text-property>
+                                <expression name="expression" type="javascript">"Wallet No. -  "+dataSetRow["hblnum_pataccount_no"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">bal</property>
+                                <text-property name="displayName">bal</text-property>
+                                <expression name="expression" type="javascript">"Current Balance :: "+dataSetRow["curr_bal"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">hrgnum_puk</property>
+                                <text-property name="displayName">hrgnum_puk</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["hrgnum_puk"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">patname</property>
+                                <text-property name="displayName">patname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["patname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">hblnum_pataccount_no</property>
+                                <text-property name="displayName">hblnum_pataccount_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["hblnum_pataccount_no"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">qty</property>
+                                <text-property name="displayName">qty</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["qty"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">curr_bal</property>
+                                <text-property name="displayName">curr_bal</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["curr_bal"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">patnam</property>
+                                <text-property name="displayName">patnam</text-property>
+                                <expression name="expression" type="javascript">"Patient Name :  "+dataSetRow["patname"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">crno</property>
+                                <text-property name="displayName">crno</text-property>
+                                <expression name="expression" type="javascript">"Cr No. -  "+dataSetRow["hrgnum_puk"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <column id="627">
+                            <property name="width">1.1979166666666667in</property>
+                        </column>
+                        <column id="628">
+                            <property name="width">0.90625in</property>
+                        </column>
+                        <column id="629">
+                            <property name="width">0.9375in</property>
+                        </column>
+                        <column id="630">
+                            <property name="width">0.9166666666666666in</property>
+                        </column>
+                        <column id="631"/>
+                        <column id="632"/>
+                        <column id="633"/>
+                        <header>
+                            <row id="739">
+                                <cell id="740">
+                                    <property name="colSpan">3</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <data id="747">
+                                        <property name="resultSetColumn">patnam</property>
+                                    </data>
+                                </cell>
+                                <cell id="743">
+                                    <property name="colSpan">4</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <data id="748">
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">crno</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="676">
+                                <cell id="677">
+                                    <property name="colSpan">7</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <data id="722">
+                                        <property name="resultSetColumn">wallNo</property>
+                                    </data>
+                                </cell>
+                            </row>
+                            <row id="603">
+                                <property name="backgroundColor">silver</property>
+                                <cell id="604">
+                                    <property name="fontWeight">normal</property>
+                                    <label id="636">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Request No.</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="605">
+                                    <property name="fontWeight">normal</property>
+                                    <label id="637">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Request Date</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="606">
+                                    <property name="fontWeight">normal</property>
+                                    <label id="638">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Group Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="607">
+                                    <property name="fontWeight">normal</property>
+                                    <label id="639">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Tariff Name</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="608">
+                                    <property name="fontWeight">normal</property>
+                                    <label id="640">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Tariff Rate</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="609">
+                                    <property name="fontWeight">normal</property>
+                                    <label id="641">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Deposits</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="610">
+                                    <property name="fontWeight">normal</property>
+                                    <label id="642">
+                                        <property name="fontFamily">"Arial"</property>
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">Deductions</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="611">
+                                <cell id="612">
+                                    <property name="fontWeight">normal</property>
+                                    <data id="715">
+                                        <property name="resultSetColumn">hblnum_req_no</property>
+                                    </data>
+                                </cell>
+                                <cell id="613">
+                                    <property name="fontWeight">normal</property>
+                                    <data id="716">
+                                        <property name="resultSetColumn">to_char</property>
+                                    </data>
+                                </cell>
+                                <cell id="614">
+                                    <property name="fontWeight">normal</property>
+                                    <data id="717">
+                                        <property name="resultSetColumn">groupname</property>
+                                    </data>
+                                </cell>
+                                <cell id="615">
+                                    <property name="fontWeight">normal</property>
+                                    <data id="718">
+                                        <property name="resultSetColumn">trfname</property>
+                                    </data>
+                                </cell>
+                                <cell id="616">
+                                    <property name="fontWeight">normal</property>
+                                    <data id="719">
+                                        <property name="resultSetColumn">rate</property>
+                                    </data>
+                                </cell>
+                                <cell id="617">
+                                    <property name="fontWeight">normal</property>
+                                    <data id="720">
+                                        <property name="resultSetColumn">deposits</property>
+                                    </data>
+                                </cell>
+                                <cell id="618">
+                                    <property name="fontWeight">normal</property>
+                                    <data id="721">
+                                        <property name="resultSetColumn">withdrawals</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="619">
+                                <property name="fontWeight">normal</property>
+                                <property name="textAlign">right</property>
+                                <cell id="620">
+                                    <property name="colSpan">7</property>
+                                    <property name="rowSpan">1</property>
+                                    <property name="fontWeight">bold</property>
+                                    <data id="723">
+                                        <property name="resultSetColumn">bal</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="279">
+                <cell id="280"/>
+                <cell id="281"/>
+                <cell id="282"/>
+            </row>
+            <row id="357">
+                <property name="textAlign">center</property>
+                <cell id="358">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="365">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">params["report_user_Remarks"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="275">
+                <property name="textAlign">center</property>
+                <cell id="276">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text id="304">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">9pt</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[****End of Report****]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="361">
+                <property name="textAlign">center</property>
+                <cell id="362">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <text-data id="367">
+                        <property name="fontFamily">"Arial"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr">params["report_Footer_Visible"]</expression>
+                            </structure>
+                        </list-property>
+                        <expression name="valueExpr">params["report_Footer"]</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

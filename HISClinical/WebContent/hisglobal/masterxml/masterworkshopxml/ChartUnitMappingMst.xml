@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='ChartUnitMappingMst'>
+		<common-values>
+			<master-name>ChartUnitMappingMst</master-name>
+			<master-title>Chart List Unit Mapping Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Chart List Unit Mapping Master</tableHeading>
+			
+			<list-table>HGBT_CHART_UNIT_MAPPING</list-table>
+			<controls>
+				<control type="combo" index="0">
+					<label>Unit Name</label>
+					<selection-mandatory>false</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(A.HGSTR_UNITNAME)||')'</text-field>
+								<value-field>A.HGNUM_DEPTUNITCODE</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HGBT_UNIT_MST</table>
+								<table alias='B'>GBLT_DEPARTMENT_MST</table>
+							</tables>
+							<condition>
+								<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+								<general> 
+									AND A.GNUM_DEPT_CODE=B.GNUM_DEPT_CODE AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE
+									AND A.GNUM_ISVALID=1 AND B.GNUM_ISVALID=1 ORDER BY INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(A.HGSTR_UNITNAME)||')'
+								</general>
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+            <columns>
+				<column>Unit Name</column>
+				<column>Chart List</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(C.HGSTR_UNITNAME)||')'</field>
+					<field>INITCAP(D.HGSTR_CHART_NAME)</field>
+				</fields>
+				
+				<primaryKey>
+					<field>A.HGNUM_DEPTUNITCODE</field>
+					<field>A.HGNUM_CHART_ID</field>
+					<field>A.HGNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HGBT_CHART_UNIT_MAPPING</table>
+					<table alias='B'>GBLT_DEPARTMENT_MST</table>
+					<table alias='C'>HGBT_UNIT_MST</table>
+					<table alias='D'>HGBT_CHART_MST</table>					
+				</tables>
+				
+				<condition>
+					<isvalid-field>
+						A.HGNUM_DEPTUNITCODE=C.HGNUM_DEPTUNITCODE AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND
+						C.GNUM_DEPT_CODE=B.GNUM_DEPT_CODE AND C.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE  AND
+						A.HGNUM_CHART_ID=D.HGNUM_CHART_ID AND D.GNUM_HOSPITAL_CODE=100 AND
+						 a.gnum_isvalid=c.gnum_isvalid AND a.gnum_isvalid=d.gnum_isvalid and a.gnum_isvalid=b.gnum_isvalid and
+						A.GNUM_ISVALID
+					</isvalid-field>
+					<hospital-code> A.GNUM_HOSPITAL_CODE </hospital-code>
+					<orderby> ORDER BY INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(C.HGSTR_UNITNAME)||')' </orderby>
+					<dependent>
+						<clause> A.HGNUM_DEPTUNITCODE = #0 </clause>
+					</dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+		
+		<add-page>
+			<static-page>/opd/master/chartUnitMappingMst.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/chartUnitMappingMst.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

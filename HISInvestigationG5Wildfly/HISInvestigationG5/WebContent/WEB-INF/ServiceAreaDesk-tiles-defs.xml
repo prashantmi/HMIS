@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions> 
+ 
+ <definition name="/requisitionStatusReport1" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Requisition Status Report" type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/requisitionStatusReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/acceptedPatientReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Accepted Patient Report" type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/acceptedPatientReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/unAcceptedPatientReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Unaccepted Patient Report" type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/unAcceptedPatientReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/rejectedPatientReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Rejected Patient Report" type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/rejectedPatientReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/serviceProvidedPatientReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Service Provided Patient Report" type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/serviceProvidedPatientReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/serviceInProcessPatientReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Service In Process Patient Report" type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/serviceInProcessPatientReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/serviceRescheduledPatientReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Service Reshceduled Patient Report" type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/serviceRescheduledPatientReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/serviceAreaWiseTotalPatientStatisticsReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Service Area Wise Total Patient Statistics Report" type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/serviceAreaWiseTotalPatientStatisticsReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/serviceAreaWisePatientListReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Service Area Wise Patient List " type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/serviceAreaWisePatientListReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/serviceAreaWiseReqAnalysisReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Service Area Wise Requisition Analysis " type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/serviceAreaWiseReqAnalysisReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/immunizationAnalysisReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Immunization Statistical Report " type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/immunizationAnalysisReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/serviceAreaWiseConsumablesReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Service Area Wise Consumables Report " type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/serviceAreaWiseConsumablesReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+ <definition name="/cnsyClinicReport" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="CNSY Clinic Report " type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/cnsyClinicReport.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  <definition name="/ServiceAreaAppointmentRpt" path="/servicearea/reports/jsp/commonReportLayout.jsp">      
+	  <put name="title"  value="Service Area Appointment Report" type="string"/>
+  	  <put name="header"  value="/servicearea/reports/jsp/blank.jsp"/>	  
+  	  <put name="body"  value="/servicearea/report/ServiceAreaAppointmentRpt.cnt"/>	  
+  	  <put name="footer" value="/servicearea/reports/jsp/reportFooter.jsp" />  
+  </definition>
+  
+</tiles-definitions>

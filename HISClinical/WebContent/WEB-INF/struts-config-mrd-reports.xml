@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC 
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+          
+<struts-config>
+	<form-beans>
+		<form-bean name="commonReportFB" type="hisglobal.presentation.ReportFB"/>
+		<form-bean name="ASRDORWiseHospitalRegistrationReportFB" type="mrd.reports.controller.fb.ASRDORWiseHospitalRegistrationReportFB"/>
+		<form-bean name="SpecialityWiseOutdoorPatientsFB" type="mrd.reports.controller.fb.SpecialityWiseOutdoorPatientsFB"/>
+		<form-bean name="SpecialityWiseIndoorPatientsFB" type="mrd.reports.controller.fb.SpecialityWiseIndoorPatientsFB"/>
+		<form-bean name="RegisteredMlcPatientsFB" type="mrd.reports.controller.fb.RegisteredMlcPatientsFB"/>
+		<form-bean name="BirthDetailsReportFB" type="mrd.reports.controller.fb.BirthDetailsReportFB"/>
+		<form-bean name="DeathDetailsReportFB" type="mrd.reports.controller.fb.DeathDetailsReportFB"/>
+		<form-bean name="TwentyPointReportFB" type="mrd.reports.controller.fb.TwentyPointReportFB"/>
+		<form-bean name="DiseaseCodeReportFB" type="mrd.reports.controller.fb.DiseaseCodeReportFB"/>
+		<form-bean name="LICReportFB" type="mrd.reports.controller.fb.LICReportFB"/>
+		<form-bean name="GenderWiseOutdoorPatientsFB" type="mrd.reports.controller.fb.GenderWiseOutdoorPatientsFB"/>
+		<form-bean name="SpecialityUnitWiseOpdPatientsFB" type="mrd.reports.controller.fb.SpecialityUnitWiseOpdPatientsFB"/>
+		<form-bean name="SpecialityWiseSundayClinicPatientsFB" type="mrd.reports.controller.fb.SpecialityWiseSundayClinicPatientsFB"/>
+		<form-bean name="SpecialityGenderWiseOPDPatientsFB" type="mrd.reports.controller.fb.SpecialityGenderWiseOPDPatientsFB"/>
+		<form-bean name="SpecialityWiseOperationFB" type="mrd.reports.controller.fb.SpecialityWiseOperationFB"/>
+		<form-bean name="SpecialityWiseInvestigationFB" type="mrd.reports.controller.fb.SpecialityWiseInvestigationFB"/>
+		<form-bean name="SpecialityUnitWiseSplClinicOPDFB" type="mrd.reports.controller.fb.SpecialityUnitWiseSplClinicOPDFB"/>
+		<form-bean name="AgeSexReligionHosRegFB" type="mrd.reports.controller.fb.AgeSexReligionHosRegFB"/>
+		<form-bean name="AgeSexReligionDeptRegFB" type="mrd.reports.controller.fb.AgeSexReligionDeptRegFB"/>
+		<form-bean name="PatientNotDischargedFB" type="mrd.reports.controller.fb.PatientNotDischargedFB"/>
+		<form-bean name="CommunicableDisReportFB" type="mrd.reports.controller.fb.CommunicableDisReportFB"/>
+		<form-bean name="NonCommunicableDisReportFB" type="mrd.reports.controller.fb.NonCommunicableDisReportFB"/>
+		<form-bean name="IndoorPatientsBetweenTwoDatesFB" type="mrd.reports.controller.fb.IndoorPatientsBetweenTwoDatesFB"/>
+		<form-bean name="SexRatioFB" type="mrd.reports.controller.fb.SexRatioFB"/>
+		<form-bean name="PediatricsImmunizationsReportFB" type="mrd.reports.controller.fb.PediatricsImmunizationsReportFB"/>
+		<form-bean name="DeliveriesAndCUTInsertionReportFB" type="mrd.reports.controller.fb.DeliveriesAndCUTInsertionReportFB"/>
+		<form-bean name="HospitalPerformanceReportFB" type="mrd.reports.controller.fb.HospitalPerformanceReportFB"/>
+		<form-bean name="FormPReportFB" type="mrd.reports.controller.fb.FormPReportFB"/>
+		<form-bean name="DeptWiseMonthlyAbstractOfPatientFB" type="mrd.reports.controller.fb.DeptWiseMonthlyAbstractOfPatientFB"/>
+		<form-bean name="FluorosisEradicationProgrammeReportFB" type="mrd.reports.controller.fb.FluorosisEradicationProgrammeReportFB"/>
+		<form-bean name="RegistrationCensusReportFB" type="mrd.reports.controller.fb.RegistrationCensusReportFB"/>
+		<form-bean name="RegistrationPatientListingReportFB" type="mrd.reports.controller.fb.RegistrationPatientListingReportFB"/>
+		<form-bean name="OpdStaticReportFB" type="mrd.reports.controller.fb.OpdStaticReportFB"/>
+		
+		<form-bean name="admissionAndDischargeStaticReportFB" type="mrd.reports.controller.fb.AdmissionAndDischargeStaticReportFB"/>
+		<form-bean name="admissionAndDischargeListingReportFB" type="mrd.reports.controller.fb.AdmissionAndDischargeListingReportFB"/>
+		<form-bean name="diseaseWisePatientStaticReportFB" type="mrd.reports.controller.fb.DiseaseWisePatientStaticReportFB"/>
+		<form-bean name="diseaseWisePatientListingReportFB" type="mrd.reports.controller.fb.DiseaseWisePatientListingReportFB"/>
+		<form-bean name="deathPatientListingReportFB" type="mrd.reports.controller.fb.DeathPatientListingReportFB"/>
+		<form-bean name="mlcPatientListingReportFB" type="mrd.reports.controller.fb.MlcPatientListingReportFB"/>
+		
+		<form-bean name="broughtDeathPatientListingReportFB" type="mrd.reports.controller.fb.BroughtDeathPatientListingReportFB"/>
+		<form-bean name="wardCensusReportFB" type="mrd.reports.controller.fb.WardCensusReportFB"/>
+		<form-bean name="operationCensusReportFB" type="mrd.reports.controller.fb.OperationCensusReportFB"/>
+		<form-bean name="labCensusReportFB" type="mrd.reports.controller.fb.LabCensusReportFB" />
+		<form-bean name="issueAndReceiptOfCasePaperInterfaceReportFB" type="mrd.reports.controller.fb.IssueAndReceiptOfCasePaperInterfaceReportFB"/>
+		<form-bean name="medicalCampReportFB" type="mrd.reports.controller.fb.MedicalCampReportFB" />
+	</form-beans>
+	
+	<action-mappings>
+	
+		<action path="/report"
+				type="mrd.reports.controller.action.MrdCommonReportACTION"
+				name="commonReportFB"
+				scope="request"
+				parameter="mode">
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+			<forward name="SPECIALITYWISEOUTDOORPATIENTS" path="/specialityWiseOutdoorPatientsReportdefinition"/>
+			<forward name="SPECIALITYWISEOUTDOORPATIENTSVIEW" path="/report/specialityWiseOutdoorPatientsReport.cnt"/>
+			<forward name="SPECIALITYWISEINDOORPATIENTS" path="/specialityWiseIndoorPatientsReportdefinition"/>
+			<forward name="SPECIALITYWISEINDOORPATIENTSVIEW" path="/report/specialityWiseIndoorPatientsReport.cnt"/>
+			<forward name="GENDERWISEOUTDOORPATIENTS" path="/genderWiseOutdoorPatientsReportdefinition"/>
+			<forward name="GENDERWISEOUTDOORPATIENTSVIEW" path="/report/genderWiseOutdoorPatientsReport.cnt"/>
+			<forward name="SPECIALITYUNITWISEOPDPATIENTS" path="/specialityUnitWiseOPDPatientsReportdefinition"/>
+			<forward name="SPECIALITYUNITWISEOPDPATIENTSVIEW" path="/report/specialityUnitWiseOPDPatientsReport.cnt"/>
+			<forward name="SPECIALITYGENDERWISEOPDPATIENTS" path="/specialityGenderWiseOPDPatientsReportdefinition"/>
+			<forward name="SPECIALITYGENDERWISEOPDPATIENTSVIEW" path="/report/specialityGenderWiseOPDPatientsReport.cnt"/>
+			<forward name="SPECIALITYWISESUNDAYCLINICPATIENTS" path="/specialityWiseSundayClinicPatientsReportdefinition"/>
+			<forward name="SPECIALITYWISESUNDAYCLINICPATIENTSVIEW" path="/report/specialityWiseSundayClinicPatientsReport.cnt"/>
+			<forward name="SPECIALITYWISEOPERATION" path="/specialityWiseOperationReportdefinition"/>
+			<forward name="SPECIALITYWISEOPERATIONVIEW" path="/report/specialityWiseOperationReport.cnt"/>
+			<forward name="SPECIALITYUNITWISESPLCLINICOPDPAT" path="/specialityUnitWiseSplClinicOPDPatReportdefinition"/>
+			<forward name="SPECIALITYUNITWISESPLCLINICOPDPATVIEW" path="/report/specialityUnitWiseSplClinicOPDPatReport.cnt"/>
+			<forward name="SPECIALITYWISEINVESTIGATION" path="/specialityWiseInvestigationReportdefinition"/>
+			<forward name="SPECIALITYWISEINVESTIGATIONVIEW" path="/report/specialityWiseInvestigationReport.cnt"/>
+			<forward name="REGISTEREDMLCPATIENTREPORT" path="/registeredMlcPatientReportdefinition"/>
+			<forward name="REGISTEREDMLCPATIENTREPORTVIEW" path="/report/registeredMlcPatientReport.cnt"/>
+			
+			<forward name="BIRTHDETAILSREPORT" path="/birthDetailsReportdefinition"/>
+			<forward name="BIRTHDETAILSREPORTVIEW" path="/report/birthDetailsReport.cnt"/>
+			
+			<forward name="LICREPORT" path="/licReportdefinition"/>
+			<forward name="LICREPORTVIEW" path="/report/licReport.cnt"/>
+			<forward name="DEATHDETAILSREPORT" path="/deathDetailsReportdefinition"/>
+			<forward name="DEATHDETAILSREPORTVIEW" path="/report/deathDetailsReport.cnt"/>
+			<forward name="TWENTYPOINTREPORT" path="/twentyPointReportdefinition"/>
+			<forward name="TWENTYPOINTREPORTVIEW" path="/report/twentyPointReport.cnt"/>
+			
+			<forward name="PATIENTNOTDISCHARGEDREPORT" path="/patientNotDischargedReportdefinition"/>
+			<forward name="PATIENTNOTDISCHARGEDREPORTVIEW" path="/report/patientNotDischargedReport.cnt"/>
+			
+			<forward name="DISEASECODEREPORT" path="/diseaseCodeReportdefinition"/>
+			<forward name="DISEASECODEREPORTVIEW" path="/report/diseaseCodeReport.cnt"/>
+			<forward name="AGESEXRELIGIONHOSREGREPORT" path="/ageSexReligionHosRegReportdefinition"/>
+			<forward name="AGESEXRELIGIONHOSREGREPORTVIEW" path="/report/ageSexReligionHosRegReport.cnt"/>
+			
+			<forward name="AGESEXRELIGIONHOSPREGREPORT" path="/ASRDORWiseHospitalRegistrationReportdefinition"/>
+			<forward name="AGESEXRELIGIONHOSPREGREPORTVIEW" path="/report/ASRDORWiseHospitalRegistrationReportCNT.cnt"/>
+			
+			<forward name="AGESEXRELIGIONDEPTREGREPORT" path="/ageSexReligionDeptRegReportdefinition"/>
+			<forward name="AGESEXRELIGIONDEPTREGREPORTVIEW" path="/report/ageSexReligionDeptRegReport.cnt"/>
+			
+			<forward name="COMMUNICABLEDISREPORT" path="/communicableDisReportdefinition"/>
+			<forward name="COMMUNICABLEDISREPORTVIEW" path="/report/communicableDiseaseReport.cnt"/>
+			
+			<forward name="NONCOMMUNICABLEDISREPORT" path="/nonCommunicableDisReportdefinition"/>
+			<forward name="NONCOMMUNICABLEDISREPORTVIEW" path="/report/nonCommunicableDisReport.cnt"/>
+			
+			<forward name="INDOORPATIENTSBETWEENTWODATESREPORT" path="/indoorPatientsBetweenTwoDatesReportdefinition"/>
+			<forward name="INDOORPATIENTSBETWEENTWODATESREPORTVIEW" path="/report/indoorPatientsBetweenTwoDatesReport.cnt"/>
+			
+			<forward name="SEXRATIOREPORT" path="/sexRatioReportdefinition"/>
+			<forward name="SEXRATIOREPORTVIEW" path="/report/sexRatioReport.cnt"/>
+			
+			<forward name="PEDIATRICSIMMUNIZATIONSREPORT" path="/pediatricsImmunizationsReportdefinition"/>
+			<forward name="PEDIATRICSIMMUNIZATIONSREPORTVIEW" path="/report/pediatricsImmunizationsReport.cnt"/>
+			
+			<forward name="DELIVERIESANDCUTINSERTIONREPORT" path="/deliveriesAndCUTInsertionReportdefinition"/>
+			<forward name="DELIVERIESANDCUTINSERTIONREPORTVIEW" path="/report/deliveriesAndCUTInsertionReport.cnt"/>
+			
+			<forward name="HOSPITALPERFORMANCEREPORT" path="/hospitalPerformanceReportdefinition"/>
+			<forward name="HOSPITALPERFORMANCEREPORTVIEW" path="/report/hospitalPerformanceReport.cnt"/>
+			
+			<forward name="FORMPREPORT" path="/formPReportdefinition"/>
+			<forward name="FORMPREPORTVIEW" path="/report/formPReport.cnt"/>
+			
+			<forward name="DEPTWISEMONTHLYABSTRACTOFPATIENT" path="/deptWiseMonthlyAbstractOfPatientdefinition"/>
+	 		<forward name="DEPTWISEMONTHLYABSTRACTOFPATIENTVIEW" path="/report/DeptWiseMonthlyAbstractOfPatientCNT.cnt"/>
+	 		
+	 		<forward name="FLUOROSISERADICATIONPROGRAMMEREPORT" path="/fluorosisEradicationProgrammeReportdefinition"/>
+			<forward name="FLUOROSISERADICATIONPROGRAMMEREPORTVIEW" path="/report/fluorosisEradicationProgrammeReport.cnt"/> 
+			
+			<forward name="REGISTRATIONCENSUSREPORT" path="/registrationCensusReportdefinition"/>
+			<forward name="REGISTRATIONCENSUSREPORTVIEW" path="/report/registrationCensusReport.cnt"/>
+			
+			<forward name="REGISTRATIONPATIENTLISTINGREPORT" path="/registrationPatientListingReportdefinition"/>
+			<forward name="REGISTRATIONPATIENTLISTINGREPORTVIEW" path="/report/registrationPatientListingReport.cnt"/>
+			
+			<forward name="OPDSTATICREPORT" path="/opdStaticReportdefinition"/>
+			<forward name="OPDSTATICREPORTVIEW" path="/report/opdStaticReport.cnt"/>
+			
+			<forward name="ADMISSIONANDDISCHARGESTATICREPORT" path="/admissionAndDischargeStaticReportdefinition"/>
+			<forward name="ADMISSIONANDDISCHARGESTATICREPORTVIEW" path="/report/admissionAndDischargeStaticReport.cnt"/>
+			
+			<forward name="ADMISSIONANDDISCHARGELISTINGREPORT" path="/admissionAndDischargeListingReportdefinition"/>
+			<forward name="ADMISSIONANDDISCHARGELISTINGREPORTVIEW" path="/report/admissionAndDischargeListingReport.cnt"/>
+			
+			<forward name="DISEASEWISEPATIENTSTATICREPORT" path="/diseaseWisePatientStaticReportdefinition"/>
+			<forward name="DISEASEWISEPATIENTSTATICREPORTVIEW" path="/report/diseaseWisePatientStaticReport.cnt"/>
+			
+			<forward name="DISEASEWISEPATIENTLISTINGREPORT" path="/diseaseWisePatientListingReportdefinition"/>
+			<forward name="DISEASEWISEPATIENTLISTINGREPORTVIEW" path="/report/diseaseWisePatientListingReport.cnt"/>
+			
+			<forward name="DEATHPATIENTLISTINGREPORT" path="/deathPatientListingReportdefinition"/>
+			<forward name="DEATHPATIENTLISTINGREPORTVIEW" path="/report/deathPatientListingReport.cnt"/>
+			
+			<forward name="MLCPATIENTLISTINGREPORT" path="/mlcPatientListingReportdefinition"/>
+			<forward name="MLCPATIENTLISTINGREPORTVIEW" path="/report/mlcPatientListingReport.cnt"/>
+			
+			<forward name="BROUGHTDEATHPATIENTLISTINGREPORT" path="/broughtDeathPatientListingReportdefinition" />
+			<forward name="BROUGHTDEATHPATIENTLISTINGREPORTVIEW" path="/report/broughtDeathPatientListingReport.cnt"/>
+			
+			<forward name="WARDCENSUSREPORT" path="/wardCensusReportdefinition"/>
+			<forward name="WARDCENSUSREPORTVIEW" path="/report/wardCensusReport.cnt"/>
+			
+			<forward name="OPERATIONCENSUSREPORT" path="/operationCensusReportdefinition"/>
+			<forward name="OPERATIONCENSUSREPORTVIEW" path="/report/operationCensusReport.cnt"/>
+			
+			<forward name="LABCENSUSREPORT" path="/labCensusReportdefinition"/>
+			<forward name="LABCENSUSREPORTVIEW" path="/report/labCensusReport.cnt"/>
+			
+			<forward name="ISSUEANDRECEIPTOFCASEPAPERINTERFACEREPORT" path="/issueAndReceiptOfCasePaperInterfaceReportdefinition"/>
+			<forward name="ISSUEANDRECEIPTOFCASEPAPERINTERFACEREPORTVIEW" path="/report/issueAndReceiptOfCasePaperInterfaceReport.cnt"/>
+			
+			
+			<forward name="MEDICALCAMPREPORT" path="/medicalCampReportdefinition"/>
+			<forward name="MEDICALCAMPREPORTVIEW" path="/report/medicalCampReport.cnt"/>
+			
+		</action>		
+	
+		<action path="/report/DeptWiseMonthlyAbstractOfPatientCNT"
+				type="mrd.reports.controller.action.DeptWiseMonthlyAbstractOfPatientCNT"
+				name="DeptWiseMonthlyAbstractOfPatientFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/deptWiseMonthlyAbstractOfPatient.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+	
+		<action path="/report/genderWiseOutdoorPatientsReport"
+				type="mrd.reports.controller.action.GenderWiseOutdoorPatientsACTION"
+				name="GenderWiseOutdoorPatientsFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/genderWiseOutdoorPatients.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+			<action path="/report/specialityWiseOutdoorPatientsReport"
+				type="mrd.reports.controller.action.SpecialityWiseOutdoorPatientsACTION"
+				name="SpecialityWiseOutdoorPatientsFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/specialityWiseOutdoorPatients.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/specialityWiseIndoorPatientsReport"
+				type="mrd.reports.controller.action.SpecialityWiseIndoorPatientsACTION"
+				name="SpecialityWiseIndoorPatientsFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/specialityWiseIndoorPatients.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/ASRDORWiseHospitalRegistrationReportCNT"
+				type="mrd.reports.controller.action.ASRDORWiseHospitalRegistrationReportCNT"
+				name="ASRDORWiseHospitalRegistrationReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/ASRDORWiseHospitalRegistrationReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/specialityUnitWiseOPDPatientsReport"
+				type="mrd.reports.controller.action.SpecialityUnitWiseOPDPatientsACTION"
+				name="SpecialityUnitWiseOpdPatientsFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/specialityUnitWiseOPDPatients.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/specialityGenderWiseOPDPatientsReport"
+				type="mrd.reports.controller.action.SpecialityGenderWiseOPDPatientsACTION"
+				name="SpecialityGenderWiseOPDPatientsFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/specialityGenderWiseOPDPatients.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/specialityWiseSundayClinicPatientsReport"
+				type="mrd.reports.controller.action.SpecialityWiseSundayClinicPatientsACTION"
+				name="SpecialityWiseSundayClinicPatientsFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/specialityWiseSundayClinicPatients.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		
+		<action path="/report/specialityWiseOperationReport"
+				type="mrd.reports.controller.action.SpecialityWiseOperationACTION"
+				name="SpecialityWiseOperationFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/specialityWiseOperation.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/specialityWiseInvestigationReport"
+				type="mrd.reports.controller.action.SpecialityWiseInvestigationACTION"
+				name="SpecialityWiseInvestigationFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/specialityWiseInvestigation.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/specialityUnitWiseSplClinicOPDPatReport"
+				type="mrd.reports.controller.action.SpecialityUnitWiseSplClinicOPDPatACTION"
+				name="SpecialityUnitWiseSplClinicOPDFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/specialityUnitWiseSplClinicOPDPat.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/registeredMlcPatientReport"
+				type="mrd.reports.controller.action.RegisteredMlcPatientsACTION"
+				name="RegisteredMlcPatientsFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/registeredMlcPatients.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/birthDetailsReport"
+				type="mrd.reports.controller.action.BirthDetailsReportACTION"
+				name="BirthDetailsReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/birthDetailsReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/twentyPointReport"
+				type="mrd.reports.controller.action.TwentyPointReportACTION"
+				name="TwentyPointReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/twentyPointReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/patientNotDischargedReport"
+				type="mrd.reports.controller.action.PatientNotDischargedReportACTION"
+				name="PatientNotDischargedFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/patientNotDischargedReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/communicableDiseaseReport"
+				type="mrd.reports.controller.action.CommunicableDisReportACTION"
+				name="CommunicableDisReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/communicableDisReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		
+		<action path="/report/nonCommunicableDisReport"
+				type="mrd.reports.controller.action.NonCommunicableDisReportACTION"
+				name="NonCommunicableDisReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/nonCommunicableDisReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/indoorPatientsBetweenTwoDatesReport"
+				type="mrd.reports.controller.action.IndoorPatientsBetweenTwoDatesACTION"
+				name="IndoorPatientsBetweenTwoDatesFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/indoorPatientsBetweenTwoDates.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/sexRatioReport"
+				type="mrd.reports.controller.action.SexRatioACTION"
+				name="SexRatioFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/sexRatioReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/pediatricsImmunizationsReport"
+				type="mrd.reports.controller.action.PediatricsImmunizationsReportACTION"
+				name="PediatricsImmunizationsReportFB"
+				scope="request"
+				parameter="hmode">
+			<forward name="NEW" path="/reports/pediatricsImmunizationsReport.jsp"/>
+			<forward name="REPORT" path="/reports/pediatricsImmunizationsReportData.jsp"/>
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/report/deliveriesAndCUTInsertionReport"
+				type="mrd.reports.controller.action.DeliveriesAndCUTInsertionReportACTION"
+				name="DeliveriesAndCUTInsertionReportFB"
+				scope="request"
+				parameter="hmode">
+			<forward name="NEW" path="/reports/deliveriesAndCUTInsertionReport.jsp"/>
+			<forward name="REPORT" path="/reports/deliveriesAndCUTInsertionReportData.jsp"/>
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/report/hospitalPerformanceReport"
+				type="mrd.reports.controller.action.HospitalPerformanceReportACTION"
+				name="HospitalPerformanceReportFB"
+				scope="request"
+				parameter="hmode">
+			<forward name="NEW" path="/reports/hospitalPerformanceReport.jsp"/>
+			<forward name="REPORT" path="/reports/hospitalPerformanceReportData.jsp"/>
+			<forward name="CANCEL" path="/../startup/initPage.jsp" redirect="true" />
+		</action>
+		
+		<action path="/report/formPReport"
+				type="mrd.reports.controller.action.FormPReportACTION"
+				name="FormPReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/formPReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/registrationCensusReport"
+				type="mrd.reports.controller.action.RegistrationCensusReportACTION"
+				name="RegistrationCensusReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/registrationCensusReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/registrationPatientListingReport"
+				type="mrd.reports.controller.action.RegistrationPatientListingReportACTION"
+				name="RegistrationPatientListingReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/registrationPatientListingReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/opdStaticReport"
+				type="mrd.reports.controller.action.OpdStaticReportACTION"
+				name="OpdStaticReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/OpdStaticReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/admissionAndDischargeStaticReport"
+				type="mrd.reports.controller.action.AdmissionAndDischargeStaticReportACTION"
+				name="admissionAndDischargeStaticReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/admissionAndDischargeStaticReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/admissionAndDischargeListingReport"
+				type="mrd.reports.controller.action.AdmissionAndDischargeListingReportACTION"
+				name="admissionAndDischargeListingReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/admissionAndDischargeListingReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/diseaseWisePatientStaticReport"
+				type="mrd.reports.controller.action.DiseaseWisePatientStaticReportACTION"
+				name="diseaseWisePatientStaticReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/diseaseWisePatientStaticReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/diseaseWisePatientListingReport"
+				type="mrd.reports.controller.action.DiseaseWisePatientListingReportACTION"
+				name="diseaseWisePatientListingReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/diseaseWisePatientListingReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/deathPatientListingReport"
+				type="mrd.reports.controller.action.DeathPatientListingReportACTION"
+				name="deathPatientListingReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/deathPatientListingReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/mlcPatientListingReport"
+				type="mrd.reports.controller.action.MlcPatientListingReportACTION"
+				name="mlcPatientListingReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/mlcPatientListingReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/broughtDeathPatientListingReport"
+				type="mrd.reports.controller.action.BroughtDeathPatientListingReportACTION"
+				name="broughtDeathPatientListingReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/broughtDeathPatientListingReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/wardCensusReport"
+				type="mrd.reports.controller.action.WardCensusReportACTION"
+				name="wardCensusReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/wardCensusReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/operationCensusReport"
+				type="mrd.reports.controller.action.OperationCensusReportACTION"
+				name="operationCensusReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/operationCensusReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/labCensusReport"
+				type="mrd.reports.controller.action.LabCensusReportACTION"
+				name="labCensusReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/labCensusReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/issueAndReceiptOfCasePaperInterfaceReport"
+				type="mrd.reports.controller.action.IssueAndReceiptOfCasePaperInterfaceReportACTION"
+				name="issueAndReceiptOfCasePaperInterfaceReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/issueAndReceiptOfCasePaperInterfaceReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/licReport"
+				type="mrd.reports.controller.action.LICReportACTION"
+				name="LICReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/licReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/deathDetailsReport"
+				type="mrd.reports.controller.action.DeathDetailsReportACTION"
+				name="DeathDetailsReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/deathDetailsReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/diseaseCodeReport"
+				type="mrd.reports.controller.action.DiseaseCodeReportACTION"
+				name="DiseaseCodeReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/diseaseCodeReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/ageSexReligionHosRegReport"
+				type="mrd.reports.controller.action.AgeSexReligionHosRegACTION"
+				name="AgeSexReligionHosRegFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/ageSexReligionHosReg.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/ageSexReligionDeptRegReport"
+				type="mrd.reports.controller.action.AgeSexReligionDeptRegACTION"
+				name="AgeSexReligionDeptRegFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/ageSexReligionDeptReg.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/> 
+		</action>
+		
+		<action path="/report/fluorosisEradicationProgrammeReport"
+				type="mrd.reports.controller.action.FluorosisEradicationProgrammeReportACTION"
+				name="FluorosisEradicationProgrammeReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/fluorosisEradicationProgrammeReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+		
+		<action path="/report/medicalCampReport"
+				type="mrd.reports.controller.action.MedicalCampReportACTION"
+				name="medicalCampReportFB"
+				scope="request"
+				parameter="reportMode">
+			<forward name="NEW" path="/reports/medicalCampReport.jsp"/>
+			<forward name="ERROR" path="/reports/MrdErrorPageReportDataNotFound.jsp"/>
+		</action>
+	
+		<action path="/switchModule"
+			type="org.apache.struts.actions.SwitchAction" />
+		
+	</action-mappings>
+	
+	<message-resources  parameter="hisglobal.hisconfig.hisResourceBundle"></message-resources>
+	
+	 <plug-in className="org.apache.struts.tiles.TilesPlugin">
+      	<set-property property="definitions-config" value="/WEB-INF/Mrd-tiles-def.xml"/>
+    	<set-property property="definitions-validate-parser" value="true"/>
+     	<set-property property="moduleAware" value="true"/>    
+	</plug-in>        
+
+</struts-config>          
