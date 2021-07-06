@@ -1,0 +1,96 @@
+
+#TemplateDesigner {
+}
+
+#TemplateDesigner .cellInActive {
+	background-color:#F1ECE2;
+	font-family: MS Sans Serif;
+	font-size: 10px;
+	font-size:2;
+	border-width: 1
+}
+
+#TemplateDesigner .cellActive {
+	background-Color:#778899;
+	font-size:2;
+	font-family: MS Sans Serif;
+	font-size: 10px;
+	border-width: 2
+}
+
+#TemplateDesigner .cellParent {
+	background-Color: #FF9005;
+	font-size:2;
+	font-family: MS Sans Serif;
+	font-size: 10px;
+	border-width: 2
+}
+
+#TemplateDesigner .cellChild {
+	background-Color: #90EE90;
+	font-size:2;
+	font-family: MS Sans Serif;
+	font-size: 10px;
+	border-width: 2
+}
+
+#TemplateDesigner .cellFormulaSource {
+	background-Color: #0000FF;
+	font-size:2;
+	font-family: MS Sans Serif;
+	font-size: 10px;
+	border-width: 2
+}
+
+#TemplateDesigner .cellFormulatedDependent {
+	background-Color: #00EE00;
+	font-size:2;
+	font-family: MS Sans Serif;
+	font-size: 10px;
+	border-width: 2
+}
+
+#TemplateDesigner .cellCorrespondingDependent {
+	background-Color: #EE0000;
+	font-size:2;
+	font-family: MS Sans Serif;
+	font-size: 10px;
+	border-width: 2
+}
+
+#TemplateDesigner .colorControlText {
+	width: 80px;
+	font-size: 12px;
+	float: left;
+	padding-top: 2px;
+	background-color: #FFFFFF;
+	color: #000000
+}
+
+#TemplateDesigner .colorControlPickerImage {
+	padding-right: 1px;
+	padding-top: 1px
+}
+
+#TemplateDesigner td.tdfont  {
+	background-Color:#F1ECE2;
+	height:15;
+	color:#990000;
+	text-align:left;
+	text-transform: capitalize;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+
+}
+#TemplateDesigner td.tdfonthead  {
+	background-color:#E0EBEB;//FFEBD5;
+	height:15;
+	font-family: "MS Sans Serif";
+	font-size:12px;
+	color:#653232;
+	text-align:left;
+}

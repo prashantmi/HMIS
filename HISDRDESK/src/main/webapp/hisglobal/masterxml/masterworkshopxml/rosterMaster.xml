@@ -1,0 +1,290 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='rostermaster'>
+		<common-values>
+			<master-name hasrostersequence="true">rosterMaster</master-name>
+			<master-title>Roster Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Roster Master</tableHeading> 
+				<list-table>HOPT_ROSTER_MST</list-table>				
+				<columns>
+					 <column>OPD Name </column>
+					 <column>Unit Name </column>
+					 <column>WeekDay </column>
+				      <column>Start Time </column>
+				     <column>End Time </column>
+               </columns>
+					<query-detail>					
+					<fields>
+						<field>INITCAP(A.HOPSTR_OPD_NAME)</field>
+						<field>INITCAP(B.HGSTR_UNITNAME)</field>
+						<field>A.HOPNUM_WEEK_DAY</field>
+						<field>A.HOPSTR_START_TIME</field>
+						<field> A.HOPSTR_END_TIME</field>						
+						</fields>
+					<primaryKey>
+						<field>A.HGNUM_DEPTUNITCODE||'^'||A.HOPNUM_WEEK_DAY||'^'||A.HOPSTR_START_TIME||'^'||A.HGNUM_SEQ_NO</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HOPT_ROSTER_MST</table>
+					    <table alias='B'>HGBT_UNIT_MST</table>
+					</tables>
+					<condition>					 
+		                   <general>a.hgnum_deptunitcode = SUBSTR (b.hgnum_deptunitcode, 4, 5) and</general>
+                           <isvalid-field>A.GNUM_ISVALID 
+						   </isvalid-field>
+						   <orderBy>
+						          order by A.HOPNUM_WEEK_DAY, A.HOPSTR_START_TIME, A.HOPSTR_OPD_NAME,B.HGSTR_UNITNAME      
+						   </orderBy>
+					</condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>
+				<control type="combo" index="0">
+						<label>Department Name</label>
+						  <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>initcap(A.GSTR_DEPT_NAME) </text-field>
+									<value-field>A.GNUM_DEPT_CODE </value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_DEPARTMENT_MST</table>									
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1 </general>									
+								</condition>
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					    <submitRequired>1</submitRequired>
+					</control>					
+				
+				 <control type="text" index="1" >
+						<label>OPD Name</label>
+						<constraints inputType='alphanumeric'  mandatory="true" size = "15" />
+						<readOnly>0</readOnly>
+				 </control>
+					
+				<control type="combo" index="2">
+						<label>Unit Name</label>
+						  <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>A.HGSTR_UNITNAME</text-field>
+									<value-field>A.HGNUM_DEPTUNITCODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HGBT_UNIT_MST</table>	
+								  
+								</tables>
+								<condition>
+									<general>HGNUM_UNIT_CODE IN (select A.HGNUM_UNIT_CODE  from HGBT_UNIT_MST A,GBLT_DEPARTMENT_MST B where A.HGNUM_DEPT_CODE = B.GNUM_DEPT_CODE) </general>
+									 <dependent>
+										<clause>AND A.HGNUM_DEPT_CODE= #0</clause>
+									</dependent> 
+							</condition>
+							</dynamic>
+							
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>					
+					</control>				
+				 <control type="combo" index="3">
+						<label>Weekdays</label>
+						  <selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+							    <option value='0'>Select Value </option>
+								<option value='1'>Sunday </option>
+								<option value='3'>Monday</option>
+							    <option value='4'>Tuesday</option>
+								<option value='5'>Wednesday</option>
+								<option value='6'>Thursday</option>
+								<option value='7'>Friday</option>
+								<option value='8'>Saturday</option>
+								
+							</static>
+						</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+					 
+				  <control type="text" index="4" >
+						<label>Start Time</label>
+						<constraints inputType='alphanumeric'  mandatory="true" size = "6" maxlength = "5" methodstring="onkeypress='checkTime(event,this);'"/>						
+						<readOnly>0</readOnly>
+					</control>					
+					   <control type="text" index="5" >
+						<label>End Time </label>
+						<constraints inputType='alphanumeric'  mandatory="true" size = "6" maxlength = "5"                                methodstring="onkeypress='checkTime(event,this);'"/>						
+						<readOnly>0</readOnly>
+					</control>  
+					
+				  	 <control type="combo" index="6">
+						<label>IsValid Status</label>
+						  <selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				  <control type="text" index="7" >
+						<label>Roster Type</label>
+						<constraints maxlength='2' size='3'  inputType='numeric' />						
+						<readOnly>0</readOnly>
+					</control>
+				</controls>
+				<insert-query>
+					<primary-key>
+						<field>HGNUM_DEPTUNITCODE</field>
+						<value>(select distinct substr(#2,4,8) from HGBT_UNIT_MST)</value>
+					</primary-key>
+					<fields valueMap='#3'>HOPNUM_WEEK_DAY</fields>
+					<fields valueMap='#4'>HOPSTR_START_TIME</fields>
+					<fields valueMap='#1'>HOPSTR_OPD_NAME</fields>
+					<fields valueMap='#5'>HOPSTR_END_TIME</fields>
+					<fields valueMap='@entryDate'> GDT_ENTRY_DATE</fields>                         
+				    <fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+				    <fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>				   
+					<fields valueMap='#6'>GNUM_ISVALID</fields>
+				    <fields valueMap='#7'> HGNUM_ROSTER_TYPE</fields>
+				    <table>HOPT_ROSTER_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+
+		<modify-page>
+		  <dynamic-page>
+		   <controls>
+		       <control type="text" index="0">
+						<label>OPD Name </label>
+						<constraints size="16" maxlength = "15" mandatory ='true'/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>		
+			  
+				<control type="combo" index="5">
+						<label>Week Days</label>
+						<data>
+							<static>
+								<option value='0'>Select Value </option>
+								<option value='1'>Sunday </option>
+								<option value='3'>Monday</option>
+							    <option value='4'>Tuesday</option>
+								<option value='5'>Wednesday</option>
+								<option value='6'>Thursday</option>
+								<option value='7'>Friday</option>
+								<option value='8'>Saturday</option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+ 
+		     <control type="text" index="2">
+						<label>Start Time </label>
+						<constraints size="6" maxlength = "5" mandatory ='true' methodstring="onkeypress='checkTime(event,this);'"/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>		
+		
+		      
+		
+				 <control type="text" index="3">
+						<label>End Time </label>
+						<constraints size="6" maxlength = "5" mandatory ='true' methodstring="onkeypress='checkTime(event,this);'"/>
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>		 
+		
+		               <control type="text" index="4">
+						<label>Sequence Number</label>
+						<constraints size="3" maxlength = "2" mandatory = "true" />
+						<data>
+							<static>#Q4</static>
+						</data>
+						<readOnly>1</readOnly>
+					</control>		 
+					
+
+				
+					<control type="combo" index="5">
+						<label>IsActive Status</label>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+                          
+						   
+					<control type="text" index="6">
+						<label>Roster Type </label>
+						<constraints size="3" maxlength = "2" />
+						<data>
+							<static>#Q5</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>	   						   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>A.HOPSTR_OPD_NAME</field>
+					 <field>A.HOPNUM_WEEK_DAY</field>
+					 <field>A.HOPSTR_START_TIME</field>								
+                     <field>A.HOPSTR_END_TIME</field>
+				     <field>A.HGNUM_SEQ_NO</field>
+					 <field>A.HGNUM_ROSTER_TYPE</field>		
+				 </fields>					
+					<tables>
+						<table alias='A'>HOPT_ROSTER_MST</table>						
+					</tables>
+					<condition>						
+						<dependent>
+						    <clause>A.HGNUM_DEPTUNITCODE= #C1 </clause>
+							<clause>AND A.HOPNUM_WEEK_DAY= #C2 </clause>
+							<clause>AND A.HOPSTR_START_TIME= #C3 </clause>
+							<clause>AND A.HGNUM_SEQ_NO= #C4 </clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>	
+				<update-query>				
+					<fields valueMap='#1'>HOPNUM_WEEK_DAY</fields>
+					<fields valueMap='#2'>HOPSTR_START_TIME</fields>
+					<fields valueMap='#0'>HOPSTR_OPD_NAME</fields>
+					<fields valueMap='#3'>HOPSTR_END_TIME</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#4'>HGNUM_SEQ_NO</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='#5'>GNUM_ISVALID</fields>	
+					<fields valueMap='#6'>HGNUM_ROSTER_TYPE</fields>								
+					<table>HOPT_ROSTER_MST</table>
+					<condition>HGNUM_DEPTUNITCODE = #1 </condition>
+					<condition>HOPNUM_WEEK_DAY= #2 </condition>
+					<condition>HOPSTR_START_TIME= #3 </condition>
+					<condition>HGNUM_SEQ_NO= #4 </condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

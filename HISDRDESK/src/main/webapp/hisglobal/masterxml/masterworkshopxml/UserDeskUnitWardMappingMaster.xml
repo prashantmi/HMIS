@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Unit Ward User Wise Desk Mapping Master'>
+		<common-values>
+			<master-name>UserDeskUnitWardMappingMaster</master-name>
+			<master-title>Unit Ward User Wise Desk Mapping Master</master-title>
+		</common-values>
+
+		<list-page>
+			<tableHeading>Unit Ward User Wise Desk Mapping Master</tableHeading>
+			<list-table>GBLT_USER_DESKMENU_MST</list-table>
+
+			<controls>
+				<control type="combo" index="0">
+					<label>Desk Type</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<static>
+							<option value='3'>IPD Nursing Desk</option>
+							<option value='4'>IPD Doctor Desk</option>
+						</static>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+			<columns>
+				 <column>Unit Name</column>
+				 <column>Ward Name</column>
+				 <column>User Name</column>
+				 <column>Desk Name</column> 
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(C.HGSTR_UNITNAME)||')'</field>
+					
+					<field>NVL((Select INITCAP (F.HIPSTR_WARD_NAME) FROM HIPT_WARD_MST F			 
+							WHERE A.HIPNUM_WARD_CODE=F.HIPNUM_WARD_CODE 
+                    		AND A.GNUM_HOSPITAL_CODE=F.GNUM_HOSPITAL_CODE 
+                    		AND TRUNC(SYSDATE) BETWEEN TRUNC(F.GDT_EFFECTIVE_FRM) 
+                    		AND TRUNC(NVL(F.GDT_EFFECTIVE_TO,SYSDATE))
+		                    AND F.GNUM_ISVALID=1),'-')</field>
+		                    
+					<field>NVL((SELECT INITCAP(D.GSTR_USER_NAME) FROM GBLT_USER_MST D WHERE A.GNUM_USERSEAT_ID=D.GNUM_USERID
+							AND A.GNUM_HOSPITAL_CODE=D.GNUM_HOSPITAL_CODE AND D.GNUM_ISVALID=1),'-')</field>
+     
+					<field>INITCAP(E.GSTR_DESK_NAME)</field>
+					
+				</fields>
+				<primaryKey>
+					
+					<field>A.GNUM_USER_DESKMENU_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					
+				</primaryKey>
+				<tables>
+					<table alias='A'>GBLT_USER_DESKMENU_MST</table>
+					<table alias='B'>GBLT_DEPARTMENT_MST</table>
+					<table alias='C'>HGBT_UNIT_MST</table>
+					<table alias='E'>GBLT_DESK_MST</table>
+					
+				</tables>
+				<condition>
+					<isvalid-field>
+						A.HGNUM_DEPTUNITCODE=C.HGNUM_DEPTUNITCODE AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND
+						C.GNUM_DEPT_CODE=B.GNUM_DEPT_CODE AND C.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND					
+						A.GNUM_DESK_ID=E.GNUM_DESK_ID AND A.GNUM_HOSPITAL_CODE=E.GNUM_HOSPITAL_CODE AND
+						B.GNUM_ISVALID=1 AND C.GNUM_ISVALID=1 AND E.GNUM_ISVALID=1 AND A.GNUM_DESK_TYPE IN (3,4) AND
+						A.GNUM_ISVALID
+					</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby> ORDER BY INITCAP(B.GSTR_DEPT_NAME)||' ('||INITCAP(C.HGSTR_UNITNAME)||')' </orderby>
+					<dependent>
+						<clause> A.GNUM_DESK_TYPE = #0 </clause>
+					</dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+		
+		<add-page>
+			<static-page>/opd/master/AddUserDeskUnitWardMappingMaster.cnt</static-page>
+		</add-page>
+		
+		<modify-page>
+			<static-page>/opd/master/ModifyViewUserDeskUnitWardMappingMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

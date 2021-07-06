@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Keyword Master'>
+		<common-values>
+			<master-name>KeywordMaster</master-name>
+			<master-title>Episode Keyword Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Keyword Master</tableHeading>
+			
+			<list-table>HGBT_EPISODE_KEYWORD_MST</list-table>
+			
+			<columns>
+				<column>Keyword</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>A.HGSTR_EPISODE_KEYWORD</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HGNUM_EPISODE_KEYWORD_ID</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HGBT_EPISODE_KEYWORD_MST</table>
+				</tables>
+				
+				<condition>
+					<general>
+						A.GNUM_ISVALID =1 
+					</general>
+					<general-inactive>
+							A.GNUM_ISVALID =2 
+					</general-inactive>
+                    <isvalid-field>false</isvalid-field>
+					
+					<orderby> ORDER BY A.HGSTR_EPISODE_KEYWORD </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/opd/master/KeywordMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/KeywordMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,40 @@
+
+<context>
+		<Resource 
+        name="AHIS"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.226.80.35:5444/hmis_aiims_patna"
+		username="hmisaiimsp"
+		password="hmisaiimsp"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+		<Resource 
+        name="AHIS_U"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.10.10.72:5444/tstaiimspatna"
+		username="aiimspatna"
+		password="aiimspatna"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+		
+		
+		<Resource 
+        name="AHIS_M"
+        auth="Container"
+        type="javax.sql.DataSource"
+		driverClassName="com.edb.Driver"
+		url="jdbc:edb://10.10.10.116:5444/aiims_manglagiri"
+		username="aiims_manglagiri"
+		password="aiims_manglagiri"
+		maxActive="4"
+		maxIdle="2"
+		maxWait="5000"/>
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+</context>

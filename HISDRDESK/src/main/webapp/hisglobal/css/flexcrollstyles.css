@@ -1,0 +1,174 @@
+ 
+.scrollgeneric {
+line-height: 1px;
+font-size: 1px;
+position: absolute;
+top: 0; left: 0;
+}
+
+ 
+.vscrollerbase {
+ 
+width: 12px;
+background: url(verticalbar.png) 0 0 repeat-y;
+}
+
+.vscrollerbar {
+width: 12px;
+ 
+}
+
+.hscrollerbase {
+ 
+height: 20px;
+}
+
+.hscrollerbar {
+height: 20px;
+ 
+}
+
+ 
+
+.vscrollerbar, .hscrollerbar {
+ 
+padding: 15px;
+}
+
+.vscrollerbarbeg {
+ 
+/* background: url("/HISInvestigationG5/hisglobal/images/verticalbar.png") -100px 0 no-repeat; */
+background-color:#1277b5;
+width: 12px;
+ 
+height: 12px !important;
+}
+
+.vscrollerbarmid {
+ 
+width: 12px;
+background-color:#1277b5;
+/* background: url("/HISInvestigationG5/hisglobal/images/verticalbar.png") -20px 0 repeat-y; */
+}
+
+.vscrollerbarend {
+ 
+/* background: url("/HISInvestigationG5/hisglobal/images/verticalbar.png") -100px -12px no-repeat; */
+background-color:#1277b5;
+width: 12px;
+height: 12px;
+}
+
+.vscrollerbasebeg {
+ 
+/* background: url("/HISInvestigationG5/hisglobal/images/verticalbar.png") -60px 0 no-repeat; */
+background-color:#fff;
+width: 12px;
+ 
+height: 22px !important;
+}
+
+.vscrollerbasemid {
+ 
+/* width: 20px; */
+}
+
+.vscrollerbaseend {
+ 
+/* background: url("/HISInvestigationG5/hisglobal/images/verticalbar.png") -60px -22px no-repeat; */
+background-color:#fff;
+width: 12px;
+height: 22px;
+}
+
+.hscrollerbarbeg {
+ 
+background: url(horizontalbar.png) 0 -100px no-repeat;
+width: 12px;
+ 
+width: 11px !important;
+}
+
+.hscrollerbarmid  {
+ 
+background: url(horizontalbar.png) 0 -20px repeat-x;
+height: 20px;
+}
+
+.hscrollerbarend {
+/* Right image holder for horizontal scrollbar */
+background: url(horizontalbar.png) -11px -100px no-repeat;
+height: 20px;
+width: 11px;
+}
+
+.scrollerjogbox {
+/* Scroller jog (scroll-pan) image holder, only visible when both scrollbars are used */
+background: url(horizontalbar.png) -22px -100px no-repeat;
+width: 20px;
+height: 20px;
+top: auto; left: auto;
+bottom: 0px; right: 0px;
+}
+.hscrollerbase {
+/* hscrollerbase is the div that holds the scrollbar (parent of hscrollerbar) */
+background: url(horizontalbar.png) 0 0 repeat-x;
+}
+
+.hscrollerbasebeg {
+/* Horizontal scrollbar's left-cap */
+/* This may be used for holding the left arrow */
+background: url(horizontalbar.png) 0 -60px no-repeat;
+height: 20px;
+ 
+width: 22px !important;
+}
+.hscrollerbasemid {
+ 
+/* height: 20px; */
+}
+.hscrollerbaseend {
+ 
+height: 20px;
+width: 22px;
+background: url(horizontalbar.png) -22px -60px no-repeat;
+}
+
+ 
+.vscrollerbar:hover .vscrollerbarbeg {
+background-position: -50px -23px; 
+}
+.vscrollerbar:hover .vscrollerbarmid {
+background-position: -20px 0;
+}
+.vscrollerbar:hover .vscrollerbarend {
+background-position: -50px -35px;
+}
+.vscrollerbasebeg:hover {
+background-position: -40px 0;
+}
+.vscrollerbaseend:hover {
+background-position: -40px -22px;
+}
+.hscrollerbar:hover .hscrollerbarbeg {
+background-position: 0 -60px; 
+}
+.hscrollerbar:hover .hscrollerbarmid {
+background-position: 0 -20px;
+}
+.hscrollerbar:hover .hscrollerbarend {
+background-position: -11px -60px;
+}
+.hscrollerbasebeg:hover {
+background-position: 0 -40px;
+}
+.hscrollerbaseend:hover {
+background-position: -11px -40px;
+}
+.scrollerjogbox:hover {
+background-position: -22px -120px;
+}
+
+
+/* Scroll Bar Master Styling Ends Here */
+

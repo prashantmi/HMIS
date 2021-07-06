@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='icdSnomedMappingMaster'>
+		<common-values>
+			<master-name>icdSnomedMappingMaster</master-name>
+			<master-title>ICD Snomed Mapping Master</master-title>
+		</common-values>
+		
+		<list-page>
+				<tableHeading>Disease Mapping Master</tableHeading> 
+				<list-table>HGBT_DISEASE_MAPPING_MST</list-table>				
+				<columns>
+					 <column>ICD</column>  
+					 <column>Snomed term</column>  				  
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGBSTR_DISEASE_NAME_FRM)||'('||TRIM(HGBSTR_DISEASE_CODE_FRM)||')'</field>
+						<field>INITCAP(A.HGBSTR_DISEASE_NAME_TO)</field>					
+					</fields>
+					<primaryKey>
+						<field>A.HGNUM_MAPPING_SEQ_NO</field>
+						
+						
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_DISEASE_MAPPING_MST</table>
+					</tables>
+					<condition>	
+                        <isvalid-field>A.GNUM_CODIFICATION_ID_FRM=0 AND A.GNUM_CODIFICATION_ID_TO=3 AND A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID</isvalid-field>
+						<orderby> order by INITCAP(A.HGBSTR_DISEASE_NAME_FRM)</orderby>	
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>
+			<static-page>/opd/master/icdSnomedMappingMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/icdSnomedMappingMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

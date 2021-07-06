@@ -1,0 +1,130 @@
+
+.tabGroup .tabGroupTop span{
+	float:left;
+	display: inline;
+	background: url('/HISInvestigationG5/hisglobal/images/tl.gif');
+	background-repeat: no-repeat;
+    background-position: top left;
+	padding:1px 10px 1px 10px;
+}
+
+.tabGroup .tabGroupTop{
+	display: inline;
+	clear:both;
+	float:left;
+	background:#1276b3 url('/HISInvestigationG5/hisglobal/images/tr.gif');
+	background-repeat: no-repeat;
+    background-position: top right;
+	width:auto;
+}
+
+
+#tabs {
+    padding-left: 10px;
+    margin: 0;
+    list-style: none;	
+    background-color:CCE6FF;
+  
+}
+/*    background: #CFDCED url("/hisglobal/images/tab-right.gif") no-repeat right top;*/
+#tabs li  {
+    float: left;
+    background: #000000 ;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-color: #e0ebeb;
+    margin: 0 3px 0 0;
+    padding: 0;
+    	border: 2px solid #FFD700;
+ 
+    padding: 0px 5px; 
+     
+border-radius: 25px 25px 2px 2px;
+   width: 23.1em; /* IE/Win fix */
+}
+
+ 
+
+/*background: url("images/tab-left.gif") no-repeat left top;*/
+#tabs li a  {
+    float: left;
+    display: block;
+    font-size:12px;
+    text-decoration: none;
+    color:black;
+    white-space: nowrap;
+	font-weight: bold;
+	 color: -webkit-linear-gradient(red, blue); /* For Safari 5.1 to 6.0 */
+  color: -o-linear-gradient(red, blue); /* For Opera 11.1 to 12.0 */
+  color: -moz-linear-gradient(red, blue); /* For Firefox 3.6 to 15 */
+  color: linear-gradient(red, blue); /* Standard syntax */
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding: 5px 15px 4px;
+    width: 23.1em; /* IE/Win fix */
+     
+	-webkit-transition: font-size 1s ease;
+	-moz-transition: font-size 1s ease;
+	-ms-transition: font-size 1s ease;
+	-o-transition: font-size 1s ease;
+	transition: font-size 1s ease;
+}
+
+
+ 
+ 
+ 
+/* #tabs li a:hover{
+   
+    
+      color:#A52A2A;
+      font-size: 13px;
+     
+   
+}  
+ */
+  
+
+#tabs .current{
+    font-family: verdana, arial, sans-serif;
+    font-size:12px;
+    text-decoration: none;
+    color: red;
+    background-color: rex;
+    white-space: nowrap;
+    background-image: url('/HISInvestigationG5/hisglobal/images/rnd-003366-eff3f7-LT.gif');
+    background-repeat: no-repeat;
+    background-position: top Left;
+
+}
+#tabs .current span{
+    font-family: verdana, arial, sans-serif;
+    font-size:12px;
+    text-decoration: none;
+    color: black;
+    background-image: url('/HISInvestigationG5/hisglobal/images/rnd-003366-eff3f7-RT.gif');
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 5px 15px 4px;
+    width: .1em; /* IE/Win fix */
+	width: auto;
+}
+
+ 
+ TR {
+	FONT-SIZE: 11px; FONT-FAMILY: 'MS Sans Serif', Arial, Helvetica, 'sans-serif'
+}
+TD {
+	FONT-SIZE: 11px; FONT-FAMILY: 'MS Sans Serif', Arial, Helvetica, 'sans-serif'
+}
+.DIVIDER {
+	BACKGROUND: #707090
+}
+.TAB {
+	BACKGROUND: #f0f0f0
+}
+.SELECTEDTAB {
+	COLOR: black
+}
+ 
+

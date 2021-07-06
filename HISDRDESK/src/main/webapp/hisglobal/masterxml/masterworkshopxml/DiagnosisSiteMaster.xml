@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='DiagnosisSiteMaster'>
+		<common-values>
+			<master-name>DiagnosisSiteMaster</master-name>
+			<master-title>Diagnosis Site Master</master-title>
+		</common-values>
+		<list-page>
+			<tableHeading>Diagnosis Site Master</tableHeading> 
+			<list-table>HGBT_DISEASE_SITE_MST</list-table>
+			<columns>
+				 <column>Diagnosis Site</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HGSTR_DISEASE_SITE) </field>
+				</fields>
+				<primaryKey>
+					<field>A.HGNUM_DISEASE_SITE_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HGBT_DISEASE_SITE_MST</table>
+				</tables>
+				<condition>
+					<isvalid-field> A.GNUM_HOSPITAL_CODE=100 AND  A.GNUM_ISVALID</isvalid-field>
+					<orderby> order by INITCAP(A.HGSTR_DISEASE_SITE)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+		<add-page>			
+			<static-page>/opd/master/diseaseSiteMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/diseaseSiteMaster.cnt</static-page>
+		</modify-page>	
+	</master>	
+</master-config>

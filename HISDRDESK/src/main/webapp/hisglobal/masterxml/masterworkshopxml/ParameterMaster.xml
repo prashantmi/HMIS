@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='ParameterMaster'>
+		<common-values>
+			<master-name>ParameterMaster</master-name>
+			<master-title>Parameter Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Parameter Master</tableHeading> 
+				<list-table>HGBT_PARAMETER_MST</list-table>				
+				<columns>
+					 <column>Parameter Name</column>  
+					 <column>Parameter Group</column>  
+					 <column>Para Bound</column>  
+					 <column>SNOMED-CT Preferred Term</column>  							  
+				</columns>
+				<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_PARA_NAME)</field>
+						<field>B.HGSTR_TEMPLATE_GROUP_NAME</field>
+						<field>DECODE(A.HGNUM_PARA_BOUND ,1,'Non-Patient Centric',2,'Patient Centric','')</field>
+						<field>INITCAP(nvl(a.sctstr_pterm_para_id::character varying,''))</field>
+					</fields>
+					<primaryKey>
+						<field>A.HGNUM_PARA_ID</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_PARAMETER_MST</table>
+						<table alias='B'>HGBT_TEMPLATE_GROUP_MST</table>
+					</tables>
+					<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+						<orderby> AND A.GNUM_HOSPITAL_CODE=100 AND A.HGNUM_PARA_TYPE=B.HGNUM_TEMPLATE_GROUP_ID AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND B.GNUM_ISVALID=1 order by INITCAP(A.HGSTR_PARA_NAME)</orderby>	
+                    </condition>
+				</query-detail>				
+		</list-page>
+	
+		<add-page>
+			<static-page>/hisglobal/utility/generictemplate/master/ParameterMaster.cnt</static-page>
+		</add-page>
+		
+		<modify-page>
+			<static-page>/hisglobal/utility/generictemplate/master/ParameterMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

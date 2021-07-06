@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Shift Master'>
+		<common-values>
+			<master-name>DutyRosterShiftMaster</master-name>
+			<master-title>Shift Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Shift Master</tableHeading>
+			
+			<list-table>HDRT_SHIFT_MST</list-table>
+
+			<columns>
+				<column>Shift Description</column>
+				<column>Shift Type</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HDTSTR_SHIFT_DESC)</field> 
+					<field>INITCAP(B.HDTSTR_SHIFT_DESC)</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HDRNUM_SHIFT_ID</field>
+					<field>A.HDRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field> 
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDRT_SHIFT_MST</table>
+					<table alias='B'>HDRT_SHIFT_TYPE_MST</table>
+				</tables>
+				
+				<condition>
+					
+					<general-inactive> A.HDRNUM_SHIFT_TYPE=B.HDRNUM_SHIFT_TYPE and B.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE and  </general-inactive>
+					<general> A.HDRNUM_SHIFT_TYPE=B.HDRNUM_SHIFT_TYPE  and  </general>
+					
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					
+								
+				</condition>
+				<orderby> ORDER BY(B.HDTSTR_SHIFT_DESC)</orderby>
+				
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/dutyroster/masters/ShiftTypeMstAddModACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/dutyroster/masters/ShiftTypeMstAddModACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

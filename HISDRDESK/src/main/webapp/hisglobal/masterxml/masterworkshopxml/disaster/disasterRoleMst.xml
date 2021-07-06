@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Duty Role Master'>
+		<common-values>
+			<master-name>disasterRoleMst</master-name>
+			<master-title>Disaster Role Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Disaster Role Master</tableHeading>
+			
+			<list-table>HDST_ROLE_MST</list-table>
+
+			<columns>
+				<column>Role Name</column>
+				<column>Committee Type</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HDSSTR_ROLE_NAME)</field> 
+					<field>DECODE(A.HDSNUM_COMMITTEE_TYPE,1,'Committee',2,'QR Team')</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HDSNUM_ROLE_ID</field>
+					<field>A.HDSNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDST_ROLE_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby>ORDER BY(A.HDSSTR_ROLE_NAME)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/disaster/master/disasterRoleMstAddModACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/disaster/master/disasterRoleMstAddModACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<master-config>
+	<master name='OrganizationMaster'>
+		<common-values>
+			<master-name>OrganizationMaster</master-name>
+			<master-title>Organization Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>OrganizationMaster</tableHeading> 
+				<list-table>HMBT_ORGANIZATION_MST</list-table>
+				
+				<columns>
+					 <column>Organization Name</column>
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HMBSTR_ORG_NAME) </field>
+						</fields>
+					<primaryKey>
+						<field>A.HMBNUM_ORGANIZATION_ID</field>
+						<field>A.HMBNUM_SLNO</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					
+					</primaryKey>
+					<tables>
+						<table alias='A'>HMBT_ORGANIZATION_MST</table>
+					</tables>
+					<condition>		
+                        <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                        <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                    </condition>
+				</query-detail>				
+		</list-page>
+	<add-page>
+			<static-page>/medicalboard/masters/OrganizationMstACTION.cnt</static-page>
+		</add-page>
+		
+		<modify-page>
+			<static-page>/medicalboard/masters/OrganizationMstACTION.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Area Canned Master'>
+		<common-values>
+			<master-name>ServiceAreaCannedMst</master-name>
+			<master-title>Service Area Canned Master</master-title>
+		</common-values>
+	<list-page>
+			<tableHeading>Service Area Canned Master</tableHeading>
+			<list-table>HSRV_CANNED_MST</list-table>
+			<columns>
+				<column>Service Area</column>
+				<column>Procedure</column>
+				<column>Canned File</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>INITCAP(C.HSRSTR_SERVICE_AREA_NAME) || '('|| NVL ((SELECT INITCAP 
+						(GSTR_DEPT_NAME) FROM GBLT_DEPARTMENT_MST DEPT WHERE 
+						DEPT.GNUM_DEPT_CODE = C.GNUM_DEPT_CODE AND DEPT.GNUM_HOSPITAL_CODE = C.GNUM_HOSPITAL_CODE 
+						AND GNUM_ISVALID=1),'Global Service' ) || ')' SERVICEAREA</field>
+					<field>NVL((SELECT INITCAP (D.HSRSTR_PROCEDURE_NAME) FROM HSRV_PROCEDURE_MST D
+           					WHERE D.GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE AND D.HSRNUM_PROCEDURE_CODE = 
+           					A.HSRNUM_PROCEDURE_CODE),'-')</field>
+           			<field>A.HSRSTR_CANNED_FILE</field>
+				</fields>
+				<primaryKey>
+					<field>A.HSRNUM_CANNED_CODE</field>
+					<field>A.HSRNUM_SERVICE_AREA_CODE</field>
+					<field>A.HSRNUM_PROCEDURE_CODE</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HSRV_CANNED_MST</table>
+					<table alias='C'>HSRV_SERVICE_AREA_MST</table>
+				</tables>
+				<condition>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+                    <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                    <general> C.HSRNUM_SERVICE_AREA_CODE=A.HSRNUM_SERVICE_AREA_CODE 
+						AND C.GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE AND
+	 				</general>
+					<orderby> order by SERVICEAREA</orderby>
+	 				<general-inactive>
+	 					C.HSRNUM_SERVICE_AREA_CODE=A.HSRNUM_SERVICE_AREA_CODE 
+						AND C.GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE AND
+					</general-inactive>
+                </condition>
+			</query-detail>
+		</list-page>
+		<add-page>
+			<static-page>/servicearea/masters/ServiceAreaCannedMst.cnt</static-page>		
+		</add-page>
+		<modify-page>
+			<static-page>/servicearea/masters/ServiceAreaCannedMst.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

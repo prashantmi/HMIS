@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='QRTMaster'>
+		<common-values>
+			<master-name>Quick Response Team Master</master-name>
+			<master-title>Quick Response Team Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Quick Response Team</tableHeading> 
+				<list-table>HDST_QRT_DTL</list-table>
+				<columns>
+					 <column>Team Name</column>
+					 <column>Team Description</column>
+					
+				</columns>
+
+					<query-detail>
+					<fields>
+						<field>A.HDRSTR_TEAM_NAME</field>
+						<field>A.HDRSTR_TEAM_DESC</field>
+						
+					</fields>
+					<primaryKey>
+						<field>A.HDRNUM_TEAM_ID </field>
+						<field>A.HDSNUM_SLNO </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HDST_QRT_DTL </table>
+						
+					</tables>
+					<condition>		
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+							<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+							<orderby> order by A.HDRSTR_TEAM_NAME</orderby>
+							
+					</condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<static-page>/disaster/qrtMaster.cnt</static-page>	
+		</add-page>
+		<modify-page>
+		 	 <static-page>/disaster/qrtMaster.cnt</static-page>	
+		 </modify-page>
+	</master>	
+</master-config>

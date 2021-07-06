@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='PatCategoryMappingMaster'>
+		<common-values>
+			 <master-name>DrugDoseMaster</master-name> 
+			<master-title>Drug Dose Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Drug Dose Master</tableHeading> 
+				<list-table>HGBT_DRUG_DOSE_MST</list-table>
+				<columns>
+					<column>Dose Name</column>
+					<column>Item Type</column>
+			  </columns>
+				<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_DOSE_NAME)</field>
+						<field>pkg_opd_func.get_itemtype_name('1', A.hstnum_itemtype_id::character varying,'10001','100')</field>					   
+					</fields>
+					<primaryKey>
+						<field>A.HGNUM_DOSE_ID </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>		
+						<field>A.HGNUM_SLNO</field>					
+					</primaryKey>
+					<tables>						
+						<table alias='A'>HGBT_DRUG_DOSE_MST </table>
+					</tables>
+				<condition>					
+						<isvalid-field> A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID </isvalid-field>
+					</condition>
+				</query-detail>	
+				
+				
+		</list-page>		
+		<add-page>	
+			<static-page>/opd/master/DrugDoseMaster.cnt</static-page>		
+		</add-page>
+		<modify-page>
+		  <static-page>/opd/master/DrugDoseMaster.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>

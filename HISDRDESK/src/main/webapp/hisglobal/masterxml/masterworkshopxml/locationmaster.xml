@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='LocationMaster'>
+		<common-values>
+			<master-name>LocationMaster</master-name>
+			<master-title>Location Master</master-title>
+		</common-values>
+		<list-page>
+			<tableHeading>Location Master</tableHeading>
+			<list-table>HGBT_LOCATION_MST</list-table>
+			
+			<columns>
+				<column>Location Description </column>
+				<column>Location Type </column>
+			</columns>
+				
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HGSTR_DESCRIPTION)</field>
+					<field>NVL((SELECT INITCAP (b.gstr_loc_type) FROM gblt_location_type_mst b WHERE b.gnum_hospital_code = 100 
+							AND b.gnum_isvalid = 1 AND b.gnum_loc_type_code = a.hgnum_loc_type_code),'-')</field>
+				</fields>
+				
+				<primaryKey>
+					<field>A.HGNUM_LOCATION_CODE </field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HGBT_LOCATION_MST </table>
+					
+				</tables>
+				
+				<condition>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<isvalid-field> A.GNUM_ISVALID	</isvalid-field>
+					<orderby> ORDER BY INITCAP(A.HGSTR_DESCRIPTION)</orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/registration/master/addLocationMaster.cnt</static-page>			
+		</add-page>
+
+		<modify-page>	
+   		    <static-page>/registration/master/modifyLocationMaster.cnt</static-page>		
+		</modify-page>
+	</master>	
+</master-config>

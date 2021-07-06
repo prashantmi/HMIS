@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Global Desk Master'>
+		<common-values>
+			<master-name>OPDDeskMasterGlobal</master-name>
+			<master-title>Desk Master Global</master-title>
+		</common-values>
+
+		<list-page>
+			<tableHeading>Global Desk Master</tableHeading> 
+			<list-table>GBLT_DESK_MST</list-table>
+			<controls>
+				<control type="combo" index="1">
+			       	<label>Desk Type</label>
+			         <selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_DESK_TYPE_DESC)</text-field>
+									<value-field>A.GNUM_DESK_TYPE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_DESK_TYPE_MST</table>	
+								</tables>
+								<condition>
+									<general> A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.GSTR_DESK_TYPE_DESC)</general>
+								</condition>
+							</dynamic>		
+						</data>
+						<default>-1</default>
+					</control>
+			</controls>
+			<columns>
+				<column>Desk Name</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.GSTR_DESK_NAME)|| DECODE(GNUM_ISDEFAULT_DESK,1,' (Default)','')</field>
+				</fields>
+				<primaryKey>
+					<field>A.GNUM_DESK_ID</field>
+					
+				</primaryKey>
+				<tables>
+					<table alias='A'>GBLT_DESK_MST</table>
+				</tables>
+				<condition>	
+				<general> A.GNUM_HOSPITAL_CODE=100 AND </general>				 
+					<isvalid-field>  A.GNUM_ISVALID </isvalid-field>
+					<orderby> ORDER BY INITCAP(A.GSTR_DESK_NAME)</orderby>
+					<dependent>
+						<clause>  A.GNUM_DESK_TYPE = #0 </clause>
+					</dependent>
+				</condition>
+			</query-detail>				
+		</list-page>
+
+		<add-page>			
+			<static-page>/opd/master/AddModifyMenuToGlobalDeskACTION.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/AddModifyMenuToGlobalDeskACTION.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

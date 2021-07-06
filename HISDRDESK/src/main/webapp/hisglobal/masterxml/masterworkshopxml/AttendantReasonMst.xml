@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='AttendantReasonMst'>
+		<common-values>
+			<master-name>AttendantReasonMst</master-name>
+			<master-title>Attendant Reason Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Attendant Reason Master</tableHeading>
+			<list-table>HGBT_ATTENDANT_REASON_MST</list-table>
+
+			<columns>
+				<column>Reason</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HGSTR_ATTENDANT_REASON)</field>
+				</fields>
+				<primaryKey>
+					<field>A.HGNUM_ATTENDANT_REASON_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HGNUM_SLNO</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HGBT_ATTENDANT_REASON_MST </table>
+				</tables>
+				<condition>
+					<general>
+							A.GNUM_HOSPITAL_CODE=100 AND  A.GNUM_ISVALID =1 
+					</general>
+					<general-inactive>
+							A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+					</general-inactive>
+                    <isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY INITCAP(A.HGSTR_ATTENDANT_REASON) </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+		
+		<add-page>
+			<static-page>/opd/master/attendantReasonMaster.cnt</static-page>
+		</add-page>
+		<modify-page>
+			<static-page>/opd/master/attendantReasonMaster.cnt</static-page>
+		</modify-page>
+	</master>	
+</master-config>		

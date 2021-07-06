@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='DiagnosisTypeMaster'>
+		<common-values>
+			<master-name>DiagnosisTypeMaster</master-name>
+			<master-title>Diagnosis Type Master</master-title>
+		</common-values>
+
+		<list-page>
+			<tableHeading>Diagnosis Master</tableHeading>
+			<list-table>HGBT_DIAGNOSIS_TYPE_MST</list-table>
+
+			<columns>
+				<column>Diagnosis Type</column>
+
+			</columns>
+			<query-detail>
+				<fields>
+					<field>
+						INITCAP(A.HGBSTR_DIAGNOSTIC_TYPE_NAME)
+					</field>
+
+				</fields>
+				<primaryKey>
+					<field>A.HGBNUM_DIAGNOSTIC_TYPE_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HGBT_DIAGNOSIS_TYPE_MST</table>
+				</tables>
+				<condition>
+					<general>
+						A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID =1
+					</general>
+					<general-inactive>
+						A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+					</general-inactive>
+					<isvalid-field>false</isvalid-field>
+					<orderby>
+						order by INITCAP(A.HGBSTR_DIAGNOSTIC_TYPE_NAME)
+					</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<dynamic-page>
+				<controls>
+					<control type="text" index="0">
+						<label>Diagnosis Type</label>
+						<constraints maxlength='60' size='40' inputType='alphabets' mandatory='true' />
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="1">
+						<label>Visibility Mode</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='0'>ICD</option>
+								<option value='1'>Hospital</option>
+								<option value='2'>ICD and Hospital</option>
+							</static>
+						</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+					<control type="text" index="2" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet' styleString="style='display:none'" />			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+						
+					</control>
+				</controls>
+				<redundent-check>
+					SELECT COUNT (*) FROM HGBT_DIAGNOSIS_TYPE_MST WHERE
+					(gnum_isvalid = 1 OR gnum_isvalid = 2) and GNUM_HOSPITAL_CODE = 100 and
+					trim(upper(HGBSTR_DIAGNOSTIC_TYPE_NAME)) = controlindex0
+				</redundent-check>
+				<insert-query>
+					<primary-key>
+						<field>HGBNUM_DIAGNOSTIC_TYPE_CODE</field>
+						<value>
+							SELECT
+							nvl(MAX(HGBNUM_DIAGNOSTIC_TYPE_CODE),10)+1
+							FROM HGBT_DIAGNOSIS_TYPE_MST 
+							WHERE GNUM_HOSPITAL_CODE=100
+						</value>
+					</primary-key>
+
+					<fields valueMap='#I0'>HGBSTR_DIAGNOSTIC_TYPE_NAME</fields>
+					<fields valueMap='#1'>HGBNUM_IS_ICD</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#2'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+
+					<table>HGBT_DIAGNOSIS_TYPE_MST</table>
+				</insert-query>
+			</dynamic-page>
+		</add-page>
+
+		<modify-page>
+			<dynamic-page>
+				<controls>
+					<control type="text" index="0">
+						<label>Diagnosis Type</label>
+						<constraints maxlength="60" size="40" mandatory='true' inputType="alphabets" />
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="1">
+						<label>Visibility Mode</label>
+						<data>
+							<static>
+								<option value='0'>ICD</option>
+								<option value='1'>Hospital</option>
+								<option value='2'>ICD and Hospital</option>
+							</static>
+						</data>
+						<default>#Q1</default>
+						<submitRequired>0</submitRequired>
+					</control>
+					<control type="combo" index="2">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active</option>
+								<option value='2'>In Active</option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+				</controls>
+				<initialise-query>
+					<fields>
+						<field>
+							INITCAP(A.HGBSTR_DIAGNOSTIC_TYPE_NAME)
+						</field>
+						<field>A.HGBNUM_IS_ICD</field>
+					</fields>
+					<tables>
+						<table alias='A'>HGBT_DIAGNOSIS_TYPE_MST</table>
+
+					</tables>
+					<condition>
+						<dependent>
+							<clause>
+								A.GNUM_HOSPITAL_CODE=100 and A.HGBNUM_DIAGNOSTIC_TYPE_CODE= #C1
+							</clause>
+						</dependent>
+					</condition>
+				</initialise-query>
+				<redundent-check>
+					SELECT COUNT (*) FROM HGBT_DIAGNOSIS_TYPE_MST WHERE
+					(gnum_isvalid = 1 OR gnum_isvalid = 2) and GNUM_HOSPITAL_CODE = 100 and 
+					trim(upper(HGBSTR_DIAGNOSTIC_TYPE_NAME)) = controlindex0
+				</redundent-check>
+				<update-query>
+
+					<fields valueMap='#I0'>
+						HGBSTR_DIAGNOSTIC_TYPE_NAME
+					</fields>
+					<fields valueMap='#1'>HGBNUM_IS_ICD</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+
+
+					<table>HGBT_DIAGNOSIS_TYPE_MST</table>
+					<condition> GNUM_HOSPITAL_CODE = 100 and HGBNUM_DIAGNOSTIC_TYPE_CODE = #1</condition>	
+									
+				</update-query>
+			</dynamic-page>
+		</modify-page>
+	</master>
+</master-config>

@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Procedure Consumables Master'>
+		<common-values>
+			<master-name>ProcedureConsumablesMst</master-name>
+			<master-title>Procedure Consumables Master</master-title>
+		</common-values>
+	<list-page>
+			<tableHeading>ProcedureConsumables Master</tableHeading>
+			<list-table>HSRV_PROCEDURE_CONSUMABLE_MST</list-table>
+			<columns>
+				<column>Service Area</column>
+				<column>Procedure</column>
+				<column>Consumable Category</column>
+				<column>Consumable Type</column>
+				<column>Drug</column>
+				<column>Item</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>INITCAP(D.HSRSTR_SERVICE_AREA_NAME)</field>
+					<field>INITCAP(E.HSRSTR_PROCEDURE_NAME)</field>
+           			<field>INITCAP(B.SSTNUM_ITEM_CAT_NAME)</field>
+           			<field>INITCAP(C.HSTSTR_ITEMTYPE_NAME)</field>
+           			<field>NVL((SELECT F.HSTSTR_ITEM_NAME FROM HSTT_DRUG_MST F
+         					WHERE A.GNUM_HOSPITAL_CODE=F.GNUM_HOSPITAL_CODE
+     						AND A.GNUM_ISVALID=F.GNUM_ISVALID
+     						AND A.HSTNUM_ITEM_ID=F.HSTNUM_ITEM_ID ),'---')</field>
+     				<field>NVL((SELECT G.HSTSTR_ITEM_NAME FROM HSTT_ITEM_MST G
+         					WHERE A.GNUM_HOSPITAL_CODE=G.GNUM_HOSPITAL_CODE
+     						AND A.GNUM_ISVALID=G.GNUM_ISVALID
+     						AND A.HSTNUM_ITEM_ID=G.HSTNUM_ITEM_ID ),'---')</field>
+				</fields>
+				<primaryKey>
+					<field>A.HSRNUM_SERVICE_AREA_CODE</field>
+					<field>A.HSRNUM_PROCEDURE_CODE</field>
+					<field>A.SSTNUM_ITEM_CAT_NO</field>
+					<field>A.HSTNUM_ITEMTYPE_ID</field>
+					<field>A.HSTNUM_ITEMBRAND_ID</field>
+					<field>A.HSTNUM_ITEM_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HSRV_PROCEDURE_CONSUMABLE_MST</table>
+					<table alias='B'>SSTT_ITEM_CATEGORY_MST</table>
+					<table alias='C'>HSTT_ITEMTYPE_MST</table>
+					<table alias='D'>HSRV_SERVICE_AREA_MST</table>
+					<table alias='E'>HSRV_PROCEDURE_MST</table>
+				</tables>
+				<condition>					
+					<general> A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND A.GNUM_HOSPITAL_CODE=D.GNUM_HOSPITAL_CODE
+AND A.GNUM_HOSPITAL_CODE=E.GNUM_HOSPITAL_CODE AND A.GNUM_ISVALID=B.GNUM_ISVALID AND A.GNUM_ISVALID=C.GNUM_ISVALID AND A.GNUM_ISVALID=D.GNUM_ISVALID
+AND A.GNUM_ISVALID=E.GNUM_ISVALID AND A.HSRNUM_SERVICE_AREA_CODE=D.HSRNUM_SERVICE_AREA_CODE AND A.HSRNUM_PROCEDURE_CODE=E.HSRNUM_PROCEDURE_CODE
+AND A.SSTNUM_ITEM_CAT_NO=B.SSTNUM_ITEM_CAT_NO AND A.HSTNUM_ITEMTYPE_ID=C.HSTNUM_ITEMTYPE_ID
+	 </general>
+                    <isvalid-field>AND A.GNUM_ISVALID</isvalid-field>
+                    <hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>                   
+                    <orderby> ORDER BY INITCAP(D.HSRSTR_SERVICE_AREA_NAME)</orderby>
+                </condition>
+			</query-detail>
+		</list-page>
+		<add-page>	
+			<static-page>/servicearea/masters/procedureConsumablesMst.cnt</static-page>		
+		</add-page>
+
+		<modify-page>
+			<static-page>/servicearea/masters/procedureConsumablesMst.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

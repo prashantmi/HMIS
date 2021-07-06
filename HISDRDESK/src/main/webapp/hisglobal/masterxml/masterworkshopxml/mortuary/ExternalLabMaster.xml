@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='External Lab Test Master'>
+		<common-values>
+			<master-name>ExternalLabMaster</master-name>
+			<master-title>External Lab Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>External Lab Master</tableHeading>
+			
+			<list-table>HMRT_EXT_LAB_MST</list-table>
+
+		
+			
+			<columns>
+				<column>External Lab Name</column>
+			</columns>
+
+
+
+
+			<query-detail>
+				<fields>
+					<field>A.HMRSTR_EXT_LAB_NAME</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HMRNUM_EXT_LAB_ID</field>
+					<field>A.HMRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HMRT_EXT_LAB_MST</table>
+				</tables>
+				
+				<condition>
+				    <isvalid-field> A.GNUM_ISVALID </isvalid-field>
+					
+					<orderby> ORDER BY(A.HMRSTR_EXT_LAB_NAME) </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/mortuary/master/ExternalLabMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/mortuary/master/ExternalLabMaster.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

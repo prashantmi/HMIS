@@ -1,0 +1,363 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='UnitDisclaimerMaster'>
+		<common-values>
+			<master-name>UnitDisclaimerMaster</master-name>
+			<master-title>Unit Disclaimer Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Unit Disclaimer Master</tableHeading> 
+				<list-table>HRGT_DISCLAIMER_MST</list-table>
+				
+				<columns>
+					 <column>Department/Unit</column> 
+					 <column>Disclaimer1</column> 
+					 <column>Disclaimer2</column>
+					 <column>Disclaimer3</column> 				  
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>(SELECT GSTR_DEPT_NAME
+						  FROM GBLT_DEPARTMENT_MST WHERE GNUM_ISVALID = 1
+						   AND GNUM_HOSPITAL_CODE = A.GNUM_HOSPITAL_CODE
+						   AND GNUM_DEPT_CODE=B.HGNUM_DEPT_CODE)
+						    ||'/'||B.HGSTR_UNITNAME
+						</field>
+						<field>INITCAP(NVL (a.hgstr_disclaimer_desc1, ' '))</field>
+						<field>INITCAP(NVL (a.hgstr_disclaimer_desc2, ' '))</field>
+						<field>INITCAP(NVL (a.hgstr_disclaimer_desc3, ' '))</field>				
+					</fields>
+					<primaryKey>
+						<field>A.HRGNUM_DISCLAIMER_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						<field>A.HRGNUM_SLNO</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HRGT_DISCLAIMER_MST </table>
+						<table alias='B'>HGBT_UNIT_MST </table>
+					</tables>
+					<condition>	
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+							<general> A.HGNUM_DEPTUNITCODE IS NOT NULL
+							and a.HGNUM_DEPTUNITCODE=b.HGNUM_DEPTUNITCODE
+							and b.GNUM_ISVALID=1 and
+							a.GNUM_HOSPITAL_CODE=b.GNUM_HOSPITAL_CODE</general>				 
+                            <isvalid-field> and A.GNUM_ISVALID</isvalid-field>
+                            <orderby> order by INITCAP(A.HGSTR_DISCLAIMER_DESC1)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+
+				<controls>	
+				
+				<control type="combo" index="0" align="left">
+						<label>Department Unit</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP((SELECT INITCAP (gstr_dept_name)
+							               FROM gblt_department_mst
+							              WHERE gnum_hospital_code = a.gnum_hospital_code
+							                AND gnum_dept_code = a.hgnum_dept_code and gnum_isvalid=1)
+							         || '('
+							         || INITCAP (hgstr_unitname)
+							         || ')') AS unitname</text-field>
+									<value-field>A. hgnum_deptunitcode </value-field>
+								</options>
+								<tables>
+									<table alias='A'>hgbt_unit_mst</table>									  
+								</tables>
+								<condition>
+									<hospital-code> A.GNUM_HOSPITAL_CODE</hospital-code>
+									
+								<general>  
+							     AND hgnum_deptunitcode NOT IN (
+					            SELECT hgnum_deptunitcode
+					              FROM hrgt_disclaimer_mst
+					             WHERE gnum_isvalid = 1
+					               AND hgnum_deptunitcode = a.hgnum_deptunitcode
+					               AND gnum_hospital_code = a.gnum_hospital_code) order by unitname</general>			
+          					</condition>
+							<orderby> order by unitname</orderby>	
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>					
+				</control>
+				<control type="combo" index="1" align="left">
+						<label>Alignment</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Center </option>
+								<option value='2'>Right </option>
+								<option value='3'>Left </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+				</control>	
+				<control type="radio" index="2">
+						<label>Location</label>
+						<data>
+							<static>
+								<option value='1'>Header</option>
+								<option value='0'>Footer </option>
+							</static>
+						</data>
+						<default>0</default>
+						<readOnly>0</readOnly>
+				</control>	
+				<control type="combo" index="3" align="left">
+					<label>Usability</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>HPMRSTR_PROFILE_NAME as PROFILENAME
+	 								</text-field>
+									<value-field>A.HPMRNUM_PROFILE_TYPE as PROFILETYPE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>HPMRT_PROFILE_TYPE_MST</table>									  
+								</tables>
+								<condition>
+									<general> A.GNUM_HOSPITAL_CODE = 100 AND gnum_isvalid = 1  
+										UNION 
+	 									(SELECT 'Normal' AS PROFILENAME,1 AS PROFILETYPE FROM DUAL) 
+	 									UNION
+	 									(SELECT 'Special' AS PROFILENAME,2 AS PROFILETYPE FROM DUAL) 
+	 									UNION
+	 									(SELECT 'Casualty' AS PROFILENAME ,3 AS PROFILETYPE FROM DUAL)
+	 									 ORDER BY PROFILETYPE
+  									 </general>			
+          					</condition> 
+							<orderby> ORDER BY PROFILETYPE</orderby>		
+							</dynamic>			
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>					
+				</control>
+				
+				<control type="combo" index="4" align="left">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+				</control>	
+				<control type="text" index="5" align="left" >
+						<label>Disclaimer1</label>
+						<constraints maxlength='100' size='60' inputType='alphanumeric'  />						
+						<readOnly>0</readOnly>
+				</control>
+					
+              	 <control type="text" index="6" align="left">
+						<label>Disclaimer2</label>
+						<constraints maxlength='100'  size='60'  inputType='alphanumeric' />						
+						<readOnly>0</readOnly>
+					</control>
+				<control type="text" index="7" align="left">
+						<label>Disclaimer3</label>
+						<constraints maxlength='100'  size='60'  inputType='alphanumeric'  />						
+						<readOnly>0</readOnly>
+				</control>
+				</controls>
+				
+				<insert-query>
+					<primary-key>
+						<field>HRGNUM_DISCLAIMER_ID</field>
+						<value>SELECT NVL(MAX(HRGNUM_DISCLAIMER_ID),100)+1 FROM HRGT_DISCLAIMER_MST</value>
+						<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+					</primary-key>
+					
+					<fields valueMap='#0'>HGNUM_DEPTUNITCODE</fields>
+					<fields valueMap='#1'>HRGNUM_ALIGN</fields>
+					<fields valueMap='#2'>HRGNUM_ISHEADER</fields>
+					<fields valueMap='#3'>HRGNUM_USABILITY_FLAG</fields>
+					<fields valueMap='#4'>GNUM_ISVALID</fields>
+					<fields valueMap='#5'>HGSTR_DISCLAIMER_DESC1</fields>
+					<fields valueMap='#6'>HGSTR_DISCLAIMER_DESC2</fields>
+					<fields valueMap='#7'>HGSTR_DISCLAIMER_DESC3</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='@defaultOne'>HRGNUM_SLNO</fields>
+						
+					<table>HRGT_DISCLAIMER_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+
+		<modify-page>
+		  <dynamic-page>
+		   <controls>
+		   		<control type="text" index="0">
+						<label>Department Unit</label>
+						<constraints  size='21' maxlength = "50" mandatory ='true' />
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>1</readOnly>
+					</control>
+					<control type="combo" index="1" align="left">
+						<label>Alignment</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Center </option>
+								<option value='2'>Right </option>
+								<option value='3'>Left </option>
+							</static>
+						</data>
+						<default>#Q5</default>
+						<submitRequired>0</submitRequired>
+				</control>	
+				<control type="radio" index="2">
+						<label>Location</label>
+						<data>
+							<static>
+								<option value='1'>Header</option>
+								<option value='0'>Footer </option>
+							</static>
+						</data>
+						<default>#Q6</default>
+						<readOnly>0</readOnly>
+				</control>
+				<control type="combo" index="3" align="left">
+				<label>Usability</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>HPMRSTR_PROFILE_NAME as PROFILENAME
+ 								</text-field>
+								<value-field>A.HPMRNUM_PROFILE_TYPE as PROFILETYPE</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HPMRT_PROFILE_TYPE_MST</table>									  
+							</tables>
+							<condition>
+								<general> A.GNUM_HOSPITAL_CODE = 100 AND gnum_isvalid = 1  
+									UNION 
+ 									(SELECT 'Normal' AS PROFILENAME,1 AS PROFILETYPE FROM DUAL) 
+ 									UNION
+ 									(SELECT 'Special' AS PROFILENAME,2 AS PROFILETYPE FROM DUAL) 
+ 									UNION
+ 									(SELECT 'Casualty' AS PROFILENAME ,3 AS PROFILETYPE FROM DUAL)
+ 									 ORDER BY PROFILETYPE 
+ 									 </general>			
+         					</condition> 
+						<orderby> ORDER BY PROFILETYPE</orderby>		
+						</dynamic>			
+					</data>
+					<default>#Q7</default>
+				   <submitRequired>0</submitRequired>					
+				</control>
+					<control type="combo" index="4">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control> 
+					
+				  <control type="text" index="5">
+						<label>Disclaimer1</label>
+						<constraints  size='60' maxlength = "100" inputType='alphanumeric'/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>			
+				
+					<control type="text" index="6">
+						<label>Disclaimer2</label>
+						<constraints   size='60' maxlength = "100" inputType='alphanumeric' />
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>			
+				                       
+						   
+					<control type="text" index="7">
+						<label>Disclaimer3</label>
+						<constraints   size='60' maxlength = "100" inputType='alphanumeric' />
+						<data>
+							<static>#Q4</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>			
+						   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+				 <field>A.HGNUM_DEPTUNITCODE</field>
+					 
+				 <field>INITCAP((SELECT INITCAP (gstr_dept_name)
+              			 FROM gblt_department_mst
+             			 WHERE gnum_hospital_code = b.gnum_hospital_code
+             			 AND GNUM_ISVALID=1
+             			   AND gnum_dept_code = b.hgnum_dept_code)
+        				 || '('
+       		  		    || INITCAP (hgstr_unitname)
+        				 || ')') AS unitname</field>
+        				 
+					 <field>A.HGSTR_DISCLAIMER_DESC1</field>
+					 <field>A.HGSTR_DISCLAIMER_DESC2</field>
+					 <field>A.HGSTR_DISCLAIMER_DESC3</field>
+					 <field>A.HRGNUM_ALIGN</field>
+					 <field>A.HRGNUM_ISHEADER</field>
+					 <field>A.HRGNUM_USABILITY_FLAG</field>
+	                 			               						
+				 </fields>					
+					<tables>
+						<table alias='A'>HRGT_DISCLAIMER_MST</table>
+						<table alias='B'>hgbt_unit_mst</table>
+						
+					</tables>
+					<condition>	
+					 	<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					 	<hospital-code>B.GNUM_HOSPITAL_CODE</hospital-code>	
+					 	<general>
+					 	 a.HGNUM_DEPTUNITCODE = b.HGNUM_DEPTUNITCODE and 
+					 	</general>
+						<dependent>
+						    <clause>A.HRGNUM_DISCLAIMER_ID = #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>					
+					
+					<fields valueMap='#1'>HRGNUM_ALIGN</fields>
+					<fields valueMap='#2'>HRGNUM_ISHEADER</fields>
+					<fields valueMap='#3'>HRGNUM_USABILITY_FLAG</fields>
+					<fields valueMap='#4'>GNUM_ISVALID</fields>
+					<fields valueMap='#5'>HGSTR_DISCLAIMER_DESC1</fields>
+					<fields valueMap='#6'>HGSTR_DISCLAIMER_DESC2</fields>
+					<fields valueMap='#7'>HGSTR_DISCLAIMER_DESC3</fields>					
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>					
+					<fields valueMap='@entryDate'>GDT_LSTMOD_DATE</fields>
+											
+					<table>HRGT_DISCLAIMER_MST</table>
+					<condition>HRGNUM_DISCLAIMER_ID = #0</condition>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+		</master>
+		</master-config>

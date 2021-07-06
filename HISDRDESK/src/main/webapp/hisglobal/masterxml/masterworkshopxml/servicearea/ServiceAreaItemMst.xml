@@ -1,0 +1,229 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Service Area Item Master'>
+		<common-values>
+			<master-name>ServiceAreaItemMst</master-name>
+			<master-title>Service Area Item Master</master-title>
+		</common-values>	
+	
+	<list-page>
+				<tableHeading>Service Area Item Master</tableHeading> 
+				<list-table>HSRV_SERVICE_ITEM_MST</list-table>
+				
+				<columns>
+					 <column>Item Name</column>
+					 <column>Item Type</column>
+  			   </columns>
+					<query-detail>
+					<fields>
+					    <field>INITCAP(B.HSTSTR_ITEM_NAME)</field>
+					    <field>NVL(INITCAP(C.HSTSTR_ITEMTYPE_NAME),'-')</field>
+					</fields>
+					<primaryKey>
+						<field>A.HSTNUM_ITEM_ID</field>
+						<field>A.HSTNUM_ITEMTYPE_ID</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>						
+					</primaryKey>
+					<tables>
+						<table alias='A'>HSRV_SERVICE_ITEM_MST</table>
+						<table alias='B'>HSTT_ITEM_MST</table>				
+						<table alias='C'>HSTT_ITEMTYPE_MST</table>
+					</tables>
+					<condition>			
+							<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>							              				 
+                            <isvalid-field> A.GNUM_ISVALID</isvalid-field>
+                            <general>
+								<clause> A.HSTNUM_ITEM_ID=B.HSTNUM_ITEM_ID AND A.HSTNUM_ITEMTYPE_ID=C.HSTNUM_ITEMTYPE_ID AND B.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE AND A.GNUM_HOSPITAL_CODE=C.GNUM_HOSPITAL_CODE AND</clause>
+							</general>
+                             <orderby> order by INITCAP(B.HSTSTR_ITEM_NAME)</orderby>                             
+                    </condition>
+				</query-detail>				
+		</list-page>
+		
+		<add-page>			
+			<dynamic-page>	
+				<controls>
+					<control type="combo" index="0" >
+						<label>Item Type</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+								<dynamic>
+									<options>
+										<text-field>INITCAP(A.HSTSTR_ITEMTYPE_NAME)</text-field>
+										<value-field>A.HSTNUM_ITEMTYPE_ID</value-field>
+									</options>
+									<tables>
+										<table alias='A'>hstt_itemtype_mst</table>											
+									</tables>																
+									<condition>
+										<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+										<general> AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HSTSTR_ITEMTYPE_NAME)</general>
+																				
+									</condition>
+								</dynamic>
+							</data>
+						<default>0</default>	
+						<submitRequired>1</submitRequired>
+					</control>	
+					<control type="combo" index="1" >
+						<label>Item Name</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+								<dynamic>
+									<options>
+										<text-field>INITCAP (A.HSTSTR_ITEM_NAME)</text-field>
+										<value-field>a.hstnum_item_id</value-field>
+									</options>
+									<tables>
+										<table alias='A'>hstt_item_mst</table>											
+									</tables>																
+									<condition>
+										<general> A.GNUM_ISVALID = 1  </general>
+										<dependent>
+											<clause>AND A.HSTNUM_ITEMTYPE_ID=#0</clause>
+										</dependent>	
+																				
+									</condition>
+								</dynamic>
+							</data>
+						<default>0</default>	
+						<submitRequired>0</submitRequired>
+					</control>						
+					<control type="textarea" index="2" >
+						<label>Item Description</label>
+						<constraints  styleString="style='width:130px; height:30px'" inputType ='alphanumeric'  methodstring="onkeypress='return CheckMaxLength(event,this,50);'"/>
+						<readOnly>0</readOnly>
+					</control>	
+					<control type="combo" index="3">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>										
+				</controls>
+				<insert-query>
+					<fields valueMap='#I0'>HSTNUM_ITEMTYPE_ID</fields>
+					<fields valueMap='#1'>hstnum_item_id</fields>														
+					<fields valueMap="#2">HSRV_SERVICE_ITEM_DES</fields>
+					<fields valueMap='@seatId'>GNUM_SEATID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#3'>GNUM_ISVALID</fields>					
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>										
+					<table>HSRV_SERVICE_ITEM_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+		
+		<modify-page>
+		    <dynamic-page>
+		    	<controls> 
+		    		<control type="combo" index="0" >
+						<label>Item Type</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+								<dynamic>
+									<options>
+										<text-field>INITCAP(A.HSTSTR_ITEMTYPE_NAME)</text-field>
+										<value-field>A.HSTNUM_ITEMTYPE_ID</value-field>
+									</options>
+									<tables>
+										<table alias='A'>hstt_itemtype_mst</table>											
+									</tables>																
+									<condition>
+										<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+										<general> AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.HSTSTR_ITEMTYPE_NAME)</general>
+																				
+									</condition>
+								</dynamic>
+							</data>
+						<default>#Q0</default>	
+						<submitRequired>1</submitRequired>
+					</control>
+					<control type="combo" index="1" >
+						<label>Item Name</label>
+						<selection-mandatory>true</selection-mandatory>
+							<data>
+								<dynamic>
+									<options>
+										<text-field>INITCAP (A.HSTSTR_ITEM_NAME)</text-field>
+										<value-field>a.hstnum_item_id</value-field>
+									</options>
+									<tables>
+										<table alias='A'>hstt_item_mst</table>											
+									</tables>																
+									<condition>
+										<general> A.GNUM_ISVALID = 1  </general>
+										<dependent>
+											<clause>AND A.HSTNUM_ITEMTYPE_ID=#0</clause>
+										</dependent>	
+																				
+									</condition>
+								</dynamic>
+							</data>
+						<default>#Q1</default>	
+						<submitRequired>0</submitRequired>
+					</control> 				
+					<control type="textarea" index="2">
+						<label>Item Description</label>
+						<constraints  styleString="style='width:130px; height:30px'" inputType ='alphanumeric'  methodstring="onkeypress='return CheckMaxLength(event,this,50);'"/>
+						<data>
+							<static>#Q2</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="3">
+						<label>IsValid Status </label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>			
+            	</controls>
+		        <initialise-query>
+			   	 <fields>
+					 <field>A.HSTNUM_ITEMTYPE_ID</field>
+					 <field>A.HSTNUM_ITEM_ID</field>					 
+					 <field>A.HSRV_SERVICE_ITEM_DES</field>
+				 </fields>					
+					<tables>						
+						<table alias="A">HSRV_SERVICE_ITEM_MST</table>
+						
+					</tables>
+					<condition>						
+						<dependent>
+						    <clause> A.HSTNUM_ITEM_ID = #C1 </clause>
+						    <clause>AND A.HSTNUM_ITEMTYPE_ID = #C2 </clause>
+						    <clause> AND A.GNUM_HOSPITAL_CODE = #C3 </clause>						    
+						</dependent>
+								
+					</condition>						
+				</initialise-query>		 
+				<update-query>
+					<fields valueMap='#I0'>HSTNUM_ITEMTYPE_ID</fields>					
+					<fields valueMap='#1'>HSTNUM_ITEM_ID</fields>
+					<fields valueMap='#2'>HSRV_SERVICE_ITEM_DES</fields>
+					<fields valueMap='#3'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_LASTMOD_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_LSTMOD_DATE</fields>									
+							
+					<table>HSRV_SERVICE_ITEM_MST</table>
+					<condition>HSTNUM_ITEM_ID = #1</condition>
+					<condition>HSTNUM_ITEMTYPE_ID = #2</condition>
+					<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>		

@@ -1,0 +1,197 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='PatCategoryMappingMaster'>
+		<common-values>
+			 <master-name>PatCategoryMappingMaster</master-name> 
+			<master-title>Patient Category Mapping Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Patient Category Mapping Master</tableHeading> 
+				<list-table>HRGT_PATIENT_CAT_MAPPING_MST</list-table>
+				
+				<columns>
+					<column>Patient Primary Category </column>
+					<column>Patient Secondary Category</column>
+				  
+				</columns>
+				<query-detail>
+					<fields>
+						<field>(SELECT INITCAP(GSTR_PATIENT_CAT_NAME) FROM GBLT_PATIENT_CAT_MST WHERE GNUM_PATIENT_CAT_CODE = A.HRGNUM_PAT_PRI_CAT_CODE)</field>
+						<field>(SELECT INITCAP(GSTR_PATIENT_CAT_NAME) FROM GBLT_PATIENT_CAT_MST WHERE GNUM_PATIENT_CAT_CODE = A.HRGNUM_PAT_SEC_CAT_CODE)</field>					   
+					</fields>
+					<primaryKey>
+						<field>A.HRGNUM_S_NO </field>
+						<field>A.GNUM_HOSPITAL_CODE</field>						
+					</primaryKey>
+					<tables>						
+						<table alias='A'>HRGT_PATIENT_CAT_MAPPING_MST </table>
+					</tables>
+				<condition>						
+						<isvalid-field> A.GNUM_ISVALID</isvalid-field>
+					</condition>
+				</query-detail>				
+		</list-page>		
+		<add-page>			
+				<dynamic-page>	
+				<controls>				
+					<control type="combo" index="0">
+						<label>Patient Primary Category</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_PATIENT_CAT_NAME) </text-field>
+									<value-field>A.GNUM_PATIENT_CAT_CODE </value-field>
+								</options>
+								<tables>
+									<table alias = 'A'>GBLT_PATIENT_CAT_MST </table>									
+								</tables>
+								<condition>
+									<general>GNUM_ISVALID =1 AND GNUM_PATIENT_CAT_TYPE=0</general>			
+								</condition>
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>
+					</control>
+					<control type="combo" index="1">
+						<label>Patient Secondary Category</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_PATIENT_CAT_NAME) </text-field>
+									<value-field>A.GNUM_PATIENT_CAT_CODE </value-field>
+								</options>
+								<tables>
+									<table alias ='A'>GBLT_PATIENT_CAT_MST</table>
+								</tables>
+								<condition>
+									<general>GNUM_ISVALID =1 AND GNUM_PATIENT_CAT_TYPE=1</general>									
+								</condition>
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>
+					</control>					
+					<control type="combo" index="3">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>                								
+				</controls> 				
+				<insert-query>
+					<primary-key>
+						<field>HRGNUM_S_NO</field>
+						<value>SELECT NVL(MAX(HRGNUM_S_NO),10)+1 FROM HRGT_PATIENT_CAT_MAPPING_MST</value>
+					</primary-key>				
+					<fields valueMap='#0'>HRGNUM_PAT_PRI_CAT_CODE</fields>
+					<fields valueMap='#1'>HRGNUM_PAT_SEC_CAT_CODE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					
+					
+				<table>HRGT_PATIENT_CAT_MAPPING_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+	<modify-page>
+		  <dynamic-page>
+		   <controls>
+		  	 		<control type="combo" index="0">
+						<label>Primary Category Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_PATIENT_CAT_NAME)</text-field>
+									<value-field>A.GNUM_PATIENT_CAT_CODE </value-field>
+								</options>
+								<tables>
+									<table alias = 'A'>GBLT_PATIENT_CAT_MST </table>
+									
+								</tables>
+								<condition>
+										<general>GNUM_ISVALID =1 AND GNUM_PATIENT_CAT_TYPE=0</general>
+								</condition>									
+							</dynamic>									
+						</data>
+						<default>#Q0</default>	
+						<submitRequired>0</submitRequired>
+					</control>
+					<control type="combo" index="1">
+						<label>Secondary Name</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_PATIENT_CAT_NAME) </text-field>
+									<value-field>A.GNUM_PATIENT_CAT_CODE </value-field>
+								</options>
+								<tables>
+									<table alias ='A'>GBLT_PATIENT_CAT_MST </table>
+								</tables>
+								<condition>
+										<general>GNUM_ISVALID=1  AND A.GNUM_PATIENT_CAT_TYPE = 1</general>
+								</condition>									
+							</dynamic>									
+						</data>
+						<default>#Q1</default>	
+						<submitRequired>0</submitRequired>
+					</control>
+					
+					 
+					
+					<control type="combo" index="2">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+                          
+										   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>A.HRGNUM_PAT_PRI_CAT_CODE</field>
+					 <field>A.HRGNUM_PAT_SEC_CAT_CODE</field>
+					
+				 </fields>					
+					<tables>
+						<table alias='A'>HRGT_PATIENT_CAT_MAPPING_MST</table>
+						
+					</tables>
+					<condition>						
+						<dependent>
+						    <clause>A.HRGNUM_S_NO= #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>					
+				    <fields valueMap='#0'>HRGNUM_PAT_PRI_CAT_CODE</fields>
+					<fields valueMap='#1'>HRGNUM_PAT_SEC_CAT_CODE</fields>
+					<fields valueMap='#2'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<table>HRGT_PATIENT_CAT_MAPPING_MST</table>
+					<condition>HRGNUM_S_NO = #1</condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

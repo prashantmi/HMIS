@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Blood Donor Type Master'>
+		<common-values>
+			<master-name>BloodDonorTypeMaster</master-name>
+			<master-title>Blood Donor Type Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Blood Donar Type Master</tableHeading>
+			
+			<list-table>HBBT_DONOR_TYPE_MST</list-table>
+
+			<columns>
+				<column>Donor Description</column>
+				<column>Card Expiry Days</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HBSTR_DONOR_DESC)</field>
+					<field>NVL(A.HBNUM_CARD_EXPIRY_DAYS ,0)</field>
+				</fields>
+				
+				<primaryKey>
+					<field>A.HBNUM_DONOR_TYPE_CODE</field>
+					<field>A.HBNUM_DONOR_TYPE_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HBBT_DONOR_TYPE_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby>ORDER BY(A.HBNUM_CARD_EXPIRY_DAYS)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/bloodbank/masters/BloodDonorTypeMstACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/bloodbank/masters/BloodDonorTypeMstACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

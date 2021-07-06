@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="QmsFB" type="QMS.transaction.controller.fb.QmsFB" />
+		
+		 
+	</form-beans>
+	
+	
+	<action-mappings>
+	
+		
+		
+		<action path="/transaction/QMSAction"
+				type="QMS.transaction.controller.action.QMSAction"
+				name="QmsFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+<!--			<forward name="NEW" path="/transaction/medicalCertificate.jsp" />-->
+			<forward name="NEW" path="/QMS_admin.jsp" />
+			<!-- <forward name="POPUP" path="/transaction/mcDiagnosisPopup.jsp" />	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+			<forward name="GETDTL" path="/transaction/medicalCertificateIssue.jsp"/>
+			<forward name="POPUPCERT" path="/transaction/medicalCertPopup.jsp" />	 -->
+			
+			
+		</action>
+		
+		
+		
+		
+		
+	</action-mappings>
+		
+</struts-config>	

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+   <master name='Registration Occupation Master'>
+        <common-values>
+           <master-name>RegistrationOccupationMaster</master-name>
+           <master-title>Registration Occupation Master</master-title>
+        </common-values>
+        <list-page>
+           <tableHeading>Registration Occupation Master</tableHeading>
+           <list-table>GBLT_OCCUPATION_MST</list-table>
+           
+           <columns>
+              <column>Occupation Name</column>
+              
+           </columns>
+           
+           <query-detail>
+              <fields>
+	    		 <field>INITCAP(NVL(A.GSTR_OCCUPATION_NAME,'0'::char varying))</field>
+				 
+			  </fields>
+				<primaryKey>
+					<field>A.GNUM_OCCUPATION_CODE</field>
+				    <field>A.GNUM_OCCUPATION_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>GBLT_OCCUPATION_MST</table>
+				</tables>
+				<condition>					 
+					<general>
+									A.GNUM_HOSPITAL_CODE=100 AND  A.GNUM_ISVALID =1 
+					</general>
+					<general-inactive>
+									A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+					</general-inactive>
+                    <isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY(INITCAP(NVL(A.GSTR_OCCUPATION_NAME,'0'::char varying))) </orderby>
+				</condition>
+			</query-detail>				
+		</list-page>
+				
+		<add-page>			
+			<static-page>/registration/masters/RegOccupMstACTION.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/registration/masters/RegOccupMstACTION.cnt</static-page>
+		</modify-page>	
+		
+		
+
+		
+	</master>
+</master-config>
+		

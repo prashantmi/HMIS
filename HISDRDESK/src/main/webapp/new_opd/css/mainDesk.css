@@ -1,0 +1,461 @@
+	html{
+ 		font-size: 14px !important;
+ 	}	
+ 	body{
+ 		font-size: 0.9em;
+ 	}
+ 	.col-sm-12 {
+		transition:all 1s !important;
+	}
+
+	.col-sm-6{
+		transition:all 1s !important;
+	}
+	.btn-outline-success {
+      color: white !important;
+      /* color: #28a745 !important; */
+      /* background-color: transparent !important; */
+   	  background-color: #3ac9d6  !important;
+      background-image: none !important;
+      border-color: #3ac9d6 !important;
+      padding:4px 12px;
+      width: 4em !important;
+   }
+   .btn-outline-reprint {
+      color: white !important; 
+   	  background-color: #5bbff6  !important;
+      background-image: none !important;
+      border-color: #6dc4f5 !important;
+      padding:4px 7px;
+      width: 4.5em !important;
+   }
+  .btn-outline-info {
+      color: white !important;
+      /* color: #31b0d5 !important; */
+      /* background-color: transparent !important; */
+	  background-color: #31b0d5 !important;
+      background-image: none !important;
+      border-color: #31b0d5 !important;
+      padding:4px 12px;
+   }
+  .prescriptionColBtn:hover{
+    background-color: #1aaab7  !important;
+    color: white !important;
+    transition: .4s !important;
+   }
+  .btn-outline-reprint:hover{
+    background-color: #29a4e9  !important;
+    color: white !important;
+    transition: .4s !important;
+   }
+  .emrLink:hover{
+    background-color: #31b0d5 !important;
+    color: white !important;
+    transition: .4s !important;
+   }
+   
+   .patSideList{
+     display:none;
+     position:fixed;
+   	 width:320px;
+   	 background-color:#fff;
+   	 z-index:9999;
+   	 right:0px;
+   	 top:8vh;
+   	 height:92vh;
+   	 overflow-y:hidden;
+   	 border-left:1px solid #dbdbdb;
+   }
+   .patSideList legend{
+   	 padding:10px 0;
+   	 margin-bottom:5px;
+   	 font-weight: 400;
+   	 text-transform:uppercase;
+   	 font-size: 18px;
+   }
+   .patSideList .patCatHeader{
+   	 padding:5px 0;
+   	 text-align: center;
+   	 background-color: #dddddd;
+   	 color: #535353;
+   	 font-weight:600;
+   	 font-size: 13px;
+   	 letter-spacing:1px;
+   	 text-transform:uppercase; 
+   }
+   .patSideList ul{
+   	 list-style-type:none;
+   	 width:100%;
+   	 padding:0;
+   	 margin:0;
+   } 
+   .patSideList ul li{
+   	 list-style-type:none;
+   	 width:100%;
+   	 padding: 5px 10px;
+   	 text-align:left; 
+   }
+   .patSideList ul li:hover{
+	 background-color:#e7e7e7;
+   }
+   .patSideList ul li:not(:last-child){ 
+   	 border-bottom:1px solid #dbdbdb;
+   }
+   .patSideList ul li img{
+   	 margin: 3% 2%;float:left; width: 30px; min-width: 20px; box-shadow: 0px 5px 25px 0px rgba(0,0,0,0.2); border: 1px solid #fff;
+   }
+    .patSummaryTile{
+	    padding:6% 10px !important;
+	  }  
+	  @media only screen and (max-width: 767px)
+	  {
+	    .patSummaryTile{
+	      padding:20vw 10px !important;
+	    }  
+	  }
+	  .nextPatientPresc:active{
+			color:#99c8f9;
+	  }
+	  .nextPatientPresc:visited{
+			color:#99c8f9;
+	  }
+	  .nextPatientPresc{
+			color:#1e87f0;
+	  }
+	  .prevPatientPresc:active{
+			color:#99c8f9;
+	  }
+	  .prevPatientPresc:visited{
+			color:#99c8f9;
+	  }
+	  .prevPatientPresc{
+			color:#1e87f0;
+	  }
+      .pictures {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pictures > li {
+      float: left;
+      width: 33.3%;
+      height: 33.3%;
+      margin: 0 -1px -1px 0;
+      border: 1px solid transparent;
+      overflow: hidden;
+    }
+
+    .pictures > li > img {
+      width: 100%;
+      cursor: -webkit-zoom-in;
+      cursor: zoom-in;
+    }
+    .patSummaryTile{
+	    transition:0.4s;
+	    box-shadow: 0 0 25px -12px #a4a4a4;
+	    }
+    .patSummaryTile:hover{
+	    box-shadow: 0 0 25px -4px #a4a4a4;
+	    } 
+	.patSummaryTile h2{
+			font-size: 2.4vw;
+		}
+	 @media only screen and (max-width: 767px) {
+		.patSummaryTile h2{
+				font-size: 4em;
+			} 
+		} 
+		.investigation{
+			margin:0px !important;
+		}
+		.investigation li{
+			text-align:left !important;
+		} 
+		.investigation li p{
+			margin:0px !important;
+			font-size:13px;
+		}
+		.printPrescTreatmentLst{
+			margin:0px !important;
+		} 
+		.printPrescTreatmentLst li{
+			text-align:left !important;
+		} 
+		.printPrescTreatmentLst li p{
+			margin:0px !important;
+			font-size:13px;
+		}
+		.printPrescPage{
+			color:black !important;
+		}
+		.printPrescPage p{
+			letter-spacing: inherit !important;
+			color: black !important;
+		}
+		.printPrescPage p small{
+		font-weight: 400 !important;
+		font-size: 90%;
+		}
+		.printPrescPatDtlTbl tr td{
+			border-top: 0px solid #ddd !important;
+			padding: 2px 5px;
+		}
+		.printPrescPatDtlTbl tr th{
+			border-top: 0px solid #ddd !important;
+			padding: 2px 5px;
+		} 
+		.printPrescPatDtlTbl{ 
+			font-size: 13px;
+			margin:10px 0;
+		}
+		.printPrescTreatmentTbl{
+			font-size: 13px
+		}
+		.printPrescTreatmentTbl tr td{
+		border-top: 0px solid #ddd !important;
+		}
+		.printPrescTreatmentTbl tr th{
+		border-top: 0px solid #ddd !important;
+		border-bottom: 0px solid #ddd !important;
+		}
+		.printPrescTreatmentTbl{
+			max-width: 700px;
+		}
+		.printPrescPage{
+			width: 65em !important;
+		}
+		/* .swal-title { 
+		  font-size:14px !important;
+		}
+		.swal-modal {
+		  font-size:14px !important;
+		}
+		.swal-modal h2{
+		  font-size:14px !important;
+		}
+		.swal-button {
+		  padding: 7px 19px;
+		  border-radius: 2px;
+		  background-color: #4962B3;
+		  font-size: 12px;
+		  border: 1px solid #3e549a;
+		  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+		} */
+		i.isAttended{ 
+			width: 12px;
+ 			height: 12px;  
+ 			display: inline-block;
+ 			position: absolute;
+ 			border-radius: 50%;
+ 			left: 42px;
+		}
+		i.attended{
+ 			background-color: #2bc32b;
+		}
+		/* .isAttended {
+		    width: 16px;
+		    height: 16px;
+		    display: inline-block;
+		    position: absolute;
+		    border-radius: 50%;
+		    left: 42px;
+		    padding: 0px 3px;
+		}
+		.attended {
+		    background-color: #2bc32b;
+		    color: white;
+		    font-size: 12px;
+		    font-weight: bold;
+		} */
+		.isAttended_1{ 
+			background-color: #fff;
+		}
+		.isAttended_2{
+			background-color: #fff; /* #d6d6d6; */
+		} 
+		.isAttended_1 .patStatus a{ 
+			text-decoration:none !important;
+			padding: .4em 1em .4em !important;
+			font-size: 85% !important;
+			border-radius: .1em !important; 
+			background-color: #4bd396 !important;
+		}
+		.isAttended_2 .patStatus a{ 
+			text-decoration:none !important;
+			padding: .4em .5em .4em !important;
+			font-size: 85% !important;
+			border-radius: .1em !important; 
+			background-color: #e91e63 !important;
+		}
+		#investigationLabReportModal .tabs-left{
+		  border-bottom: none;
+		  padding-top: 2px;
+		}
+		#investigationLabReportModal .tabs-left {
+		  border-right: 1px solid #ddd;
+		} 
+		#investigationLabReportModal .tabs-left>li {
+		  float: none;
+		  margin-bottom: 2px;
+		}
+		#investigationLabReportModal .tabs-left>li {
+		  margin-right: -1px;
+		}
+		#investigationLabReportModal .tabs-left>li.active>a,
+		#investigationLabReportModal .tabs-left>li.active>a:hover,
+		#investigationLabReportModal .tabs-left>li.active>a:focus {
+		  border-bottom-color: #ddd;
+		  border-right-color: transparent;
+		}
+		#investigationLabReportModal .tabs-left>li.active>a{
+		  color: grey;
+		}
+		#investigationLabReportModal .tabs-left>li>a {
+		  border-radius: 4px 0 0 4px;
+		  margin-right: 0;
+		  display:block;
+		  color: #4e7ebc;
+		  font-weight: bold;
+		  text-transform: uppercase;
+		  letter-spacing: 0px;
+		  font-size: smaller;
+		} 
+		.patInvestigationTestList li{
+			padding: 5px;
+		}
+		.patInvestigationTestList li a{
+			text-decoration: none;
+			color: #6d6db7; /* #2e89ff #ff8080 */ 
+		}
+		#investigationLabReportModal .tabs-left>li:first-child>a{
+			background-color: #0dc5a1; /* #93ff8c; */
+			color: white;
+			font-weight: lighter;
+			font-size: 12px;
+			border-radius: 0px;
+			text-transform: capitalize;
+			letter-spacing: 1px;
+		}
+		#investigationLabReportModal .tabs-left>li.active:first-child>a{
+			background-color: #07987b;
+			color: white; 
+			font-weight: lighter;
+			font-size: 12px 
+			border-radius: 0px;
+			text-transform: capitalize;
+			letter-spacing: 1px;
+		}
+		.testTrendsBtn{
+			border: 0px !important;
+			border-radius: 0% !important;
+			font-size: 0.91em !important;
+			/* box-shadow: 0px 2px 15px -5px grey !important; */
+			transition:0.3s;  
+		}
+		.testTrendsBtn:hover{
+			box-shadow: 0px 2px 15px -0px grey !important;
+			transform: translateY(-2px);
+		}
+		.input-group{
+			z-index:0 !important;
+		}
+		 	#page-content-wrapper  > .container-fluid{
+		 		/* margin: 25px 20px; */
+		 	}
+		
+		 @media only screen and (max-width: 1250px) {
+		 	#page-content-wrapper  > .container-fluid{
+		 		margin:0px !important;
+		 	}
+			#prescViewVisiBtnId{
+				font-size:10px !important;
+				padding:5px 4px !important;
+			}
+			#nextPatNamePrescriptionPanel{
+				display:none;
+			}
+			#prevPatNamePrescriptionPanel{
+				display:none;
+			}
+			.prevPatientPresc{
+				font-size:2em !important;
+				margin-right: 2% !important;
+			}
+			.nextPatientPresc{
+				font-size:2em !important;
+				margin-left: 2% !important;
+			}
+			#prescrightPanelHeaderPat{
+				font-size:12px;
+			}
+			#prescrightPanelHeaderPat img{
+				height:2em !important;
+				padding-right:6px !important;
+			}
+		 }
+		 @media only screen and (min-width: 767px) {
+			 #investigationLabReportModal .modal-dialog{
+			 	width:95vw !important;
+			 }
+		}
+		
+	/* Added By Timsi  */
+	 .btn-referal {
+	      color: white !important;
+	      /* color: #28a745 !important; */
+	      /* background-color: transparent !important; */
+	   	  background-color: #E0A800  !important;
+	      background-image: none !important;
+	      border-color: #E0A800 !important;
+	      padding:4px 12px;
+	      width: 4em !important;
+ 	 }
+ 	 .btn-referal:hover{
+	    background-color: #E0A800  !important;
+	    color: black !important;
+	    transition: .4s !important;
+	   }
+	 
+	 
+	 label{
+		margin-top:7px;
+	}
+	.alignRight{
+		text-align:right;
+	}
+	.alignCenter{
+		text-align:center;
+	}
+	.alignLeftPaddingLeftZero{
+		text-align:left;
+		padding-left:0;
+	}
+	.paddingRightZero{
+		padding-right:0;
+	}
+	.paddingLeftRightZero{
+		padding-right:0;
+		padding-left:0;
+	}
+	.errorMessage{
+		font-style:italic;
+		color:red;
+	}
+	
+	@media only screen and (max-width: 991px)  {
+		  /*.form-control {
+		    background-color: lightblue;
+		  }*/
+		}
+		.tooltip{
+		    position:absolute;
+		    z-index:1020;
+		    display:block;
+		    visibility:visible;
+		    padding:5px;
+		    font-size:13px;
+		    opacity:0;
+		    filter:alpha(opacity=0)
+		}
+	  

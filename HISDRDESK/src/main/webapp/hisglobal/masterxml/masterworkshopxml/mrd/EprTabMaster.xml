@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Epr Tab Master'>
+		<common-values>
+			<master-name>EprTabMaster</master-name>
+			<master-title>Epr Tab Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Epr Tab Master</tableHeading>
+			
+			<list-table>HPMRT_EPR_TAB_MST</list-table>
+			
+			<columns>
+				<column>Tab Name</column>
+			</columns>
+			<query-detail>
+				<fields>
+					<field>A.HPMRSTR_TAB_NAME</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HPMRNUM_EPR_TAB_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>HPMRT_EPR_TAB_MST</table>
+				</tables>
+				
+				<condition>
+					<general>
+							A.GNUM_HOSPITAL_CODE=100 AND  A.GNUM_ISVALID =1 
+					</general>
+					<general-inactive>
+							A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+					</general-inactive>
+                         <isvalid-field>false</isvalid-field>
+					<orderby> ORDER BY A.HPMRSTR_TAB_NAME </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<dynamic-page>	
+				<controls>				
+					<control type="text" index="0">
+						<label>Tab Name</label>
+						<constraints inputType='alphabets' size='30'  maxlength ='100' mandatory ='true'/>	
+						<readOnly>0</readOnly>
+					</control>
+							
+					<control type="combo" index="1" >
+						<label>Tab Type</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>OPD </option>
+								<option value='2'>IPD </option>
+								<option value='0'>OPD and IPD </option>
+							</static>
+						</data>
+						<default>-1</default>
+						<submitRequired>0</submitRequired>
+					</control>						
+					<control type="radio" index="2" >
+						<label>Is Default</label>
+						<data>
+							<static>
+								<option value='1'>Yes </option>
+								<option value='0'>No </option>
+							</static>
+						</data>
+						<default>0</default>
+						<readOnly>0</readOnly>		
+					</control>
+					<control type="radio" index="3" >
+						<label>Normal Bound Type</label>
+						<data>
+							<static>
+								<option value='1'>Yes </option>
+								<option value='0'>No </option>
+							</static>
+						</data>
+						<default>1</default>
+						<readOnly>0</readOnly>	
+					</control>
+					<control type="radio" index="4" >
+						<label>Restricted Bound Type</label>
+						<data>
+							<static>
+								<option value='1'>Yes </option>
+								<option value='0'>No </option>
+							</static>
+						</data>
+						<default>1</default>
+						<readOnly>0</readOnly>	
+					</control>
+					<control type="text" index="5">
+						<label>Tab URL</label>
+						<constraints inputType='alphabets' size='30'  maxlength ='100' mandatory ='true'/>	
+						<readOnly>0</readOnly>
+					</control>
+				 	<control type="text" index="6" >
+						<label> </label>
+						<constraints maxlength='3' size='4' inputType='alphabet' styleString="style='display:none'" />			
+						<data>
+							<static>100</static>
+						</data>			
+						<readOnly>1</readOnly>
+						
+					</control>
+				</controls>
+				<redundent-check>
+				SELECT COUNT (*) FROM HPMRT_EPR_TAB_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) and GNUM_HOSPITAL_CODE=100 
+				 and upper (HPMRSTR_TAB_NAME)  =  controlindex0
+				</redundent-check>	 
+				<insert-query>
+					<primary-key>
+						<field>HPMRNUM_EPR_TAB_ID</field>
+						<value>SELECT NVL(MAX(HPMRNUM_EPR_TAB_ID),10)+1 FROM HPMRT_EPR_TAB_MST where GNUM_HOSPITAL_CODE=100 </value>						
+					</primary-key>
+					<fields valueMap='#I0'>HPMRSTR_TAB_NAME</fields>
+					<fields valueMap='#1'>HPMRNUM_TAB_TYPE</fields>
+					<fields valueMap='#2'>HPMRNUM_ISDEFAULT</fields>
+					<fields valueMap='#3'>HPMRNUM_NORMAL_BOUND_TYPE</fields>
+					<fields valueMap='#4'>HPMRNUM_RESTRICTED_BOUND_TYPE</fields>
+					<fields valueMap='#U5'>HPMRSTR_URL</fields>
+					<fields valueMap='@seatId'>	GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#6'>GNUM_HOSPITAL_CODE</fields>
+					<fields valueMap='@defaultOne'>GNUM_ISVALID</fields>
+					 <table>HPMRT_EPR_TAB_MST</table>				  
+				</insert-query>
+			</dynamic-page>		
+		</add-page>
+
+		<modify-page>
+			<dynamic-page>
+				<controls>				
+					<control type="text" index="0">
+						<label>Tab Name</label>
+						<constraints inputType='alphabets' size='30'  maxlength ='100' mandatory ='true'/>
+						<data>
+							<static>#Q0</static>
+						</data>	
+						<readOnly>0</readOnly>
+					</control>
+							
+					<control type="combo" index="1" >
+						<label>Tab Type</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>OPD </option>
+								<option value='2'>IPD </option>
+								<option value='0'>OPD and IPD </option>
+							</static>
+						</data>
+						<default>#Q1</default>
+						<submitRequired>0</submitRequired>
+					</control>						
+					<control type="radio" index="2" >
+						<label>Is Default</label>
+						<data>
+							<static>
+								<option value='1'>Yes </option>
+								<option value='0'>No </option>
+							</static>
+						</data>
+						<default>#Q2</default>
+						<readOnly>0</readOnly>		
+					</control>
+					<control type="radio" index="3" >
+						<label>Normal Bound Type</label>
+						<data>
+							<static>
+								<option value='1'>Yes </option>
+								<option value='0'>No </option>
+							</static>
+						</data>
+						<default>#Q3</default>
+						<readOnly>0</readOnly>	
+					</control>
+					<control type="radio" index="4" >
+						<label>Restricted Bound Type</label>
+						<data>
+							<static>
+								<option value='1'>Yes </option>
+								<option value='0'>No </option>
+							</static>
+						</data>
+						<default>#Q4</default>
+						<readOnly>0</readOnly>	
+					</control>
+					<control type="text" index="5">
+						<label>Tab URL</label>
+						<constraints inputType='alphabets' size='30'  maxlength ='100' mandatory ='true'/>	
+						<data>
+							<static>#Q5</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					<control type="combo" index="6">
+						<label>Is Active Status</label>
+					<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				 
+				</controls>
+				
+			 <initialise-query>
+			   	 <fields>
+					 <field>A.HPMRSTR_TAB_NAME</field>
+					 <field>A.HPMRNUM_TAB_TYPE</field>
+					 <field>A.HPMRNUM_ISDEFAULT</field>
+					 <field>A.HPMRNUM_NORMAL_BOUND_TYPE</field>
+					 <field>A.HPMRNUM_RESTRICTED_BOUND_TYPE</field>								
+                   	 <field>A.HPMRSTR_URL</field>				     
+				 </fields>					
+					<tables>
+						<table alias='A'>HPMRT_EPR_TAB_MST</table>
+					</tables>
+					<condition>	
+					<dependent>
+						    <clause>A.HPMRNUM_EPR_TAB_ID = #C1 and A.GNUM_HOSPITAL_CODE=100 </clause>
+					</dependent>
+					</condition>						
+				</initialise-query>	
+				
+				<redundent-check>
+				SELECT COUNT (*) FROM HPMRT_EPR_TAB_MST WHERE (gnum_isvalid = 1 OR gnum_isvalid = 2) and GNUM_HOSPITAL_CODE=100 
+				 and upper (HPMRSTR_TAB_NAME)  =  controlindex0
+				</redundent-check>	
+						
+				<update-query>					
+					<fields valueMap='#I0'>HPMRSTR_TAB_NAME</fields>
+					<fields valueMap='#1'>HPMRNUM_TAB_TYPE</fields>
+					<fields valueMap='#2'>HPMRNUM_ISDEFAULT</fields>
+					<fields valueMap='#3'>HPMRNUM_NORMAL_BOUND_TYPE</fields>
+					<fields valueMap='#4'>HPMRNUM_RESTRICTED_BOUND_TYPE</fields>
+					<fields valueMap='#U5'>HPMRSTR_URL</fields>
+					<fields valueMap='@seatId'>	GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='#6'>GNUM_ISVALID</fields>
+					<table>HPMRT_EPR_TAB_MST</table>	
+					<condition>HPMRNUM_EPR_TAB_ID = #1 and GNUM_HOSPITAL_CODE=100</condition>						
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>
+</master-config>

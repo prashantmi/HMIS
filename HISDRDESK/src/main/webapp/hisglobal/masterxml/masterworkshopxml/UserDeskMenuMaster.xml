@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+
+<master-config>
+	<master name='Desk Mapping Master'>
+		<common-values>
+			<master-name>DeskMappingMaster</master-name>
+			<master-title>Desk Mapping Master</master-title>
+		</common-values>
+
+		<list-page>
+			<tableHeading>Desk Mapping Master</tableHeading>
+			<list-table>GBLT_USER_DESKMENU_MST</list-table> 
+
+		 	<controls>
+				<control type="combo" index="0">
+					<label>Desk Type</label>
+					<selection-mandatory>false</selection-mandatory>
+					<data>
+						<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_DESK_TYPE_DESC)</text-field>
+									<value-field>A.GNUM_DESK_TYPE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_DESK_TYPE_MST</table>	
+								</tables>
+								<condition>
+									<general> A.GNUM_HOSPITAL_CODE=100 AND A.GNUM_ISVALID = 1 ORDER BY INITCAP(A.GSTR_DESK_TYPE_DESC)</general>
+								</condition>
+							</dynamic>		
+					</data>
+					<default>-1</default>
+				</control>
+			</controls> 
+			<columns>
+				 <column>Desk Name</column>
+				 <column>Mapping Type</column>
+				 <column>Mapped To</column>
+				 
+			</columns>
+			<query-detail>
+				<fields>
+					<field>INITCAP(B.GSTR_DESK_NAME)</field>		
+					<field>DECODE(a.gnum_mapping_type, 1, 'Hospital Default', 2, 'Unit Wise', 3, 'Ward Wise', 4, 'User Wise', 0, 'Global Default')</field>
+					<field>DECODE(a.gnum_mapping_type, 
+					2, ( SELECT INITCAP(X.GSTR_DEPT_NAME)||' ('||INITCAP(Y.HGSTR_UNITNAME)||')' FROM gblt_department_mst X, hgbt_unit_mst Y where Y.HGNUM_DEPTUNITCODE=A.HGNUM_DEPTUNITCODE AND X.GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE AND
+						X.GNUM_DEPT_CODE=Y.GNUM_DEPT_CODE AND Y.GNUM_HOSPITAL_CODE=X.GNUM_HOSPITAL_CODE AND X.GNUM_ISVALID=1 AND Y.GNUM_ISVALID=1), 
+					3, (select d.HIPSTR_WARD_NAME from HIPT_WARD_MST d where d.HIPNUM_WARD_CODE=a.HIPNUM_WARD_CODE and GNUM_ISVALID=1 and GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE), 
+					4, (select d.gstr_user_name from GBLT_USER_MST d where d.gnum_userid=A.GNUM_USERSEAT_ID and GNUM_ISVALID=1 and GNUM_HOSPITAL_CODE=A.GNUM_HOSPITAL_CODE)) </field>
+				</fields>
+				<primaryKey>		
+				    <field>A.gnum_desk_type</field>					
+					<field>A.gnum_mapping_seqno</field>					
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				<tables>
+					<table alias='A'>GBLT_USER_DESKMENU_MST</table>
+					<table alias='B'>GBLT_DESK_MST</table>
+				</tables>
+				<condition>
+					<isvalid-field>
+						A.GNUM_DESK_ID=B.GNUM_DESK_ID AND A.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND
+						B.GNUM_ISVALID=1 AND 
+						A.GNUM_ISVALID
+					</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby> ORDER BY INITCAP(B.GSTR_DESK_NAME) </orderby>
+					<dependent>
+						<clause> A.GNUM_DESK_TYPE = #0 </clause>
+					</dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+		
+		<add-page>
+			<static-page>/opd/master/AddUserDeskMenuMaster.cnt</static-page>
+		</add-page>
+		
+		<modify-page>
+			<static-page>/opd/master/ModifyViewUserDeskMenuACTION.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

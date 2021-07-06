@@ -1,0 +1,381 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='HospitalMaster'>
+		<common-values>
+			<master-name>HospitalMaster</master-name>
+			<master-title>Hospital Master </master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Hospital Master</tableHeading> 
+				<list-table>GBLT_HOSPITAL_MST</list-table>
+				
+				<columns>
+					 <column>Hospital Name </column>
+					 <column>Hospital Short Name</column>
+				     <column>City</column>
+				 </columns>
+
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.GSTR_HOSPITAL_NAME)</field>
+					  	<field>UPPER(A.GSTR_HOSP_SHORT_NAME)</field>
+					    <field>INITCAP(A.GSTR_CITY)</field>
+					
+					</fields>
+					<primaryKey>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+						
+					</primaryKey>
+					<tables>
+						<table alias='A'>GBLT_HOSPITAL_MST </table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <orderby> order by INITCAP(A.GSTR_HOSPITAL_NAME)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+				<controls>
+				
+					<control type="radio"  index="0">  
+						<label>Hospital Type </label>	
+						<data>
+							<static>
+								<option value='0'>Is Not Associated </option>
+								<option value='1'>Is Associated  </option>
+							</static>
+						</data>
+						<default>1</default>
+						<readOnly>0</readOnly>							
+					</control>					
+					<control type="textarea" index="1" >
+						<label>Hospital Name</label>
+						<constraints  inputType='alphabets' styleString="style='width:130px; height:30px'" mandatory ='true' methodstring="onkeypress='return CheckMaxLength(event,this,100);'"/>					
+						<readOnly>0</readOnly>
+					</control>	
+					
+					<control type="text" index="2" >
+						<label>Hospital Short Name</label>
+						<constraints  inputType='alphabets' maxlength ='10' size="12" mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>			
+									
+	                <control type="textarea" index="3" >
+						<label>Address1</label>
+						<constraints  inputType='alphanumeric' styleString="style='width:130px; height:30px'"  methodstring="onkeypress='return CheckMaxLength(event,this,40);'"/>							
+						<readOnly>0</readOnly>
+					</control>				
+				   <control type="text" index="4" >
+						<label>Address2</label>
+						<constraints  inputType='alphanumeric' maxlength ='40' size="22"/>						
+						<readOnly>0</readOnly>
+					</control>			
+					
+					 <control type="text" index="5" >
+						<label>City</label>
+						<constraints  inputType='alphabets'  maxlength ='40' size='22' />						
+						<readOnly>0</readOnly>
+					</control>
+					  <control type="combo" index="6">
+						<label>State</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_STATENAME)</text-field>
+									<value-field>A.GNUM_STATECODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_STATE_MST</table>									  
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1</general>									
+							</condition>
+							</dynamic>							
+						</data>
+						<default>-1</default>
+					   <submitRequired>0</submitRequired>					
+					</control>
+					
+					
+					<control type="text" index="7" >
+						<label>Phone</label>
+						<constraints  inputType='numeric'  maxlength ='11'  size='12'/>						
+						<readOnly>0</readOnly>
+					</control>				
+					 <control type="text" index="8" >
+						<label>Fax</label>
+						<constraints  inputType='numeric'  maxlength ='11' size="12"/>						
+						<readOnly>0</readOnly>
+					</control>					
+					<control type="text" index="9">
+						<label>Email </label>
+						<constraints  inputType = 'alphanumeric' maxlength="50" size="22" />						
+						<readOnly>0</readOnly>
+					</control>					  					  
+					 <control type="text" index="10">
+						<label>Contact Person</label>
+						<constraints  inputType = 'alphabets' maxlength="50" size="22" />
+						<readOnly>0</readOnly>
+					</control>				
+					<control type="combo" index="11">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				  <control type="text" index="12" >
+						<label>HL7</label>
+						<constraints maxlength='10' size='12' inputType='numeric' />						
+						<readOnly>0</readOnly>
+					</control>	
+					
+							
+				
+				</controls>
+				<insert-query>
+					<primary-key>
+						<field>GNUM_HOSPITAL_CODE</field>
+						<value>SELECT NVL(MAX(GNUM_HOSPITAL_CODE),0)+1 FROM GBLT_HOSPITAL_MST</value>
+					
+						
+					</primary-key>
+					
+					<fields valueMap='#0'>GNUM_IS_ASSOCIATED</fields>
+					<fields valueMap='#I1'>GSTR_HOSPITAL_NAME</fields>
+					<fields valueMap='#U2'>GSTR_HOSP_SHORT_NAME</fields>
+					<fields valueMap='#3'>GSTR_HOSPITAL_ADD1</fields>
+					<fields valueMap='#4'>GSTR_HOSPITAL_ADD2</fields>
+					<fields valueMap='#5'>GSTR_CITY</fields>
+					<fields valueMap='#6'>GNUM_STATE_CODE</fields>
+				    <fields valueMap='#7'>GSTR_PHONE</fields>
+				    <fields valueMap='#8'>GSTR_FAX</fields>
+				    <fields valueMap='#9'>GSTR_EMAIL</fields>
+				    <fields valueMap='#I10'>GSTR_CONTACT_PERSON</fields>
+					<fields valueMap='#11'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+				    <fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+				   <fields valueMap='#12'>GNUM_HL7_CODE</fields>
+					
+					
+				<table>GBLT_HOSPITAL_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+
+		<modify-page>
+		  <dynamic-page>
+		   <controls>
+		   
+		   			<control type="radio"  index="0">  
+						<label>Hospital Type </label>	
+						<data>
+							<static>
+								<option value='0'>Is Not Associated </option>
+								<option value='1'>Is Associated  </option>
+							</static>
+						</data>
+						<default>#Q0</default>
+						<readOnly>0</readOnly>							
+					</control> 
+		            <control type="textarea" index="1">
+						<label>Hospital Name </label>
+						<constraints  inputType='alphabets' styleString="style='width:130px; height:30px'" mandatory ='true' methodstring="onkeypress='return CheckMaxLength(event,this,100);'"/>	
+						<data>
+							<static>#Q1</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					
+					<control type="text" index="2" >
+						<label>Hospital Short Name</label>
+						<constraints  inputType='alphabets' maxlength ='10' size="12"  mandatory="true"/>	
+						<data>
+							<static>#Q2</static>
+						</data>					
+						<readOnly>0</readOnly>
+					</control>	
+								
+				    <control type="text" index="3">
+						<label>Address1 </label>
+						<constraints  inputType='alphanumeric' styleString="style='width:130px; height:30px'"  methodstring="onkeypress='return CheckMaxLength(event,this,40);'"/>	
+						<data>
+							<static>#Q3</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>	  
+									
+				    <control type="text" index="4">
+						<label>Address2</label>
+						<constraints  inputType = 'alphanumeric' maxlength ='40' size="22"/>
+						<data>
+							<static>#Q4</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					  
+					 
+					  <control type="text" index="5">
+						<label>City </label>
+						<constraints  inputType = 'alphabets' maxlength = '40' size="22" />
+						<data>
+							<static>#Q5</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					  
+					   <control type="combo" index="6">
+						<label>State</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<dynamic>
+								<options>
+									<text-field>INITCAP(A.GSTR_STATENAME)</text-field>
+									<value-field>A.GNUM_STATECODE</value-field>
+								</options>
+								<tables>
+									<table alias='A'>GBLT_STATE_MST</table>									  
+								</tables>
+								<condition>
+									<general>A.GNUM_ISVALID = 1</general>									
+							</condition>
+							</dynamic>							
+						</data>
+						<default>#Q6</default>
+					   <submitRequired>0</submitRequired>					
+					</control>
+					  
+					   <control type="text" index="7">
+						<label>Phone </label>
+						<constraints  inputType = 'numeric' maxlength = '11' size="12"/>
+						<data>
+							<static>#Q7</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					  
+					  
+					    <control type="text" index="8">
+						<label>Fax </label>
+						<constraints   maxlength = '11' size="12" inputType = 'numeric'/>
+						<data>
+							<static>#Q8</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					  				  
+					   <control type="text" index="9">
+						<label>Email </label>
+						<constraints  inputType = 'alphanumeric' maxlength="50" size="22" />
+						<data>
+							<static>#Q9</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					  					  
+					 <control type="text" index="10">
+						<label>Contact Person</label>
+						<constraints  inputType = 'alphabets' maxlength="50" size="22" />
+						<data>
+							<static>#Q10</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					  					
+					<control type="combo" index="11">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>
+                          
+						   
+					<control type="text" index="12">
+						<label>HL7 </label>
+						<constraints  size='12' maxlength = "10" inputType = 'numeric'/>
+						<data>
+							<static>#Q11</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>	 
+					
+					
+					
+					<control type="textarea" index="13">
+						<label>Remarks </label>
+						<constraints  styleString="style='width:130px; height:30px'" inputType ='alphanumeric' mandatory='true' methodstring="onkeypress='return CheckMaxLength(event,this,50);'"/>
+						<data>
+							<static>#Q12</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>	 
+						   
+						   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+			   	 
+			   	 	 <field>A.GNUM_IS_ASSOCIATED</field>
+					 <field>INITCAP(A.GSTR_HOSPITAL_NAME)</field>
+					 <field>UPPER(A.GSTR_HOSP_SHORT_NAME)</field>
+					 <field>INITCAP(A.GSTR_HOSPITAL_ADD1)</field>
+					 <field>INITCAP(A.GSTR_HOSPITAL_ADD2)</field>								
+                     <field>INITCAP(A.GSTR_CITY)</field>			               						
+				     <field>A.GNUM_STATE_CODE</field>
+				     <field>A.GSTR_PHONE</field> 
+					 <field>A.GSTR_FAX</field>
+					 <field>A.GSTR_EMAIL</field>
+					 <field>INITCAP(A.GSTR_CONTACT_PERSON)</field>
+					 <field>A.GNUM_HL7_CODE</field>
+					 <field>A.GSTR_REMARKS</field>
+				    
+				 </fields>					
+					<tables>
+						<table alias='A'>GBLT_HOSPITAL_MST</table>
+						
+					</tables>
+					<condition>						
+						<dependent>
+						    <clause>A.GNUM_HOSPITAL_CODE = #C1</clause>
+						</dependent>		
+					</condition>						
+				</initialise-query>		 
+				<update-query>
+					
+					<fields valueMap='#0'>GNUM_IS_ASSOCIATED</fields>
+					<fields valueMap='#I1'>GSTR_HOSPITAL_NAME</fields>
+					<fields valueMap='#U2'>GSTR_HOSP_SHORT_NAME</fields>
+					<fields valueMap='#3'>GSTR_HOSPITAL_ADD1</fields>
+					<fields valueMap='#4'>GSTR_HOSPITAL_ADD2</fields>
+					<fields valueMap='#5'>GSTR_CITY</fields>
+					<fields valueMap='#6'>GNUM_STATE_CODE</fields>					
+					<fields valueMap='#7'>GSTR_PHONE</fields>	
+					<fields valueMap='#8'>GSTR_FAX</fields>	
+					<fields valueMap='#9'>GSTR_EMAIL</fields>	
+					<fields valueMap='#I10'>GSTR_CONTACT_PERSON</fields>	
+					<fields valueMap='#11'>GNUM_ISVALID</fields>	
+					<fields valueMap='@seatId'>GNUM_LSTMOD_SEATID</fields>	
+					<fields valueMap='@entryDate'>GDT_LSTMOD_DATE</fields>	
+					<fields valueMap='#12'>GNUM_HL7_CODE</fields>
+					<fields valueMap='#13'>GSTR_REMARKS</fields>
+					<table>GBLT_HOSPITAL_MST</table>
+					<condition>GNUM_HOSPITAL_CODE = #1</condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

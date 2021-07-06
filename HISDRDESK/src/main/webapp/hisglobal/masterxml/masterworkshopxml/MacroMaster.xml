@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Macro Master'>
+		<common-values>
+			<master-name>MacroMaster</master-name>
+			<master-title>Macro Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Macro Master</tableHeading>
+			
+			<list-table>HGBT_MACRO_MST</list-table>
+
+            <controls>
+				<control type="combo" index="0">
+					<label>Process Name</label>
+					<selection-mandatory>true</selection-mandatory>
+					<data>
+						<dynamic>
+							<options>
+								<text-field>initcap(A.HGSTR_PROCESS_DESC)</text-field>
+								<value-field>A.HGNUM_PROCESS_ID</value-field>
+							</options>
+							<tables>
+								<table alias='A'>HGBT_MACRO_PROCESS_MST</table>
+							</tables>
+							<condition>
+								
+								<general> A.GNUM_ISVALID = 1 order by A.HGSTR_PROCESS_DESC </general>	
+							</condition>
+						</dynamic>
+					</data>
+					<default>-1</default>
+				</control>
+			</controls>
+
+			<columns>
+				<column>Macro Header</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(B.HGSTR_MACRO_HEADER)</field>
+				</fields>
+				
+				<primaryKey>
+					<field>B.HGNUM_MACRO_ID</field>
+					<field>B.HGNUM_SLNO</field>
+					<field>B.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='B'>HGBT_MACRO_MST</table>
+										
+				</tables>
+				
+				<condition>
+					
+					<isvalid-field>B.GNUM_ISVALID</isvalid-field>
+					<hospital-code>B.GNUM_HOSPITAL_CODE</hospital-code>
+						<dependent>
+						<clause> B.HGNUM_PROCESS_ID = #0 </clause>
+				    </dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+		<add-page>
+			<static-page>/opd/master/macroMstAdd.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/macroMstAdd.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

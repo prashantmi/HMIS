@@ -1,0 +1,41 @@
+
+           .col-sm-6,.col-sm-5,.col-sm-4,.col-sm-3{
+               padding: 5px;
+               display: inline-flex;
+           }
+           
+        .formSection {
+            margin-left: 0px;
+            margin-right: 0px;
+            background-color: #fff;
+            padding: 2%;
+            margin: 2% 0;
+            transition: 0.5s;
+            box-shadow: 0 0.5px 20px 2px #b0acac;
+
+        }
+
+        .formSection:hover {
+            box-shadow: 0 2px 20px 2px #000;
+
+
+        }
+           
+
+        body {
+
+            background: #eaeef3;
+            color: rgba(75, 75, 75, 0.7);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            font-size: 14px;
+            font-weight: 500;
+        }
+           
+           label{
+               width: 50% ;
+           }
+           .radio-group{
+              width: 50% ; 
+           }
+           
+      

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<!-- ========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="DoctorDeskFB" type="new_opd.transaction.controller.fb.DoctorDeskFB" />
+		<form-bean name="SearchemrActionFB" type="new_opd.transaction.controller.fb.SearchemrActionFB" />
+		<form-bean name="OPDTemplateMstFb" type="new_opd.transaction.controller.fb.OPDTemplateMstFb" />
+		<form-bean name="IpdDoctorDeskFB" type="new_opd.transaction.controller.fb.IpdDoctorDeskFB" />
+		 
+	</form-beans>
+	
+	
+	<action-mappings>
+	
+		
+		
+		<action path="/transaction/DoctorDeskAction"
+				type="new_opd.transaction.controller.action.DoctorDeskAction"
+				name="DoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+<!--			<forward name="NEW" path="/transaction/medicalCertificate.jsp" />-->
+			<forward name="INITIAL" path="/initial_drDesk.jsp" />
+			<forward name="NEW" path="/opdDrDesk.jsp" />
+			<forward name="NEW1" path="/printPrescription.jsp" />
+			<forward name="TEMPLATESAVE" path="/TemplateSave.jsp" />
+			<forward name="MOBILEPRINTPRESC" path="/mobileprintPrescription.jsp" />
+			<forward name="FILEUPLOAD" path="/fileUpload.jsp" />
+			<forward name="PRESCRIPTIONBOOKMARKING" path="/prescriptionprofileList.jsp" />
+			<forward name="PRINTPRESCRIPTIONBOOKMARKING" path="/printPrescription_profile.jsp" />
+			
+			
+			
+			
+			
+			
+			<!-- <forward name="POPUP" path="/transaction/mcDiagnosisPopup.jsp" />	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+			<forward name="GETDTL" path="/transaction/medicalCertificateIssue.jsp"/>
+			<forward name="POPUPCERT" path="/transaction/medicalCertPopup.jsp" />	 -->
+			
+			
+		</action>
+		
+	
+	  <action path="/transaction/IpdDoctorDeskAction"
+				type="new_opd.transaction.controller.action.IpdDoctorDeskAction"
+				name="IpdDoctorDeskFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+<!--			<forward name="NEW" path="/transaction/medicalCertificate.jsp" />-->
+			<forward name="INITIAL" path="/initial_drDesk.jsp" />
+			<forward name="NEW" path="/ipdDrDesk.jsp" />
+			<forward name="NEW1" path="/ipdprintPrescription.jsp" />
+			<forward name="TEMPLATESAVE" path="/TemplateSave.jsp" />
+			<forward name="MOBILEPRINTPRESC" path="/mobileprintPrescription.jsp" />
+			
+			<forward name="FILEUPLOAD" path="/fileUpload.jsp" />
+			<forward name="PRESCRIPTIONBOOKMARKING" path="/prescriptionprofileList.jsp" />
+			<forward name="PRINTPRESCRIPTIONBOOKMARKING" path="/printPrescription_profile.jsp" />
+			<!-- <forward name="POPUP" path="/transaction/mcDiagnosisPopup.jsp" />	
+			<forward name="CANCEL" path="../startup/initPage.jsp" redirect="true" />
+			<forward name="GETDTL" path="/transaction/medicalCertificateIssue.jsp"/>
+			<forward name="POPUPCERT" path="/transaction/medicalCertPopup.jsp" />	 -->
+			
+			
+		</action>
+		
+		
+		
+		<action path="/transaction/SearchemrAction"
+				type="new_opd.transaction.controller.action.SearchemrAction"
+				name="SearchemrActionFB"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+			<forward name="INITIAL" path="/Searchemr.jsp" />
+			</action>
+		
+		
+			<action path="/transaction/OPDTemplateMstAction"
+				type="new_opd.transaction.controller.action.OPDTemplateMstAction"
+				name="OPDTemplateMstFb"
+				validate="false"
+				scope="request"
+				parameter="hmode">
+			<forward name="INITIAL" path="/OPDTemplateMstListing.jsp" />
+			<forward name="ADD" path="/OPDTemplateMst.jsp" />
+			<forward name="MODIFY" path="/OPDTemplateModify.jsp" />
+			<forward name="PRINTPRESC" path="/PreViewOPDTemplateMst.jsp" />
+			<forward name="PRINTPRESCVIEW" path="/PreViewOPDTemplateMstView.jsp" />
+			
+			</action>
+		
+		
+		
+	</action-mappings>
+		
+</struts-config>	

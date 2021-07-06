@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Image Pointer Master'>
+		<common-values>
+			<master-name>ImagePointerMaster</master-name>
+			<master-title>Image Pointer Master</master-title>
+		</common-values>
+
+		<list-page>
+			<tableHeading>Image Pointer Master</tableHeading>
+			<list-table>HOPT_IMAGEDESC_MST</list-table>
+
+			<columns>
+				<column>Image Description</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HOPSTR_IMAGE_DESC)</field>
+				</fields>
+				<primaryKey>
+					<field>A.HOPNUM_IMAGEDESC_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+					<field>A.HOPNUM_SLNO</field>
+					
+				</primaryKey>
+				<tables>
+					<table alias='A'>HOPT_IMAGEDESC_MST</table>
+				</tables>
+				<condition>
+					<general>
+							A.GNUM_HOSPITAL_CODE=100 AND  A.GNUM_ISVALID =1 
+					</general>
+					<general-inactive>
+							A.GNUM_ISVALID =2 AND A.GNUM_HOSPITAL_CODE=100
+					</general-inactive>
+                    <isvalid-field>false</isvalid-field>					
+					<orderby> ORDER BY INITCAP(A.HOPSTR_IMAGE_DESC) </orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+	<add-page>			
+			<static-page>/opd/master/imagePointerMaster.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/opd/master/imagePointerMaster.cnt</static-page>
+		</modify-page>	
+			</master>
+</master-config>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <master-config>
+	<master name='MealTypeMealTimeMappingMaster'>
+		<common-values>
+			<master-name>MealTypeMealTimeMappingMaster</master-name>
+			<master-title>Meal Type Meal Time Mapping Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Meal Type Menu Mapping Master</tableHeading>
+			
+			<list-table>HDKT_MEALTYPE_MEALTIME_MAP_MST </list-table>
+
+			<columns>
+				<column>Meal Type</column>
+				<column>Diet Type</column>
+				</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(B.HDKSTR_MEALTYPE_NAME)</field>
+					<field>INITCAP(C.HDKSTR_DIETTYPE_NAME)</field>
+				</fields>
+				<primaryKey>
+					<field>distinct(A.HDKNUM_MEALTYPE_ID)</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDKT_MEALTYPE_MEALTIME_MAP_MST  </table>
+					<table alias='B'>HDKT_MEALTYPE_MST  </table>
+					<table alias='C'>HDKTS_DIET_TYPE_MST </table>
+				</tables>
+				
+				<condition>
+				<general> 
+						A.HDKNUM_MEALTYPE_ID=B.HDKNUM_MEALTYPE_ID AND B.GNUM_HOSPITAL_CODE=100 AND
+				C.HDKNUM_DIET_TYPE_ID=B.HDKNUM_DIET_TYPE_ID AND C.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND 
+				 B.GNUM_ISVALID=1 AND
+					</general>
+					<general-inactive>
+						A.HDKNUM_MEALTYPE_ID=B.HDKNUM_MEALTYPE_ID AND B.GNUM_HOSPITAL_CODE=100 AND
+				C.HDKNUM_DIET_TYPE_ID=B.HDKNUM_DIET_TYPE_ID AND C.GNUM_HOSPITAL_CODE=B.GNUM_HOSPITAL_CODE AND 
+				 B.GNUM_ISVALID=1 AND
+					</general-inactive>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby>order by INITCAP(B.HDKSTR_MEALTYPE_NAME)</orderby>
+					<dependent>
+						<clause> A.HDKNUM_MEALTYPE_ID = #0 </clause>
+					</dependent>
+				</condition>
+			</query-detail>
+		</list-page>
+	
+		<add-page>
+			<static-page>/dietkitchen/masters/MealTypeMealTimeMappingMstACTION.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/dietkitchen/masters/MealTypeMealTimeMappingMstACTION.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>
+   

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Roster Shift Master'>
+		<common-values>
+			<master-name>rosterShiftMst</master-name>
+			<master-title>Roster Shift Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Roster Shift Master</tableHeading>
+			
+			<list-table>HDRT_ROSTTYPE_SHIFT_MST</list-table>
+
+			<columns>
+				<column>Roster Name</column>
+				<column>Shift</column>
+				<column>Shift Type</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(B.HDRSTR_ROSTER_TYPE_NAME)</field> 
+					<field>INITCAP(C.HDTSTR_SHIFT_DESC)</field> 
+					<field>INITCAP(D.HDTSTR_SHIFT_DESC)</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HDRNUM_ROSTER_TYPE_ID</field>
+					<field>A.HDRNUM_SLNO</field>
+					<field>A.HDRNUM_SHIFT_ID</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDRT_ROSTTYPE_SHIFT_MST</table>
+					<table alias='B'>HDRT_ROSTER_TYPE_MST</table>
+					<table alias='C'>HDRT_SHIFT_MST</table>
+					<table alias='D'>HDRT_SHIFT_TYPE_MST</table>
+					
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<general>   A.HDRNUM_ROSTER_TYPE_ID=B.HDRNUM_ROSTER_TYPE_ID AND
+					A.HDRNUM_SHIFT_ID=C.HDRNUM_SHIFT_ID AND
+					C.HDRNUM_SHIFT_TYPE=D.HDRNUM_SHIFT_TYPE AND C.GNUM_ISVALID=1 AND
+					B.GNUM_ISVALID=1 AND D.GNUM_ISVALID=1 AND
+					</general> 
+					<general-inactive>    A.HDRNUM_ROSTER_TYPE_ID=B.HDRNUM_ROSTER_TYPE_ID AND
+					A.HDRNUM_SHIFT_ID=C.HDRNUM_SHIFT_ID AND
+					C.HDRNUM_SHIFT_TYPE=D.HDRNUM_SHIFT_TYPE AND C.GNUM_ISVALID=1 AND
+					B.GNUM_ISVALID=1 AND D.GNUM_ISVALID=1 AND
+					</general-inactive> 
+					<orderby> ORDER BY(B.HDRSTR_ROSTER_TYPE_NAME)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/dutyroster/masters/rosterShiftMstAddModACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/dutyroster/masters/rosterShiftMstAddModACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>

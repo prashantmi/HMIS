@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<master-config>
+	<master name='OPDOrganMaster'>
+		<common-values>
+			<master-name>OPDOrganMaster</master-name>
+			<master-title>Organ Master</master-title>
+		</common-values>
+		<list-page>
+				<tableHeading>Organ Master</tableHeading> 
+				<list-table>HGBT_ORGAN_MST</list-table>				
+				<columns>
+					 <column>Organ Name</column>
+				  </columns>
+					<query-detail>
+					<fields>
+						<field>INITCAP(A.HGSTR_ORGAN_NAME)</field>
+					</fields>
+					<primaryKey>
+						<field>A.HGNUM_ORGAN_CODE</field>
+						<field>A.GNUM_HOSPITAL_CODE</field>
+					</primaryKey>
+					<tables>
+						<table alias='A'>HGBT_ORGAN_MST </table>
+					</tables>
+					<condition>					 
+                            <isvalid-field>A.GNUM_ISVALID</isvalid-field>
+                            <orderby> order by INITCAP(A.HGSTR_ORGAN_NAME)</orderby>
+                    </condition>
+				</query-detail>				
+		</list-page>
+		<add-page>			
+			<dynamic-page>	
+
+				<controls>				
+					<control type="text" index="0" >
+						<label>Organ Name</label>
+						<constraints maxlength='100' size='30' inputType='alphabets'  mandatory="true"/>						
+						<readOnly>0</readOnly>
+					</control>
+					
+              	 	<control type="combo" index="1">
+						<label>IsValid Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>1</default>
+						<submitRequired>0</submitRequired>
+					</control>					
+				  
+								
+				</controls>
+				<insert-query>
+					<primary-key>
+						<field>HGNUM_ORGAN_CODE</field>
+						<value>SELECT NVL(MAX(HGNUM_ORGAN_CODE),00)+01 FROM HGBT_ORGAN_MST</value>
+						<hospital-code>GNUM_HOSPITAL_CODE</hospital-code>
+					</primary-key>
+					<fields valueMap='#I0'>HGSTR_ORGAN_NAME</fields>
+					<fields valueMap='#1'>GNUM_ISVALID</fields>
+					<fields valueMap='@seatId'>GNUM_SEAT_ID</fields>
+					<fields valueMap='@entryDate'>GDT_ENTRY_DATE</fields>
+					<fields valueMap='@hospitalCode'>GNUM_HOSPITAL_CODE</fields>
+					
+					<table>HGBT_ORGAN_MST</table>
+				</insert-query>
+			</dynamic-page>			
+		</add-page>
+
+		<modify-page>
+		  <dynamic-page>
+		   <controls>
+		<control type="text" index="0">
+						<label>Organ Name</label>
+						<constraints  size='30' maxlength = "100" mandatory ='true' inputType="alphabets"/>
+						<data>
+							<static>#Q0</static>
+						</data>
+						<readOnly>0</readOnly>
+					</control>
+					
+					<control type="combo" index="1">
+						<label>IsActive Status</label>
+						<selection-mandatory>true</selection-mandatory>
+						<data>
+							<static>
+								<option value='1'>Active </option>
+								<option value='2'>In Active </option>
+							</static>
+						</data>
+						<default>#S</default>
+						<submitRequired>0</submitRequired>
+					</control>                          
+						   
+				  </controls>
+		       <initialise-query>
+			   	 <fields>
+					 <field>INITCAP(A.HGSTR_ORGAN_NAME)</field>
+				 </fields>					
+					<tables>
+						<table alias='A'>HGBT_ORGAN_MST</table>
+					</tables>
+					<condition>						
+						<dependent>
+						    <clause>A.HGNUM_ORGAN_CODE= #C1</clause>
+						</dependent>		
+					</condition>	
+										
+				</initialise-query>		 
+				<update-query>					
+					<fields valueMap='#I0'>HGSTR_ORGAN_NAME</fields>
+					<fields valueMap='#1'>GNUM_ISVALID</fields>
+									
+					<table>HGBT_ORGAN_MST</table>
+					<condition>HGNUM_ORGAN_CODE = #1</condition>
+				</update-query>
+        	</dynamic-page>
+		</modify-page>
+	</master>	
+</master-config>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<master-config>
+	<master name='Duty Block Master'>
+		<common-values>
+			<master-name>dutyBlockMst</master-name>
+			<master-title>Duty Block Master</master-title>
+		</common-values>
+		
+		<list-page>
+			<tableHeading>Duty Block Master</tableHeading>
+			
+			<list-table>HDRT_DUTY_BLOCK_MST</list-table>
+
+			<columns>
+				<column>Duty Block Name</column>
+				<column>Duty Block Description</column>
+			</columns>
+
+			<query-detail>
+				<fields>
+					<field>INITCAP(A.HDTSTR_BLOCK_NAME)</field> 
+					<field>INITCAP(A.HDTSTR_BLOCK_DESC)</field> 
+				</fields>
+				
+				<primaryKey>
+					<field>A.HDRNUM_BLOCK_ID</field>
+					<field>A.HDRNUM_SLNO</field>
+					<field>A.GNUM_HOSPITAL_CODE</field>
+				</primaryKey>
+				
+				<tables>
+					<table alias='A'>HDRT_DUTY_BLOCK_MST</table>
+				</tables>
+				
+				<condition>
+					<isvalid-field>A.GNUM_ISVALID</isvalid-field>
+					<hospital-code>A.GNUM_HOSPITAL_CODE</hospital-code>
+					<orderby> ORDER BY(A.HDTSTR_BLOCK_NAME)</orderby>
+				</condition>
+			</query-detail>
+		</list-page>
+
+		<add-page>
+			<static-page>/dutyroster/masters/dutyBlockMstAddModACT.cnt</static-page>
+		</add-page>
+
+		<modify-page>
+			<static-page>/dutyroster/masters/dutyBlockMstAddModACT.cnt</static-page>
+		</modify-page>
+	</master>
+</master-config>
